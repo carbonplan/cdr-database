@@ -2,11 +2,11 @@ import Metric from '../components/metric'
 
 const Report = (props) => {
     console.log(props)
-    var tags = props.project.properties.tags.join('] [')
+    var tags = props.project.tags.join('] [')
     return (
-        <li><b> {props.project.properties.name}: </b> [<i>{tags}</i>]
+        <li><b> {props.project.name}: </b> [<i>{tags}</i>]
             <ul> 
-                {props.project.properties.metrics.map(metric => (<Metric metric={metric}></Metric>))}
+                {props.project.metrics.map(metric => (<Metric metric={metric}></Metric>))}
             </ul>
         </li>
     )
