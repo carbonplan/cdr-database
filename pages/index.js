@@ -6,7 +6,7 @@ function Index(props) {
         <div>
             <Header name='Carbon Plan Reports'></Header>
             <p>Projects</p>
-            <ul> {props.features.map(project => (<Report project={ project }></Report>))} </ul>
+            {props.features.map(project => (<Report project={ project }></Report>))}
         </div>
     )
 }
