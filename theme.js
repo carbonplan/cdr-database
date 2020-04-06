@@ -20,14 +20,14 @@ export default {
     background: 'rgb(245,245,245)',
     primary: 'rgb(53,53,53)',
     secondary: 'rgb(80,80,80)',
-    muted: 'rgb(0,0,0)',
+    muted: 'rgb(200,200,200)',
     modes: {
       dark: {
         text: 'rgb(255,255,255)',
         background: 'rgb(28,29,33)',
         primary: 'rgb(230,230,230)',
         secondary: 'rgb(224, 224, 224)',
-        muted: 'rgb(255,255,255)',
+        muted: 'rgb(51,53,59)',
       }
     }
   },

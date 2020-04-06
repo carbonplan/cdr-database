@@ -23,7 +23,7 @@ const Sidebar = (props) => {
         <Box sx={{ 
           height: '60px',
           borderStyle: 'solid', 
-          borderColor: 'primary', 
+          borderColor: 'muted', 
           borderWidth: '0px', 
           borderBottomWidth: '1px'
         }}>

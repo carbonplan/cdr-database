@@ -13,10 +13,10 @@ const Main = ({ projects }) => {
         <Box sx={{ 
           flex: '1 1 auto', 
           borderStyle: 'solid', 
-          borderColor: 'primary',
+          borderColor: 'muted',
           borderWidth: '0px', 
           borderRightWidth: '1px',
-          borderLeftWidth: '1px' ,
+          borderLeftWidth: '1px' 
         }}>
           <Box sx={{ py: [4], px: [4, 4, 3], maxWidth: '600px', margin: 'auto' }}>
             <Heading sx={{ fontSize: [5] }}>
