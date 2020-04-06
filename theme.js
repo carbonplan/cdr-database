@@ -117,6 +117,10 @@ export default {
       textDecoration: "none",
       fontWeight: "bold",
       cursor: "pointer"
+    },
+    hr: {
+      'border': 'none',
+      'borderTop': '2px dotted'
     }
   }
 }

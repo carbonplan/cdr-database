@@ -13,9 +13,9 @@ const Report = (props) => {
       p: [3],
       mb: [4]
     }}>
-      <Heading> {props.project.name} {props.project.tags.map(tag => <Tag name={tag}> </Tag>)} </Heading>
+      <Heading> {props.project.name} {props.project.tags.map(tag => <Tag name={tag} key={ tag }> </Tag>)} </Heading>
       <Text sx={{ fontSize: [2], py: [1] }}> Direct air capture combined with mineralization for storage </Text>
-      <Divider sx={{ 'border': 'none', 'border-top': '2px dotted' }} />
+      <Divider />
       <div>
         { props.project.metrics.map(metric => (<Metric metric={metric}></Metric>)) }
       </div>

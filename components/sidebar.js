@@ -1,5 +1,4 @@
 import { Box, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
-import { connect } from 'react-redux'
 import { useColorMode } from 'theme-ui'
 import { useDispatch, useSelector } from 'react-redux'
 
