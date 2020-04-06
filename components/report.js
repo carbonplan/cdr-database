@@ -1,8 +1,8 @@
 import Metric from './metric'
-import { Box } from 'theme-ui'
+import Tag from './tag'
+import { Badge, Box, Divider, Heading, Text } from 'theme-ui'
 
 const Report = (props) => {
-  var tags = props.project.tags.join('] [')
 
   return (
     <Box sx={{ 
@@ -13,11 +13,12 @@ const Report = (props) => {
       p: [3],
       mb: [4]
     }}>
-      <li><b> {props.project.name}: </b> [<i>{tags}</i>]
-        <ul> 
-          {props.project.metrics.map(metric => (<Metric metric={metric}></Metric>))}
-        </ul>
-      </li>
+      <Heading> {props.project.name} {props.project.tags.map(tag => <Tag name={tag}> </Tag>)} </Heading>
+      <Text sx={{ fontSize: [2], py: [1] }}> Direct air capture combined with mineralization for storage </Text>
+      <Divider sx={{ 'border': 'none', 'border-top': '2px dotted' }} />
+      <div>
+        { props.project.metrics.map(metric => (<Metric metric={metric}></Metric>)) }
+      </div>
     </Box>
   )
 }

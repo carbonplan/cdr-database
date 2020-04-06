@@ -28,6 +28,13 @@ export default {
         primary: 'rgb(230,230,230)',
         secondary: 'rgb(224, 224, 224)',
         muted: 'rgb(51,53,59)',
+        // tag colors
+        mineralization: '#A7B7B7',
+        soil: '#B7765F',
+        biomass: '#CCC45E',
+        forests: '#5FA055',
+        ocean: '#7FABB5',
+        dac: '#9D75BA',
       }
     }
   },

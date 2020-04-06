@@ -36,12 +36,12 @@ const Sidebar = (props) => {
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               filter
             </Heading>
-            <Badge variant={getVariant('forests')} onClick={() => addOrRemove('forests')}>forests</Badge>
-            <Badge variant={getVariant('DAC')} onClick={() => addOrRemove('DAC')}>DAC</Badge>
-            <Badge variant={getVariant('mineralization')} onClick={() => addOrRemove('mineralization')}>mineralization</Badge>
-            <Badge variant={getVariant('soil')} onClick={() => addOrRemove('soil')}>soil</Badge>
-            <Badge variant={getVariant('ocean')} onClick={() => addOrRemove('ocean')}>ocean</Badge>
-            <Badge variant={getVariant('biomass')} onClick={() => addOrRemove('biomass')}>biomass</Badge>
+            <Badge variant={getVariant('forests')} onClick={() => addOrRemove('forests')} sx={{ 'borderColor': 'forests'}} >forests</Badge>
+            <Badge variant={getVariant('DAC')} onClick={() => addOrRemove('DAC')} sx={{ 'borderColor': 'dac'}} >DAC</Badge>
+            <Badge variant={getVariant('mineralization')} onClick={() => addOrRemove('mineralization')} sx={{ 'borderColor': 'mineralization'}} >mineralization</Badge>
+            <Badge variant={getVariant('soil')} onClick={() => addOrRemove('soil')} sx={{ 'borderColor': 'soil'}} >soil</Badge>
+            <Badge variant={getVariant('ocean')} onClick={() => addOrRemove('ocean')} sx={{ 'borderColor': 'ocean'}} >ocean</Badge>
+            <Badge variant={getVariant('biomass')} onClick={() => addOrRemove('biomass')} sx={{ 'borderColor': 'biomass'}} >biomass</Badge>
           </Box>
           <Box sx={{ mb: [4] }}>
             <Heading sx={{ fontSize: [3], mb: [2] }}>
