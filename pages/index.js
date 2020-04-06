@@ -1,14 +1,15 @@
-import Header from '../components/header'
-import Report from '../components/report'
-function Index(props) {
-    console.log(props)
-    return (
-        <div>
-            <Header name='Carbon Plan Reports'></Header>
-            <p>Projects</p>
-            {props.features.map(project => (<Report project={ project }></Report>))}
-        </div>
-    )
+import Layout from '../components/layout'
+import Sidebar from '../components/sidebar'
+import Main from '../components/main'
+import { withRedux } from '../lib/redux'
+
+function Index (props) {
+  return (
+    <Layout>
+      <Sidebar></Sidebar>
+      <Main projects={props.features}></Main>
+    </Layout>
+  )
 }
 
 export async function getStaticProps() {
@@ -17,4 +18,4 @@ export async function getStaticProps() {
     return { props: projects }
 }
 
-export default Index
+export default withRedux(Index)
