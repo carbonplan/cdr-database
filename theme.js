@@ -53,7 +53,10 @@ export default {
       fontSize: [1],
       pt: ['4px'],
       pb: ['6px'],
-      fontFamily: 'monospace'
+      fontFamily: 'monospace',
+      '&:focus': {
+        outline: 'none'
+      }
     },
     radio: {
       cursor: 'pointer'
