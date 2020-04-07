@@ -1,7 +1,7 @@
 import About from './about'
 import Summary from './summary'
 import Report from './report'
-import { Box, Flex, Heading, Text } from 'theme-ui'
+import { Badge, Box, Flex, Heading, Text } from 'theme-ui'
 import { useSelector } from 'react-redux'
 
 const Main = ({ projects }) => {

@@ -1,5 +1,6 @@
-import { Box, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
+import { Box, Flex, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Sidebar = (props) => {
@@ -12,8 +13,18 @@ const Sidebar = (props) => {
     else dispatch({ type: 'ADD_TAG', tag: tag })
   }
 
-  const getVariant = (tag) => {
-    return tags.includes(tag) ? 'selected' : 'primary'
+  const getStyle = (tag) => {
+    if (tags.includes(tag)) {
+      return {
+        borderColor: tag,
+        bg: alpha(tag, 0.4)
+      }
+    } else {
+      return {
+        borderColor: tag,
+        bg: 'background'
+      }
+    }
   }
 
   return (
@@ -30,25 +41,30 @@ const Sidebar = (props) => {
             (carbon)plan
           </Box>
         </Box>
-        <Box sx={{ p: [4] }}>
+        <Flex sx={{ 
+          p: [4],
+          flexDirection: 'column', 
+          height: ['inherit', null, 'calc(100vh - 60px)']
+        }}>
           <Box sx={{ mb: [4] }}>
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               filter
             </Heading>
-            <Badge variant={getVariant('forests')} onClick={() => addOrRemove('forests')} sx={{ 'borderColor': 'forests'}} >forests</Badge>
-            <Badge variant={getVariant('DAC')} onClick={() => addOrRemove('DAC')} sx={{ 'borderColor': 'dac'}} >DAC</Badge>
-            <Badge variant={getVariant('mineralization')} onClick={() => addOrRemove('mineralization')} sx={{ 'borderColor': 'mineralization'}} >mineralization</Badge>
-            <Badge variant={getVariant('soil')} onClick={() => addOrRemove('soil')} sx={{ 'borderColor': 'soil'}} >soil</Badge>
-            <Badge variant={getVariant('ocean')} onClick={() => addOrRemove('ocean')} sx={{ 'borderColor': 'ocean'}} >ocean</Badge>
-            <Badge variant={getVariant('biomass')} onClick={() => addOrRemove('biomass')} sx={{ 'borderColor': 'biomass'}} >biomass</Badge>
+            <Badge variant='primary' sx={getStyle('forests')} onClick={() => addOrRemove('forests')}>forests</Badge>
+            <Badge variant='primary' sx={getStyle('dac')} onClick={() => addOrRemove('dac')}>dac</Badge>
+            <Badge variant='primary' sx={getStyle('mineralization')} onClick={() => addOrRemove('mineralization')}>mineralization</Badge>
+            <Badge variant='primary' sx={getStyle('soil')} onClick={() => addOrRemove('soil')}>soil</Badge>
+            <Badge variant='primary' sx={getStyle('ocean')} onClick={() => addOrRemove('ocean')}>ocean</Badge>
+            <Badge variant='primary' sx={getStyle('biomass')} onClick={() => addOrRemove('biomass')}>biomass</Badge>
           </Box>
           <Box sx={{ mb: [4] }}>
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               search
             </Heading>
-            <Input></Input>
+            <Input>
+            </Input>
           </Box>
-          <Box sx={{ mb: [4] }}>
+          <Box sx={{ mb: [2], mt: [0, null, 'auto'] }}>
             <Label onClick={e => {setColorMode('dark')}}>
               <Radio name='dark-mode' value='true' defaultChecked={true}/>
               <Text sx={{ fontSize: [2] }}>dark mode</Text>
@@ -58,7 +74,7 @@ const Sidebar = (props) => {
               <Text sx={{ fontSize: [2] }}>light mode</Text>
             </Label>
           </Box>
-        </Box>
+        </Flex>
       </Box>
     </Box>
   )
