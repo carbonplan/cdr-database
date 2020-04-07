@@ -27,7 +27,7 @@ const Main = ({ projects }) => {
               all metrics are based on publicly available information. Click
               triangles to see additional charts and explanations.
             </Text>
-            { projects.map(project => (<Report project={ project }></Report>)) }
+            {projects.filter(project =>project.tags.includes('DAC')).map(project => (<Report project={ project } key={ project.name }></Report>)) }
           </Box>
         </Box>
         <Box sx={{ flexGrow: 1, flexBasis: 'sidebar', display: ['none', 'none', 'block'] }}>
