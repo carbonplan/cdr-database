@@ -19,9 +19,7 @@ class LiveSearch extends Component {
 
         const handleChange = (e) => {
             this.setState({ input: e.target.value })
-            console.log(this.state)
             const searchTerm = this.state.input.trim()
-            console.log(this.searchTerm)
             dispatch({ type: 'SEARCH', value: searchTerm })
 
         }

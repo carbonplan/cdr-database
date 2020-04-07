@@ -1,14 +1,13 @@
 import About from './about'
 import Summary from './summary'
 import Report from './report'
-import { Box, Flex, Heading, Text } from 'theme-ui'
+import { Badge, Box, Flex, Heading, Text } from 'theme-ui'
 import { useSelector } from 'react-redux'
 import Fuse from 'fuse.js';
 
 
 const customFilter = (tags, search, projects) => {
 
-  console.log(projects)
   // Search options
   const options = {
     keys: ['name', 'tag', 'project_id', 'properties']
@@ -35,7 +34,6 @@ const Main = ({ projects }) => {
   const tags = useSelector(state => state.tags)
   const search = useSelector(state => state.search)
   const showProjects = customFilter(tags, search, projects)
-  console.log('showProjects', showProjects)
 
   return (
     <Box sx={{ flexGrow: 99999, flexBasis: 0, minWidth: 'main' }}>

@@ -12,7 +12,7 @@ class MyApp extends App {
           <Component {...pageProps} />
           <style jsx global>{`
             body {
-              overscroll-behavior: none
+              overscroll-behavior: none;
             }
           `}
         </style>

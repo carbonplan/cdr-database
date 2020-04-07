@@ -1,6 +1,6 @@
 import Metric from './metric'
-import Tag from './tag'
-import { Badge, Box, Divider, Heading, Text } from 'theme-ui'
+import { Badge, Grid, Box, Divider, Heading, Text } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 
 const Report = (props) => {
 
@@ -13,12 +13,27 @@ const Report = (props) => {
       p: [3],
       mb: [4]
     }}>
-      <Heading> {props.project.name} {props.project.tags.map(tag => <Tag name={tag} key={ tag }> </Tag>)} </Heading>
-      <Text sx={{ fontSize: [2], py: [1] }}> Direct air capture combined with mineralization for storage </Text>
+      <Grid columns={[1, null, '1fr 200px']}>
+        <Heading>{props.project.name}</Heading>
+        <Box sx={{ textAlign: ['left', null, 'right'] }}>
+          {props.project.tags.map((tag) => 
+            <Badge key={tag} variant='primary' sx={{ 
+              borderColor: tag.toLowerCase(),
+              bg: alpha(tag.toLowerCase(), 0.4),
+              cursor: 'default'
+            }}>
+              {tag}
+            </Badge>
+          )}
+        </Box>
+      </Grid>
+      <Text sx={{ fontSize: [2], py: [1] }}> 
+        Direct air capture combined with mineralization for storage 
+      </Text>
       <Divider />
-      <div>
+      <Box>
         { props.project.metrics.map(metric => (<Metric metric={metric}></Metric>)) }
-      </div>
+      </Box>
     </Box>
   )
 }
