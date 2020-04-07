@@ -6,7 +6,7 @@ import { withRedux } from '../lib/redux'
 function Index (props) {
   return (
     <Layout>
-      <Sidebar></Sidebar>
+      <Sidebar projects={props.features}></Sidebar>
       <Main projects={props.features}></Main>
     </Layout>
   )

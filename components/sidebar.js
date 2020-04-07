@@ -1,6 +1,7 @@
 import { Box, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
 import { useDispatch, useSelector } from 'react-redux'
+import LiveSearch from './search'
 
 const Sidebar = (props) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -35,18 +36,18 @@ const Sidebar = (props) => {
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               filter
             </Heading>
-            <Badge variant={getVariant('forests')} onClick={() => addOrRemove('forests')} sx={{ 'borderColor': 'forests'}} >forests</Badge>
+            <Badge variant={getVariant('Forests')} onClick={() => addOrRemove('Forests')} sx={{ 'borderColor': 'forests' }} >Forests</Badge>
             <Badge variant={getVariant('DAC')} onClick={() => addOrRemove('DAC')} sx={{ 'borderColor': 'dac'}} >DAC</Badge>
-            <Badge variant={getVariant('mineralization')} onClick={() => addOrRemove('mineralization')} sx={{ 'borderColor': 'mineralization'}} >mineralization</Badge>
-            <Badge variant={getVariant('soil')} onClick={() => addOrRemove('soil')} sx={{ 'borderColor': 'soil'}} >soil</Badge>
-            <Badge variant={getVariant('ocean')} onClick={() => addOrRemove('ocean')} sx={{ 'borderColor': 'ocean'}} >ocean</Badge>
-            <Badge variant={getVariant('biomass')} onClick={() => addOrRemove('biomass')} sx={{ 'borderColor': 'biomass'}} >biomass</Badge>
+            <Badge variant={getVariant('Mineralization')} onClick={() => addOrRemove('Mineralization')} sx={{ 'borderColor': 'mineralization' }} >Mineralization</Badge>
+            <Badge variant={getVariant('Soil')} onClick={() => addOrRemove('Soil')} sx={{ 'borderColor': 'soil'}} >Soil</Badge>
+            <Badge variant={getVariant('Ocean')} onClick={() => addOrRemove('Ocean')} sx={{ 'borderColor': 'ocean' }} >Ocean</Badge>
+            <Badge variant={getVariant('Biomass')} onClick={() => addOrRemove('Biomass')} sx={{ 'borderColor': 'biomass'}} >Biomass</Badge>
           </Box>
           <Box sx={{ mb: [4] }}>
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               search
             </Heading>
-            <Input></Input>
+            <LiveSearch></LiveSearch>
           </Box>
           <Box sx={{ mb: [4] }}>
             <Label onClick={e => {setColorMode('dark')}}>

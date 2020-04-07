@@ -3,7 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 
 const initialState = {
-  tags: []
+  tags: [],
+  search: ''
 }
 
 
@@ -21,6 +22,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         tags: state.tags.filter(tag => tag !== action.tag),
+      }
+    case 'SEARCH':
+      return {
+        ...state,
+        search: action.value,
       }
   }
 }

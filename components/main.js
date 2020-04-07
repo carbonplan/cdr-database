@@ -3,9 +3,39 @@ import Summary from './summary'
 import Report from './report'
 import { Box, Flex, Heading, Text } from 'theme-ui'
 import { useSelector } from 'react-redux'
+import Fuse from 'fuse.js';
+
+
+const customFilter = (tags, search, projects) => {
+
+  console.log(projects)
+  // Search options
+  const options = {
+    keys: ['name', 'tag', 'project_id', 'properties']
+  }
+
+  if (!search && !tags) {
+    return projects
+  }
+
+  if (search) {
+    const fuse = new Fuse(projects, options);
+    const searchProjects = fuse.search(search).map(project => project.item)
+    if (tags.length) {
+      return searchProjects.filter(project => project.tags.some(t => tags.includes(t)))
+    } else {
+      return searchProjects
+    }
+  } else {
+    return projects.filter(project => project.tags.some(t => tags.includes(t)))
+  }
+}
 
 const Main = ({ projects }) => {
   const tags = useSelector(state => state.tags)
+  const search = useSelector(state => state.search)
+  const showProjects = customFilter(tags, search, projects)
+  console.log('showProjects', showProjects)
 
   return (
     <Box sx={{ flexGrow: 99999, flexBasis: 0, minWidth: 'main' }}>
@@ -27,7 +57,7 @@ const Main = ({ projects }) => {
               all metrics are based on publicly available information. Click
               triangles to see additional charts and explanations.
             </Text>
-            {projects.filter(project =>project.tags.includes('DAC')).map(project => (<Report project={ project } key={ project.name }></Report>)) }
+            { showProjects.map(project => (<Report project={ project } key={ project.name }></Report>)) }
           </Box>
         </Box>
         <Box sx={{ flexGrow: 1, flexBasis: 'sidebar', display: ['none', 'none', 'block'] }}>

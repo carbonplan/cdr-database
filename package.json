@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/carbonplan/reports-dev#readme",
   "dependencies": {
+    "fuse.js": "^5.1.0",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
