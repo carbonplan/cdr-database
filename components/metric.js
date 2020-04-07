@@ -2,7 +2,6 @@
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { connect } from 'react-redux'
 import { Component } from 'react'
-import MetricValue from './mvalue'
 
 class Report extends Component {
 
@@ -23,15 +22,19 @@ class Report extends Component {
     const { expanded } = this.state
 
     return <div>
-      <Grid
-        columns={['100px 1fr 30px']}>
-        <MetricValue value={metric.value} />
+      <Grid columns={['100px 1fr 30px']}>
+        <Box>{metric.value}</Box>
         <Text>{metric.name} [{metric.units}] </Text>
-        <IconButton sx={{ cursor: 'pointer' }} onClick={this.toggle} aria-label='Toggle more info'>
+        <IconButton sx={{ 
+          cursor: 'pointer'
+        }} onClick={this.toggle} aria-label='Toggle more info'>
           <svg sx={{ height: [30, null, 20], width: [30, null, 20] }}>
             <polygon points='3,3 19,3 11,16'
               sx={{
-                fill: 'text', stroke: 'text', strokeWidth: 1, transition: '0.25s all',
+                fill: 'text', 
+                stroke: 'text', 
+                strokeWidth: 1, 
+                transition: '0.25s all',
                 transformOrigin: [
                   '11px 8px',
                   null,

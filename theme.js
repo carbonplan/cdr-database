@@ -21,6 +21,12 @@ export default {
     primary: 'rgb(53,53,53)',
     secondary: 'rgb(80,80,80)',
     muted: 'rgb(200,200,200)',
+    mineralization: '#A7B7B7',
+    soil: '#B7765F',
+    biomass: '#CCC45E',
+    forests: '#5FA055',
+    ocean: '#7FABB5',
+    dac: '#9D75BA',
     modes: {
       dark: {
         text: 'rgb(255,255,255)',
@@ -28,18 +34,34 @@ export default {
         primary: 'rgb(230,230,230)',
         secondary: 'rgb(224, 224, 224)',
         muted: 'rgb(51,53,59)',
-        // tag colors
         mineralization: '#A7B7B7',
         soil: '#B7765F',
         biomass: '#CCC45E',
         forests: '#5FA055',
         ocean: '#7FABB5',
-        dac: '#9D75BA',
+        dac: '#9D75BA'
       }
     }
   },
   text: {
     link: {
+      cursor: 'pointer'
+    }
+  },
+  forms: {
+    input: {
+      fontSize: [1],
+      pt: ['4px'],
+      pb: ['6px'],
+      fontFamily: 'monospace',
+      '&:focus': {
+        outline: 'none'
+      }
+    },
+    radio: {
+      cursor: 'pointer'
+    },
+    label: {
       cursor: 'pointer'
     }
   },
@@ -55,33 +77,23 @@ export default {
       borderStyle: 'solid',
       borderColor: 'primary',
       borderWidth: '1px',
-      bg: 'background',
+      backgroundColor: 'background',
+      borderRadius: '4px',
       mr: [2],
       mb: [2],
-      pl: [1],
-      pr: [1],
-      fontSize: [2],
-      fontWeight: 'bold'
-    },
-    selected: {
-      cursor: 'pointer', 
-      color: 'background',
-      borderStyle: 'solid',
-      borderColor: 'primary',
-      borderWidth: '1px',
-      bg: 'primary',
-      mr: [2],
-      mb: [2],
-      pl: [1],
-      pr: [1],
-      fontSize: [2],
-      fontWeight: 'bold'
+      pt: ['1px'],
+      pb: ['2px'],
+      pl: ['5px'],
+      pr: ['5px'],
+      fontSize: [1],
+      fontWeight: 'body',
+      fontFamily: 'monospace'
     }
   },
   links: {
     nav: {
       color: "primary",
-      "&.active": {
+      "&:active": {
         color: "primary",
       },
       "&:hover": {
