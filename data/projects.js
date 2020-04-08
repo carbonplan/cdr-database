@@ -52,7 +52,7 @@ export default {
             "value": "$100",
             "units": "$/tCO2"
         }],
-        "tags": ["DAC", "Mineralization"],
+        "tags": ["dac", "mineralization"],
         "project_id": "STRP01"
     }, {
         "type": "Feature",
@@ -106,7 +106,7 @@ export default {
             "value": "$50",
             "units": "$/tCO2"
         }],
-        "tags": ["Mineralization", "Building materials"],
+        "tags": ["mineralization", "building materials"],
         "project_id": "STRP02"
     }, {
         "type": "Feature",
@@ -160,7 +160,7 @@ export default {
             "value": "$66",
             "units": "$/tCO2"
         }],
-        "tags": ["Soil", "Broker"],
+        "tags": ["soil", "broker"],
         "project_id": "STRP03"
     }, {
         "type": "Feature",
@@ -214,7 +214,7 @@ export default {
             "value": "Not specified",
             "units": "$/tCO2"
         }],
-        "tags": ["Soil", "Broker"],
+        "tags": ["soil", "broker"],
         "project_id": "STRP04"
     }, {
         "type": "Feature",
@@ -268,7 +268,7 @@ export default {
             "value": "$70-$80",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "BECCS"],
+        "tags": ["biomass", "beccs"],
         "project_id": "STRP05"
     }, {
         "type": "Feature",
@@ -322,7 +322,7 @@ export default {
             "value": "$50",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "Biochar"],
+        "tags": ["biomass", "biochar"],
         "project_id": "STRP06"
     }, {
         "type": "Feature",
@@ -376,7 +376,7 @@ export default {
             "value": "$4",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Reforestation"],
+        "tags": ["forests", "reforestation"],
         "project_id": "STRP07"
     }, {
         "type": "Feature",
@@ -430,7 +430,7 @@ export default {
             "value": "$1-$15",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Broker"],
+        "tags": ["forests", "broker"],
         "project_id": "STRP08"
     }, {
         "type": "Feature",
@@ -484,7 +484,7 @@ export default {
             "value": "$43",
             "units": "$/tCO2"
         }],
-        "tags": ["Ocean", ""],
+        "tags": ["ocean"],
         "project_id": "STRP09"
     }, {
         "type": "Feature",
@@ -538,7 +538,7 @@ export default {
             "value": "$15",
             "units": "$/tCO2"
         }],
-        "tags": ["Soil", "Broker"],
+        "tags": ["soil", "broker"],
         "project_id": "STRP10"
     }, {
         "type": "Feature",
@@ -592,7 +592,7 @@ export default {
             "value": "$10",
             "units": "$/tCO2"
         }],
-        "tags": ["Mineralization", ""],
+        "tags": ["mineralization"],
         "project_id": "STRP11"
     }, {
         "type": "Feature",
@@ -646,7 +646,7 @@ export default {
             "value": "$10-$100",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Avoided conversion"],
+        "tags": ["forests", "avoided conversion"],
         "project_id": "STRP12"
     }, {
         "type": "Feature",
@@ -700,7 +700,7 @@ export default {
             "value": "$50",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Agroforestry"],
+        "tags": ["forests", "agroforestry"],
         "project_id": "STRP13"
     }, {
         "type": "Feature",
@@ -754,7 +754,7 @@ export default {
             "value": "$40",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "Biochar"],
+        "tags": ["biomass", "biochar"],
         "project_id": "STRP14"
     }, {
         "type": "Feature",
@@ -808,7 +808,7 @@ export default {
             "value": "Not specified",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "Building materials"],
+        "tags": ["biomass", "building materials"],
         "project_id": "STRP15"
     }, {
         "type": "Feature",
@@ -862,7 +862,7 @@ export default {
             "value": "$25",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "Building materials"],
+        "tags": ["biomass", "building materials"],
         "project_id": "STRP16"
     }, {
         "type": "Feature",
@@ -916,7 +916,7 @@ export default {
             "value": "$50",
             "units": "$/tCO2"
         }],
-        "tags": ["Biomass", "Biochar"],
+        "tags": ["biomass", "biochar"],
         "project_id": "STRP17"
     }, {
         "type": "Feature",
@@ -970,7 +970,7 @@ export default {
             "value": "$50",
             "units": "$/tCO2"
         }],
-        "tags": ["Mineralization", "Building materials"],
+        "tags": ["mineralization", "building materials"],
         "project_id": "STRP18"
     }, {
         "type": "Feature",
@@ -1024,7 +1024,7 @@ export default {
             "value": "$20",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Reforestation"],
+        "tags": ["forests", "reforestation"],
         "project_id": "STRP19"
     }, {
         "type": "Feature",
@@ -1078,7 +1078,7 @@ export default {
             "value": "$30",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Burial"],
+        "tags": ["forests", "burial"],
         "project_id": "STRP20"
     }, {
         "type": "Feature",
@@ -1132,7 +1132,7 @@ export default {
             "value": "$20-50",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Avoided conversion"],
+        "tags": ["forests", "avoided conversion"],
         "project_id": "STRP21"
     }, {
         "type": "Feature",
@@ -1186,7 +1186,7 @@ export default {
             "value": "$20",
             "units": "$/tCO2"
         }],
-        "tags": ["Forests", "Building materials"],
+        "tags": ["forests", "building materials"],
         "project_id": "STRP22"
     }]
 }

@@ -21,12 +21,12 @@ export default {
     primary: 'rgb(53,53,53)',
     secondary: 'rgb(80,80,80)',
     muted: 'rgb(200,200,200)',
-    mineralization: '#A7B7B7',
-    soil: '#B7765F',
-    biomass: '#CCC45E',
-    forests: '#5FA055',
-    ocean: '#7FABB5',
-    dac: '#9D75BA',
+    brown: '#B7765F',
+    yellow: '#CCC45E',
+    green: '#5FA055',
+    blue: '#7FABB5',
+    grey: '#A7B7B7',
+    purple: '#9D75BA',
     modes: {
       dark: {
         text: 'rgb(255,255,255)',
@@ -34,12 +34,12 @@ export default {
         primary: 'rgb(230,230,230)',
         secondary: 'rgb(224, 224, 224)',
         muted: 'rgb(51,53,59)',
-        mineralization: '#A7B7B7',
-        soil: '#B7765F',
-        biomass: '#CCC45E',
-        forests: '#5FA055',
-        ocean: '#7FABB5',
-        dac: '#9D75BA'
+        brown: '#B7765F',
+        yellow: '#CCC45E',
+        green: '#5FA055',
+        blue: '#7FABB5',
+        grey: '#A7B7B7',
+        purple: '#9D75BA',
       }
     }
   },

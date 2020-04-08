@@ -1,9 +1,9 @@
 import Metric from './metric'
 import { Badge, Grid, Box, Divider, Heading, Text } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
+import { connect } from 'react-redux'
 
 const Report = (props) => {
-
   return (
     <Box sx={{ 
       borderStyle: 'solid', 
@@ -16,10 +16,10 @@ const Report = (props) => {
       <Grid columns={[1, null, '1fr 200px']}>
         <Heading>{props.project.name}</Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
-          {props.project.tags.map((tag) => 
+          {props.project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
-              borderColor: tag.toLowerCase(),
-              bg: alpha(tag.toLowerCase(), 0.4),
+              borderColor: props.colors.tags[tag],
+              bg: alpha(props.colors.tags[tag], 0.4),
               cursor: 'default'
             }}>
               {tag}
