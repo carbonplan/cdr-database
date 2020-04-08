@@ -149,6 +149,6 @@ export default {
     reforestation: 'green',
     'avoided conversion': 'green',
     agroforestry: 'green',
-    burial: 'biomass'
+    burial: 'yellow'
   }
 }
