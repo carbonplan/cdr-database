@@ -7,10 +7,9 @@ import Fuse from 'fuse.js';
 
 
 const customFilter = (tags, search, projects) => {
-
-  // Search options
   const options = {
-    keys: ['name', 'tag', 'project_id', 'properties']
+    keys: ['name'],
+    threshold: 0
   }
 
   if (!search && !tags) {
@@ -18,7 +17,7 @@ const customFilter = (tags, search, projects) => {
   }
 
   if (search) {
-    const fuse = new Fuse(projects, options);
+    const fuse = new Fuse(projects, options)
     const searchProjects = fuse.search(search).map(project => project.item)
     if (tags.length) {
       return searchProjects.filter(project => project.tags.some(t => tags.includes(t)))

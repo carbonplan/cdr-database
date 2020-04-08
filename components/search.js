@@ -1,40 +1,31 @@
 /** @jsx jsx */
-import { jsx, Box, Button } from 'theme-ui'
-import { Component } from 'react'
-import { connect } from 'react-redux'
+import { jsx, Box, Input, Button } from 'theme-ui'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-const mapStateToProps = (state) => {
-    return {
-    }
+const LiveSearch = () => {
+  const [input, setInput] = useState({})
+  const dispatch = useDispatch()
+
+  const handleInputChange = (e) => {
+    const searchTerm = e.currentTarget.value.trim()
+    dispatch({ type: 'SEARCH', value: searchTerm })
+    setInput({
+      ...input,
+      [e.currentTarget.name]: e.currentTarget.value
+    })
+  }
+
+  return (
+    <Box>
+      <Input
+        type='text'
+        placeholder='search reports'
+        onChange={handleInputChange}
+        sx={{ '&:focus': { outline: 'none' } }}
+      />
+    </Box>
+  )
 }
 
-class LiveSearch extends Component {
-
-    state = {
-        input: ''
-    }
-
-    render() {
-        const { dispatch } = this.props
-
-        const handleChange = (e) => {
-            this.setState({ input: e.target.value })
-            const searchTerm = this.state.input.trim()
-            dispatch({ type: 'SEARCH', value: searchTerm })
-
-        }
-
-        return <Box>
-            <input
-                type='text'
-                placeholder='Search CarbonPlan Reports'
-                value={this.state.input}
-                onChange={handleChange}
-                sx={{ width: 210, border: 'text', background: 'text', variant: 'text.input', '&:focus': { outline: 'none' } }}
-            />
-        </Box>
-    }
-
-}
-
-export default connect(mapStateToProps)(LiveSearch)
+export default LiveSearch

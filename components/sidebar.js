@@ -1,8 +1,9 @@
+import theme from '.././theme'
+import LiveSearch from './search'
 import { Box, Flex, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useDispatch, useSelector } from 'react-redux'
-import LiveSearch from './search'
 
 const Sidebar = (props) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -14,16 +15,15 @@ const Sidebar = (props) => {
     else dispatch({ type: 'ADD_TAG', tag: tag })
   }
 
-  const getStyle = (tag, colors) => {
-    const color = colors.tags[tag]
+  const getStyle = (tag) => {
     if (tags.includes(tag)) {
       return {
-        borderColor: color,
-        bg: alpha(color, 0.4)
+        borderColor: theme.tags[tag],
+        bg: alpha(theme.tags[tag], 0.4)
       }
     } else {
       return {
-        borderColor: color,
+        borderColor: theme.tags[tag],
         bg: 'background'
       }
     }
@@ -52,18 +52,18 @@ const Sidebar = (props) => {
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               filter
             </Heading>
-            <Badge variant='primary' sx={getStyle('forests', props.colors)} onClick={() => addOrRemove('forests')}>forests</Badge>
-            <Badge variant='primary' sx={getStyle('dac', props.colors)} onClick={() => addOrRemove('dac')}>dac</Badge>
-            <Badge variant='primary' sx={getStyle('mineralization', props.colors)} onClick={() => addOrRemove('mineralization')}>mineralization</Badge>
-            <Badge variant='primary' sx={getStyle('soil', props.colors)} onClick={() => addOrRemove('soil')}>soil</Badge>
-            <Badge variant='primary' sx={getStyle('ocean', props.colors)} onClick={() => addOrRemove('ocean')}>ocean</Badge>
-            <Badge variant='primary' sx={getStyle('biomass', props.colors)} onClick={() => addOrRemove('biomass')}>biomass</Badge>
+            <Badge variant='primary' sx={getStyle('forests')} onClick={() => addOrRemove('forests')}>forests</Badge>
+            <Badge variant='primary' sx={getStyle('dac')} onClick={() => addOrRemove('dac')}>dac</Badge>
+            <Badge variant='primary' sx={getStyle('mineralization')} onClick={() => addOrRemove('mineralization')}>mineralization</Badge>
+            <Badge variant='primary' sx={getStyle('soil')} onClick={() => addOrRemove('soil')}>soil</Badge>
+            <Badge variant='primary' sx={getStyle('ocean')} onClick={() => addOrRemove('ocean')}>ocean</Badge>
+            <Badge variant='primary' sx={getStyle('biomass')} onClick={() => addOrRemove('biomass')}>biomass</Badge>
           </Box>
           <Box sx={{ mb: [4] }}>
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               search
             </Heading>
-            <LiveSearch></LiveSearch>
+             <LiveSearch></LiveSearch>
           </Box>
           <Box sx={{ mb: [2], mt: [0, null, 'auto'] }}>
             <Label onClick={e => {setColorMode('dark')}}>
