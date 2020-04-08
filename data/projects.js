@@ -484,7 +484,7 @@ export default {
             "value": "$43",
             "units": "$/tCO2"
         }],
-        "tags": ["ocean", ""],
+        "tags": ["ocean"],
         "project_id": "STRP09"
     }, {
         "type": "Feature",
@@ -592,7 +592,7 @@ export default {
             "value": "$10",
             "units": "$/tCO2"
         }],
-        "tags": ["mineralization", ""],
+        "tags": ["mineralization"],
         "project_id": "STRP11"
     }, {
         "type": "Feature",

@@ -1,7 +1,7 @@
 import About from './about'
 import Summary from './summary'
 import Report from './report'
-import { Badge, Box, Flex, Heading, Text } from 'theme-ui'
+import { Box, Flex, Heading, Text } from 'theme-ui'
 import { useSelector } from 'react-redux'
 import Fuse from 'fuse.js';
 
@@ -30,10 +30,10 @@ const customFilter = (tags, search, projects) => {
   }
 }
 
-const Main = ({ projects }) => {
+const Main = ({ props }) => {
   const tags = useSelector(state => state.tags)
   const search = useSelector(state => state.search)
-  const showProjects = customFilter(tags, search, projects)
+  const showProjects = customFilter(tags, search, props.projects)
 
   return (
     <Box sx={{ flexGrow: 99999, flexBasis: 0, minWidth: 'main' }}>
@@ -55,7 +55,7 @@ const Main = ({ projects }) => {
               all metrics are based on publicly available information. Click
               triangles to see additional charts and explanations.
             </Text>
-            { showProjects.map(project => (<Report project={ project } key={ project.name }></Report>)) }
+            { showProjects.map(project => (<Report project={ project } colors={ props.colors } key={ project.name }></Report>)) }
           </Box>
         </Box>
         <Box sx={{ flexGrow: 1, flexBasis: 'sidebar', display: ['none', 'none', 'block'] }}>

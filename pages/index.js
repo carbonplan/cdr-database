@@ -4,18 +4,24 @@ import Main from '../components/main'
 import { withRedux } from '../lib/redux'
 
 function Index (props) {
-  return (
-    <Layout>
-      <Sidebar projects={props.features}></Sidebar>
-      <Main projects={props.features}></Main>
-    </Layout>
-  )
+    return (
+        <Layout>
+            <Sidebar colors={ props.colors }></Sidebar>
+        <Main props={props}></Main>
+        </Layout>
+    )
 }
 
 export async function getStaticProps() {
     const data = await import('../data/projects.js')
-    const projects = data.default
-    return { props: projects }
+    const colors = await import('../data/colors.js')
+    // const projects = data.default
+
+    let obj = {}
+    obj.projects = data.default.features
+    obj.colors = colors.default
+
+    return { props: obj }
 }
 
 export default withRedux(Index)
