@@ -30,7 +30,7 @@ const Main = ({ props }) => {
         <Box sx={{ flexGrow: 1, flexBasis: 'sidebar', display: ['none', 'none', 'block'] }}>
           <Box sx={{ position: 'sticky', top: 0 }} >
             <About></About>
-            {/*<Summary projects={ showProjects }></Summary>*/}
+            <Summary projects={ props.projects }></Summary>
           </Box> 
         </Box>
       </Flex>

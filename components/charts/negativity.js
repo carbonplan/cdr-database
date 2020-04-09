@@ -1,12 +1,10 @@
 /** @jsx jsx */
 import _ from 'lodash'
 import { jsx } from 'theme-ui'
-import { Component } from 'react'
 import { VegaLite } from 'react-vega'
-import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
-const Lca = (props) => {
+const Negativity = (props) => {
 
   const { projects } = props
   const context = useThemeUI()
@@ -42,13 +40,14 @@ const Lca = (props) => {
   for (var i = 0; i < projects.length; i++) {
     values.push(
       {
-        negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'Neg negativity ratio'))[0].value),
+        negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'Net negativity ratio'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
       }
     )
   }
+
 
   // const spec = {
   //   data: { name: 'values' },
@@ -58,7 +57,7 @@ const Lca = (props) => {
   //   encoding: {
   //     y: { field: "group", type: "nominal" },
   //     x: {
-  //       field: "min_dur", type: "quantitative", axis: { title: 'Lca (years)' },
+  //       field: "min_dur", type: "quantitative", axis: { title: 'Negativity (years)' },
   //       scale: { type: 'log' },},
   //     x2: { field: "max_dur" },
   //     color: {
@@ -79,7 +78,7 @@ const Lca = (props) => {
   const spec = {
     data: { name: 'values' },
     mark: {
-      type: 'circle', "tooltip": true, size: 100
+      type: 'circle', "tooltip": true, size: 100,
     },
     encoding: {
       y: { field: "group", type: "nominal" },
@@ -89,7 +88,8 @@ const Lca = (props) => {
       },
       color: {
         field: 'color',
-        type: 'nominal'
+        type: 'ordinal',
+        scale: null
       },
       tooltip: [
         { field: "name", type: "ordinal" },
@@ -106,4 +106,4 @@ const Lca = (props) => {
 
 }
 
-export default Lca
+export default Negativity

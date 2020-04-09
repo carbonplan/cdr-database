@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import _ from 'lodash'
 import { jsx } from 'theme-ui'
-import { Component } from 'react'
 import { VegaLite } from 'react-vega'
-import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
 const CostVolume = (props) => {
@@ -53,7 +51,7 @@ const CostVolume = (props) => {
     const spec = {
       data: { name: 'values' },
       mark: {
-        type: 'circle',
+        type: 'circle', size: 100
       },
       encoding: {
         x: {
@@ -70,7 +68,8 @@ const CostVolume = (props) => {
         },
         color: {
           field: 'color',
-          type: 'nominal'
+          type: 'nominal',
+          scale: null
         },
         tooltip: [
           { field: "name", type: "ordinal" },
