@@ -29,9 +29,11 @@ const Summary = ( props ) => {
         <option>Permanence</option>
         <option>Negativity</option>
       </Select>
+      {/*
       {(chart == 'Cost vs. Volume') && <CostVolume projects={props.projects}> </CostVolume>}
       {(chart == 'Permanence') && <Permanence projects={props.projects}> </Permanence>}
       {(chart == 'Negativity') && <Lca projects={props.projects}> </Lca>}
+      */}
     </Box>
   )
 }
