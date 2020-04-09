@@ -6,7 +6,7 @@ import { VegaLite } from 'react-vega'
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
-const Permanence = (props) => {
+const Lca = (props) => {
 
   const { projects } = props
   const context = useThemeUI()
@@ -42,50 +42,50 @@ const Permanence = (props) => {
   for (var i = 0; i < projects.length; i++) {
     values.push(
       {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'Estimated durability'))[0].value),
+        negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'Neg negativity ratio'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
       }
-      )
-    }
+    )
+  }
 
-    // const spec = {
-    //   data: { name: 'values' },
-    //   mark: {
-    //     type: 'bar',
-    //   },
-    //   encoding: {
-    //     y: { field: "group", type: "nominal" },
-    //     x: {
-    //       field: "min_dur", type: "quantitative", axis: { title: 'Permanence (years)' },
-    //       scale: { type: 'log' },},
-    //     x2: { field: "max_dur" },
-    //     color: {
-    //       field: 'color',
-    //       type: 'nominal'
-    //     },
-    //   },
-    //   transform: [
-    //     {
-    //       aggregate: [
-    //         { op: "min", field: "durability", as: "min_dur" },
-    //         { op: "max", field: "durability", as: "max_dur" },
-    //       ],
-    //       groupby: ["group"]
-    //     }
-    //   ],
-    // }
+  // const spec = {
+  //   data: { name: 'values' },
+  //   mark: {
+  //     type: 'bar',
+  //   },
+  //   encoding: {
+  //     y: { field: "group", type: "nominal" },
+  //     x: {
+  //       field: "min_dur", type: "quantitative", axis: { title: 'Lca (years)' },
+  //       scale: { type: 'log' },},
+  //     x2: { field: "max_dur" },
+  //     color: {
+  //       field: 'color',
+  //       type: 'nominal'
+  //     },
+  //   },
+  //   transform: [
+  //     {
+  //       aggregate: [
+  //         { op: "min", field: "negativity", as: "min_dur" },
+  //         { op: "max", field: "negativity", as: "max_dur" },
+  //       ],
+  //       groupby: ["group"]
+  //     }
+  //   ],
+  // }
   const spec = {
     data: { name: 'values' },
     mark: {
-      type: 'tick', "tooltip": true
+      type: 'circle', "tooltip": true, size: 100
     },
     encoding: {
       y: { field: "group", type: "nominal" },
       x: {
-        field: "durability", type: "quantitative", axis: { title: 'Permanence (years)' },
-        scale: { type: 'log' },
+        field: "negativity", type: "quantitative", axis: { title: 'Net Negativity Ratio' },
+        scale: { type: 'linear' },
       },
       color: {
         field: 'color',
@@ -93,23 +93,17 @@ const Permanence = (props) => {
       },
       tooltip: [
         { field: "name", type: "ordinal" },
-        { field: "durability", type: "quantitative" },
+        { field: "negativity", type: "quantitative" },
       ]
     },
-    "config": {
-      "tick": {
-        "thickness": 10,
-        "bandSize": 10
-      }
-    }
   }
 
-    const width = 300
-    const height = 125
+  const width = 300
+  const height = 125
 
-    return <VegaLite config={config} width={width} height={height}
+  return <VegaLite config={config} width={width} height={height}
     data={{ values: values }} actions={false} spec={spec} />
 
-  }
+}
 
-  export default Permanence
+export default Lca
