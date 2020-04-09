@@ -1,15 +1,18 @@
-import theme from '.././theme'
 import Metric from './metric'
 import Expander from './expander'
 import { Badge, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { useThemeUI } from 'theme-ui'
 
 const Report = (props) => {
   const id = props.project.project_id
   const visibility = useSelector(state => state.visibility[id])
   const [expanded, setExpanded] = useState(false)
+
+  const context = useThemeUI()
+  const theme = context.theme
 
   const toggle = (e) => {
     setExpanded(!expanded)
@@ -42,7 +45,7 @@ const Report = (props) => {
       </Grid>
       <Grid columns={[1, null, '1fr 32px']}>
       <Text sx={{ fontSize: [2] }}> 
-        Direct air capture combined with mineralization for storage 
+        { props.project.description }
       </Text>
       <IconButton sx={{ cursor: 'pointer'}} onClick={toggle} aria-label='Toggle more info'>
         <Expander expanded={expanded}></Expander>

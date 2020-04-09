@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import _ from 'lodash'
 import { jsx } from 'theme-ui'
-import { Component } from 'react'
 import { VegaLite } from 'react-vega'
-import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
 const Permanence = (props) => {
@@ -42,7 +40,7 @@ const Permanence = (props) => {
   for (var i = 0; i < projects.length; i++) {
     values.push(
       {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'Estimated durability'))[0].value),
+        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'Permanence'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
@@ -79,7 +77,7 @@ const Permanence = (props) => {
   const spec = {
     data: { name: 'values' },
     mark: {
-      type: 'tick', "tooltip": true
+      type: 'circle', size: 100
     },
     encoding: {
       y: { field: "group", type: "nominal" },
@@ -89,7 +87,9 @@ const Permanence = (props) => {
       },
       color: {
         field: 'color',
-        type: 'nominal'
+        type: 'nominal',
+        scale: null
+
       },
       tooltip: [
         { field: "name", type: "ordinal" },

@@ -1,8 +1,7 @@
 import { Box, Heading, Select } from 'theme-ui'
 import CostVolume from './charts/cost-volume.js'
 import Permanence from './charts/permanence.js'
-import Lca from './charts/lca.js'
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
+import Negativity from './charts/negativity.js'
 import { useState } from 'react'
 
 const Summary = ( props ) => {
@@ -31,7 +30,7 @@ const Summary = ( props ) => {
       </Select>
       {(chart == 'Cost vs. Volume') && <CostVolume projects={props.projects}> </CostVolume>}
       {(chart == 'Permanence') && <Permanence projects={props.projects}> </Permanence>}
-      {(chart == 'Negativity') && <Lca projects={props.projects}> </Lca>}
+      {(chart == 'Negativity') && <Negativity projects={props.projects}> </Negativity>}
     </Box>
   )
 }
