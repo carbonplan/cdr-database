@@ -19,7 +19,6 @@ const Summary = ( props ) => {
         summary
       </Heading>
       <Select
-        value={chart}
         onChange={e => {
           setChart(e.target.value)
         }}
