@@ -1,60 +1,36 @@
-/** @jsx jsx */
+import Expander from './expander'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { connect } from 'react-redux'
-import { Component } from 'react'
+import { useState } from 'react'
 
-class Report extends Component {
+const Metric = ({ metric }) => {
+  const [expanded, setExpanded] = useState(false)
 
-  constructor(props) {
-    super(props)
-    this.state = { expanded: false }
-    this.toggle = this.toggle.bind(this)
+  const toggle = (e) => {
+    setExpanded(!expanded)
   }
 
-  toggle() {
-    this.setState(state => ({
-      expanded: !state.expanded
-    }))
-  }
-
-  render() {
-    const { metric } = this.props
-    const { expanded } = this.state
-
-    return <div>
-      <Grid columns={['100px 1fr 30px']}>
-        <Box>{metric.value}</Box>
-        <Text>{metric.name} [{metric.units}] </Text>
-        <IconButton sx={{ 
-          cursor: 'pointer'
-        }} onClick={this.toggle} aria-label='Toggle more info'>
-          <svg sx={{ height: [30, null, 20], width: [30, null, 20] }}>
-            <polygon points='3,3 19,3 11,16'
-              sx={{
-                fill: 'text', 
-                stroke: 'text', 
-                strokeWidth: 1, 
-                transition: '0.25s all',
-                transformOrigin: [
-                  '11px 8px',
-                  null,
-                  '10px 8px'
-                ],
-                transform: [
-                  expanded ? '' : 'rotate(-90deg)',
-                  null,
-                  expanded ? '' : 'rotate(90deg)'
-                ]
-              }} />
-          </svg>
-        </IconButton>
-      </Grid>
-      {expanded && <Box>
-        More details on metric go here.
-      </Box>}
-      <Divider/>
-    </div>
-  }
+  return <div>
+    <Grid columns={['30px 100px 1fr', '30px 150px 1fr', '150px 1fr 30px']}>
+      <IconButton onClick={toggle} aria-label='Toggle more info' sx={{ 
+        cursor: 'pointer', 
+        display: ['inherit', 'inherit', 'none'] 
+      }}>
+        <Expander expanded={expanded}></Expander>
+      </IconButton>
+      <Text variant='metric.value'>{metric.value}</Text>
+      <Text variant='metric.label'>{metric.name} [{metric.units}] </Text>
+      <IconButton onClick={toggle} aria-label='Toggle more info' sx={{
+        cursor: 'pointer', display: ['none', 'none', 'inherit'] 
+      }}>
+        <Expander expanded={expanded}></Expander>
+      </IconButton>
+    </Grid>
+    {expanded && <Box>
+      More details on metric go here.
+    </Box>}
+    <Divider sx={{ mr: [2] }}/>
+  </div>
 }
 
-  export default Report
+export default Metric

@@ -3,13 +3,13 @@ import { jsx, Box, Input, Button } from 'theme-ui'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-const LiveSearch = () => {
+const Search = () => {
   const [input, setInput] = useState({})
   const dispatch = useDispatch()
 
   const handleInputChange = (e) => {
     const searchTerm = e.currentTarget.value.trim()
-    dispatch({ type: 'SEARCH', value: searchTerm })
+    dispatch({ type: 'UPDATE_SEARCH', value: searchTerm })
     setInput({
       ...input,
       [e.currentTarget.name]: e.currentTarget.value
@@ -28,4 +28,4 @@ const LiveSearch = () => {
   )
 }
 
-export default LiveSearch
+export default Search
