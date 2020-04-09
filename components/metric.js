@@ -10,7 +10,7 @@ const Metric = ({ metric }) => {
   //   setExpanded(!expanded)
   // }
 
-  const has_units = (metric.units != null)
+  const hasUnits = (metric.units != null)
 
   return <div>
     <Grid columns={['30px 100px 1fr', '30px 150px 1fr', '150px 1fr 30px']}>
@@ -22,8 +22,8 @@ const Metric = ({ metric }) => {
       </IconButton> */}
       <Text variant='metric.value'>{metric.value}</Text>
 
-      {has_units && <Text variant='metric.label'>{metric.name} [{metric.units}] </Text>}
-      {!has_units && <Text variant='metric.label'>{metric.name} </Text>}
+      {hasUnits && <Text variant='metric.label'>{metric.name} [{metric.units}] </Text>}
+      {!hasUnits && <Text variant='metric.label'>{metric.name} </Text>}
       {/* <IconButton onClick={toggle} aria-label='Toggle more info' sx={{
         cursor: 'pointer', display: ['none', 'none', 'inherit']
       }}>
