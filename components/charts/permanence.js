@@ -6,7 +6,7 @@ import { VegaLite } from 'react-vega'
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
-const CostVolume = (props) => {
+const Permanence = (props) => {
 
   const { projects } = props
   const context = useThemeUI()
@@ -42,8 +42,8 @@ const CostVolume = (props) => {
   for (var i = 0; i < projects.length; i++) {
     values.push(
       {
-        cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'Cost today'))[0].value),
-        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'Total project volume'))[0].value),
+        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'Estimated durability'))[0].value),
+        group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
       }
@@ -53,31 +53,28 @@ const CostVolume = (props) => {
     const spec = {
       data: { name: 'values' },
       mark: {
-        type: 'circle',
+        type: 'bar',
       },
       encoding: {
+        y: { field: "group", type: "nominal" },
         x: {
-          field: 'volume',
-          type: 'quantitative',
-          axis: { title: 'Total volume (tCO2)' },
-          scale: { type: 'log' },
-        },
-        y: {
-          field: 'cost',
-          type: 'quantitative',
-          axis: { title: 'Cost today ($/tCO2)' },
-          scale: { type: 'log' },
-        },
+          field: "min_dur", type: "quantitative", axis: { title: 'Permanence (years)' },
+          scale: { type: 'log' },},
+        x2: { field: "max_dur" },
         color: {
           field: 'color',
           type: 'nominal'
         },
-        tooltip: [
-          { field: "name", type: "ordinal" },
-          { field: "volume", type: "quantitative" },
-          { field: "cost", type: "quantitative" },
-        ]
-      }
+      },
+      transform: [
+        {
+          aggregate: [
+            { op: "min", field: "durability", as: "min_dur" },
+            { op: "max", field: "durability", as: "max_dur" },
+          ],
+          groupby: ["group"]
+        }
+      ],
     }
 
     const width = 300
@@ -88,4 +85,4 @@ const CostVolume = (props) => {
 
   }
 
-  export default CostVolume
+  export default Permanence

@@ -50,7 +50,7 @@ export default {
   },
   forms: {
     input: {
-      fontSize: [1],
+      fontSize: [0],
       pt: ['4px'],
       pb: ['6px'],
       fontFamily: 'monospace',
