@@ -44,12 +44,10 @@ const Report = (props) => {
         </Box>
       </Grid>
       <Grid columns={[1, null, '1fr 32px']}>
-      <Text sx={{ fontSize: [2] }}> 
+      <Text variant='description'> 
         { props.project.description }
       </Text>
-      <IconButton sx={{ cursor: 'pointer'}} onClick={toggle} aria-label='Toggle more info'>
-        <Expander expanded={expanded}></Expander>
-      </IconButton>
+      <Expander toggle={toggle} expanded={expanded}></Expander>
       </Grid>
       <Box>
         {expanded && 

@@ -44,6 +44,11 @@ export default {
     }
   },
   text: {
+    description: {
+      fontSize: [2],
+      marginBlockStart: '0.3em',
+      mb: [1]
+    },
     metric: {
       value: {
         fontFamily: 'monospace',
