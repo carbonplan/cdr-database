@@ -1,5 +1,5 @@
 import theme from '.././theme'
-import LiveSearch from './search'
+import Search from './search'
 import { Box, Flex, Heading, Badge, Input, Label, Radio, Text } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
@@ -63,7 +63,7 @@ const Sidebar = (props) => {
             <Heading sx={{ fontSize: [3], mb: [2] }}>
               search
             </Heading>
-             <LiveSearch></LiveSearch>
+             <Search></Search>
           </Box>
           <Box sx={{ mb: [2], mt: [0, null, 'auto'] }}>
             <Label onClick={e => {setColorMode('dark')}}>

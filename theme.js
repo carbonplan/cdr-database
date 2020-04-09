@@ -44,6 +44,18 @@ export default {
     }
   },
   text: {
+    metric: {
+      value: {
+        fontFamily: 'monospace',
+        fontSize: [3],
+        textAlign: 'right'
+      },
+      label: {
+        fontFamily: 'monospace',
+        fontSize: [1],
+        mt: ['6px']
+      }
+    },
     link: {
       cursor: 'pointer'
     }
@@ -144,7 +156,7 @@ export default {
     dac: 'purple',
     biochar: 'yellow',
     'building materials': 'yellow',
-    broker: 'text',
+    broker: 'grey',
     beccs: 'yellow',
     reforestation: 'green',
     'avoided conversion': 'green',
