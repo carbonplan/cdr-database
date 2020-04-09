@@ -29,7 +29,7 @@ export default {
     purple: '#9D75BA',
     modes: {
       dark: {
-        text: 'rgb(255,255,255)',
+        text: 'rgb(245,245,245)',
         background: 'rgb(28,29,33)',
         primary: 'rgb(230,230,230)',
         secondary: 'rgb(224, 224, 224)',

@@ -53,12 +53,12 @@ const reducer = (state = initialState, action) => {
         search: action.value,
         visibility: combinedSearch(state.tags, action.value, state.fuse, state.projects)
       }
-    case 'SET_PROJECTS':
+    case 'INIT_PROJECTS':
       return {
         ...state,
         projects: action.value
       }
-    case 'SET_VISIBILITY':
+    case 'INIT_VISIBILITY':
       const obj = {}
       state.projects.forEach( (project) =>
         obj[project.project_id] = true
@@ -67,7 +67,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         visibility: obj
       }
-    case 'SET_FUSE':
+    case 'INIT_FUSE':
       const options = {
         keys: ['name'],
         threshold: 0

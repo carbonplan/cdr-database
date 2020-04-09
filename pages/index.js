@@ -6,9 +6,9 @@ import { useDispatch } from 'react-redux'
 
 function Index (props) {
   const dispatch = useDispatch()
-  dispatch({ type: 'SET_PROJECTS', value: props.projects })
-  dispatch({ type: 'SET_VISIBILITY' })
-  dispatch({ type: 'SET_FUSE' })
+  dispatch({ type: 'INIT_PROJECTS', value: props.projects })
+  dispatch({ type: 'INIT_VISIBILITY' })
+  dispatch({ type: 'INIT_FUSE' })
 
   return (
     <Layout>
