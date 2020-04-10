@@ -72,6 +72,15 @@ export default {
       pb: ['6px'],
       fontFamily: 'monospace'
     },
+    select: {
+      p: [1],
+      pl: [2],
+      width: '200px',
+      mt: [3],
+      color: 'text',
+      fontFamily: 'monospace',
+      fontSize: [1]
+    },
     radio: {
       cursor: 'pointer'
     },
@@ -82,6 +91,7 @@ export default {
   sizes: {
     container: 1600,
     sidebar: 256,
+    chart: 400,
     main: 320
   },
   badges: {

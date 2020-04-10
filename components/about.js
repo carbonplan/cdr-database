@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Box
       sx={{
-        height: '50vh',
+        height: '45vh',
         borderStyle: 'solid', 
         borderColor: 'muted', 
         borderWidth: '0px', 

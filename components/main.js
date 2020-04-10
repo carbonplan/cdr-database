@@ -15,7 +15,7 @@ const Main = ({ props }) => {
           borderRightWidth: '1px',
           borderLeftWidth: '1px' 
         }}>
-          <Box sx={{ py: [4], px: [4, 4, 3], maxWidth: '600px', margin: 'auto' }}>
+          <Box sx={{ py: [4], px: [4, 4, 2], maxWidth: '600px', margin: 'auto' }}>
             <Heading sx={{ fontSize: [5] }}>
               carbon reports
             </Heading>
@@ -27,7 +27,7 @@ const Main = ({ props }) => {
             { props.projects.map(project => (<Report project={ project } key={ project.name }></Report>)) }
           </Box>
         </Box>
-        <Box sx={{ flexGrow: 1, flexBasis: 'sidebar', display: ['none', 'none', 'block'] }}>
+        <Box sx={{ flexGrow: 1, flexBasis: 'chart', display: ['none', 'none', 'block'] }}>
           <Box sx={{ position: 'sticky', top: 0 }} >
             <About></About>
             <Summary projects={ props.projects }></Summary>

@@ -9,14 +9,9 @@ const Summary = ( props ) => {
   const [chart, setChart] = useState('Cost vs. Volume');
 
   return (
-    <Box
-      sx={{
-        height: '50vh',
-        p: [4]
-      }}
-    >
+    <Box sx={{ height: '55vh', p: [4] }}>
       <Heading sx={{ fontSize: [5] }}>
-        summary
+        charts
       </Heading>
       <Select
         onChange={e => {

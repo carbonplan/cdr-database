@@ -99,7 +99,7 @@ const Negativity = (props) => {
   }
 
   const width = 300
-  const height = 125
+  const height = 200
 
   return <VegaLite config={config} width={width} height={height}
     data={{ values: values }} actions={false} spec={spec} />
