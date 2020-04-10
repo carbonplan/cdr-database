@@ -22,7 +22,7 @@ const Search = () => {
         type='text'
         placeholder='search reports'
         onChange={handleInputChange}
-        sx={{ pt: [2], '&:focus': { outline: 'none' } }}
+        sx={{ pt: [2] }}
       />
     </Box>
   )

@@ -70,10 +70,7 @@ export default {
       fontSize: [0],
       pt: ['4px'],
       pb: ['6px'],
-      fontFamily: 'monospace',
-      '&:focus': {
-        outline: 'none'
-      }
+      fontFamily: 'monospace'
     },
     radio: {
       cursor: 'pointer'
