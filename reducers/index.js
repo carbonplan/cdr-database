@@ -70,7 +70,8 @@ const reducer = (state = initialState, action) => {
     case 'INIT_FUSE':
       const options = {
         keys: ['name'],
-        threshold: 0
+        threshold: 0,
+        useExtendedSearch: true
       }
       return {
         ...state,

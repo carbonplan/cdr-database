@@ -107,7 +107,7 @@ const Permanence = (props) => {
 
   var vgSpec = vegaLite.compile(spec, { config: config }).spec;
 
-  vgSpec.signals = clickSignals
+  vgSpec.signals.push(...clickSignals)
 
   const width = 300
   const height = 200
