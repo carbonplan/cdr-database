@@ -1,12 +1,18 @@
 /** @jsx jsx */
 import _ from 'lodash'
 import { jsx } from 'theme-ui'
-import { VegaLite } from 'react-vega'
+import { Vega } from 'react-vega'
 import { useThemeUI } from 'theme-ui'
+import { useDispatch, useSelector } from 'react-redux'
+import clickSignals from './utils.js'
+
+var vegaLite = require('vega-lite')
+
 
 const CostVolume = (props) => {
 
   const { projects } = props
+  const dispatch = useDispatch()
   const context = useThemeUI()
   const theme = context.theme
 
@@ -35,56 +41,95 @@ const CostVolume = (props) => {
       type: 'none'
     }
   }
-
+  
   var values = []
+  let fillOpacity
   for (var i = 0; i < projects.length; i++) {
+    
+    const visible = useSelector(state => state.visibility[projects[i].project_id])
+    
+    if (visible) {
+      fillOpacity = 1
+    } else {
+      fillOpacity = 0.4
+    }
+    
     values.push(
       {
         cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'Cost today'))[0].value),
         volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'Total project volume'))[0].value),
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
+        fillOpacity: fillOpacity
       }
-      )
-    }
-
-    const spec = {
-      data: { name: 'values' },
-      mark: {
-        type: 'circle', size: 100
-      },
-      encoding: {
-        x: {
-          field: 'volume',
-          type: 'quantitative',
-          axis: { title: 'Total volume (tCO2)' },
-          scale: { type: 'log' },
-        },
-        y: {
-          field: 'cost',
-          type: 'quantitative',
-          axis: { title: 'Cost today ($/tCO2)' },
-          scale: { type: 'log' },
-        },
-        color: {
-          field: 'color',
-          type: 'nominal',
-          scale: null
-        },
-        tooltip: [
-          { field: "name", type: "ordinal" },
-          { field: "volume", type: "quantitative" },
-          { field: "cost", type: "quantitative" },
-        ]
-      }
-    }
-
-    const width = 300
-    const height = 200
-
-    return <VegaLite config={config} width={width} height={height}
-    data={{ values: values }} actions={false} spec={spec} />
-
+    )
   }
 
-  export default CostVolume
+  const spec = {
+    data: { name: 'values' },
+    mark: {
+      type: 'circle', size: 100,
+    },
+    encoding: {
+      x: {
+        field: 'volume',
+        type: 'quantitative',
+        axis: { title: 'Total volume (tCO2)' },
+        scale: { type: 'log' },
+      },
+      y: {
+        field: 'cost',
+        type: 'quantitative',
+        axis: { title: 'Cost today ($/tCO2)' },
+        scale: { type: 'log' },
+      },
+      color: {
+        field: 'color',
+        type: 'nominal',
+        scale: null
+      },
+      stroke: {
+        field: 'color',
+        type: 'nominal',
+        scale: null,
+      },
+      fillOpacity: {
+        field: 'fillOpacity',
+        type: 'quantitative',
+        scale: null
+      },
+      tooltip: [
+        { field: "name", type: "ordinal" },
+        { field: "volume", type: "quantitative" },
+        { field: "cost", type: "quantitative" },
+      ]
+    },
+  }
+
+  var vgSpec = vegaLite.compile(spec, { config: config }).spec;
+
+  vgSpec.signals = clickSignals
+
+  const width = 300
+  const height = 200
+
+  function handleClickOn(...args) {
+    console.log('handleClickOn', args);
+    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
+  }
+
+  function handleClickOff(...args) {
+    console.log('handleClickOff', args);
+    dispatch({ type: 'UPDATE_SEARCH', value: '' })
+  }
+
+  const signalListeners = {
+    clickOn: handleClickOn,
+    clickOff: handleClickOff
+  }
+
+  return <Vega width={width} height={height} signalListeners={signalListeners}
+    data={{ values: values }} actions={false} spec={vgSpec} />
+}
+
+export default CostVolume

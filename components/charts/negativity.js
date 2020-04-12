@@ -1,12 +1,18 @@
 /** @jsx jsx */
 import _ from 'lodash'
 import { jsx } from 'theme-ui'
-import { VegaLite } from 'react-vega'
+import { Vega } from 'react-vega'
 import { useThemeUI } from 'theme-ui'
+import { useDispatch, useSelector } from 'react-redux'
+import clickSignals from './utils.js'
+
+var vegaLite = require('vega-lite')
+
 
 const Negativity = (props) => {
 
   const { projects } = props
+  const dispatch = useDispatch()
   const context = useThemeUI()
   const theme = context.theme
 
@@ -37,48 +43,31 @@ const Negativity = (props) => {
   }
 
   var values = []
+  let fillOpacity
   for (var i = 0; i < projects.length; i++) {
+    const visible = useSelector(state => state.visibility[projects[i].project_id])
+
+    if (visible) {
+      fillOpacity = 1
+    } else {
+      fillOpacity = 0.4
+    }
+    
     values.push(
       {
         negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'Net negativity ratio'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
+        fillOpacity: fillOpacity
       }
     )
   }
 
-
-  // const spec = {
-  //   data: { name: 'values' },
-  //   mark: {
-  //     type: 'bar',
-  //   },
-  //   encoding: {
-  //     y: { field: "group", type: "nominal" },
-  //     x: {
-  //       field: "min_dur", type: "quantitative", axis: { title: 'Negativity (years)' },
-  //       scale: { type: 'log' },},
-  //     x2: { field: "max_dur" },
-  //     color: {
-  //       field: 'color',
-  //       type: 'nominal'
-  //     },
-  //   },
-  //   transform: [
-  //     {
-  //       aggregate: [
-  //         { op: "min", field: "negativity", as: "min_dur" },
-  //         { op: "max", field: "negativity", as: "max_dur" },
-  //       ],
-  //       groupby: ["group"]
-  //     }
-  //   ],
-  // }
   const spec = {
     data: { name: 'values' },
     mark: {
-      type: 'circle', "tooltip": true, size: 100,
+      type: 'circle', size: 100,
     },
     encoding: {
       y: { field: "group", type: "nominal" },
@@ -91,6 +80,16 @@ const Negativity = (props) => {
         type: 'ordinal',
         scale: null
       },
+      stroke: {
+        field: 'color',
+        type: 'nominal',
+        scale: null,
+      },
+      fillOpacity: {
+        field: 'fillOpacity',
+        type: 'quantitative',
+        scale: null
+      },
       tooltip: [
         { field: "name", type: "ordinal" },
         { field: "negativity", type: "quantitative" },
@@ -98,11 +97,30 @@ const Negativity = (props) => {
     },
   }
 
+  var vgSpec = vegaLite.compile(spec, { config: config }).spec;
+
+  vgSpec.signals.push(...clickSignals)
+
   const width = 300
   const height = 200
 
-  return <VegaLite config={config} width={width} height={height}
-    data={{ values: values }} actions={false} spec={spec} />
+  function handleClickOn(...args) {
+    console.log('handleClickOn', args);
+    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
+  }
+
+  function handleClickOff(...args) {
+    console.log('handleClickOff', args);
+    dispatch({ type: 'UPDATE_SEARCH', value: '' })
+  }
+
+  const signalListeners = {
+    clickOn: handleClickOn,
+    clickOff: handleClickOff
+  }
+
+  return <Vega width={width} height={height} signalListeners={signalListeners}
+    data={{ values: values }} actions={false} spec={vgSpec} />
 
 }
 
