@@ -30,7 +30,16 @@ export const signals = [
     'name': 'clickOn',
     'on': [
       {
-        'events': 'symbol:mousedown!',
+        'events': 'symbol:mousedown![!event.shiftKey]',
+        'update': 'item()'
+      }
+    ]
+  },
+  {
+    'name': 'clickOr',
+    'on': [
+      {
+        'events': 'symbol:mousedown![event.shiftKey]',
         'update': 'item()'
       }
     ]

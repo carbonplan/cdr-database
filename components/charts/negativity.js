@@ -93,17 +93,20 @@ const Negativity = (props) => {
   const height = 200
 
   function handleClickOn(...args) {
-    console.log('handleClickOn', args);
     dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
   }
 
+  function handleClickOr(...args) {
+    dispatch({ type: 'OR_SEARCH', value: args[1].datum.name })
+  }
+
   function handleClickOff(...args) {
-    console.log('handleClickOff', args);
     dispatch({ type: 'UPDATE_SEARCH', value: '' })
   }
 
   const signalListeners = {
     clickOn: handleClickOn,
+    clickOr: handleClickOr,
     clickOff: handleClickOff
   }
 
