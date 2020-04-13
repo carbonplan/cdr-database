@@ -29,8 +29,8 @@ const Main = ({ props }) => {
         </Box>
         <Box sx={{ flexGrow: 1, flexBasis: 'chart', display: ['none', 'none', 'block'] }}>
           <Box sx={{ position: 'sticky', top: 0 }} >
-            <About></About>
             <Summary projects={ props.projects }></Summary>
+            <About></About>
           </Box> 
         </Box>
       </Flex>

@@ -8,7 +8,7 @@ const About = () => {
         borderStyle: 'solid', 
         borderColor: 'muted', 
         borderWidth: '0px', 
-        borderBottomWidth: '1px',
+        borderTopWidth: '1px',
         p: [4]
       }}
     >
