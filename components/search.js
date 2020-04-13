@@ -8,7 +8,7 @@ const Search = () => {
   const input = useSelector(state => state.search)
 
   const handleInputChange = (e) => {
-    const searchTerm = e.currentTarget.value.trim()
+    const searchTerm = e.currentTarget.value
     dispatch({ type: 'UPDATE_SEARCH', value: searchTerm })
   }
 

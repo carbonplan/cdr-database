@@ -19,12 +19,12 @@ const Sidebar = (props) => {
     if (tags.includes(tag)) {
       return {
         borderColor: theme.tags[tag],
-        bg: alpha(theme.tags[tag], 0.4)
+        bg: alpha(theme.tags[tag], 0.5)
       }
     } else {
       return {
         borderColor: theme.tags[tag],
-        bg: 'background'
+        bg: alpha(theme.tags[tag], 0.1)
       }
     }
   }
