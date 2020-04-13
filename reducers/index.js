@@ -55,6 +55,13 @@ const reducer = (state = initialState, action) => {
         search: action.value,
         visibility: combinedSearch(state.tags, action.value, state.fuse, state.projects)
       }
+    case 'OR_SEARCH':
+      const new_search = state.search.concat(' | ', action.value)
+      return {
+        ...state,
+        search: new_search,
+        visibility: combinedSearch(state.tags, new_search, state.fuse, state.projects)
+      }
     case 'INIT_PROJECTS':
       return {
         ...state,
@@ -72,7 +79,8 @@ const reducer = (state = initialState, action) => {
     case 'INIT_FUSE':
       const options = {
         keys: ['name'],
-        threshold: 0
+        threshold: 0.1,
+        useExtendedSearch: true
       }
       return {
         ...state,
