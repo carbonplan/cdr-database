@@ -73,11 +73,19 @@ export default {
       fontFamily: 'monospace'
     },
     select: {
+      '-webkit-appearance': 'none',
+      '-moz-appearance': 'none',
       p: [1],
-      pl: [2],
+      pl: [0],
       width: '200px',
       mt: [3],
       color: 'text',
+      bg: 'background',
+      border: 'none',
+      borderBottomStyle: 'solid',
+      borderBottomWidth: '1px',
+      borderBottomColor: 'text',
+      borderRadius: '0px',
       fontFamily: 'monospace',
       fontSize: [1]
     },
