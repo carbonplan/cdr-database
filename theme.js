@@ -73,6 +73,7 @@ export default {
       fontFamily: 'monospace'
     },
     select: {
+      cursor: 'pointer',
       '-webkit-appearance': 'none',
       '-moz-appearance': 'none',
       p: [1],
