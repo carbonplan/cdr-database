@@ -39,7 +39,7 @@ export const signals = [
     'name': 'clickOff',
     'on': [
       {
-        'events': 'window:mousedown',
+        'events': '.vega-embed:mousedown',
         'update': '{}'
       }
     ]
