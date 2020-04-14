@@ -3,7 +3,7 @@ export default {
   fonts: {
     body: 'relative-medium-pro',
     heading: 'inherit',
-    monospace: 'Menlo, monospace',
+    monospace: 'relative-mono-11-pitch-pro',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {

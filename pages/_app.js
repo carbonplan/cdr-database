@@ -34,6 +34,17 @@ class MyApp extends App {
               font-weight: normal;
               font-style: normal;
             }
+
+           @font-face {
+              font-family: 'relative-mono-11-pitch-pro';
+              src: url('${prefix}relative-mono-11-pitch-pro.eot');
+              src: url('${prefix}relative-mono-11-pitch-pro.eot?#iefix') format('embedded-opentype'),
+                   url('${prefix}relative-mono-11-pitch-pro.woff2') format('woff2'),
+                   url('${prefix}relative-mono-11-pitch-pro.woff') format('woff'),
+                   url('${prefix}relative-mono-11-pitch-pro.ttf') format('truetype');
+              font-weight: normal;
+              font-style: normal;
+            }
           `}
         </style>
       </ThemeProvider>
