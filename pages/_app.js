@@ -4,7 +4,7 @@ import { ThemeProvider } from 'theme-ui'
 
 import theme from '../theme'
 
-const prefix = 'https://storage.googleapis.com/carbonplan-assets/fonts/relative/'
+const prefix = 'https://the-freeman-files.s3.amazonaws.com/fonts/'
 
 class MyApp extends App {
   render() {
@@ -35,7 +35,7 @@ class MyApp extends App {
               font-style: normal;
             }
 
-           @font-face {
+            @font-face {
               font-family: 'relative-mono-11-pitch-pro';
               src: url('${prefix}relative-mono-11-pitch-pro.eot');
               src: url('${prefix}relative-mono-11-pitch-pro.eot?#iefix') format('embedded-opentype'),
@@ -45,6 +45,18 @@ class MyApp extends App {
               font-weight: normal;
               font-style: normal;
             }
+
+            @font-face {
+              font-family: 'relative-faux-book-pro';
+              src: url('${prefix}relative-faux-book-pro.eot');
+              src: url('${prefix}relative-faux-book-pro.eot?#iefix') format('embedded-opentype'),
+                   url('${prefix}relative-faux-book-pro.woff2') format('woff2'),
+                   url('${prefix}relative-faux-book-pro.woff') format('woff'),
+                   url('${prefix}relative-faux-book-pro.ttf') format('truetype');
+              font-weight: normal;
+              font-style: normal;
+            }
+
           `}
         </style>
       </ThemeProvider>

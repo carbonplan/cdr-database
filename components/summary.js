@@ -7,14 +7,11 @@ import Negativity from './charts/negativity.js'
 import { useState } from 'react'
 
 const Summary = ( props ) => {
-  
+
   const [chart, setChart] = useState('Cost vs. Volume');
 
   return (
-    <Box sx={{ height: '55vh', p: [4] }}>
-      <Heading sx={{ fontSize: [5] }}>
-        charts
-      </Heading>
+    <Box sx={{ height: 'calc(55vh - 0.55*56px)', p: [4] }}>
       <Box>
       <select
         onChange={e => {

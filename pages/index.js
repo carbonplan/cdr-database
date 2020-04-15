@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import Sidebar from '../components/sidebar'
 import Main from '../components/main'
+import { Container, Flex, Box } from 'theme-ui'
 import { useEffect } from 'react'
 import { withRedux } from '../lib/redux'
 import { useDispatch } from 'react-redux'
@@ -22,8 +23,9 @@ function Index (props) {
 
   return (
     <Layout>
-      <Sidebar></Sidebar>
       <Main props={props}></Main>
+      <Sidebar props={props}></Sidebar>
+      
     </Layout>
   )
 }

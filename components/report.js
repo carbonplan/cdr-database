@@ -20,14 +20,12 @@ const Report = (props) => {
 
   if (visibility) {
     return <Box sx={{ 
-      borderStyle: 'solid', 
-      borderWidth: '1px', 
-      borderColor: 'primary', 
-      borderRadius: '6px',
-      p: [3],
-      pr: [2],
-      pb: [2],
-      mb: [4]
+      borderStyle: 'solid',
+      borderColor: 'muted',
+      borderWidth: '0px', 
+      borderBottomWidth: '1px',
+      pr: [4],
+      py: [4]
     }}>
       <Grid columns={[1, null, '1fr 250px']}>
         <Heading sx={{ mb: [2] }}>{props.project.name}</Heading>
@@ -35,7 +33,7 @@ const Report = (props) => {
           {props.project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
               borderColor: theme.tags[tag],
-              bg: alpha(theme.tags[tag], 0.4),
+              color: theme.tags[tag],
               cursor: 'default'
             }}>
               {tag}
@@ -44,7 +42,7 @@ const Report = (props) => {
         </Box>
       </Grid>
       <Grid columns={[1, null, '1fr 32px']}>
-      <Text variant='description'> 
+      <Text variant='description' sx={{ mb: [2] }}> 
         { props.project.description }
       </Text>
       <Expander toggle={toggle} expanded={expanded}></Expander>

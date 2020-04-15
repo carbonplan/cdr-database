@@ -17,17 +17,15 @@ const CostVolume = (props) => {
   const theme = context.theme
   
   var values = []
-  let fillOpacity, strokeOpacity
+  let opacity
   for (var i = 0; i < projects.length; i++) {
     
     const visible = useSelector(state => state.visibility[projects[i].project_id])
     
     if (visible) {
-      fillOpacity = 0.7
-      strokeOpacity = 1
+      opacity = 1
     } else {
-      fillOpacity = 0.1,
-      strokeOpacity = 0.2
+      opacity = 0.2
     }
     
     values.push(
@@ -36,8 +34,7 @@ const CostVolume = (props) => {
         volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'Total project volume'))[0].value),
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
-        fillOpacity: fillOpacity,
-        strokeOpacity: strokeOpacity
+        opacity: opacity
       }
     )
   }
@@ -69,18 +66,8 @@ const CostVolume = (props) => {
         type: 'nominal',
         scale: null
       },
-      stroke: {
-        field: 'color',
-        type: 'nominal',
-        scale: null,
-      },
-      strokeOpacity: {
-        field: 'strokeOpacity',
-        type: 'quantitative',
-        scale: null
-      },
-      fillOpacity: {
-        field: 'fillOpacity',
+      opacity: {
+        field: 'opacity',
         type: 'quantitative',
         scale: null
       }
