@@ -1,9 +1,12 @@
 import Expander from './expander'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
+import { useThemeUI } from 'theme-ui'
 
-const Metric = ({ metric }) => {
+const Metric = ({ metric, tag }) => {
   const [expanded, setExpanded] = useState(false)
+  const context = useThemeUI()
+  const theme = context.theme
 
   const toggle = (e) => {
     setExpanded(!expanded)
@@ -13,11 +16,13 @@ const Metric = ({ metric }) => {
 
   return <div>
     <Grid columns={['30px 100px 1fr', '30px 100px 1fr', '100px 1fr 30px']}>
-      <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
+      <Box sx={{ ml: ['-5px'], display: ['inherit', 'inherit', 'none'] }}>
         <Expander toggle={toggle} expanded={expanded}></Expander>
       </Box>
-      <Text variant='metric.value'>{metric.value}</Text>
-      {hasUnits && <Text variant='metric.label'>{metric.name} [{metric.units}] </Text>}
+      <Text variant='metric.value' sx={{ color: theme.tags[tag] }}>{metric.value}</Text>
+      {hasUnits && <Text variant='metric.label'>{metric.name}
+        <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>
+      </Text>}
       {!hasUnits && <Text variant='metric.label'>{metric.name}</Text>}
       <Box sx={{ display: ['none', 'none', 'inherit'] }}>
         <Expander toggle={toggle} expanded={expanded}></Expander>

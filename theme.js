@@ -1,45 +1,51 @@
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace',
+    body: 'relative-faux-book-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
+    heading: 'relative-medium-pro, system-ui, -apple-system, BlinkMacSystemFont',
+    monospace: 'relative-mono-11-pitch-pro, Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 700,
-    bold: 700,
+    heading: 400,
+    bold: 400,
   },
   lineHeights: {
     body: 1.45,
     heading: 1.125,
   },
   colors: {
-    text: 'rgb(10,10,10)',
-    background: 'rgb(245,245,245)',
-    primary: 'rgb(53,53,53)',
-    secondary: 'rgb(80,80,80)',
-    muted: 'rgb(200,200,200)',
-    brown: '#B7765F',
-    yellow: '#CCC45E',
-    green: '#5FA055',
-    blue: '#7FABB5',
-    grey: '#A7B7B7',
-    purple: '#9D75BA',
+    text: '#ebebeb',
+    background: '#1b1e23',
+    primary: '#e3e4e5',
+    secondary: '#818284',
+    muted: '#363a3e',
+    red: '#f07071',
+    orange: '#ea9755',
+    yellow: '#d4c05e',
+    green: '#7eb36a',
+    teal: '#64b9c4',
+    blue: '#85a2f7',
+    purple: '#bc85d9',
+    pink: '#e587b6',
+    grey: '#a9b4c4',
     modes: {
-      dark: {
-        text: 'rgb(245,245,245)',
-        background: 'rgb(28,29,33)',
-        primary: 'rgb(230,230,230)',
-        secondary: 'rgb(224, 224, 224)',
-        muted: 'rgb(51,53,59)',
-        brown: '#B7765F',
-        yellow: '#CCC45E',
-        green: '#5FA055',
-        blue: '#7FABB5',
-        grey: '#A7B7B7',
-        purple: '#9D75BA',
+      light: {
+        text: '#1b1e23',
+        background: '#ebebec',
+        primary: 'rgb(53,53,53)',
+        secondary: 'rgb(80,80,80)',
+        muted: 'rgb(200,200,200)',
+        red: '#f07071',
+        orange: '#ea9755',
+        yellow: '#d4c05e',
+        green: '#7eb36a',
+        teal: '#64b9c4',
+        blue: '#85a2f7',
+        purple: '#bc85d9',
+        pink: '#e587b6',
+        grey: '#a9b4c4'
       }
     }
   },
@@ -53,12 +59,19 @@ export default {
       value: {
         fontFamily: 'monospace',
         fontSize: [3],
-        textAlign: 'right'
+        textAlign: 'right',
+        mt: ['2px']
       },
       label: {
         fontFamily: 'monospace',
-        fontSize: [1],
+        fontSize: [2],
         mt: ['6px']
+      },
+      units: {
+        fontFamily: 'monospace',
+        color: 'secondary',
+        fontSize: [1],
+        ml: [2]
       }
     },
     link: {
@@ -74,8 +87,8 @@ export default {
     },
     select: {
       cursor: 'pointer',
-      '-webkit-appearance': 'none',
-      '-moz-appearance': 'none',
+      WebkitAppearance: 'none',
+      MozAppearance: 'none',
       p: [1],
       pl: [0],
       width: '200px',
@@ -98,8 +111,8 @@ export default {
     }
   },
   sizes: {
-    container: 1600,
-    sidebar: 256,
+    container: 1150,
+    sidebar: 475,
     chart: 400,
     main: 320
   },
@@ -109,15 +122,16 @@ export default {
       color: 'primary',
       borderStyle: 'solid',
       borderColor: 'primary',
-      borderWidth: '1px',
-      backgroundColor: 'background',
-      borderRadius: '4px',
-      mr: [2],
+      borderWidth: '0px',
+      borderBottomWidth: '2px',
+      bg: 'background',
+      borderRadius: '0px',
+      textTransform: 'uppercase',
       mb: [2],
       pt: ['1px'],
       pb: ['2px'],
-      pl: ['5px'],
-      pr: ['5px'],
+      pl: [0],
+      pr: [0],
       fontSize: [1],
       fontWeight: 'body',
       fontFamily: 'monospace'
@@ -164,16 +178,19 @@ export default {
       cursor: "pointer"
     },
     hr: {
-      'border': 'none',
-      'borderTop': '2px dotted'
+      border: 'none',
+      borderStyle: 'solid',
+      borderWidth: '0px',
+      borderTopWidth: '1px',
+      borderColor: 'muted'
     }
   },
   tags: {
     mineralization: 'grey',
-    soil: 'brown',
+    soil: 'orange',
     biomass: 'yellow',
     forests: 'green',
-    ocean: 'blue',
+    ocean: 'teal',
     dac: 'purple',
     biochar: 'yellow',
     'building materials': 'yellow',

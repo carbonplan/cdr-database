@@ -20,23 +20,23 @@ const Report = (props) => {
 
   if (visibility) {
     return <Box sx={{ 
-      borderStyle: 'solid', 
-      borderWidth: '1px', 
-      borderColor: 'primary', 
-      borderRadius: '6px',
-      p: [3],
-      pr: [2],
-      pb: [2],
-      mb: [4]
+      borderStyle: 'solid',
+      borderColor: 'muted',
+      borderWidth: '0px', 
+      borderBottomWidth: '1px',
+      pr: [4],
+      py: [4]
     }}>
-      <Grid columns={[1, null, '1fr 250px']}>
-        <Heading sx={{ mb: [2] }}>{props.project.name}</Heading>
+      <Grid columns={[1, null, '1fr 300px']}>
+        <Heading sx={{ mb: [2], fontSize: [4] }}>{props.project.name}</Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
           {props.project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
               borderColor: theme.tags[tag],
-              bg: alpha(theme.tags[tag], 0.4),
-              cursor: 'default'
+              color: theme.tags[tag],
+              cursor: 'default',
+              mr: [2],
+              ml: [0, 0, 2]
             }}>
               {tag}
             </Badge>
@@ -44,23 +44,30 @@ const Report = (props) => {
         </Box>
       </Grid>
       <Grid columns={[1, null, '1fr 32px']}>
-      <Text variant='description'> 
+      <Text variant='description' sx={{ mb: [2] }}> 
         { props.project.description }
       </Text>
-      <Expander toggle={toggle} expanded={expanded}></Expander>
+      <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
+        <Expander toggle={toggle} expanded={expanded}></Expander>
+      </Box>
       </Grid>
       <Box>
         {expanded && 
           <>
           <Divider sx={{ mr: [2] }}/>
-          {props.project.metrics.map((metric) => <Metric key={metric.name} metric={metric}></Metric>) }
+          {props.project.metrics.map((metric) => 
+            <Metric 
+              key={metric.name} 
+              tag={props.project.tags[0]} 
+              metric={metric}
+            ></Metric>) }
           </>
         }
       </Box>
     </Box>
   } else {
-  return null
-}
+    return null
+  }
 }
 
 export default Report

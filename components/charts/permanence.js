@@ -17,17 +17,15 @@ const Permanence = (props) => {
   const theme = context.theme
 
   var values = []
-  let fillOpacity, strokeOpacity
+  let opacity
   for (var i = 0; i < projects.length; i++) {
 
     const visible = useSelector(state => state.visibility[projects[i].project_id])
 
     if (visible) {
-      fillOpacity = 0.7
-      strokeOpacity = 1
+      opacity = 1
     } else {
-      fillOpacity = 0.1,
-      strokeOpacity = 0.2
+      opacity = 0.2
     }
 
     values.push(
@@ -36,8 +34,7 @@ const Permanence = (props) => {
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
-        fillOpacity: fillOpacity,
-        strokeOpacity: strokeOpacity
+        opacity: opacity
       }
     )
   }
@@ -55,12 +52,13 @@ const Permanence = (props) => {
       y: { 
         field: 'group', 
         type: 'nominal',
-        scale: { 'padding': 2 }
+        scale: { 'padding': 3 },
+        axis: { title: 'GROUP', domain: false, labels: false, ticks: false }
       },
       x: {
         field: 'durability', 
         type: 'quantitative', 
-        axis: { title: 'Permanence (years)', tickCount: 3 },
+        axis: { title: 'PERMANENCE years', tickCount: 3 },
         scale: { type: 'log',  domain: [0.6, 2000], nice: false  },
       },
       color: {
@@ -74,13 +72,8 @@ const Permanence = (props) => {
         type: 'nominal',
         scale: null,
       },
-      fillOpacity: {
-        field: 'fillOpacity',
-        type: 'quantitative',
-        scale: null
-      },
-      strokeOpacity: {
-        field: 'strokeOpacity',
+      opacity: {
+        field: 'opacity',
         type: 'quantitative',
         scale: null
       }
