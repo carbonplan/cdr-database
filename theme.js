@@ -1,9 +1,9 @@
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
   fonts: {
-    body: 'relative-faux-book-pro',
-    heading: 'relative-medium-pro',
-    monospace: 'relative-mono-11-pitch-pro',
+    body: 'relative-faux-book-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
+    heading: 'relative-medium-pro, system-ui, -apple-system, BlinkMacSystemFont',
+    monospace: 'relative-mono-11-pitch-pro, Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -21,25 +21,31 @@ export default {
     primary: 'rgb(53,53,53)',
     secondary: 'rgb(80,80,80)',
     muted: 'rgb(200,200,200)',
-    brown: '#B7765F',
-    yellow: '#CCC45E',
-    green: '#5FA055',
-    blue: '#7FABB5',
+    red: '#f07071',
+    orange: '#ea9755',
+    yellow: '#d4c05e',
+    green: '#7eb36a',
+    teal: '#64b9c4',
+    blue: '#85a2f7',
+    purple: '#bc85d9',
+    pink: '#e587b6',
     grey: '#a9b4c4',
-    purple: '#9D75BA',
     modes: {
       dark: {
-        text: '#ebebec',
+        text: '#ebebeb',
         background: '#1b1e23',
-        primary: 'rgb(230,230,230)',
-        secondary: 'rgb(224, 224, 224)',
-        muted: '#52575a',
-        brown: '#B7765F',
-        yellow: '#CCC45E',
-        green: '#5FA055',
-        blue: '#7FABB5',
-        grey: '#a9b4c4',
-        purple: '#9D75BA',
+        primary: '#e3e4e5',
+        secondary: '#818284',
+        muted: '#363a3e',
+        red: '#f07071',
+        orange: '#ea9755',
+        yellow: '#d4c05e',
+        green: '#7eb36a',
+        teal: '#64b9c4',
+        blue: '#85a2f7',
+        purple: '#bc85d9',
+        pink: '#e587b6',
+        grey: '#a9b4c4'
       }
     }
   },
@@ -53,12 +59,19 @@ export default {
       value: {
         fontFamily: 'monospace',
         fontSize: [3],
-        textAlign: 'right'
+        textAlign: 'right',
+        mt: ['2px']
       },
       label: {
         fontFamily: 'monospace',
-        fontSize: [1],
+        fontSize: [2],
         mt: ['6px']
+      },
+      units: {
+        fontFamily: 'monospace',
+        color: 'secondary',
+        fontSize: [1],
+        ml: [2]
       }
     },
     link: {
@@ -98,8 +111,8 @@ export default {
     }
   },
   sizes: {
-    container: 1100,
-    sidebar: 500,
+    container: 1150,
+    sidebar: 475,
     chart: 400,
     main: 320
   },
@@ -114,7 +127,6 @@ export default {
       bg: 'background',
       borderRadius: '0px',
       textTransform: 'uppercase',
-      mr: [3],
       mb: [2],
       pt: ['1px'],
       pb: ['2px'],
@@ -175,10 +187,10 @@ export default {
   },
   tags: {
     mineralization: 'grey',
-    soil: 'brown',
+    soil: 'orange',
     biomass: 'yellow',
     forests: 'green',
-    ocean: 'blue',
+    ocean: 'teal',
     dac: 'purple',
     biochar: 'yellow',
     'building materials': 'yellow',

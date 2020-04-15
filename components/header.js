@@ -1,8 +1,7 @@
 import { Box, Flex, Container } from 'theme-ui'
 
 const Header = () => {
-  return <Container>
-    <Flex
+  return <Flex
       sx={{
         margin: '0 auto',
         width: '100%',
@@ -17,7 +16,6 @@ const Header = () => {
       menu
     </Box>
   </Flex>
-  </Container>
 }
 
 export default Header

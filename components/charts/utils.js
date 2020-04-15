@@ -12,7 +12,9 @@ export const config = (theme) => {
       titleFontSize: theme.fontSizes[1],
       titleColor: theme.colors.text,
       domain: true,
-      tickOffset: 0
+      tickOffset: 0,
+      labelPadding: 5,
+      titlePadding: 10
     },
     view: {
       stroke: 'none'

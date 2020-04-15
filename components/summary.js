@@ -8,10 +8,10 @@ import { useState } from 'react'
 
 const Summary = ( props ) => {
 
-  const [chart, setChart] = useState('Cost vs. Volume');
+  const [chart, setChart] = useState('COST VS VOLUME');
 
   return (
-    <Box sx={{ height: 'calc(55vh - 0.55*56px)', p: [4] }}>
+    <Box sx={{ height: 'calc(50vh - 0.5*56px)', px: [4], pt: [3] }}>
       <Box>
       <select
         onChange={e => {
@@ -21,31 +21,23 @@ const Summary = ( props ) => {
           variant: 'forms.select'
         }}
         defaultValue={chart}>
-        <option>Cost vs. Volume</option>
-        <option>Permanence</option>
-        <option>Negativity</option>
+        <option>COST VS VOLUME</option>
+        <option>PERMANENCE</option>
+        <option>NET NEGATIVITY</option>
       </select>
-      <svg sx={{ 
-        height: [30, null, 20], 
-        width: [30, null, 20],
-        ml: ['-24px'],
-        mb: ['-3px'],
-        pointerEvents: 'none'
-      }}>
-      <polygon points='3,3 19,3 11,16'
-        sx={{
-          fill: 'text', 
-          stroke: 'text', 
-          strokeWidth: 1, 
-          transition: '0.25s all',
-          transformOrigin: ['10px 8px'],
-          transform: ['scale(0.8)']
-        }} />
-      </svg>
+      <span sx={{ 
+        ml: ['-15px'], 
+        fontSize: [4], 
+        display: 'inline-block', 
+        transform: 'rotate(90deg)',
+        pointerEvents: 'none',
+        position: 'relative',
+        top: '3px'
+      }}>-></span>
       </Box>
-      {(chart == 'Cost vs. Volume') && <CostVolume projects={props.projects}> </CostVolume>}
-      {(chart == 'Permanence') && <Permanence projects={props.projects}> </Permanence>}
-      {(chart == 'Negativity') && <Negativity projects={props.projects}> </Negativity>}
+      {(chart == 'COST VS VOLUME') && <CostVolume projects={props.projects}> </CostVolume>}
+      {(chart == 'PERMANENCE') && <Permanence projects={props.projects}> </Permanence>}
+      {(chart == 'NET NEGATIVITY') && <Negativity projects={props.projects}> </Negativity>}
     </Box>
   )
 }

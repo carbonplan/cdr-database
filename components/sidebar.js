@@ -34,7 +34,8 @@ const Sidebar = ({ props }) => {
   return (
     <Box sx={{ 
       flexGrow: 1, 
-      flexBasis: 'sidebar'
+      flexBasis: 'sidebar',
+      display: ['none', 'none', 'inherit']
     }}>
       <Box sx={{ 
         position: 'fixed', 

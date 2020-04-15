@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Box
       sx={{
-        height: 'calc(45vh - 0.45*56px)',
+        height: 'calc(50vh - 0.5*56px)',
         borderStyle: 'solid', 
         borderColor: 'muted', 
         borderWidth: '0px', 
@@ -13,7 +13,7 @@ const About = () => {
       }}
     >
       <Heading sx={{ fontSize: [5] }}>
-        about
+        methods
       </Heading>
     </Box>
   )

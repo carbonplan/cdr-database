@@ -5,25 +5,23 @@ const Expander = ({ toggle, expanded }) => {
   return <IconButton 
       onClick={toggle} 
       aria-label='Toggle more info' 
-      sx={{ cursor: 'pointer' }}
-    >
-    <svg sx={{ height: [30, null, 20], width: [30, null, 20] }}>
-      <polygon points='3,3 19,3 11,16'
-        sx={{
+      sx={{ 
+        cursor: 'pointer',
+        fill: 'secondary', 
+        stroke: 'secondary', 
+        '&:hover': {
           fill: 'text', 
           stroke: 'text', 
-          strokeWidth: 1, 
+        }
+      }}
+    >
+    <svg sx={{ height: '16px', width: '16px' }}>
+      <path d='M8,0 V16 M0,8 H16'
+        sx={{
+          strokeWidth: 3, 
           transition: '0.25s all',
-          transformOrigin: [
-            '11px 8px',
-            null,
-            '10px 8px'
-          ],
-          transform: [
-            expanded ? '' : 'rotate(-90deg)',
-            null,
-            expanded ? '' : 'rotate(90deg)'
-          ]
+          transformOrigin: '8px 8px',
+          transform: expanded ? 'rotate(-45deg)' : ''
         }} />
   </svg>
   </IconButton>

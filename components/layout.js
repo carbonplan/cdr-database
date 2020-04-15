@@ -2,8 +2,16 @@ import Seo from './seo'
 import Header from './header'
 import Footer from './footer'
 import { Container, Flex, Box } from 'theme-ui'
+import { useColorMode } from 'theme-ui'
 
 const Layout = ({ children }) => {
+  const [colorMode, setColorMode] = useColorMode()
+
+  const toggle = (e) => {
+    if (colorMode == 'light') setColorMode('dark')
+    else setColorMode('light')
+  }
+
   return (
     <>
       <Seo/>
@@ -24,14 +32,16 @@ const Layout = ({ children }) => {
             bg: 'background',
             height: '56px'
           }}>
+          <Container sx={{ px: [4] }}>
           <Header></Header>
+          </Container>
         </Box>
         <Box
           sx={{
             width: '100%',
             flex: '1 1 auto',
           }}>
-          <Container>
+          <Container sx={{ px: [4] }}>
             <Flex sx={{ flexWrap: 'wrap' }}>
               { children }
             </Flex>
@@ -42,7 +52,9 @@ const Layout = ({ children }) => {
             width: '100%'
           }}>
           <Container>
-            <Footer></Footer>
+            <Box onClick={ toggle } sx={{ position: 'fixed', bottom: 20, right: 20 }}>
+              { colorMode } 
+            </Box>
           </Container>
         </Box>
       </Flex>

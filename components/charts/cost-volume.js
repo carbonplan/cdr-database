@@ -45,20 +45,20 @@ const CostVolume = (props) => {
     },
     mark: {
       type: 'circle', 
-      size: 200, 
+      size: 250, 
       cursor: 'pointer'
     },
     encoding: {
       x: {
         field: 'volume',
         type: 'quantitative',
-        axis: { title: 'Total volume (tCO2)', tickCount: 3 },
+        axis: { title: 'TOTAL VOLUME tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [2, 100000000], nice: false },
       },
       y: {
         field: 'cost',
         type: 'quantitative',
-        axis: { title: 'Cost today ($/tCO2)', tickCount: 3 },
+        axis: { title: 'COST TODAY $/tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [3, 3000], nice: false },
       },
       color: {

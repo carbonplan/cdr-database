@@ -22,12 +22,14 @@ const Filter = () => {
     if (tags.includes(tag)) {
       return {
         borderColor: theme.tags[tag],
-        color: theme.tags[tag]
+        color: theme.tags[tag],
+        mr: [3]
       }
     } else {
       return {
         borderColor: alpha(theme.tags[tag], 0.2),
-        color: alpha(theme.tags[tag], 0.2)
+        color: alpha(theme.tags[tag], 0.2),
+        mr: [3]
       }
     }
   }
