@@ -22,11 +22,15 @@ function Index (props) {
   dispatch({ type: 'INIT_FUSE' })
 
   useEffect(() => {
-    let params = new URLSearchParams(window.location.search);
-    let search = params.get('search');
+    const params = new URLSearchParams(window.location.search);
+    const search = params.get('search')
     if (search) {
-      console.log('search', search.replace(/^"(.*)"$/, '$1'))
       dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
+    }
+    const tags = params.get('tags')
+    console.log(tags)
+    if (tags) {
+      dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
     }
   })
 
