@@ -12,7 +12,7 @@ const About = () => {
         p: [4]
       }}
     >
-      <Heading sx={{ fontSize: [5] }}>
+      <Heading sx={{ fontSize: [4] }}>
         methods
       </Heading>
     </Box>

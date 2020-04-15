@@ -28,7 +28,7 @@ const Report = (props) => {
       py: [4]
     }}>
       <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2] }}>{props.project.name}</Heading>
+        <Heading sx={{ mb: [2], fontSize: [4] }}>{props.project.name}</Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
           {props.project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
