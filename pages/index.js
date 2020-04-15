@@ -25,7 +25,6 @@ function Index (props) {
     <Layout>
       <Main props={props}></Main>
       <Sidebar props={props}></Sidebar>
-      
     </Layout>
   )
 }
