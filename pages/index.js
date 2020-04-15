@@ -1,10 +1,10 @@
 import Layout from '../components/layout'
 import Sidebar from '../components/sidebar'
 import Main from '../components/main'
-import { Container, Flex, Box } from 'theme-ui'
 import { useEffect } from 'react'
 import { withRedux } from '../lib/redux'
 import { useDispatch } from 'react-redux'
+import { useRouter } from 'next/router'
 
 function Index (props) {
 
@@ -21,18 +21,17 @@ function Index (props) {
   dispatch({ type: 'INIT_VISIBILITY' })
   dispatch({ type: 'INIT_FUSE' })
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const search = params.get('search')
-    if (search) {
-      dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
-    }
-    const tags = params.get('tags')
-    console.log(tags)
-    if (tags) {
-      dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
-    }
-  })
+  const router = useRouter()
+  const query = router.query
+  const search = query.search
+  if (search) {
+    dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
+  }
+  const tags = query.tags
+  console.log(tags)
+  if (tags) {
+    dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
+  }
 
   return (
     <Layout>
