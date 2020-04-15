@@ -16,6 +16,13 @@ const Filter = () => {
     else dispatch({ type: 'ADD_TAG', tag: tag })
   }
 
+  let params = new URLSearchParams(window.location.search);
+  let search = params.get('search');
+  if (search) {
+    console.log('search', search.replace(/^"(.*)"$/, '$1'))
+    dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
+  }
+
   const getStyle = (tag) => {
     if (tags.includes(tag)) {
       return {

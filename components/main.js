@@ -3,6 +3,7 @@ import Filter from './filter'
 import { Box, Flex, Heading, Text } from 'theme-ui'
 
 const Main = ({ props }) => {
+
   return (
     <Box sx={{ flexGrow: 99999, flexBasis: 0, minWidth: 'main' }}>
       <Flex>
