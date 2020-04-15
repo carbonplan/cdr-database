@@ -18,7 +18,7 @@ const Search = () => {
         type='text'
         placeholder='search reports'
         onChange={handleInputChange}
-        sx={{ pt: [2] }}
+        sx={{ pt: [2], border: '0px' }}
         value={input}
       />
     </Box>
