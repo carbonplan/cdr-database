@@ -53,7 +53,7 @@ const Permanence = (props) => {
         field: 'group', 
         type: 'nominal',
         scale: { 'padding': 3 },
-        axis: { title: 'GROUP', domain: false, labels: false, ticks: false }
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
       },
       x: {
         field: 'durability', 
