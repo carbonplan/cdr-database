@@ -18,7 +18,7 @@ export default {
   colors: {
     text: '#ebebeb',
     background: '#1b1e23',
-    primary: '#e3e4e5',
+    primary: '#e4e4e4',
     secondary: '#818284',
     muted: '#363a3e',
     red: '#f07071',
@@ -34,8 +34,8 @@ export default {
       light: {
         text: '#1b1e23',
         background: '#ebebec',
-        primary: 'rgb(53,53,53)',
-        secondary: 'rgb(80,80,80)',
+        primary: '#484848',
+        secondary: '#636363',
         muted: 'rgb(200,200,200)',
         red: '#f07071',
         orange: '#ea9755',

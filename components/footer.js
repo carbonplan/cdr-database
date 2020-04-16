@@ -52,7 +52,11 @@ const Footer = (props) => {
           cursor: 'pointer',
           position: 'relative', 
           top: '7px', 
-          left: '7px'
+          left: '7px',
+          transition: '0.25s all',
+          '&:hover': {
+            stroke: 'text'
+          }
         }}
       >
         <svg

@@ -1,6 +1,6 @@
 import theme from '.././theme'
 import Search from './search'
-import { Box, Badge, Grid, MenuButton, Text } from 'theme-ui'
+import { Box, Badge, Grid, IconButton, Text } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
@@ -35,14 +35,14 @@ const Filter = () => {
     } else if (tag === 'all') {
       if (tags.length == 6) {
         return {
-          borderColor: 'text',
-          color: 'text',
+          borderColor: 'primary',
+          color: 'primary',
           mr: [3]
         }
       } else {
         return {
-          borderColor: alpha('text', 0.2),
-          color: alpha('text', 0.2),
+          borderColor: alpha('primary', 0.2),
+          color: alpha('primary', 0.2),
           mr: [3]
         }
       }
@@ -82,7 +82,22 @@ const Filter = () => {
           <Badge variant='primary' sx={getStyle('all')} onClick={() => toggleAll()}>all</Badge>
         </Box>
         <Box>
-          <MenuButton aria-label='Toggle Search' onClick={() => toggleSearch()} />
+          <IconButton aria-label='Toggle Search' onClick={() => toggleSearch()} 
+            sx={{ 
+              stroke: searchExpanded ? 'text' : 'secondary', 
+              fill: 'background',
+              cursor: 'pointer',
+              transition: '0.25s all',
+              '&:hover': {
+                stroke: 'text'
+              }
+            }}
+          >
+            <svg height='24px' width='24px' strokeWidth='2'>
+              <circle cx="15" cy="9.1" r="6.8"/>
+              <line x1="2.4" y1="21.7" x2="10.2" y2="13.9"/>
+            </svg>
+          </IconButton>
         </Box>
       </Grid>
       <Grid columns={[2, null, '1fr 200px']}>
