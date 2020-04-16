@@ -5,6 +5,8 @@ import { useEffect } from 'react'
 import { withRedux } from '../lib/redux'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
+import globals from '../globals'
+import fetch from 'isomorphic-unfetch'
 
 function Index (props) {
 
@@ -42,12 +44,11 @@ function Index (props) {
 }
 
 export async function getStaticProps() {
-  const data = await import('../data/projects.js')
 
-  let obj = {}
-  obj.projects = data.default.features
+  const res = await fetch(globals.apiServer + 'projects')
+  const data = await res.json()
 
-  return { props: obj }
+  return { props: { projects: data.features } }
 }
 
 export default withRedux(Index)
