@@ -47,13 +47,6 @@ const reducer = (state = initialState, action) => {
         tags: tagsMinus,
         visibility: combinedSearch(tagsMinus, state.search, state.fuse, state.projects)
       }
-    case 'RESET_TAGS':
-      const allTags = ['dac', 'forests', 'mineralization', 'soil', 'ocean', 'biomass']
-      return {
-        ...state,
-        tags: allTags,
-        visibility: combinedSearch(allTags, state.search, state.fuse, state.projects)
-      }
     case 'SET_TAGS':
       return {
         ...state,

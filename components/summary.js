@@ -32,7 +32,8 @@ const Summary = ( props ) => {
         transform: 'rotate(90deg)',
         pointerEvents: 'none',
         position: 'relative',
-        top: '3px'
+        top: '3px',
+        color: 'secondary'
       }}>-></span>
       </Box>
       {(chart == 'COST VS VOLUME') && <CostVolume projects={props.projects}> </CostVolume>}

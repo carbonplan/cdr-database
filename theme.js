@@ -80,10 +80,18 @@ export default {
   },
   forms: {
     input: {
-      fontSize: [0],
+      fontSize: [2],
       pt: ['4px'],
       pb: ['6px'],
-      fontFamily: 'monospace'
+      pl: [0],
+      pr: [0],
+      fontFamily: 'monospace',
+      borderRadius: '0px',
+      borderStyle: 'solid',
+      borderColor: 'muted',
+      borderWidth: '0px',
+      borderBottomWidth: '1px',
+      textAlign: 'right'
     },
     select: {
       cursor: 'pointer',
