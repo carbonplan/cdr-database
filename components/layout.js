@@ -24,8 +24,10 @@ const Layout = ({ children }) => {
             bg: 'background',
             height: '56px'
           }}>
-          <Container sx={{ px: [4] }}>
-          <Header></Header>
+          <Container sx={{ 
+            px: [4]
+          }}>
+          <Header/>
           </Container>
         </Box>
         <Box
@@ -41,12 +43,13 @@ const Layout = ({ children }) => {
         </Box>
         <Box
           sx={{
-            width: '100%'
+            width: '100%',
+            position: 'sticky',
+            bottom: '0px',
+            display: ['none', 'none', 'inherit']
           }}>
-          <Container>
-            <Box sx={{ position: 'fixed', bottom: 125, right: 20 }}>
-              <Footer/>
-            </Box>
+          <Container sx={{ px: [4] }}>
+            <Footer/>
           </Container>
         </Box>
       </Flex>

@@ -118,8 +118,15 @@ export default {
       cursor: 'pointer'
     }
   },
+  layout: {
+    container: {
+      maxWidth: '1150px',
+      '@media only screen and (min-width: 100em)': {
+        maxWidth: '1500px',
+      }
+    }
+  },
   sizes: {
-    container: 1150,
     sidebar: 475,
     chart: 400,
     main: 320

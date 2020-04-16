@@ -11,7 +11,7 @@ const Summary = ( props ) => {
   const [chart, setChart] = useState('COST VS VOLUME');
 
   return (
-    <Box sx={{ height: 'calc(50vh - 0.5*56px)', px: [4], pt: [3] }}>
+    <Box sx={{ height: '400px', px: [4], pt: [3] }}>
       <Box>
       <select
         onChange={e => {
