@@ -54,6 +54,12 @@ const reducer = (state = initialState, action) => {
         tags: allTags,
         visibility: combinedSearch(allTags, state.search, state.fuse, state.projects)
       }
+    case 'SET_TAGS':
+      return {
+        ...state,
+        tags: action.value,
+        visibility: combinedSearch(action.value, state.search, state.fuse, state.projects)
+      }
     case 'UPDATE_SEARCH':
       return {
         ...state,

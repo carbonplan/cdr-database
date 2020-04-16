@@ -16,6 +16,7 @@ const Filter = () => {
     else dispatch({ type: 'ADD_TAG', tag: tag })
   }
 
+
   const getStyle = (tag) => {
     if (tags.includes(tag)) {
       return {

@@ -240,7 +240,7 @@ export default {
       "value": 336.07,
       "units": "$/tCO2"
     }],
-    "tags": ["ocean"],
+    "tags": ["ocean", "phytoplankton"],
     "project_id": "STRP09",
     "description": "Leveraging biogeochemistry, our wave-powered upwelling/downwelling technology achieves long-term CO2\\u200b \\u200b sequestration."
   }, {
@@ -594,5 +594,32 @@ export default {
     "tags": ["forests", "building materials"],
     "project_id": "STRP22",
     "description": "The largest giant bamboo reforestation project on earth + engineered lumber"
+  }, {
+    "type": "Feature",
+    "geometry": {
+      "type": null
+    },
+    "properties": {},
+    "name": "Vesta",
+    "metrics": [{
+      "name": "Total project volume",
+      "value": 200.0,
+      "units": "tCO2"
+    }, {
+      "name": "Net negativity ratio",
+      "value": 0.045,
+      "units": null
+    }, {
+      "name": "Permanence",
+      "value": 1000.0,
+      "units": "years"
+    }, {
+      "name": "Cost today",
+      "value": 50.0,
+      "units": "$/tCO2"
+    }],
+    "tags": ["ocean", "mineralization"],
+    "project_id": "STRP23",
+    "description": "Accelerate olivine weathering with wave power for carbon dioxide removal."
   }]
 }

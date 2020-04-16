@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Box, Input } from 'theme-ui'
-import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Search = () => {
