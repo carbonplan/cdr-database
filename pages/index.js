@@ -35,6 +35,8 @@ function Index (props) {
     dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
   }
 
+  console.log(props)
+
   return (
     <Layout>
       <Main props={props}></Main>
@@ -48,7 +50,7 @@ export async function getStaticProps() {
   const res = await fetch(globals.apiServer + 'projects')
   const data = await res.json()
 
-  return { props: { projects: data.features } }
+  return { props: { projects: data.projects } }
 }
 
 export default withRedux(Index)

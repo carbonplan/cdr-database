@@ -20,7 +20,7 @@ const Permanence = (props) => {
   let opacity
   for (var i = 0; i < projects.length; i++) {
 
-    const visible = useSelector(state => state.visibility[projects[i].project_id])
+    const visible = useSelector(state => state.visibility[projects[i].projectId])
 
     if (visible) {
       opacity = 1
