@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
 
 const Report = (props) => {
-  const id = props.project.project_id
+  const id = props.project.projectId
   const visibility = useSelector(state => state.visibility[id])
   const [expanded, setExpanded] = useState(false)
 
