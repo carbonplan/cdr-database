@@ -67,6 +67,12 @@ export default {
         fontSize: [2],
         mt: ['6px']
       },
+      comment: {
+        fontFamily: 'monospace',
+        fontSize: [1],
+        color: 'secondary',
+        mt: [0]
+      },
       units: {
         fontFamily: 'monospace',
         color: 'secondary',
@@ -129,7 +135,7 @@ export default {
   sizes: {
     sidebar: 475,
     chart: 400,
-    main: 320
+    main: 250
   },
   badges: {
     primary: {
