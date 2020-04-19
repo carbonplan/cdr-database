@@ -33,7 +33,6 @@ class MyApp extends App {
                    url('${prefix}relative-medium-pro.ttf') format('truetype');
               font-weight: normal;
               font-style: normal;
-              font-display: swap;
             }
 
             @font-face {
@@ -45,7 +44,6 @@ class MyApp extends App {
                    url('${prefix}relative-mono-11-pitch-pro.ttf') format('truetype');
               font-weight: normal;
               font-style: normal;
-              font-display: swap;
             }
 
             @font-face {
@@ -57,7 +55,6 @@ class MyApp extends App {
                    url('${prefix}relative-faux-book-pro.ttf') format('truetype');
               font-weight: normal;
               font-style: normal;
-              font-display: swap;
             }
 
           `}

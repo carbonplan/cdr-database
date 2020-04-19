@@ -70,8 +70,9 @@ const Filter = () => {
       borderColor: 'muted',
       borderWidth: '0px',
       borderBottomWidth: '1px',
+      zIndex: 1000
     }}>
-      <Grid columns={[2, null, '1fr 30px']}>
+      <Grid columns={[1, null, '1fr 30px']}>
         <Box>
           <Badge variant='primary' sx={getStyle('forests')} onClick={() => addOrRemove('forests')}>forests</Badge>
           <Badge variant='primary' sx={getStyle('dac')} onClick={() => addOrRemove('dac')}>dac</Badge>
@@ -81,7 +82,7 @@ const Filter = () => {
           <Badge variant='primary' sx={getStyle('biomass')} onClick={() => addOrRemove('biomass')}>biomass</Badge>
           <Badge variant='primary' sx={getStyle('all')} onClick={() => toggleAll()}>all</Badge>
         </Box>
-        <Box>
+        <Box sx={{ display: ['none','none','inherit'] }}>
           <IconButton aria-label='Toggle Search' onClick={() => toggleSearch()} 
             sx={{ 
               stroke: searchExpanded ? 'text' : 'secondary', 

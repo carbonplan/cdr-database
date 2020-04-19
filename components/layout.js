@@ -22,7 +22,8 @@ const Layout = ({ children }) => {
             position: 'sticky', 
             top: 0,
             bg: 'background',
-            height: '56px'
+            height: '56px',
+            zIndex: 1000
           }}>
           <Container sx={{ 
             px: [4]
