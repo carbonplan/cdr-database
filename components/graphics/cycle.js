@@ -8,7 +8,11 @@ const Cycle = ({ tag, data }) => {
   const theme = context.theme
 
   const sxStock = (stock) => {
-    if (data.stock[stock] > 0) return theme.tags[tag]
+    const enhanced = data.flux.filter((fx) => 
+      (fx.from == stock) &&
+      (fx.type == 'enhanced')
+    )
+    if (data.stock[stock] || (enhanced.length > 0)) return theme.tags[tag]
     else return 'secondary'
   }
 
@@ -87,7 +91,7 @@ const Cycle = ({ tag, data }) => {
         c0.3,0.4,0.3,1.1-0.2,1.4C236.4,36.6,236.1,36.6,235.9,36.6z"/>
       <path sx={{ fill: sxFlux({from: 'ocean', to: 'atmosphere'}) }} d="M221.5,36.6c-0.2,0-0.4-0.1-0.6-0.2c-0.4-0.3-0.5-1-0.2-1.4l7.1-9c0.3-0.4,1-0.5,1.4-0.2c0.4,0.3,0.5,1,0.2,1.4l-7.1,9
         C222.1,36.5,221.8,36.6,221.5,36.6z"/>
-      <circle sx={{ fill: sxStockInner('materials') }} cx="100.1" cy="91.1" r="7.7"/>
+      <circle sx={{ fill: sxStockInner('material') }} cx="100.1" cy="91.1" r="7.7"/>
       <circle sx={{ fill: sxStockInner('land') }} cx="179.2" cy="91.1" r="7.7"/>
       <circle sx={{ fill: sxStockInner('ocean') }} cx="237.5" cy="91.1" r="7.7"/>
       <circle sx={{ fill: sxStockInner('geological') }} cx="33.6" cy="91.1" r="7.7"/>
