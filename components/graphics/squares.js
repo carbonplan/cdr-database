@@ -3,13 +3,10 @@ import { jsx, Box, Text } from 'theme-ui'
 import * as d3 from 'd3-scale'
 import { useThemeUI } from 'theme-ui'
 
-const Square = ({ tag, data }) => {
+const Squares = ({ tag, data }) => {
 
   const context = useThemeUI()
   const theme = context.theme
-
-  // const x = (scale.type == 'log') ? d3.scaleLog() : d3.scaleLinear()
-  // const width = x.domain([scale.min, scale.max]).range([0, 90])(data)
 
   return <Box sx={{ 
       mt: ['12px'], 
@@ -28,4 +25,4 @@ const Square = ({ tag, data }) => {
   </Box>
 }
 
-export default Square
+export default Squares

@@ -87,8 +87,8 @@ const Report = ({ project }) => {
             <Box sx={{ pr: [2], textAlign: ['left', 'left', 'right'] }}>
               <Text sx={{ color: 'secondary' }}>Location</Text>
               <Text>
-                United States
-                <Link variant='arrow' href={ project.source.url }>↗</Link>
+                { project.location }
+                <Link variant='arrow' href={ 'https://maps.google.com/' + project.location }>↗</Link>
               </Text>
             </Box>
           </Grid>

@@ -1,28 +1,12 @@
 import Expander from './expander'
 import Cycle from './graphics/cycle'
 import Bar from './graphics/bar'
-import Square from './graphics/square'
+import Squares from './graphics/squares'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
 
-import metrics from '../public/metrics'
-
-const cycle = {
-  stock: {
-    geological: true,
-    land: null,
-    ocean: null,
-    material: null
-  },
-  flux: [
-    {
-      from: 'atmosphere',
-      to: 'geological',
-      type: 'enhanced'
-    }
-  ]
-}
+import scales from './graphics/scales'
 
 const Metric = ({ metric, tag }) => {
 
@@ -50,11 +34,11 @@ const Metric = ({ metric, tag }) => {
       }
       <Text variant='metric.value' sx={{ color: theme.tags[tag] }}>{(metric.name != 'additionality') ? metric.value : ''}</Text>
       <Box sx={{ display: ['none', 'none', 'inherit']}}>
-        {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={metrics['volume'].scale}></Bar>}
-        {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={metrics['permanence'].scale}></Bar>}
-        {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={metrics['negativity'].scale}></Bar>}
-        {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={metrics['cost'].scale}></Bar>}
-        {(metric.name == 'additionality') && <Square tag={tag} data={metric.value}></Square>}
+        {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
+        {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
+        {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
+        {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
+        {(metric.name == 'additionality') && <Squares tag={tag} data={metric.value}></Squares>}
       </Box>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
