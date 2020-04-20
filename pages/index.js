@@ -26,8 +26,13 @@ function Index (props) {
   const router = useRouter()
   const query = router.query
   const search = query.search
+  const id = query.id
+
   if (search) {
     dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
+  }
+  if (id) {
+    dispatch({ type: 'UPDATE_SEARCH', value: id.replace(/^"(.*)"$/, '$1') })
   }
   const tags = query.tags
 

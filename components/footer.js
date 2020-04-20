@@ -26,7 +26,7 @@ const Footer = (props) => {
   return (
     <Box sx={{ float: 'right', transformOrigin: 'right', transform: 'rotate(90deg)' }}>
       <Text variant='metric.units' sx={{ whiteSpace: 'nowrap', display: 'inline-block', leftMargin: '15px' }}>
-        PROJECTS: 22
+        PROJECTS: 23
       </Text>
       <IconButton aria-label='Current Color' sx={{ fill: 'secondary' }} >
         <svg

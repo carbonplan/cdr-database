@@ -2,7 +2,7 @@
 import { jsx, Box } from 'theme-ui'
 import { useThemeUI } from 'theme-ui'
 
-const Cycle = ({ tag, data }) => {
+const Cycle = ({ tag, data, labels }) => {
 
   const context = useThemeUI()
   const theme = context.theme
@@ -59,7 +59,7 @@ const Cycle = ({ tag, data }) => {
       transformOrigin: 'left'
     }}>
     <svg 
-      height='123px' 
+      height={labels ? '150px' : '123px'} 
       width='270px'
       stroke='none'
       strokeWidth='1px'
@@ -131,6 +131,15 @@ const Cycle = ({ tag, data }) => {
         C223.1,48,222.9,48.1,222.6,48.1z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'ocean', to: 'atmosphere'}) }} d="M234.7,48.1c-0.3,0-0.5-0.1-0.7-0.3l-12.1-12.1c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l12.1,12.1c0.4,0.4,0.4,1,0,1.4
         C235.2,48,235,48.1,234.7,48.1z"/>
+      {labels && 
+        <>
+        <text sx={{ fill: 'text', fontSize: [3] }} x="70" y="34">Atmos</text>
+        <text sx={{ fill: 'text', fontSize: [3] }} x="16" y="130">Geo</text>
+        <text sx={{ fill: 'text', fontSize: [3] }} x="85" y="130">Mat</text>
+        <text sx={{ fill: 'text', fontSize: [3] }} x="164" y="130">Lnd</text>
+        <text sx={{ fill: 'text', fontSize: [3] }} x="221" y="130">Ocn</text>
+        </>
+      }
   </svg>
   </Box>
 }

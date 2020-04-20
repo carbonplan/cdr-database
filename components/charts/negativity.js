@@ -29,7 +29,7 @@ const Negativity = (props) => {
     
     values.push(
       {
-        negativity: 1 - parseFloat(projects[i].metrics.filter(m => (m.name == 'negativity'))[0].value),
+        negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'negativity'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,

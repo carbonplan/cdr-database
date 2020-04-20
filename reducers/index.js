@@ -16,8 +16,8 @@ const combinedSearch = (tags, search, fuse, projects) => {
   projects.forEach( (project) => {
     visibility[project.id] = false
     if (!(search == '')) {
-      if ((project.tags.some(t => tags.includes(t))) &&
-          (matches.includes(project.id))) {
+      if (((project.tags.some(t => tags.includes(t))) &&
+          (matches.includes(project.id))) || (search == project.id)) {
         visibility[project.id] = true
       }
     } else {

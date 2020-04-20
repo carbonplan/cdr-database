@@ -19,7 +19,18 @@ const Metric = ({ metric, tag }) => {
   }
 
   const hasUnits = (metric.units != '')
-  const hasDetails = (metric.name != 'cost')
+  const hasDetails = (metric.comment != '')
+
+  const format = (key, value) => {
+    if (key == 'additionality') return ''
+    else if (key == 'cost') return '$' + value
+    else if (key == 'volume') {
+      if (value < 1000) return value
+      else if ((value >= 1000) && (value < 1000000)) return Math.round(value / 1000) + 'k'
+      else if (value >= 1000000) return Math.round(value / 1000000) + 'M'
+    }
+    else return value
+  }
 
   return <div>
     <Grid columns={['30px 50px 1fr', '30px 50px 100px 1fr', '75px 100px 1fr 30px']}>
@@ -32,7 +43,7 @@ const Metric = ({ metric, tag }) => {
         <Box sx={{ ml: ['-5px'], display: ['inherit', 'inherit', 'none'] }}>
         </Box>
       }
-      <Text variant='metric.value' sx={{ color: theme.tags[tag] }}>{(metric.name != 'additionality') ? metric.value : ''}</Text>
+      <Text variant='metric.value' sx={{ color: theme.tags[tag] }}>{format(metric.name, metric.value)}</Text>
       <Box sx={{ display: ['none', 'none', 'inherit']}}>
         {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
         {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
@@ -43,7 +54,8 @@ const Metric = ({ metric, tag }) => {
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-        {(metric.rating > 0) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
+        {(metric.rating == 1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
+        {(metric.rating == -1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>x</Text>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>

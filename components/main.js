@@ -26,9 +26,9 @@ const Main = ({ props }) => {
               </Heading>
               <Text sx={{ fontSize: [2], py: [3], pb: [4], pr: [4] }}>
                 This is a public database of carbon removal projects. 
-                Each report quantifies a project. All metrics are based on publicly available information,
-                and all analysis is meant to be transparent, standardized, and objective.
-                Click plus signs to see additional charts and explanations.
+                All metrics are based on public information,
+                and analysis is transparent, standardized, and objective.
+                Click the + to see detailed metrics and explanations.
               </Text>
             </Box>
             <Filter></Filter>

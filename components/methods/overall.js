@@ -10,9 +10,9 @@ const Overall = () => {
     </Text>
     <Text>
       We annotate metrics with their provenance. For volume,
-      negativity, and permanence a √ indicates confidence in the metric 
-      given project information, independent data and
-      models, or both. Abscence of a √ suggests a need for additional data or validation.
+      negativity, and permanence a √ indicates our confidence in the metric
+      and an x indicates we have questions. Abscence of a mark suggests that we
+      need to do further work and/or require more information about the project.
     </Text>
     </>
   )
