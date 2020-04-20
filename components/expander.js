@@ -10,15 +10,15 @@ const Expander = ({ toggle, expanded }) => {
         fill: 'secondary', 
         stroke: 'secondary', 
         '&:hover': {
-          fill: 'text', 
-          stroke: 'text', 
+          fill: 'primary', 
+          stroke: 'primary', 
         }
       }}
     >
     <svg height='16px' width='16px'>
       <path d='M8,0 V16 M0,8 H16'
         sx={{
-          strokeWidth: 3, 
+          strokeWidth: 2, 
           transition: '0.25s all',
           transformOrigin: '8px 8px',
           transform: expanded ? 'rotate(-45deg)' : ''

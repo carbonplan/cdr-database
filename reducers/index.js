@@ -12,17 +12,17 @@ const initialState = {
 
 const combinedSearch = (tags, search, fuse, projects) => {
   const visibility = {}
-  const matches = fuse.search(search).map(project => project.item.projectId)
+  const matches = fuse.search(search).map(project => project.item.id)
   projects.forEach( (project) => {
-    visibility[project.projectId] = false
+    visibility[project.id] = false
     if (!(search == '')) {
       if ((project.tags.some(t => tags.includes(t))) &&
-          (matches.includes(project.projectId))) {
-        visibility[project.projectId] = true
+          (matches.includes(project.id))) {
+        visibility[project.id] = true
       }
     } else {
       if (project.tags.some(t => tags.includes(t))) {
-        visibility[project.projectId] = true
+        visibility[project.id] = true
       }
     }
   })
@@ -74,7 +74,7 @@ const reducer = (state = initialState, action) => {
     case 'INIT_VISIBILITY':
       const obj = {}
       state.projects.forEach( (project) =>
-        obj[project.projectId] = true
+        obj[project.id] = true
       )
       return {
         ...state,

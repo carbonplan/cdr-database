@@ -11,7 +11,7 @@ const Summary = ( props ) => {
   const [chart, setChart] = useState('COST VS VOLUME');
 
   return (
-    <Box sx={{ height: '400px', px: [4], pt: [3] }}>
+    <Box sx={{ height: '350px', px: [4], pt: [3] }}>
       <Box>
       <select
         onChange={e => {
@@ -23,7 +23,7 @@ const Summary = ( props ) => {
         defaultValue={chart}>
         <option>COST VS VOLUME</option>
         <option>PERMANENCE</option>
-        <option>NET NEGATIVITY</option>
+        <option>NEGATIVITY</option>
       </select>
       <span sx={{ 
         ml: ['-15px'], 
@@ -38,7 +38,7 @@ const Summary = ( props ) => {
       </Box>
       {(chart == 'COST VS VOLUME') && <CostVolume projects={props.projects}> </CostVolume>}
       {(chart == 'PERMANENCE') && <Permanence projects={props.projects}> </Permanence>}
-      {(chart == 'NET NEGATIVITY') && <Negativity projects={props.projects}> </Negativity>}
+      {(chart == 'NEGATIVITY') && <Negativity projects={props.projects}> </Negativity>}
     </Box>
   )
 }

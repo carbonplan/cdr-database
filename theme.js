@@ -60,24 +60,27 @@ export default {
         fontFamily: 'monospace',
         fontSize: [3],
         textAlign: 'right',
-        mt: ['2px']
+        mt: ['2px'],
       },
       label: {
         fontFamily: 'monospace',
         fontSize: [2],
-        mt: ['6px']
+        mt: ['6px'],
+        textTransform: 'uppercase',
       },
       comment: {
         fontFamily: 'monospace',
         fontSize: [1],
         color: 'secondary',
-        mt: [0]
+        mt: [0],
+        mb: [3]
       },
       units: {
         fontFamily: 'monospace',
         color: 'secondary',
         fontSize: [1],
-        ml: [2]
+        ml: [2],
+        textTransform: 'normal'
       }
     },
     link: {
@@ -96,7 +99,7 @@ export default {
       borderStyle: 'solid',
       borderColor: 'muted',
       borderWidth: '0px',
-      borderBottomWidth: '1px',
+      borderBottomWidth: '0px',
       textAlign: 'right'
     },
     select: {
@@ -105,7 +108,7 @@ export default {
       MozAppearance: 'none',
       p: [1],
       pl: [0],
-      width: '200px',
+      width: '175px',
       mt: [3],
       color: 'text',
       bg: 'background',
@@ -133,7 +136,7 @@ export default {
     }
   },
   sizes: {
-    sidebar: 475,
+    sidebar: 500,
     chart: 400,
     main: 250
   },
@@ -159,6 +162,7 @@ export default {
     }
   },
   links: {
+
     nav: {
       color: "primary",
       "&:active": {
@@ -176,6 +180,19 @@ export default {
       cursor: "pointer",
       p: [2],
       pb: [1]
+    },
+    arrow: {
+      color: 'secondary',
+      ml: [2], 
+      fontSize: [4], 
+      position: 'relative', 
+      top: '4px', 
+      display: 'inline-block',
+      textDecoration: 'none',
+      lineHeight: 0,
+      '&:hover': {
+        color: "primary",
+      }
     }
   },
   styles: {
@@ -185,18 +202,15 @@ export default {
       fontWeight: 'body',
     },
     a: {
-      color: "text",
-      "&:active": {
-        color: "text",
+      color: 'secondary',
+      '&:active': {
+        color: 'text',
       },
-      "&:hover": {
-        color: "muted",
-        borderBottom: 'solid',
-        borderWidth: [2]
+      '&:hover': {
+        color: 'text'
       },
-      textDecoration: "none",
-      fontWeight: "bold",
-      cursor: "pointer"
+      textDecoration: 'none',
+      cursor: 'pointer'
     },
     hr: {
       border: 'none',
@@ -220,6 +234,7 @@ export default {
     reforestation: 'green',
     'avoided conversion': 'green',
     agroforestry: 'green',
-    burial: 'yellow'
+    burial: 'yellow',
+    phytoplankton: 'teal'
   }
 }

@@ -1,13 +1,14 @@
 import Metric from './metric'
 import Expander from './expander'
-import { Badge, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
+import Cycle from './graphics/cycle'
+import { Badge, Link, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
 
-const Report = (props) => {
-  const id = props.project.projectId
+const Report = ({ project }) => {
+  const id = project.id
   const visibility = useSelector(state => state.visibility[id])
   const [expanded, setExpanded] = useState(false)
 
@@ -17,6 +18,20 @@ const Report = (props) => {
   const toggle = (e) => {
     setExpanded(!expanded)
   }
+
+  const showMetrics = [
+    'volume',
+    'negativity',
+    'cost',
+    'permanence',
+    'additionality'
+  ]
+
+  const metrics = showMetrics.map((metric) => {
+    return project.metrics.filter((m) => m.name == metric)[0]
+  })
+
+  const cycle = project.metrics.filter((m) => m.name == 'volume')[0]['cycle']
 
   if (visibility) {
     return <Box sx={{ 
@@ -28,9 +43,9 @@ const Report = (props) => {
       py: [4]
     }}>
       <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2], fontSize: [4] }}>{props.project.name}</Heading>
+        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}</Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
-          {props.project.tags.map((tag) =>
+          {project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
               borderColor: theme.tags[tag],
               color: theme.tags[tag],
@@ -45,7 +60,7 @@ const Report = (props) => {
       </Grid>
       <Grid columns={[1, null, '1fr 32px']}>
       <Text variant='description' sx={{ mb: [2] }}> 
-        { props.project.description }
+        { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
         <Expander toggle={toggle} expanded={expanded}></Expander>
@@ -55,12 +70,28 @@ const Report = (props) => {
         {expanded && 
           <>
           <Divider sx={{ mr: [2] }}/>
-          {props.project.metrics.map((metric) => 
+          {metrics.map((metric) => 
             <Metric 
               key={metric.name} 
-              tag={props.project.tags[0]} 
+              tag={project.tags[0]}
               metric={metric}
             ></Metric>) }
+          <Grid columns={[1, null, 2]}>
+            <Box>
+              <Text sx={{ color: 'secondary' }}>Source</Text>
+              <Text>
+                Stripe Decrement
+                <Link variant='arrow' href={ project.source.url }>↗</Link>
+              </Text>
+            </Box>
+            <Box sx={{ pr: [2], textAlign: ['left', 'left', 'right'] }}>
+              <Text sx={{ color: 'secondary' }}>Location</Text>
+              <Text>
+                United States
+                <Link variant='arrow' href={ project.source.url }>↗</Link>
+              </Text>
+            </Box>
+          </Grid>
           </>
         }
       </Box>

@@ -25,9 +25,10 @@ const Main = ({ props }) => {
                 carbon reports
               </Heading>
               <Text sx={{ fontSize: [2], py: [3], pb: [4], pr: [4] }}>
-                Each of these reports quantifies a particular carbon removal project —
-                all metrics are based on publicly available information. Click
-                triangles to see additional charts and explanations.
+                This is a public database of carbon removal projects. 
+                Each report quantifies a project. All metrics are based on publicly available information,
+                and all analysis is meant to be transparent, standardized, and objective.
+                Click plus signs to see additional charts and explanations.
               </Text>
             </Box>
             <Filter></Filter>

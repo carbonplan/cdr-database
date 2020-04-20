@@ -30,12 +30,10 @@ function Index (props) {
     dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
   }
   const tags = query.tags
-  console.log(tags)
+
   if (tags) {
     dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
   }
-
-  console.log(props)
 
   return (
     <Layout>

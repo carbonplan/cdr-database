@@ -20,7 +20,7 @@ const Permanence = (props) => {
   let opacity
   for (var i = 0; i < projects.length; i++) {
 
-    const visible = useSelector(state => state.visibility[projects[i].projectId])
+    const visible = useSelector(state => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 1
@@ -30,7 +30,7 @@ const Permanence = (props) => {
 
     values.push(
       {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'Permanence'))[0].value),
+        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'permanence'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
@@ -52,7 +52,7 @@ const Permanence = (props) => {
       y: { 
         field: 'group', 
         type: 'nominal',
-        scale: { 'padding': 3 },
+        scale: { 'padding': 1.87 },
         axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
       },
       x: {
@@ -85,7 +85,7 @@ const Permanence = (props) => {
   vgSpec.signals.push(...signals)
 
   const width = 300
-  const height = 200
+  const height = 175
 
   function handleClickOn(...args) {
     dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })

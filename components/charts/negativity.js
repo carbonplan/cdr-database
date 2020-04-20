@@ -19,7 +19,7 @@ const Negativity = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-    const visible = useSelector(state => state.visibility[projects[i].projectId])
+    const visible = useSelector(state => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 1
@@ -29,7 +29,7 @@ const Negativity = (props) => {
     
     values.push(
       {
-        negativity: parseFloat(projects[i].metrics.filter(m => (m.name == 'Net negativity ratio'))[0].value),
+        negativity: 1 - parseFloat(projects[i].metrics.filter(m => (m.name == 'negativity'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
@@ -51,13 +51,13 @@ const Negativity = (props) => {
       y: { 
         field: 'group', 
         type: 'nominal',
-        scale: { 'padding': 2.5 },
+        scale: { 'padding': 1.87 },
         axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
       },
       x: {
         field: 'negativity', 
         type: 'quantitative', 
-        axis: { title: 'Net Negativity Ratio', tickCount: 2 },
+        axis: { title: 'NEGATIVITY', tickCount: 2 },
         scale: { type: 'linear', domain: [-0.1, 1.1], nice: false },
       },
       color: {
@@ -83,7 +83,7 @@ const Negativity = (props) => {
   vgSpec.signals.push(...signals)
 
   const width = 300
-  const height = 200
+  const height = 175
 
   function handleClickOn(...args) {
     dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })

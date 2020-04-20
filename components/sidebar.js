@@ -1,5 +1,5 @@
 import theme from '.././theme'
-import About from './about'
+import Methods from './methods/'
 import Summary from './summary'
 import { Box } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
@@ -45,7 +45,7 @@ const Sidebar = ({ props }) => {
         borderLeftWidth: '1px' 
       }}>
         <Summary projects={ props.projects }></Summary>
-        <About></About>
+        <Methods></Methods>
       </Box>
     </Box>
   )

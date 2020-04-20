@@ -2,43 +2,55 @@
 import { jsx, Box } from 'theme-ui'
 import { useThemeUI } from 'theme-ui'
 
-const Cycle = ({ tag, schema }) => {
+const Cycle = ({ tag, data }) => {
 
   const context = useThemeUI()
   const theme = context.theme
 
   const sxStock = (stock) => {
-    if (schema.stock[stock] > 0) return theme.tags[tag]
-    else return 'rgb(175,175,175)'
+    if (data.stock[stock] > 0) return theme.tags[tag]
+    else return 'secondary'
   }
 
   const sxStockInner = (stock) => {
-    if (schema.stock[stock]) return theme.tags[tag]
+    if (data.stock[stock]) return theme.tags[tag]
     else return 'none'
   }
 
   const sxFlux = (flux) => {
-    const matches = schema.flux.filter((fx) => 
+    const enhanced = data.flux.filter((fx) => 
       (fx.from == flux.from) &&
       (fx.to == flux.to) &&
       (fx.type == 'enhanced')
     )
-    if (matches.length > 0) return theme.tags[tag]
-    else return 'rgb(175,175,175)'
-  }
-
-  const sxFluxAvoided = (flux) => {
-    const matches = schema.flux.filter((fx) => 
+    const avoided = data.flux.filter((fx) => 
       (fx.from == flux.from) &&
       (fx.to == flux.to) &&
       (fx.type == 'avoided')
     )
-    if (matches.length > 0) return theme.tags[tag]
+    if (avoided.length > 0) {
+      return 'none'
+    } else if (enhanced.length > 0) {
+      return theme.tags[tag]
+    } else {
+      return 'secondary'
+    }
+  }
+
+  const sxFluxAvoided = (flux) => {
+    const avoided = data.flux.filter((fx) => 
+      (fx.from == flux.from) &&
+      (fx.to == flux.to) &&
+      (fx.type == 'avoided')
+    )
+    if (avoided.length > 0) return theme.tags[tag]
     else return 'none'
   }
 
   return <Box sx={{ 
       ml: ['-8px'], 
+      mt: ['-23px'],
+      mb: ['-5px'],
       transform: 'scale(0.75)', 
       transformOrigin: 'left'
     }}>
@@ -46,9 +58,9 @@ const Cycle = ({ tag, schema }) => {
       height='123px' 
       width='270px'
       stroke='none'
-      stroke-width='1px'
-      stroke-linecap='round'
-      stroke-miterlimit='10'
+      strokeWidth='1px'
+      strokeLinecap='round'
+      strokeMiterlimit='10'
       fill='none'
     >
       <rect sx={{ fill: 'muted' }} x="11.3" y="14.4" width="248.8" height="25.9"/>
@@ -105,10 +117,12 @@ const Cycle = ({ tag, schema }) => {
         C19.3,48,19,48.1,18.8,48.1z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'geological', to: 'atmosphere'}) }} d="M30.9,48.1c-0.3,0-0.5-0.1-0.7-0.3L18.1,35.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l12.1,12.1c0.4,0.4,0.4,1,0,1.4
         C31.4,48,31.1,48.1,30.9,48.1z"/>
+      <path sx={{ fill: sxFluxAvoided({from: 'geological', to: 'atmosphere'}) }} d="M24.9,64.2c-0.6,0-1-0.4-1-1V26.8c0-0.6,0.4-1,1-1s1,0.4,1,1v36.3C25.9,63.7,25.4,64.2,24.9,64.2z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'land', to: 'atmosphere'}) }} d="M164,48.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l12.1-12.1c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-12.1,12.1
         C164.6,48,164.3,48.1,164,48.1z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'land', to: 'atmosphere'}) }} d="M176.1,48.1c-0.3,0-0.5-0.1-0.7-0.3l-12.1-12.1c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l12.1,12.1c0.4,0.4,0.4,1,0,1.4
         C176.7,48,176.4,48.1,176.1,48.1z"/>
+      <path sx={{ fill: sxFluxAvoided({from: 'land', to: 'atmosphere'}) }} d="M170.2,64.2c-0.6,0-1-0.4-1-1V26.8c0-0.6,0.4-1,1-1s1,0.4,1,1v36.3C171.2,63.7,170.7,64.2,170.2,64.2z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'ocean', to: 'atmosphere'}) }} d="M222.6,48.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4L234,34.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-12.1,12.1
         C223.1,48,222.9,48.1,222.6,48.1z"/>
       <path sx={{ fill: sxFluxAvoided({from: 'ocean', to: 'atmosphere'}) }} d="M234.7,48.1c-0.3,0-0.5-0.1-0.7-0.3l-12.1-12.1c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l12.1,12.1c0.4,0.4,0.4,1,0,1.4

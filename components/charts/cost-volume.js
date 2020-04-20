@@ -20,7 +20,7 @@ const CostVolume = (props) => {
   let opacity
   for (var i = 0; i < projects.length; i++) {
     
-    const visible = useSelector(state => state.visibility[projects[i].projectId])
+    const visible = useSelector(state => state.visibility[projects[i].id])
     
     if (visible) {
       opacity = 1
@@ -30,8 +30,8 @@ const CostVolume = (props) => {
     
     values.push(
       {
-        cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'Cost today'))[0].value),
-        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'Total project volume'))[0].value),
+        cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'cost'))[0].value),
+        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'volume'))[0].value),
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
         opacity: opacity
@@ -52,13 +52,13 @@ const CostVolume = (props) => {
       x: {
         field: 'volume',
         type: 'quantitative',
-        axis: { title: 'TOTAL VOLUME tCO2', tickCount: 3 },
+        axis: { title: 'VOLUME tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [2, 100000000], nice: false },
       },
       y: {
         field: 'cost',
         type: 'quantitative',
-        axis: { title: 'COST TODAY $/tCO2', tickCount: 3 },
+        axis: { title: 'COST $/tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [3, 3000], nice: false },
       },
       color: {
@@ -79,7 +79,7 @@ const CostVolume = (props) => {
   vgSpec.signals = signals
 
   const width = 300
-  const height = 200
+  const height = 175
 
   function handleClickOn(...args) {
     dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
