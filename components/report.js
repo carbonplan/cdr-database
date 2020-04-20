@@ -20,9 +20,9 @@ const Report = ({ project }) => {
   }
 
   const showMetrics = [
+    'cost',
     'volume',
     'negativity',
-    'cost',
     'permanence',
     'additionality'
   ]

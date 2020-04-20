@@ -21,7 +21,7 @@ const Expander = ({ toggle, expanded }) => {
           strokeWidth: 2, 
           transition: '0.25s all',
           transformOrigin: '8px 8px',
-          transform: expanded ? 'rotate(-45deg)' : ''
+          transform: expanded ? 'rotate(45deg)' : ''
         }} />
   </svg>
   </IconButton>

@@ -4,9 +4,9 @@ const Overall = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      Most metrics are currently based directly on information provided by projects.
-      We are actively developing methods for calibrating these values based on independent data and
-      models.
+      Most metrics are currently based directly on information provided by projects, with our
+      annotation. We are actively developing methods for calibration
+      based on independent data and models.
     </Text>
     <Text>
       We annotate metrics with their provenance. For volume,

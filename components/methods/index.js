@@ -47,7 +47,7 @@ const About = () => {
   return (
     <Box
       sx={{
-        height: 'calc(50vh - 0.5*56px)',
+        height: 'calc(100vh - 406px)',
         borderStyle: 'solid', 
         borderColor: 'muted', 
         borderWidth: '0px', 
