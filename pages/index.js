@@ -21,6 +21,7 @@ function Index (props) {
   const dispatch = useDispatch()
   dispatch({ type: 'INIT_PROJECTS', value: props.projects })
   dispatch({ type: 'INIT_FUSE' })
+  dispatch({ type: 'INIT_VISIBILITY' })
 
   const router = useRouter()
   const query = router.query
@@ -28,15 +29,9 @@ function Index (props) {
 
   if (id) {
     dispatch({ type: 'UPDATE_SEARCH', value: id.replace(/^"(.*)"$/, '$1') })
-    if (expand) dispatch({ type: 'SHOW_ONE', value: true })
-  } else {
-    dispatch({ type: 'INIT_VISIBILITY' })
   }
 
-  const tags = query.tags
-  if (tags) {
-    dispatch({ type: 'SET_TAGS', value: tags.replace(/^"(.*)"$/, '$1').split(',') })
-  }
+  if (expand) dispatch({ type: 'SHOW_ONE', value: true })
 
   return (
     <Layout>

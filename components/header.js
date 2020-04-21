@@ -6,10 +6,11 @@ const Header = () => {
       margin: '0 auto',
       width: '100%',
       justifyContent: 'space-between',
-      py: [3]
+      pt: ['12px'],
+      pb: [3]
     }}
   >
-    <Box>
+    <Box sx={{ fontSize: [3] }}>
       (carbon)plan
     </Box>
     <Box>
