@@ -25,8 +25,7 @@ function Index (props) {
 
   const router = useRouter()
   const query = router.query
-  const search = query.search
-  const id = query.id
+  const { search, id, expand } = query
 
   if (search) {
     dispatch({ type: 'UPDATE_SEARCH', value: search.replace(/^"(.*)"$/, '$1') })
@@ -34,6 +33,9 @@ function Index (props) {
   if (id) {
     dispatch({ type: 'UPDATE_SEARCH', value: id.replace(/^"(.*)"$/, '$1') })
   }
+  // if (expand) {
+  //   dispatch({ type: 'SHOW_ONE', value: true })
+  // }
   const tags = query.tags
 
   if (tags) {
