@@ -59,7 +59,7 @@ const CostVolume = (props) => {
         field: 'cost',
         type: 'quantitative',
         axis: { title: 'COST $/tCO2', tickCount: 3 },
-        scale: { type: 'log', domain: [3, 3000], nice: false },
+        scale: { type: 'log', domain: [2, 2000], nice: false },
       },
       color: {
         field: 'color',

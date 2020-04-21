@@ -49,8 +49,8 @@ const Report = ({ project }) => {
       borderColor: 'muted',
       borderWidth: '0px', 
       borderBottomWidth: '1px',
-      pr: [4],
-      py: [4]
+      pr: [0, 4, 4],
+      py: [3]
     }}>
       <Grid columns={[1, null, '1fr 300px']}>
         <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}</Heading>
@@ -78,7 +78,7 @@ const Report = ({ project }) => {
       </Grid>
       <Box>
         {(expanded || showOne) && 
-          <>
+          <Box sx={{ pb: [1] }}>
           <Divider sx={{ mr: [2] }}/>
           {metrics.map((metric) => 
             <Metric 
@@ -101,7 +101,7 @@ const Report = ({ project }) => {
               </Text>
             </Box>
           </Grid>
-          </>
+          </Box>
         }
       </Box>
     </Box>
