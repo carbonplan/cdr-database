@@ -3,14 +3,17 @@ import Expander from './expander'
 import Cycle from './graphics/cycle'
 import { Badge, Link, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
 
 const Report = ({ project }) => {
   const id = project.id
 
+  const dispatch = useDispatch()
+
   const visibility = useSelector(state => state.visibility[id])
+  const showOne = useSelector(state => state.showOne)
 
   const [expanded, setExpanded] = useState(false)
 
@@ -18,7 +21,12 @@ const Report = ({ project }) => {
   const theme = context.theme
 
   const toggle = (e) => {
-    setExpanded(!expanded)
+    if (showOne) {
+      dispatch({ type: 'SHOW_ONE', value: false })
+      setExpanded(false)
+    } else {
+      setExpanded(!expanded)
+    }
   }
 
   const showMetrics = [
@@ -41,8 +49,8 @@ const Report = ({ project }) => {
       borderColor: 'muted',
       borderWidth: '0px', 
       borderBottomWidth: '1px',
-      pr: [4],
-      py: [4]
+      pr: [0, 4, 4],
+      py: [3]
     }}>
       <Grid columns={[1, null, '1fr 300px']}>
         <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}</Heading>
@@ -65,12 +73,12 @@ const Report = ({ project }) => {
         { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
-        <Expander toggle={toggle} expanded={expanded}></Expander>
+        <Expander toggle={toggle} expanded={(expanded || showOne)}></Expander>
       </Box>
       </Grid>
       <Box>
-        {expanded && 
-          <>
+        {(expanded || showOne) && 
+          <Box sx={{ pb: [1] }}>
           <Divider sx={{ mr: [2] }}/>
           {metrics.map((metric) => 
             <Metric 
@@ -93,7 +101,7 @@ const Report = ({ project }) => {
               </Text>
             </Box>
           </Grid>
-          </>
+          </Box>
         }
       </Box>
     </Box>

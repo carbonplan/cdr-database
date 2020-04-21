@@ -17,10 +17,9 @@ const Squares = ({ tag, data }) => {
       stroke='none'
       fill='none'
     >
-      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 0) ? 1 : 0.2 }} x="0" y="0" width="16" height="12"/>
-      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 1) ? 1 : 0.2 }} x="24.66" y="0" width="16" height="12"/>
-      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 2) ? 1 : 0.2 }} x="49.32" y="0" width="16" height="12"/>
-      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 3) ? 1 : 0.2 }} x="74" y="0" width="16" height="12"/>
+      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 0) ? 1 : 0.2 }} x="0" y="0" width="25" height="12"/>
+      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 1) ? 1 : 0.2 }} x="33" y="0" width="25" height="12"/>
+      <rect sx={{ fill: theme.tags[tag], opacity: (data >= 2) ? 1 : 0.2 }} x="65" y="0" width="25" height="12"/>
     </svg>
   </Box>
 }

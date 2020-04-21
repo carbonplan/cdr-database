@@ -11,7 +11,7 @@ const Volume = () => {
       </Text>
       <Text sx={{ mb: [3] }}>
         Note that a project with large VOLUME but low NEGATIVITY
-        would not neccessarily be an effective form of carbon removal
+        would not be an effective form of carbon removal
         due to the large emissions.
       </Text>
     </>

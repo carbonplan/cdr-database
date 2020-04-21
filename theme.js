@@ -58,13 +58,13 @@ export default {
     metric: {
       value: {
         fontFamily: 'monospace',
-        fontSize: [3],
+        fontSize: [2, 2, 3],
         textAlign: 'right',
-        mt: ['2px'],
+        mt: ['6px', '6px', '2px'],
       },
       label: {
         fontFamily: 'monospace',
-        fontSize: [2],
+        fontSize: [2, 2, 2],
         mt: ['6px'],
         textTransform: 'uppercase',
       },
