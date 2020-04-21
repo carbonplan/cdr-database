@@ -3,16 +3,14 @@ import Expander from './expander'
 import Cycle from './graphics/cycle'
 import { Badge, Link, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
 
 const Report = ({ project }) => {
   const id = project.id
-  const dispatch = useDispatch()
 
   const visibility = useSelector(state => state.visibility[id])
-  const showOne = useSelector(state => state.showOne)
 
   const [expanded, setExpanded] = useState(false)
 
@@ -20,12 +18,7 @@ const Report = ({ project }) => {
   const theme = context.theme
 
   const toggle = (e) => {
-    if (showOne) {
-      dispatch({ type: 'SHOW_ONE', value: false })
-      setExpanded(false)
-    } else {
-      setExpanded(!expanded)
-    }
+    setExpanded(!expanded)
   }
 
   const showMetrics = [
@@ -72,11 +65,11 @@ const Report = ({ project }) => {
         { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
-        <Expander toggle={toggle} expanded={(expanded || showOne)}></Expander>
+        <Expander toggle={toggle} expanded={expanded}></Expander>
       </Box>
       </Grid>
       <Box>
-        {(expanded || showOne) && 
+        {expanded && 
           <>
           <Divider sx={{ mr: [2] }}/>
           {metrics.map((metric) => 

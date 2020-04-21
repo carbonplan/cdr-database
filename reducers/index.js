@@ -7,7 +7,6 @@ const initialState = {
   tags: ['dac', 'forests', 'mineralization', 'soil', 'ocean', 'biomass'],
   search: '',
   visibility: {},
-  showOne: false,
   projects: []
 }
 
@@ -31,7 +30,6 @@ const combinedSearch = (tags, search, fuse, projects) => {
 }
 
 const reducer = (state = initialState, action) => {
-  let search, visibility
   switch (action.type) {
     default:
       return state
@@ -61,21 +59,17 @@ const reducer = (state = initialState, action) => {
         visibility: combinedSearch(action.value, state.search, state.fuse, state.projects)
       }
     case 'UPDATE_SEARCH':
-      visibility = combinedSearch(state.tags, action.value, state.fuse, state.projects)
       return {
         ...state,
         search: action.value,
-        visibility: visibility,
-        showOne: (Object.values(visibility).filter(x => x).length == 1)
+        visibility: combinedSearch(state.tags, action.value, state.fuse, state.projects),
       }
     case 'OR_SEARCH':
-      search = state.search.concat(' | ', action.value)
-      visibility = combinedSearch(state.tags, search, state.fuse, state.projects)
+      const newSearch = state.search.concat(' | ', action.value)
       return {
         ...state,
-        search: search,
-        visibility: visibility,
-        showOne: (Object.values(visibility).filter(x => x).length == 1)
+        search: newSearch,
+        visibility: combinedSearch(state.tags, newSearch, state.fuse, state.projects)
       }
     case 'INIT_PROJECTS':
       return {
