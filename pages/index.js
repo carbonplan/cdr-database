@@ -33,9 +33,9 @@ function Index (props) {
   if (id) {
     dispatch({ type: 'UPDATE_SEARCH', value: id.replace(/^"(.*)"$/, '$1') })
   }
-  // if (expand) {
-  //   dispatch({ type: 'SHOW_ONE', value: true })
-  // }
+  if (expand) {
+    dispatch({ type: 'SHOW_ONE', value: true })
+  }
   const tags = query.tags
 
   if (tags) {
@@ -51,7 +51,6 @@ function Index (props) {
 }
 
 export async function getStaticProps() {
-
   const res = await fetch(globals.apiServer + 'projects')
   const data = await res.json()
 
