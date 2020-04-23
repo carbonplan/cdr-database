@@ -2,11 +2,19 @@ import { Text } from 'theme-ui'
 
 const Permanence = () => {
   return (
-    <Text>
-      The PERMANENCE of a project is the likely duration of its durable storage.
-      Estimates are taken from projects and validated or modified
-      based on known parameters that limit permanence.
+    <>
+    <Text sx={{ mb: [2] }}>
+      We consider the PERMANENCE of a project the duration over which durable storage
+      can be reasonable assured. We apply hueristics to calibrate self-reported data.
     </Text>
+    <Text>
+      When a range is provided, we report the minimum. For projects with 
+      contractual commitments (e.g. for soil and forests), we consider the contract duration
+      the duration of permanence, even if it is lower than the number
+      suggested by the underlying biogeophysics. And all times are reported 
+      relative to the most recent project documents.
+    </Text>
+    </>
   )
 }
 

@@ -16,10 +16,10 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: '#ebebeb',
+    text: '#ebebec',
     background: '#1b1e23',
     primary: '#e4e4e4',
-    secondary: '#818284',
+    secondary: '#808080',
     muted: '#363a3e',
     red: '#f07071',
     orange: '#ea9755',
@@ -32,10 +32,10 @@ export default {
     grey: '#a9b4c4',
     modes: {
       light: {
-        text: '#1b1e23',
+        text: '#333333',
         background: '#ebebec',
         primary: '#484848',
-        secondary: '#636363',
+        secondary: '#b0b0b0',
         muted: 'rgb(200,200,200)',
         red: '#f07071',
         orange: '#ea9755',
