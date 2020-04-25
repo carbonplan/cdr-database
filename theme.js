@@ -78,7 +78,7 @@ export default {
         fontSize: ['18px']
       },
       comment: {
-        fontFamily: 'monospace',
+        fontFamily: 'body',
         fontSize: [1],
         color: 'secondary',
         letterSpacing: 'body',
