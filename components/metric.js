@@ -24,6 +24,7 @@ const Metric = ({ metric, tag }) => {
   const format = (key, value) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
+    if (key == 'transparency') return ''
     else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
     else if (key == 'negativity') return parseFloat(value).toFixed(2)
     else if (key == 'volume') {
@@ -54,12 +55,14 @@ const Metric = ({ metric, tag }) => {
         {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
         {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
         {(metric.name == 'additionality') && <Squares tag={tag} data={metric.value}></Squares>}
+        {(metric.name == 'transparency') && <Squares tag={tag} data={metric.value}></Squares>}
       </Box>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-        {(metric.rating == 1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
-        {(metric.rating == -1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>x</Text>}
+        {(metric.rating === 1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
+        {(metric.rating === 0) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>?</Text>}
+        {(metric.rating === -1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>x</Text>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>
@@ -69,15 +72,13 @@ const Metric = ({ metric, tag }) => {
     </Grid>
     {expanded && 
       <Box sx={{ pl: ['5px', '5px', '207px'] }}>
-      {((metric.name == 'negativity') && (metric.kind != 'N/A')) && 
-        <Text variant='metric.comment' sx={{ display: 'inline-block' }}>
-          Total emissions are {metric.emissions} tCO2 for {metric.removal} tCO2 removed,
-          based on {(metric.kind == 'ratio') ? 'technology parameters' : 'an instantiated project'}.
-        </Text>
+      {(metric.claim) && <Text variant='metric.comment'>
+        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>(claim)</Text>
+        {metric.claim}</Text>
       }
-      <Text variant='metric.comment'>{metric.comment}</Text>
-      {(metric.name == 'volume') &&
-        <Cycle tag={tag} data={metric.cycle}></Cycle>
+       {(metric.comment) && <Text variant='metric.comment'>
+        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>(comment)</Text>
+        {metric.comment}</Text>
       }
       </Box>
     }

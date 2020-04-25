@@ -30,11 +30,13 @@ const Report = ({ project }) => {
   }
 
   const showMetrics = [
-    'cost',
+    'mechanism',
     'volume',
     'negativity',
     'permanence',
-    'additionality'
+    'cost',
+    'additionality',
+    'transparency'
   ]
 
   const metrics = showMetrics.map((metric) => {
