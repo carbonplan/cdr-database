@@ -2,6 +2,7 @@ import Expander from './expander'
 import Cycle from './graphics/cycle'
 import Bar from './graphics/bar'
 import Squares from './graphics/squares'
+import Emissions from './graphics/emissions'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -50,6 +51,7 @@ const Metric = ({ metric, tag }) => {
         {format(metric.name, metric.value)}
       </Text>
       <Box sx={{ display: ['none', 'none', 'inherit']}}>
+        {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}
         {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
         {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
         {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
@@ -60,9 +62,9 @@ const Metric = ({ metric, tag }) => {
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-        {(metric.rating === 1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
-        {(metric.rating === 0) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>?</Text>}
-        {(metric.rating === -1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>x</Text>}
+        {(metric.rating === 1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>√</Text>}
+        {(metric.rating === 0) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>?</Text>}
+        {(metric.rating === -1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>x</Text>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>
@@ -72,12 +74,12 @@ const Metric = ({ metric, tag }) => {
     </Grid>
     {expanded && 
       <Box sx={{ pl: ['5px', '5px', '207px'] }}>
-      {(metric.claim) && <Text variant='metric.comment'>
-        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>(claim)</Text>
+      {(metric.claim) && <Text variant='metric.comment' sx={{ mt: [1], mb: [2] }}>
+        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>Claim</Text>
         {metric.claim}</Text>
       }
-       {(metric.comment) && <Text variant='metric.comment'>
-        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>(comment)</Text>
+       {(metric.comment) && <Text variant='metric.comment' sx={{ mt: [1], mb: [3] }}>
+        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>Comment</Text>
         {metric.comment}</Text>
       }
       </Box>

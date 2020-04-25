@@ -6,6 +6,9 @@ export default {
     monospace: 'relative-mono-11-pitch-pro, Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  letterSpacings: {
+    body: '0.02em' 
+  },
   fontWeights: {
     body: 400,
     heading: 400,
@@ -13,6 +16,7 @@ export default {
   },
   lineHeights: {
     body: 1.45,
+    small: 1.3,
     heading: 1.125,
   },
   colors: {
@@ -53,7 +57,7 @@ export default {
     description: {
       fontSize: [2],
       marginBlockStart: '0.3em',
-      mb: [1]
+      mb: [1],
     },
     metric: {
       value: {
@@ -68,12 +72,17 @@ export default {
         mt: ['6px'],
         textTransform: 'uppercase',
       },
+      rating: {
+        display: 'inline-block',
+        ml: [3],
+        fontSize: ['18px']
+      },
       comment: {
         fontFamily: 'monospace',
         fontSize: [1],
         color: 'secondary',
-        mt: [0],
-        mb: [3]
+        letterSpacing: 'body',
+        lineHeight: 'small'
       },
       units: {
         fontFamily: 'monospace',
@@ -162,7 +171,6 @@ export default {
     }
   },
   links: {
-
     nav: {
       color: "primary",
       "&:active": {
@@ -199,7 +207,7 @@ export default {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body',
+      fontWeight: 'body'
     },
     a: {
       color: 'secondary',
