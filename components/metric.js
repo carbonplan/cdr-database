@@ -20,7 +20,7 @@ const Metric = ({ metric, tag }) => {
   }
 
   const hasUnits = (metric.units != '')
-  const hasDetails = (metric.comment != '')
+  const hasDetails = ((metric.claim != '') || (metric.comment != ''))
 
   const format = (key, value) => {
     if (value == 'N/A') return 'N/A'
@@ -73,14 +73,33 @@ const Metric = ({ metric, tag }) => {
       }
     </Grid>
     {expanded && 
-      <Box sx={{ pl: ['5px', '5px', '207px'] }}>
-      {(metric.claim) && <Text variant='metric.comment' sx={{ mt: [1], mb: [2] }}>
-        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>Claim</Text>
-        {metric.claim}</Text>
+      <Box sx={{ 
+        mt: ((metric.claim || metric.comment) ? [2] : [0] ),
+        mb: ((metric.claim || metric.comment) ? ['20px'] : [0] )
+      }}>
+      {(metric.claim) && 
+        <Grid 
+          gap={['12px', '16px', '16px']} 
+          columns={['20px 50px 1fr', '20px 50px 1fr', '191px 1fr 30px']}
+          sx={{ }}
+        >
+          <Text variant='metric.comment' sx={{ color: theme.tags[tag], textAlign: 'right', mr: [2] }}>NOTES</Text>
+          <Text variant='metric.comment' sx={{ }}>{metric.claim}</Text>
+        </Grid>
       }
-       {(metric.comment) && <Text variant='metric.comment' sx={{ mt: [1], mb: [3] }}>
-        <Text sx={{ color: theme.tags[tag], display: 'inline-block', mr: [2] }}>Comment</Text>
-        {metric.comment}</Text>
+      <Box sx={{ 
+        mt: ((metric.claim && metric.comment) ? [2] : [0] )
+      }}>
+      </Box>
+      {(metric.comment) && 
+        <Grid 
+          gap={['12px', '16px', '16px']} 
+          columns={['20px 50px 1fr', '20px 50px 1fr', '191px 1fr 30px']}
+          sx={{ }}
+        >
+          <Text variant='metric.comment' sx={{ color: theme.tags[tag], textAlign: 'right', mr: [2] }}>COMMENT</Text>
+          <Text variant='metric.comment' sx={{ }}>{metric.comment}</Text>
+        </Grid>
       }
       </Box>
     }
