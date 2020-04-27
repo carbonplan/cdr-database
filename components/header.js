@@ -1,4 +1,5 @@
 import { Box, Flex, MenuButton } from 'theme-ui'
+import Logo from './logo'
 
 const Header = () => {
   return <Flex
@@ -10,8 +11,8 @@ const Header = () => {
       pb: [3]
     }}
   >
-    <Box sx={{ fontSize: [3] }}>
-      (carbon)plan
+    <Box>
+      <Logo></Logo>
     </Box>
     <Box>
       <MenuButton aria-label='Toggle Menu' />
