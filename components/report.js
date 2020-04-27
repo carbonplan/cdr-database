@@ -57,9 +57,11 @@ const Report = ({ project }) => {
       <Grid columns={[1, null, '1fr 300px']}>
         <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}
           <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
+            {/* 
             <Text sx={{ display: 'inline-block', color: theme.tags[project.tags[0]] }}>{ project.score }</Text>
             <Text sx={{ display: 'inline-block', ml: [1], mr: [1] }}>/</Text>
-            <Text sx={{ display: 'inline-block' }}>10</Text>
+            <Text sx={{ display: 'inline-block' }}>10</Text> 
+            */}
           </Text>
         </Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
