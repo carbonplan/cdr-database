@@ -28,9 +28,7 @@ const Main = ({ props }) => {
                 This is a public database of reports on carbon removal projects. 
                 All metrics are based on public information.
                 Analysis aims to be transparent, standardized, and objective.
-                Marks next to metrics indicate that have confidence in the value
-                (√), we are unable to confirm it (?), or we have reason to doubt it (x). 
-                Click the + to see detailed metrics and explanations.
+                Click the + to see details.
               </Text>
             </Box>
             <Filter></Filter>
