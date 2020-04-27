@@ -26,6 +26,7 @@ const Metric = ({ metric, tag }) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
     if (key == 'transparency') return ''
+    if ((key == 'permanence') && (value == 1000)) return '1000+'
     else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
     else if (key == 'negativity') return parseFloat(value).toFixed(2)
     else if (key == 'volume') {
@@ -74,21 +75,21 @@ const Metric = ({ metric, tag }) => {
     </Grid>
     {expanded && 
       <Box sx={{ 
-        mt: ((metric.claim || metric.comment) ? [2] : [0] ),
-        mb: ((metric.claim || metric.comment) ? ['20px'] : [0] )
+        mt: ((metric.notes || metric.comment) ? [2] : [0] ),
+        mb: ((metric.notes || metric.comment) ? ['20px'] : [0] )
       }}>
-      {(metric.claim) && 
+      {(metric.notes) && 
         <Grid 
           gap={['12px', '16px', '16px']} 
           columns={['20px 50px 1fr', '20px 50px 1fr', '191px 1fr 30px']}
           sx={{ }}
         >
           <Text variant='metric.comment' sx={{ color: theme.tags[tag], textAlign: 'right', mr: [2] }}>NOTES</Text>
-          <Text variant='metric.comment' sx={{ }}>{metric.claim}</Text>
+          <Text variant='metric.comment' sx={{ }}>{metric.notes}</Text>
         </Grid>
       }
       <Box sx={{ 
-        mt: ((metric.claim && metric.comment) ? [2] : [0] )
+        mt: ((metric.notes && metric.comment) ? [2] : [0] )
       }}>
       </Box>
       {(metric.comment) && 
