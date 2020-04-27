@@ -1,7 +1,7 @@
 import { Box, Heading, Text, Badge } from 'theme-ui'
 import Overall from './overall'
 import Volume from './volume'
-import Cycle from './cycle'
+import Mechanism from './mechanism'
 import Negativity from './negativity'
 import Cost from './cost'
 import Permanence from './permanence'
@@ -14,7 +14,7 @@ import { alpha } from '@theme-ui/color'
 const contents = {
   'overall': <Overall></Overall>,
   'volume': <Volume></Volume>,
-  'cycle': <Cycle></Cycle>,
+  'mechanism': <Mechanism></Mechanism>,
   'negativity': <Negativity></Negativity>,
   'cost': <Cost></Cost>,
   'permanence': <Permanence></Permanence>,
@@ -61,7 +61,8 @@ const About = () => {
         methods
       </Heading>
       <Box sx={{ maxWidth: '370px', mb: [2] }}>
-        {['overall', 'volume', 'cycle', 'negativity', 'cost', 'permanence', 'additionality', 'access', 'feedback?'].map((name) => 
+        {['overall', 'mechanism', 'volume', 'negativity', 'cost', 'permanence',
+          'additionality', 'access', 'feedback?'].map((name) => 
           <Badge variant='primary' key={name} sx={getStyle(name)} onClick={() => setMethod(name)}>{name}</Badge>
         )}
       </Box>

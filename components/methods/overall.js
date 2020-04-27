@@ -9,11 +9,10 @@ const Overall = () => {
       based on independent data and models.
     </Text>
     <Text>
-      We annotate metrics with explanation and context. For volume,
-      negativity, and permanence, a √ indicates our confidence in the metric
-      and an x indicates we have questions. Absence of a mark suggests that we
-      need to do further work and/or require more information,
-      and should not be read as a critque.
+      Marks next to metrics indicate either that have confidence in the value
+      (√), we are unable to confirm it (?), or we have reason to doubt it (x). 
+      We additionally annotate metrics with notes on basic project facts and 
+      comments explaining our current evaluation.
     </Text>
     </>
   )

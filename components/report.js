@@ -30,11 +30,13 @@ const Report = ({ project }) => {
   }
 
   const showMetrics = [
-    'cost',
+    'mechanism',
     'volume',
     'negativity',
     'permanence',
-    'additionality'
+    'cost',
+    'additionality',
+    'transparency'
   ]
 
   const metrics = showMetrics.map((metric) => {
@@ -53,7 +55,15 @@ const Report = ({ project }) => {
       py: [3]
     }}>
       <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}</Heading>
+        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}
+          <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
+            {/* 
+            <Text sx={{ display: 'inline-block', color: theme.tags[project.tags[0]] }}>{ project.score }</Text>
+            <Text sx={{ display: 'inline-block', ml: [1], mr: [1] }}>/</Text>
+            <Text sx={{ display: 'inline-block' }}>10</Text> 
+            */}
+          </Text>
+        </Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
           {project.tags.map((tag) =>
             <Badge key={tag} variant='primary' sx={{ 
@@ -90,7 +100,7 @@ const Report = ({ project }) => {
             <Box>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
-                Stripe Decrement
+                { project.source.name }
                 <Link variant='arrow' href={ project.source.url }>↗</Link>
               </Text>
             </Box>

@@ -2,6 +2,7 @@ import Expander from './expander'
 import Cycle from './graphics/cycle'
 import Bar from './graphics/bar'
 import Squares from './graphics/squares'
+import Emissions from './graphics/emissions'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -19,11 +20,13 @@ const Metric = ({ metric, tag }) => {
   }
 
   const hasUnits = (metric.units != '')
-  const hasDetails = (metric.comment != '')
+  const hasDetails = ((metric.claim != '') || (metric.comment != ''))
 
   const format = (key, value) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
+    if (key == 'transparency') return ''
+    if ((key == 'permanence') && (value == 1000)) return '1000+'
     else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
     else if (key == 'negativity') return parseFloat(value).toFixed(2)
     else if (key == 'volume') {
@@ -49,17 +52,20 @@ const Metric = ({ metric, tag }) => {
         {format(metric.name, metric.value)}
       </Text>
       <Box sx={{ display: ['none', 'none', 'inherit']}}>
+        {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}
         {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
         {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
         {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
         {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
         {(metric.name == 'additionality') && <Squares tag={tag} data={metric.value}></Squares>}
+        {(metric.name == 'transparency') && <Squares tag={tag} data={metric.value}></Squares>}
       </Box>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-        {(metric.rating == 1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>√</Text>}
-        {(metric.rating == -1) && <Text sx={{ display: 'inline-block', ml: [3], color: theme.tags[tag] }}>x</Text>}
+        {(metric.rating === 1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>√</Text>}
+        {(metric.rating === 0) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>?</Text>}
+        {(metric.rating === -1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>x</Text>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>
@@ -68,16 +74,33 @@ const Metric = ({ metric, tag }) => {
       }
     </Grid>
     {expanded && 
-      <Box sx={{ pl: ['5px', '5px', '207px'] }}>
-      {((metric.name == 'negativity') && (metric.kind != 'N/A')) && 
-        <Text variant='metric.comment' sx={{ display: 'inline-block' }}>
-          Total emissions are {metric.emissions} tCO2 for {metric.removal} tCO2 removed,
-          based on {(metric.kind == 'ratio') ? 'technology parameters' : 'an instantiated project'}.
-        </Text>
+      <Box sx={{ 
+        mt: ((metric.notes || metric.comment) ? [2] : [0] ),
+        mb: ((metric.notes || metric.comment) ? ['20px'] : [0] )
+      }}>
+      {(metric.notes) && 
+        <Grid 
+          gap={['12px', '16px', '16px']} 
+          columns={['20px 50px 1fr', '20px 50px 1fr', '191px 1fr 30px']}
+          sx={{ }}
+        >
+          <Text variant='metric.comment' sx={{ color: theme.tags[tag], textAlign: 'right', mr: [2] }}>NOTES</Text>
+          <Text variant='metric.comment' sx={{ }}>{metric.notes}</Text>
+        </Grid>
       }
-      <Text variant='metric.comment'>{metric.comment}</Text>
-      {(metric.name == 'volume') &&
-        <Cycle tag={tag} data={metric.cycle}></Cycle>
+      <Box sx={{ 
+        mt: ((metric.notes && metric.comment) ? [2] : [0] )
+      }}>
+      </Box>
+      {(metric.comment) && 
+        <Grid 
+          gap={['12px', '16px', '16px']} 
+          columns={['20px 50px 1fr', '20px 50px 1fr', '191px 1fr 30px']}
+          sx={{ }}
+        >
+          <Text variant='metric.comment' sx={{ color: theme.tags[tag], textAlign: 'right', mr: [2] }}>COMMENT</Text>
+          <Text variant='metric.comment' sx={{ }}>{metric.comment}</Text>
+        </Grid>
       }
       </Box>
     }
