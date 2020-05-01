@@ -7,7 +7,7 @@ export default {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   letterSpacings: {
-    body: '0.02em' 
+    body: '0.02em'
   },
   fontWeights: {
     body: 400,
@@ -57,7 +57,7 @@ export default {
     description: {
       fontSize: [2],
       marginBlockStart: '0.3em',
-      mb: [1],
+      mb: [1]
     },
     metric: {
       value: {
@@ -70,19 +70,16 @@ export default {
         fontFamily: 'monospace',
         fontSize: [2, 2, 2],
         mt: ['6px'],
-        textTransform: 'uppercase',
-      },
-      rating: {
-        display: 'inline-block',
-        ml: [3],
-        fontSize: ['18px']
+        textTransform: 'capitalize',
       },
       comment: {
         fontFamily: 'body',
         fontSize: [1],
         color: 'secondary',
         letterSpacing: 'body',
-        lineHeight: 'small'
+        lineHeight: 'small',
+        mt: [0],
+        mb: [2]
       },
       units: {
         fontFamily: 'monospace',
@@ -90,10 +87,25 @@ export default {
         fontSize: [1],
         ml: [2],
         textTransform: 'normal'
+      },
+      rating: {
+        display: 'inline-block',
+        ml: [3],
+        fontSize: ['18px']
       }
     },
     link: {
       cursor: 'pointer'
+    },
+    arrow: {
+      color: 'text',
+      ml: [2], 
+      fontSize: [4], 
+      position: 'relative', 
+      top: '4px', 
+      display: 'inline-block',
+      textDecoration: 'none',
+      lineHeight: 0,
     }
   },
   forms: {
@@ -126,7 +138,7 @@ export default {
       borderBottomWidth: '1px',
       borderBottomColor: 'text',
       borderRadius: '0px',
-      fontFamily: 'monospace',
+      fontFamily: 'heading',
       fontSize: [1]
     },
     radio: {
@@ -151,12 +163,13 @@ export default {
   },
   badges: {
     primary: {
+      letterSpacing: '0.05em',
       cursor: 'pointer', 
       color: 'primary',
       borderStyle: 'solid',
       borderColor: 'primary',
       borderWidth: '0px',
-      borderBottomWidth: '2px',
+      borderBottomWidth: '1px',
       bg: 'background',
       borderRadius: '0px',
       textTransform: 'uppercase',
@@ -190,7 +203,8 @@ export default {
       pb: [1]
     },
     arrow: {
-      color: 'secondary',
+      cursor: 'pointer',
+      color: 'primary',
       ml: [2], 
       fontSize: [4], 
       position: 'relative', 
@@ -199,7 +213,7 @@ export default {
       textDecoration: 'none',
       lineHeight: 0,
       '&:hover': {
-        color: "primary",
+        color: 'secondary'
       }
     }
   },
@@ -207,15 +221,20 @@ export default {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body'
+      fontWeight: 'body',
     },
     a: {
-      color: 'secondary',
+      color: 'text',
+      borderStyle: 'solid',
+      borderColor: 'text',
+      borderWidth: '0px',
+      borderBottomWidth: '1px',
       '&:active': {
         color: 'text',
       },
       '&:hover': {
-        color: 'text'
+        color: 'secondary',
+        borderColor: 'secondary'
       },
       textDecoration: 'none',
       cursor: 'pointer'
@@ -236,7 +255,7 @@ export default {
     ocean: 'teal',
     dac: 'purple',
     biochar: 'yellow',
-    'building materials': 'yellow',
+    materials: 'yellow',
     broker: 'grey',
     beccs: 'yellow',
     reforestation: 'green',

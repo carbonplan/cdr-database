@@ -8,7 +8,7 @@ import { config, signals } from './utils.js'
 
 var vegaLite = require('vega-lite')
 
-const Permanence = (props) => {
+const Volume = (props) => {
 
   const { projects } = props
   const dispatch = useDispatch()
@@ -18,7 +18,6 @@ const Permanence = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-
     const visible = useSelector(state => state.visibility[projects[i].id])
 
     if (visible) {
@@ -26,10 +25,10 @@ const Permanence = (props) => {
     } else {
       opacity = 0.2
     }
-
+    
     values.push(
       {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'permanence'))[0].value),
+        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'volume'))[0].value),
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
@@ -56,16 +55,15 @@ const Permanence = (props) => {
         axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
       },
       x: {
-        field: 'durability', 
-        type: 'quantitative', 
-        axis: { title: 'PERMANENCE years', tickCount: 3 },
-        scale: { type: 'log',  domain: [0.6, 2000], nice: false  },
+        field: 'volume',
+        type: 'quantitative',
+        axis: { title: 'VOLUME tCO2', tickCount: 3 },
+        scale: { type: 'log', domain: [2, 100000000], nice: false }   
       },
       color: {
         field: 'color',
-        type: 'nominal',
+        type: 'ordinal',
         scale: null
-
       },
       stroke: {
         field: 'color',
@@ -77,7 +75,7 @@ const Permanence = (props) => {
         type: 'quantitative',
         scale: null
       }
-    }
+    },
   }
 
   var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
@@ -107,6 +105,7 @@ const Permanence = (props) => {
 
   return <Vega width={width} height={height} signalListeners={signalListeners}
     data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
+
 }
 
-export default Permanence
+export default Volume

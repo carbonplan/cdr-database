@@ -8,7 +8,6 @@ import { config, signals } from './utils.js'
 
 var vegaLite = require('vega-lite')
 
-
 const Negativity = (props) => {
 
   const { projects } = props
@@ -33,6 +32,7 @@ const Negativity = (props) => {
         group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
+        id: projects[i].id,
         opacity: opacity
       }
     )
@@ -82,15 +82,15 @@ const Negativity = (props) => {
 
   vgSpec.signals.push(...signals)
 
-  const width = 300
+  const width = 335
   const height = 175
 
   function handleClickOn(...args) {
-    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
+    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.id })
   }
 
   function handleClickOr(...args) {
-    dispatch({ type: 'OR_SEARCH', value: args[1].datum.name })
+    dispatch({ type: 'OR_SEARCH', value: args[1].datum.id })
   }
 
   function handleClickOff(...args) {

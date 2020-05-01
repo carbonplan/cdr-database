@@ -8,20 +8,18 @@ import { config, signals } from './utils.js'
 
 var vegaLite = require('vega-lite')
 
-
-const CostVolume = (props) => {
+const Cost = (props) => {
 
   const { projects } = props
   const dispatch = useDispatch()
   const context = useThemeUI()
   const theme = context.theme
-  
+
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-    
     const visible = useSelector(state => state.visibility[projects[i].id])
-    
+
     if (visible) {
       opacity = 1
     } else {
@@ -31,9 +29,10 @@ const CostVolume = (props) => {
     values.push(
       {
         cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'cost'))[0].value),
-        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'volume'))[0].value),
+        group: projects[i].tags[0],
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
+        id: projects[i].id,
         opacity: opacity
       }
     )
@@ -45,48 +44,53 @@ const CostVolume = (props) => {
     },
     mark: {
       type: 'circle', 
-      size: 250, 
+      size: 200,
       cursor: 'pointer'
     },
     encoding: {
-      x: {
-        field: 'volume',
-        type: 'quantitative',
-        axis: { title: 'VOLUME tCO2', tickCount: 3 },
-        scale: { type: 'log', domain: [2, 100000000], nice: false },
+      y: { 
+        field: 'group', 
+        type: 'nominal',
+        scale: { 'padding': 1.87 },
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
       },
-      y: {
-        field: 'cost',
-        type: 'quantitative',
+      x: {
+        field: 'cost', 
+        type: 'quantitative', 
         axis: { title: 'COST $/tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [2, 2000], nice: false },
       },
       color: {
         field: 'color',
-        type: 'nominal',
+        type: 'ordinal',
         scale: null
+      },
+      stroke: {
+        field: 'color',
+        type: 'nominal',
+        scale: null,
       },
       opacity: {
         field: 'opacity',
         type: 'quantitative',
         scale: null
       }
-    }
+    },
   }
 
   var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
 
-  vgSpec.signals = signals
+  vgSpec.signals.push(...signals)
 
-  const width = 300
+  const width = 335
   const height = 175
 
   function handleClickOn(...args) {
-    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.name })
+    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.id })
   }
 
   function handleClickOr(...args) {
-    dispatch({ type: 'OR_SEARCH', value: args[1].datum.name })
+    dispatch({ type: 'OR_SEARCH', value: args[1].datum.id })
   }
 
   function handleClickOff(...args) {
@@ -101,6 +105,7 @@ const CostVolume = (props) => {
 
   return <Vega width={width} height={height} signalListeners={signalListeners}
     data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
+
 }
 
-export default CostVolume
+export default Cost

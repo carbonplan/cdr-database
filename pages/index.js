@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import Sidebar from '../components/sidebar'
 import Main from '../components/main'
+import { Flex, Grid } from 'theme-ui'
 import { useEffect } from 'react'
 import { withRedux } from '../lib/redux'
 import { useDispatch } from 'react-redux'
@@ -35,11 +36,15 @@ function Index (props) {
 
   return (
     <Layout>
-      <Main props={props}></Main>
-      <Sidebar props={props}></Sidebar>
+      <Grid columns={[1, 1, '52% 48%']} gap={['0px']}>
+        <Main props={props}></Main>
+        <Sidebar props={props}></Sidebar>
+      </Grid>
     </Layout>
   )
 }
+
+export default withRedux(Index)
 
 export async function getStaticProps() {
   const res = await fetch(globals.apiServer + 'projects')
@@ -48,4 +53,3 @@ export async function getStaticProps() {
   return { props: { projects: data.projects } }
 }
 
-export default withRedux(Index)

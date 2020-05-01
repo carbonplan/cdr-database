@@ -1,15 +1,17 @@
-import { Box, Heading, Text, Badge } from 'theme-ui'
-import Overall from './overall'
-import Volume from './volume'
-import Mechanism from './mechanism'
-import Negativity from './negativity'
-import Cost from './cost'
-import Permanence from './permanence'
-import Additionality from './additionality'
-import Access from './access'
-import Feedback from './feedback'
+import { Box, Heading, Text, Badge, Link } from 'theme-ui'
+import Overall from './methods/overall'
+import Volume from './methods/volume'
+import Mechanism from './methods/mechanism'
+import Negativity from './methods/negativity'
+import Cost from './methods/cost'
+import Permanence from './methods/permanence'
+import Additionality from './methods/additionality'
+import Access from './methods/access'
+import Feedback from './methods/feedback'
 import { useState } from 'react'
 import { alpha } from '@theme-ui/color'
+import { useThemeUI } from 'theme-ui'
+import { default as NextLink } from 'next/link'
 
 const contents = {
   'overall': <Overall></Overall>,
@@ -23,7 +25,7 @@ const contents = {
   'feedback?': <Feedback></Feedback>
 }
 
-const About = () => {
+const Methods = () => {
   const [method, setMethod] = useState('overall')
 
   const toggleMethod = (e) => {
@@ -35,13 +37,15 @@ const About = () => {
       return {
         borderColor: 'primary',
         color: 'primary',
-        mr: [3]
+        mr: [3],
+        mb: [1]
       }
     } else {
       return {
         borderColor: alpha('primary', 0.2),
         color: alpha('primary', 0.2),
-        mr: [3]
+        mr: [3],
+        mb: [1]
       }
     }
   }
@@ -54,23 +58,32 @@ const About = () => {
         borderColor: 'muted', 
         borderWidth: '0px', 
         borderTopWidth: '1px',
-        p: [4]
+        pl: [4],
+        pt: [3]
       }}
     >
-      <Heading sx={{ fontSize: [4], mb: [2] }}>
-        methods
+      <Heading sx={{ fontSize: [4], mt: [1], mb: [2] }}>
+        Methods
       </Heading>
-      <Box sx={{ maxWidth: '370px', mb: [2] }}>
+      <Box sx={{ maxWidth: '420px', mb: [2] }}>
         {['overall', 'mechanism', 'volume', 'negativity', 'cost', 'permanence',
           'additionality', 'access', 'feedback?'].map((name) => 
           <Badge variant='primary' key={name} sx={getStyle(name)} onClick={() => setMethod(name)}>{name}</Badge>
         )}
       </Box>
-      <Box sx={{ maxWidth: '410px', fontSize: [1] }}>
+      <Box sx={{ maxWidth: '420px', fontSize: [1] }}>
         {contents[method]}
       </Box>
+      <Heading sx={{ fontSize: [2], mt: [3] }}>
+        <NextLink href='/methods'>
+          <Text>
+            READ MORE
+            <Link variant='arrow'>↗</Link>
+          </Text>
+        </NextLink>
+      </Heading>
     </Box>
   )
 }
 
-export default About
+export default Methods

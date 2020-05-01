@@ -66,6 +66,7 @@ const Metric = ({ metric, tag }) => {
         {(metric.rating === 1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>√</Text>}
         {(metric.rating === 0) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>?</Text>}
         {(metric.rating === -1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>x</Text>}
+        {(metric.rating === -2) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>!</Text>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>
@@ -76,7 +77,7 @@ const Metric = ({ metric, tag }) => {
     {expanded && 
       <Box sx={{ 
         mt: ((metric.notes || metric.comment) ? [2] : [0] ),
-        mb: ((metric.notes || metric.comment) ? ['20px'] : [0] )
+        mb: ((metric.notes || metric.comment) ? [3] : [0] )
       }}>
       {(metric.notes) && 
         <Grid 

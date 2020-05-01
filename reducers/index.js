@@ -8,7 +8,9 @@ const initialState = {
   search: '',
   visibility: {},
   projects: [],
-  showOne: false
+  showOne: false,
+  methodsExpanded: true,
+  summaryExpanded: true
 }
 
 const combinedSearch = (tags, search, fuse, projects) => {
@@ -34,6 +36,26 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
+    case 'EXPAND_METHODS':
+      return {
+        ...state,
+        methodsExpanded: true
+      }
+    case 'COLLAPSE_METHODS':
+      return {
+        ...state,
+        methodsExpanded: false
+      }
+    case 'EXPAND_SUMMARY':
+      return {
+        ...state,
+        summaryExpanded: true
+      }
+    case 'COLLAPSE_SUMMARY':
+      return {
+        ...state,
+        summaryExpanded: false
+      }
     case 'SHOW_ONE':
       return {
         ...state,
@@ -94,7 +116,7 @@ const reducer = (state = initialState, action) => {
     case 'INIT_FUSE':
       const options = {
         keys: ['name'],
-        threshold: 0.3,
+        threshold: 0.1,
         useExtendedSearch: true
       }
       return {

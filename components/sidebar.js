@@ -1,5 +1,5 @@
 import theme from '.././theme'
-import Methods from './methods/'
+import Methods from './methods'
 import Summary from './summary'
 import { Box } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
@@ -31,22 +31,20 @@ const Sidebar = ({ props }) => {
   }
 
   return (
+    <Box>
     <Box sx={{ 
-      flexGrow: 1, 
-      flexBasis: 'sidebar',
-      display: ['none', 'none', 'inherit']
+      position: 'fixed',
+      top: '56px',
+      borderStyle: 'solid', 
+      borderColor: 'muted',
+      borderWidth: '0px',
+      borderLeftWidth: '1px',
+      display: ['none', 'none', 'inherit'],
+      mr: [5]
     }}>
-      <Box sx={{ 
-        position: 'fixed', 
-        top: '56px',
-        borderStyle: 'solid', 
-        borderColor: 'muted',
-        borderWidth: '0px', 
-        borderLeftWidth: '1px' 
-      }}>
-        <Summary projects={ props.projects }></Summary>
-        <Methods></Methods>
-      </Box>
+      <Summary projects={ props.projects }></Summary>
+      <Methods></Methods>
+    </Box>
     </Box>
   )
 }
