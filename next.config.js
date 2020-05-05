@@ -1,3 +1,8 @@
-module.exports = {
-  assetPrefix: 'https://reports.carbonplan.now.sh'
-}
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/
+})
+
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  assetPrefix: ''
+})

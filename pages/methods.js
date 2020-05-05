@@ -10,11 +10,15 @@ import globals from '../globals'
 import fetch from 'isomorphic-unfetch'
 import { default as NextLink } from 'next/link'
 
+import Metrics from '../methods/metrics.md'
+import Projects from '../methods/projects.md'
+import TOC from '../methods/toc.md'
+
 function Methods (props) {
 
   return (
     <Layout>
-      <Heading sx={{ py: [3], fontSize: [7] }}>
+      <Heading sx={{ py: [3], fontSize: [6] }}>
         <NextLink href='/'><Text sx={{ 
           display: 'inline-block', 
           mr: [3],
@@ -25,16 +29,37 @@ function Methods (props) {
         }}>←</Text></NextLink>
         Methods
       </Heading>
-      <Grid columns={[2]}>
-        <Box>
-          <Heading sx={{ my: [5], fontSize: [4], mb: [2] }}>
-            / by project
-          </Heading>
+      <Text sx={{ maxWidth: '700px' }}>
+        Here we provide detailed methods on our project evaluation process.
+        We include specific notes on each project, and detailed descriptions 
+        of our metrics. This content is on Github as markdown files with versions.
+        If you spot an error, or think we got something wrong, open an issue or
+        email us.
+      </Text>
+      <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4], mr: [5] }}>
+        <Box sx={{ 
+          borderStyle: 'solid',
+          borderColor: 'muted',
+          borderWidth: '0px',
+          borderBottomWidth: ['1px', '0px', '0px'],
+          height: ['fit-contents', '200px', '200px'],
+          backgroundColor: 'background',
+          position: 'sticky',
+          top: '56px',
+          pr: [1],
+          pb: [2]
+        }}>
+          <TOC></TOC>
         </Box>
-        <Box>
-          <Heading sx={{ my: [5], fontSize: [4], mb: [2] }}>
-            / by metric
-          </Heading>
+        <Box sx={{ 
+          borderStyle: 'solid',
+          borderColor: 'muted',
+          borderWidth: '0px',
+          borderLeftWidth: ['0px', '0px', '1px'],
+          pl: [2, 5, 5]
+        }}>
+          <Metrics></Metrics>
+          <Projects></Projects>
         </Box>
       </Grid>
     </Layout>
