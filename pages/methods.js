@@ -36,7 +36,7 @@ function Methods (props) {
         If you spot an error, or think we got something wrong, open an issue or
         email us.
       </Text>
-      <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4], mr: [5] }}>
+      <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
         <Box sx={{ 
           borderStyle: 'solid',
           borderColor: 'muted',
@@ -56,7 +56,8 @@ function Methods (props) {
           borderColor: 'muted',
           borderWidth: '0px',
           borderLeftWidth: ['0px', '0px', '1px'],
-          pl: [2, 5, 5]
+          pl: [1, 5, 5],
+          pr: [1, 7, 7]
         }}>
           <Metrics></Metrics>
           <Projects></Projects>
