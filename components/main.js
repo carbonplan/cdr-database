@@ -18,7 +18,7 @@ const Main = ({ props }) => {
           borderBottomWidth: '1px'
         }}>
           <Heading sx={{ fontSize: [7] }}>
-            Carbon reports
+            Project reports
           </Heading>
           <Text sx={{ fontSize: [2], py: [3], pb: [4], pr: [4] }}>
             This is a public database of reports on carbon removal project proposals. 
