@@ -100,8 +100,8 @@ const Report = ({ project }) => {
             <Box>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
-                { project.source.name }
-                <Link variant='arrow' href={ project.source.url }>↗</Link>
+                { project.program.name }
+                <Link variant='arrow' href={ project.program.url }>↗</Link>
               </Text>
             </Box>
             <Box sx={{ pr: [2], textAlign: ['left', 'left', 'right'] }}>

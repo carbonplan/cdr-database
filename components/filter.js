@@ -13,8 +13,13 @@ const Filter = () => {
   const [searchExpanded, setSearchExpanded] = useState(false)
 
   const addOrRemove = (tag) => {
-    if (tags.includes(tag)) dispatch({ type: 'REMOVE_TAG', tag: tag })
-    else dispatch({ type: 'ADD_TAG', tag: tag })
+    if (tags.length == allTags.length) {
+      dispatch({ type: 'SET_TAG', tag: tag })
+    } else if (tags.includes(tag)) {
+      dispatch({ type: 'REMOVE_TAG', tag: tag })
+    } else {
+      dispatch({ type: 'ADD_TAG', tag: tag })
+    }
   }
 
   const toggleAll = () => {
@@ -82,13 +87,13 @@ const Filter = () => {
           <Badge variant='primary' sx={getStyle('biomass')} onClick={() => addOrRemove('biomass')}>biomass</Badge>
           <Badge variant='primary' sx={getStyle('all')} onClick={() => toggleAll()}>all</Badge>
         </Box>
-        <Box sx={{ display: ['none','none','inherit'] }}>
+        <Box sx={{ display: ['none','none','inherit'], cursor: 'pointer' }}>
           <IconButton aria-label='Toggle Search' onClick={() => toggleSearch()} 
             sx={{ 
               stroke: searchExpanded ? 'text' : 'secondary', 
               fill: 'background',
               cursor: 'pointer',
-              transition: '0.25s all',
+              transition: 'stroke 0.25s',
               '&:hover': {
                 stroke: 'text'
               }

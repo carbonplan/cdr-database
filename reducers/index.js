@@ -77,11 +77,11 @@ const reducer = (state = initialState, action) => {
         visibility: combinedSearch(tagsMinus, state.search, state.fuse, state.projects),
         showOne: false
       }
-    case 'SET_TAGS':
+    case 'SET_TAG':
       return {
         ...state,
-        tags: action.value,
-        visibility: combinedSearch(action.value, state.search, state.fuse, state.projects),
+        tags: [action.tag],
+        visibility: combinedSearch([action.tag], state.search, state.fuse, state.projects),
         showOne: false
       }
     case 'UPDATE_SEARCH':

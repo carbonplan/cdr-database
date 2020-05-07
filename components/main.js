@@ -29,7 +29,10 @@ const Main = ({ props }) => {
         </Box>
         <Filter></Filter>
         <Box>
-        { props.projects.map(project => (<Report project={ project } key={ project.name }></Report>)) }
+        { props.projects
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(project => (<Report project={ project } key={ project.name }></Report>)) 
+        }
         </Box>
       </Box>
     </Box>

@@ -262,6 +262,7 @@ export default {
     'avoided conversion': 'green',
     agroforestry: 'green',
     burial: 'yellow',
-    phytoplankton: 'teal'
+    phytoplankton: 'teal',
+    injection: 'grey'
   }
 }

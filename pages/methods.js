@@ -29,11 +29,11 @@ function Methods (props) {
         }}>←</Text></NextLink>
         Methods
       </Heading>
-      <Text sx={{ maxWidth: '700px' }}>
-        Here we provide detailed methods on our project evaluation process.
-        We include specific notes on each project we evaluated in the context
-        of a procurement program, and detailed descriptions 
-        of our metrics. This content is on Github as markdown files with versions.
+      <Text sx={{ maxWidth: '800px' }}>
+        Detailed methods on our project evaluation process.
+        We include notes on each project we evaluated in the context
+        of a procurement program, and descriptions 
+        of our metrics. All content is on Github as versioned markdown.
         If you spot an error, or think we got something wrong, open an issue or
         email us.
       </Text>

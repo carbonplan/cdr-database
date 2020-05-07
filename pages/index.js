@@ -4,7 +4,7 @@ import Main from '../components/main'
 import { Flex, Grid } from 'theme-ui'
 import { useEffect } from 'react'
 import { withRedux } from '../lib/redux'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import globals from '../globals'
 import fetch from 'isomorphic-unfetch'
@@ -19,10 +19,14 @@ function Index (props) {
     })
   })
 
+  const projects = useSelector(state => state.projects)
   const dispatch = useDispatch()
-  dispatch({ type: 'INIT_PROJECTS', value: props.projects })
-  dispatch({ type: 'INIT_FUSE' })
-  dispatch({ type: 'INIT_VISIBILITY' })
+
+  if (projects.length == 0) {
+    dispatch({ type: 'INIT_PROJECTS', value: props.projects })
+    dispatch({ type: 'INIT_FUSE' })
+    dispatch({ type: 'INIT_VISIBILITY' })
+  }
 
   const router = useRouter()
   const query = router.query
