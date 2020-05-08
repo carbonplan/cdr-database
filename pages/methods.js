@@ -27,7 +27,7 @@ function Methods (props) {
             color: 'secondary'
           }
         }}>←</Text></NextLink>
-        Methods
+        Methods [IN PROGRESS]
       </Heading>
       <Text sx={{ maxWidth: '800px' }}>
         Detailed methods on our project evaluation process.

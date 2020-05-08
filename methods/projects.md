@@ -1,6 +1,6 @@
 # Projects
 
-Here we provide detailed methods for particular projects evaluations, as a supplement to the metrics and comments available in our public database. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Here and elsewhere, our primary focus is evaluating the scientific plausibility and credibility of claims made in project proposals.
+Here we provide detailed methods for particular projects evaluations, as a supplement to the metrics and comments available in our public database. Projects are organized by the program in which they were solicited. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Here and elsewhere, our primary focus is evaluating the scientific plausibility and credibility of claims made in project proposals.
 
 ### Stripe Climate 2020
 

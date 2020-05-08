@@ -8,7 +8,6 @@ const Cost = () => {
       In a subset of cases costs have been modified for accounting
       consistency across projects.
     </Text>
-
   )
 }
 

@@ -4,10 +4,13 @@ const Feedback = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      Want to provide feedback on a metric, method, or this dashboard? Open an 
-      issue <Link href='https://github.com/carbonplan/reports'>here</Link>.
+      You can use{' '}<Link href='/'>[URL]</Link>{' '}
+      to download all project data as JSON, or you can specify a specify project id, for example,
+      {' '}<Link href='/'>[URL]</Link>{' '}
     </Text>
     <Text sx={{ mb: [2] }}>
+      Want to provide feedback on a metric, method, or this dashboard? Open an 
+      issue <Link href='https://github.com/carbonplan/reports'>here</Link>.
       Want to provide feedback on our API or schema? Open an 
       issue <Link href='https://github.com/carbonplan/api'>here</Link>.
     </Text>

@@ -5,7 +5,7 @@ const Negativity = () => {
     <>
       <Text sx={{ mb: [2] }}>
         We define NEGATIVITY as one minus the ratio of gross project emissions to gross carbon removal. 
-        If emissions are high relative to the amount of carbon removal, this value will approach 0.
+        If emissions are low relative to the amount of carbon removal, this value will approach 1.
       </Text>
       <Text sx={{ mb: [2] }}>
         Estimating negativity requires a life cycle assessment to quantify emissions sources. 
