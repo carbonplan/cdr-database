@@ -22,7 +22,7 @@ const Main = ({ props }) => {
           </Heading>
           <Text sx={{ fontSize: [2], py: [3], pb: [4], pr: [4] }}>
             This is a public database of reports on carbon removal project proposals. 
-            These reports are our indepndent analysis based on public information.
+            These reports reflect our indepndent analysis of public information.
             Click the + to see details.
           </Text>
         </Box>
