@@ -28,12 +28,13 @@ function Methods (props) {
         Methods
       </Heading>
       <Text sx={{ maxWidth: '800px' }}>
-        Detailed methods on our project evaluation process.
-        We include notes on each project we evaluated in the context
-        of a procurement program, and descriptions 
-        of our metrics. All content is on Github as versioned markdown.
-        If you spot an error, or think we got something wrong, open an issue or
-        email us.
+        Detailed methods on our project evaluations.
+        We include descriptions of our metrics and
+        notes on each project we evaluated in the context
+        of a procurement program. All content is on Github as versioned markdown.
+        If you spot an error, or think we got something wrong, open an{' '}
+        <Link href='https://github.com/carbonplan/reports'>issue</Link> or{' '}
+        <Link href='mailto:reports@carbonplan.org'>email us</Link>.
       </Text>
       <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
         <Box sx={{ 
