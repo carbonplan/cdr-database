@@ -96,8 +96,8 @@ const Report = ({ project }) => {
               tag={project.tags[0]}
               metric={metric}
             ></Metric>) }
-          <Grid columns={[1, null, 2]}>
-            <Box>
+          <Grid columns={[1, null, '300px 1fr']}>
+            <Box sx={{ fontSize: [1] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
                 <Text>
@@ -106,7 +106,7 @@ const Report = ({ project }) => {
                 </Text>
               </Text>
             </Box>
-            <Box sx={{ pr: [2], textAlign: ['left', 'left', 'right'] }}>
+            <Box sx={{ fontSize: [1], pr: [2], textAlign: ['left', 'left', 'right'] }}>
               <Text sx={{ color: 'secondary' }}>Location</Text>
               <Text>
                 { project.location.name }
