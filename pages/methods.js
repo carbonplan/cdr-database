@@ -3,7 +3,7 @@ import { Heading, Grid, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
 import Metrics from '../methods/metrics.md'
-import ProgramStripe2020 from '../methods/programs/stripe-2020.md'
+import ProgramStripeClimate2020 from '../methods/programs/stripe-climate-2020.md'
 import TOC from '../methods/toc.js'
 
 function Methods (props) {
@@ -59,7 +59,7 @@ function Methods (props) {
           pr: [1, 7, 7]
         }}>
           {(section == 'metrics') && <Metrics/>}
-          {(section == 'programs:stripe-climate-2020') && <ProgramStripe2020/>}
+          {(section == 'programs:stripe-climate-2020') && <ProgramStripeClimate2020/>}
         </Box>
       </Grid>
     </Layout>
