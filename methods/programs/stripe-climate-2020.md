@@ -1,4 +1,4 @@
-# Program: Stripe Climate 2020
+# Program: Stripe Climate 2020 [IN PROGRESS]
 
 Here we provide detailed methods for all projects evaluated as part of the [Stripe Climate 2020]() program. Read our [article]() for more info on what we did as part of this process. Here, we do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Here and elsewhere, our primary focus is evaluating the scientific plausibility and credibility of claims made in project proposals.
 
