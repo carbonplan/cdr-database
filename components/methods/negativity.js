@@ -4,7 +4,7 @@ const Negativity = () => {
   return (
     <>
       <Text sx={{ mb: [2] }}>
-        We define NEGATIVITY as one minus the ratio of gross project emissions to gross carbon removal. 
+        We define Negativity as one minus the ratio of gross project emissions to gross carbon removal. 
         If emissions are low relative to the amount of carbon removal, this value will approach 1.
       </Text>
       <Text sx={{ mb: [2] }}>

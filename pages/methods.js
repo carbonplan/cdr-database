@@ -1,20 +1,18 @@
 import Layout from '../components/layout'
-import Sidebar from '../components/sidebar'
-import Main from '../components/main'
 import { Heading, Grid, Box, Text, Link } from 'theme-ui'
-import { useEffect } from 'react'
-import { withRedux } from '../lib/redux'
-import { useDispatch } from 'react-redux'
-import { useRouter } from 'next/router'
-import globals from '../globals'
-import fetch from 'isomorphic-unfetch'
 import { default as NextLink } from 'next/link'
-
+import { useState, useEffect } from 'react'
 import Metrics from '../methods/metrics.md'
-import Projects from '../methods/projects.md'
-import TOC from '../methods/toc.md'
+import ProgramStripe2020 from '../methods/programs/stripe-2020.md'
+import TOC from '../methods/toc.js'
 
 function Methods (props) {
+
+  const [section, setSection] = useState('metrics')
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [section])
 
   return (
     <Layout>
@@ -50,7 +48,7 @@ function Methods (props) {
           pr: [1],
           pb: [2]
         }}>
-          <TOC></TOC>
+          <TOC setSection={setSection}></TOC>
         </Box>
         <Box sx={{ 
           borderStyle: 'solid',
@@ -60,8 +58,8 @@ function Methods (props) {
           pl: [1, 5, 5],
           pr: [1, 7, 7]
         }}>
-          <Metrics></Metrics>
-          <Projects></Projects>
+          {(section == 'metrics') && <Metrics/>}
+          {(section == 'programs:stripe-climate-2020') && <ProgramStripe2020/>}
         </Box>
       </Grid>
     </Layout>

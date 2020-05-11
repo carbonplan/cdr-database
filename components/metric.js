@@ -3,6 +3,10 @@ import Cycle from './graphics/cycle'
 import Bar from './graphics/bar'
 import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
+import Check from './icons/check'
+import Question from './icons/question'
+import Ex from './icons/ex'
+import Exclamation from './icons/exclamation'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -57,16 +61,16 @@ const Metric = ({ metric, tag }) => {
         {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
         {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
         {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
-        {(metric.name == 'additionality') && <Squares tag={tag} data={metric.value}></Squares>}
-        {(metric.name == 'transparency') && <Squares tag={tag} data={metric.value}></Squares>}
+        {(metric.name == 'additionality') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
+        {(metric.name == 'transparency') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
       </Box>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-        {(metric.rating === 1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>√</Text>}
-        {(metric.rating === 0) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>?</Text>}
-        {(metric.rating === -1) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>x</Text>}
-        {(metric.rating === -2) && <Text variant='metric.rating' sx={{ color: theme.tags[tag] }}>!</Text>}
+        {(metric.rating === 1) && <Check color={theme.tags[tag]}/>}
+        {(metric.rating === 0) && <Question color={theme.tags[tag]}/>}
+        {(metric.rating === -1) && <Ex color={theme.tags[tag]}/>}
+        {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
       </Text>
       {hasDetails && 
         <Box sx={{ display: ['none', 'none', 'inherit'] }}>

@@ -98,14 +98,13 @@ export default {
       cursor: 'pointer'
     },
     arrow: {
-      color: 'text',
       ml: [2], 
       fontSize: [4], 
       position: 'relative', 
       top: '4px', 
       display: 'inline-block',
       textDecoration: 'none',
-      lineHeight: 0,
+      lineHeight: 0
     }
   },
   forms: {
@@ -203,8 +202,6 @@ export default {
       pb: [1]
     },
     arrow: {
-      cursor: 'pointer',
-      color: 'primary',
       ml: [2], 
       fontSize: [4], 
       position: 'relative', 
@@ -212,8 +209,14 @@ export default {
       display: 'inline-block',
       textDecoration: 'none',
       lineHeight: 0,
+      cursor: 'pointer',
+      color: 'text',
+       '&:active': {
+        color: 'text',
+      },
       '&:hover': {
-        color: 'secondary'
+        color: 'secondary',
+        borderColor: 'secondary'
       }
     }
   },

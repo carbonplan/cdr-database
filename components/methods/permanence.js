@@ -4,8 +4,8 @@ const Permanence = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      We consider the PERMANENCE of a project the duration over which durable storage
-      can be reasonable assured. We apply hueristics to calibrate self-reported data.
+      We consider the permanence of a project the duration over 
+      which durable carbon storage can be reasonably assured.
     </Text>
     <Text>
       When a range is provided, we report the minimum. For projects with 

@@ -75,12 +75,9 @@ const Methods = () => {
         {contents[method]}
       </Box>
       <Heading sx={{ fontSize: [2], mt: [3] }}>
-        <NextLink href='/methods'>
-          <Text>
-            READ MORE
-            <Link variant='arrow'>↗</Link>
-          </Text>
-        </NextLink>
+        <Text>
+          <Text>READ MORE<NextLink href='/methods'><Link variant='arrow'>↗</Link></NextLink></Text>
+        </Text>
       </Heading>
     </Box>
   )

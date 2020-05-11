@@ -1,4 +1,7 @@
 import { Text } from 'theme-ui'
+import Check from '../icons/check'
+import Question from '../icons/question'
+import Ex from '../icons/ex'
 
 const Overall = () => {
   return (
@@ -9,9 +12,11 @@ const Overall = () => {
       based on independent data and models.
     </Text>
     <Text>
-      Marks next to metrics indicate that we have either independently validated the claims
-      (√), we have reason to doubt the claims (x), or we are uncertain (?). A (?) should not
-      be taken as a critism, rather a lack of information.
+      The mark next to each metric shows our validation. 
+      A <Check closed={true}/> means we have independently 
+      validated the claims. An <Ex closed={true}/> means we have reason to doubt the claims. 
+      A <Question closed={true}/> means we are uncertain,  
+      and should not be taken as a criticism, rather a lack of information.
       We additionally include notes on projects and 
       comments explaining our evaluation.
     </Text>

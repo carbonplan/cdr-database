@@ -9,5 +9,4 @@
   - [Additionality](#Additionality)
   - [Transparency](#Transparency)
 
-- [Projects](#projects)
-  - [Stripe Climate 2020](#stripe-climate-2020)
+- [Program: Stripe Climate 2020](#projects)

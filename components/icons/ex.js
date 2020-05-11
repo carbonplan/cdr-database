@@ -2,7 +2,7 @@
 import { jsx, Box } from 'theme-ui'
 import { useThemeUI } from 'theme-ui'
 
-const Check = ({ closed, color }) => {
+const Ex = ({ closed, color }) => {
 
   const context = useThemeUI()
   const theme = context.theme
@@ -26,11 +26,15 @@ const Check = ({ closed, color }) => {
       }}
     >
     {!closed && 
-      <polyline points="1.21 7.17 5.51 11.46 14.79 2.18"/>
+      <>
+      <line x1="4.1" y1="3.1" x2="11.9" y2="10.9"/>
+      <line x1="11.9" y1="3.1" x2="4.1" y2="10.9"/>
+      </>
     }
     {closed && 
       <>
-      <polyline points="5.95 13.34 10.25 17.64 19.53 8.36"/>
+      <line x1="9.1" y1="9.1" x2="16.9" y2="16.9"/>
+      <line x1="16.9" y1="9.1" x2="9.1" y2="16.9"/>
       <circle cx="13" cy="13" r="12"/>
       </>
     }
@@ -38,4 +42,4 @@ const Check = ({ closed, color }) => {
   </span>
 }
 
-export default Check
+export default Ex
