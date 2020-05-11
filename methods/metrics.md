@@ -10,6 +10,11 @@ import Exclamation from '../components/icons/exclamation'
 
 Metrics are based on information provided in public project offerings plus our own research. We are actively developing methods for metric calibration based on independent data and models.
 
+The mark next to each metric shows our validation. A <Check closed={true}/> means we have independently validated the claims. An <Ex closed={true}/> means we have reason to doubt the claims. A <Question closed={true}/> means we are uncertain, and should not be taken as a criticism, rather a lack of information. We also include notes and comments, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
+
+Marks on metrics are only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide marks on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of  $/tCO2, however, uncertainty in cost does reflect uncertainty in volume, but as we evaluate volume separately, we do not attempt to specifically validate the cost. 
+
+For Additionality and Transparency we provide a score from 1 to 3 and comments, but no other evaluation. For these two dimensions, we occasionally use an  <Exclamation closed={true}/> to indicate a specific issue that warrants further investigation.
 
 Across all metrics, our evaluation is primarily focused on validating whether claims are plausible and consistent with the best available science and data. We also strive, through our metrics, to harmonize concepts and quantities across a wide diversity of projects. This process is more straightforward for methods based on established physical or biological processes, and can pose challenges for proprietary industrial practices or inherently variable physical properties.
 
