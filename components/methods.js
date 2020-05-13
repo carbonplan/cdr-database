@@ -12,6 +12,7 @@ import { useState } from 'react'
 import { alpha } from '@theme-ui/color'
 import { useThemeUI } from 'theme-ui'
 import { default as NextLink } from 'next/link'
+import { useRouter } from 'next/router'
 
 const contents = {
   'overall': <Overall></Overall>,
@@ -26,6 +27,7 @@ const contents = {
 }
 
 const Methods = () => {
+  const router = useRouter()
   const [method, setMethod] = useState('overall')
 
   const toggleMethod = (e) => {
@@ -76,7 +78,7 @@ const Methods = () => {
       </Box>
       <Heading sx={{ fontSize: [2], mt: [3] }}>
         <Text>
-          <Text>READ MORE<NextLink href='/methods'><Link variant='arrow'>↗</Link></NextLink></Text>
+          <Text>READ MORE<NextLink href={router.asPath + 'methods'}><Link variant='arrow'>↗</Link></NextLink></Text>
         </Text>
       </Heading>
     </Box>

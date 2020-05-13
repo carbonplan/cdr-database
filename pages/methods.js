@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react'
 import Metrics from '../methods/metrics.md'
 import ProgramStripeClimate2020 from '../methods/programs/stripe-climate-2020.md'
 import TOC from '../methods/toc.js'
+import { useRouter } from 'next/router'
 
 function Methods (props) {
-
+  const router = useRouter()
   const [section, setSection] = useState('metrics')
   
   useEffect(() => {
@@ -17,7 +18,7 @@ function Methods (props) {
   return (
     <Layout>
       <Heading sx={{ py: [3], fontSize: [6] }}>
-        <NextLink href='/'><Text sx={{ 
+        <NextLink href={router.asPath.replace('methods','')}><Text sx={{ 
           display: 'inline-block', 
           mr: [3],
           cursor: 'pointer',
