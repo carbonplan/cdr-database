@@ -51,7 +51,7 @@ function Index (props) {
 export default withRedux(Index)
 
 export async function getStaticProps() {
-  const res = await fetch(globals.apiServer + 'projects')
+  const res = await fetch(globals.apiServer + 'projects.json')
   const data = await res.json()
 
   return { props: { projects: data.projects } }
