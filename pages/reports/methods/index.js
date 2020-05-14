@@ -1,10 +1,10 @@
-import Layout from '../components/layout'
+import Layout from '../../../components/layout'
 import { Heading, Grid, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
-import Metrics from '../methods/metrics.md'
-import ProgramStripeClimate2020 from '../methods/programs/stripe-climate-2020.md'
-import TOC from '../methods/toc.js'
+import Metrics from '../../../methods/metrics.md'
+import ProgramStripeClimate2020 from '../../../methods/programs/stripe-climate-2020.md'
+import TOC from '../../../methods/toc.js'
 
 function Methods (props) {
   const [section, setSection] = useState('metrics')
@@ -16,14 +16,15 @@ function Methods (props) {
   return (
     <Layout>
       <Heading sx={{ py: [3], fontSize: [6] }}>
-        <NextLink href='/'><Text sx={{ 
+        <NextLink href='/reports'><a><Text sx={{ 
           display: 'inline-block', 
+          color: 'text',
           mr: [3],
           cursor: 'pointer',
           '&:hover': {
             color: 'secondary'
           }
-        }}>←</Text></NextLink>
+        }}>←</Text></a></NextLink>
         Methods
       </Heading>
       <Text sx={{ maxWidth: '800px' }}>

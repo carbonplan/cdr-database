@@ -19,7 +19,7 @@ const TOC = ({ setSection }) => {
   return (
     <>
     <Box sx={{ fontSize: [5], mt: ['21px'] }}>
-      <NextLink href='/'><Text sx={{ 
+      <NextLink href='/reports'><Text sx={{ 
           display: 'inline-block', 
           mr: [3],
           cursor: 'pointer',

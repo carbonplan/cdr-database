@@ -1,12 +1,12 @@
-import Layout from '../components/layout'
-import Sidebar from '../components/sidebar'
-import Main from '../components/main'
+import Layout from '../../components/layout'
+import Sidebar from '../../components/sidebar'
+import Main from '../../components/main'
 import { Flex, Grid } from 'theme-ui'
 import { useEffect } from 'react'
-import { withRedux } from '../lib/redux'
+import { withRedux } from '../../lib/redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import globals from '../globals'
+import globals from '../../globals'
 import fetch from 'isomorphic-unfetch'
 
 function Index (props) {
