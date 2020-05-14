@@ -74,8 +74,7 @@ const Filter = () => {
       borderStyle: 'solid',
       borderColor: 'muted',
       borderWidth: '0px',
-      borderBottomWidth: '1px',
-      zIndex: 1000
+      borderBottomWidth: '1px'
     }}>
       <Grid columns={[1, null, '1fr 30px']}>
         <Box>
