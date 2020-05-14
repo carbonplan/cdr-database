@@ -1,7 +1,6 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/_next(.*)", "dest": "/reports/_next$1" },
-    { "src": "/(.*)", "dest": "/reports$1"}
+    { "src": "/reports(.*)", "dest": "/$1"}
   ]
 }
