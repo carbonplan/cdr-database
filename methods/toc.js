@@ -19,14 +19,15 @@ const TOC = ({ setSection }) => {
   return (
     <>
     <Box sx={{ fontSize: [5], mt: ['21px'] }}>
-      <NextLink href='/reports'><Text sx={{ 
+      <NextLink href='/reports'><a><Text sx={{ 
           display: 'inline-block', 
           mr: [3],
+          color: 'text',
           cursor: 'pointer',
           '&:hover': {
             color: 'secondary'
           }
-        }}>←</Text></NextLink>Contents
+        }}>←</Text></a></NextLink>Contents
     </Box>
     <Box sx={{ mt: [2] }}>
       <Link onClick={() => setSection('metrics')}>Metrics</Link>

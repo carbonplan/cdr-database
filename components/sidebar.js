@@ -6,7 +6,7 @@ import { useColorMode } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Sidebar = ({ props }) => {
+const Sidebar = ({ projects }) => {
   const [colorMode, setColorMode] = useColorMode()
   const dispatch = useDispatch()
   const tags = useSelector(state => state.tags)
@@ -42,7 +42,7 @@ const Sidebar = ({ props }) => {
       display: ['none', 'none', 'inherit'],
       mr: [5]
     }}>
-      <Summary projects={ props.projects }></Summary>
+      <Summary projects={ projects }></Summary>
       <Methods></Methods>
     </Box>
     </Box>

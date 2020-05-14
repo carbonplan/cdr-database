@@ -7,9 +7,9 @@ import { withRedux } from '../../lib/redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import globals from '../../globals'
-import fetch from 'isomorphic-unfetch'
+import data from '../../data'
 
-function Index (props) {
+function Index () {
 
   useEffect(() => {
     document.body.addEventListener('keyup', function(e) {
@@ -23,7 +23,7 @@ function Index (props) {
   const dispatch = useDispatch()
 
   if (projects.length == 0) {
-    dispatch({ type: 'INIT_PROJECTS', value: props.projects })
+    dispatch({ type: 'INIT_PROJECTS', value: data.projects })
     dispatch({ type: 'INIT_FUSE' })
     dispatch({ type: 'INIT_VISIBILITY' })
   }
@@ -41,19 +41,11 @@ function Index (props) {
   return (
     <Layout>
       <Grid columns={[1, 1, '52% 48%']} gap={['0px']}>
-        <Main props={props}></Main>
-        <Sidebar props={props}></Sidebar>
+        <Main projects={data.projects}></Main>
+        <Sidebar projects={data.projects}></Sidebar>
       </Grid>
     </Layout>
   )
 }
 
 export default withRedux(Index)
-
-export async function getStaticProps() {
-  const res = await fetch(globals.apiServer + 'projects.json')
-  const data = await res.json()
-
-  return { props: { projects: data.projects } }
-}
-

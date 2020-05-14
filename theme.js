@@ -99,12 +99,20 @@ export default {
     },
     arrow: {
       ml: [2], 
+      color: 'text',
       fontSize: [4], 
       position: 'relative', 
       top: '4px', 
       display: 'inline-block',
       textDecoration: 'none',
-      lineHeight: 0
+      lineHeight: 0,
+      '&:active': {
+        color: 'text',
+      },
+      '&:hover': {
+        color: 'secondary',
+        borderColor: 'secondary'
+      }
     }
   },
   forms: {
@@ -211,7 +219,7 @@ export default {
       lineHeight: 0,
       cursor: 'pointer',
       color: 'text',
-       '&:active': {
+      '&:active': {
         color: 'text',
       },
       '&:hover': {
