@@ -38,7 +38,7 @@ function Methods (props) {
           height: ['fit-contents', '200px', '200px'],
           backgroundColor: 'background',
           position: 'sticky',
-          top: '65px',
+          top: '55px',
           pr: [1],
           pb: [2]
         }}>
