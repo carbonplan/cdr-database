@@ -1,6 +1,6 @@
-# Program: Stripe Climate 2020 [IN PROGRESS]
+# Program: Stripe 2020 [IN PROGRESS]
 
-Here we provide detailed methods for all projects evaluated as part of the [Stripe Climate 2020]() program. Read our [article]() for more info on what we did as part of this process. Here, we do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Here and elsewhere, our primary focus is evaluating the scientific plausibility and credibility of claims made in project proposals.
+Here we provide detailed methods for the analysis we performed on carbon removal projects proposed in the [Stripe 2020 Negative Emissions Purchase](). Read our [article]() for more context on our analysis of these projects. All analysis was based on public project proposals and other public information. Here, we do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Our primary focus is evaluating the scientific plausibility and credibility of claims made in project proposals.
 
 ## Biorecro
 
@@ -54,7 +54,6 @@ For a 174 ha land project in Scotland, project claims a breakdown of total volum
 
 ## GreenSand
 
-Double check 1.25 tCO2 / 1 t olivine.
 
 ## IndigoAg
 
@@ -74,7 +73,6 @@ Project directly reports rates of 16 tCO2 / ha / yr for the Rip’s Redwoods dev
 
 ## Project Vesta
 
-Double check 1.25 tCO2 / 1 t olivine.
 
 ## Rizome
 
@@ -83,7 +81,5 @@ Reported volume is based on a 1,000 ha pilot. The total volume includes both 15,
 ## SilviaTerra
 
 ## Soil Value Exchange
-
-Rate of sequestration rate reasonable, and land amount is specified.
 
 ## Vandersanden

@@ -2,7 +2,7 @@ import Report from './report'
 import Filter from './filter'
 import { Box, Flex, Heading, Text } from 'theme-ui'
 
-const Main = ({ props }) => {
+const Main = ({ projects }) => {
 
   return (
     <Box>
@@ -28,7 +28,7 @@ const Main = ({ props }) => {
         </Box>
         <Filter></Filter>
         <Box>
-        { props.projects
+        { projects
           .sort((a, b) => a.name.localeCompare(b.name))
           .map(project => (<Report project={ project } key={ project.name }></Report>)) 
         }

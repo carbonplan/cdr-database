@@ -51,17 +51,12 @@ const Report = ({ project }) => {
       borderColor: 'muted',
       borderWidth: '0px', 
       borderBottomWidth: '1px',
-      pr: [0, 4, 4],
-      py: [3]
+      pr: [0, 0, 4],
+      py: [3, 3, 3]
     }}>
-      <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}
+      <Grid gap={['8px', '16px', '16px']} columns={[1, null, '1fr 300px']}>
+        <Heading sx={{ mb: [1, 1, 2], fontSize: [4] }}>{project.name}
           <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
-            {/* 
-            <Text sx={{ display: 'inline-block', color: theme.tags[project.tags[0]] }}>{ project.score }</Text>
-            <Text sx={{ display: 'inline-block', ml: [1], mr: [1] }}>/</Text>
-            <Text sx={{ display: 'inline-block' }}>10</Text> 
-            */}
           </Text>
         </Heading>
         <Box sx={{ textAlign: ['left', null, 'right'] }}>
@@ -78,8 +73,8 @@ const Report = ({ project }) => {
           )}
         </Box>
       </Grid>
-      <Grid columns={[1, null, '1fr 32px']}>
-      <Text variant='description' sx={{ mb: [2] }}> 
+      <Grid gap={['8px', '16px', '16px']} columns={[1, 1, '1fr 32px']}>
+      <Text variant='description' sx={{ mb: [2, 2, 2] }}> 
         { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
@@ -100,10 +95,18 @@ const Report = ({ project }) => {
             <Box sx={{ fontSize: [1] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
-                <Text>
+                <Link sx={{ 
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: 'text'
+                  },
+                  '&:hover > #arrow': {
+                    color: 'secondary'
+                  }
+                }} href={ project.program.url }>
                   { project.program.name }
-                  <Link variant='arrow' href={ project.program.url }>↗</Link>
-                </Text>
+                  <Text id='arrow' variant='arrow'>↗</Text>
+                </Link>
               </Text>
             </Box>
             <Box sx={{ fontSize: [1], pr: [2], textAlign: ['left', 'left', 'right'] }}>

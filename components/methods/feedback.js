@@ -4,19 +4,21 @@ const Feedback = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      You can use{' '}<Link href='/'>[URL]</Link>{' '}
-      to download all project data as JSON, or you can specify a specify project id, for example,
-      {' '}<Link href='/'>[URL]</Link>{' '}
+      You can use our {' '}<Link href='https://github.com/carbonplan/api'>API</Link>{' '}
+      to download all project data as JSON or CSV.
     </Text>
     <Text sx={{ mb: [2] }}>
-      Want to provide feedback on a metric, method, or this dashboard? Open an 
+      Want to provide feedback on our website, design, or graphics? Open an 
       issue <Link href='https://github.com/carbonplan/reports'>here</Link>.
-      Want to provide feedback on our API or schema? Open an 
-      issue <Link href='https://github.com/carbonplan/api'>here</Link>.
     </Text>
     <Text sx={{ mb: [2] }}>
-      Are you a project developer or funder and interested in our work? Email us at{' '}
-      <Link href='mailto:hello@carbonplan.org'>hello@carbonplan.org</Link>.
+      Want to provide feedback on our metrics or analysis methods? Open an 
+      issue <Link href='https://github.com/carbonplan/reports'>here</Link> or email us at{' '}
+      <Link href='mailto:feedback@carbonplan.org'>feedback@carbonplan.org</Link>.
+    </Text>
+    <Text sx={{ mb: [2] }}>
+      Are you a project developer with specific questions about the report of your project? Email us at{' '}
+      <Link href='mailto:feedback@carbonplan.org'>feedback@carbonplan.org</Link>.
     </Text>
     </>
   )
