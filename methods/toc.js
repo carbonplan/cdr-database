@@ -20,24 +20,24 @@ const TOC = ({ setSection }) => {
     <>
     <Box>
     <NextLink href='/reports'><a><Text sx={{ 
-          display: 'inline-block', 
-          fontSize: [6],
-          mt: [2],
-          mr: [3],
-          color: 'text',
-          cursor: 'pointer',
-          '&:hover': {
-            color: 'secondary'
-          }
-        }}>←</Text></a></NextLink>
+      display: 'inline-block', 
+      fontSize: [6],
+      mt: [2],
+      mr: [3],
+      color: 'text',
+      cursor: 'pointer',
+      '&:hover': {
+        color: 'secondary'
+      }
+    }}>←</Text></a></NextLink>
     </Box>
-    <Box sx={{ mt: [2] }}>
+    <Box sx={{ mt: [2], fontSize: [3] }}>
       <Link onClick={() => setSection('metrics')}>Metrics</Link>
     </Box>
-    <Box sx={{ mt: [2] }}>
+    <Box sx={{ mt: [2], fontSize: [3] }}>
       <Link onClick={() => setSection('feedback')}>Feedback?</Link>
     </Box>
-    <Box sx={{ mt: [2] }}>
+    <Box sx={{ mt: [2], fontSize: [3] }}>
       Programs<Box sx={{ 
         display: 'inline-block',
         position: 'relative',
@@ -46,7 +46,7 @@ const TOC = ({ setSection }) => {
     </Box>
     {expandedPrograms && 
       <>
-      <Box>
+      <Box sx={{ fontSize: [3] }}>
         <Link onClick={() => setSection('programs:stripe-2020')}>Stripe 2020</Link>
       </Box>
       </>

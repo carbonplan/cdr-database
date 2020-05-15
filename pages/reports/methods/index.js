@@ -22,9 +22,8 @@ function Methods (props) {
       <Heading sx={{ pb: [3], pt: [4], fontSize: [6] }}>
         Methods
       </Heading>
-      <Text sx={{ maxWidth: '800px' }}>
-        Detailed methods on our project evaluations.
-        We include descriptions of our metrics and
+      <Text sx={{ maxWidth: '800px', fontSize: [3] }}>
+        Here are descriptions of our metrics and
         notes on each project we evaluated in the context
         of a procurement program. Want to give us feedback? 
         Read <Link onClick={() => setSection('feedback')}>here</Link>.
@@ -53,9 +52,11 @@ function Methods (props) {
           pl: [1, 5, 5],
           pr: [1, 7, 7]
         }}>
+          <Box sx={{ mt: ['-50px'] }}>
           {(section == 'metrics') && <Metrics/>}
           {(section == 'feedback') && <Feedback/>}
           {(section == 'programs:stripe-2020') && <ProgramStripe2020/>}
+          </Box>
         </Box>
       </Grid>
     </Layout>

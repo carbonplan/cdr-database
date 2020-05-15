@@ -1,13 +1,19 @@
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
   fonts: {
-    body: 'relative-faux-book-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
+    body: 'relative-book-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
+    faux: 'relative-faux-book-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
     heading: 'relative-medium-pro, Roboto, system-ui, -apple-system, BlinkMacSystemFont',
     monospace: 'relative-mono-11-pitch-pro, Menlo, monospace',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [12, 14, 16, 18, 24, 34, 48, 64, 96],
   letterSpacings: {
-    body: '0.02em'
+    body: '0.01em',
+    mono: '0.02em',
+    faux: '0.05em',
+    heading: '-0.015em',
+    wide: '0.07em',
+    extra: '0.13em'
   },
   fontWeights: {
     body: 400,
@@ -15,9 +21,9 @@ export default {
     bold: 400,
   },
   lineHeights: {
-    body: 1.45,
+    body: 1.35,
     small: 1.3,
-    heading: 1.125,
+    heading: 1.05,
   },
   colors: {
     text: '#ebebec',
@@ -54,8 +60,26 @@ export default {
     }
   },
   text: {
+    default: {
+      color: 'text',
+      fontFamily: 'body',
+      letterSpacing: 'body'
+    },
+    link: {
+      color: 'text',
+      '&:active': {
+        color: 'text',
+      },
+      '&:hover': {
+        color: 'secondary',
+      },
+      textDecoration: 'underline',
+      cursor: 'pointer'
+    },
     description: {
       fontSize: [2],
+      fontFamily: 'faux',
+      letterSpacing: 'faux',
       marginBlockStart: '0.3em',
       mb: [1]
     },
@@ -73,10 +97,10 @@ export default {
         textTransform: 'capitalize',
       },
       comment: {
-        fontFamily: 'body',
+        fontFamily: 'faux',
         fontSize: [1],
         color: 'secondary',
-        letterSpacing: 'body',
+        letterSpacing: 'faux',
         lineHeight: 'small',
         mt: [0],
         mb: [2]
@@ -93,9 +117,6 @@ export default {
         ml: [3],
         fontSize: ['18px']
       }
-    },
-    link: {
-      cursor: 'pointer'
     },
     arrow: {
       ml: [2], 
@@ -170,7 +191,7 @@ export default {
   },
   badges: {
     primary: {
-      letterSpacing: '0.05em',
+      letterSpacing: 'wide',
       cursor: 'pointer', 
       color: 'primary',
       borderStyle: 'solid',
@@ -186,7 +207,6 @@ export default {
       pl: [0],
       pr: [0],
       fontSize: [1],
-      fontWeight: 'body',
       fontFamily: 'monospace'
     }
   },
@@ -233,6 +253,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      letterSpacing: 'body'
     },
     a: {
       color: 'text',
@@ -251,6 +272,35 @@ export default {
       borderWidth: '0px',
       borderTopWidth: '1px',
       borderColor: 'muted'
+    },
+    p: {
+      fontFamily: 'body',
+      fontSize: [3],
+      fontWeight: 'body',
+      letterSpacing: 'body'
+    },
+    h1: {
+      fontFamily: 'heading',
+      letterSpacing: 'heading',
+      fontSize: [6, 7, 7],
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      mt: [6],
+      mb: [5]
+    },
+    h2: {
+      fontFamily: 'heading',
+      fontSize: [5],
+      fontWeight: 'heading',
+      mt: [4],
+      mb: [3]
+    },
+    h3: {
+      fontFamily: 'heading',
+      fontSize: [4],
+      fontWeight: 'heading',
+      mt: [4],
+      mb: [3],
     }
   },
   tags: {

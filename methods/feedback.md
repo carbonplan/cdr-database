@@ -1,4 +1,4 @@
-# How to give feedback
+# Feedback?
 
 All our content is on Github, and we welcome feedback on all aspects of our work.
 

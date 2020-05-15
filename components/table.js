@@ -17,6 +17,7 @@ const Table = ({ one, two, three, type, children }) => {
         borderTopWidth: '1px',
         borderColor: 'muted',
         py: [2],
+        mb: [2],
         mr: [7]
       }}>
       { children }
@@ -28,21 +29,21 @@ const Table = ({ one, two, three, type, children }) => {
       <Row>
         {(type == 'icons') && <Check/>}
         {(type == 'squares') && <Squares data={2}/>}
-        <Box sx={{ pt: [1], mb: [1] }}>
+        <Box sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
           { three }
         </Box>
       </Row>
       <Row>
         {(type == 'icons') && <Question/>}
         {(type == 'squares') && <Squares data={1}/>}
-        <Box sx={{ pt: [1], mb: [1] }}>
+        <Box sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
           { two }
         </Box>
       </Row>
       <Row>
         {(type == 'icons') && <Ex/>}
         {(type == 'squares') && <Squares data={0}/>}
-        <Box sx={{ pt: ['6px'], mb: [1] }}>
+        <Box sx={{ pt: ['6px'], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
           { one }
         </Box>
       </Row>

@@ -10,6 +10,8 @@ const Feedback = () => {
     <Text sx={{ mb: [2] }}>
       Want to provide feedback on our website, design, or graphics? Open an 
       issue <Link href='https://github.com/carbonplan/reports'>here</Link>.
+    </Text>
+    <Text sx={{ mb: [2] }}>
       Want to provide feedback on our metrics or analysis methods? Open an 
       issue <Link href='https://github.com/carbonplan/reports'>here</Link> or email us at{' '}
       <Link href='mailto:feedback@carbonplan.org'>feedback@carbonplan.org</Link>.
