@@ -46,7 +46,7 @@ const Metric = ({ metric, tag }) => {
       ['34px 55px 1fr 37px', '34px 55px 1fr 37px', '75px 100px 1fr 120px 30px']
     }>
       {hasDetails &&        
-        <Box sx={{ ml: ['-5px'], mt: ['1px'], display: ['inherit', 'inherit', 'none'] }}>
+        <Box sx={{ ml: ['-5px'], mt: ['2px'], display: ['inherit', 'inherit', 'none'] }}>
           <Expander toggle={toggle} expanded={expanded}></Expander> 
         </Box>  
       } 
