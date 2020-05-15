@@ -24,6 +24,10 @@ class MyApp extends App {
               outline: none !important;
             }
 
+            a {
+              text-decoration: none;
+            }
+
             @font-face {
               font-family: 'relative-book-pro';
               src: url('${prefix}relative-book-pro.eot');

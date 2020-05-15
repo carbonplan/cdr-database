@@ -95,10 +95,18 @@ const Report = ({ project }) => {
             <Box sx={{ fontSize: [1] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
-                <Text>
+                <Link sx={{ 
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: 'text'
+                  },
+                  '&:hover > #arrow': {
+                    color: 'secondary'
+                  }
+                }} href={ project.program.url }>
                   { project.program.name }
-                  <Link variant='arrow' href={ project.program.url }>↗</Link>
-                </Text>
+                  <Text id='arrow' variant='arrow'>↗</Text>
+                </Link>
               </Text>
             </Box>
             <Box sx={{ fontSize: [1], pr: [2], textAlign: ['left', 'left', 'right'] }}>
