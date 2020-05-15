@@ -78,8 +78,8 @@ export default {
     },
     description: {
       fontSize: [2],
-      fontFamily: 'faux',
-      letterSpacing: 'faux',
+      fontFamily: 'body',
+      letterSpacing: 'body',
       marginBlockStart: '0.3em',
       mb: [1]
     },
