@@ -97,7 +97,6 @@ const Volume = (props) => {
     const y = args[1].group
 
     var selected = []
-    dispatch({ type: 'UPDATE_SEARCH', value: '' })
     for (var i = 0; i < projects.length; i++) {
       const row = values[i]
 
@@ -105,7 +104,7 @@ const Volume = (props) => {
         selected.push(row.id)
       }
     }
-    dispatch({ type: 'OR_SEARCH', value: selected.join(' | ') })
+    dispatch({ type: 'UPDATE_SEARCH', value: selected.join(' | ') })
   }
 
   function handleClickOr(...args) {
