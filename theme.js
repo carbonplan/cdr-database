@@ -292,6 +292,7 @@ export default {
       fontFamily: 'heading',
       fontSize: [5],
       fontWeight: 'heading',
+      lineHeight: 'heading',
       mt: [5],
       mb: [4]
     },
@@ -299,6 +300,7 @@ export default {
       fontFamily: 'heading',
       fontSize: [4],
       fontWeight: 'heading',
+      lineHeight: 'heading',
       mt: [4],
       mb: [3],
     }
