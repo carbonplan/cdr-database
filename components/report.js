@@ -51,11 +51,11 @@ const Report = ({ project }) => {
       borderColor: 'muted',
       borderWidth: '0px', 
       borderBottomWidth: '1px',
-      pr: [0, 4, 4],
-      py: [3]
+      pr: [0, 0, 4],
+      py: [3, 3, 3]
     }}>
-      <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}
+      <Grid gap={['8px', '16px', '16px']} columns={[1, null, '1fr 300px']}>
+        <Heading sx={{ mb: [1, 1, 2], fontSize: [4] }}>{project.name}
           <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
           </Text>
         </Heading>
@@ -73,8 +73,8 @@ const Report = ({ project }) => {
           )}
         </Box>
       </Grid>
-      <Grid columns={[1, null, '1fr 32px']}>
-      <Text variant='description' sx={{ mb: [2] }}> 
+      <Grid gap={['8px', '16px', '16px']} columns={['1fr 32px', '1fr 32px', '1fr 32px']}>
+      <Text variant='description' sx={{ mb: [2, 2, 2] }}> 
         { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
