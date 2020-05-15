@@ -33,7 +33,7 @@ const Volume = (props) => {
         color: theme.colors[theme.tags[projects[i].tags[0]]],
         name: projects[i].name,
         id: projects[i].id,
-        opacity: opacity
+        opacity: opacity,
       }
     )
   }
@@ -46,6 +46,9 @@ const Volume = (props) => {
       type: 'circle', 
       size: 200,
       cursor: 'pointer'
+    },
+    selection: {
+      brush: { type: "interval" }
     },
     encoding: {
       y: { 
@@ -89,6 +92,22 @@ const Volume = (props) => {
     dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.id })
   }
 
+  function handleBrush(...args) {
+    const x = args[1].volume
+    const y = args[1].group
+
+    var selected = []
+    dispatch({ type: 'UPDATE_SEARCH', value: '' })
+    for (var i = 0; i < projects.length; i++) {
+      const row = values[i]
+
+      if ((y.includes(row.group)) && ((row.volume > x[0]) && (row.volume < x[1]))) {
+        selected.push(row.id)
+      }
+    }
+    dispatch({ type: 'OR_SEARCH', value: selected.join(' | ') })
+  }
+
   function handleClickOr(...args) {
     dispatch({ type: 'OR_SEARCH', value: args[1].datum.id })
   }
@@ -100,6 +119,7 @@ const Volume = (props) => {
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
+    brush: handleBrush,
     clickOff: handleClickOff
   }
 
