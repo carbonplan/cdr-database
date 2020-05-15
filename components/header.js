@@ -13,6 +13,7 @@ const link = {
   borderColor: 'primary',
   borderWidth: '0px',
   borderBottomWidth: '1px',
+  textDecoration: 'none',
   display: 'block',
   '&:hover': {
     color: 'secondary',
@@ -89,7 +90,6 @@ const Header = () => {
         ],
         opacity: 1,
         textAlign: '-webkit-right',
-        zIndex: 2000,
         mt: ['56px'],
         pt: [3]
       }}>

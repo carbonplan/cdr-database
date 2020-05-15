@@ -3,7 +3,8 @@ import { Heading, Grid, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
 import Metrics from '../../../methods/metrics.md'
-import ProgramStripeClimate2020 from '../../../methods/programs/stripe-climate-2020.md'
+import Feedback from '../../../methods/feedback.md'
+import ProgramStripe2020 from '../../../methods/programs/stripe-2020.md'
 import TOC from '../../../methods/toc.js'
 
 function Methods (props) {
@@ -15,27 +16,20 @@ function Methods (props) {
 
   return (
     <Layout>
-      <Heading sx={{ py: [3], fontSize: [6] }}>
-        <NextLink href='/reports'><a><Text sx={{ 
-          display: 'inline-block', 
-          color: 'text',
-          mr: [3],
-          cursor: 'pointer',
-          '&:hover': {
-            color: 'secondary'
-          }
-        }}>←</Text></a></NextLink>
+      <Box sx={{
+        
+      }}>
+      <Heading sx={{ pb: [3], pt: [4], fontSize: [6] }}>
         Methods
       </Heading>
       <Text sx={{ maxWidth: '800px' }}>
         Detailed methods on our project evaluations.
         We include descriptions of our metrics and
         notes on each project we evaluated in the context
-        of a procurement program. All content is on Github as versioned markdown.
-        If you spot an error, or think we got something wrong, open an{' '}
-        <Link href='https://github.com/carbonplan/reports'>issue</Link> or{' '}
-        <Link href='mailto:reports@carbonplan.org'>email us</Link>.
+        of a procurement program. Want to give us feedback? 
+        Read <Link onClick={() => setSection('feedback')}>here</Link>.
       </Text>
+      </Box>
       <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
         <Box sx={{ 
           borderStyle: 'solid',
@@ -45,7 +39,7 @@ function Methods (props) {
           height: ['fit-contents', '200px', '200px'],
           backgroundColor: 'background',
           position: 'sticky',
-          top: '56px',
+          top: '65px',
           pr: [1],
           pb: [2]
         }}>
@@ -60,7 +54,8 @@ function Methods (props) {
           pr: [1, 7, 7]
         }}>
           {(section == 'metrics') && <Metrics/>}
-          {(section == 'programs:stripe-climate-2020') && <ProgramStripeClimate2020/>}
+          {(section == 'feedback') && <Feedback/>}
+          {(section == 'programs:stripe-2020') && <ProgramStripe2020/>}
         </Box>
       </Grid>
     </Layout>

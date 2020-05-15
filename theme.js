@@ -236,18 +236,13 @@ export default {
     },
     a: {
       color: 'text',
-      borderStyle: 'solid',
-      borderColor: 'text',
-      borderWidth: '0px',
-      borderBottomWidth: '1px',
       '&:active': {
         color: 'text',
       },
       '&:hover': {
         color: 'secondary',
-        borderColor: 'secondary'
       },
-      textDecoration: 'none',
+      textDecoration: 'underline',
       cursor: 'pointer'
     },
     hr: {

@@ -8,7 +8,7 @@ import Exclamation from '../components/icons/exclamation'
 
 ## Overall
 
-Metrics are based on information provided in public project offerings plus our own research. We are actively developing methods for metric calibration based on independent data and models.
+Metrics are based on information provided in public project offerings plus our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
 The mark next to each metric shows our validation. A <Check closed={true}/> means we have independently validated the claims. An <Ex closed={true}/> means we have reason to doubt the claims. A <Question closed={true}/> means we are uncertain, and should not be taken as a criticism, rather a lack of information. We also include notes and comments, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
@@ -116,9 +116,9 @@ We are mindful that different organizations might have different priorities for 
 
 <Table 
 type='squares'
-three='.'
-two='.' 
-one='.' 
+three='Climate benefits claimed by the project are likely to be additional. This could be because the project proposes an unconventional action, has relatively high costs, or has no inherent commercial value outside of its climate benefits.'
+two='Climate benefits claimed by the project might be additional, but we cannot validate the claim with confidence. Used when the evidence on additionality is mixed, without a clear balance establishing either a finding of additionality or non-additionality.' 
+one='Climate benefits claimed by the project are likely to not be additional because they are likely to occur independently from the proposed investment. This could be because the proposed activity is already commonplace or required by law; because the project has promised or could promise its climate benefits to another party; or because the climate benefits it claims are logically implied by pre-existing commitments.' 
 >
 </Table>
 
