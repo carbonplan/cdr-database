@@ -42,10 +42,22 @@ const Metric = ({ metric, tag }) => {
   }
 
   return <Box>
-    <Grid gap={['12px', '16px', '16px']} columns={
-      ['50px 1fr 50px 37px', '50px 1fr 50px 37px', '75px 100px 1fr 120px 30px']
+    <Grid gap={['2px', '2px', '16px']} columns={
+      ['34px 55px 1fr 37px', '34px 55px 1fr 37px', '75px 100px 1fr 120px 30px']
     }>
-      <Text variant='metric.value' sx={{ color: theme.tags[tag] }}>
+      {hasDetails &&        
+        <Box sx={{ ml: ['-5px'], mt: ['1px'], display: ['inherit', 'inherit', 'none'] }}>
+          <Expander toggle={toggle} expanded={expanded}></Expander> 
+        </Box>  
+      } 
+      {!hasDetails &&   
+        <Box sx={{ ml: ['-5px'], display: ['inherit', 'inherit', 'none'] }}>    
+        </Box>  
+      }
+      <Text variant='metric.value' sx={{ 
+        color: theme.tags[tag],
+        textAlign: ['left', 'left', 'right']
+      }}>
         {format(metric.name, metric.value)}
       </Text>
       <Box sx={{ display: ['none', 'none', 'inherit']}}>
@@ -68,7 +80,7 @@ const Metric = ({ metric, tag }) => {
         {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
       </Text>
       {hasDetails && 
-        <Box sx={{  }}>
+        <Box sx={{ display: ['none', 'none', 'inherit'] }}>
           <Expander toggle={toggle} expanded={expanded}></Expander>
         </Box>
       }
@@ -88,11 +100,11 @@ const Metric = ({ metric, tag }) => {
             color: theme.tags[tag], 
             textAlign: ['left', 'left', 'right'], 
             mr: [2],
-            ml: ['61px', '61px', 0],
+            ml: ['93px', '93px', 0],
             mt: [1, 1, 0]
           }}>NOTES</Text>
           <Text variant='metric.comment' sx={{ 
-            ml: ['61px', '61px', 0]
+            ml: ['93px', '93px', 0]
           }}>{metric.notes}</Text>
         </Grid>
       }
@@ -110,11 +122,11 @@ const Metric = ({ metric, tag }) => {
             color: theme.tags[tag], 
             textAlign: ['left', 'left', 'right'], 
             mr: [2],
-            ml: ['61px', '61px', 0],
+            ml: ['93px', '93px', 0],
             mt: [1, 1, 0]
           }}>COMMENT</Text>
           <Text variant='metric.comment' sx={{ 
-            ml: ['61px', '61px', 0]
+            ml: ['93px', '93px', 0]
           }}>{metric.comment}</Text>
         </Grid>
       }

@@ -73,7 +73,7 @@ const Report = ({ project }) => {
           )}
         </Box>
       </Grid>
-      <Grid gap={['8px', '16px', '16px']} columns={['1fr 32px', '1fr 32px', '1fr 32px']}>
+      <Grid gap={['8px', '16px', '16px']} columns={[1, 1, '1fr 32px']}>
       <Text variant='description' sx={{ mb: [2, 2, 2] }}> 
         { project.description }
       </Text>
