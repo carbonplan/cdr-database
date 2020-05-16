@@ -93,7 +93,7 @@ const Report = ({ project }) => {
               metric={metric}
             ></Metric>) }
           <Grid columns={[1, 1, '300px 1fr']}>
-            <Box sx={{ fontSize: [1], mt: ['12px', '12px', 2] }}>
+            <Box sx={{ fontSize: [1], mt: ['8px', '8px', 2] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
                 <Link sx={{ 

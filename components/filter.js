@@ -75,7 +75,8 @@ const Filter = () => {
       borderColor: 'muted',
       borderWidth: '0px',
       borderBottomWidth: '1px',
-      zIndex: 500
+      zIndex: 500,
+      display: ['none', 'none', 'inherit']
     }}>
       <Grid columns={[1, null, '1fr 30px']}>
         <Box>
