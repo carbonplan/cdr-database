@@ -8,7 +8,6 @@ const Search = () => {
 
   const handleInputChange = (e) => {
     const searchTerm = e.currentTarget.value
-    console.log(searchTerm)
     dispatch({ type: 'UPDATE_SEARCH', value: searchTerm })
   }
 
