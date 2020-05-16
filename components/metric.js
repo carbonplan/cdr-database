@@ -41,26 +41,105 @@ const Metric = ({ metric, tag }) => {
     else return value
   }
 
-  return <Box>
-    <Grid gap={['2px', '2px', '16px']} columns={
-      ['34px 55px 1fr 37px', '34px 55px 1fr 37px', '75px 100px 1fr 120px 30px']
-    }>
-      {hasDetails &&        
-        <Box sx={{ ml: ['-5px'], mt: ['2px'], display: ['inherit', 'inherit', 'none'] }}>
-          <Expander toggle={toggle} expanded={expanded}></Expander> 
-        </Box>  
-      } 
-      {!hasDetails &&   
-        <Box sx={{ ml: ['-5px'], display: ['inherit', 'inherit', 'none'] }}>    
-        </Box>  
+  const Mobile = () => {
+    return <Box>
+      <Grid columns={['1fr 30px']}>
+      <Text>
+        <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
+        {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
+      </Text>
+      {hasDetails && 
+        <Box sx={{ ml: ['-5px'] }}>
+          <Expander toggle={toggle} expanded={expanded}></Expander>
+        </Box>
       }
+      </Grid>
+
+      <Text variant='metric.value' sx={{ 
+        color: theme.tags[tag],
+        textAlign: ['left'],
+        fontSize: [4],
+        mt: ['-2px']
+      }}>
+        {format(metric.name, metric.value)}
+      </Text>
+      <Box>
+        {(metric.name == 'mechanism') && 
+          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4] }}>
+            {(metric.removal && metric.avoided) ? 'REMOVAL + AVOIDED' : ''}
+            {(metric.removal && !metric.avoided) ? 'REMOVAL ONLY' : ''}
+            {(!metric.removal && metric.avoided) ? 'AVOIDED ONLY' : ''}
+          </Text>
+        }
+        {(metric.name == 'additionality') && 
+          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value}
+          <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
+          </Text>
+        }
+        {(metric.name == 'transparency') && 
+          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value}
+          <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
+        </Text>
+        }
+      </Box>
+      {expanded && 
+        <Box sx={{ 
+          mt: ((metric.notes || metric.comment) ? [3] : [0] ),
+          mb: ((metric.notes || metric.comment) ? [3] : [0] )
+        }}>
+        {(metric.notes) && 
+          <>
+          <Text variant='metric.comment' sx={{ 
+            color: theme.tags[tag], 
+            textAlign: ['left', 'left', 'right'], 
+            mr: [2],
+            ml: [0],
+            mt: [3]
+          }}>NOTES</Text>
+          <Text variant='metric.comment' sx={{ 
+            ml: [0]
+          }}>{metric.notes}</Text>
+          </>
+        }
+        <Box sx={{ 
+          mt: ((metric.notes && metric.comment) ? [2] : [0] )
+        }}>
+        </Box>
+        {(metric.comment) && 
+          <>
+          <Text variant='metric.comment' sx={{ 
+            color: theme.tags[tag], 
+            textAlign: ['left', 'left', 'right'], 
+            mr: [2],
+            ml: [0],
+            mt: [3]
+          }}>COMMENT</Text>
+          <Text variant='metric.comment' sx={{ 
+            ml: [0]
+          }}>{metric.comment}</Text>
+          </>
+        }
+        </Box>
+      }
+      <Divider sx={{ mr: [0, 0, 2], mt: ['12px'] }}/>
+    </Box>
+  }
+
+  return <Box>
+    <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
+      <Mobile/>
+    </Box>
+    <Box sx={{ display: ['none', 'none', 'inherit'] }}>
+    <Grid gap={['16px']} columns={
+      ['75px 100px 1fr 120px 30px']
+    }>
       <Text variant='metric.value' sx={{ 
         color: theme.tags[tag],
         textAlign: ['left', 'left', 'right']
       }}>
         {format(metric.name, metric.value)}
       </Text>
-      <Box sx={{ display: ['none', 'none', 'inherit']}}>
+      <Box>
         {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}
         {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
         {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
@@ -80,7 +159,7 @@ const Metric = ({ metric, tag }) => {
         {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
       </Text>
       {hasDetails && 
-        <Box sx={{ display: ['none', 'none', 'inherit'] }}>
+        <Box sx={{  }}>
           <Expander toggle={toggle} expanded={expanded}></Expander>
         </Box>
       }
@@ -92,19 +171,19 @@ const Metric = ({ metric, tag }) => {
       }}>
       {(metric.notes) && 
         <Grid 
-          gap={['4px', '4px', '16px']} 
-          columns={[1, 1, '191px 1fr 30px']}
+          gap={['16px']} 
+          columns={['191px 1fr 30px']}
           sx={{ }}
         >
           <Text variant='metric.comment' sx={{ 
             color: theme.tags[tag], 
-            textAlign: ['left', 'left', 'right'], 
+            textAlign: ['right'], 
             mr: [2],
-            ml: ['93px', '93px', 0],
-            mt: [1, 1, 0]
+            ml: [0],
+            mt: [0]
           }}>NOTES</Text>
           <Text variant='metric.comment' sx={{ 
-            ml: ['93px', '93px', 0]
+            ml: [0]
           }}>{metric.notes}</Text>
         </Grid>
       }
@@ -114,25 +193,26 @@ const Metric = ({ metric, tag }) => {
       </Box>
       {(metric.comment) && 
         <Grid 
-          gap={['4px', '4px', '16px']} 
-          columns={[1, 1, '191px 1fr 30px']}
+          gap={['16px']} 
+          columns={['191px 1fr 30px']}
           sx={{ }}
         >
           <Text variant='metric.comment' sx={{ 
             color: theme.tags[tag], 
-            textAlign: ['left', 'left', 'right'], 
+            textAlign: ['right'], 
             mr: [2],
-            ml: ['93px', '93px', 0],
-            mt: [1, 1, 0]
+            ml: [0],
+            mt: [0]
           }}>COMMENT</Text>
           <Text variant='metric.comment' sx={{ 
-            ml: ['93px', '93px', 0]
+            ml: [0]
           }}>{metric.comment}</Text>
         </Grid>
       }
       </Box>
     }
     <Divider sx={{ mr: [2] }}/>
+    </Box>
   </Box>
 }
 

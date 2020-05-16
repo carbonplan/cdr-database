@@ -52,9 +52,10 @@ const Report = ({ project }) => {
       borderWidth: '0px', 
       borderBottomWidth: '1px',
       pr: [0, 0, 4],
-      py: [3, 3, 3]
+      pt: [3, 3, 3],
+      pb: [2, 2, 3]
     }}>
-      <Grid gap={['8px', '16px', '16px']} columns={[1, null, '1fr 300px']}>
+      <Grid gap={['8px', '8px', '16px']} columns={[1, null, '1fr 300px']}>
         <Heading sx={{ mb: [1, 1, 2], fontSize: [4] }}>{project.name}
           <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
           </Text>
@@ -73,8 +74,8 @@ const Report = ({ project }) => {
           )}
         </Box>
       </Grid>
-      <Grid gap={['8px', '16px', '16px']} columns={[1, 1, '1fr 32px']}>
-      <Text variant='description' sx={{ mb: [2, 2, 2] }}> 
+      <Grid gap={['8px', '8px', '16px']} columns={[1, 1, '1fr 32px']}>
+      <Text variant='description' sx={{ mb: [0, 0, 2] }}> 
         { project.description }
       </Text>
       <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
@@ -84,15 +85,15 @@ const Report = ({ project }) => {
       <Box>
         {(expanded || showOne) && 
           <Box sx={{ pb: [1] }}>
-          <Divider sx={{ mr: [2] }}/>
+          <Divider sx={{ mr: [0, 0, 2] }}/>
           {metrics.map((metric) => 
             <Metric 
               key={metric.name} 
               tag={project.tags[0]}
               metric={metric}
             ></Metric>) }
-          <Grid columns={[1, null, '300px 1fr']}>
-            <Box sx={{ fontSize: [1] }}>
+          <Grid columns={[1, 1, '300px 1fr']}>
+            <Box sx={{ fontSize: [1], mt: ['12px', '12px', 2] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
                 <Link sx={{ 
@@ -109,7 +110,7 @@ const Report = ({ project }) => {
                 </Link>
               </Text>
             </Box>
-            <Box sx={{ fontSize: [1], pr: [2], textAlign: ['left', 'left', 'right'] }}>
+            <Box sx={{ fontSize: [1], pr: [2], mt: [0, 0, 2], mb: [2, 2, 0], textAlign: ['left', 'left', 'right'] }}>
               <Text sx={{ color: 'secondary' }}>Location</Text>
               <Text>
                 { project.location.name }
