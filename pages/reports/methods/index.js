@@ -42,7 +42,7 @@ function Methods (props) {
           pr: [1],
           pb: [2]
         }}>
-          <TOC setSection={setSection}></TOC>
+          <TOC setSection={setSection} section={section}></TOC>
         </Box>
         <Box sx={{ 
           borderStyle: 'solid',

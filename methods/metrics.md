@@ -38,6 +38,8 @@ one='Proposal of future technology that violate basic physical principles or pub
 
 Volume is our best estimate of the current annual carbon removal and/or avoided emissions of the project. In all cases volume is based on a public project offering. We are working on calibrating these estimates with domain-specific data-driven approaches.
 
+Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. a direct air capture facility), and those that are performing a one time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
+
 Note that a project with large Volume but low Negativity would not be an effective form of carbon removal or avoided emissions due to the large process emissions, so these metrics should be considered together.
 
 To evaluate Volume, we use one of two approaches. 
@@ -57,6 +59,10 @@ one='Claim of substantial volume that we have credible reason to find implausibl
 ## Negativity
 
 We define negativity as one minus the ratio of gross project emissions to gross carbon removal. If emissions are high relative to the amount of carbon removal, this value will approach 0.
+
+Note that, for projects performing carbon dioxide storage (e.g. mineralization in concrete or pyrolysis to produce biochar) that currently source CO2 from existing biogenic sources or industrial waste streams, one might reasonably think of their negativity as low or zero, as they are currently avoiding emissions but not performing carbon removal. However, as we separately address that distinction under Mechanism, we choose here to still report a (potentially positive) negativity based on the gross project emissions relative to the gross carbon removed or stored.
+
+When projects report negativity based on a claimed volume of carbon removal that additionally includes avoided emissions due to other practices that were prevented (e.g. prevented use of alternative building materials), we recompute the ratio, if possible, to only reflect the carbon removal or carbon storage component.
 
 Estimating negativity requires a life cycle assessment to quantify emissions sources. This can be an abstract 'per ton' estimate based on parameters of the technology, or based on data from an instantiated project.
 
@@ -84,7 +90,7 @@ For all projects, when a range is provided, we report the minimum, and all times
 
 For soil and forest projects, we separately examine physical and socioeconomic risks. Physical risks include wildfire, drought, and natural disaster. Socioeconomic risks include breaches of contract, bankruptcy, and other factors which prevent projects from continuing to provide climate benefits. When explicit contract terms are described, we consider the contract duration the duration of permanence, even if it is lower than the number suggested by the physical risks. We consider 30 years or less a plausible maximum duration of permanence for these projects. While somewhat arbitrary, 30 years.... 
 
-Building materials are intermediate, as the plausible duration of permanence depends on the material (e.g. concrete vs laminated wood). While concrete can be considered similarly permanent as mineralization, wood products are likely bounded by a range of 50-100 years [CITE].
+Building materials are intermediate, as the plausible duration of permanence depends on the material (e.g. concrete vs laminated wood). While concrete can be considered similarly permanent as mineralization, wood products are likely bounded by a range of 50-100 years (Hepburn et al., 2019; Lippke et al., 2005).
 
 <Table 
 type='icons'
