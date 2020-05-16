@@ -4,7 +4,7 @@ import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
 import Metrics from '../../../methods/metrics.md'
 import Feedback from '../../../methods/feedback.md'
-import ProgramStripe2020 from '../../../methods/programs/stripe-2020.md'
+import Projects from '../../../methods/projects.md'
 import TOC from '../../../methods/toc.js'
 
 function Methods (props) {
@@ -23,10 +23,10 @@ function Methods (props) {
         Methods
       </Heading>
       <Text sx={{ maxWidth: '800px', fontSize: [3] }}>
-        Here are descriptions of our metrics and
-        notes on each project we evaluated in the context
-        of a procurement program. Want to give us feedback? 
-        Read <Link onClick={() => setSection('feedback')}>here</Link>.
+        Descriptions of our metrics and
+        notes on each carbon removal project we have analyzed. Check out the{' '}
+        <Link onClick={() => setSection('feedback')}>feedback</Link> section
+        if you have questions or want to get in touch.
       </Text>
       </Box>
       <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
@@ -55,7 +55,7 @@ function Methods (props) {
           <Box sx={{ mt: ['-50px'], maxWidth: '800px' }}>
           {(section == 'metrics') && <Metrics/>}
           {(section == 'feedback') && <Feedback/>}
-          {(section == 'programs:stripe-2020') && <ProgramStripe2020/>}
+          {(section == 'projects') && <Projects/>}
           </Box>
         </Box>
       </Grid>

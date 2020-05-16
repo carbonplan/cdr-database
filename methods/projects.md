@@ -1,6 +1,8 @@
-# Projects: Stripe 2020
+# Projects
 
-Here we provide detailed methods for projects analyzed from the [Stripe Climate 2020]() program. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. Here and elsewhere, our primary focus is independently evaluating the scientific plausibility and credibility of claims made in project proposals.
+Here we provide detailed methods for projects we have analyzed. All analysis and evaluation is based on information provided in public project proposals plus our own research. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations made or calculations performed. 
+
+Here and elsewhere, our primary focus is analyzing and independently validating scientific plausibility and credibility. We work entirely independently of organiztions soliciting project proposals. Our hope is that sharing data and insights can benefit the field as a whole, and complement the work of the inventors, scientists, entrepreneurs, and activists who are making climate solutions a reality. 
 
 ## Biorecro
 

@@ -20,6 +20,7 @@ const TOC = ({ section, setSection }) => {
     if (current == section) {
       return { 
         textDecoration: 'none',
+        pb: ['2px'],
         borderColor: 'text',
         borderStyle: 'solid',
         borderWidth: '0px',
@@ -31,6 +32,7 @@ const TOC = ({ section, setSection }) => {
     } else {
       return { 
         textDecoration: 'none',
+        pb: ['2px'],
         borderColor: 'background',
         borderStyle: 'solid',
         borderWidth: '0px',
@@ -58,7 +60,7 @@ const TOC = ({ section, setSection }) => {
       <Link  sx={style('metrics')} onClick={() => setSection('metrics')}>Metrics</Link>
     </Box>
     <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
-      <Link sx={style('programs:stripe-2020')} onClick={() => setSection('programs:stripe-2020')}>Projects: Stripe 2020</Link>
+      <Link sx={style('projects')} onClick={() => setSection('projects')}>Projects</Link>
       </Box>
     <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
       <Link sx={style('feedback')} onClick={() => setSection('feedback')}>Feedback?</Link>

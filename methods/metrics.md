@@ -6,9 +6,9 @@ import Exclamation from '../components/icons/exclamation'
 
 # Metrics
 
-## Overall
+Our goal is to harmonize metrics across a range of project categories, bringing standards and shared concepts to a complex and nascent space. 
 
-Metrics are based on information provided in public project offerings plus our own research. We are actively developing better methods for metric calibration based on independent data and models.
+Values for each metric are based on information provided in public project proposals plus our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
 The mark next to each metric shows our validation. A <Check closed={true}/> means we have independently validated the claims. An <Ex closed={true}/> means we have reason to doubt the claims. A <Question closed={true}/> means we are uncertain, and should not be taken as a criticism, rather a lack of information. We also include notes and comments, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 

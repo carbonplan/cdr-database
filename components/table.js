@@ -10,7 +10,7 @@ const Table = ({ one, two, three, type, children }) => {
   if (type == 'icons') width = '50px'
   if (type == 'squares') width = '100px'
 
-  const Row = ({ children }) => {
+  const Row = ({ children, final }) => {
     return <Grid columns={[width + ' 1fr']} sx={{
         borderStyle: 'solid',
         borderWidth: '0px',
@@ -18,14 +18,18 @@ const Table = ({ one, two, three, type, children }) => {
         borderColor: 'muted',
         py: [2],
         mb: [2],
-        mr: [7]
+        mr: [7],
+        borderBottomWidth: final ? '1px' : '0px',
+        pb: final ? [3] : [0]
       }}>
       { children }
     </Grid>
   }
 
   return (
-    <Box sx={{ my: [4] }}>
+    <Box sx={{ 
+      my: [4]
+    }}>
       <Row>
         {(type == 'icons') && <Check/>}
         {(type == 'squares') && <Squares data={2}/>}
@@ -40,7 +44,7 @@ const Table = ({ one, two, three, type, children }) => {
           { two }
         </Box>
       </Row>
-      <Row>
+      <Row final={true}>
         {(type == 'icons') && <Ex/>}
         {(type == 'squares') && <Squares data={0}/>}
         <Box sx={{ pt: ['6px'], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
