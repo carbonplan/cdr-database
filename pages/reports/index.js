@@ -24,7 +24,6 @@ function Index () {
 
   if (projects.length == 0) {
     dispatch({ type: 'INIT_PROJECTS', value: data.projects })
-    dispatch({ type: 'INIT_FUSE' })
     dispatch({ type: 'INIT_VISIBILITY' })
   }
 
