@@ -52,7 +52,7 @@ function Methods (props) {
           pl: [1, 5, 5],
           pr: [1, 7, 7]
         }}>
-          <Box sx={{ mt: ['-50px'] }}>
+          <Box sx={{ mt: ['-50px'], maxWidth: '800px' }}>
           {(section == 'metrics') && <Metrics/>}
           {(section == 'feedback') && <Feedback/>}
           {(section == 'programs:stripe-2020') && <ProgramStripe2020/>}
