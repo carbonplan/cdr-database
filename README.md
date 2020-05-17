@@ -25,7 +25,7 @@ and then visit `http://localhost:5000/reports` in your browser.
 
 ## license
 
-All the code in this repository is MIT licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, reports, etc.). Some of the data featured here is sourced from content made available under a CC-BY license. We include attribution for this content, and we please request that you also maintain that attribution if using this data.
+All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/) licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, reports, etc.). Some of the data featured here is sourced from content made available under a [CC-BY-4.0](https://choosealicense.com/licenses/cc-by-4.0/) license. We include attribution for this content, and we please request that you also maintain that attribution if using this data.
 
 ## about us
 
