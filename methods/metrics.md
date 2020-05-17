@@ -126,20 +126,20 @@ one='Climate benefits claimed by the project are likely to not be additional bec
 >
 </Table>
 
-## Transparency
+## Specificity
 
-The transparency score reflects the degree to which project information is publicly available. All entries in this datasets are based off public information which, on its own, indicates a welcome form of transparency. This metric is relative above and beyond that baseline.
+The Specificity metric reflects there is enough detailed information in project proposals, publications, or other materials for us to validate our metrics. All entries in this datasets are based off public proposals, which provides a baseline level of information. This metric is relative above and beyond that baseline.
 
-Transparency includes the thoroughness of project materials, but also the availability of external resources or peer-reviewed publications. The utility of different materials depends on the project category, but can include: specific project parameters (locations, practices), specific technology components, peer-reviewed publications, third-party verifications, and any datasets or models used for project quantification or life cycle assessment.
+The utility of different information depends on the project category, but can include: specific project parameters (locations, practices), specific technology components, peer-reviewed publications, third-party verifications, and any datasets or models used for project quantification or life cycle assessment.
 
-In considering transparency, we appreciate there can be sensitivity around proprietary and private information, including intellectual property for technology, or information about land owners and existing business practices. A low value on transparency does not necessarily mean a carbon removal strategy cannot be effective, but it does place extra burden on the measurement and verification of its efficacy. 
+In considering Specificity, we appreciate there can be sensitivity around proprietary and private information, including intellectual property for technology, or information about land owners and existing business practices. A low value on Specificity does not necessarily mean a carbon removal strategy cannot be effective, but it does place extra burden on the measurement and verification of its efficacy. 
 
-In general, we believe more transparency can help the field develop new and better solutions, and can help organizations make better decisions when selecting projects.
+In general, we encourage sharing as much details as possible, as we believe making specific project information more public and transparent can help the field develop new and better solutions, and can help organizations make better decisions when selecting projects.
 
 <Table 
 type='squares'
-three='Project either uses an established approach and provides full details on its specific implementation, or uses an early-stage approach but provides substantial information about the planned implementation and is grounded in existing data and research.'
-two='Project uses an established approach but provides few details about the specifics of its implementation, or describes a new approach but without details on its plan.' 
-one='Critical project data that would be important for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.' 
+three='Project either uses an established approach and full specific details on implementaiton can be obtained, or uses an early-stage approach but makes extensive details available eabout the planned implementation and is grounded in existing data and research.'
+two='Project uses an established approach but few details are available about the specifics of its implementation, or describes a new approach but without details on its plan.' 
+one='Critical project data needed for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.' 
 >
 </Table>

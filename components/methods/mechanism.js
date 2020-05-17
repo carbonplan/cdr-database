@@ -5,7 +5,7 @@ const Mechanism = () => {
     <>
       <Text sx={{ mb: [3] }}>
         We consider Mechanism to be the basic process by which a project either
-        removes carbon dioxide from the atmosphere (indicated by 'CDR'), reduces carbon
+        removes carbon dioxide from the atmosphere (indicated by 'CDR'), avoids carbon
         dioxide emissions (indicated by 'AVD'), or both.
       </Text>
       <Text sx={{ mb: [3] }}>

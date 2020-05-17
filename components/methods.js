@@ -6,7 +6,7 @@ import Negativity from './methods/negativity'
 import Cost from './methods/cost'
 import Permanence from './methods/permanence'
 import Additionality from './methods/additionality'
-import Transparency from './methods/transparency'
+import Specificity from './methods/specificity'
 import Feedback from './methods/feedback'
 import { useState } from 'react'
 import { alpha } from '@theme-ui/color'
@@ -21,7 +21,7 @@ const contents = {
   'cost': <Cost></Cost>,
   'permanence': <Permanence></Permanence>,
   'additionality': <Additionality></Additionality>,
-  'transparency': <Transparency></Transparency>,
+  'specificity': <Specificity></Specificity>,
   'feedback?': <Feedback></Feedback>
 }
 
@@ -67,7 +67,7 @@ const Methods = () => {
       </Heading>
       <Box sx={{ maxWidth: '450px', mb: [2] }}>
         {['overall', 'mechanism', 'volume', 'negativity', 'cost', 'permanence',
-          'additionality', 'transparency', 'feedback?'].map((name) => 
+          'additionality', 'specificity', 'feedback?'].map((name) => 
           <Badge variant='primary' key={name} sx={getStyle(name)} onClick={() => setMethod(name)}>{name}</Badge>
         )}
       </Box>

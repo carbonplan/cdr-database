@@ -22,12 +22,12 @@ const Metric = ({ metric, tag }) => {
   }
 
   const hasUnits = (metric.units != '')
-  const hasDetails = ((metric.claim != '') || (metric.comment != ''))
+  const hasDetails = ((metric.notes != '') || (metric.comment != ''))
 
   const format = (key, value) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
-    if (key == 'transparency') return ''
+    if (key == 'specificity') return ''
     if ((key == 'permanence') && (value == 1000)) return '1000+'
     else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
     else if (key == 'negativity') return parseFloat(value).toFixed(2)
@@ -73,7 +73,7 @@ const Metric = ({ metric, tag }) => {
           <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
           </Text>
         }
-        {(metric.name == 'transparency') && 
+        {(metric.name == 'specificity') && 
           <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value}
           <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
         </Text>
@@ -150,7 +150,7 @@ const Metric = ({ metric, tag }) => {
         {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
         {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
         {(metric.name == 'additionality') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
-        {(metric.name == 'transparency') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
+        {(metric.name == 'specificity') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
       </Box>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
@@ -176,13 +176,13 @@ const Metric = ({ metric, tag }) => {
       {(metric.notes) && 
         <Grid 
           gap={['16px']} 
-          columns={['191px 1fr 30px']}
+          columns={['201px 1fr 30px']}
           sx={{ }}
         >
           <Text variant='metric.comment' sx={{ 
             color: theme.tags[tag], 
             textAlign: ['right'], 
-            mr: [2],
+            mr: ['9px'],
             ml: [0],
             mt: [0]
           }}>NOTES</Text>
@@ -198,13 +198,13 @@ const Metric = ({ metric, tag }) => {
       {(metric.comment) && 
         <Grid 
           gap={['16px']} 
-          columns={['191px 1fr 30px']}
+          columns={['201px 1fr 30px']}
           sx={{ }}
         >
           <Text variant='metric.comment' sx={{ 
             color: theme.tags[tag], 
             textAlign: ['right'], 
-            mr: [2],
+            mr: ['9px'],
             ml: [0],
             mt: [0]
           }}>COMMENT</Text>

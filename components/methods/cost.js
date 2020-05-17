@@ -4,7 +4,7 @@ const Cost = () => {
   return (
     <>
       <Text sx={{ mb: [2] }}>
-        Project Cost is taken directly from public projet offerings.
+        Project Cost is taken directly from public project offerings.
       </Text>
       <Text sx={{ mb: [2] }}>
         Costs are expressed per volume, so while the price itself is entirely 
