@@ -4,9 +4,7 @@ import Bar from './graphics/bar'
 import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
 import Check from './icons/check'
-import Question from './icons/question'
 import Ex from './icons/ex'
-import Exclamation from './icons/exclamation'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -125,6 +123,13 @@ const Metric = ({ metric, tag }) => {
     </Box>
   }
 
+  const parseMetric = (metric) => {
+    if (metric.name != 'mechanism') return format(metric.name, metric.value)
+    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided)) return 'CDR'
+    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided)) return 'AVD'
+    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided)) return 'BOTH'
+  }
+
   return <Box>
     <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
       <Mobile/>
@@ -137,7 +142,7 @@ const Metric = ({ metric, tag }) => {
         color: theme.tags[tag],
         textAlign: ['left', 'left', 'right']
       }}>
-        {format(metric.name, metric.value)}
+        {parseMetric(metric)}
       </Text>
       <Box>
         {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}

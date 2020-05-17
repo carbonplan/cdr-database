@@ -1,8 +1,6 @@
 import Table from '../components/table'
 import Check from '../components/icons/check'
-import Question from '../components/icons/question'
 import Ex from '../components/icons/ex'
-import Exclamation from '../components/icons/exclamation'
 
 # Metrics
 
@@ -14,7 +12,7 @@ The mark next to each metric shows our validation. A <Check closed={true}/> mean
 
 Marks on metrics are only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide marks on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of  $/tCO2, however, uncertainty in cost does reflect uncertainty in volume, but as we validate volume separately, we do not attempt to specifically validate the cost. 
 
-For Additionality and Transparency we provide a coarse score from 1 to 3 and comments. For these two dimensions, we occasionally use an  <Exclamation closed={true}/> to indicate a specific issue that warrants further investigation. For Transparency, we consider the availability of public materials itself highly transparent, so these values should be considered relative above and beyond that baseline. For Additionality, we note that its importance depends on the motivation for funding a project, and a low value does not mean a project cannot have significant positive climate benefits.
+For Additionality and Transparency we provide a coarse score from 1 to 3 and comments. For Transparency, we consider the availability of public materials itself highly transparent, so these values should be considered relative above and beyond that baseline. For Additionality, we note that its importance depends on the motivation for funding a project, and a low value does not mean a project cannot have significant positive climate benefits.
 
 Across all metrics, our evaluation is primarily focused on validating whether claims are plausible and consistent with the best available science and data. We also strive, through our metrics, to harmonize concepts and quantities across a wide diversity of projects. This process is more straightforward for methods based on established physical or biological processes, and can pose particular challenges for proprietary industrial practices or inherently variable physical properties.
 
