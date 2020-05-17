@@ -138,7 +138,7 @@ In general, we encourage sharing as many details as possible, as we believe maki
 
 <Table 
 type='squares'
-three='Project either uses an established approach and full specific details on implementaiton can be obtained, or uses an early-stage approach but makes extensive details available eabout the planned implementation and is grounded in existing data and research.'
+three='Project either uses an established approach and full details can be obtained on implementaiton, or uses an early-stage approach but makes extensive details available about the planned implementation and its grounding in existing data and research.'
 two='Project uses an established approach but few details are available about the specifics of its implementation, or describes a new approach but without details on its plan.' 
 one='Critical project data needed for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.' 
 >
