@@ -128,13 +128,13 @@ one='Climate benefits claimed by the project are likely to not be additional bec
 
 ## Specificity
 
-The Specificity metric reflects there is enough detailed information in project proposals, publications, or other materials for us to validate our metrics. All entries in this datasets are based off public proposals, which provides a baseline level of information. This metric is relative above and beyond that baseline.
+Specificity reflects whether there is enough detailed information in project proposals, publications, or other materials for us to validate our metrics. All entries in this database are based off public proposals, which provides a baseline level of information. This metric is relative above and beyond that baseline.
 
 The utility of different information depends on the project category, but can include: specific project parameters (locations, practices), specific technology components, peer-reviewed publications, third-party verifications, and any datasets or models used for project quantification or life cycle assessment.
 
 In considering Specificity, we appreciate there can be sensitivity around proprietary and private information, including intellectual property for technology, or information about land owners and existing business practices. A low value on Specificity does not necessarily mean a carbon removal strategy cannot be effective, but it does place extra burden on the measurement and verification of its efficacy. 
 
-In general, we encourage sharing as much details as possible, as we believe making specific project information more public and transparent can help the field develop new and better solutions, and can help organizations make better decisions when selecting projects.
+In general, we encourage sharing as many details as possible, as we believe making specific project information more public and transparent can help the field develop new and better solutions, and can help organizations make better decisions when selecting projects.
 
 <Table 
 type='squares'
