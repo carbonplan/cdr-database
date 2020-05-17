@@ -104,8 +104,8 @@ const Report = ({ project }) => {
                   '&:hover > #arrow': {
                     color: 'secondary'
                   }
-                }} href={ project.program.url }>
-                  { project.program.name }
+                }} href={ project.source.url }>
+                  { project.source.name }
                   <Text id='arrow' variant='arrow'>↗</Text>
                 </Link>
               </Text>
