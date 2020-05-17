@@ -100,6 +100,37 @@ const reducer = (state = initialState, action) => {
         visibility: combinedSearch(state.tags, newSearch, state.projects),
         showOne: false
       }
+    case 'SET_ACTIVE_LIST':
+      const vis_active_list = {}
+      state.projects.forEach((project) =>
+        vis_active_list[project.id] = action.value.includes(project.id)
+      )
+      return {
+        ...state,
+        visibility: vis_active_list
+      }
+    case 'SET_ACTIVE':
+      const vis_active_one = Object.assign({}, state.visibility)
+      state.projects.forEach((project) =>
+        vis_active_one[project.id] = (project.id === action.value)
+      )
+      return {
+        ...state,
+        visibility: vis_active_one
+      }
+    case 'TOGGLE_ACTIVE':
+      const toggle_active = Object.assign({}, state.visibility)
+      toggle_active[action.value] = !toggle_active[action.value]
+      return {
+        ...state,
+        visibility: toggle_active
+      }
+    case 'CLICK_OFF':
+      return {
+        ...state,
+        visibility: combinedSearch(state.tags, state.search, state.projects),
+        showOne: false
+      }
     case 'INIT_PROJECTS':
       return {
         ...state,

@@ -47,6 +47,9 @@ const Volume = (props) => {
       size: 200,
       cursor: 'pointer'
     },
+    selection: {
+      brush: { type: "interval", zoom: false }
+    },
     encoding: {
       y: { 
         field: 'group', 
@@ -86,21 +89,42 @@ const Volume = (props) => {
   const height = 175
 
   function handleClickOn(...args) {
-    dispatch({ type: 'UPDATE_SEARCH', value: args[1].datum.id })
+    dispatch({ type: 'SET_ACTIVE', value: args[1].datum.id })
   }
 
   function handleClickOr(...args) {
-    dispatch({ type: 'OR_SEARCH', value: args[1].datum.id })
+    dispatch({ type: 'TOGGLE_ACTIVE', value: args[1].datum.id })
   }
 
   function handleClickOff(...args) {
-    dispatch({ type: 'UPDATE_SEARCH', value: '' })
+    dispatch({ type: 'CLICK_OFF', value: '' })
+  }
+
+  function handleBrush(...args) {
+    if (Object.keys(args[1]).length == 0) {
+      handleClickOff(args)
+      return
+    } else {
+      const x = args[1].volume
+      const y = args[1].group
+
+      var selected = []
+      for (var i = 0; i < projects.length; i++) {
+        const row = values[i]
+
+        if ((y.includes(row.group)) && ((row.volume > x[0]) && (row.volume < x[1]))) {
+          selected.push(row.id)
+        }
+      }
+      dispatch({ type: 'SET_ACTIVE_LIST', value: selected })
+    }
   }
 
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
-    clickOff: handleClickOff
+    clickOff: handleClickOff,
+    brush: handleBrush
   }
 
   return <Vega width={width} height={height} signalListeners={signalListeners}
