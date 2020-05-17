@@ -52,7 +52,6 @@ const Metric = ({ metric, tag }) => {
         </Box>
       }
       </Grid>
-
       <Text variant='metric.value' sx={{ 
         color: theme.tags[tag],
         textAlign: ['left'],
@@ -107,7 +106,7 @@ const Metric = ({ metric, tag }) => {
           <>
           <Text variant='metric.comment' sx={{ 
             color: theme.tags[tag], 
-            textAlign: ['left', 'left', 'right'], 
+            textAlign: ['left'], 
             mr: [2],
             ml: [0],
             mt: [3]
@@ -136,7 +135,7 @@ const Metric = ({ metric, tag }) => {
     </Box>
     <Box sx={{ display: ['none', 'none', 'inherit'] }}>
     <Grid gap={['16px']} columns={
-      ['75px 100px 1fr 120px 30px']
+      ['85px 100px 1fr 110px 30px']
     }>
       <Text variant='metric.value' sx={{ 
         color: theme.tags[tag],

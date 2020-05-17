@@ -86,13 +86,13 @@ export default {
     metric: {
       value: {
         fontFamily: 'monospace',
-        fontSize: [2, 2, 3],
+        fontSize: [3],
         textAlign: 'right',
-        mt: ['6px', '6px', '6px']
+        mt: ['6px']
       },
       label: {
         fontFamily: 'monospace',
-        fontSize: [2, 2, 2],
+        fontSize: [2],
         mt: ['6px'],
         textTransform: 'capitalize',
       },
@@ -277,7 +277,8 @@ export default {
       fontFamily: 'body',
       fontSize: [3],
       fontWeight: 'body',
-      letterSpacing: 'body'
+      letterSpacing: 'body',
+      cursor: 'text'
     },
     h1: {
       fontFamily: 'heading',
