@@ -154,7 +154,7 @@ const Metric = ({ metric, tag }) => {
       </Text>
       <Text>
         {(metric.rating === 1) && <Check color={theme.tags[tag]}/>}
-        {(metric.rating === 0) && <Question color={theme.tags[tag]}/>}
+        {(metric.rating === 0) && <Box/>}
         {(metric.rating === -1) && <Ex color={theme.tags[tag]}/>}
         {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
       </Text>

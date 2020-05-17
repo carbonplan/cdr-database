@@ -14,9 +14,8 @@ const Overall = () => {
     <Text>
       The mark next to each metric shows our validation. 
       A <Check closed={true}/> means we have independently 
-      validated the claims. An <Ex closed={true}/> means we have reason to doubt the claims. 
-      A <Question closed={true}/> means we are uncertain,  
-      and should not be taken as a criticism, rather a lack of information.
+      validated the claim and an <Ex closed={true}/> means we have reason to doubt the claim. 
+      In all other cases we remain uncertain, so we leave the entry blank.
       We additionally include notes on projects and 
       comments explaining our evaluation.
     </Text>

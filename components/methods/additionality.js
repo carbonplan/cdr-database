@@ -12,7 +12,7 @@ const Additionality = () => {
     <Text sx={{ mb: [2] }}>
       We examine projects for contextual information around the likelihood
       of additionality and rank them on a three point scale. 
-      Low scores are not a concern if the goal is advancing technology, 
+      Low values are not a concern if the goal is advancing technology, 
       but should be a primary consideration if the goal is offsetting.
     </Text>
     </>

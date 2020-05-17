@@ -37,13 +37,14 @@ const Table = ({ one, two, three, type, children }) => {
           { three }
         </Box>
       </Row>
+      {(type == 'squares') &&
       <Row>
-        {(type == 'icons') && <Question/>}
-        {(type == 'squares') && <Squares data={1}/>}
+        <Squares data={1}/>
         <Box sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
           { two }
         </Box>
       </Row>
+      }
       <Row final={true}>
         {(type == 'icons') && <Ex/>}
         {(type == 'squares') && <Squares data={0}/>}
