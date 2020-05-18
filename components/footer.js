@@ -21,7 +21,7 @@ const Footer = (props) => {
     }
   }, [])
 
-  const color = '#7eb36a'  // TODO: Get from pointer
+  const color = '#7eb36a'
 
   return (
     <Box sx={{ 
