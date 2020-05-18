@@ -57,7 +57,6 @@ const Methods = () => {
         borderStyle: 'solid', 
         borderColor: 'muted', 
         borderWidth: '0px', 
-        borderTopWidth: '1px',
         pl: [4],
         pt: [3]
       }}

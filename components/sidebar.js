@@ -38,7 +38,6 @@ const Sidebar = ({ projects }) => {
       borderStyle: 'solid', 
       borderColor: 'muted',
       borderWidth: '0px',
-      borderLeftWidth: '1px',
       display: ['none', 'none', 'inherit'],
       mr: [5]
     }}>

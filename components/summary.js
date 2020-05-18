@@ -12,7 +12,19 @@ const Summary = ( props ) => {
   const [chart, setChart] = useState('VOLUME');
 
   return (
-    <Box sx={{ height: '350px', px: [4], pt: [3] }}>
+    <Box sx={{ 
+      height: '350px', 
+      px: [4], 
+      pt: [3],
+      borderStyle: 'solid', 
+      borderColor: 'muted', 
+      borderWidth: '0px', 
+      borderBottomWidth: '1px',
+      display: 'inherit',
+      '@media screen and (max-height: 600px)': {
+        display: 'none'
+      }
+    }}>
       <Box>
       <select
         onChange={e => {
