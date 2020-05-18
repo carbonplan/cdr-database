@@ -54,13 +54,13 @@ three='Possible to validate claimed volume using either an independent calculati
 
 ## Negativity
 
-We define Negativity as one minus the ratio of gross project emissions to gross climate benefits. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are high relative to the amount of carbon removal or avoided emissions, this ratio will approach 0 and the Negativity metric will approach 1.
+We define Negativity as one minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
 
 As discussed above under Mechanism, the concept of “climate benefits” is complicated because some projects directly remove CO2 (and thus contribute “gross removal”) but others primarily avoid and store CO2 emissions (and thus contribute “gross storage”). For example, a project that mineralizes CO2 sourced from industrial waste streams is primarily avoiding emissions, rather than directly removing CO2. We call the CO2 it mineralizes its “gross storage.” Similarly, a project that produces biochar from biogenic materials is not directly removing CO2 from the atmosphere, but is rather avoiding biogenic CO2 emissions. We would calculate the carbon embedded in biochar as the project’s “gross storage” for the purposes of the Negativity metric.
 
-When projects report Negativity based on a claimed volume of carbon removal that also includes avoided emissions due to other practices that were prevented (e.g. prevented use of alternative building materials), we recompute the ratio, if possible, to only reflect the carbon removal or carbon storage component.
+When projects report Negativity based on volume that also includes avoided emissions due to other practices that were prevented (e.g. prevented use of alternative building materials), we recompute the ratio, if possible, to only reflect the carbon removal or carbon storage component.
 
-Estimating Negativity requires a life cycle assessment to quantify emissions sources. This can be an abstract 'per ton' estimate based on parameters of the technology, or based on data from an instantiated project.
+Estimating Negativity requires a life cycle assessment to quantify emissions sources and sinks. This can be an abstract 'per ton' estimate based on parameters of the technology, or based on data from an instantiated project.
 
 To evaluate Negativity, we analyze publicly provided life cycle assessment information. Where possible, we extract explicit gross total project emissions, and total volumes of carbon dioxide either removed or stored, and then compute the ratio. When projects simply report a ‘per ton’ ratio, we report that instead. If boundary conditions and emission sources are specified, we summarize them.
 

@@ -30,7 +30,7 @@ const Table = ({ one, two, three, type, children }) => {
     <Box sx={{ 
       my: [4]
     }}>
-      <Row>
+      <Row final={(type == 'icons')}>
         {(type == 'icons') && <Check/>}
         {(type == 'squares') && <Squares data={2}/>}
         <Box sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
@@ -38,6 +38,7 @@ const Table = ({ one, two, three, type, children }) => {
         </Box>
       </Row>
       {(type == 'squares') &&
+      <>
       <Row>
         <Squares data={1}/>
         <Box sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}>
@@ -51,6 +52,7 @@ const Table = ({ one, two, three, type, children }) => {
           { one }
         </Box>
       </Row>
+      </>
       }
     </Box>
   )

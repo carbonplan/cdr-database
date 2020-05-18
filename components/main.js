@@ -28,7 +28,8 @@ const Main = ({ projects }) => {
           <Text sx={{ fontSize: [2], py: [3], pb: [4], pr: [4] }}>
             This is a public database of reports on carbon removal project proposals. 
             These reports reflect our independent analysis of public information.
-            Read more about our methods <NextLink href='/reports/methods'><a><Link>here</Link></a></NextLink>.
+            Read more about our methods <NextLink href='/reports/methods'><a>
+            <Text variant='link' sx={{ display: 'inline-block' }}>here</Text></a></NextLink>.
           </Text>
         </Box>
         <Filter></Filter>

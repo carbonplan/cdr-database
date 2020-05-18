@@ -81,6 +81,9 @@ const Methods = () => {
               color: 'text',
               '&:hover > #arrow': {
                 color: 'secondary'
+              },
+              '&:hover': {
+                color: 'secondary'
               }
             }}>READ MORE<Text id='arrow' variant='arrow'>↗</Text></Text>
             </a>

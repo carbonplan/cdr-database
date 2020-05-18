@@ -27,7 +27,7 @@ const Exclamation = ({ closed, color }) => {
     >
     {!closed && 
       <>
-      <line class="st0" x1="8" y1="0.9" x2="8" y2="9.6"/>
+      <line x1="8" y1="0.9" x2="8" y2="9.6"/>
       <line x1="7.97" y1="11.3" x2="7.97" y2="13.01"/>
       </>
     }

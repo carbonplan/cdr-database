@@ -64,8 +64,8 @@ const Header = () => {
         {expanded && <svg sx={{ width: '50px', height: '30px', transform: 'scale(2)', mt: ['-3px'] }}
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 68 36">
-          <line class="cls-1" x1="50.85" y1="29.79" x2="17.15" y2="6.21"/>
-          <line class="cls-1" x1="17.15" y1="29.79" x2="50.85" y2="6.21"/>
+          <line x1="50.85" y1="29.79" x2="17.15" y2="6.21"/>
+          <line x1="17.15" y1="29.79" x2="50.85" y2="6.21"/>
           <path sx={{ transition: 'all 0.25s' }} className='paren' d="M6.4,1.2c-6.3,10.3-6.3,23.3,0,33.6"/>
           <path sx={{ transition: 'all 0.25s' }} className='paren' d="M61.6,34.8c6.3-10.3,6.3-23.3,0-33.6"/>
           </svg>
