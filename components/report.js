@@ -94,8 +94,8 @@ const Report = ({ project }) => {
         pr: [0, 0, 4]
       }}>
         {(expanded || showOne) && 
-          <Box sx={{ pb: [1] }}>
-          <Divider sx={{ mr: [0, 0, 2] }}/>
+          <Box sx={{ pb: [2, 2, '18px'] }}>
+          <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
           {metrics.map((metric) => 
             <Metric 
               key={metric.name} 

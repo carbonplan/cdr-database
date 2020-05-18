@@ -46,12 +46,15 @@ const Metric = ({ metric, tag }) => {
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
-      }
+      },
+      pt: [2],
+      pb: [!expanded ? 3 : 0]
     }}>
       <Grid id='grid' columns={['1fr 30px']}>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
+        {(metric.rating === 1) && <Check color={theme.tags[tag]}/>}
       </Text>
       {hasDetails && 
         <Box id='container' sx={{ ml: ['-5px'] }}>
@@ -126,7 +129,7 @@ const Metric = ({ metric, tag }) => {
         }
         </Box>
       }
-      <Divider sx={{ mr: [0, 0, 2], mt: ['12px'] }}/>
+      <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
     </Box>
   }
 
@@ -147,7 +150,9 @@ const Metric = ({ metric, tag }) => {
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
-      }
+      },
+      pt: [2],
+      pb: [!expanded ? 2 : 0]
     }}>
       <Grid id='grid' gap={['16px']} columns={
         ['85px 100px 1fr 110px 30px']
@@ -231,7 +236,7 @@ const Metric = ({ metric, tag }) => {
       }
       </Box>
     }
-    <Divider sx={{ mr: [2] }}/>
+    <Divider sx={{ mr: [2], mt: [0], mb: [0] }}/>
     </Box>
   </Box>
 }
