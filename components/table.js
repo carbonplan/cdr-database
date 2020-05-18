@@ -44,7 +44,6 @@ const Table = ({ one, two, three, type, children }) => {
           { two }
         </Box>
       </Row>
-      }
       <Row final={true}>
         {(type == 'icons') && <Ex/>}
         {(type == 'squares') && <Squares data={0}/>}
@@ -52,6 +51,7 @@ const Table = ({ one, two, three, type, children }) => {
           { one }
         </Box>
       </Row>
+      }
     </Box>
   )
 }

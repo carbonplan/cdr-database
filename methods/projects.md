@@ -44,6 +44,8 @@ The CarbonCure process utilizes CO2 for mineralization in building materials. At
 
 This project is a proposal to combine two existing components, fast pyrolysis for converting  biomass to bio-oil, and underground waste injection of the bio-oil for permanent storage. The current project plans to source the bio-oil from an existing source and demonstrate geological sequestration in Class I injection wells, in North America and Europe. The underlying component technologies are well established, and two papers are referenced that present theoretical analysis of the potential for combining them. We consider the volume validated as it is simply a function of the planned bio-oil procurement. Specifically, given the stated ratio of 1.55 tCO2 for every 1 t of bio-oil (which corresponds to  42% C content for the bio-oil), we infer that 6452 t bio-oil will be procured. 
 
+A minor clarification on negativity is that the project estimates 1.53 tCO2 removed and 0.347 tCO2 of process emissions, yielding a ratio of 1 - 0.347 / 1.53 = 0.773. They however report a ratio of 1 - 0.28 = 0.72 , likely because they took a different ratio. We report our recomputed number for consistency.
+ 
 ## Climeworks
 
 The reported volume of 50 tCO2 / yr is based on a small pilot plant in Iceland commissioned in 2017. We used a back of the envelope calculation to evaluate the plausibility of this number. ClimeWorks claims they use amine sorbents. Assuming an adsorption capacity of 2 mmol CO2 / g (Jones et al., 2016), a range of 4-6 cycles per day, and a range of 200-500 kg or sorbent for the pilot plant, yields sequestration volumes of approximately 25-70t CO2 / yr, making the estimate highly plausible.
@@ -132,7 +134,7 @@ The project uses CO2 for mineralization in building materials. At least in its c
 
 First we list all references mentioned above. Below that we list supplementary references that inform our general thinking on these topics.
 
-...
+…
 
 Additional references
 
