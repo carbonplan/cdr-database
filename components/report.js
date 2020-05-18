@@ -36,7 +36,7 @@ const Report = ({ project }) => {
     'permanence',
     'cost',
     'additionality',
-    'transparency'
+    'specificity'
   ]
 
   const metrics = showMetrics.map((metric) => {
@@ -50,61 +50,77 @@ const Report = ({ project }) => {
       borderStyle: 'solid',
       borderColor: 'muted',
       borderWidth: '0px', 
-      borderBottomWidth: '1px',
-      pr: [0, 4, 4],
-      py: [3]
+      borderBottomWidth: '1px'
     }}>
-      <Grid columns={[1, null, '1fr 300px']}>
-        <Heading sx={{ mb: [2], fontSize: [4] }}>{project.name}
-          <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
-            {/* 
-            <Text sx={{ display: 'inline-block', color: theme.tags[project.tags[0]] }}>{ project.score }</Text>
-            <Text sx={{ display: 'inline-block', ml: [1], mr: [1] }}>/</Text>
-            <Text sx={{ display: 'inline-block' }}>10</Text> 
-            */}
-          </Text>
-        </Heading>
-        <Box sx={{ textAlign: ['left', null, 'right'] }}>
-          {project.tags.map((tag) =>
-            <Badge key={tag} variant='primary' sx={{ 
-              borderColor: theme.tags[tag],
-              color: theme.tags[tag],
-              cursor: 'default',
-              mr: [2],
-              ml: [0, 0, 2]
-            }}>
-              {tag}
-            </Badge>
-          )}
-        </Box>
+      <Box onClick={toggle} sx={{
+        cursor: 'pointer',
+        '&:hover > #grid > #container > #expander': {
+          fill: 'primary',
+          stroke: 'primary'
+        },
+        pr: [0, 0, 4],
+        pt: [3, 3, 3],
+        pb: [2, 2, 3]
+      }}>
+      <Grid gap={['8px', '8px', '16px']} columns={[1, null, '1fr 300px']}>
+          <Heading sx={{ mb: [1, 1, 2], fontSize: [4] }}>{project.name}
+            <Text sx={{ fontFamily: 'monospace', ml: [2], fontSize: [2], display: 'inline-block' }}>
+            </Text>
+          </Heading>
+          <Box sx={{ textAlign: ['left', null, 'right'] }}>
+            {project.tags.map((tag) =>
+              <Badge key={tag} variant='primary' sx={{ 
+                borderColor: theme.tags[tag],
+                color: theme.tags[tag],
+                cursor: 'default',
+                mr: [2],
+                ml: [0, 0, 2]
+              }}>
+                {tag}
+              </Badge>
+            )}
+          </Box>
       </Grid>
-      <Grid columns={[1, null, '1fr 32px']}>
-      <Text variant='description' sx={{ mb: [2] }}> 
+      <Grid id='grid' gap={['8px', '8px', '16px']} columns={[1, 1, '1fr 32px']}>
+      <Text variant='description' sx={{ mb: [0, 0, 2] }}> 
         { project.description }
       </Text>
-      <Box sx={{ ml: ['-5px', '-5px', '2px'] }}>
-        <Expander toggle={toggle} expanded={(expanded || showOne)}></Expander>
+      <Box id='container' sx={{ ml: ['-5px', '-5px', '2px'] }}>
+        <Expander id='expander' toggle={toggle} expanded={(expanded || showOne)}></Expander>
       </Box>
       </Grid>
-      <Box>
+      </Box>
+      <Box sx={{
+        pr: [0, 0, 4]
+      }}>
         {(expanded || showOne) && 
-          <Box sx={{ pb: [1] }}>
-          <Divider sx={{ mr: [2] }}/>
+          <Box sx={{ pb: [2, 2, '18px'] }}>
+          <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
           {metrics.map((metric) => 
             <Metric 
               key={metric.name} 
               tag={project.tags[0]}
               metric={metric}
             ></Metric>) }
-          <Grid columns={[1, null, 2]}>
-            <Box>
+          <Grid columns={[1, 1, '300px 1fr']}>
+            <Box sx={{ fontSize: [1], mt: ['8px', '8px', 2] }}>
               <Text sx={{ color: 'secondary' }}>Source</Text>
               <Text>
-                { project.source.name }
-                <Link variant='arrow' href={ project.source.url }>↗</Link>
+                <Link sx={{ 
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: 'secondary'
+                  },
+                  '&:hover > #arrow': {
+                    color: 'secondary'
+                  }
+                }} href={ project.source.url }>
+                  { project.source.name }
+                  <Text id='arrow' variant='arrow'>↗</Text>
+                </Link>
               </Text>
             </Box>
-            <Box sx={{ pr: [2], textAlign: ['left', 'left', 'right'] }}>
+            <Box sx={{ fontSize: [1], pr: [2], mt: [0, 0, 2], mb: [2, 2, 0], textAlign: ['left', 'left', 'right'] }}>
               <Text sx={{ color: 'secondary' }}>Location</Text>
               <Text>
                 { project.location.name }

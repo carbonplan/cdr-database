@@ -12,7 +12,19 @@ const Summary = ( props ) => {
   const [chart, setChart] = useState('VOLUME');
 
   return (
-    <Box sx={{ height: '350px', px: [4], pt: [3] }}>
+    <Box sx={{ 
+      height: '350px', 
+      px: [4], 
+      pt: [3],
+      borderStyle: 'solid', 
+      borderColor: 'muted', 
+      borderWidth: '0px', 
+      borderBottomWidth: '0px',
+      display: 'inherit',
+      '@media screen and (max-height: 750px)': {
+        display: 'none'
+      }
+    }}>
       <Box>
       <select
         onChange={e => {
@@ -31,12 +43,11 @@ const Summary = ( props ) => {
         ml: ['-15px'], 
         fontSize: [4], 
         display: 'inline-block', 
-        transform: 'rotate(90deg)',
         pointerEvents: 'none',
         position: 'relative',
         top: '3px',
         color: 'secondary'
-      }}>-></span>
+      }}>↓</span>
       </Box>
       {(chart == 'VOLUME') && <Volume projects={props.projects}> </Volume>}
       {(chart == 'PERMANENCE') && <Permanence projects={props.projects}> </Permanence>}

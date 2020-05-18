@@ -1,18 +1,22 @@
 import { Text } from 'theme-ui'
+import Check from '../icons/check'
+import Question from '../icons/question'
+import Ex from '../icons/ex'
 
 const Overall = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      Most metrics are currently based directly on information provided by projects. 
+      Metrics are based on information provided in public project proposals plus our own research. 
       We are actively developing methods for calibration
       based on independent data and models.
     </Text>
     <Text>
-      Marks next to metrics indicate either that have confidence in the value
-      (√), we are unable to confirm it (?), or we have reason to doubt it (x). 
-      We additionally annotate metrics with notes on basic project facts and 
-      comments explaining our current evaluation.
+      The mark next to each metric shows our validation. 
+      A <Check closed={true}/> means we could validate a claim with reasonable confidence.
+      We leave entries blank where we didn't feel confident validating claims.
+      "Notes" for each metric describe project information directly 
+      and "Comments" explain our evaluation or interpretation.
     </Text>
     </>
   )

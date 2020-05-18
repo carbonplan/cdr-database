@@ -4,7 +4,7 @@ import { ThemeProvider } from 'theme-ui'
 
 import theme from '../theme'
 
-const prefix = 'https://the-freeman-files.s3.amazonaws.com/fonts/'
+const prefix = 'https://carbonplan-assets.s3.amazonaws.com/fonts/relative/'
 
 class MyApp extends App {
   render() {
@@ -22,6 +22,32 @@ class MyApp extends App {
             .no-focus-outline input:focus,
             .no-focus-outline select:focus {
               outline: none !important;
+            }
+
+            a {
+              text-decoration: none;
+            }
+
+            sup, sub {
+              vertical-align: baseline;
+              position: relative;
+              top: -0.4em;
+            }
+
+            sub { 
+              top: 0.4em; 
+              font-size: small;
+            }
+
+            @font-face {
+              font-family: 'relative-book-pro';
+              src: url('${prefix}relative-book-pro.eot');
+              src: url('${prefix}relative-book-pro.eot?#iefix') format('embedded-opentype'),
+                   url('${prefix}relative-book-pro.woff2') format('woff2'),
+                   url('${prefix}relative-book-pro.woff') format('woff'),
+                   url('${prefix}relative-book-pro.ttf') format('truetype');
+              font-weight: normal;
+              font-style: normal;
             }
 
             @font-face {

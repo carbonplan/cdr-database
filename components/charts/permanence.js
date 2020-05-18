@@ -46,7 +46,10 @@ const Permanence = (props) => {
     mark: {
       type: 'circle', 
       size: 200,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      hover: {
+        opacity: 0.5
+      }
     },
     encoding: {
       y: { 

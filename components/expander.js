@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx, IconButton } from 'theme-ui'
 
-const Expander = ({ toggle, expanded }) => {
+const Expander = ({ toggle, expanded, id }) => {
   return <IconButton 
       onClick={toggle} 
+      id={id}
       aria-label='Toggle more info' 
       sx={{ 
         cursor: 'pointer',

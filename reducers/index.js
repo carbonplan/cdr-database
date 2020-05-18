@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
-import Fuse from 'fuse.js'
 
 const initialState = {
   tags: ['dac', 'forests', 'mineralization', 'soil', 'ocean', 'biomass'],
@@ -13,9 +12,11 @@ const initialState = {
   summaryExpanded: true
 }
 
-const combinedSearch = (tags, search, fuse, projects) => {
+const combinedSearch = (tags, search, projects) => {
   const visibility = {}
-  const matches = fuse.search(search).map(project => project.item.id)
+  const matches = projects.filter(project => 
+    project.name.trim().toLowerCase().includes(search.trim().toLowerCase())
+  ).map(project => project.id)
   projects.forEach( (project) => {
     visibility[project.id] = false
     if (!(search == '')) {
@@ -66,7 +67,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         tags: tagsPlus,
-        visibility: combinedSearch(tagsPlus, state.search, state.fuse, state.projects),
+        visibility: combinedSearch(tagsPlus, state.search, state.projects),
         showOne: false
       }
     case 'REMOVE_TAG':
@@ -74,21 +75,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         tags: tagsMinus,
-        visibility: combinedSearch(tagsMinus, state.search, state.fuse, state.projects),
+        visibility: combinedSearch(tagsMinus, state.search, state.projects),
         showOne: false
       }
-    case 'SET_TAGS':
+    case 'SET_TAG':
       return {
         ...state,
-        tags: action.value,
-        visibility: combinedSearch(action.value, state.search, state.fuse, state.projects),
+        tags: [action.tag],
+        visibility: combinedSearch([action.tag], state.search, state.projects),
         showOne: false
       }
     case 'UPDATE_SEARCH':
       return {
         ...state,
         search: action.value,
-        visibility: combinedSearch(state.tags, action.value, state.fuse, state.projects),
+        visibility: combinedSearch(state.tags, action.value, state.projects),
         showOne: false
       }
     case 'OR_SEARCH':
@@ -96,7 +97,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         search: newSearch,
-        visibility: combinedSearch(state.tags, newSearch, state.fuse, state.projects),
+        visibility: combinedSearch(state.tags, newSearch, state.projects),
         showOne: false
       }
     case 'INIT_PROJECTS':
@@ -112,16 +113,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         visibility: obj
-      }
-    case 'INIT_FUSE':
-      const options = {
-        keys: ['name'],
-        threshold: 0.1,
-        useExtendedSearch: true
-      }
-      return {
-        ...state,
-        fuse: new Fuse(state.projects, options)
       }
   }
 }

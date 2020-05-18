@@ -1,12 +1,12 @@
 import theme from '.././theme'
 import Methods from './methods'
 import Summary from './summary'
-import { Box } from 'theme-ui'
+import { Box, Divider } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Sidebar = ({ props }) => {
+const Sidebar = ({ projects }) => {
   const [colorMode, setColorMode] = useColorMode()
   const dispatch = useDispatch()
   const tags = useSelector(state => state.tags)
@@ -38,11 +38,19 @@ const Sidebar = ({ props }) => {
       borderStyle: 'solid', 
       borderColor: 'muted',
       borderWidth: '0px',
-      borderLeftWidth: '1px',
       display: ['none', 'none', 'inherit'],
-      mr: [5]
+      mr: [5],
     }}>
-      <Summary projects={ props.projects }></Summary>
+      <Summary projects={ projects }></Summary>
+      <Divider sx={{ 
+        ml: ['32px'], 
+        mr: ['32px'], 
+        my: [1],
+        display: 'inherit',
+        '@media screen and (max-height: 750px)': {
+          display: 'none'
+        }
+      }}/>
       <Methods></Methods>
     </Box>
     </Box>

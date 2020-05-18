@@ -12,7 +12,7 @@ const Bar = ({ tag, data, scale }) => {
   const width = x.domain([scale.min, scale.max]).range([0, 90])(data)
 
   return <Box sx={{ 
-      mt: ['12px'], 
+      mt: ['13px'], 
     }}>
     <svg 
       height='20px' 
