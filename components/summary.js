@@ -21,7 +21,7 @@ const Summary = ( props ) => {
       borderWidth: '0px', 
       borderBottomWidth: '0px',
       display: 'inherit',
-      '@media screen and (max-height: 700px)': {
+      '@media screen and (max-height: 750px)': {
         display: 'none'
       }
     }}>
