@@ -136,7 +136,7 @@ Ahimana & Maghembe (1987) Growth and biomass production by young Eucalyptus tere
 
 Bittig et al. (2019) A BGC-Argo Guide: Planning, Deployment, Data Handling and Usage, Frontiers in Marine Science, [DOI](https://doi.org/10.3389/fmars.2019.00502)
 
-Campbell et al. (2018) Potential carbon storage in biochar made from logging residue: Basic principles and Southern Oregon case studies, PLOS One, [DOI](https://doi.org/10.1371/journal. pone.0203475)
+Campbell et al. (2018) Potential carbon storage in biochar made from logging residue: Basic principles and Southern Oregon case studies, PLOS One, [DOI](https://doi.org/10.1371/journal.pone.0203475)
 
 Fuss et al. (2018) Negative emissions—Part 2: Costs, potentials and side effects, Environmental Research Letters, [DOI](https://doi.org/10.1088/1748-9326/aabf9f)
 
