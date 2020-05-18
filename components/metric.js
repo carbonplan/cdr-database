@@ -139,7 +139,8 @@ const Metric = ({ metric, tag }) => {
     }>
       <Text variant='metric.value' sx={{ 
         color: theme.tags[tag],
-        textAlign: ['left', 'left', 'right']
+        textAlign: ['left', 'left', 'right'],
+        mt: ['5px']
       }}>
         {parseMetric(metric)}
       </Text>

@@ -4,11 +4,11 @@ const Feedback = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      You can use our {' '}<Link href='https://github.com/carbonplan/api'>API</Link>{' '}
-      to download all project data as JSON or CSV.
+      Our {' '}<Link href='https://github.com/carbonplan/api'>API</Link>{' '}
+      lets you download all project data as JSON or CSV.
     </Text>
     <Text sx={{ mb: [2] }}>
-      Want to provide feedback on our website, design, or graphics? Open an 
+      Want to provide feedback on this dashboard or make a feature request? Open an 
       issue <Link href='https://github.com/carbonplan/reports'>here</Link>.
     </Text>
     <Text sx={{ mb: [2] }}>

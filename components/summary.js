@@ -19,7 +19,7 @@ const Summary = ( props ) => {
       borderStyle: 'solid', 
       borderColor: 'muted', 
       borderWidth: '0px', 
-      borderBottomWidth: '1px',
+      borderBottomWidth: '0px',
       display: 'inherit',
       '@media screen and (max-height: 700px)': {
         display: 'none'

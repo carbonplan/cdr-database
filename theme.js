@@ -88,7 +88,7 @@ export default {
         fontFamily: 'monospace',
         fontSize: [3],
         textAlign: 'right',
-        mt: ['6px']
+        mt: ['5px']
       },
       label: {
         fontFamily: 'monospace',
