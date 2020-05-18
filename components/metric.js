@@ -41,14 +41,21 @@ const Metric = ({ metric, tag }) => {
 
   const Mobile = () => {
     return <Box>
-      <Grid columns={['1fr 30px']}>
+      <Box onClick={toggle} sx={{
+      cursor: 'pointer',
+      '&:hover > #grid > #container > #expander': {
+        fill: 'primary',
+        stroke: 'primary'
+      }
+    }}>
+      <Grid id='grid' columns={['1fr 30px']}>
       <Text>
         <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
         {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
       </Text>
       {hasDetails && 
-        <Box sx={{ ml: ['-5px'] }}>
-          <Expander toggle={toggle} expanded={expanded}></Expander>
+        <Box id='container' sx={{ ml: ['-5px'] }}>
+          <Expander id={'expander'} toggle={toggle} expanded={expanded}></Expander>
         </Box>
       }
       </Grid>
@@ -78,6 +85,7 @@ const Metric = ({ metric, tag }) => {
           <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
         </Text>
         }
+      </Box>
       </Box>
       {expanded && 
         <Box sx={{ 
@@ -134,41 +142,48 @@ const Metric = ({ metric, tag }) => {
       <Mobile/>
     </Box>
     <Box sx={{ display: ['none', 'none', 'inherit'] }}>
-    <Grid gap={['16px']} columns={
-      ['85px 100px 1fr 110px 30px']
-    }>
-      <Text variant='metric.value' sx={{ 
-        color: theme.tags[tag],
-        textAlign: ['left', 'left', 'right'],
-        mt: ['5px']
-      }}>
-        {parseMetric(metric)}
-      </Text>
-      <Box>
-        {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}
-        {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
-        {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
-        {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
-        {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
-        {(metric.name == 'additionality') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
-        {(metric.name == 'specificity') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
-      </Box>
-      <Text>
-        <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
-        {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
-      </Text>
-      <Text>
-        {(metric.rating === 1) && <Check color={theme.tags[tag]}/>}
-        {(metric.rating === 0) && <Box/>}
-        {(metric.rating === -1) && <Ex color={theme.tags[tag]}/>}
-        {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
-      </Text>
-      {hasDetails && 
-        <Box sx={{  }}>
-          <Expander toggle={toggle} expanded={expanded}></Expander>
-        </Box>
+    <Box onClick={toggle} sx={{
+      cursor: 'pointer',
+      '&:hover > #grid > #container > #expander': {
+        fill: 'primary',
+        stroke: 'primary'
       }
-    </Grid>
+    }}>
+      <Grid id='grid' gap={['16px']} columns={
+        ['85px 100px 1fr 110px 30px']
+      }>
+        <Text variant='metric.value' sx={{ 
+          color: theme.tags[tag],
+          textAlign: ['left', 'left', 'right']
+        }}>
+          {parseMetric(metric)}
+        </Text>
+        <Box>
+          {(metric.name == 'mechanism') && <Emissions tag={tag} removal={metric.removal} avoided={metric.avoided} ></Emissions>}
+          {(metric.name == 'volume') && <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>}
+          {(metric.name == 'permanence') && <Bar tag={tag} data={metric.value} scale={scales['permanence']}></Bar>}
+          {(metric.name == 'negativity') && <Bar tag={tag} data={metric.value} scale={scales['negativity']}></Bar>}
+          {(metric.name == 'cost') && <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>}
+          {(metric.name == 'additionality') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
+          {(metric.name == 'specificity') && <Squares color={theme.tags[tag]} data={metric.value}></Squares>}
+        </Box>
+        <Text>
+          <Text variant='metric.label' sx={{ display: 'inline-block' }}>{metric.name}</Text>
+          {(hasUnits) && <Text variant='metric.units' sx={{ display: 'inline-block' }}>{metric.units}</Text>}
+        </Text>
+        <Text>
+          {(metric.rating === 1) && <Check color={theme.tags[tag]}/>}
+          {(metric.rating === 0) && <Box/>}
+          {(metric.rating === -1) && <Ex color={theme.tags[tag]}/>}
+          {(metric.rating === -2) && <Exclamation color={theme.tags[tag]}/>}
+        </Text>
+        {hasDetails && 
+          <Box id='container' sx={{  }}>
+            <Expander id={'expander'} toggle={toggle} expanded={expanded}></Expander>
+          </Box>
+        }
+      </Grid>
+    </Box>
     {expanded && 
       <Box sx={{ 
         mt: ((metric.notes || metric.comment) ? [2] : [0] ),
