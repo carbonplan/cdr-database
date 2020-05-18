@@ -109,7 +109,7 @@ const Report = ({ project }) => {
                 <Link sx={{ 
                   textDecoration: 'none',
                   '&:hover': {
-                    color: 'text'
+                    color: 'secondary'
                   },
                   '&:hover > #arrow': {
                     color: 'secondary'

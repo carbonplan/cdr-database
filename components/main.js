@@ -22,7 +22,7 @@ const Main = ({ projects }) => {
           borderWidth: '0px', 
           borderBottomWidth: '1px'
         }}>
-          <Heading sx={{ fontSize: [7] }}>
+          <Heading sx={{ fontSize: [6, 6, 7] }}>
             Project reports
           </Heading>
           <Text sx={{ fontSize: [3], py: [3], pb: [4], pr: [4] }}>
