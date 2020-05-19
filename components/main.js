@@ -30,8 +30,7 @@ const Main = ({ projects }) => {
             These reports reflect our independent analysis of public information.
             Read more about our <NextLink href='/reports/methods'><a>
             <Text variant='link' sx={{ display: 'inline-block' }}>methods</Text></a></NextLink>{' '}
-            and <NextLink href='/research/stripe-reports-insights'><a>
-            <Text variant='link' sx={{ display: 'inline-block' }}>insights</Text></a></NextLink>.
+            and <Link href='/research/stripe-reports-insights'>insights</Link>.
           </Text>
         </Box>
         <Filter></Filter>
