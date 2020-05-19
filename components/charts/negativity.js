@@ -21,7 +21,7 @@ const Negativity = (props) => {
     const visible = useSelector(state => state.visibility[projects[i].id])
 
     if (visible) {
-      opacity = 1
+      opacity = 0.85
     } else {
       opacity = 0.2
     }
@@ -47,6 +47,9 @@ const Negativity = (props) => {
       size: 200,
       cursor: 'pointer'
     },
+    selection: {
+      highlight: { type: "single", on: "mouseover" },
+    },
     encoding: {
       y: { 
         field: 'group', 
@@ -65,16 +68,26 @@ const Negativity = (props) => {
         type: 'ordinal',
         scale: null
       },
-      stroke: {
-        field: 'color',
-        type: 'nominal',
-        scale: null,
-      },
       opacity: {
-        field: 'opacity',
-        type: 'quantitative',
-        scale: null
-      }
+        value: 1,
+        condition: {
+          selection: {
+            not: "highlight"
+          },
+          field: 'opacity',
+          type: 'quantitative',
+          scale: null,
+        },
+      },
+      size: {
+        condition: {
+          selection: {
+            not: "highlight"
+          },
+          value: 200
+        },
+        value: 285
+      },
     },
   }
 
