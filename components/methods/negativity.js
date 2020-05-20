@@ -5,7 +5,7 @@ const Negativity = () => {
     <>
       <Text sx={{ mb: [2] }}>
         We define Negativity as 1 minus the ratio of gross project emissions to gross climate benefits,
-        including carbon removal and storage. If emissions are high relative to the climate benefits,
+        including carbon removal and storage. If emissions are low relative to the climate benefits,
          this metric will approach 1.
       </Text>
       <Text sx={{ mb: [2] }}>
