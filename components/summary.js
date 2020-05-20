@@ -13,7 +13,7 @@ const Summary = ( props ) => {
 
   return (
     <Box sx={{ 
-      height: '350px', 
+      height: '380px', 
       px: [4], 
       pt: [3],
       borderStyle: 'solid', 
@@ -21,7 +21,7 @@ const Summary = ( props ) => {
       borderWidth: '0px', 
       borderBottomWidth: '0px',
       display: 'inherit',
-      '@media screen and (max-height: 750px)': {
+      '@media screen and (max-height: 770px)': {
         display: 'none'
       }
     }}>

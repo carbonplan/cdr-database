@@ -4,7 +4,7 @@ const Permanence = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      The Permanence of a project is the duration over 
+      The Permanence of a project is the duration in years over 
       which durable carbon storage can be reasonably assured.
     </Text>
     <Text>

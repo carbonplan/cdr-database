@@ -5,9 +5,9 @@ const Volume = () => {
     <>
       <Text sx={{ mb: [2] }}>
         Volume is our best estimate of the current carbon removal and/or avoided emissions
-        of the project. In all cases volume is based on a public project offering. 
-        We are working on calibrating these estimates with 
-        domain-specific models.
+        of the project in metric tCO<sub>2</sub>. Volumes are based on public project offerings 
+        and reflect project lifetimes, some of which are one year, some longer.
+        We are working on better models to calibrate these estimates.
       </Text>
       <Text>
         Note that a project with large Volume but low Negativity

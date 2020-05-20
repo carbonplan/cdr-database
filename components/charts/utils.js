@@ -2,7 +2,7 @@ export const config = (theme) => {
   return {
     background: null,
     cursor: 'pointer',
-    padding: { left: 25, right: 0, top: 30, bottom: 50 },
+    padding: { left: 25, right: 0, top: 25, bottom: 60 },
     axis: {
       grid: false,
       labelFontSize: theme.fontSizes[1],
