@@ -15,6 +15,11 @@ class MyApp extends App {
           <style jsx global>{`
             body {
               overscroll-behavior: none;
+              cursor: initial !important;
+            }
+
+            .mark-symbol {
+              cursor: pointer;
             }
 
             .no-focus-outline a:focus,

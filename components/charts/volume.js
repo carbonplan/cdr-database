@@ -44,8 +44,7 @@ const Volume = (props) => {
     },
     mark: {
       type: 'circle', 
-      size: 200,
-      cursor: 'pointer'
+      size: 200
     },
     selection: {
       highlight: { type: "single", on: "mouseover" },
