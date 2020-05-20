@@ -2,6 +2,10 @@ import Table from '../components/table'
 import Check from '../components/icons/check'
 import Ex from '../components/icons/ex'
 
+export const meta = {
+  revised: '05-18-2020'
+}
+
 # Metrics
 
 Our goal is to harmonize metrics across a range of project categories, bringing standards and shared concepts to a complex and nascent space. 
