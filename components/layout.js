@@ -45,7 +45,8 @@ const Layout = ({ children }) => {
             width: '100%',
             position: 'sticky',
             bottom: '0px',
-            display: ['none', 'none', 'inherit']
+            display: ['none', 'none', 'inherit'],
+            pointerEvents: 'none'
           }}>
           <Box sx={{ px: [4], width: '100%' }}>
             <Footer/>

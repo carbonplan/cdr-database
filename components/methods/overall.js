@@ -7,7 +7,7 @@ const Overall = () => {
   return (
     <>
     <Text sx={{ mb: [2] }}>
-      Metrics are based on information provided in public project proposals plus our own research. 
+      Metrics are based on information in public project proposals plus our own research. 
       We are actively developing methods for calibration
       based on independent data and models.
     </Text>

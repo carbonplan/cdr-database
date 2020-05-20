@@ -74,7 +74,7 @@ const Methods = () => {
         {contents[method]}
       </Box>
       <Heading sx={{ fontSize: [2], mt: [3] }}>
-        <Text>
+        <Text sx={{ width: 'fit-content' }}>
           <NextLink href='/reports/methods'>
             <a>
             <Text sx={{ 

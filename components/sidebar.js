@@ -49,6 +49,9 @@ const Sidebar = ({ projects }) => {
         display: 'inherit',
         '@media screen and (max-height: 750px)': {
           display: 'none'
+        },
+        '@media screen and (max-width: 1100px)': {
+          display: 'none'
         }
       }}/>
       <Methods></Methods>

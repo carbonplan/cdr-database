@@ -29,7 +29,8 @@ const Footer = (props) => {
       transformOrigin: 'right', 
       transform: 'rotate(90deg)',
       paddingBottom: '10px',
-      backgroundColor: 'background' 
+      backgroundColor: 'background',
+      pointerEvents: 'all'
     }}>
       <Text variant='metric.units' sx={{ whiteSpace: 'nowrap', display: 'inline-block', leftMargin: '15px' }}>
         PROJECTS: 24

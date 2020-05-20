@@ -23,6 +23,9 @@ const Summary = ( props ) => {
       display: 'inherit',
       '@media screen and (max-height: 770px)': {
         display: 'none'
+      },
+      '@media screen and (max-width: 1100px)': {
+        display: 'none'
       }
     }}>
       <Box>
