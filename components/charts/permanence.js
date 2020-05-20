@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import _ from 'lodash'
-import { jsx, Text } from 'theme-ui'
+import { jsx, Box, Text } from 'theme-ui'
 import { Vega } from 'react-vega'
 import { useThemeUI } from 'theme-ui'
 import { useDispatch, useSelector } from 'react-redux'
@@ -122,8 +122,10 @@ const Permanence = (props) => {
   }
 
   return <>
+  <Box sx={{ height: height + 25 + 60 + 4 }}>
   <Vega width={width} height={height} signalListeners={signalListeners}
     data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
+  </Box>
   <Text sx={{maxWidth: '420px', fontSize: [0]}}>
     Projects by categories as a function of permanence (years), the
     duration over which durable carbon storage can be reasonably assured.
