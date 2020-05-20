@@ -46,7 +46,7 @@ A minor clarification on negativity is that the project estimates 1.53 tCO<sub>2
  
 ## Climeworks
 
-The project combines direct air capture via a solid chemical sorbent and thermal swing, with geological sequestration in mineral form using a published technology (Snæbjörnsdóttir, 2020). The reported volume of 50 tCO<sub>2</sub> / yr is based on a small pilot plant in Iceland commissioned in 2017. We used a back of the envelope calculation to evaluate the plausibility of this number. ClimeWorks claims they use amine sorbents. Assuming an adsorption capacity of 2 mmol CO<sub>2</sub> / g (Sanz-Peŕez et al., 2016), a range of 4-6 cycles per day, and a range of 200-500 kg or sorbent for the pilot plant, yields sequestration volumes of approximately 25-70t CO<sub>2</sub> / yr, making the estimate highly plausible.
+The project combines direct air capture via a solid chemical sorbent and thermal swing, with geological sequestration in mineral form via injection into basaltic rock using the published CarbFix method (Gunnarsson et al., 2018; Snæbjörnsdóttir et al., 2020). The reported volume of 50 tCO<sub>2</sub> / yr is based on a small pilot plant in Iceland commissioned in 2017. We used a back of the envelope calculation to evaluate the plausibility of this number. ClimeWorks claims they use amine sorbents. Assuming an adsorption capacity of 2 mmol CO<sub>2</sub> / g (Sanz-Peŕez et al., 2016), a range of 4-6 cycles per day, and a range of 200-500 kg or sorbent for the pilot plant, yields sequestration volumes of approximately 25-70t CO<sub>2</sub> / yr, making the estimate highly plausible.
 
 ## Droneseed
 
@@ -139,6 +139,8 @@ Bittig et al. (2019) A BGC-Argo Guide: Planning, Deployment, Data Handling and U
 Campbell et al. (2018) Potential carbon storage in biochar made from logging residue: Basic principles and Southern Oregon case studies, PLOS One, [DOI](https://doi.org/10.1371/journal.pone.0203475)
 
 Fuss et al. (2018) Negative emissions—Part 2: Costs, potentials and side effects, Environmental Research Letters, [DOI](https://doi.org/10.1088/1748-9326/aabf9f)
+
+Gunnarsson et al. (2018) The rapid and cost-effective capture and subsurface mineral storage of carbon and sulfur at the CarbFix2 site, International Journal of Greenhouse Gas Control, [DOI](https://doi.org/10.1016/j.ijggc.2018.08.014)
 
 Hepburn et al., (2019) The technological and economic prospects for CO2 utilization and removal, Nature, [DOI](https://doi.org/10.1038/s41586-019-1681-6)
 
