@@ -34,7 +34,7 @@ three='Established carbon removal or storage technology or practice with existin
 
 ## Volume
 
-Most of the time, volume estimates come directly from project applications. In a few cases, volume is stated in a way that can’t easily be compared with other projects, and can potentially be normalized. 
+Volume estimates almost all come directly from project applications, and are stated in metric tCO<sub>2</sub>. In a few cases, volume is specified in a way that can’t easily be compared with other projects, and can potentially be normalized. 
 
 Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. direct air capture), and those that are performing a one-time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
 
@@ -54,7 +54,7 @@ three='Possible to validate claimed volume using either an independent calculati
 
 ## Negativity
 
-We define Negativity as one minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
+We define Negativity as 1 minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
 
 As discussed above under Mechanism, the concept of “climate benefits” is complicated because some projects directly remove CO<sub>2</sub> (and thus contribute “gross removal”) but others primarily avoid and store CO<sub>2</sub> emissions (and thus contribute “gross storage”). For example, a project that mineralizes CO<sub>2</sub> sourced from industrial waste streams is primarily avoiding emissions, rather than directly removing CO<sub>2</sub>. We call the CO<sub>2</sub> it mineralizes its “gross storage.” Similarly, a project that produces biochar from biogenic materials is not directly removing CO<sub>2</sub> from the atmosphere, but is rather avoiding biogenic CO<sub>2</sub> emissions. We would calculate the carbon embedded in biochar as the project’s “gross storage” for the purposes of the Negativity metric.
 
@@ -62,7 +62,7 @@ When projects report Negativity based on volume that also includes avoided emiss
 
 Estimating Negativity requires a life cycle assessment to quantify emissions sources and sinks. This can be an abstract 'per ton' estimate based on parameters of the technology, or based on data from an instantiated project.
 
-To evaluate Negativity, we analyze publicly provided life cycle assessment information. Where possible, we extract explicit gross total project emissions, and total volumes of carbon dioxide either removed or stored, and then compute the ratio. When projects simply report a ‘per ton’ ratio, we report that instead. If boundary conditions and emission sources are specified, we summarize them.
+To evaluate Negativity, we analyze publicly provided life cycle assessment information. Where possible, we extract explicit gross project emissions, and gross volumes of carbon dioxide either removed or stored, and then compute the ratio. When projects simply report a ‘per ton’ ratio, we report that instead. If boundary conditions and emission sources are specified, we summarize them.
 
 For projects with an additional avoided removal component above and beyond the primary carbon removal or storage mechanism (e.g. emissions avoided due to less use of an alternative building material), we do not include those avoided emissions when calculating ratios.
 
@@ -76,9 +76,9 @@ three='Boundary conditions are well specified with respect to our understanding 
 >
 </Table>
 
-## Permanence
+## Permanence 
 
-We consider the Permanence of a project the duration over which durable carbon storage can be reasonably assured.
+We consider the Permanence of a project the duration over which durable carbon storage can be reasonably assured, in years.
 
 Our evaluation of Permanence is largely categorical, with different considerations and heuristics for natural solutions (e.g. soil and forests), solutions that involve geological, mineral, or other physical storage materials.
 
@@ -98,12 +98,12 @@ three='Generally used for claimed durations of 1000+ years for geologic or miner
 
 ## Cost
 
-Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects) .
+Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects). 
 
-Costs are expressed on a per-ton basis. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
+Costs are expressed per metric tCO<sub>2</sub> and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
 
 We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for direct air capture and mineralization.
-.
+
 ## Additionality
 
 Additionality refers to the causal relationship between the funds a climate project seeks and the climate benefits it claims. Establishing a connection depends on a counterfactual scenario that asks what would happen in the absence of funding. If the project will generate climate benefits but is feasible if and only if it receives payment, then the project is additional. If the project will likely generate climate benefits without the funding, then it is non-additional. 

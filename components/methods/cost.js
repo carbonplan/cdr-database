@@ -7,10 +7,11 @@ const Cost = () => {
         Project Cost is taken directly from public project offerings.
       </Text>
       <Text sx={{ mb: [2] }}>
-        Costs are expressed per volume, so while the price itself is entirely 
-        set by the project, any uncertainty associated 
-        with volume extends to the cost. Because we separately validate volume, 
-        we do not provide additional validation of cost.
+        Costs are expressed per volume and thus reflect project lifetimes, 
+        some of which are one year, some longer.
+        Because we separately validate volume, 
+        we do not provide additional validation of cost, as it is otherwise
+        set entirely by projects.
       </Text>
       <Text>
         Some costs have been modified for accounting
