@@ -4,14 +4,14 @@ const Negativity = () => {
   return (
     <>
       <Text sx={{ mb: [2] }}>
-        We define Negativity as one minus the ratio of gross project emissions to gross climate benefits,
-        including carbon removal and storage. If emissions are high relative to the climate benefits,
-         this metric will approach 1.
+        We define Negativity as one minus the ratio of gross project emissions to gross climate
+        benefits, including carbon removal and storage. If emissions are high relative to the
+        climate benefits, this metric will approach 1.
       </Text>
       <Text sx={{ mb: [2] }}>
-        Estimating negativity requires a life cycle assessment to quantify emissions sources and sinks. 
-        This can be an abstract 'per ton' estimate based on parameters
-        of the technology, or derived from an instantiated project.
+        Estimating negativity requires a life cycle assessment to quantify emissions sources and
+        sinks. This can be an abstract 'per ton' estimate based on parameters of the technology, or
+        derived from an instantiated project.
       </Text>
     </>
   )

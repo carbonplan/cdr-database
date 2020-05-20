@@ -13,7 +13,7 @@ export default {
     faux: '0.05em',
     heading: '-0.015em',
     wide: '0.07em',
-    extra: '0.13em'
+    extra: '0.13em',
   },
   fontWeights: {
     body: 400,
@@ -55,40 +55,40 @@ export default {
         blue: '#85a2f7',
         purple: '#bc85d9',
         pink: '#e587b6',
-        grey: '#a9b4c4'
-      }
-    }
+        grey: '#a9b4c4',
+      },
+    },
   },
   text: {
     default: {
       color: 'text',
       fontFamily: 'body',
-      letterSpacing: 'body'
+      letterSpacing: 'body',
     },
     link: {
-      color: 'text',
+      'color': 'text',
       '&:active': {
         color: 'text',
       },
       '&:hover': {
         color: 'secondary',
       },
-      textDecoration: 'underline',
-      cursor: 'pointer'
+      'textDecoration': 'underline',
+      'cursor': 'pointer',
     },
     description: {
       fontSize: [2],
       fontFamily: 'body',
       letterSpacing: 'body',
       marginBlockStart: '0.3em',
-      mb: [1]
+      mb: [1],
     },
     metric: {
       value: {
         fontFamily: 'monospace',
         fontSize: [3],
         textAlign: 'right',
-        mt: ['5px']
+        mt: ['5px'],
       },
       label: {
         fontFamily: 'monospace',
@@ -103,38 +103,38 @@ export default {
         letterSpacing: 'faux',
         lineHeight: 'small',
         mt: [0],
-        mb: [2]
+        mb: [2],
       },
       units: {
         fontFamily: 'monospace',
         color: 'secondary',
         fontSize: [1],
         ml: [2],
-        textTransform: 'normal'
+        textTransform: 'normal',
       },
       rating: {
         display: 'inline-block',
         ml: [3],
-        fontSize: ['18px']
-      }
+        fontSize: ['18px'],
+      },
     },
     arrow: {
-      ml: [2], 
-      color: 'text',
-      fontSize: [4], 
-      position: 'relative', 
-      top: '4px', 
-      display: 'inline-block',
-      textDecoration: 'none',
-      lineHeight: 0,
+      'ml': [2],
+      'color': 'text',
+      'fontSize': [4],
+      'position': 'relative',
+      'top': '4px',
+      'display': 'inline-block',
+      'textDecoration': 'none',
+      'lineHeight': 0,
       '&:active': {
         color: 'text',
       },
       '&:hover': {
         color: 'secondary',
-        borderColor: 'secondary'
-      }
-    }
+        borderColor: 'secondary',
+      },
+    },
   },
   forms: {
     input: {
@@ -149,7 +149,7 @@ export default {
       borderColor: 'muted',
       borderWidth: '0px',
       borderBottomWidth: '0px',
-      textAlign: 'right'
+      textAlign: 'right',
     },
     select: {
       cursor: 'pointer',
@@ -167,32 +167,32 @@ export default {
       borderBottomColor: 'text',
       borderRadius: '0px',
       fontFamily: 'heading',
-      fontSize: [1]
+      fontSize: [1],
     },
     radio: {
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     label: {
-      cursor: 'pointer'
-    }
+      cursor: 'pointer',
+    },
   },
   layout: {
     container: {
-      maxWidth: '1150px',
+      'maxWidth': '1150px',
       '@media only screen and (min-width: 100em)': {
         maxWidth: '1500px',
-      }
-    }
+      },
+    },
   },
   sizes: {
     sidebar: 500,
     chart: 400,
-    main: 250
+    main: 250,
   },
   badges: {
     primary: {
       letterSpacing: 'wide',
-      cursor: 'pointer', 
+      cursor: 'pointer',
       color: 'primary',
       borderStyle: 'solid',
       borderColor: 'primary',
@@ -207,78 +207,78 @@ export default {
       pl: [0],
       pr: [0],
       fontSize: [1],
-      fontFamily: 'monospace'
-    }
+      fontFamily: 'monospace',
+    },
   },
   links: {
     nav: {
-      color: "primary",
-      "&:active": {
-        color: "primary",
+      'color': 'primary',
+      '&:active': {
+        color: 'primary',
       },
-      "&:hover": {
-        color: "background",
-        backgroundColor: "primary"
+      '&:hover': {
+        color: 'background',
+        backgroundColor: 'primary',
       },
-      fontFamily: 'heading',
-      borderRadius: [2],
-      textDecoration: "none",
-      fontSize: [2],
-      fontWeight: "bold",
-      cursor: "pointer",
-      p: [2],
-      pb: [1]
+      'fontFamily': 'heading',
+      'borderRadius': [2],
+      'textDecoration': 'none',
+      'fontSize': [2],
+      'fontWeight': 'bold',
+      'cursor': 'pointer',
+      'p': [2],
+      'pb': [1],
     },
     arrow: {
-      ml: [2], 
-      fontSize: [4], 
-      position: 'relative', 
-      top: '4px', 
-      display: 'inline-block',
-      textDecoration: 'none',
-      lineHeight: 0,
-      cursor: 'pointer',
-      color: 'text',
+      'ml': [2],
+      'fontSize': [4],
+      'position': 'relative',
+      'top': '4px',
+      'display': 'inline-block',
+      'textDecoration': 'none',
+      'lineHeight': 0,
+      'cursor': 'pointer',
+      'color': 'text',
       '&:active': {
         color: 'text',
       },
       '&:hover': {
         color: 'secondary',
-        borderColor: 'secondary'
-      }
-    }
+        borderColor: 'secondary',
+      },
+    },
   },
   styles: {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      letterSpacing: 'body'
+      letterSpacing: 'body',
     },
     a: {
-      color: 'text',
+      'color': 'text',
       '&:active': {
         color: 'text',
       },
       '&:hover': {
         color: 'secondary',
       },
-      textDecoration: 'underline',
-      cursor: 'pointer'
+      'textDecoration': 'underline',
+      'cursor': 'pointer',
     },
     hr: {
       border: 'none',
       borderStyle: 'solid',
       borderWidth: '0px',
       borderTopWidth: '1px',
-      borderColor: 'muted'
+      borderColor: 'muted',
     },
     p: {
       fontFamily: 'body',
       fontSize: [3],
       fontWeight: 'body',
       letterSpacing: 'body',
-      cursor: 'text'
+      cursor: 'text',
     },
     h1: {
       fontFamily: 'heading',
@@ -287,7 +287,7 @@ export default {
       fontWeight: 'heading',
       lineHeight: 'heading',
       mt: [6],
-      mb: [5]
+      mb: [5],
     },
     h2: {
       fontFamily: 'heading',
@@ -295,7 +295,7 @@ export default {
       fontWeight: 'heading',
       lineHeight: 'heading',
       mt: [5],
-      mb: [4]
+      mb: [4],
     },
     h3: {
       fontFamily: 'heading',
@@ -304,24 +304,24 @@ export default {
       lineHeight: 'heading',
       mt: [4],
       mb: [3],
-    }
+    },
   },
   tags: {
-    mineralization: 'grey',
-    soil: 'orange',
-    biomass: 'yellow',
-    forests: 'green',
-    ocean: 'teal',
-    dac: 'purple',
-    biochar: 'yellow',
-    materials: 'yellow',
-    broker: 'grey',
-    beccs: 'yellow',
-    reforestation: 'green',
+    'mineralization': 'grey',
+    'soil': 'orange',
+    'biomass': 'yellow',
+    'forests': 'green',
+    'ocean': 'teal',
+    'dac': 'purple',
+    'biochar': 'yellow',
+    'materials': 'yellow',
+    'broker': 'grey',
+    'beccs': 'yellow',
+    'reforestation': 'green',
     'avoided conversion': 'green',
-    agroforestry: 'green',
-    burial: 'yellow',
-    phytoplankton: 'teal',
-    injection: 'grey'
-  }
+    'agroforestry': 'green',
+    'burial': 'yellow',
+    'phytoplankton': 'teal',
+    'injection': 'grey',
+  },
 }

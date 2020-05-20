@@ -38,6 +38,7 @@
     "vega-lite": "^4.11.0"
   },
   "devDependencies": {
+    "prettier": "2.0.5",
     "redux-devtools-extension": "^2.13.8"
   }
 }

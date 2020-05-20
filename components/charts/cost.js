@@ -9,7 +9,6 @@ import { config, signals } from './utils.js'
 var vegaLite = require('vega-lite')
 
 const Cost = (props) => {
-
   const { projects } = props
   const dispatch = useDispatch()
   const context = useThemeUI()
@@ -18,52 +17,50 @@ const Cost = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-    const visible = useSelector(state => state.visibility[projects[i].id])
+    const visible = useSelector((state) => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 1
     } else {
       opacity = 0.2
     }
-    
-    values.push(
-      {
-        cost: parseFloat(projects[i].metrics.filter(m => (m.name == 'cost'))[0].value),
-        group: projects[i].tags[0],
-        color: theme.colors[theme.tags[projects[i].tags[0]]],
-        name: projects[i].name,
-        id: projects[i].id,
-        opacity: opacity
-      }
-    )
+
+    values.push({
+      cost: parseFloat(projects[i].metrics.filter((m) => m.name == 'cost')[0].value),
+      group: projects[i].tags[0],
+      color: theme.colors[theme.tags[projects[i].tags[0]]],
+      name: projects[i].name,
+      id: projects[i].id,
+      opacity: opacity,
+    })
   }
 
   const spec = {
-    data: { 
-      name: 'values' 
+    data: {
+      name: 'values',
     },
     mark: {
-      type: 'circle', 
+      type: 'circle',
       size: 200,
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     encoding: {
-      y: { 
-        field: 'group', 
+      y: {
+        field: 'group',
         type: 'nominal',
-        scale: { 'padding': 1.87 },
-        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
+        scale: { padding: 1.87 },
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false },
       },
       x: {
-        field: 'cost', 
-        type: 'quantitative', 
+        field: 'cost',
+        type: 'quantitative',
         axis: { title: 'COST $/tCO2', tickCount: 3 },
         scale: { type: 'log', domain: [2, 2000], nice: false },
       },
       color: {
         field: 'color',
         type: 'ordinal',
-        scale: null
+        scale: null,
       },
       stroke: {
         field: 'color',
@@ -73,12 +70,12 @@ const Cost = (props) => {
       opacity: {
         field: 'opacity',
         type: 'quantitative',
-        scale: null
-      }
+        scale: null,
+      },
     },
   }
 
-  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
+  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec
 
   vgSpec.signals.push(...signals)
 
@@ -100,12 +97,20 @@ const Cost = (props) => {
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
-    clickOff: handleClickOff
+    clickOff: handleClickOff,
   }
 
-  return <Vega width={width} height={height} signalListeners={signalListeners}
-    data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
-
+  return (
+    <Vega
+      width={width}
+      height={height}
+      signalListeners={signalListeners}
+      data={{ values: values }}
+      renderer={'svg'}
+      actions={false}
+      spec={vgSpec}
+    />
+  )
 }
 
 export default Cost

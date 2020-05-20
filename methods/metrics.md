@@ -4,13 +4,13 @@ import Ex from '../components/icons/ex'
 
 # Metrics
 
-Our goal is to harmonize metrics across a range of project categories, bringing standards and shared concepts to a complex and nascent space. 
+Our goal is to harmonize metrics across a range of project categories, bringing standards and shared concepts to a complex and nascent space.
 
 Values for each metric are based on information provided in public project proposals and our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
-The mark next to each metric shows our validation. We gave projects a <Check closed={true}/> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <Check closed={true}/> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information. 
+The mark next to each metric shows our validation. We gave projects a <Check closed={true}/> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <Check closed={true}/> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
-Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO<sub>2</sub>, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost. 
+Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of \$/tCO<sub>2</sub>, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
 
 For Additionality and Specificity we provide a qualitative score from 1 to 3, along with comments. Both of these scores are contextual. Additionality is less important when funding decisions are oriented around encouraging innovation, rather than carbon offsetting. For Specificity, our scores should be interpreted in light of the fact that all projects in our database have provided a baseline level of information, and achieved a significant degree of transparency, by making materials public.
 
@@ -20,7 +20,7 @@ In the remainder of this document, we explain each metric in detail, and provide
 
 ## Mechanism
 
-A project’s Mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO<sub>2</sub> from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature  a closed circle on the right-hand side of the metric and the abbreviation AVD.
+A project’s Mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO<sub>2</sub> from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature a closed circle on the right-hand side of the metric and the abbreviation AVD.
 
 While we only consider projects in this database that have the potential to be part of a carbon removal system, some of these projects are, in their current form, only responsible for avoided emissions. For example, utilization of CO<sub>2</sub> for storage in building materials where the CO<sub>2</sub> is currently sourced from an industrial waste stream currently constitutes an avoided emissions process, but would constitute carbon removal if its CO<sub>2</sub> were sourced from direct air capture or biological sources.
 
@@ -34,7 +34,7 @@ three='Established carbon removal or storage technology or practice with existin
 
 ## Volume
 
-Most of the time, volume estimates come directly from project applications. In a few cases, volume is stated in a way that can’t easily be compared with other projects, and can potentially be normalized. 
+Most of the time, volume estimates come directly from project applications. In a few cases, volume is stated in a way that can’t easily be compared with other projects, and can potentially be normalized.
 
 Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. direct air capture), and those that are performing a one-time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
 
@@ -84,9 +84,9 @@ Our evaluation of Permanence is largely categorical, with different consideratio
 
 For all projects, when a range is provided, we report the minimum. All times are adjusted so that they are relative to the most recent project documents. Permanence claims equal to or greater than 1000 were recorded as 1000+.
 
-For soil and forest projects, we separately examine physical and socioeconomic risks. Physical risks include wildfire, drought, and natural disaster. Socioeconomic risks include breaches of contract, bankruptcy, and other factors which prevent projects from continuing to provide climate benefits. When explicit contract terms are described, we consider the contract duration the duration of Permanence, even if it is lower than the number suggested by the physical risks. 
+For soil and forest projects, we separately examine physical and socioeconomic risks. Physical risks include wildfire, drought, and natural disaster. Socioeconomic risks include breaches of contract, bankruptcy, and other factors which prevent projects from continuing to provide climate benefits. When explicit contract terms are described, we consider the contract duration the duration of Permanence, even if it is lower than the number suggested by the physical risks.
 
-We consider 30 years or less a plausible maximum duration of Permanence for projects managing socioeconomic risks, especially involving forests and soil. While somewhat arbitrary, 30 years offers a useful threshold because it is the maximum term length of residential mortgages in the United States, and therefore represents an upper-bound on the length of private contracts in a real-world financial market. 
+We consider 30 years or less a plausible maximum duration of Permanence for projects managing socioeconomic risks, especially involving forests and soil. While somewhat arbitrary, 30 years offers a useful threshold because it is the maximum term length of residential mortgages in the United States, and therefore represents an upper-bound on the length of private contracts in a real-world financial market.
 
 Building materials are intermediate, as the plausible duration of Permanence depends on the material (e.g. concrete vs laminated wood). While concrete can be considered similarly permanent as mineralization, wood products are likely bounded by a range of 50-100 years (Hepburn et al., 2019; Lippke et al., 2005).
 
@@ -100,13 +100,14 @@ three='Generally used for claimed durations of 1000+ years for geologic or miner
 
 Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects) .
 
-Costs are expressed on a per-ton basis. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
+Costs are expressed on a per-ton basis. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of \$/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
 
 We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for direct air capture and mineralization.
 .
+
 ## Additionality
 
-Additionality refers to the causal relationship between the funds a climate project seeks and the climate benefits it claims. Establishing a connection depends on a counterfactual scenario that asks what would happen in the absence of funding. If the project will generate climate benefits but is feasible if and only if it receives payment, then the project is additional. If the project will likely generate climate benefits without the funding, then it is non-additional. 
+Additionality refers to the causal relationship between the funds a climate project seeks and the climate benefits it claims. Establishing a connection depends on a counterfactual scenario that asks what would happen in the absence of funding. If the project will generate climate benefits but is feasible if and only if it receives payment, then the project is additional. If the project will likely generate climate benefits without the funding, then it is non-additional.
 
 Evaluating Additionality is critical but difficult because the counterfactual scenario can only be estimated, not observed — there is no “control” earth. Additionality is also dynamic: it depends on highly contextual information that can change over time, such as price spreads between different commodities.
 
@@ -128,7 +129,7 @@ Specificity reflects whether there is enough detailed information in project pro
 
 The utility of different information depends on the project category, but can include: specific project parameters (locations, practices), specific technology components, peer-reviewed publications, third-party verifications, and any datasets or models used for project quantification or life cycle assessment.
 
-In considering Specificity, we appreciate there can be sensitivity around proprietary and private information, including intellectual property for technology, or information about land owners and existing business practices. A low value on Specificity does not necessarily mean a carbon removal strategy cannot be effective, but it does indicate the importance of accurately  measuring and verifying project performance. 
+In considering Specificity, we appreciate there can be sensitivity around proprietary and private information, including intellectual property for technology, or information about land owners and existing business practices. A low value on Specificity does not necessarily mean a carbon removal strategy cannot be effective, but it does indicate the importance of accurately measuring and verifying project performance.
 
 In general, we encourage sharing as many details as possible. We believe that making specific project information more public and transparent can help the field develop new and better solutions, as well as help organizations make better decisions when selecting projects.
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Search = () => {
   const dispatch = useDispatch()
-  const input = useSelector(state => state.search)
+  const input = useSelector((state) => state.search)
 
   const handleInputChange = (e) => {
     const searchTerm = e.currentTarget.value
@@ -14,9 +14,9 @@ const Search = () => {
   return (
     <Box>
       <Input
-        type='text'
-        autoFocus='true'
-        placeholder='search reports'
+        type="text"
+        autoFocus="true"
+        placeholder="search reports"
         onChange={handleInputChange}
         sx={{ pt: [2] }}
         value={input}

@@ -9,7 +9,6 @@ import { config, signals } from './utils.js'
 var vegaLite = require('vega-lite')
 
 const Permanence = (props) => {
-
   const { projects } = props
   const dispatch = useDispatch()
   const context = useThemeUI()
@@ -18,8 +17,7 @@ const Permanence = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-
-    const visible = useSelector(state => state.visibility[projects[i].id])
+    const visible = useSelector((state) => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 1
@@ -27,48 +25,45 @@ const Permanence = (props) => {
       opacity = 0.2
     }
 
-    values.push(
-      {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'permanence'))[0].value),
-        group: projects[i].tags[0],
-        color: theme.colors[theme.tags[projects[i].tags[0]]],
-        name: projects[i].name,
-        id: projects[i].id,
-        opacity: opacity
-      }
-    )
+    values.push({
+      durability: parseFloat(projects[i].metrics.filter((m) => m.name == 'permanence')[0].value),
+      group: projects[i].tags[0],
+      color: theme.colors[theme.tags[projects[i].tags[0]]],
+      name: projects[i].name,
+      id: projects[i].id,
+      opacity: opacity,
+    })
   }
 
   const spec = {
-    data: { 
-      name: 'values' 
+    data: {
+      name: 'values',
     },
     mark: {
-      type: 'circle', 
+      type: 'circle',
       size: 200,
       cursor: 'pointer',
       hover: {
-        opacity: 0.5
-      }
+        opacity: 0.5,
+      },
     },
     encoding: {
-      y: { 
-        field: 'group', 
+      y: {
+        field: 'group',
         type: 'nominal',
-        scale: { 'padding': 1.87 },
-        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
+        scale: { padding: 1.87 },
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false },
       },
       x: {
-        field: 'durability', 
-        type: 'quantitative', 
+        field: 'durability',
+        type: 'quantitative',
         axis: { title: 'PERMANENCE years', tickCount: 3 },
-        scale: { type: 'log',  domain: [0.6, 2000], nice: false  },
+        scale: { type: 'log', domain: [0.6, 2000], nice: false },
       },
       color: {
         field: 'color',
         type: 'nominal',
-        scale: null
-
+        scale: null,
       },
       stroke: {
         field: 'color',
@@ -78,12 +73,12 @@ const Permanence = (props) => {
       opacity: {
         field: 'opacity',
         type: 'quantitative',
-        scale: null
-      }
-    }
+        scale: null,
+      },
+    },
   }
 
-  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
+  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec
 
   vgSpec.signals.push(...signals)
 
@@ -105,11 +100,20 @@ const Permanence = (props) => {
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
-    clickOff: handleClickOff
+    clickOff: handleClickOff,
   }
 
-  return <Vega width={width} height={height} signalListeners={signalListeners}
-    data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
+  return (
+    <Vega
+      width={width}
+      height={height}
+      signalListeners={signalListeners}
+      data={{ values: values }}
+      renderer={'svg'}
+      actions={false}
+      spec={vgSpec}
+    />
+  )
 }
 
 export default Permanence

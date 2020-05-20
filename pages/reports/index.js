@@ -9,17 +9,16 @@ import { useRouter } from 'next/router'
 import globals from '../../globals'
 import data from '../../data'
 
-function Index () {
-
+function Index() {
   useEffect(() => {
-    document.body.addEventListener('keyup', function(e) {
+    document.body.addEventListener('keyup', function (e) {
       if (e.which === 9) {
-        document.documentElement.classList.remove('no-focus-outline');
+        document.documentElement.classList.remove('no-focus-outline')
       }
     })
   })
 
-  const projects = useSelector(state => state.projects)
+  const projects = useSelector((state) => state.projects)
   const dispatch = useDispatch()
 
   if (projects.length == 0) {

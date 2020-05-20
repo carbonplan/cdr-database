@@ -22,7 +22,7 @@ const contents = {
   'permanence': <Permanence></Permanence>,
   'additionality': <Additionality></Additionality>,
   'specificity': <Specificity></Specificity>,
-  'feedback?': <Feedback></Feedback>
+  'feedback?': <Feedback></Feedback>,
 }
 
 const Methods = () => {
@@ -38,14 +38,14 @@ const Methods = () => {
         borderColor: 'primary',
         color: 'primary',
         mr: [3],
-        mb: [1]
+        mb: [1],
       }
     } else {
       return {
         borderColor: alpha('primary', 0.2),
         color: alpha('primary', 0.2),
         mr: [3],
-        mb: [1]
+        mb: [1],
       }
     }
   }
@@ -54,38 +54,52 @@ const Methods = () => {
     <Box
       sx={{
         height: 'calc(100vh - 406px)',
-        borderStyle: 'solid', 
-        borderColor: 'muted', 
-        borderWidth: '0px', 
+        borderStyle: 'solid',
+        borderColor: 'muted',
+        borderWidth: '0px',
         pl: [4],
-        pt: [3]
+        pt: [3],
       }}
     >
-      <Heading sx={{ fontSize: [4], mt: [1], mb: [2] }}>
-        Methods
-      </Heading>
+      <Heading sx={{ fontSize: [4], mt: [1], mb: [2] }}>Methods</Heading>
       <Box sx={{ maxWidth: '450px', mb: [2] }}>
-        {['overall', 'mechanism', 'volume', 'negativity', 'cost', 'permanence',
-          'additionality', 'specificity', 'feedback?'].map((name) => 
-          <Badge variant='primary' key={name} sx={getStyle(name)} onClick={() => setMethod(name)}>{name}</Badge>
-        )}
+        {[
+          'overall',
+          'mechanism',
+          'volume',
+          'negativity',
+          'cost',
+          'permanence',
+          'additionality',
+          'specificity',
+          'feedback?',
+        ].map((name) => (
+          <Badge variant="primary" key={name} sx={getStyle(name)} onClick={() => setMethod(name)}>
+            {name}
+          </Badge>
+        ))}
       </Box>
-      <Box sx={{ maxWidth: '420px', fontSize: [1] }}>
-        {contents[method]}
-      </Box>
+      <Box sx={{ maxWidth: '420px', fontSize: [1] }}>{contents[method]}</Box>
       <Heading sx={{ fontSize: [2], mt: [3] }}>
         <Text>
-          <NextLink href='/reports/methods'>
+          <NextLink href="/reports/methods">
             <a>
-            <Text sx={{ 
-              color: 'text',
-              '&:hover > #arrow': {
-                color: 'secondary'
-              },
-              '&:hover': {
-                color: 'secondary'
-              }
-            }}>READ MORE<Text id='arrow' variant='arrow'>↗</Text></Text>
+              <Text
+                sx={{
+                  'color': 'text',
+                  '&:hover > #arrow': {
+                    color: 'secondary',
+                  },
+                  '&:hover': {
+                    color: 'secondary',
+                  },
+                }}
+              >
+                READ MORE
+                <Text id="arrow" variant="arrow">
+                  ↗
+                </Text>
+              </Text>
             </a>
           </NextLink>
         </Text>
