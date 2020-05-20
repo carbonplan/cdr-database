@@ -5,6 +5,7 @@ import { Vega } from 'react-vega'
 import { useThemeUI } from 'theme-ui'
 import { useDispatch, useSelector } from 'react-redux'
 import { config, signals } from './utils.js'
+import { default as NextLink } from 'next/link'
 
 var vegaLite = require('vega-lite')
 
@@ -121,7 +122,7 @@ const Volume = (props) => {
   <Text sx={{maxWidth: '420px', fontSize: [0]}}>
     Projects by categories as a function of volume (metric tCO2),
     Volumes reflect project lifetimes, some one year, 
-    some longer (see Methods).
+    some longer (see <NextLink href='/reports/methods'><a><Text variant='link' sx={{ display: 'inline-block' }}>Methods</Text></a></NextLink>).
   </Text>
   </>
 }
