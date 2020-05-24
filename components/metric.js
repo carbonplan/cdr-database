@@ -41,7 +41,8 @@ const Metric = ({ metric, tag }) => {
 
   const mobile = <Box>
       <Box onClick={toggle} sx={{
-      cursor: 'pointer',
+      cursor: hasDetails ? 'pointer' : 'default',
+      pointerEvents: hasDetails ? 'all' : 'none',
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
@@ -91,10 +92,10 @@ const Metric = ({ metric, tag }) => {
       </Box>
       <Box sx={{
         opacity: expanded ? 1 : 0,
-        maxHeight: expanded ? '300px' : '0px',
+        maxHeight: expanded ? '400px' : '0px',
         overflow: 'hidden',
         transition: [
-          'max-height 0.15s ease-in'
+          'max-height 0.2s ease-in'
         ]
       }}>
       {expanded && 
@@ -155,7 +156,8 @@ const Metric = ({ metric, tag }) => {
     </Box>
     <Box sx={{ display: ['none', 'none', 'inherit'] }}>
     <Box onClick={toggle} sx={{
-      cursor: 'pointer',
+      cursor: hasDetails ? 'pointer' : 'default',
+      pointerEvents: hasDetails ? 'all' : 'none',
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
@@ -200,7 +202,7 @@ const Metric = ({ metric, tag }) => {
     </Box>
     <Box sx={{
       opacity: expanded ? 1 : 0,
-      maxHeight: expanded ? '300px' : '0px',
+      maxHeight: expanded ? '400px' : '0px',
       overflow: 'hidden',
       transition: [
         'max-height 0.15s ease-in'
