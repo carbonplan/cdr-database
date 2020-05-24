@@ -39,6 +39,13 @@ const Metric = ({ metric, tag }) => {
     else return value
   }
 
+  const parseMetric = (metric) => {
+    if (metric.name != 'mechanism') return format(metric.name, metric.value)
+    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided)) return 'CDR'
+    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided)) return 'AVD'
+    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided)) return 'BOTH'
+  }
+
   const mobile = <Box>
       <Box onClick={toggle} sx={{
       cursor: hasDetails ? 'pointer' : 'default',
@@ -143,13 +150,6 @@ const Metric = ({ metric, tag }) => {
       <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
     </Box>
 
-  const parseMetric = (metric) => {
-    if (metric.name != 'mechanism') return format(metric.name, metric.value)
-    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided)) return 'CDR'
-    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided)) return 'AVD'
-    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided)) return 'BOTH'
-  }
-
   return <Box>
     <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
       { mobile }
@@ -205,7 +205,7 @@ const Metric = ({ metric, tag }) => {
       maxHeight: expanded ? '400px' : '0px',
       overflow: 'hidden',
       transition: [
-        'max-height 0.15s ease-in'
+        'max-height 0.1s ease-in'
       ]
     }}>
     {expanded && 
