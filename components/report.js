@@ -91,45 +91,54 @@ const Report = ({ project }) => {
       </Grid>
       </Box>
       <Box sx={{
-        pr: [0, 0, 4]
+        pr: [0, 0, 4],
+        opacity: (expanded || showOne) ? 1 : 0,
+        maxHeight: (expanded || showOne) ? '800px' : '0px',
+        overflow: 'hidden',
+        transition: [
+          'opacity 0.15s ease-in, max-height 0.25s ease-in',
+          'opacity 0.15s ease-in, max-height 0.25s ease-in',
+          'max-height 0.15s ease-in'
+        ]
       }}>
         {(expanded || showOne) && 
-          <Box sx={{ pb: [2, 2, '18px'] }}>
-          <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
-          {metrics.map((metric) => 
-            <Metric 
-              key={metric.name} 
-              tag={project.tags[0]}
-              metric={metric}
-            ></Metric>) }
-          <Grid columns={[1, 1, '300px 1fr']}>
-            <Box sx={{ fontSize: [1], mt: ['8px', '8px', 2] }}>
-              <Text sx={{ color: 'secondary' }}>Source</Text>
-              <Text>
-                <Link sx={{ 
-                  textDecoration: 'none',
-                  '&:hover': {
-                    color: 'secondary'
-                  },
-                  '&:hover > #arrow': {
-                    color: 'secondary'
-                  }
-                }} href={ project.source.url }>
-                  { project.source.name }
-                  <Text id='arrow' variant='arrow'>↗</Text>
-                </Link>
-              </Text>
-            </Box>
-            <Box sx={{ fontSize: [1], pr: [2], mt: [0, 0, 2], mb: [2, 2, 0], textAlign: ['left', 'left', 'right'] }}>
-              <Text sx={{ color: 'secondary' }}>Location</Text>
-              <Text>
-                { project.location.name }
-              </Text>
-            </Box>
-          </Grid>
+        <Box sx={{ pb: [2, 2, '18px'] }}>
+        <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
+        {metrics.map((metric) => 
+          <Metric 
+            key={metric.name} 
+            tag={project.tags[0]}
+            metric={metric}
+          ></Metric>) }
+        <Grid columns={[1, 1, '300px 1fr']}>
+          <Box sx={{ fontSize: [1], mt: ['8px', '8px', 2] }}>
+            <Text sx={{ color: 'secondary' }}>Source</Text>
+            <Text>
+              <Link sx={{ 
+                textDecoration: 'none',
+                '&:hover': {
+                  color: 'secondary'
+                },
+                '&:hover > #arrow': {
+                  color: 'secondary'
+                }
+              }} href={ project.source.url }>
+                { project.source.name }
+                <Text id='arrow' variant='arrow'>↗</Text>
+              </Link>
+            </Text>
           </Box>
-        }
+          <Box sx={{ fontSize: [1], pr: [2], mt: [0, 0, 2], mb: [2, 2, 0], textAlign: ['left', 'left', 'right'] }}>
+            <Text sx={{ color: 'secondary' }}>Location</Text>
+            <Text>
+              { project.location.name }
+            </Text>
+          </Box>
+        </Grid>
+        </Box>
+      }
       </Box>
+      
     </Box>
   } else {
     return null

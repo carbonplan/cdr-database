@@ -39,16 +39,23 @@ const Metric = ({ metric, tag }) => {
     else return value
   }
 
-  const Mobile = () => {
-    return <Box>
+  const parseMetric = (metric) => {
+    if (metric.name != 'mechanism') return format(metric.name, metric.value)
+    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided)) return 'CDR'
+    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided)) return 'AVD'
+    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided)) return 'BOTH'
+  }
+
+  const mobile = <Box>
       <Box onClick={toggle} sx={{
-      cursor: 'pointer',
+      cursor: hasDetails ? 'pointer' : 'default',
+      pointerEvents: hasDetails ? 'all' : 'none',
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
       },
       pt: [2],
-      pb: [!expanded ? 3 : 0]
+      pb: [3]
     }}>
       <Grid id='grid' columns={['1fr 30px']}>
       <Text>
@@ -90,9 +97,18 @@ const Metric = ({ metric, tag }) => {
         }
       </Box>
       </Box>
+      <Box sx={{
+        opacity: expanded ? 1 : 0,
+        maxHeight: expanded ? '400px' : '0px',
+        overflow: 'hidden',
+        transition: [
+          'max-height 0.2s ease-in'
+        ]
+      }}>
       {expanded && 
+        <Box sx={{ pb: [1] }}>
         <Box sx={{ 
-          mt: ((metric.notes || metric.comment) ? [3] : [0] ),
+          mt: ((metric.notes || metric.comment) ? [0] : [0] ),
           mb: ((metric.notes || metric.comment) ? [3] : [0] )
         }}>
         {(metric.notes) && 
@@ -102,7 +118,7 @@ const Metric = ({ metric, tag }) => {
             textAlign: ['left', 'left', 'right'], 
             mr: [2],
             ml: [0],
-            mt: [3]
+            mt: [0]
           }}>NOTES</Text>
           <Text variant='metric.comment' sx={{ 
             ml: [0]
@@ -110,7 +126,7 @@ const Metric = ({ metric, tag }) => {
           </>
         }
         <Box sx={{ 
-          mt: ((metric.notes && metric.comment) ? [2] : [0] )
+          mt: ((metric.notes && metric.comment) ? [3] : [0] )
         }}>
         </Box>
         {(metric.comment) && 
@@ -120,7 +136,7 @@ const Metric = ({ metric, tag }) => {
             textAlign: ['left'], 
             mr: [2],
             ml: [0],
-            mt: [3]
+            mt: [0]
           }}>COMMENT</Text>
           <Text variant='metric.comment' sx={{ 
             ml: [0]
@@ -128,31 +144,26 @@ const Metric = ({ metric, tag }) => {
           </>
         }
         </Box>
+        </Box>
       }
+      </Box>
       <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
     </Box>
-  }
-
-  const parseMetric = (metric) => {
-    if (metric.name != 'mechanism') return format(metric.name, metric.value)
-    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided)) return 'CDR'
-    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided)) return 'AVD'
-    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided)) return 'BOTH'
-  }
 
   return <Box>
     <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
-      <Mobile/>
+      { mobile }
     </Box>
     <Box sx={{ display: ['none', 'none', 'inherit'] }}>
     <Box onClick={toggle} sx={{
-      cursor: 'pointer',
+      cursor: hasDetails ? 'pointer' : 'default',
+      pointerEvents: hasDetails ? 'all' : 'none',
       '&:hover > #grid > #container > #expander': {
         fill: 'primary',
         stroke: 'primary'
       },
       pt: [2],
-      pb: [!expanded ? 2 : 0]
+      pb: [2]
     }}>
       <Grid id='grid' gap={['16px']} columns={
         ['85px 100px 1fr 110px 30px']
@@ -189,10 +200,19 @@ const Metric = ({ metric, tag }) => {
         }
       </Grid>
     </Box>
+    <Box sx={{
+      opacity: expanded ? 1 : 0,
+      maxHeight: expanded ? '400px' : '0px',
+      overflow: 'hidden',
+      transition: [
+        'max-height 0.1s ease-in'
+      ]
+    }}>
     {expanded && 
+      <Box sx={{ pb: [1] }}>
       <Box sx={{ 
         mt: ((metric.notes || metric.comment) ? [2] : [0] ),
-        mb: ((metric.notes || metric.comment) ? [3] : [0] )
+        mb: ((metric.notes || metric.comment) ? [2] : [0] )
       }}>
       {(metric.notes) && 
         <Grid 
@@ -235,7 +255,9 @@ const Metric = ({ metric, tag }) => {
         </Grid>
       }
       </Box>
+      </Box>
     }
+    </Box>
     <Divider sx={{ mr: [2], mt: [0], mb: [0] }}/>
     </Box>
   </Box>
