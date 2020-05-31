@@ -86,12 +86,12 @@ const Metric = ({ metric, tag }) => {
           </Text>
         }
         {(metric.name == 'additionality') && 
-          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value}
+          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value + 1}
           <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
           </Text>
         }
         {(metric.name == 'specificity') && 
-          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value}
+          <Text sx={{color: theme.tags[tag], fontFamily: 'monospace', letterSpacing: 'mono', fontSize: [4]}}>{metric.value + 1}
           <Text sx={{color: 'text', display: 'inline-block'}}>/</Text>3
         </Text>
         }
