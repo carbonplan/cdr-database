@@ -99,7 +99,7 @@ const Metric = ({ metric, tag }) => {
       </Box>
       <Box sx={{
         opacity: expanded ? 1 : 0,
-        maxHeight: expanded ? '400px' : '0px',
+        maxHeight: expanded ? '500px' : '0px',
         overflow: 'hidden',
         transition: [
           'max-height 0.2s ease-in'
@@ -202,7 +202,7 @@ const Metric = ({ metric, tag }) => {
     </Box>
     <Box sx={{
       opacity: expanded ? 1 : 0,
-      maxHeight: expanded ? '400px' : '0px',
+      maxHeight: expanded ? '500px' : '0px',
       overflow: 'hidden',
       transition: [
         'max-height 0.1s ease-in'
