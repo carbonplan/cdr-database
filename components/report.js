@@ -93,7 +93,7 @@ const Report = ({ project }) => {
       <Box sx={{
         pr: [0, 0, 4],
         opacity: (expanded || showOne) ? 1 : 0,
-        maxHeight: (expanded || showOne) ? '800px' : '0px',
+        maxHeight: (expanded || showOne) ? 'auto' : '0px',
         overflow: 'hidden',
         transition: [
           'opacity 0.15s ease-in, max-height 0.25s ease-in',
