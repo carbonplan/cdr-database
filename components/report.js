@@ -1,6 +1,6 @@
 import Metric from './metric'
 import Expander from './expander'
-import Cycle from './graphics/cycle'
+import AnimateHeight from 'react-animate-height'
 import { Badge, Link, Grid, Box, Divider, Heading, Text, IconButton } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { useSelector, useDispatch } from 'react-redux'
@@ -90,16 +90,14 @@ const Report = ({ project }) => {
       </Box>
       </Grid>
       </Box>
+      <AnimateHeight
+        duration={200}
+        height={ (expanded || showOne) ? 'auto' : 0 }
+        easing={'linear'}
+      >
       <Box sx={{
         pr: [0, 0, 4],
-        opacity: (expanded || showOne) ? 1 : 0,
-        maxHeight: (expanded || showOne) ? 'auto' : '0px',
-        overflow: 'hidden',
-        transition: [
-          'opacity 0.15s ease-in, max-height 0.25s ease-in',
-          'opacity 0.15s ease-in, max-height 0.25s ease-in',
-          'max-height 0.15s ease-in'
-        ]
+        opacity: (expanded || showOne) ? 1 : 0
       }}>
         {(expanded || showOne) && 
         <Box sx={{ pb: [2, 2, '18px'] }}>
@@ -138,7 +136,7 @@ const Report = ({ project }) => {
         </Box>
       }
       </Box>
-      
+      </AnimateHeight>
     </Box>
   } else {
     return null
