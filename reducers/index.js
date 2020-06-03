@@ -9,23 +9,28 @@ const initialState = {
   projects: [],
   showOne: false,
   methodsExpanded: true,
-  summaryExpanded: true
+  summaryExpanded: true,
 }
 
 const combinedSearch = (tags, search, projects) => {
   const visibility = {}
-  const matches = projects.filter(project => 
-    project.name.trim().toLowerCase().includes(search.trim().toLowerCase())
-  ).map(project => project.id)
-  projects.forEach( (project) => {
+  const matches = projects
+    .filter((project) =>
+      project.name.trim().toLowerCase().includes(search.trim().toLowerCase())
+    )
+    .map((project) => project.id)
+  projects.forEach((project) => {
     visibility[project.id] = false
     if (!(search == '')) {
-      if (((project.tags.some(t => tags.includes(t))) &&
-          (matches.includes(project.id))) || (search == project.id)) {
+      if (
+        (project.tags.some((t) => tags.includes(t)) &&
+          matches.includes(project.id)) ||
+        search == project.id
+      ) {
         visibility[project.id] = true
       }
     } else {
-      if (project.tags.some(t => tags.includes(t))) {
+      if (project.tags.some((t) => tags.includes(t))) {
         visibility[project.id] = true
       }
     }
@@ -40,57 +45,60 @@ const reducer = (state = initialState, action) => {
     case 'EXPAND_METHODS':
       return {
         ...state,
-        methodsExpanded: true
+        methodsExpanded: true,
       }
     case 'COLLAPSE_METHODS':
       return {
         ...state,
-        methodsExpanded: false
+        methodsExpanded: false,
       }
     case 'EXPAND_SUMMARY':
       return {
         ...state,
-        summaryExpanded: true
+        summaryExpanded: true,
       }
     case 'COLLAPSE_SUMMARY':
       return {
         ...state,
-        summaryExpanded: false
+        summaryExpanded: false,
       }
     case 'SHOW_ONE':
       return {
         ...state,
-        showOne: action.value
+        showOne: action.value,
       }
     case 'ADD_TAG':
-      const tagsPlus = [...state.tags.filter(tag => tag !== action.tag), action.tag]
+      const tagsPlus = [
+        ...state.tags.filter((tag) => tag !== action.tag),
+        action.tag,
+      ]
       return {
         ...state,
         tags: tagsPlus,
         visibility: combinedSearch(tagsPlus, state.search, state.projects),
-        showOne: false
+        showOne: false,
       }
     case 'REMOVE_TAG':
-      const tagsMinus = state.tags.filter(tag => tag !== action.tag)
+      const tagsMinus = state.tags.filter((tag) => tag !== action.tag)
       return {
         ...state,
         tags: tagsMinus,
         visibility: combinedSearch(tagsMinus, state.search, state.projects),
-        showOne: false
+        showOne: false,
       }
     case 'SET_TAG':
       return {
         ...state,
         tags: [action.tag],
         visibility: combinedSearch([action.tag], state.search, state.projects),
-        showOne: false
+        showOne: false,
       }
     case 'UPDATE_SEARCH':
       return {
         ...state,
         search: action.value,
         visibility: combinedSearch(state.tags, action.value, state.projects),
-        showOne: false
+        showOne: false,
       }
     case 'OR_SEARCH':
       const newSearch = state.search.concat(' | ', action.value)
@@ -98,21 +106,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         search: newSearch,
         visibility: combinedSearch(state.tags, newSearch, state.projects),
-        showOne: false
+        showOne: false,
       }
     case 'INIT_PROJECTS':
       return {
         ...state,
-        projects: action.value
+        projects: action.value,
       }
     case 'INIT_VISIBILITY':
       const obj = {}
-      state.projects.forEach( (project) =>
-        obj[project.id] = true
-      )
+      state.projects.forEach((project) => (obj[project.id] = true))
       return {
         ...state,
-        visibility: obj
+        visibility: obj,
       }
   }
 }

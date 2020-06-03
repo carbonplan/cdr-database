@@ -10,7 +10,6 @@ import { default as NextLink } from 'next/link'
 var vegaLite = require('vega-lite')
 
 const Volume = (props) => {
-
   const { projects } = props
   const dispatch = useDispatch()
   const context = useThemeUI()
@@ -19,60 +18,60 @@ const Volume = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-    const visible = useSelector(state => state.visibility[projects[i].id])
+    const visible = useSelector((state) => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 0.85
     } else {
       opacity = 0.2
     }
-    
-    values.push(
-      {
-        volume: parseFloat(projects[i].metrics.filter(m => (m.name == 'volume'))[0].value),
-        group: projects[i].tags[0],
-        color: theme.colors[theme.tags[projects[i].tags[0]]],
-        name: projects[i].name,
-        id: projects[i].id,
-        opacity: opacity
-      }
-    )
+
+    values.push({
+      volume: parseFloat(
+        projects[i].metrics.filter((m) => m.name == 'volume')[0].value
+      ),
+      group: projects[i].tags[0],
+      color: theme.colors[theme.tags[projects[i].tags[0]]],
+      name: projects[i].name,
+      id: projects[i].id,
+      opacity: opacity,
+    })
   }
 
   const spec = {
-    data: { 
-      name: 'values' 
+    data: {
+      name: 'values',
     },
     mark: {
-      type: 'circle', 
-      size: 200
+      type: 'circle',
+      size: 200,
     },
     selection: {
-      highlight: { type: "single", on: "mouseover" },
+      highlight: { type: 'single', on: 'mouseover' },
     },
     encoding: {
-      y: { 
-        field: 'group', 
+      y: {
+        field: 'group',
         type: 'nominal',
-        scale: { 'padding': 1.87 },
-        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
+        scale: { padding: 1.87 },
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false },
       },
       x: {
         field: 'volume',
         type: 'quantitative',
         axis: { title: 'VOLUME tCO2', tickCount: 3 },
-        scale: { type: 'log', domain: [2, 100000000], nice: false }   
+        scale: { type: 'log', domain: [2, 100000000], nice: false },
       },
       color: {
         field: 'color',
         type: 'ordinal',
-        scale: null
+        scale: null,
       },
       opacity: {
         value: 1,
         condition: {
           selection: {
-            not: "highlight"
+            not: 'highlight',
           },
           field: 'opacity',
           type: 'quantitative',
@@ -82,16 +81,16 @@ const Volume = (props) => {
       size: {
         condition: {
           selection: {
-            not: "highlight"
+            not: 'highlight',
           },
-          value: 200
+          value: 200,
         },
-        value: 285
+        value: 285,
       },
     },
   }
 
-  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
+  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec
 
   vgSpec.signals.push(...signals)
 
@@ -113,20 +112,36 @@ const Volume = (props) => {
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
-    clickOff: handleClickOff
+    clickOff: handleClickOff,
   }
 
-  return <>
-  <Box sx={{ height: height + 25 + 60 + 4 }}>
-  <Vega width={width} height={height} signalListeners={signalListeners}
-    data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
-  </Box>
-  <Text sx={{maxWidth: '420px', fontSize: [0]}}>
-    Projects by categories as a function of volume (metric tCO2),
-    Volumes reflect project lifetimes, some one year, 
-    some longer (see <NextLink href='/reports/methods'><a><Text variant='link' sx={{ display: 'inline-block' }}>Methods</Text></a></NextLink>).
-  </Text>
-  </>
+  return (
+    <>
+      <Box sx={{ height: height + 25 + 60 + 4 }}>
+        <Vega
+          width={width}
+          height={height}
+          signalListeners={signalListeners}
+          data={{ values: values }}
+          renderer={'svg'}
+          actions={false}
+          spec={vgSpec}
+        />
+      </Box>
+      <Text sx={{ maxWidth: '420px', fontSize: [0] }}>
+        Projects by categories as a function of volume (metric tCO2), Volumes
+        reflect project lifetimes, some one year, some longer (see{' '}
+        <NextLink href="/reports/methods">
+          <a>
+            <Text variant="link" sx={{ display: 'inline-block' }}>
+              Methods
+            </Text>
+          </a>
+        </NextLink>
+        ).
+      </Text>
+    </>
+  )
 }
 
 export default Volume
