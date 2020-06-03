@@ -4,7 +4,6 @@ import { default as NextLink } from 'next/link'
 import Expander from '../components/expander'
 
 const TOC = ({ section, setSection }) => {
-
   const [expandedMetrics, setExpandedMetrics] = useState(false)
   const [expandedPrograms, setExpandedPrograms] = useState(false)
 
@@ -18,7 +17,7 @@ const TOC = ({ section, setSection }) => {
 
   const style = (current) => {
     if (current == section) {
-      return { 
+      return {
         textDecoration: 'none',
         pb: ['2px'],
         borderColor: 'text',
@@ -26,46 +25,59 @@ const TOC = ({ section, setSection }) => {
         borderWidth: '0px',
         borderBottomWidth: '2px',
         '&:hover': {
-          borderColor: 'secondary'
-        }
+          borderColor: 'secondary',
+        },
       }
     } else {
-      return { 
+      return {
         textDecoration: 'none',
         pb: ['2px'],
         borderColor: 'background',
         borderStyle: 'solid',
         borderWidth: '0px',
-        borderBottomWidth: '2px'
+        borderBottomWidth: '2px',
       }
     }
   }
 
   return (
     <>
-    <Box>
-    <NextLink href='/reports'><a><Text sx={{ 
-      display: 'inline-block', 
-      fontSize: [6],
-      mt: [2],
-      mr: [3],
-      color: 'text',
-      cursor: 'pointer',
-      '&:hover': {
-        color: 'secondary'
-      }
-    }}>←</Text></a></NextLink>
-    </Box>
-    <Box sx={{ mt: [2], fontSize: [3],  }}>
-      <Link  sx={style('metrics')} onClick={() => setSection('metrics')}>Metrics</Link>
-    </Box>
-    <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
-      <Link sx={style('projects')} onClick={() => setSection('projects')}>Projects</Link>
+      <Box>
+        <NextLink href="/reports">
+          <a>
+            <Text
+              sx={{
+                display: 'inline-block',
+                fontSize: [6],
+                mt: [2],
+                mr: [3],
+                color: 'text',
+                cursor: 'pointer',
+                '&:hover': {
+                  color: 'secondary',
+                },
+              }}
+            >
+              ←
+            </Text>
+          </a>
+        </NextLink>
       </Box>
-    <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
-      <Link sx={style('feedback')} onClick={() => setSection('feedback')}>Feedback?</Link>
-    </Box>
-
+      <Box sx={{ mt: [2], fontSize: [3] }}>
+        <Link sx={style('metrics')} onClick={() => setSection('metrics')}>
+          Metrics
+        </Link>
+      </Box>
+      <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
+        <Link sx={style('projects')} onClick={() => setSection('projects')}>
+          Projects
+        </Link>
+      </Box>
+      <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
+        <Link sx={style('feedback')} onClick={() => setSection('feedback')}>
+          Feedback?
+        </Link>
+      </Box>
     </>
   )
 }

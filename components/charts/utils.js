@@ -14,45 +14,45 @@ export const config = (theme) => {
       domain: true,
       tickOffset: 0,
       labelPadding: 5,
-      titlePadding: 10
+      titlePadding: 10,
     },
     view: {
-      stroke: 'none'
+      stroke: 'none',
     },
     line: {
       strokeWidth: 5,
-      color: theme.colors.text
+      color: theme.colors.text,
     },
-    autosize: 'none'
+    autosize: 'none',
   }
 }
 
 export const signals = [
   {
-    'name': 'clickOn',
-    'on': [
+    name: 'clickOn',
+    on: [
       {
-        'events': 'symbol:mousedown![!event.shiftKey]',
-        'update': 'item()'
-      }
-    ]
+        events: 'symbol:mousedown![!event.shiftKey]',
+        update: 'item()',
+      },
+    ],
   },
   {
-    'name': 'clickOr',
-    'on': [
+    name: 'clickOr',
+    on: [
       {
-        'events': 'symbol:mousedown![event.shiftKey]',
-        'update': 'item()'
-      }
-    ]
+        events: 'symbol:mousedown![event.shiftKey]',
+        update: 'item()',
+      },
+    ],
   },
   {
-    'name': 'clickOff',
-    'on': [
+    name: 'clickOff',
+    on: [
       {
-        'events': '.vega-embed:mousedown',
-        'update': '{}'
-      }
-    ]
-  }
+        events: '.vega-embed:mousedown',
+        update: '{}',
+      },
+    ],
+  },
 ]

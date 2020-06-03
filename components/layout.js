@@ -6,39 +6,42 @@ import { Container, Flex, Box, Text } from 'theme-ui'
 const Layout = ({ children }) => {
   return (
     <>
-      <Seo/>
+      <Seo />
       <Flex
         sx={{
           flexDirection: 'column',
           minHeight: '100vh',
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
-            borderStyle: 'solid', 
+            borderStyle: 'solid',
             borderColor: 'muted',
-            borderWidth: '0px', 
+            borderWidth: '0px',
             borderBottomWidth: '1px',
-            position: 'sticky', 
+            position: 'sticky',
             top: 0,
             bg: 'background',
             height: '56px',
-            zIndex: 1000
-          }}>
-          <Container sx={{ 
-            px: [4]
-          }}>
-          <Header/>
+            zIndex: 1000,
+          }}
+        >
+          <Container
+            sx={{
+              px: [4],
+            }}
+          >
+            <Header />
           </Container>
         </Box>
         <Box
           sx={{
             width: '100%',
             flex: '1 1 auto',
-          }}>
-          <Container sx={{ px: [4] }}>
-            { children }
-          </Container>
+          }}
+        >
+          <Container sx={{ px: [4] }}>{children}</Container>
         </Box>
         <Box
           sx={{
@@ -46,10 +49,11 @@ const Layout = ({ children }) => {
             position: 'sticky',
             bottom: '0px',
             display: ['none', 'none', 'inherit'],
-            pointerEvents: 'none'
-          }}>
+            pointerEvents: 'none',
+          }}
+        >
           <Box sx={{ px: [4], width: '100%' }}>
-            <Footer/>
+            <Footer />
           </Box>
         </Box>
       </Flex>

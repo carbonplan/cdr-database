@@ -2,5 +2,5 @@
 const apiServer = 'https://api.carbonplan.now.sh/'
 
 module.exports = {
-  apiServer: apiServer
+  apiServer: apiServer,
 }

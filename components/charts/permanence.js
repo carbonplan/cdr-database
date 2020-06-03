@@ -9,7 +9,6 @@ import { config, signals } from './utils.js'
 var vegaLite = require('vega-lite')
 
 const Permanence = (props) => {
-
   const { projects } = props
   const dispatch = useDispatch()
   const context = useThemeUI()
@@ -18,8 +17,7 @@ const Permanence = (props) => {
   var values = []
   let opacity
   for (var i = 0; i < projects.length; i++) {
-
-    const visible = useSelector(state => state.visibility[projects[i].id])
+    const visible = useSelector((state) => state.visibility[projects[i].id])
 
     if (visible) {
       opacity = 0.85
@@ -27,57 +25,56 @@ const Permanence = (props) => {
       opacity = 0.2
     }
 
-    values.push(
-      {
-        durability: parseFloat(projects[i].metrics.filter(m => (m.name == 'permanence'))[0].value),
-        group: projects[i].tags[0],
-        color: theme.colors[theme.tags[projects[i].tags[0]]],
-        name: projects[i].name,
-        id: projects[i].id,
-        opacity: opacity
-      }
-    )
+    values.push({
+      durability: parseFloat(
+        projects[i].metrics.filter((m) => m.name == 'permanence')[0].value
+      ),
+      group: projects[i].tags[0],
+      color: theme.colors[theme.tags[projects[i].tags[0]]],
+      name: projects[i].name,
+      id: projects[i].id,
+      opacity: opacity,
+    })
   }
 
   const spec = {
-    data: { 
-      name: 'values' 
+    data: {
+      name: 'values',
     },
     mark: {
-      type: 'circle', 
+      type: 'circle',
       size: 200,
       cursor: 'pointer',
       hover: {
-        opacity: 0.5
-      }
+        opacity: 0.5,
+      },
     },
     selection: {
-      highlight: { type: "single", on: "mouseover" },
+      highlight: { type: 'single', on: 'mouseover' },
     },
     encoding: {
-      y: { 
-        field: 'group', 
+      y: {
+        field: 'group',
         type: 'nominal',
-        scale: { 'padding': 1.87 },
-        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false }
+        scale: { padding: 1.87 },
+        axis: { title: 'CATEGORY', domain: false, labels: false, ticks: false },
       },
       x: {
-        field: 'durability', 
-        type: 'quantitative', 
+        field: 'durability',
+        type: 'quantitative',
         axis: { title: 'PERMANENCE years', tickCount: 3 },
-        scale: { type: 'log',  domain: [0.6, 2000], nice: false  },
+        scale: { type: 'log', domain: [0.6, 2000], nice: false },
       },
       color: {
         field: 'color',
         type: 'nominal',
-        scale: null
-
+        scale: null,
       },
       opacity: {
         value: 1,
         condition: {
           selection: {
-            not: "highlight"
+            not: 'highlight',
           },
           field: 'opacity',
           type: 'quantitative',
@@ -87,16 +84,16 @@ const Permanence = (props) => {
       size: {
         condition: {
           selection: {
-            not: "highlight"
+            not: 'highlight',
           },
-          value: 200
+          value: 200,
         },
-        value: 285
+        value: 285,
       },
-    }
+    },
   }
 
-  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec;
+  var vgSpec = vegaLite.compile(spec, { config: config(theme) }).spec
 
   vgSpec.signals.push(...signals)
 
@@ -118,19 +115,28 @@ const Permanence = (props) => {
   const signalListeners = {
     clickOn: handleClickOn,
     clickOr: handleClickOr,
-    clickOff: handleClickOff
+    clickOff: handleClickOff,
   }
 
-  return <>
-  <Box sx={{ height: height + 25 + 60 + 4 }}>
-  <Vega width={width} height={height} signalListeners={signalListeners}
-    data={{ values: values }} renderer={'svg'} actions={false} spec={vgSpec} />
-  </Box>
-  <Text sx={{maxWidth: '420px', fontSize: [0]}}>
-    Projects by categories as a function of permanence (years), the
-    duration over which durable carbon storage can be reasonably assured.
-  </Text>
-  </>
+  return (
+    <>
+      <Box sx={{ height: height + 25 + 60 + 4 }}>
+        <Vega
+          width={width}
+          height={height}
+          signalListeners={signalListeners}
+          data={{ values: values }}
+          renderer={'svg'}
+          actions={false}
+          spec={vgSpec}
+        />
+      </Box>
+      <Text sx={{ maxWidth: '420px', fontSize: [0] }}>
+        Projects by categories as a function of permanence (years), the duration
+        over which durable carbon storage can be reasonably assured.
+      </Text>
+    </>
+  )
 }
 
 export default Permanence
