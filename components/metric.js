@@ -5,6 +5,7 @@ import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
 import Check from './icons/check'
 import Ex from './icons/ex'
+import AnimateHeight from 'react-animate-height'
 import { Box, Divider, jsx, Grid, Text, IconButton } from 'theme-ui'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -20,6 +21,10 @@ const Metric = ({ metric, tag }) => {
   const toggle = (e) => {
     setExpanded(!expanded)
   }
+
+  const length = (metric.comment ? metric.comment.length : 0) +
+    (metric.notes ? metric.notes.length : 0)
+  const duration = Math.min(Math.max(length / 2, 100), 200) * 0.75
 
   const hasUnits = (metric.units != '')
   const hasDetails = ((metric.notes != '') || (metric.comment != ''))
@@ -97,14 +102,11 @@ const Metric = ({ metric, tag }) => {
         }
       </Box>
       </Box>
-      <Box sx={{
-        opacity: expanded ? 1 : 0,
-        maxHeight: expanded ? 'auto' : '0px',
-        overflow: 'hidden',
-        transition: [
-          'max-height 0.2s ease-in'
-        ]
-      }}>
+      <AnimateHeight
+        duration={duration}
+        height={expanded ? 'auto' : 0}
+        easing={'linear'}
+      >
       {expanded && 
         <Box sx={{ pb: [1] }}>
         <Box sx={{ 
@@ -146,7 +148,7 @@ const Metric = ({ metric, tag }) => {
         </Box>
         </Box>
       }
-      </Box>
+      </AnimateHeight>
       <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }}/>
     </Box>
 
@@ -200,14 +202,11 @@ const Metric = ({ metric, tag }) => {
         }
       </Grid>
     </Box>
-    <Box sx={{
-      opacity: expanded ? 1 : 0,
-      maxHeight: expanded ? 'auto' : '0px',
-      overflow: 'hidden',
-      transition: [
-        'max-height 0.1s ease-in'
-      ]
-    }}>
+    <AnimateHeight
+      duration={duration}
+      height={expanded ? 'auto' : 0}
+      easing={'linear'}
+    >
     {expanded && 
       <Box sx={{ pb: [1] }}>
       <Box sx={{ 
@@ -257,7 +256,7 @@ const Metric = ({ metric, tag }) => {
       </Box>
       </Box>
     }
-    </Box>
+    </AnimateHeight>
     <Divider sx={{ mr: [2], mt: [0], mb: [0] }}/>
     </Box>
   </Box>
