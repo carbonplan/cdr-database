@@ -16,20 +16,20 @@ const Bar = ({ tag, data, scale }) => {
         mt: ['13px'],
       }}
     >
-      <svg height="20px" width="90px" stroke="none" fill="none">
+      <svg height='20px' width='90px' stroke='none' fill='none'>
         <rect
           sx={{ fill: theme.tags[tag], opacity: 0.2 }}
-          x="0"
-          y="0"
-          width="100"
-          height="12"
+          x='0'
+          y='0'
+          width='100'
+          height='12'
         />
         <rect
           sx={{ fill: theme.tags[tag], opacity: 1 }}
-          x="0"
-          y="0"
+          x='0'
+          y='0'
           width={width}
-          height="12"
+          height='12'
         />
       </svg>
     </Box>

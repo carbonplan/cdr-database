@@ -93,7 +93,7 @@ const Report = ({ project }) => {
               {project.tags.map((tag) => (
                 <Badge
                   key={tag}
-                  variant="primary"
+                  variant='primary'
                   sx={{
                     borderColor: theme.tags[tag],
                     color: theme.tags[tag],
@@ -108,16 +108,16 @@ const Report = ({ project }) => {
             </Box>
           </Grid>
           <Grid
-            id="grid"
+            id='grid'
             gap={['8px', '8px', '16px']}
             columns={[1, 1, '1fr 32px']}
           >
-            <Text variant="description" sx={{ mb: [0, 0, 2] }}>
+            <Text variant='description' sx={{ mb: [0, 0, 2] }}>
               {project.description}
             </Text>
-            <Box id="container" sx={{ ml: ['-5px', '-5px', '2px'] }}>
+            <Box id='container' sx={{ ml: ['-5px', '-5px', '2px'] }}>
               <Expander
-                id="expander"
+                id='expander'
                 toggle={toggle}
                 expanded={expanded || showOne}
               ></Expander>
@@ -162,7 +162,7 @@ const Report = ({ project }) => {
                         href={project.source.url}
                       >
                         {project.source.name}
-                        <Text id="arrow" variant="arrow">
+                        <Text id='arrow' variant='arrow'>
                           ↗
                         </Text>
                       </Link>

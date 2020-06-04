@@ -14,9 +14,9 @@ const Search = () => {
   return (
     <Box>
       <Input
-        type="text"
-        autoFocus="true"
-        placeholder="search reports"
+        type='text'
+        autoFocus='true'
+        placeholder='search reports'
         onChange={handleInputChange}
         sx={{ pt: [2] }}
         value={input}

@@ -69,20 +69,20 @@ const Metric = ({ metric, tag }) => {
           pb: [3],
         }}
       >
-        <Grid id="grid" columns={['1fr 30px']}>
+        <Grid id='grid' columns={['1fr 30px']}>
           <Text>
-            <Text variant="metric.label" sx={{ display: 'inline-block' }}>
+            <Text variant='metric.label' sx={{ display: 'inline-block' }}>
               {metric.name}
             </Text>
             {hasUnits && (
-              <Text variant="metric.units" sx={{ display: 'inline-block' }}>
+              <Text variant='metric.units' sx={{ display: 'inline-block' }}>
                 {metric.units}
               </Text>
             )}
             {metric.rating === 1 && <Check color={theme.tags[tag]} />}
           </Text>
           {hasDetails && (
-            <Box id="container" sx={{ ml: ['-5px'] }}>
+            <Box id='container' sx={{ ml: ['-5px'] }}>
               <Expander
                 id={'expander'}
                 toggle={toggle}
@@ -92,7 +92,7 @@ const Metric = ({ metric, tag }) => {
           )}
         </Grid>
         <Text
-          variant="metric.value"
+          variant='metric.value'
           sx={{
             color: theme.tags[tag],
             textAlign: ['left'],
@@ -161,7 +161,7 @@ const Metric = ({ metric, tag }) => {
               {metric.notes && (
                 <>
                   <Text
-                    variant="metric.comment"
+                    variant='metric.comment'
                     sx={{
                       color: theme.tags[tag],
                       textAlign: ['left', 'left', 'right'],
@@ -173,7 +173,7 @@ const Metric = ({ metric, tag }) => {
                     NOTES
                   </Text>
                   <Text
-                    variant="metric.comment"
+                    variant='metric.comment'
                     sx={{
                       ml: [0],
                     }}
@@ -190,7 +190,7 @@ const Metric = ({ metric, tag }) => {
               {metric.comment && (
                 <>
                   <Text
-                    variant="metric.comment"
+                    variant='metric.comment'
                     sx={{
                       color: theme.tags[tag],
                       textAlign: ['left'],
@@ -202,7 +202,7 @@ const Metric = ({ metric, tag }) => {
                     COMMENT
                   </Text>
                   <Text
-                    variant="metric.comment"
+                    variant='metric.comment'
                     sx={{
                       ml: [0],
                     }}
@@ -237,12 +237,12 @@ const Metric = ({ metric, tag }) => {
           }}
         >
           <Grid
-            id="grid"
+            id='grid'
             gap={['16px']}
             columns={['85px 100px 1fr 110px 30px']}
           >
             <Text
-              variant="metric.value"
+              variant='metric.value'
               sx={{
                 color: theme.tags[tag],
                 textAlign: ['left', 'left', 'right'],
@@ -290,11 +290,11 @@ const Metric = ({ metric, tag }) => {
               )}
             </Box>
             <Text>
-              <Text variant="metric.label" sx={{ display: 'inline-block' }}>
+              <Text variant='metric.label' sx={{ display: 'inline-block' }}>
                 {metric.name}
               </Text>
               {hasUnits && (
-                <Text variant="metric.units" sx={{ display: 'inline-block' }}>
+                <Text variant='metric.units' sx={{ display: 'inline-block' }}>
                   {metric.units}
                 </Text>
               )}
@@ -306,7 +306,7 @@ const Metric = ({ metric, tag }) => {
               {metric.rating === -2 && <Exclamation color={theme.tags[tag]} />}
             </Text>
             {hasDetails && (
-              <Box id="container" sx={{}}>
+              <Box id='container' sx={{}}>
                 <Expander
                   id={'expander'}
                   toggle={toggle}
@@ -332,7 +332,7 @@ const Metric = ({ metric, tag }) => {
                 {metric.notes && (
                   <Grid gap={['16px']} columns={['201px 1fr 30px']} sx={{}}>
                     <Text
-                      variant="metric.comment"
+                      variant='metric.comment'
                       sx={{
                         color: theme.tags[tag],
                         textAlign: ['right'],
@@ -344,7 +344,7 @@ const Metric = ({ metric, tag }) => {
                       NOTES
                     </Text>
                     <Text
-                      variant="metric.comment"
+                      variant='metric.comment'
                       sx={{
                         ml: [0],
                       }}
@@ -361,7 +361,7 @@ const Metric = ({ metric, tag }) => {
                 {metric.comment && (
                   <Grid gap={['16px']} columns={['201px 1fr 30px']} sx={{}}>
                     <Text
-                      variant="metric.comment"
+                      variant='metric.comment'
                       sx={{
                         color: theme.tags[tag],
                         textAlign: ['right'],
@@ -373,7 +373,7 @@ const Metric = ({ metric, tag }) => {
                       COMMENT
                     </Text>
                     <Text
-                      variant="metric.comment"
+                      variant='metric.comment'
                       sx={{
                         ml: [0],
                       }}

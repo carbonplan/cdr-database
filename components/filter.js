@@ -89,49 +89,49 @@ const Filter = () => {
       <Grid columns={[1, null, '1fr 30px']}>
         <Box>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('forests')}
             onClick={() => addOrRemove('forests')}
           >
             forests
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('dac')}
             onClick={() => addOrRemove('dac')}
           >
             dac
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('mineralization')}
             onClick={() => addOrRemove('mineralization')}
           >
             mineralization
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('soil')}
             onClick={() => addOrRemove('soil')}
           >
             soil
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('ocean')}
             onClick={() => addOrRemove('ocean')}
           >
             ocean
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('biomass')}
             onClick={() => addOrRemove('biomass')}
           >
             biomass
           </Badge>
           <Badge
-            variant="primary"
+            variant='primary'
             sx={getStyle('all')}
             onClick={() => toggleAll()}
           >
@@ -140,7 +140,7 @@ const Filter = () => {
         </Box>
         <Box sx={{ display: ['none', 'none', 'inherit'], cursor: 'pointer' }}>
           <IconButton
-            aria-label="Toggle Search"
+            aria-label='Toggle Search'
             onClick={() => toggleSearch()}
             sx={{
               stroke: searchExpanded ? 'text' : 'secondary',
@@ -152,9 +152,9 @@ const Filter = () => {
               },
             }}
           >
-            <svg height="24px" width="24px" strokeWidth="2">
-              <circle cx="15" cy="9.1" r="6.8" />
-              <line x1="2.4" y1="21.7" x2="10.2" y2="13.9" />
+            <svg height='24px' width='24px' strokeWidth='2'>
+              <circle cx='15' cy='9.1' r='6.8' />
+              <line x1='2.4' y1='21.7' x2='10.2' y2='13.9' />
             </svg>
           </IconButton>
         </Box>
