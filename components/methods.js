@@ -75,7 +75,7 @@ const Methods = () => {
           'feedback?',
         ].map((name) => (
           <Badge
-            variant="primary"
+            variant='primary'
             key={name}
             sx={getStyle(name)}
             onClick={() => setMethod(name)}
@@ -87,7 +87,7 @@ const Methods = () => {
       <Box sx={{ maxWidth: '420px', fontSize: [1] }}>{contents[method]}</Box>
       <Heading sx={{ fontSize: [2], mt: [3] }}>
         <Text sx={{ width: 'fit-content' }}>
-          <NextLink href="/reports/methods">
+          <NextLink href='/reports/methods'>
             <a>
               <Text
                 sx={{
@@ -101,7 +101,7 @@ const Methods = () => {
                 }}
               >
                 READ MORE
-                <Text id="arrow" variant="arrow">
+                <Text id='arrow' variant='arrow'>
                   ↗
                 </Text>
               </Text>

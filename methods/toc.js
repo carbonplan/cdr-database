@@ -43,7 +43,7 @@ const TOC = ({ section, setSection }) => {
   return (
     <>
       <Box>
-        <NextLink href="/reports">
+        <NextLink href='/reports'>
           <a>
             <Text
               sx={{

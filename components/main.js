@@ -30,14 +30,14 @@ const Main = ({ projects }) => {
             This is a public database of reports on carbon removal project
             proposals. These reports reflect our independent analysis of public
             information. Read more about our{' '}
-            <NextLink href="/reports/methods">
+            <NextLink href='/reports/methods'>
               <a>
-                <Text variant="link" sx={{ display: 'inline-block' }}>
+                <Text variant='link' sx={{ display: 'inline-block' }}>
                   methods
                 </Text>
               </a>
             </NextLink>{' '}
-            and <Link href="/research/stripe-reports-insights">insights</Link>.
+            and <Link href='/research/stripe-reports-insights'>insights</Link>.
           </Text>
         </Box>
         <Filter></Filter>

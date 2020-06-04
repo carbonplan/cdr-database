@@ -6,7 +6,7 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 class MyDocument extends Document {
   render() {
     return (
-      <Html className="no-focus-outline">
+      <Html className='no-focus-outline'>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script

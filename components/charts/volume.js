@@ -131,9 +131,9 @@ const Volume = (props) => {
       <Text sx={{ maxWidth: '420px', fontSize: [0] }}>
         Projects by categories as a function of volume (metric tCO2), Volumes
         reflect project lifetimes, some one year, some longer (see{' '}
-        <NextLink href="/reports/methods">
+        <NextLink href='/reports/methods'>
           <a>
-            <Text variant="link" sx={{ display: 'inline-block' }}>
+            <Text variant='link' sx={{ display: 'inline-block' }}>
               Methods
             </Text>
           </a>

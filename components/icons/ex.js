@@ -18,8 +18,8 @@ const Ex = ({ closed, color }) => {
       <svg
         height={closed ? '18px' : '22px'}
         width={closed ? '18px' : '22px'}
-        stroke="none"
-        fill="none"
+        stroke='none'
+        fill='none'
         viewBox={closed ? '0 0 30 30' : '0 0 20 20'}
         sx={{
           strokeWidth: closed ? '1.5px' : '1.5px',
@@ -29,15 +29,15 @@ const Ex = ({ closed, color }) => {
       >
         {!closed && (
           <>
-            <line x1="4.1" y1="3.1" x2="11.9" y2="10.9" />
-            <line x1="11.9" y1="3.1" x2="4.1" y2="10.9" />
+            <line x1='4.1' y1='3.1' x2='11.9' y2='10.9' />
+            <line x1='11.9' y1='3.1' x2='4.1' y2='10.9' />
           </>
         )}
         {closed && (
           <>
-            <line x1="9.1" y1="9.1" x2="16.9" y2="16.9" />
-            <line x1="16.9" y1="9.1" x2="9.1" y2="16.9" />
-            <circle cx="13" cy="13" r="12" />
+            <line x1='9.1' y1='9.1' x2='16.9' y2='16.9' />
+            <line x1='16.9' y1='9.1' x2='9.1' y2='16.9' />
+            <circle cx='13' cy='13' r='12' />
           </>
         )}
       </svg>

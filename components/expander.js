@@ -6,7 +6,7 @@ const Expander = ({ toggle, expanded, id }) => {
     <IconButton
       onClick={toggle}
       id={id}
-      aria-label="Toggle more info"
+      aria-label='Toggle more info'
       sx={{
         cursor: 'pointer',
         fill: 'secondary',
@@ -17,9 +17,9 @@ const Expander = ({ toggle, expanded, id }) => {
         },
       }}
     >
-      <svg height="16px" width="16px">
+      <svg height='16px' width='16px'>
         <path
-          d="M8,0 V16 M0,8 H16"
+          d='M8,0 V16 M0,8 H16'
           sx={{
             strokeWidth: 2,
             transition: '0.25s all',
