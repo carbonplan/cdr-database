@@ -9,7 +9,6 @@ repos:
           |html\
           |js|jsx\
           |json\
-          |mdx\
           |ts|tsx\
           |vue\
           |yaml|yml\
