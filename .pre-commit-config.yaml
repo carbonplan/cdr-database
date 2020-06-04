@@ -3,3 +3,24 @@ repos:
     rev: '2.0.5'
     hooks:
       - id: prettier
+        files: "\\.(\
+          css|less|scss\
+          |graphql|gql\
+          |html\
+          |js|jsx\
+          |json\
+          |mdx\
+          |ts|tsx\
+          |vue\
+          |yaml|yml\
+          )$"
+  - repo: https://github.com/prettier/prettier
+    rev: '2.0.5'
+    hooks:
+      - id: prettier
+        name: prettier-markdown
+        entry: prettier --write --parser mdx
+        files: "\\.(\
+          |md|markdown|mdown|mkdn\
+          |mdx\
+          )$"

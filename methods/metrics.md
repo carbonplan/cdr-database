@@ -3,7 +3,7 @@ import Check from '../components/icons/check'
 import Ex from '../components/icons/ex'
 
 export const meta = {
-revised: '05-18-2020'
+  revised: '05-18-2020',
 }
 
 # Metrics
@@ -30,11 +30,10 @@ While we only consider projects in this database that have the potential to be p
 
 In general, a project’s mechanism should be well-specified. The challenge of validation can be more significant, however, when a project involves early-stage technologies or references a broad variety of potential approaches without specifics about which ones are used.
 
-<Table 
-type='icons'
-three='Established carbon removal or storage technology or practice with existing demonstrations and/or published literature on the underlying mechanisms. The fact that a  component of the technology might not be proven is acceptable, so long as the core carbon removal or storage aspect is well established.' 
->
-</Table>
+<Table
+  type='icons'
+  three='Established carbon removal or storage technology or practice with existing demonstrations and/or published literature on the underlying mechanisms. The fact that a  component of the technology might not be proven is acceptable, so long as the core carbon removal or storage aspect is well established.'
+></Table>
 
 ## Volume
 
@@ -50,11 +49,10 @@ In other cases, where the volume is primarily driven by procurement of materials
 
 In many cases we were unable to validate volume through an independent calculation or using project information, either because we lacked sufficient detail to parameterize an otherwise well-specific proposal, or because we were unable to replicate broad claims with simple models. Where possible, we indicated in our comments what additional information would be useful. A lack of validation on volume should not necessarily be taken as criticism, and we hope to improve in this ability over time.
 
-<Table 
-type='icons'
-three='Possible to validate claimed volume using either an independent calculation or a check for internal consistency, depending on the provided information.' 
->
-</Table>
+<Table
+  type='icons'
+  three='Possible to validate claimed volume using either an independent calculation or a check for internal consistency, depending on the provided information.'
+></Table>
 
 ## Negativity
 
@@ -74,11 +72,10 @@ For forest projects, for consistency, we compute Negativity over the project lif
 
 We express no judgment on this metric when we don't know enough about the project's process to independently confirm a claim.
 
-<Table 
-type='icons'
-three='Boundary conditions are well specified with respect to our understanding of the mechanism, and LCA components are thoroughly documented, either directly by the project and/or through independent assessment or verification with a third-party.' 
->
-</Table>
+<Table
+  type='icons'
+  three='Boundary conditions are well specified with respect to our understanding of the mechanism, and LCA components are thoroughly documented, either directly by the project and/or through independent assessment or verification with a third-party.'
+></Table>
 
 ## Permanence
 
@@ -94,11 +91,10 @@ We consider 30 years or less a plausible maximum duration of Permanence for proj
 
 Building materials are intermediate, as the plausible duration of Permanence depends on the material (e.g. concrete vs laminated wood). While concrete can be considered similarly permanent as mineralization, wood products are likely bounded by a range of 50-100 years (Hepburn et al., 2019; Lippke et al., 2005).
 
-<Table 
-type='icons'
-three='Generally used for claimed durations of 1000+ years for geologic or mineral storage,  durations of 100-1000 years for biochar, durations of 50-100 years for wooden building materials, or durations of 30 or fewer years for forests or soil projects. Requires specific description of storage mechanism or contractual arrangements.'
->
-</Table>
+<Table
+  type='icons'
+  three='Generally used for claimed durations of 1000+ years for geologic or mineral storage,  durations of 100-1000 years for biochar, durations of 50-100 years for wooden building materials, or durations of 30 or fewer years for forests or soil projects. Requires specific description of storage mechanism or contractual arrangements.'
+></Table>
 
 ## Cost
 
@@ -118,13 +114,12 @@ We examine projects for contextual information around the likelihood of Addition
 
 Different organizations might have different priorities for project selection. Low values on Additionality are not a concern when the purpose of funding is to advance technology, but should be a primary consideration if the goal is to claim an emissions offset.
 
-<Table 
-type='squares'
-three='Climate benefits claimed by the project are likely to be additional. This could be because the project proposes an unconventional action, has relatively high costs, or has no inherent commercial value outside of its climate benefits.'
-two='Climate benefits claimed by the project might be additional, but we cannot validate with confidence. Used when the evidence on additionality is mixed, without a clear balance establishing either a finding of additionality or non-additionality.' 
-one='Climate benefits claimed by the project are likely to not be additional because they are likely to occur independently from the proposed investment. This could be because the proposed activity is already commonplace or required by law; because the project has promised or could promise its climate benefits to another party; or because the climate benefits it claims are logically implied by pre-existing commitments.' 
->
-</Table>
+<Table
+  type='squares'
+  three='Climate benefits claimed by the project are likely to be additional. This could be because the project proposes an unconventional action, has relatively high costs, or has no inherent commercial value outside of its climate benefits.'
+  two='Climate benefits claimed by the project might be additional, but we cannot validate with confidence. Used when the evidence on additionality is mixed, without a clear balance establishing either a finding of additionality or non-additionality.'
+  one='Climate benefits claimed by the project are likely to not be additional because they are likely to occur independently from the proposed investment. This could be because the proposed activity is already commonplace or required by law; because the project has promised or could promise its climate benefits to another party; or because the climate benefits it claims are logically implied by pre-existing commitments.'
+></Table>
 
 ## Specificity
 
@@ -136,10 +131,9 @@ In considering Specificity, we appreciate there can be sensitivity around propri
 
 In general, we encourage sharing as many details as possible. We believe that making specific project information more public and transparent can help the field develop new and better solutions, as well as help organizations make better decisions when selecting projects.
 
-<Table 
-type='squares'
-three='Project either uses an established approach and full details can be obtained on implementation, or uses an early-stage approach but makes extensive details available about the planned implementation and its grounding in existing data and research.'
-two='Project uses an established approach with few details available on the specifics of its implementation, or describes a new approach but without details on its plan.' 
-one='Critical project data needed for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.' 
->
-</Table>
+<Table
+  type='squares'
+  three='Project either uses an established approach and full details can be obtained on implementation, or uses an early-stage approach but makes extensive details available about the planned implementation and its grounding in existing data and research.'
+  two='Project uses an established approach with few details available on the specifics of its implementation, or describes a new approach but without details on its plan.'
+  one='Critical project data needed for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.'
+></Table>
