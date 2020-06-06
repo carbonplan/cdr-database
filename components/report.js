@@ -97,7 +97,6 @@ const Report = ({ project }) => {
                   sx={{
                     borderColor: theme.tags[tag],
                     color: theme.tags[tag],
-                    cursor: 'default',
                     mr: [2],
                     ml: [0, 0, 2],
                   }}
