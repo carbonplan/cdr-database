@@ -1,4 +1,4 @@
-# (carbon)plan / reports
+# carbonplan / reports
 
 This repository includes the source code for [carbonplan.org/reports](https://carbonplan.org/reports), a browsable public database of reports on carbon removal projects. The site is a [Next.js](https://nextjs.org/) project, deployed on [Vercel](https://vercel.com/).
 
