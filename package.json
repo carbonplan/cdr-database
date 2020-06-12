@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development next -p 5000",
     "build": "next build",
-    "start": "next start -p 5000"
+    "start": "next start -p 5000",
+    "lint": "npm run lint-js && npm run lint-md",
+    "lint-js": "prettier --check '{components,lib,pages}/**/*.js'",
+    "lint-md": "prettier --check README.md 'methods/**/*.md' --parser mdx"
   },
   "repository": {
     "type": "git",
