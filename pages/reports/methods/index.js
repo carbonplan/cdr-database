@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import Metrics from '../../../methods/metrics.md'
 import Feedback from '../../../methods/feedback.md'
 import Projects from '../../../methods/projects.md'
-import TOC from '../../../methods/toc.js'
+import TOC from '../../../components/toc.js'
 
 function Methods(props) {
   const [section, setSection] = useState('metrics')

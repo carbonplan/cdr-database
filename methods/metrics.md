@@ -14,7 +14,8 @@ Values for each metric are based on information provided in public project propo
 
 The mark next to each metric shows our validation. We gave projects a <Check closed={true}/> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <Check closed={true}/> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
-Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of \$/tCO<sub>2</sub>, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
+<!-- prettier-ignore -->
+Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO<sub>2</sub>, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
 
 For Additionality and Specificity we provide a qualitative score from 1 to 3, along with comments. Both of these scores are contextual. Additionality is less important when funding decisions are oriented around encouraging innovation, rather than carbon offsetting. For Specificity, our scores should be interpreted in light of the fact that all projects in our database have provided a baseline level of information, and achieved a significant degree of transparency, by making materials public.
 
@@ -100,7 +101,8 @@ Building materials are intermediate, as the plausible duration of Permanence dep
 
 Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects).
 
-Costs are expressed per metric tCO<sub>2</sub> and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of \$/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
+<!-- prettier-ignore -->
+Costs are expressed per metric tCO<sub>2</sub> and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
 
 We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for direct air capture and mineralization.
 
