@@ -3,10 +3,8 @@ import Sidebar from '../../components/sidebar'
 import Main from '../../components/main'
 import { Flex, Grid } from 'theme-ui'
 import { useEffect } from 'react'
-import { withRedux } from '../../lib/redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import globals from '../../globals'
 import data from '../../data'
 
 function Index() {
@@ -46,4 +44,4 @@ function Index() {
   )
 }
 
-export default withRedux(Index)
+export default Index
