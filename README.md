@@ -9,13 +9,11 @@
 
 [![GitHub][github-badge]][github]
 ![Build Status][]
-![dependabot][]
 ![MIT License][]
 
 [github]: https://github.com/carbonplan/reports
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
 [build status]: https://flat.badgen.net/github/checks/carbonplan/reports
-[dependabot]: https://flat.badgen.net/dependabot/carbonplan/reports?icon=dependabot
 [mit license]: https://flat.badgen.net/badge/license/MIT/blue
 
 ## resources
