@@ -2,10 +2,17 @@
 import { jsx, Box, IconButton, Text } from 'theme-ui'
 import { useColorMode } from 'theme-ui'
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 const Footer = (props) => {
   const [colorMode, setColorMode] = useColorMode()
   const [coords, setCoords] = useState({ x: 0, y: 0 })
+  const visibility = useSelector((state) => state.visibility)
+
+  const nProjects = Object.values(visibility).reduce(function (a, b) {
+    return a + b
+  }, 0)
+  const nProjectsString = String(nProjects).padStart(2, 0)
 
   const toggle = (e) => {
     if (colorMode == 'light') setColorMode('dark')
@@ -41,7 +48,7 @@ const Footer = (props) => {
           leftMargin: '15px',
         }}
       >
-        PROJECTS: 24
+        PROJECTS: {nProjectsString}
       </Text>
       <IconButton aria-label='Current Color' sx={{ fill: 'secondary' }}>
         <svg
