@@ -21,20 +21,18 @@ const Footer = (props) => {
 
   // color of first projects primary tag
   var colorKey
-  var colorHex
   var i
   if (nProjects) {
     for (i = 0; i < projects.length; i++) {
       if (visibility[projects[i].id]) {
         colorKey = theme.tags[projects[i].tags[0]]
-        colorHex = theme.colors[colorKey].toUpperCase()
         break
       }
     }
   } else {
     colorKey = 'secondary'
-    colorHex = '#7eb36a'.toUpperCase()
   }
+  const colorHex = theme.colors[colorKey].toUpperCase()
 
   const toggle = (e) => {
     if (colorMode == 'light') setColorMode('dark')
