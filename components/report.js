@@ -42,8 +42,6 @@ const Report = ({ project }) => {
     return project.metrics.filter((m) => m.name == metric)[0]
   })
 
-  const cycle = project.metrics.filter((m) => m.name == 'volume')[0]['cycle']
-
   if (visibility) {
     return (
       <Box

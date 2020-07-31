@@ -1,18 +1,40 @@
 /** @jsx jsx */
 import { jsx, Box, IconButton, Text } from 'theme-ui'
-import { useColorMode } from 'theme-ui'
+import { useColorMode, useThemeUI } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 const Footer = (props) => {
+  const context = useThemeUI()
+  const theme = context.theme
+
   const [colorMode, setColorMode] = useColorMode()
   const [coords, setCoords] = useState({ x: 0, y: 0 })
+  const projects = useSelector((state) => state.projects)
   const visibility = useSelector((state) => state.visibility)
 
+  // number of projects
   const nProjects = Object.values(visibility).reduce(function (a, b) {
     return a + b
   }, 0)
   const nProjectsString = String(nProjects).padStart(2, 0)
+
+  // color of first projects primary tag
+  var colorKey
+  var colorHex
+  var i
+  if (nProjects) {
+    for (i = 0; i < projects.length; i++) {
+      if (visibility[projects[i].id]) {
+        colorKey = theme.tags[projects[i].tags[0]]
+        colorHex = theme.colors[colorKey].toUpperCase()
+        break
+      }
+    }
+  } else {
+    colorKey = 'secondary'
+    colorHex = '#7eb36a'.toUpperCase()
+  }
 
   const toggle = (e) => {
     if (colorMode == 'light') setColorMode('dark')
@@ -26,8 +48,6 @@ const Footer = (props) => {
       window.removeEventListener('mousemove', setFromEvent)
     }
   }, [])
-
-  const color = '#7eb36a'
 
   return (
     <Box
@@ -50,7 +70,7 @@ const Footer = (props) => {
       >
         PROJECTS: {nProjectsString}
       </Text>
-      <IconButton aria-label='Current Color' sx={{ fill: 'secondary' }}>
+      <IconButton aria-label='Current Color' sx={{ fill: colorKey }}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
@@ -64,7 +84,7 @@ const Footer = (props) => {
         variant='metric.units'
         sx={{ whiteSpace: 'nowrap', display: 'inline-block' }}
       >
-        {color}
+        {colorHex}
       </Text>
       <IconButton
         aria-label='Toggle dark mode'
