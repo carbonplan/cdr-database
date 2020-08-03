@@ -19,16 +19,19 @@ const Footer = (props) => {
   }, 0)
   const nProjectsString = String(nProjects).padStart(2, 0)
 
-  // color of first projects primary tag
-  var colorKey
+  // get tag color
+  // set to default if more than 1 tag color is visible
+  const visColors = []
   var i
-  if (nProjects) {
-    for (i = 0; i < projects.length; i++) {
-      if (visibility[projects[i].id]) {
-        colorKey = theme.tags[projects[i].tags[0]]
-        break
-      }
+  var colorKey
+  for (i = 0; i < projects.length; i++) {
+    if (visibility[projects[i].id]) {
+      visColors.push(theme.tags[projects[i].tags[0]])
     }
+  }
+  const distinctColors = [...new Set(visColors)]
+  if (distinctColors.length == 1) {
+    colorKey = distinctColors[0]
   } else {
     colorKey = 'secondary'
   }
