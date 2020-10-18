@@ -12,7 +12,7 @@ const Table = ({ one, two, three, type, children }) => {
   const Row = ({ children, final }) => {
     return (
       <Grid
-        columns={[width + ' 1fr']}
+        columns={[1, 1, width + ' 1fr']}
         sx={{
           borderStyle: 'solid',
           borderWidth: '0px',
@@ -20,7 +20,7 @@ const Table = ({ one, two, three, type, children }) => {
           borderColor: 'muted',
           py: [2],
           mb: [2],
-          mr: [7],
+          mr: [1, 1, 7],
           borderBottomWidth: final ? '1px' : '0px',
           pb: final ? [3] : [0],
         }}

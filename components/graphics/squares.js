@@ -13,7 +13,12 @@ const Squares = ({ color, data }) => {
         mt: ['13px'],
       }}
     >
-      <svg height='20px' width='90px' stroke='none' fill='none'>
+      <svg
+        sx={{ height: ['10px', '10px', '20px'] }}
+        width='90px'
+        stroke='none'
+        fill='none'
+      >
         <rect
           sx={{ fill: color ? color : 'primary', opacity: data >= 0 ? 1 : 0.2 }}
           x='0'

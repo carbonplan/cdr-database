@@ -63,20 +63,48 @@ const TOC = ({ section, setSection }) => {
           </a>
         </NextLink>
       </Box>
-      <Box sx={{ mt: [2], fontSize: [3] }}>
-        <Link sx={style('metrics')} onClick={() => setSection('metrics')}>
-          Metrics
-        </Link>
-      </Box>
-      <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
-        <Link sx={style('projects')} onClick={() => setSection('projects')}>
-          Projects
-        </Link>
-      </Box>
-      <Box sx={{ mt: [2], fontSize: [3], textDecoration: 'none' }}>
-        <Link sx={style('feedback')} onClick={() => setSection('feedback')}>
-          Feedback?
-        </Link>
+      <Box
+        sx={{
+          mb: [3, 3, 0],
+        }}
+      >
+        <Box
+          sx={{
+            mr: [3, 3, 0],
+            display: ['inline-block', 'inline-block', 'block'],
+            mt: [2],
+            fontSize: [3],
+          }}
+        >
+          <Link sx={style('metrics')} onClick={() => setSection('metrics')}>
+            Metrics
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            mr: [3, 3, 0],
+            display: ['inline-block', 'inline-block', 'block'],
+            mt: [2],
+            fontSize: [3],
+            textDecoration: 'none',
+          }}
+        >
+          <Link sx={style('projects')} onClick={() => setSection('projects')}>
+            Projects
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            display: ['inline-block', 'inline-block', 'block'],
+            mt: [2],
+            fontSize: [3],
+            textDecoration: 'none',
+          }}
+        >
+          <Link sx={style('feedback')} onClick={() => setSection('feedback')}>
+            Feedback?
+          </Link>
+        </Box>
       </Box>
     </>
   )

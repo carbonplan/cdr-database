@@ -34,8 +34,9 @@ function Methods(props) {
             borderBottomWidth: ['1px', '0px', '0px'],
             height: ['fit-contents', '200px', '200px'],
             backgroundColor: 'background',
+            zIndex: 1000,
             position: 'sticky',
-            top: '55px',
+            top: '56px',
             pr: [1],
             pb: [2],
           }}

@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         >
           <Container
             sx={{
-              px: [4],
+              px: [3, 3, 4],
             }}
           >
             <Header />
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
             flex: '1 1 auto',
           }}
         >
-          <Container sx={{ px: [4] }}>{children}</Container>
+          <Container sx={{ px: [3, 3, 4] }}>{children}</Container>
         </Box>
         <Box
           sx={{

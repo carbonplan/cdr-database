@@ -10,7 +10,7 @@ const Check = ({ closed, color }) => {
     <span
       sx={{
         display: 'inline-block',
-        ml: closed ? [1] : [3],
+        ml: closed ? [0, 0, 1] : [0, 0, 3],
         mr: closed ? ['2px'] : [0],
         mt: closed ? ['-3px'] : [0],
       }}
