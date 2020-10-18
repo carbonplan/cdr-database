@@ -66,7 +66,7 @@ function Methods(props) {
             borderBottomWidth: ['1px', '1px', '0px'],
             height: ['fit-contents', 'fit-contents', '200px'],
             backgroundColor: 'background',
-            zIndex: 1000,
+            zIndex: 500,
             position: 'sticky',
             top: '56px',
             pr: [1],
