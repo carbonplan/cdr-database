@@ -17,7 +17,39 @@ function Methods(props) {
   return (
     <Layout>
       <Box sx={{}}>
-        <Heading sx={{ pb: [3], pt: [4], fontSize: [6] }}>Methods</Heading>
+        <Box
+          sx={{
+            display: ['initial', 'initial', 'none'],
+          }}
+        >
+          <NextLink href='/reports' passHref={true}>
+            <Link
+              sx={{
+                display: 'inline-block',
+                fontSize: [6],
+                mt: [2],
+                mr: [3],
+                color: 'text',
+                cursor: 'pointer',
+                '&:hover': {
+                  color: 'secondary',
+                },
+                textDecoration: 'none',
+              }}
+            >
+              ←
+            </Link>
+          </NextLink>
+        </Box>
+        <Heading
+          sx={{
+            pb: [3],
+            pt: [1, 1, 4],
+            fontSize: [6],
+          }}
+        >
+          Methods
+        </Heading>
         <Text sx={{ maxWidth: '800px', fontSize: [3] }}>
           Descriptions of our metrics and notes on each carbon removal project
           we have analyzed. Check out the{' '}
@@ -25,14 +57,14 @@ function Methods(props) {
           if you have questions or want to get in touch.
         </Text>
       </Box>
-      <Grid columns={[1, '17% 83%', '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
+      <Grid columns={[1, 1, '17% 83%']} gap={['64px']} sx={{ mt: [4] }}>
         <Box
           sx={{
             borderStyle: 'solid',
             borderColor: 'muted',
             borderWidth: '0px',
-            borderBottomWidth: ['1px', '0px', '0px'],
-            height: ['fit-contents', '200px', '200px'],
+            borderBottomWidth: ['1px', '1px', '0px'],
+            height: ['fit-contents', 'fit-contents', '200px'],
             backgroundColor: 'background',
             zIndex: 1000,
             position: 'sticky',
@@ -49,11 +81,11 @@ function Methods(props) {
             borderColor: 'muted',
             borderWidth: '0px',
             borderLeftWidth: ['0px', '0px', '1px'],
-            pl: [1, 5, 5],
-            pr: [1, 7, 7],
+            pl: [1, 1, 5],
+            pr: [1, 1, 7],
           }}
         >
-          <Box sx={{ mt: ['-50px'], maxWidth: '800px' }}>
+          <Box sx={{ mt: ['-80px', '-80px', '-50px'], maxWidth: '800px' }}>
             {section == 'metrics' && <Metrics />}
             {section == 'feedback' && <Feedback />}
             {section == 'projects' && <Projects />}

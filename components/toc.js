@@ -42,30 +42,34 @@ const TOC = ({ section, setSection }) => {
 
   return (
     <>
-      <Box>
-        <NextLink href='/reports'>
-          <a>
-            <Text
-              sx={{
-                display: 'inline-block',
-                fontSize: [6],
-                mt: [2],
-                mr: [3],
-                color: 'text',
-                cursor: 'pointer',
-                '&:hover': {
-                  color: 'secondary',
-                },
-              }}
-            >
-              ←
-            </Text>
-          </a>
+      <Box
+        sx={{
+          display: ['none', 'none', 'initial'],
+        }}
+      >
+        <NextLink href='/reports' passHref={true}>
+          <Link
+            sx={{
+              display: 'inline-block',
+              fontSize: [6],
+              mt: [2],
+              mr: [3],
+              color: 'text',
+              cursor: 'pointer',
+              '&:hover': {
+                color: 'secondary',
+              },
+              textDecoration: 'none',
+            }}
+          >
+            ←
+          </Link>
         </NextLink>
       </Box>
       <Box
         sx={{
           mb: [3, 3, 0],
+          mt: [1, 1, 0],
         }}
       >
         <Box
