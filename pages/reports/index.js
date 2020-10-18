@@ -1,7 +1,7 @@
 import Layout from '../../components/layout'
 import Sidebar from '../../components/sidebar'
 import Main from '../../components/main'
-import { Flex, Grid } from 'theme-ui'
+import { Grid } from 'theme-ui'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'

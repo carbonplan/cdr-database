@@ -1,7 +1,7 @@
 import Seo from './seo'
 import Header from './header'
 import Footer from './footer'
-import { Container, Flex, Box, Text } from 'theme-ui'
+import { Container, Flex, Box } from 'theme-ui'
 
 const Layout = ({ children }) => {
   return (

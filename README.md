@@ -1,10 +1,20 @@
+<img
+  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
+  height='48'
+/>
+
 # carbonplan / reports
 
-[![Build](https://github.com/carbonplan/reports/workflows/CI/badge.svg)](https://github.com/carbonplan/reports/actions)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=carbonplan/reports)](https://dependabot.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/carbonplan/reports/blob/master/LICENSE)
+**reports on carbon removal projects and technologies**
 
-This repository includes the source code for [carbonplan.org/reports](https://carbonplan.org/reports), a browsable public database of reports on carbon removal projects. The site is a [Next.js](https://nextjs.org/) project, deployed on [Vercel](https://vercel.com/).
+[![GitHub][github-badge]][github]
+![Build Status][]
+![MIT License][]
+
+[github]: https://github.com/carbonplan/reports
+[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
+[build status]: https://flat.badgen.net/github/checks/carbonplan/reports
+[mit license]: https://flat.badgen.net/badge/license/MIT/blue
 
 ## resources
 

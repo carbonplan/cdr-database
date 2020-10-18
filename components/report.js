@@ -1,17 +1,7 @@
 import Metric from './metric'
 import Expander from './expander'
 import AnimateHeight from 'react-animate-height'
-import {
-  Badge,
-  Link,
-  Grid,
-  Box,
-  Divider,
-  Heading,
-  Text,
-  IconButton,
-} from 'theme-ui'
-import { alpha } from '@theme-ui/color'
+import { Badge, Link, Grid, Box, Divider, Heading, Text } from 'theme-ui'
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
@@ -51,8 +41,6 @@ const Report = ({ project }) => {
   const metrics = showMetrics.map((metric) => {
     return project.metrics.filter((m) => m.name == metric)[0]
   })
-
-  const cycle = project.metrics.filter((m) => m.name == 'volume')[0]['cycle']
 
   if (visibility) {
     return (
