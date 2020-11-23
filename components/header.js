@@ -19,7 +19,7 @@ const link = {
   },
 }
 
-const Header = () => {
+const Header = ({ status }) => {
   const [expanded, setExpanded] = useState(false)
 
   const toggle = (e) => {
@@ -38,6 +38,17 @@ const Header = () => {
     >
       <Box>
         <Logo></Logo>
+      </Box>
+      <Box
+        sx={{
+          fontSize: [3],
+          display: ['none', 'none', 'initial'],
+          position: 'relative',
+          right: '-25%',
+          width: '200px',
+        }}
+      >
+        <Box sx={{ textAlign: 'right' }}>{status ? `(${status})` : ''}</Box>
       </Box>
       <Box>
         <IconButton
@@ -93,8 +104,8 @@ const Header = () => {
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 68 36'
             >
-              <line x1='50.85' y1='29.79' x2='17.15' y2='6.21' />
-              <line x1='17.15' y1='29.79' x2='50.85' y2='6.21' />
+              <line class='cls-1' x1='50.85' y1='29.79' x2='17.15' y2='6.21' />
+              <line class='cls-1' x1='17.15' y1='29.79' x2='50.85' y2='6.21' />
               <path
                 sx={{ transition: 'all 0.25s' }}
                 className='paren'
@@ -139,14 +150,14 @@ const Header = () => {
               <Link href='/about' sx={link}>
                 About
               </Link>
-              <Link href='/reports' sx={link}>
-                Reports
+              <Link href='/team' sx={link}>
+                Team
               </Link>
               <Link href='/research' sx={link}>
                 Research
               </Link>
-              <Link href='/team' sx={link}>
-                Team
+              <Link href='/reports' sx={link}>
+                Reports
               </Link>
               <Link href='/faq' sx={link}>
                 FAQ

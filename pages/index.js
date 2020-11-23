@@ -1,12 +1,12 @@
-import Layout from '../../components/layout'
-import Sidebar from '../../components/sidebar'
-import Main from '../../components/main'
+import Layout from '../components/layout'
+import Sidebar from '../components/sidebar'
+import Main from '../components/main'
 import { Grid } from 'theme-ui'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { withAuth } from '../../lib/auth'
-import data from '../../data'
+import { withAuth } from '../lib/auth'
+import data from '../data'
 
 function Index() {
   useEffect(() => {

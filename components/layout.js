@@ -3,7 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import { Container, Flex, Box } from 'theme-ui'
 
-const Layout = ({ children }) => {
+const Layout = ({ status, children }) => {
   return (
     <>
       <Seo />
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
               px: [3, 3, 4],
             }}
           >
-            <Header />
+            <Header status={status} />
           </Container>
         </Box>
         <Box

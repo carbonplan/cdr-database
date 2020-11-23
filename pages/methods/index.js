@@ -1,12 +1,12 @@
-import Layout from '../../../components/layout'
 import { Heading, Grid, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
-import { withAuth } from '../../../lib/auth'
-import Metrics from '../../../methods/metrics.md'
-import Feedback from '../../../methods/feedback.md'
-import Projects from '../../../methods/projects.md'
-import TOC from '../../../components/toc.js'
+import { withAuth } from '../../lib/auth'
+import Layout from '../../components/layout'
+import Metrics from '../../methods/metrics.md'
+import Feedback from '../../methods/feedback.md'
+import Projects from '../../methods/projects.md'
+import TOC from '../../components/toc.js'
 
 function Methods(props) {
   const [section, setSection] = useState('metrics')
