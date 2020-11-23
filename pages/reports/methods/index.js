@@ -2,6 +2,7 @@ import Layout from '../../../components/layout'
 import { Heading, Grid, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { useState, useEffect } from 'react'
+import { withAuth } from '../../../lib/auth'
 import Metrics from '../../../methods/metrics.md'
 import Feedback from '../../../methods/feedback.md'
 import Projects from '../../../methods/projects.md'
@@ -96,4 +97,4 @@ function Methods(props) {
   )
 }
 
-export default Methods
+export default withAuth(Methods)

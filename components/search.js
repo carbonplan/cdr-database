@@ -18,7 +18,20 @@ const Search = () => {
         autoFocus='true'
         placeholder='search reports'
         onChange={handleInputChange}
-        sx={{ pt: [2] }}
+        sx={{ 
+          fontSize: [2],
+          pt: [2],
+          pb: ['6px'],
+          pl: [0],
+          pr: [0],
+          fontFamily: 'monospace',
+          borderRadius: '0px',
+          borderStyle: 'solid',
+          borderColor: 'muted',
+          borderWidth: '0px',
+          borderBottomWidth: '0px',
+          textAlign: 'right', 
+        }}
         value={input}
       />
     </Box>

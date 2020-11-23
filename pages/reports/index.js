@@ -5,6 +5,7 @@ import { Grid } from 'theme-ui'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
+import { withAuth } from '../../lib/auth'
 import data from '../../data'
 
 function Index() {
@@ -44,4 +45,4 @@ function Index() {
   )
 }
 
-export default Index
+export default withAuth(Index)
