@@ -35,7 +35,7 @@ To start a development version of the site, simply run:
 npm run dev
 ```
 
-and then visit `http://localhost:5000/reports` in your browser.
+and then visit `http://localhost:5000` in your browser.
 
 ## license
 
