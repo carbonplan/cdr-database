@@ -105,6 +105,6 @@ module.exports = {
           note: 'First release.',
         },
       ],
-    }
+    },
   ],
 }
