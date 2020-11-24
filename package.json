@@ -32,7 +32,7 @@
     "d3-scale": "^3.2.3",
     "isomorphic-unfetch": "^3.1.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.2",
+    "next": "^10.0.3",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
     "react-dom": "^16.14.0",
