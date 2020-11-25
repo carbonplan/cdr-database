@@ -799,7 +799,7 @@ module.exports = {
           notes:
             "Claims 60 years from 2006 for Guanare and 100 years from 2013 for Rip's Redwoods.",
           comment:
-            "We report the minimum across the estimated permanence for the underlying projects (46 and 97), relative to the year of the proposal (2020). Physical risks are mixed with wildfire are high for Guanare, and low to moderate for Rip's Redwoods. Socioeconomic risks are significant due to the risk of default or bankruptcy on this time horizon.",
+            "We report the minimum across the estimated permanence for the underlying projects (46 and 97), relative to the year of the proposal (2020). Physical risks (mainly wildfire) are mixed, with higher risk for Guanare, and low to moderate risk for Rip's Redwoods. Socioeconomic risks are significant due to the risk of default or bankruptcy on this time horizon.",
         },
         {
           type: 'Metric',
@@ -851,6 +851,10 @@ module.exports = {
         {
           date: '05-18-2020',
           note: 'First release.',
+        },
+        {
+          date: '11-25-2020',
+          note: 'Fixed ungrammatical sentence.',
         },
       ],
     },
@@ -1234,7 +1238,7 @@ module.exports = {
           value: 1.0,
           units: '',
           rating: '',
-          notes: 'Counteractual is active forest product harvest.',
+          notes: 'Counterfactual is active forest product harvest.',
           comment:
             'By shifting to a ton-year accounting framework, SilviaTerra intends to avoid additionality concerns by measuring actual carbon stored each year. However, other factors, such as exogenous shifts in timber markets, can still affect additionality considerations with respect to forest harvest decisions. Proprietary methods for measurement and verification against field plots are not yet available.',
         },
@@ -1280,6 +1284,10 @@ module.exports = {
         {
           date: '05-18-2020',
           note: 'First release.',
+        },
+        {
+          date: '11-25-2020',
+          note: 'Fixed typo.',
         },
       ],
     },
