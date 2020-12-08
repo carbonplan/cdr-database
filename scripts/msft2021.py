@@ -1,3 +1,5 @@
+import json
+
 from utils import get_sheet, make_metric, make_project, maybe_float
 
 
@@ -46,7 +48,7 @@ def make_projects():
         project["description"] = row[("description", "")]
         project["location"] = {
             "name": row[("location", "name")],
-            "geometry": {"type": None},  # json.loads(row[("location", "geometry")]),
+            "geometry": json.loads(row[("location", "geometry")]),
         }
         project["source"] = {
             "name": row[("source", "name")],
@@ -54,7 +56,7 @@ def make_projects():
             "url": row[("source", "url")],
         }
         project["revisions"] = [
-            {"date": "01-20-2020", "note": "First release."}
+            {"date": "01-20-2021", "note": "First release."}
         ]  # json.loads(row[("revisions", "")])
         for name in metrics:
             m = make_metric(name)
