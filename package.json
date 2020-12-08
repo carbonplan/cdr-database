@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start -p 5000",
     "format": "npm run format-js && npm run format-md",
-    "format-js": "prettier --write '{components,lib,pages}/**/*.js'",
+    "format-js": "prettier --write data.js '{components,lib,pages}/**/*.js'",
     "format-md": "prettier --write README.md 'methods/**/*.md' --parser mdx"
   },
   "repository": {
@@ -23,15 +23,15 @@
   },
   "homepage": "https://github.com/carbonplan/reports-dev#readme",
   "dependencies": {
+    "@babel/core": "^7.12.9",
     "@carbonplan/components": "^1.0.0",
     "@carbonplan/theme": "^1.1.0",
     "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.3",
     "@theme-ui/color": "^0.3.4",
-    "@theme-ui/css": "^0.3.3",
+    "@theme-ui/css": "^0.3.4",
     "d3-scale": "^3.2.3",
     "isomorphic-unfetch": "^3.1.0",
-    "jsonwebtoken": "^8.5.1",
     "next": "^10.0.3",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
@@ -41,9 +41,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "rehype-slug": "^4.0.1",
-    "safe-compare": "^1.1.4",
-    "swr": "^0.3.9",
-    "theme-ui": "^0.3.3",
+    "theme-ui": "^0.3.4",
     "vega": "^5.17.0",
     "vega-lite": "^4.17.0"
   },
