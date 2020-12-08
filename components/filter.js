@@ -70,6 +70,38 @@ const Filter = () => {
     setSearchExpanded(!searchExpanded)
   }
 
+  const NumberBadge = ({ value, disabled }) => {
+  return (
+    <Box
+      sx={{
+        display: 'inline-block',
+        width: 'fit-content',
+        height: '20px',
+        borderRadius: '5px',
+        backgroundColor: 'muted',
+        ml: [3],
+        mr: [5],
+        top: ['0px'],
+        position: 'relative',
+        top: '2px',
+        textAlign: 'center',
+        opacity: disabled ? 0.2 : 1
+      }}
+    >
+      <Text
+        sx={{
+          fontFamily: 'monospace',
+          mt: [0],
+          px: [1],
+          fontSize: [1]
+        }}
+      >
+        {value}
+      </Text>
+    </Box>
+  )
+}
+
   return (
     <Box
       sx={{
@@ -86,7 +118,33 @@ const Filter = () => {
         display: ['none', 'none', 'inherit'],
       }}
     >
-      <Grid columns={[1, null, '1fr 30px']}>
+      <Box sx={{
+        borderStyle: 'solid',
+        borderColor: 'muted',
+        borderWidth: '0px',
+        borderBottomWidth: '1px',
+        pb: [3]
+      }}>
+        <Badge
+            variant='primary'
+            sx={{color: 'primary'}}
+        >
+          Stripe 2020
+        </Badge>
+        <NumberBadge value={24}/>
+        <Badge
+            variant='primary'
+            sx={{
+              color: 'primary',
+              borderColor: alpha('primary', 0.2),
+              color: alpha('primary', 0.2),
+            }}
+        >
+          Microsoft 2021
+        </Badge>
+        <NumberBadge value={120} disabled={true}/>
+      </Box>
+      <Grid columns={[1, null, '1fr 30px']} sx={{pt: [3]}}>
         <Box>
           <Badge
             variant='primary'

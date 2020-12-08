@@ -26,13 +26,13 @@
     "@carbonplan/components": "^1.0.0",
     "@carbonplan/theme": "^1.1.0",
     "@mdx-js/loader": "^1.6.21",
-    "@next/mdx": "^10.0.2",
+    "@next/mdx": "^10.0.3",
     "@theme-ui/color": "^0.3.4",
     "@theme-ui/css": "^0.3.3",
     "d3-scale": "^3.2.3",
     "isomorphic-unfetch": "^3.1.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.2",
+    "next": "^10.0.3",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
     "react-dom": "^16.14.0",
@@ -48,7 +48,7 @@
     "vega-lite": "^4.17.0"
   },
   "devDependencies": {
-    "prettier": "2.2.0",
+    "prettier": "2.2.1",
     "redux-devtools-extension": "^2.13.8"
   }
 }
