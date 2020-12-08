@@ -18,7 +18,7 @@ const Search = () => {
         autoFocus='true'
         placeholder='search reports'
         onChange={handleInputChange}
-        sx={{ 
+        sx={{
           fontSize: [2],
           pt: [2],
           pb: ['6px'],
@@ -30,7 +30,7 @@ const Search = () => {
           borderColor: 'muted',
           borderWidth: '0px',
           borderBottomWidth: '0px',
-          textAlign: 'right', 
+          textAlign: 'right',
         }}
         value={input}
       />
