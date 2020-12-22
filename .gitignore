@@ -4,3 +4,4 @@ node_modules
 /public/icons
 .now
 .env
+__pycache__

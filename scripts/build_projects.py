@@ -9,7 +9,7 @@ import stripe2020
 
 @click.command()
 @click.argument('rfps', nargs=-1)
-@click.option('--output', default='data.json', show_default=True)
+@click.option('--output', default='data.js', show_default=True)
 def main(rfps, output):
 
     projects = []
@@ -25,8 +25,8 @@ def main(rfps, output):
 
 
 def write_projects(project_collection, output):
-    with open(output, "w") as outfile:
-        json.dump(project_collection, outfile, indent=2)
+    with open(output, "w") as f:
+        f.write('module.exports=' + json.dumps(project_collection))
 
 
 if __name__ == "__main__":
