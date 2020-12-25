@@ -1,56 +1,88 @@
-import Report from './report'
-import Filter from './filter'
-import { Box, Flex, Heading, Link, Text } from 'theme-ui'
-import { default as NextLink } from 'next/link'
+import { useState, useEffect } from 'react'
+import { Grid, Box, Text, Input } from 'theme-ui'
+import Report from '../components/report'
+import Count from './count'
+import data from '../data'
 
-const Main = ({ projects }) => {
-  return (
-    <Box>
-      <Box
+const initialFilters = {
+  forests: true,
+  dac: true,
+  mineralization: true,
+  search: ''
+}
+
+const Main = () => {
+  const [filters, setFilters] = useState(initialFilters)
+  const [filtered, setFiltered] = useState([])
+
+  useEffect(() => {
+    setFiltered(data.projects.filter((d) => inFilter(d)))
+  }, [filters])
+
+  function toggleOption(value) {
+    setFilters((filters) => {
+      return { ...filters, [value]: !filters[value] }
+    })
+  }
+
+  function setSearch(value) {
+    setFilters((filters) => {
+      return { ...filters, search: value }
+    })
+  }
+
+  function inFilter(d) {
+    const inTags = true
+    const inSearch = ((filters.search.length > 0) && d.name.includes(filters.search))
+    if ((filters.search.length > 0) && inSearch) return true
+    if ((filters.search.length == 0) && inTags) return true
+    else return false
+  }
+
+  return <Grid columns={[1, 1, 'minmax(400px, 30%) auto']}>
+    <Box sx={{display: ['none', 'none', 'initial']}}>
+      <Text onClick={() => toggleOption('dac')} sx={{opacity: filters.dac ? 1 : 0.2}}>
+        DAC
+      </Text>
+      <Text onClick={() => toggleOption('forests')} sx={{opacity: filters.forests ? 1 : 0.2}}>
+        Forests
+      </Text>
+      <Text onClick={() => toggleOption('mineralization')} sx={{opacity: filters.mineralization ? 1 : 0.2}}>
+        Mineralization
+      </Text>
+      <Input
+        type='text'
+        autoFocus={true}
+        placeholder='search'
+        onChange={(e) => setSearch(e.currentTarget.value)}
         sx={{
-          py: [3],
-          pb: [2],
-          mb: [3],
+          fontSize: [2],
+          height: '24px',
+          pt: [2],
+          pb: [3],
+          pl: [0],
+          pr: [0],
+          fontFamily: 'monospace',
+          borderRadius: '0px',
           borderStyle: 'solid',
           borderColor: 'muted',
           borderWidth: '0px',
-          borderRightWidth: ['0px', '0px', '1px'],
+          borderBottomWidth: '1px',
+          textAlign: 'right',
+          display: 'inline-block',
         }}
-      >
-        <Box
-          sx={{
-            borderStyle: 'solid',
-            borderColor: 'muted',
-            borderWidth: '0px',
-            borderBottomWidth: '1px',
-          }}
-        >
-          <Heading sx={{ fontSize: [6, 6, 7] }}>Project reports</Heading>
-          <Text sx={{ fontSize: [3], py: [3], pb: [4], pr: [4] }}>
-            This is a public database of reports on carbon removal project
-            proposals. These reports reflect our independent analysis of public
-            information. Read more about our{' '}
-            <NextLink href='/reports/methods'>
-              <a>
-                <Text variant='link' sx={{ display: 'inline-block' }}>
-                  methods
-                </Text>
-              </a>
-            </NextLink>{' '}
-            and <Link href='/research/stripe-reports-insights'>insights</Link>.
-          </Text>
-        </Box>
-        <Filter></Filter>
-        <Box>
-          {projects
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .map((project) => (
-              <Report project={project} key={project.name}></Report>
-            ))}
-        </Box>
-      </Box>
+        value={filters.search}
+      />
     </Box>
-  )
+    <Box>
+      <Count value={filtered.length}/>
+      <Grid columns={[1, 1, 2]}>
+        {filtered
+          .map((d) => <Report key={d.id} name={d.name} description={d.description} tags={d.tags}/>)
+        }
+      </Grid>
+    </Box>
+  </Grid>
 }
 
 export default Main

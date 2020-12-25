@@ -45,16 +45,14 @@ const Layout = ({ status, children }) => {
         </Box>
         <Box
           sx={{
-            width: '100%',
-            position: 'sticky',
-            bottom: '0px',
+            position: 'fixed',
+            bottom: '8px',
+            right: '25px',
             display: ['none', 'none', 'inherit'],
             pointerEvents: 'none',
           }}
         >
-          <Box sx={{ px: [4], width: '100%' }}>
-            <Footer />
-          </Box>
+          <Footer />
         </Box>
       </Flex>
     </>

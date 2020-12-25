@@ -1,48 +1,35 @@
-import Layout from '../components/layout'
-import Sidebar from '../components/sidebar'
-import Main from '../components/main'
-import { Grid } from 'theme-ui'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { Grid, Flex, Box, Text } from 'theme-ui'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { withAuth } from '../lib/auth'
-import data from '../data'
+import Layout from '../components/layout'
+import Main from '../components/main'
 
 function Index() {
-  useEffect(() => {
-    document.body.addEventListener('keyup', function (e) {
-      if (e.which === 9) {
-        document.documentElement.classList.remove('no-focus-outline')
-      }
-    })
-  })
-
-  const projects = useSelector((state) => state.projects)
-  const dispatch = useDispatch()
-
-  if (projects.length == 0) {
-    dispatch({ type: 'INIT_PROJECTS', value: data.projects })
-    dispatch({ type: 'INIT_VISIBILITY' })
-  }
-
-  const router = useRouter()
-  const query = router.query
-  const { id, expand } = query
-
-  if (id) {
-    dispatch({ type: 'UPDATE_SEARCH', value: id.replace(/^"(.*)"$/, '$1') })
-  }
-
-  if (expand) dispatch({ type: 'SHOW_ONE', value: true })
-
   return (
     <Layout>
-      <Grid columns={[1, 1, '52% 48%']} gap={['0px']}>
-        <Main projects={data.projects}></Main>
-        <Sidebar projects={data.projects}></Sidebar>
+      <Grid sx={{py: [2], mb: [4]}} columns={[1, 1, 'auto 1fr']}>
+        <Text sx={{
+          fontSize: [7],
+          fontFamily: 'heading',
+          mt: ['-5px']
+        }}>
+          Project reports
+        </Text>
+        <Box sx={{position: 'relative'}}>
+        <Text sx={{
+          fontSize: [3],
+          fontFamily: 'body',
+          ml: [0, 0, 5],
+          mt: [0, 0, '20px'],
+        }}>
+          This is a public database of reports on carbon removal project proposals 
+          based on independent analysis of public information.
+        </Text>
+        </Box>
       </Grid>
+      <Main/>
     </Layout>
   )
 }
 
-export default withAuth(Index)
+export default Index
