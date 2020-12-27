@@ -1,88 +1,67 @@
 import { useState, useEffect } from 'react'
 import { Grid, Box, Text, Input } from 'theme-ui'
-import Report from '../components/report'
-import Count from './count'
-import data from '../data'
+import Sidebar from '../components/sidebar'
+import List from './list'
 
 const initialFilters = {
   forests: true,
   dac: true,
   mineralization: true,
+  soil: true,
+  biomass: true,
+  ocean: true,
+  STRP2020: true,
+  MSFT2021: true,
+  avoided: true,
+  removal: true,
+  group: false,
   search: ''
 }
 
-const Main = () => {
+const Main = ({ projectData, metricsData }) => {
   const [filters, setFilters] = useState(initialFilters)
-  const [filtered, setFiltered] = useState([])
+  const [filtered, setFiltered] = useState({count: 0})
+  const [highlighted, setHighlighted] = useState(null)
 
   useEffect(() => {
-    setFiltered(data.projects.filter((d) => inFilter(d)))
+    let obj = {}
+    let count = 0
+    projectData.forEach((d) => {
+      obj[d.id] = inFilter(d)
+      if (obj[d.id]) {count += 1}
+    })
+    obj.count = count
+    setFiltered(obj)
   }, [filters])
 
-  function toggleOption(value) {
-    setFilters((filters) => {
-      return { ...filters, [value]: !filters[value] }
-    })
-  }
-
-  function setSearch(value) {
-    setFilters((filters) => {
-      return { ...filters, search: value }
-    })
-  }
-
   function inFilter(d) {
-    const inTags = true
+    const inTags = (
+      ((filters.forests && d.tags.length > 0) && d.tags[0] == 'forests') || 
+      ((filters.dac && d.tags.length > 0) && d.tags[0] == 'dac') ||
+      ((filters.mineralization && d.tags.length > 0) && d.tags[0] == 'mineralization') ||
+      ((filters.soil && d.tags.length > 0) && d.tags[0] == 'soil') ||
+      ((filters.biomass && d.tags.length > 0) && d.tags[0] == 'biomass') ||
+      ((filters.ocean && d.tags.length > 0) && d.tags[0] == 'ocean')
+    )
+    const inSource = (
+      ((filters.STRP2020) && d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
+      ((filters.MSFT2021) && d.source.name == 'Microsoft 2021 CDR RFP')
+    )
+    const inMechanism = (
+      ((filters.avoided) && (d.metrics[0].avoided == 1.0)) ||
+      ((filters.removal) && (d.metrics[0].avoided == 0.0))
+    )
     const inSearch = ((filters.search.length > 0) && d.name.includes(filters.search))
-    if ((filters.search.length > 0) && inSearch) return true
-    if ((filters.search.length == 0) && inTags) return true
+    if ((filters.search.length > 0) && inSearch && inTags && inSource) return true
+    if ((filters.search.length == 0) && inTags && inSource) return true
     else return false
   }
 
-  return <Grid columns={[1, 1, 'minmax(400px, 30%) auto']}>
-    <Box sx={{display: ['none', 'none', 'initial']}}>
-      <Text onClick={() => toggleOption('dac')} sx={{opacity: filters.dac ? 1 : 0.2}}>
-        DAC
-      </Text>
-      <Text onClick={() => toggleOption('forests')} sx={{opacity: filters.forests ? 1 : 0.2}}>
-        Forests
-      </Text>
-      <Text onClick={() => toggleOption('mineralization')} sx={{opacity: filters.mineralization ? 1 : 0.2}}>
-        Mineralization
-      </Text>
-      <Input
-        type='text'
-        autoFocus={true}
-        placeholder='search'
-        onChange={(e) => setSearch(e.currentTarget.value)}
-        sx={{
-          fontSize: [2],
-          height: '24px',
-          pt: [2],
-          pb: [3],
-          pl: [0],
-          pr: [0],
-          fontFamily: 'monospace',
-          borderRadius: '0px',
-          borderStyle: 'solid',
-          borderColor: 'muted',
-          borderWidth: '0px',
-          borderBottomWidth: '1px',
-          textAlign: 'right',
-          display: 'inline-block',
-        }}
-        value={filters.search}
-      />
-    </Box>
-    <Box>
-      <Count value={filtered.length}/>
-      <Grid columns={[1, 1, 2]}>
-        {filtered
-          .map((d) => <Report key={d.id} name={d.name} description={d.description} tags={d.tags}/>)
-        }
-      </Grid>
-    </Box>
+  return <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
+    <Sidebar filtered={filtered} data={metricsData} filters={filters} setFilters={setFilters} highlighted={highlighted}/>
+    <List filtered={filtered} data={projectData} setHighlighted={setHighlighted}/>
   </Grid>
+    
 }
 
 export default Main

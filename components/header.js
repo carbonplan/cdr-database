@@ -3,7 +3,6 @@ import { jsx, Box, Flex, Container, IconButton, Link, Image } from 'theme-ui'
 import Logo from './logo'
 import { useState } from 'react'
 import { default as NextLink } from 'next/link'
-import { alpha } from '@theme-ui/color'
 
 const link = {
   width: 'fit-content',

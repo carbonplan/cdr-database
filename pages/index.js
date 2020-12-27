@@ -3,8 +3,19 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../components/layout'
 import Main from '../components/main'
+import data from '../data'
+
+const selectMetric = (d, name) => {
+  return d.metrics.filter((m) => m.name == name)[0].value
+}
 
 function Index() {
+  const projectData = data.projects
+  const metricsData = {
+    volume: projectData.map((d) => ({id: d.id, tag: d.tags[0], value: selectMetric(d, 'volume')})),
+    permanence: projectData.map((d) => ({id: d.id, tag: d.tags[0], value: selectMetric(d, 'permanence')}))
+  }
+
   return (
     <Layout>
       <Grid sx={{py: [2], mb: [4]}} columns={[1, 1, 'auto 1fr']}>
@@ -27,7 +38,9 @@ function Index() {
         </Text>
         </Box>
       </Grid>
-      <Main/>
+      <Box>
+      <Main projectData={projectData} metricsData={metricsData} />
+    </Box>
     </Layout>
   )
 }
