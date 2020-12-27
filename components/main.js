@@ -3,7 +3,7 @@ import { Grid, Box, Text, Input } from 'theme-ui'
 import Sidebar from '../components/sidebar'
 import List from './list'
 
-const initialFilters = {
+const initFilters = {
   forests: true,
   dac: true,
   mineralization: true,
@@ -18,9 +18,15 @@ const initialFilters = {
   search: ''
 }
 
+const initBounds = {
+  volume: [],
+  permanence: []
+}
+
 const Main = ({ projectData, metricsData }) => {
-  const [filters, setFilters] = useState(initialFilters)
+  const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({count: 0})
+  const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
 
   useEffect(() => {
@@ -32,7 +38,12 @@ const Main = ({ projectData, metricsData }) => {
     })
     obj.count = count
     setFiltered(obj)
-  }, [filters])
+  }, [filters, bounds])
+
+  function checkBounds(value, bounds) {
+    if (bounds.length == 0) return true
+    return (value > bounds[0] && value < bounds[1])
+  }
 
   function inFilter(d) {
     const inTags = (
@@ -51,15 +62,30 @@ const Main = ({ projectData, metricsData }) => {
       ((filters.avoided) && (d.metrics[0].avoided == 1.0)) ||
       ((filters.removal) && (d.metrics[0].avoided == 0.0))
     )
+    const inBounds = (
+      checkBounds(d.metrics[1].value, bounds.volume) &&
+      checkBounds(d.metrics[3].value, bounds.permanence)
+    )
     const inSearch = ((filters.search.length > 0) && d.name.includes(filters.search))
-    if ((filters.search.length > 0) && inSearch && inTags && inSource) return true
-    if ((filters.search.length == 0) && inTags && inSource) return true
+    if ((filters.search.length > 0) && inSearch && inTags && inSource && inBounds) return true
+    if ((filters.search.length == 0) && inTags && inSource && inBounds) return true
     else return false
   }
 
   return <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
-    <Sidebar filtered={filtered} data={metricsData} filters={filters} setFilters={setFilters} highlighted={highlighted}/>
-    <List filtered={filtered} data={projectData} setHighlighted={setHighlighted}/>
+    <Sidebar 
+      setBounds={setBounds} 
+      filtered={filtered} 
+      data={metricsData} 
+      filters={filters} 
+      setFilters={setFilters} 
+      highlighted={highlighted}
+    />
+    <List 
+      filtered={filtered} 
+      data={projectData} 
+      setHighlighted={setHighlighted}
+    />
   </Grid>
     
 }

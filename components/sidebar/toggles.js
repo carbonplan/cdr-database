@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import Toggle from './toggle'
 
@@ -17,4 +18,4 @@ const Toggles = ({ filters, setFilters }) => {
   </Box>
 }
 
-export default Toggles
+export default memo(Toggles)

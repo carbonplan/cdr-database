@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { memo, useState } from 'react'
-import { jsx, useThemeUI, Text, Box } from 'theme-ui'
+import { memo } from 'react'
+import { Text, Box } from 'theme-ui'
 import { select } from 'd3-selection'
 import { scaleLinear, scaleOrdinal, scaleLog } from 'd3-scale'
-import Points from './points'
+import Chart from './chart'
 
 const x1 = scaleLog()
     .domain([10, 1000000])
@@ -19,26 +18,32 @@ const y = scaleOrdinal()
   .domain(['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'])
   .range(Array(6).fill(0).map((_, i) => i * 15 + 10))
 
-const Charts = ({ highlighted, filtered, data }) => {
-  const { theme } = useThemeUI()
-
+const Charts = ({ highlighted, filtered, data, setBounds }) => {
   return <Box sx={{mt: [3]}}>
     <Text variant='label'>
       Volume:
     </Text>
-    <Box sx={{width: '100%', display: 'block'}}>
-      <svg width='370' height='100' sx={{display: 'block', my: [2]}}>
-        <Points x={x1} y={y} theme={theme} highlighted={highlighted} filtered={filtered} data={data.volume} />
-      </svg>
-    </Box>
+    <Chart 
+      x={x1} 
+      y={y} 
+      highlighted={highlighted} 
+      filtered={filtered} 
+      data={data.volume} 
+      label='volume' 
+      setBounds={setBounds}
+    />
     <Text variant='label'>
       Permanence:
     </Text>
-    <Box sx={{width: '100%', display: 'block'}}>
-      <svg width='370' height='100' sx={{display: 'block', my: [2]}}>
-        <Points x={x2} y={y} theme={theme} highlighted={highlighted} filtered={filtered} data={data.permanence} />
-      </svg>
-    </Box>
+    <Chart 
+      x={x2} 
+      y={y} 
+      highlighted={highlighted} 
+      filtered={filtered} 
+      data={data.permanence} 
+      label='permanence' 
+      setBounds={setBounds}
+    />
   </Box>
 }
 

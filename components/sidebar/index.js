@@ -4,7 +4,7 @@ import Metadata from './metadata'
 import Toggles from './toggles'
 import Charts from './charts'
 
-const Sidebar = ({ highlighted, filtered, data, filters, setFilters }) => {
+const Sidebar = ({ highlighted, filtered, data, filters, setFilters, setBounds }) => {
   return <Box sx={{
     borderWidth: '0px',
     borderRightWidth: '1px',
@@ -26,7 +26,7 @@ const Sidebar = ({ highlighted, filtered, data, filters, setFilters }) => {
       <Divider sx={{my: [3]}} />
       <Toggles filters={filters} setFilters={setFilters} />
       <Divider sx={{my: [3]}} />
-      <Charts highlighted={highlighted} filtered={filtered} data={data} />
+      <Charts highlighted={highlighted} filtered={filtered} data={data} setBounds={setBounds} />
     </Box>
     
   </Box>
