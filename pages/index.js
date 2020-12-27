@@ -1,6 +1,7 @@
 import { Grid, Flex, Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { withAuth } from '../lib/auth'
 import Layout from '../components/layout'
 import Main from '../components/main'
 import data from '../data'
@@ -45,4 +46,4 @@ function Index() {
   )
 }
 
-export default Index
+export default withAuth(Index)
