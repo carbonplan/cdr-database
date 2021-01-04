@@ -4,8 +4,8 @@ export default {
   ...base,
   text: {
     label: {
-      fontFamily: 'monospace', 
-      letterSpacing: 'wide', 
+      fontFamily: 'mono', 
+      letterSpacing: 'smallcaps', 
       textTransform: 'uppercase', 
       color: 'secondary'
     }

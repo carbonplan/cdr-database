@@ -23,7 +23,7 @@ const Search = ({ filters, setFilters }) => {
         pb: [3],
         pl: [0],
         pr: [0],
-        fontFamily: 'monospace',
+        fontFamily: 'mono',
         borderRadius: '0px',
         borderWidth: '0px',
         textAlign: 'left',

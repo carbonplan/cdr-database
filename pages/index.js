@@ -1,8 +1,8 @@
 import { Grid, Flex, Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { Layout } from '@carbonplan/components'
 import { withAuth } from '../lib/auth'
-import Layout from '../components/layout'
 import Main from '../components/main'
 import data from '../data'
 
@@ -18,17 +18,19 @@ function Index() {
   }
 
   return (
-    <Layout>
+    <Layout footer={false} metadata={false}>
       <Grid sx={{py: [2], mb: [4]}} columns={[1, 1, 'auto 1fr']}>
-        <Text sx={{
+        <Text as='h1' sx={{
           fontSize: [7],
           fontFamily: 'heading',
+          letterSpacing: 'heading',
+          fontWeight: 'heading',
           mt: ['-5px']
         }}>
           Project reports
         </Text>
         <Box sx={{position: 'relative'}}>
-        <Text sx={{
+        <Text as='p' sx={{
           fontSize: [3],
           fontFamily: 'body',
           ml: [0, 0, 5],

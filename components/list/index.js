@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Box, Text, Grid } from 'theme-ui'
+import { Badge } from '@carbonplan/components'
 import Report from './report'
-import Count from './count'
 
 const List = ({ filtered, data, setHighlighted }) => {
   return <Box>
@@ -20,10 +20,10 @@ const List = ({ filtered, data, setHighlighted }) => {
       mb: [2],
       pl: ['24px']
     }}>
-      <Text sx={{display: 'inline-block', mr: [1], fontFamily: 'monospace', textTransform: 'uppercase', color: 'secondary', letterSpacing: 'wide'}}>Selected</Text>
-      <Count value={String(filtered.count).padStart(3, '0')} />
-      <Text sx={{display: 'inline-block', ml: [3], mr: [1], fontFamily: 'monospace', textTransform: 'uppercase', color: 'secondary', letterSpacing: 'wide'}}>Total</Text>
-      <Count value={String(data.length).padStart(3, '0')} />
+      <Text sx={{display: 'inline-block', mr: [2], fontFamily: 'mono', textTransform: 'uppercase', color: 'secondary', letterSpacing: 'smallcaps'}}>Selected</Text>
+      <Badge value={String(filtered.count).padStart(3, '0')} sx={{ml: [1]}}/>
+      <Text sx={{display: 'inline-block', ml: [3], mr: [2], fontFamily: 'mono', textTransform: 'uppercase', color: 'secondary', letterSpacing: 'smallcaps'}}>Total</Text>
+      <Badge value={String(data.length).padStart(3, '0')} sx={{ml: [1]}}/>
     </Box>
     <Grid columns={[1, 1, 2]} sx={{display: ['none', 'none', 'grid'], mt: [2], pl: [3]}} gap={['0px']}>
       <Box sx={{ml: [2]}}>

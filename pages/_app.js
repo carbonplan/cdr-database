@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { Style } from '@carbonplan/components'
+import { Fonts, Globals } from '@carbonplan/components'
 import { SessionProvider } from '../lib/session'
 
 import theme from '../theme'
@@ -11,18 +11,8 @@ const App = ({ Component, pageProps }) => {
     <SessionProvider session={session} setSession={setSession}>
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
-        <Style />
-        <style jsx global>
-          {`
-            body {
-              cursor: initial !important;
-            }
-
-            .mark-symbol {
-              cursor: pointer;
-            }
-          `}
-        </style>
+        <Fonts />
+        <Globals />
       </ThemeProvider>
     </SessionProvider>
   )

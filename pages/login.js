@@ -1,8 +1,8 @@
 import { Box, Text, Form, Heading, Label, Input, Button } from 'theme-ui'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { Layout } from '@carbonplan/components'
 import { useSession } from '../lib/session'
-import Layout from '../components/layout'
 
 function Login({ origin }) {
   const router = useRouter()

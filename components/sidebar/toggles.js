@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
-import Toggle from './toggle'
+import { Toggle } from '@carbonplan/components'
 
 const Toggles = ({ filters, setFilters }) => {
 
@@ -12,7 +12,7 @@ const Toggles = ({ filters, setFilters }) => {
 
   return <Box>
     <Grid columns={['60px 1fr']}>
-      <Toggle value={filters['group']} toggle={() => toggleOption('group')}/>
+      <Toggle value={filters['group']} onClick={() => toggleOption('group')}/>
       <Text variant='label' sx={{mt: ['-1px']}}>GROUP BY APPLICANT</Text>
     </Grid>
   </Box>

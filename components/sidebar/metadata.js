@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
-import Badge from '../badge'
+import { Tag } from '@carbonplan/components'
 
 const colors = {
   dac: 'purple',
@@ -26,7 +26,7 @@ const Metadata = ({ filters, setFilters }) => {
         {
           ['STRP2020', 'MSFT2021']
             .map(
-              (d) => <Badge key={d} label={d} value={filters[d]} color={'primary'} toggle={() => toggleOption(d)} />
+              (d) => <Tag key={d} label={d} value={filters[d]} sx={{color: 'primary'}} onClick={() => toggleOption(d)} />
             )
         }
       </Box>
@@ -37,7 +37,7 @@ const Metadata = ({ filters, setFilters }) => {
         {
           ['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac']
             .map(
-              (d) => <Badge key={d} label={d} value={filters[d]} color={colors[d]} toggle={() => toggleOption(d)} />
+              (d) => <Tag key={d} label={d} value={filters[d]} sx={{color: colors[d]}} onClick={() => toggleOption(d)} />
             )
         }
       </Box>
@@ -48,7 +48,7 @@ const Metadata = ({ filters, setFilters }) => {
         {
           ['removal', 'avoided']
             .map(
-              (d) => <Badge key={d} label={d} value={filters[d]} color={colors[d]} toggle={() => toggleOption(d)} />
+              (d) => <Tag key={d} label={d} value={filters[d]} sx={{color: colors[d]}} onClick={() => toggleOption(d)} />
             )
         }
       </Box>
