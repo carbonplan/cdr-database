@@ -42,7 +42,7 @@ function Login({ origin }) {
   }
 
   return (
-    <Layout status={status}>
+    <Layout status={status} footer={false}>
       <Heading sx={{ my: [4, 5, 5], fontSize: [6, 7, 7] }}>
         This page is private
       </Heading>
