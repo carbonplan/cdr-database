@@ -63,16 +63,15 @@ const Main = ({ projectData, metricsData }) => {
       (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
     const inMechanism =
       (filters.avoided && d.metrics[0].avoided == 1.0) ||
-      (filters.removal && d.metrics[0].avoided == 0.0)
+      (filters.removal && d.metrics[0].removal == 1.0)
     const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume) &&
       checkBounds(d.metrics[3].value, bounds.permanence)
     const inSearch =
       filters.search.length > 0 && d.name.includes(filters.search)
-    if (filters.search.length > 0 && inSearch && inTags && inSource && inBounds)
-      return true
-    if (filters.search.length == 0 && inTags && inSource && inBounds)
-      return true
+    const inFilter = inTags && inSource && inBounds && inMechanism
+    if (filters.search.length > 0 && inSearch && inFilter) return true
+    if (filters.search.length == 0 && inFilter) return true
     else return false
   }
 
