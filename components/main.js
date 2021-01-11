@@ -15,17 +15,17 @@ const initFilters = {
   avoided: true,
   removal: true,
   group: false,
-  search: ''
+  search: '',
 }
 
 const initBounds = {
   volume: [],
-  permanence: []
+  permanence: [],
 }
 
 const Main = ({ projectData, metricsData }) => {
   const [filters, setFilters] = useState(initFilters)
-  const [filtered, setFiltered] = useState({count: 0})
+  const [filtered, setFiltered] = useState({ count: 0 })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
 
@@ -34,7 +34,9 @@ const Main = ({ projectData, metricsData }) => {
     let count = 0
     projectData.forEach((d) => {
       obj[d.id] = inFilter(d)
-      if (obj[d.id]) {count += 1}
+      if (obj[d.id]) {
+        count += 1
+      }
     })
     obj.count = count
     setFiltered(obj)
@@ -42,52 +44,55 @@ const Main = ({ projectData, metricsData }) => {
 
   function checkBounds(value, bounds) {
     if (bounds.length == 0) return true
-    return (value > bounds[0] && value < bounds[1])
+    return value > bounds[0] && value < bounds[1]
   }
 
   function inFilter(d) {
-    const inTags = (
-      ((filters.forests && d.tags.length > 0) && d.tags[0] == 'forests') || 
-      ((filters.dac && d.tags.length > 0) && d.tags[0] == 'dac') ||
-      ((filters.mineralization && d.tags.length > 0) && d.tags[0] == 'mineralization') ||
-      ((filters.soil && d.tags.length > 0) && d.tags[0] == 'soil') ||
-      ((filters.biomass && d.tags.length > 0) && d.tags[0] == 'biomass') ||
-      ((filters.ocean && d.tags.length > 0) && d.tags[0] == 'ocean')
-    )
-    const inSource = (
-      ((filters.STRP2020) && d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
-      ((filters.MSFT2021) && d.source.name == 'Microsoft 2021 CDR RFP')
-    )
-    const inMechanism = (
-      ((filters.avoided) && (d.metrics[0].avoided == 1.0)) ||
-      ((filters.removal) && (d.metrics[0].avoided == 0.0))
-    )
-    const inBounds = (
+    const inTags =
+      (filters.forests && d.tags.length > 0 && d.tags[0] == 'forests') ||
+      (filters.dac && d.tags.length > 0 && d.tags[0] == 'dac') ||
+      (filters.mineralization &&
+        d.tags.length > 0 &&
+        d.tags[0] == 'mineralization') ||
+      (filters.soil && d.tags.length > 0 && d.tags[0] == 'soil') ||
+      (filters.biomass && d.tags.length > 0 && d.tags[0] == 'biomass') ||
+      (filters.ocean && d.tags.length > 0 && d.tags[0] == 'ocean')
+    const inSource =
+      (filters.STRP2020 &&
+        d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
+      (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
+    const inMechanism =
+      (filters.avoided && d.metrics[0].avoided == 1.0) ||
+      (filters.removal && d.metrics[0].avoided == 0.0)
+    const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume) &&
       checkBounds(d.metrics[3].value, bounds.permanence)
-    )
-    const inSearch = ((filters.search.length > 0) && d.name.includes(filters.search))
-    if ((filters.search.length > 0) && inSearch && inTags && inSource && inBounds) return true
-    if ((filters.search.length == 0) && inTags && inSource && inBounds) return true
+    const inSearch =
+      filters.search.length > 0 && d.name.includes(filters.search)
+    if (filters.search.length > 0 && inSearch && inTags && inSource && inBounds)
+      return true
+    if (filters.search.length == 0 && inTags && inSource && inBounds)
+      return true
     else return false
   }
 
-  return <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
-    <Sidebar 
-      setBounds={setBounds} 
-      filtered={filtered} 
-      data={metricsData} 
-      filters={filters} 
-      setFilters={setFilters} 
-      highlighted={highlighted}
-    />
-    <List 
-      filtered={filtered} 
-      data={projectData} 
-      setHighlighted={setHighlighted}
-    />
-  </Grid>
-    
+  return (
+    <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
+      <Sidebar
+        setBounds={setBounds}
+        filtered={filtered}
+        data={metricsData}
+        filters={filters}
+        setFilters={setFilters}
+        highlighted={highlighted}
+      />
+      <List
+        filtered={filtered}
+        data={projectData}
+        setHighlighted={setHighlighted}
+      />
+    </Grid>
+  )
 }
 
 export default Main

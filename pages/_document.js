@@ -1,4 +1,4 @@
-import Document, {Html, Main, NextScript, Head} from 'next/document'
+import Document, { Html, Main, NextScript, Head } from 'next/document'
 import { Tracking } from '@carbonplan/components'
 import { InitializeColorMode } from 'theme-ui'
 

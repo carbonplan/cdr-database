@@ -24,7 +24,7 @@
   "homepage": "https://github.com/carbonplan/reports-dev#readme",
   "dependencies": {
     "@babel/core": "^7.12.10",
-    "@carbonplan/components": "^2.1.7",
+    "@carbonplan/components": "^2.1.10",
     "@carbonplan/theme": "^2.3.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.3",
