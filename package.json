@@ -33,7 +33,7 @@
     "d3-scale": "^3.2.3",
     "d3-selection": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.4",
+    "next": "^10.0.5",
     "polished": "^4.0.5",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
