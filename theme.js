@@ -9,5 +9,13 @@ export default {
       textTransform: 'uppercase', 
       color: 'secondary'
     }
+  },
+  tags: {
+    dac: 'purple',
+    forests: 'green',
+    mineralization: 'grey',
+    biomass: 'yellow',
+    ocean: 'teal',
+    soil: 'orange',
   }
 }

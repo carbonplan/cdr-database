@@ -4,7 +4,7 @@ from utils import get_sheet, make_metric, make_project, maybe_float
 
 
 def make_projects():
-    data = get_sheet("Sheet1", "Microsoft reports 0.2 [internal]").loc[:189]
+    data = get_sheet("Sheet1", "Microsoft reports 0.1 [internal]").loc[:189]
     metrics = [
         "mechanism",
         "volume",
