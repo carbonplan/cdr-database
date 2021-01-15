@@ -68,6 +68,7 @@ const List = ({ filtered, data, setHighlighted }) => {
                 setHighlighted={setHighlighted}
                 key={d.id}
                 id={d.id}
+                applicant={d.applicant}
                 name={d.name}
                 description={d.description}
                 tags={d.tags}
@@ -84,6 +85,7 @@ const List = ({ filtered, data, setHighlighted }) => {
                 setHighlighted={setHighlighted}
                 key={d.id}
                 id={d.id}
+                applicant={d.applicant}
                 name={d.name}
                 description={d.description}
                 tags={d.tags}

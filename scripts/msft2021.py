@@ -45,6 +45,7 @@ def make_projects():
         tags = [t.lower().strip() for t in tags]
         project["tags"].extend(tags)
         project["id"] = row[("id", "")]
+        project["applicant"] = row[("applicant", "")]
         project["description"] = row[("description", "")]
         project["location"] = {
             "name": row[("location", "name")],
