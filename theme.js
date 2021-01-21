@@ -5,9 +5,12 @@ export default {
   text: {
     label: {
       fontFamily: 'mono', 
-      letterSpacing: 'smallcaps', 
+      letterSpacing: 'mono',
+      fontSize: [1], 
       textTransform: 'uppercase', 
-      color: 'secondary'
+      color: 'secondary',
+      mt: ['3px'],
+      userSelect: 'none'
     }
   },
   tags: {

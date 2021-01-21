@@ -21,7 +21,7 @@ const Metadata = ({ filters, setFilters }) => {
   return (
     <Box>
       <Grid columns={['100px 1fr']}>
-        <Text variant='label'>SOURCE:</Text>
+        <Text variant='label'>SOURCE</Text>
         <Box sx={{ width: '250px' }}>
           {['STRP2020', 'MSFT2021'].map((d) => (
             <Tag
@@ -35,7 +35,7 @@ const Metadata = ({ filters, setFilters }) => {
         </Box>
       </Grid>
       <Grid columns={['100px 1fr']}>
-        <Text variant='label'>CATEGORY:</Text>
+        <Text variant='label'>CATEGORY</Text>
         <Box sx={{ width: '250px' }}>
           {['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'].map(
             (d) => (
@@ -51,7 +51,7 @@ const Metadata = ({ filters, setFilters }) => {
         </Box>
       </Grid>
       <Grid columns={['100px 1fr']}>
-        <Text variant='label'>MECHANISM:</Text>
+        <Text variant='label'>MECHANISM</Text>
         <Box sx={{ width: '250px' }}>
           {['removal', 'avoided'].map((d) => (
             <Tag

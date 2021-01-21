@@ -62,9 +62,15 @@ const Main = ({ projectData, metricsData }) => {
         d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
       (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
     const inMechanism =
-      (filters.avoided && (d.metrics[0].avoided == 1.0 && d.metrics[0].removal == 0.0)) ||
-      (filters.removal && (d.metrics[0].removal == 1.0 && d.metrics[0].avoided == 0.0)) || 
-      (filters.removal && filters.avoided && (d.metrics[0].removal == 1.0 || d.metrics[0].removal == 0.0))
+      (filters.avoided &&
+        d.metrics[0].avoided == 1.0 &&
+        d.metrics[0].removal == 0.0) ||
+      (filters.removal &&
+        d.metrics[0].removal == 1.0 &&
+        d.metrics[0].avoided == 0.0) ||
+      (filters.removal &&
+        filters.avoided &&
+        (d.metrics[0].removal == 1.0 || d.metrics[0].removal == 0.0))
     const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume) &&
       checkBounds(d.metrics[3].value, bounds.permanence)
@@ -89,6 +95,8 @@ const Main = ({ projectData, metricsData }) => {
         highlighted={highlighted}
       />
       <List
+        filters={filters}
+        setFilters={setFilters}
         filtered={filtered}
         data={projectData}
         setHighlighted={setHighlighted}

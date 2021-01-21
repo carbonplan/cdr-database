@@ -10,19 +10,20 @@ const Search = ({ filters, setFilters }) => {
 
   return (
     <Grid columns={['100px 1fr']}>
-      <Text variant='label'>Search:</Text>
+      <Text variant='label'>Search</Text>
       <Input
         type='text'
         autoFocus={true}
         placeholder='enter search term'
         onChange={(e) => setSearch(e.currentTarget.value)}
         sx={{
-          fontSize: [2],
+          fontSize: [1],
           height: '24px',
           pt: [2],
           pb: [3],
           pl: [0],
           pr: [0],
+          mt: ['3px'],
           fontFamily: 'mono',
           borderRadius: '0px',
           borderWidth: '0px',

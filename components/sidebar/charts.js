@@ -18,8 +18,8 @@ const y = scaleOrdinal()
 
 const Charts = ({ highlighted, filtered, data, setBounds }) => {
   return (
-    <Box sx={{ mt: [3] }}>
-      <Text variant='label'>Volume:</Text>
+    <Box sx={{ mt: [3], pt: [2] }}>
+      <Text variant='label'>Volume</Text>
       <Chart
         x={x1}
         y={y}
@@ -29,7 +29,7 @@ const Charts = ({ highlighted, filtered, data, setBounds }) => {
         label='volume'
         setBounds={setBounds}
       />
-      <Text variant='label'>Permanence:</Text>
+      <Text variant='label'>Permanence</Text>
       <Chart
         x={x2}
         y={y}

@@ -2,7 +2,15 @@ import { memo, useState } from 'react'
 import { Box, Text, Grid } from 'theme-ui'
 import theme from '../../../theme'
 
-const Report = ({ id, applicant, name, description, tags, metrics, setHighlighted }) => {
+const Report = ({
+  id,
+  applicant,
+  name,
+  description,
+  tags,
+  metrics,
+  setHighlighted,
+}) => {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -23,8 +31,8 @@ const Report = ({ id, applicant, name, description, tags, metrics, setHighlighte
         borderRadius: '6px',
         cursor: 'pointer',
         pl: [3],
-        pr: [2],
-        pt: [2],
+        pr: [3],
+        pt: ['12px'],
         pb: [3],
         my: [3],
         transition: 'border-color 0.15s',
@@ -41,6 +49,7 @@ const Report = ({ id, applicant, name, description, tags, metrics, setHighlighte
             height: 14,
             borderRadius: 7,
             ml: [1],
+            mt: ['6px'],
             backgroundColor: theme.tags[tags[0]],
           }}
         ></Box>
