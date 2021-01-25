@@ -34,7 +34,7 @@
     "d3-selection": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
     "next": "^10.0.5",
-    "polished": "^4.0.5",
+    "polished": "^4.1.0",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
     "react-dom": "^16.14.0",
