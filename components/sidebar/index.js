@@ -32,17 +32,17 @@ const Sidebar = ({
         <Text
           as='h1'
           variant='styles.h1'
-          sx={{ pt: [3, 3, 4], mb: [3, 3, 4], mt: [2, 2, 0] }}
+          sx={{ pt: [2, 2, 3], mb: [3, 3, 4], mt: [2, 2, 0] }}
         >
           Reports
         </Text>
-        <Box sx={{ maxWidth: '750px', pb: [3, 3, 0] }}>
+        <Box sx={{ maxWidth: '90%', pb: [3, 3, 1] }}>
           <Styled.p>
             A public database of reports on carbon removal project proposals.
           </Styled.p>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
-          <Divider sx={{ mr: [4], mt: [0, 0, 4], mb: [0, 0, 0] }} />
+          <Divider sx={{ mr: [4], mt: [0], mb: [0] }} />
           <Box sx={{ mb: [1], mt: [3] }}>
             <Search filters={filters} setFilters={setFilters} />
           </Box>

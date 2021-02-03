@@ -1,4 +1,4 @@
-import { Grid, Flex, Box, Text } from 'theme-ui'
+import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Layout } from '@carbonplan/components'
@@ -26,7 +26,7 @@ function Index() {
   }
 
   return (
-    <Layout footer={false} metadata={false}>
+    <Layout footer={false} metadata={false} container={false}>
       <Main projectData={projectData} metricsData={metricsData} />
     </Layout>
   )

@@ -76,8 +76,8 @@ const Main = ({ projectData, metricsData }) => {
       checkBounds(d.metrics[3].value, bounds.permanence)
     const inSearch =
       filters.search.length > 0 &&
-      (d.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        d.applicant.toLowerCase().includes(filters.search.toLowerCase()))
+      d.name.toLowerCase().includes(filters.search.toLowerCase())
+    //|| d.applicant.toLowerCase().includes(filters.search.toLowerCase()))
     const inFilter = inTags && inSource && inBounds && inMechanism
     if (filters.search.length > 0 && inSearch && inFilter) return true
     if (filters.search.length == 0 && inFilter) return true

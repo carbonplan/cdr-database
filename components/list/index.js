@@ -59,7 +59,7 @@ const List = ({ filters, setFilters, filtered, data, setHighlighted }) => {
         sx={{ display: ['none', 'none', 'grid'], mt: [2], ml: [4] }}
         gap={['0px']}
       >
-        <Box sx={{}}>
+        <Box sx={{ pr: [2] }}>
           {data
             .filter((d) => filtered[d.id])
             .filter((d, i) => i % 2 == 0)
@@ -76,7 +76,7 @@ const List = ({ filters, setFilters, filtered, data, setHighlighted }) => {
               />
             ))}
         </Box>
-        <Box sx={{ ml: [3] }}>
+        <Box sx={{ pr: [2] }}>
           {data
             .filter((d) => filtered[d.id])
             .filter((d, i) => i % 2 == 1)
