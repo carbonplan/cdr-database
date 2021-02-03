@@ -64,6 +64,7 @@ function Login({ origin }) {
           id='password'
           value={password}
           placeholder='Password?'
+          autoFocus={true}
           onChange={(e) => {
             setPassword(e.target.value)
           }}
