@@ -5,6 +5,7 @@ from utils import get_sheet, make_metric, make_project, maybe_float
 
 def make_projects():
     data = get_sheet("Sheet1", "Microsoft reports 0.1 [internal]").loc[:189]
+
     metrics = [
         "mechanism",
         "volume",
@@ -17,7 +18,6 @@ def make_projects():
 
     metric_keys = [
         "name",
-        "geometry",
         "value",
         "units",
         "notes",
@@ -38,7 +38,7 @@ def make_projects():
 
     projects = []
     for i, row in data.iterrows():
-        project = make_project(row[("project name", "")])
+        project = make_project(row[("id", "")])
         tags = row[tag_keys].to_list()
         if "" in tags:
             tags.remove("")
@@ -47,9 +47,10 @@ def make_projects():
         project["id"] = row[("id", "")]
         project["applicant"] = row[("applicant", "")]
         project["description"] = row[("description", "")]
+        project["rating"] = row[("rating", "")]
+        project["keywords"] = row[("keywords", "")]
         project["location"] = {
             "name": row[("location", "name")],
-            "geometry": json.loads(row[("location", "geometry")]),
         }
         project["source"] = {
             "name": row[("source", "name")],
@@ -59,6 +60,10 @@ def make_projects():
         project["revisions"] = [
             {"date": "01-20-2021", "note": "First release."}
         ]  # json.loads(row[("revisions", "")])
+        project["documentation"] = {
+            "name": row[("documentation", "name")],
+            "url": row[("documentation", "url")],
+        }
         for name in metrics:
             m = make_metric(name)
             for key in metric_keys:
@@ -73,6 +78,7 @@ def make_projects():
                         m[key] = -9999
 
             project["metrics"].append(m)
-        projects.append(project)
+        if row[('flag','')] != 'x':
+            projects.append(project)
 
     return projects

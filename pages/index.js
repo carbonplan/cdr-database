@@ -11,7 +11,9 @@ const selectMetric = (d, name) => {
 }
 
 function Index() {
-  const projectData = data.projects
+  const projectData = data.projects.sort((a, b) =>
+    a.applicant.localeCompare(b.applicant)
+  )
   const metricsData = {
     volume: projectData.map((d) => ({
       id: d.id,

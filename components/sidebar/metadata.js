@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { Tag } from '@carbonplan/components'
+import Rating from './rating'
 
 const colors = {
   dac: 'purple',
@@ -15,6 +16,12 @@ const Metadata = ({ filters, setFilters }) => {
   function toggleOption(value) {
     setFilters((filters) => {
       return { ...filters, [value]: !filters[value] }
+    })
+  }
+
+  function setRating(value) {
+    setFilters((filters) => {
+      return { ...filters, ['rating']: value }
     })
   }
 
@@ -63,6 +70,10 @@ const Metadata = ({ filters, setFilters }) => {
             />
           ))}
         </Box>
+      </Grid>
+      <Grid columns={['100px 1fr']}>
+        <Text variant='label'>RATING</Text>
+        <Rating value={filters['rating']} setValue={setRating} />
       </Grid>
     </Box>
   )

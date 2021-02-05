@@ -20,5 +20,15 @@ export default {
     biomass: 'yellow',
     ocean: 'teal',
     soil: 'orange',
+    reforestation: 'green',
+    biochar: 'yellow',
+    burial: 'yellow',
+    injection: 'grey',
+    phytoplankton: 'green',
+    ifm: 'green',
+    agroforestry: 'green',
+    concrete: 'grey',
+    gravel: 'grey',
+    wood: 'yellow'
   }
 }

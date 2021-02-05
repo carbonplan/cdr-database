@@ -48,18 +48,17 @@ def get_sheet(sheet, doc):
     return df
 
 
-def make_project(name):
+def make_project(id):
     """
     return a template project
     """
     return {
         "type": "Project",
-        "name": name,
         "metrics": [],
-        "geometry": {"type": None},
         "tags": [],
-        "id": "",
+        "id": id,
         "description": "",
+        "applicant": ""
     }
 
 

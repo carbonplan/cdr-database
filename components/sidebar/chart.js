@@ -13,7 +13,7 @@ const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
       brushX()
         .extent([
           [0, 0],
-          [370, 100],
+          [370, 95],
         ])
         .on('start brush', update)
     )
@@ -49,18 +49,18 @@ const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
     <Box
       sx={{
         width: '100%',
+        height: '95px',
         display: 'block',
-        my: [2],
         '.selection': { stroke: 'none' },
       }}
     >
       <svg
         ref={svg}
         width='370'
-        height='100'
+        height='95'
         style={{ position: 'absolute' }}
       ></svg>
-      <svg width='370' height='100'>
+      <svg width='370' height='95'>
         <Points
           x={x}
           y={y}

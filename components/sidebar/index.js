@@ -42,12 +42,12 @@ const Sidebar = ({
           </Styled.p>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
-          <Divider sx={{ mr: [4], mt: [0], mb: [0] }} />
+          <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
           <Box sx={{ mb: [1], mt: [3] }}>
             <Search filters={filters} setFilters={setFilters} />
           </Box>
           <Metadata filters={filters} setFilters={setFilters} />
-          <Divider sx={{ my: [3], mr: [4] }} />
+          <Divider sx={{ my: [3], mt: ['18px'], mr: ['24px'] }} />
           <Charts
             highlighted={highlighted}
             filtered={filtered}

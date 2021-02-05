@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
-import { useThemeUI, Divider, Box, Text, Grid } from 'theme-ui'
+import { useThemeUI, Divider, Box, Text, Grid, Link } from 'theme-ui'
 import { Expander, Tag } from '@carbonplan/components'
 import Metric from './metric'
 
@@ -14,17 +14,21 @@ const showMetrics = [
   'specificity',
 ]
 
-const Report = ({
-  id,
-  applicant,
-  name,
-  description,
-  tags,
-  metrics,
-  setHighlighted,
-}) => {
+const Report = ({ data, setHighlighted }) => {
   const [expanded, setExpanded] = useState(false)
   const { theme } = useThemeUI()
+
+  let {
+    id,
+    applicant,
+    name,
+    description,
+    source,
+    documentation,
+    tags,
+    metrics,
+    location,
+  } = data
 
   metrics = showMetrics.map((metric) => {
     return metrics.filter((m) => m.name == metric)[0]
@@ -49,7 +53,7 @@ const Report = ({
         borderRadius: '0px',
         cursor: 'pointer',
         pl: [3],
-        pr: [3],
+        pr: [0],
         pt: ['12px'],
         pb: [3],
         my: [3],
@@ -58,39 +62,47 @@ const Report = ({
         '&:hover': {
           borderColor: 'secondary',
         },
-        '&:hover > #grid > #container > #expander': {
+        '&:hover > #container > #expander': {
           fill: 'primary',
           stroke: 'primary',
         },
       }}
     >
-      <Grid gap={0} columns={['1fr 250px']}>
-        <Text sx={{ fontSize: [4], lineHeight: 'heading' }}>{name}</Text>
-        <Box sx={{ textAlign: 'right' }}>
-          {tags.map((tag) => (
+      <Box id='container'>
+        <Text
+          sx={{ display: 'inline-block', fontSize: [4], lineHeight: 'heading' }}
+        >
+          {applicant}
+        </Text>
+        <Expander sx={{ ml: [2] }} id='expander' value={expanded}></Expander>
+        <Box sx={{ float: 'right', textAlign: 'right' }}>
+          {tags.map((tag, i) => (
             <Tag
               label={tag}
               value={true}
-              sx={{ cursor: 'inherit', color: theme.tags[tag] }}
+              sx={{
+                cursor: 'inherit',
+                mr: i == 0 ? [2] : [0],
+                color: theme.tags[tag],
+              }}
             />
           ))}
         </Box>
-      </Grid>
-      <Grid id='grid' gap={['8px', '8px', '16px']} columns={[1, 1, '1fr 32px']}>
-        <Text sx={{ pt: [2], pb: [2] }}>{description}</Text>
-        <Box id='container' sx={{ mt: ['8px'], ml: ['-5px', '-5px', '2px'] }}>
-          <Expander id='expander' value={expanded}></Expander>
-        </Box>
-      </Grid>
+      </Box>
+      <Text sx={{ pt: [2], pb: [2], fontSize: [2] }}>{description}</Text>
+      <Text sx={{ fontSize: [1], pt: [0], pb: [1], color: 'secondary' }}>
+        {id.includes('STRP') && 'Stripe 2020'}
+        {id.includes('MSFT') && 'Microsoft 2021'}
+      </Text>
       <AnimateHeight
         duration={100}
         height={expanded ? 'auto' : 0}
         easing={'linear'}
       >
-        <Box sx={{ mt: [0] }}>
-          {expanded && (
+        {expanded && (
+          <Box sx={{ mt: [0] }}>
             <Box sx={{ mt: [3] }}>
-              <Divider sx={{ mr: [2], mt: [0], mb: [0] }} />
+              <Divider sx={{ mr: [0], mt: [0], mb: [0] }} />
               {metrics.map((metric) => (
                 <Metric
                   key={metric.name}
@@ -99,8 +111,99 @@ const Report = ({
                 ></Metric>
               ))}
             </Box>
-          )}
-        </Box>
+            <Box sx={{ fontSize: [1], mt: [3] }}>
+              <Box sx={{ display: 'inline-block', color: 'secondary' }}>
+                <Text>Documentation</Text>
+                <Text as='span' sx={{ mr: [2] }}>
+                  <Link
+                    onClick={(e) => e.stopPropagation()}
+                    sx={{
+                      textDecoration: 'none',
+                      color: 'secondary',
+                      '&:hover': {
+                        color: 'primary',
+                      },
+                      '&:hover > #arrow': {
+                        color: 'primary',
+                      },
+                    }}
+                    href={source.url}
+                  >
+                    Proposal
+                    <Text
+                      id='arrow'
+                      sx={{
+                        ml: [1],
+                        color: 'secondary',
+                        fontSize: [4],
+                        position: 'relative',
+                        top: '4px',
+                        display: 'inline-block',
+                        textDecoration: 'none',
+                        lineHeight: 0,
+                        '&:active': {
+                          color: 'primary',
+                        },
+                        '&:hover': {
+                          color: 'primary',
+                          borderColor: 'primary',
+                        },
+                      }}
+                    >
+                      ↗
+                    </Text>
+                  </Link>
+                </Text>
+                {!(documentation.name === '') && <Text as='span'>
+                  <Link
+                    onClick={(e) => e.stopPropagation()}
+                    sx={{
+                      textDecoration: 'none',
+                      color: 'secondary',
+                      '&:hover': {
+                        color: 'primary',
+                      },
+                      '&:hover > #arrow': {
+                        color: 'primary',
+                      },
+                    }}
+                    href={documentation.url}
+                  >
+                    {documentation.name}
+                    <Text
+                      id='arrow'
+                      sx={{
+                        ml: [1],
+                        fontSize: [4],
+                        position: 'relative',
+                        top: '4px',
+                        display: 'inline-block',
+                        textDecoration: 'none',
+                        lineHeight: 0,
+                        '&:active': {
+                          color: 'primary',
+                        },
+                        '&:hover': {
+                          color: 'primary',
+                          borderColor: 'primary',
+                        },
+                      }}
+                    >
+                      ↗
+                    </Text>
+                  </Link>
+                </Text>
+              }
+              </Box>
+              <Box
+                sx={{ color: 'secondary', textAlign: 'right', float: 'right' }}
+              >
+                <Text>Location</Text>
+                <Text>{location.name}</Text>
+              </Box>
+            </Box>
+          </Box>
+        )}
       </AnimateHeight>
     </Box>
   )

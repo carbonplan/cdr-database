@@ -18,7 +18,6 @@ def make_projects():
 
     metric_keys = [
         "name",
-        "geometry",
         "value",
         "units",
         "notes",
@@ -37,22 +36,28 @@ def make_projects():
 
     projects = []
     for i, row in data.iterrows():
-        project = make_project(row[("name", "")])
+        project = make_project(row[("id", "")])
         tags = row[tag_keys].to_list()
         if "" in tags:
             tags.remove("")
         tags = [t.lower().strip() for t in tags]
         project["tags"].extend(tags)
         project["id"] = row[("id", "")]
+        project["applicant"] = row[("applicant", "")]
         project["description"] = row[("description", "")]
+        project["rating"] = row[("rating", "")]
+        project["keywords"] = row[("keywords", "")]
         project["location"] = {
             "name": row[("location", "name")],
-            "geometry": json.loads(row[("location", "geometry")]),
         }
         project["source"] = {
             "name": row[("source", "name")],
             "license": row[("source", "license")],
             "url": row[("source", "url")],
+        }
+        project["documentation"] = {
+            "name": row[("documentation", "name")],
+            "url": row[("documentation", "url")],
         }
         project["revisions"] = json.loads(row[("revisions", "")])
         for name in metrics:

@@ -127,12 +127,14 @@ const MetricDesktop = ({
               </Text>
             )}
           </Text>
-          <Text sx={{ mt: ['5px'] }}>
-            {metric.rating === 1 && <Check sx={{ color: theme.tags[tag] }} />}
+          <Text sx={{ mt: ['3px'] }}>
+            {metric.rating === 1 && (
+              <Check sx={{ width: '28px', color: theme.tags[tag] }} />
+            )}
             {metric.rating === 0 && <Box />}
           </Text>
           {hasDetails && (
-            <Box id='container' sx={{ mt: '5px' }}>
+            <Box id='container' sx={{ ml: ['8px'], mt: '5px' }}>
               <Expander
                 id={'expander'}
                 toggle={toggle}
@@ -154,7 +156,7 @@ const MetricDesktop = ({
           >
             <Box
               sx={{
-                mt: metric.notes || metric.comment ? [2] : [0],
+                mt: metric.notes || metric.comment ? [0] : [0],
                 mb: metric.notes || metric.comment ? [2] : [0],
               }}
             >
@@ -215,7 +217,7 @@ const MetricDesktop = ({
           </Box>
         )}
       </AnimateHeight>
-      <Divider sx={{ mr: [2], mt: [0], mb: [0] }} />
+      <Divider sx={{ mr: [0], mt: [0], mb: [0] }} />
     </Box>
   )
 }

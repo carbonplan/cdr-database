@@ -16,6 +16,7 @@ const initFilters = {
   removal: true,
   group: false,
   search: '',
+  rating: 3,
 }
 
 const initBounds = {
@@ -42,9 +43,13 @@ const Main = ({ projectData, metricsData }) => {
     setFiltered(obj)
   }, [filters, bounds])
 
-  function checkBounds(value, bounds) {
+  function checkBounds(value, bounds, min, max) {
     if (bounds.length == 0) return true
-    return value > bounds[0] && value < bounds[1]
+    return (
+      (value > bounds[0] && value < bounds[1]) ||
+      (bounds[1] === max && value >= max) ||
+      (bounds[0] === min && value <= min)
+    )
   }
 
   function inFilter(d) {
@@ -72,13 +77,16 @@ const Main = ({ projectData, metricsData }) => {
         filters.avoided &&
         (d.metrics[0].removal == 1.0 || d.metrics[0].avoided == 1.0))
     const inBounds =
-      checkBounds(d.metrics[1].value, bounds.volume) &&
-      checkBounds(d.metrics[3].value, bounds.permanence)
+      checkBounds(d.metrics[1].value, bounds.volume, 10, 1000000) &&
+      checkBounds(d.metrics[3].value, bounds.permanence, 1, 1000)
     const inSearch =
       filters.search.length > 0 &&
-      d.name.toLowerCase().includes(filters.search.toLowerCase())
+      (d.applicant.toLowerCase().includes(filters.search.toLowerCase()) ||
+        d.keywords.toLowerCase().includes(filters.search.toLowerCase()))
     //|| d.applicant.toLowerCase().includes(filters.search.toLowerCase()))
-    const inFilter = inTags && inSource && inBounds && inMechanism
+    const isValidated = d.rating >= filters.rating
+    const inFilter =
+      inTags && inSource && inBounds && inMechanism && isValidated
     if (filters.search.length > 0 && inSearch && inFilter) return true
     if (filters.search.length == 0 && inFilter) return true
     else return false
