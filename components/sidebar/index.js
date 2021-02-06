@@ -13,14 +13,7 @@ const Sidebar = ({
   setBounds,
 }) => {
   return (
-    <Box
-      sx={{
-        borderWidth: '0px',
-        borderRightWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: 'muted',
-      }}
-    >
+    <Box sx={{}}>
       <Box
         sx={{
           position: ['initial', 'initial', 'sticky'],
@@ -31,15 +24,12 @@ const Sidebar = ({
       >
         <Text
           as='h1'
-          variant='styles.h1'
-          sx={{ pt: [2, 2, 3], mb: [3, 3, 4], mt: [2, 2, 0] }}
+          sx={{ fontSize: [6], pt: [2, 2, 3], mb: [1], mt: [2, 2, 0] }}
         >
-          Reports
+          CDR Database
         </Text>
         <Box sx={{ maxWidth: '90%', pb: [3, 3, 1] }}>
-          <Styled.p>
-            A public database of reports on carbon removal project proposals.
-          </Styled.p>
+          <Styled.p>Reports on public CDR project proposals.</Styled.p>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
           <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
@@ -47,7 +37,7 @@ const Sidebar = ({
             <Search filters={filters} setFilters={setFilters} />
           </Box>
           <Metadata filters={filters} setFilters={setFilters} />
-          <Divider sx={{ my: [3], mt: ['18px'], mr: ['24px'] }} />
+          <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
           <Charts
             highlighted={highlighted}
             filtered={filtered}

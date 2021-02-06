@@ -17,7 +17,7 @@ const List = ({ filters, setFilters, filtered, data, setHighlighted }) => {
           pt: '14px',
           mt: '-14px',
           mb: [2],
-          ml: ['24px'],
+          ml: [0],
           backgroundColor: 'background',
           borderWidth: '0px',
           borderBottomWidth: '1px',
@@ -77,7 +77,7 @@ const List = ({ filters, setFilters, filtered, data, setHighlighted }) => {
       <Divider sx={{ ml: [4] }} />
       <Grid
         columns={[1, 1, 2]}
-        sx={{ display: ['none', 'none', 'grid'], mt: [2], ml: ['24px'] }}
+        sx={{ display: ['none', 'none', 'grid'], mt: ['12px'], ml: [0] }}
         gap={['0px']}
       >
         <Box sx={{ pr: ['24px'] }}>

@@ -60,10 +60,10 @@ const MetricDesktop = ({
   return (
     <Box>
       <Box
-        onClick={toggle}
+        onClick={hasDetails ? toggle : (e) => e.stopPropagation()}
         sx={{
-          cursor: hasDetails ? 'pointer' : 'default',
-          pointerEvents: hasDetails ? 'all' : 'none',
+          cursor: hasDetails ? 'pointer' : 'inherit',
+          pointerEvents: 'all',
           '&:hover > #grid > #container > #expander': {
             fill: 'primary',
             stroke: 'primary',

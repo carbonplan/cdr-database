@@ -82,8 +82,10 @@ const Main = ({ projectData, metricsData }) => {
     const inSearch =
       filters.search.length > 0 &&
       (d.applicant.toLowerCase().includes(filters.search.toLowerCase()) ||
-        d.keywords.toLowerCase().includes(filters.search.toLowerCase()))
-    //|| d.applicant.toLowerCase().includes(filters.search.toLowerCase()))
+        d.keywords.toLowerCase().includes(filters.search.toLowerCase()) ||
+        d.location.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+        (d.tags.length > 1 &&
+          d.tags[1].toLowerCase().includes(filters.search.toLowerCase())))
     const isValidated = d.rating >= filters.rating
     const inFilter =
       inTags && inSource && inBounds && inMechanism && isValidated

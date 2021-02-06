@@ -113,7 +113,6 @@ const Report = ({ data, setHighlighted }) => {
             </Box>
             <Box sx={{ fontSize: [1], mt: [3] }}>
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
-                <Text>Documentation</Text>
                 <Text as='span' sx={{ mr: [2] }}>
                   <Link
                     onClick={(e) => e.stopPropagation()}
@@ -154,51 +153,51 @@ const Report = ({ data, setHighlighted }) => {
                     </Text>
                   </Link>
                 </Text>
-                {!(documentation.name === '') && <Text as='span'>
-                  <Link
-                    onClick={(e) => e.stopPropagation()}
-                    sx={{
-                      textDecoration: 'none',
-                      color: 'secondary',
-                      '&:hover': {
-                        color: 'primary',
-                      },
-                      '&:hover > #arrow': {
-                        color: 'primary',
-                      },
-                    }}
-                    href={documentation.url}
-                  >
-                    {documentation.name}
-                    <Text
-                      id='arrow'
+                {!(documentation.name === '') && (
+                  <Text as='span'>
+                    <Link
+                      onClick={(e) => e.stopPropagation()}
                       sx={{
-                        ml: [1],
-                        fontSize: [4],
-                        position: 'relative',
-                        top: '4px',
-                        display: 'inline-block',
                         textDecoration: 'none',
-                        lineHeight: 0,
-                        '&:active': {
-                          color: 'primary',
-                        },
+                        color: 'secondary',
                         '&:hover': {
                           color: 'primary',
-                          borderColor: 'primary',
+                        },
+                        '&:hover > #arrow': {
+                          color: 'primary',
                         },
                       }}
+                      href={documentation.url}
                     >
-                      ↗
-                    </Text>
-                  </Link>
-                </Text>
-              }
+                      {documentation.name}
+                      <Text
+                        id='arrow'
+                        sx={{
+                          ml: [1],
+                          fontSize: [4],
+                          position: 'relative',
+                          top: '4px',
+                          display: 'inline-block',
+                          textDecoration: 'none',
+                          lineHeight: 0,
+                          '&:active': {
+                            color: 'primary',
+                          },
+                          '&:hover': {
+                            color: 'primary',
+                            borderColor: 'primary',
+                          },
+                        }}
+                      >
+                        ↗
+                      </Text>
+                    </Link>
+                  </Text>
+                )}
               </Box>
               <Box
                 sx={{ color: 'secondary', textAlign: 'right', float: 'right' }}
               >
-                <Text>Location</Text>
                 <Text>{location.name}</Text>
               </Box>
             </Box>
