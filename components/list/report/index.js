@@ -52,7 +52,7 @@ const Report = ({ data, setHighlighted }) => {
         borderLeftWidth: '1px',
         borderRadius: '0px',
         cursor: 'pointer',
-        pl: [3],
+        pl: ['24px'],
         pr: [0],
         pt: ['12px'],
         pb: [3],

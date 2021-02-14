@@ -2609,7 +2609,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://americancarbonregistry.org/carbon-accounting/standards-methodologies/restoration-of-california-deltaic-and-coastal-wetlands',
       },
@@ -2708,7 +2708,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=389',
       },
@@ -2806,7 +2806,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=282',
       },
@@ -2906,7 +2906,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://carbonthroughcompost.wordpress.com/home-2/',
       },
     },
@@ -3005,7 +3005,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.tist.org/i2/kenya.php' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.tist.org/i2/kenya.php',
+      },
     },
     {
       type: 'Project',
@@ -3104,7 +3107,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1141',
       },
     },
@@ -3203,7 +3206,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1085',
       },
     },
@@ -3302,7 +3305,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1899',
       },
     },
@@ -3401,7 +3404,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.jatak.no/bedriftene/are-brug-as-avd-askim',
       },
     },
@@ -3498,7 +3501,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'http://biocharnow.com/' },
+      documentation: { name: 'Website', url: 'http://biocharnow.com/' },
     },
     {
       type: 'Project',
@@ -3595,7 +3598,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'http://www.biorecro.com/?page=main' },
+      documentation: {
+        name: 'Website',
+        url: 'http://www.biorecro.com/?page=main',
+      },
     },
     {
       type: 'Project',
@@ -3692,7 +3698,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'http://www.sequestration.org/mgscprojects/deepsalinestorage.html',
       },
     },
@@ -3790,7 +3796,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.columbialandtrust.org/' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.columbialandtrust.org/',
+      },
     },
     {
       type: 'Project',
@@ -4078,7 +4087,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=499',
       },
     },
@@ -4177,7 +4186,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=459',
       },
     },
@@ -4275,7 +4284,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://maineanencyclopedia.com/big-six-township/',
       },
     },
@@ -4374,7 +4383,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=376',
       },
     },
@@ -4473,7 +4482,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=398',
       },
     },
@@ -4572,7 +4581,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://baskahegan.com/maps/baskahegan-land-map/',
       },
     },
@@ -4671,7 +4680,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://nisquallylandtrust.org/our-lands-and-projects/protected-areas/mount-rainier-gateway-initiative/#:~:text=The%20Land%20Trust%20launched%20the,forest%20that%20surrounds%20the%20town.',
       },
@@ -4770,7 +4779,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://tedturnerreserves.com/vermejo/',
       },
     },
@@ -4963,7 +4972,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.c-combinator.com' },
+      documentation: { name: 'Website', url: 'https://www.c-combinator.com' },
     },
     {
       type: 'Project',
@@ -5058,7 +5067,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.cambiumcarbon.com/' },
+      documentation: { name: 'Website', url: 'https://www.cambiumcarbon.com/' },
     },
     {
       type: 'Project',
@@ -5155,7 +5164,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'carboculture.com' },
+      documentation: { name: 'Website', url: 'https://carboculture.com' },
     },
     {
       type: 'Project',
@@ -5253,7 +5262,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://puro.earth/services/biochar-finland-100008',
       },
     },
@@ -5352,7 +5361,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://puro.earth/services/carbon-cycle-germany-premium-quality-biochar-100018',
       },
@@ -5549,7 +5558,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.carbonsequestration-inc.com' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.carbonsequestration-inc.com',
+      },
     },
     {
       type: 'Project',
@@ -5645,7 +5657,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.carboncure.com' },
+      documentation: { name: 'Website', url: 'https://www.carboncure.com' },
     },
     {
       type: 'Project',
@@ -5741,7 +5753,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.theoutcomesfund.com/' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.theoutcomesfund.com/',
+      },
     },
     {
       type: 'Project',
@@ -5837,7 +5852,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://charmindustrial.com/' },
+      documentation: { name: 'Website', url: 'https://charmindustrial.com/' },
     },
     {
       type: 'Project',
@@ -5933,7 +5948,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://program.tist.org/' },
+      documentation: { name: 'Website', url: 'https://program.tist.org/' },
     },
     {
       type: 'Project',
@@ -6030,7 +6045,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://program.tist.org/' },
+      documentation: { name: 'Website', url: 'https://program.tist.org/' },
     },
     {
       type: 'Project',
@@ -6127,7 +6142,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=371',
       },
     },
@@ -6227,7 +6242,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=427',
       },
     },
@@ -6326,7 +6341,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.purprojet.com/project/coffee-for-peace/',
       },
     },
@@ -6426,7 +6441,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.goldstandard.org/projects/details/1806',
       },
     },
@@ -6527,7 +6542,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.purprojet.com/project/aprosacao/',
       },
     },
@@ -6627,7 +6642,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://golarainforest.org/' },
+      documentation: { name: 'Website', url: 'https://golarainforest.org/' },
     },
     {
       type: 'Project',
@@ -6726,9 +6741,8 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
-        url:
-          'https://www.purprojet.com/project/aprosacao/, https://registry.goldstandard.org/projects/details/1808',
+        name: 'Website',
+        url: 'https://registry.goldstandard.org/projects/details/1808',
       },
     },
     {
@@ -6827,7 +6841,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.purprojet.com/project/jubilacion-segura/',
       },
     },
@@ -7021,7 +7035,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1930',
       },
     },
@@ -7409,7 +7423,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://mer.markit.com/br-reg/public/project.jsp?project_id=103000000004596',
       },
@@ -7511,7 +7525,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1055',
       },
     },
@@ -7612,7 +7626,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1055',
       },
     },
@@ -7712,7 +7726,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.purprojet.com/project/rwenzori-project-uganda/',
       },
     },
@@ -7907,7 +7921,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.purprojet.com/' },
+      documentation: { name: 'Website', url: 'https://www.purprojet.com/' },
     },
     {
       type: 'Project',
@@ -8003,7 +8017,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://vnvadvisory.com/upcoming-projects/',
       },
     },
@@ -8100,7 +8114,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://climateforward.apx.com/myModule/rpt/myrpt.asp?r=111',
       },
     },
@@ -8198,7 +8212,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.climeworks.com' },
+      documentation: { name: 'Website', url: 'https://www.climeworks.com' },
     },
     {
       type: 'Project',
@@ -8293,7 +8307,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.qvidja.fi' },
+      documentation: { name: 'Website', url: 'https://www.qvidja.fi' },
     },
     {
       type: 'Project',
@@ -8390,7 +8404,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.rabobank.com/en/about-rabobank/innovation/acorn/index.html?utm_campaign=5e553208da14180001c04fab&utm_content=6013de4b92a93e00014cfa13&utm_medium=smarpshare&utm_source=linkedin',
       },
@@ -8490,7 +8504,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'http://www.drax.com/BECCS' },
+      documentation: { name: 'Website', url: 'http://www.drax.com/BECCS' },
     },
     {
       type: 'Project',
@@ -8588,7 +8602,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.droneseed.com/' },
+      documentation: { name: 'Website', url: 'https://www.droneseed.com/' },
     },
     {
       type: 'Project',
@@ -8684,7 +8698,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.ducks.org/conservation/ecoassets/ducks-unlimiteds-carbon-program',
       },
@@ -8882,7 +8896,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.ecoera.se' },
+      documentation: { name: 'Website', url: 'https://www.ecoera.se' },
     },
     {
       type: 'Project',
@@ -8978,7 +8992,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://efmi.com/management-approach/' },
+      documentation: {
+        name: 'Website',
+        url: 'https://efmi.com/management-approach/',
+      },
     },
     {
       type: 'Project',
@@ -9074,7 +9091,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.itswild.org' },
+      documentation: { name: 'Website', url: 'https://www.itswild.org' },
     },
     {
       type: 'Project',
@@ -9172,7 +9189,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://puro.earth/services/net-negative-insulation-material-finland-100009',
       },
@@ -9273,7 +9290,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://puro.earth/services/building-elements-finland-100010',
       },
     },
@@ -9373,7 +9390,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.fonafifo.go.cr/en/conozcanos/proyectos-actuales/',
       },
     },
@@ -9473,7 +9490,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=273',
       },
     },
@@ -9573,7 +9590,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://acr2.apx.com/mymodule/reg/prjView.asp?id1=274',
       },
     },
@@ -9672,7 +9689,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.greensand.nl/' },
+      documentation: { name: 'Website', url: 'https://www.greensand.nl/' },
     },
     {
       type: 'Project',
@@ -9768,7 +9785,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.greensand.nl/' },
+      documentation: { name: 'Website', url: 'https://www.greensand.nl/' },
     },
     {
       type: 'Project',
@@ -9865,11 +9882,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: {
-        name: '',
-        url:
-          'https://www.google.com/url?q=https://www.greensand.nl/&sa=D&source=editors&ust=1613078849664000&usg=AFQjCNGT98zDitY4gaIJaX_Ef-VHYG2-iw',
-      },
+      documentation: { name: 'Website', url: 'https://www.greensand.nl/' },
     },
     {
       type: 'Project',
@@ -9966,7 +9979,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.green-trees.com' },
+      documentation: { name: 'Website', url: 'https://www.green-trees.com' },
     },
     {
       type: 'Project',
@@ -10062,7 +10075,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/959',
       },
     },
@@ -10161,7 +10174,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/960',
       },
     },
@@ -10261,7 +10274,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.indigoag.com/for-growers/indigo-carbon',
       },
     },
@@ -10359,7 +10372,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://investancia.com/' },
+      documentation: { name: 'Website', url: 'https://investancia.com/' },
     },
     {
       type: 'Project',
@@ -10454,7 +10467,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://landlifecompany.com/' },
+      documentation: { name: 'Website', url: 'https://landlifecompany.com/' },
     },
     {
       type: 'Project',
@@ -10551,7 +10564,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'TruterraAg.com' },
+      documentation: { name: 'Website', url: 'https://TruterraAg.com' },
     },
     {
       type: 'Project',
@@ -10648,7 +10661,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'TruterraAg.com' },
+      documentation: { name: 'Website', url: 'https://TruterraAg.com' },
     },
     {
       type: 'Project',
@@ -10744,7 +10757,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'TruterraAg.com' },
+      documentation: { name: 'Website', url: 'https://TruterraAg.com' },
     },
     {
       type: 'Project',
@@ -10841,7 +10854,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://puro.earth/services/moelven-leading-scandinavian-timber-producer-100023',
       },
@@ -10941,7 +10954,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://native.eco/project/northern-kenya-improved-grasslands-project/',
       },
@@ -11041,7 +11054,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://native.eco/project/montana-grasslands-projecthb/',
       },
     },
@@ -11140,7 +11153,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.planvivo.org/communitree' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.planvivo.org/communitree',
+      },
     },
     {
       type: 'Project',
@@ -11238,7 +11254,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=114',
       },
@@ -11339,7 +11355,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/607',
       },
     },
@@ -11437,7 +11453,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://savingnature.com/atlantic-forest-of-brazil/',
       },
     },
@@ -11536,7 +11552,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.tist.org/i2/kenya.php' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.tist.org/i2/kenya.php',
+      },
     },
     {
       type: 'Project',
@@ -11634,7 +11653,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://facethefuture.com/projects/uganda-kibale-reforestation',
       },
     },
@@ -11735,7 +11754,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://carbonregistry.gov.bc.ca/br-reg/public/bc/index.jsp?entity=project&sort=project_name&dir=ASC&start=0&acronym=&limit=15&name=Great+Bear&standardId=',
       },
@@ -11836,7 +11855,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://nori.com/supplier/garrett-land-and-cattle',
       },
     },
@@ -11936,7 +11955,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.ocean-based.com' },
+      documentation: { name: 'Website', url: 'https://www.ocean-based.com' },
     },
     {
       type: 'Project',
@@ -12033,7 +12052,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://pachama.com/explorer/project/rips-redwoods',
       },
     },
@@ -12133,7 +12152,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.goldstandard.org/projects/details/1796',
       },
     },
@@ -12231,7 +12250,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://pachama.com/explorer/project/nicaforest',
       },
     },
@@ -12330,7 +12349,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://pachama.com/explorer/project/la-fazenda',
       },
     },
@@ -12428,7 +12447,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://program.tist.org/uganda' },
+      documentation: {
+        name: 'Website',
+        url: 'https://program.tist.org/uganda',
+      },
     },
     {
       type: 'Project',
@@ -12525,7 +12547,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.pecdcgroup.com/current-project',
       },
     },
@@ -12625,7 +12647,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.projectvesta.org' },
+      documentation: { name: 'Website', url: 'www.projectvesta.org' },
     },
     {
       type: 'Project',
@@ -12722,7 +12744,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://ecosphere.plus/sumatra-merang-peatland/',
       },
     },
@@ -12822,7 +12844,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://puro.earth/services/biochar-australia-100014',
       },
     },
@@ -12921,7 +12943,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.regen.network/registry/projects/wongella',
       },
     },
@@ -13019,7 +13041,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.regen.network/registry/projects/woodburn',
       },
     },
@@ -13117,7 +13139,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.regen.network/registry/projects/cavan-station',
       },
     },
@@ -13215,7 +13237,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.regen.network/registry/projects/wilmot',
       },
     },
@@ -13314,7 +13336,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.runningtide.com/' },
+      documentation: { name: 'Website', url: 'https://www.runningtide.com/' },
     },
     {
       type: 'Project',
@@ -13411,7 +13433,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1865',
       },
     },
@@ -13510,7 +13532,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1847',
       },
     },
@@ -13609,7 +13631,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://program.tist.org/india' },
+      documentation: { name: 'Website', url: 'https://program.tist.org/india' },
     },
     {
       type: 'Project',
@@ -13706,7 +13728,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://green-trees.com/' },
+      documentation: { name: 'Website', url: 'https://green-trees.com/' },
     },
     {
       type: 'Project',
@@ -13804,7 +13826,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/987',
       },
     },
@@ -13903,7 +13925,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://program.tist.org/kenya' },
+      documentation: { name: 'Website', url: 'https://program.tist.org/kenya' },
     },
     {
       type: 'Project',
@@ -14002,7 +14024,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.silviaterra.com/ncapx-story-pa',
       },
     },
@@ -14101,7 +14123,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.landes.co.jp/product/113' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.landes.co.jp/product/113',
+      },
     },
     {
       type: 'Project',
@@ -14198,7 +14223,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'http://www.cleanenergyregulator.gov.au/ERF/Pages/Emissions%20Reduction%20Fund%20project%20and%20contract%20registers/Project%20register/ERF-Project-Detailed-View.aspx?ListId=%7B7F242924-BF02-45EE-A289-1ABCC954E9CE%7D&ItemID=797',
       },
@@ -14395,7 +14420,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.oco.co.uk' },
+      documentation: { name: 'Website', url: 'www.oco.co.uk' },
     },
     {
       type: 'Project',
@@ -14493,7 +14518,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'http://www.cleanenergyregulator.gov.au/ERF/Pages/Emissions%20Reduction%20Fund%20project%20and%20contract%20registers/Project%20register/ERF-Project-Detailed-View.aspx?ListId=%7B7F242924-BF02-45EE-A289-1ABCC954E9CE%7D&ItemID=706',
       },
@@ -14595,7 +14620,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'http://www.proteak.com/index.php/en/sustainability/carbon-capture',
       },
@@ -14695,7 +14720,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/1740',
       },
     },
@@ -14795,7 +14820,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.goldstandard.org/projects/details/1796',
       },
     },
@@ -14894,7 +14919,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://www.miroforestry.com/plantations/yoni-sierra-leone',
       },
     },
@@ -14993,7 +15018,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://facethefuture.com/projects/uganda-kibale-reforestation',
       },
     },
@@ -15093,7 +15118,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://newildernesstrust.org/wilderness-conservation/wp/',
       },
     },
@@ -15192,7 +15217,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.stockholmexergi.se/om-stockholm-exergi/about-stockholm-exergi/negative-emissions/biochar/',
       },
@@ -15389,7 +15414,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://puro.earth/services/innovative-timber-construction-elements-norway-100012',
       },
@@ -15490,7 +15515,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'http://terraglobalcapital.com/kulera-landscape-redd-program-co-managed-protected-areas-malawi',
       },
@@ -15590,7 +15615,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.terraformation.com/blog/new-partner-uganda-environmental-defenders',
       },
@@ -15689,7 +15714,7 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.terraformation.com' },
+      documentation: { name: 'Website', url: 'https://www.terraformation.com' },
     },
     {
       type: 'Project',
@@ -15975,7 +16000,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/what-we-do/our-priorities/protect-water-and-land/land-and-water-stories/cumberland-forest-project/?vu=cumberland',
       },
@@ -16075,7 +16100,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/what-we-do/our-priorities/protect-water-and-land/land-and-water-stories/cumberland-forest-project/?vu=cumberland',
       },
@@ -16176,7 +16201,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/what-we-do/our-priorities/protect-water-and-land/land-and-water-stories/cumberland-forest-project/?vu=cumberland',
       },
@@ -16276,7 +16301,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/about-us/where-we-work/united-states/virginia/stories-in-virginia/clinch-valley-conservation-forestry/',
       },
@@ -16377,7 +16402,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/about-us/where-we-work/united-states/virginia/stories-in-virginia/clinch-valley-conservation-forestry/',
       },
@@ -16477,7 +16502,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://thereserve2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=1215',
       },
@@ -16578,7 +16603,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://thereserve2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=1160',
       },
@@ -16679,7 +16704,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://thereserve2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=1159',
       },
@@ -16779,7 +16804,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'https://www.familyforestcarbon.org/' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.familyforestcarbon.org/',
+      },
     },
     {
       type: 'Project',
@@ -16874,7 +16902,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.nature.org/workingwoodlands' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.nature.org/workingwoodlands',
+      },
     },
     {
       type: 'Project',
@@ -16972,7 +17003,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.nature.org/en-us/what-we-do/our-insights/perspectives/investing-in-blue-carbon-for-a-resilient-future/',
       },
@@ -17071,7 +17102,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.google.com/url?q=https://www.nature.org/en-us/about-us/where-we-work/united-states/washington/stories-in-washington/forest-restoration-conservation/&sa=D&source=editors&ust=1613080546774000&usg=AOvVaw3uqPU9uOk7Oq6bF8PwTHC8',
       },
@@ -17173,7 +17204,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url: 'https://registry.verra.org/app/projectDetail/VCS/919',
       },
     },
@@ -17272,7 +17303,10 @@ module.exports = {
           'https://app.powerbi.com/view?r=eyJrIjoiOGM2MGFlNGYtMGNlNy00YzY5LWEyMTAtOTA0ODEyNzEzYTczIiwidCI6ImMxMzZlZWMwLWZlOTItNDVlMC1iZWFlLTQ2OTg0OTczZTIzMiIsImMiOjF9',
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
-      documentation: { name: '', url: 'www.restorationcarbon.org' },
+      documentation: {
+        name: 'Website',
+        url: 'https://www.restorationcarbon.org',
+      },
     },
     {
       type: 'Project',
@@ -17368,7 +17402,7 @@ module.exports = {
       },
       revisions: [{ date: '01-20-2021', note: 'First release.' }],
       documentation: {
-        name: '',
+        name: 'Website',
         url:
           'https://www.usendowment.org/what-we-do/wood-to-energy/oregon-torrefaction/',
       },
