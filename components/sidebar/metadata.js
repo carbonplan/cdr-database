@@ -1,7 +1,8 @@
 import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
-import { Tag } from '@carbonplan/components'
+import { Tag, Icons } from '@carbonplan/components'
 import Rating from './rating'
+import Tooltip from '../tooltip'
 
 const colors = {
   dac: 'purple',
@@ -12,7 +13,7 @@ const colors = {
   soil: 'orange',
 }
 
-const Metadata = ({ filters, setFilters }) => {
+const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
   function toggleOption(value) {
     setFilters((filters) => {
       return { ...filters, [value]: !filters[value] }
@@ -26,10 +27,10 @@ const Metadata = ({ filters, setFilters }) => {
   }
 
   return (
-    <Box>
-      <Grid columns={['100px 1fr']}>
+    <Box sx={{ mr: ['24px'] }}>
+      <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>SOURCE</Text>
-        <Box sx={{ width: '250px' }}>
+        <Box sx={{}}>
           {['STRP2020', 'MSFT2021'].map((d) => (
             <Tag
               key={d}
@@ -40,10 +41,15 @@ const Metadata = ({ filters, setFilters }) => {
             />
           ))}
         </Box>
+        <Tooltip
+          value={'source'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
       </Grid>
-      <Grid columns={['100px 1fr']}>
+      <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>CATEGORY</Text>
-        <Box sx={{ width: '250px' }}>
+        <Box sx={{}}>
           {['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'].map(
             (d) => (
               <Tag
@@ -56,10 +62,15 @@ const Metadata = ({ filters, setFilters }) => {
             )
           )}
         </Box>
+        <Tooltip
+          value={'category'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
       </Grid>
-      <Grid columns={['100px 1fr']}>
+      <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>MECHANISM</Text>
-        <Box sx={{ width: '250px' }}>
+        <Box sx={{}}>
           {['removal', 'avoided'].map((d) => (
             <Tag
               key={d}
@@ -70,10 +81,20 @@ const Metadata = ({ filters, setFilters }) => {
             />
           ))}
         </Box>
+        <Tooltip
+          value={'mechanism'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
       </Grid>
-      <Grid columns={['100px 1fr']}>
+      <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>RATING</Text>
         <Rating value={filters['rating']} setValue={setRating} />
+        <Tooltip
+          value={'rating'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
       </Grid>
     </Box>
   )

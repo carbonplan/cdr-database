@@ -8,9 +8,10 @@ const Rating = ({ value, setValue }) => {
   const [hover, setHover] = useState(0)
 
   return (
-    <Box sx={{ width: '250px', ml: ['-5px'], mt: ['-2px'] }}>
-      {[0, 1, 2, 3, 4].map((d) => (
+    <Box sx={{ ml: ['-5px'], mt: ['-2px'] }}>
+      {[0, 1, 2, 3, 4].map((d, i) => (
         <Box
+          key={'rating-' + i}
           onMouseOver={() => setHover(d + 1)}
           onMouseLeave={() => setHover(0)}
           onClick={() => setValue(d + 1)}

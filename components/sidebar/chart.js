@@ -2,14 +2,24 @@ import { useRef, useEffect } from 'react'
 import { useThemeUI, Box } from 'theme-ui'
 import { select } from 'd3-selection'
 import { brushX } from 'd3-brush'
+import { format } from 'd3-format'
 import Points from './points'
 
-const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
-  const svg = useRef(null)
+const Chart = ({
+  x,
+  y,
+  highlighted,
+  filtered,
+  data,
+  label,
+  setBounds,
+  ticks,
+}) => {
+  const ref = useRef(null)
   const { theme } = useThemeUI()
 
   useEffect(() => {
-    select(svg.current).call(
+    select(ref.current).call(
       brushX()
         .extent([
           [0, 0],
@@ -19,7 +29,7 @@ const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
     )
 
     return function cleanup() {
-      svg.current.innerHTML = ''
+      ref.current.innerHTML = ''
     }
   }, [theme])
 
@@ -49,18 +59,12 @@ const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
     <Box
       sx={{
         width: '100%',
-        height: '95px',
+        height: '100%',
         display: 'block',
         '.selection': { stroke: 'none' },
       }}
     >
-      <svg
-        ref={svg}
-        width='370'
-        height='95'
-        style={{ position: 'absolute' }}
-      ></svg>
-      <svg width='370' height='95'>
+      <svg viewBox='0 0 370 113'>
         <Points
           x={x}
           y={y}
@@ -69,6 +73,21 @@ const Chart = ({ x, y, highlighted, filtered, data, label, setBounds }) => {
           filtered={filtered}
           data={data}
         />
+        <g ref={ref} />
+        {ticks.map((d) => {
+          return (
+            <text
+              x={x(d)}
+              y={110}
+              textAnchor={'middle'}
+              fontFamily={theme.fonts.mono}
+              fill={theme.colors.muted}
+              fontSize={theme.fontSizes[1]}
+            >
+              {format('~s')(d)}
+            </text>
+          )
+        })}
       </svg>
     </Box>
   )

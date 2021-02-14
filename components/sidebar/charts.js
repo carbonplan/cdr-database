@@ -1,8 +1,10 @@
 import { memo } from 'react'
-import { Text, Box } from 'theme-ui'
+import { Text, Box, Grid } from 'theme-ui'
 import { select } from 'd3-selection'
 import { scaleLinear, scaleOrdinal, scaleLog } from 'd3-scale'
+import { format } from 'd3-format'
 import Chart from './chart'
+import Tooltip from '../tooltip'
 
 const sx = {
   axisLabel: {
@@ -26,10 +28,18 @@ const y = scaleOrdinal()
       .map((_, i) => i * 15 + 10)
   )
 
-const Charts = ({ highlighted, filtered, data, setBounds }) => {
+const Charts = ({
+  highlighted,
+  filtered,
+  data,
+  bounds,
+  setBounds,
+  tooltips,
+  setTooltips,
+}) => {
   return (
-    <Box sx={{ mt: [2], pt: [2] }}>
-      <Box sx={{ display: 'inline-block', mb: [1] }}>
+    <Box sx={{ mt: [2], pt: [2], mr: ['24px'] }}>
+      <Grid columns={['150px 1fr 16px']} sx={{ mb: [1] }}>
         <Text variant='label'>
           Volume
           <Text
@@ -39,7 +49,22 @@ const Charts = ({ highlighted, filtered, data, setBounds }) => {
             tCO₂
           </Text>
         </Text>
-      </Box>
+        <Text
+          sx={{
+            opacity: isNaN(bounds.volume[0]) ? 0 : 1,
+            color: 'secondary',
+            fontFamily: 'mono',
+            fontSize: [1],
+          }}
+        >
+          {format('.3s')(bounds.volume[0])} - {format('.3s')(bounds.volume[1])}
+        </Text>
+        <Tooltip
+          value={'volume'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
+      </Grid>
       <Chart
         x={x1}
         y={y}
@@ -48,16 +73,9 @@ const Charts = ({ highlighted, filtered, data, setBounds }) => {
         data={data.volume}
         label='volume'
         setBounds={setBounds}
+        ticks={[10, 100, 1000, 10000, 100000, 1000000]}
       />
-      <Box sx={{ position: 'relative', width: '370px', height: '25px' }}>
-        <Text sx={{ ...sx.axisLabel, left: x1(10) }}>10</Text>
-        <Text sx={{ ...sx.axisLabel, left: x1(100) }}>100</Text>
-        <Text sx={{ ...sx.axisLabel, left: x1(1000) }}>1k</Text>
-        <Text sx={{ ...sx.axisLabel, left: x1(10000) }}>10k</Text>
-        <Text sx={{ ...sx.axisLabel, left: x1(100000) }}>100k</Text>
-        <Text sx={{ ...sx.axisLabel, left: x1(1000000) }}>1M</Text>
-      </Box>
-      <Box sx={{ display: 'inline-block', mt: [2], mb: [1] }}>
+      <Grid columns={['150px 1fr 16px']} sx={{ mt: [3], mb: [1] }}>
         <Text as='span' variant='label'>
           Permanence
           <Text
@@ -67,7 +85,23 @@ const Charts = ({ highlighted, filtered, data, setBounds }) => {
             years
           </Text>
         </Text>
-      </Box>
+        <Text
+          sx={{
+            opacity: isNaN(bounds.permanence[0]) ? 0 : 1,
+            color: 'secondary',
+            fontFamily: 'mono',
+            fontSize: [1],
+          }}
+        >
+          {format('.2s')(bounds.permanence[0])} -{' '}
+          {format('.2s')(bounds.permanence[1])}
+        </Text>
+        <Tooltip
+          value={'permanence'}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
+      </Grid>
       <Chart
         x={x2}
         y={y}
@@ -76,13 +110,8 @@ const Charts = ({ highlighted, filtered, data, setBounds }) => {
         data={data.permanence}
         label='permanence'
         setBounds={setBounds}
+        ticks={[1, 10, 100, 1000]}
       />
-      <Box sx={{ position: 'relative', width: '370px', height: '25px' }}>
-        <Text sx={{ ...sx.axisLabel, ml: ['-4px'], left: x2(1) }}>1</Text>
-        <Text sx={{ ...sx.axisLabel, left: x2(10) }}>10</Text>
-        <Text sx={{ ...sx.axisLabel, left: x2(100) }}>100</Text>
-        <Text sx={{ ...sx.axisLabel, left: x2(1000) }}>1k</Text>
-      </Box>
     </Box>
   )
 }

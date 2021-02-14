@@ -78,6 +78,7 @@ const Report = ({ data, setHighlighted }) => {
         <Box sx={{ float: 'right', textAlign: 'right' }}>
           {tags.map((tag, i) => (
             <Tag
+              key={id + '-tag-' + i}
               label={tag}
               value={true}
               sx={{

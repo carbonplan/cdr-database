@@ -24,11 +24,17 @@ const initBounds = {
   permanence: [],
 }
 
+const initTooltips = {
+  show: false,
+  selected: null,
+}
+
 const Main = ({ projectData, metricsData }) => {
   const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({ count: 0 })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
+  const [tooltips, setTooltips] = useState(initTooltips)
 
   useEffect(() => {
     let obj = {}
@@ -79,13 +85,14 @@ const Main = ({ projectData, metricsData }) => {
     const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume, 10, 1000000) &&
       checkBounds(d.metrics[3].value, bounds.permanence, 1, 1000)
+    const searchTerm = filters.search.toLowerCase()
     const inSearch =
-      filters.search.length > 0 &&
-      (d.applicant.toLowerCase().includes(filters.search.toLowerCase()) ||
-        d.keywords.toLowerCase().includes(filters.search.toLowerCase()) ||
-        d.location.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        (d.tags.length > 1 &&
-          d.tags[1].toLowerCase().includes(filters.search.toLowerCase())))
+      searchTerm.length > 0 &&
+      (d.applicant.toLowerCase().includes(searchTerm) ||
+        d.keywords.toLowerCase().includes(searchTerm) ||
+        d.location.name.toLowerCase().includes(searchTerm) ||
+        d.tags[0].toLowerCase().includes(searchTerm) ||
+        (d.tags.length > 1 && d.tags[1].toLowerCase().includes(searchTerm)))
     const isValidated = d.rating >= filters.rating
     const inFilter =
       inTags && inSource && inBounds && inMechanism && isValidated
@@ -97,12 +104,15 @@ const Main = ({ projectData, metricsData }) => {
   return (
     <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
       <Sidebar
+        bounds={bounds}
         setBounds={setBounds}
         filtered={filtered}
         data={metricsData}
         filters={filters}
         setFilters={setFilters}
         highlighted={highlighted}
+        tooltips={tooltips}
+        setTooltips={setTooltips}
       />
       <List
         filters={filters}
@@ -110,6 +120,8 @@ const Main = ({ projectData, metricsData }) => {
         filtered={filtered}
         data={projectData}
         setHighlighted={setHighlighted}
+        tooltips={tooltips}
+        setTooltips={setTooltips}
       />
     </Grid>
   )

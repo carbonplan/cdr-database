@@ -1,79 +1,25 @@
 import { memo } from 'react'
 import { Box, Text, Grid, Divider } from 'theme-ui'
-import { Badge } from '@carbonplan/components'
-import { format } from 'd3-format'
 import Report from './report'
-import Toggles from './toggles'
+import Top from './top'
 
-const List = ({ filters, setFilters, filtered, data, setHighlighted }) => {
+const List = ({
+  filters,
+  setFilters,
+  filtered,
+  data,
+  setHighlighted,
+  tooltips,
+  setTooltips,
+}) => {
   return (
     <Box>
-      <Box
-        sx={{
-          position: 'sticky',
-          height: 'fit-content',
-          top: 55,
-          pb: [3],
-          pt: '14px',
-          mt: '-14px',
-          mb: [2],
-          ml: [0],
-          backgroundColor: 'background',
-          borderWidth: '0px',
-          borderBottomWidth: '1px',
-          borderColor: 'muted',
-          borderStyle: 'solid',
-        }}
-      >
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-
-            mr: [2],
-          }}
-        >
-          Total
-        </Text>
-        <Badge
-          value={String(data.length).padStart(3, '0')}
-          sx={{ ml: [1], fontSize: [2] }}
-        />
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-            ml: [3],
-            mr: [2],
-          }}
-        >
-          Selected
-        </Text>
-        <Badge
-          value={String(filtered.count).padStart(3, '0')}
-          sx={{ ml: [1] }}
-        />
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-            ml: [3],
-            mr: [2],
-          }}
-        >
-          Volume
-        </Text>
-        <Badge
-          value={format('.2~s')(
-            data
-              .filter((d) => filtered[d.id])
-              .map((d) => d.metrics[1].value)
-              .reduce((a, b) => a + b, 0)
-          )}
-          sx={{ ml: [1] }}
-        />
-        <Toggles filters={filters} setFilters={setFilters} />
-      </Box>
+      <Top
+        data={data}
+        filtered={filtered}
+        tooltips={tooltips}
+        setTooltips={setTooltips}
+      />
       <Divider sx={{ ml: [4] }} />
       <Grid
         columns={[1, 1, 2]}
