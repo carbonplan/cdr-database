@@ -3,7 +3,7 @@ import { Box } from 'theme-ui'
 import MetricMobile from './metric-mobile'
 import MetricDesktop from './metric-desktop'
 
-const Metric = ({ metric, tag }) => {
+const Metric = ({ metric, tag, tooltips, setTooltips }) => {
   const [expanded, setExpanded] = useState(false)
 
   const toggle = (e) => {
@@ -56,6 +56,8 @@ const Metric = ({ metric, tag }) => {
           tag={tag}
           format={format}
           duration={duration}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
         />
       </Box>
       <Box sx={{ display: ['none', 'none', 'inherit'] }}>
@@ -69,6 +71,8 @@ const Metric = ({ metric, tag }) => {
           parse={parse}
           format={format}
           duration={duration}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
         />
       </Box>
     </Box>

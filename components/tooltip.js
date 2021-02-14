@@ -6,7 +6,8 @@ const Tooltip = ({ value, tooltips, setTooltips }) => {
     <Box>
       <Box
         sx={{ display: 'inline-block', cursor: 'pointer', mt: ['3px'] }}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation()
           if (tooltips.selected === value) {
             setTooltips({ show: tooltips.show, selected: null })
           } else {

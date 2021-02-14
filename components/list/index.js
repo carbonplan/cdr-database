@@ -31,7 +31,13 @@ const List = ({
             .filter((d) => filtered[d.id])
             .filter((d, i) => i % 2 == 0)
             .map((d) => (
-              <Report setHighlighted={setHighlighted} key={d.id} data={d} />
+              <Report
+                setHighlighted={setHighlighted}
+                key={d.id}
+                data={d}
+                tooltips={tooltips}
+                setTooltips={setTooltips}
+              />
             ))}
         </Box>
         <Box sx={{ pl: ['24px'], pr: [0] }}>
@@ -39,7 +45,13 @@ const List = ({
             .filter((d) => filtered[d.id])
             .filter((d, i) => i % 2 == 1)
             .map((d) => (
-              <Report setHighlighted={setHighlighted} key={d.id} data={d} />
+              <Report
+                setHighlighted={setHighlighted}
+                key={d.id}
+                data={d}
+                tooltips={tooltips}
+                setTooltips={setTooltips}
+              />
             ))}
         </Box>
       </Grid>

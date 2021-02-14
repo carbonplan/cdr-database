@@ -4,6 +4,7 @@ import { Expander, Icons } from '@carbonplan/components'
 import Bar from './graphics/bar'
 import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
+import Tooltip from '../../tooltip'
 import scales from './graphics/scales'
 
 const { Check } = Icons
@@ -54,6 +55,8 @@ const MetricDesktop = ({
   format,
   parse,
   duration,
+  tooltips,
+  setTooltips,
 }) => {
   const { theme } = useThemeUI()
 
@@ -72,7 +75,11 @@ const MetricDesktop = ({
           pb: [2],
         }}
       >
-        <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 30px 30px']}>
+        <Grid
+          id='grid'
+          gap={['16px']}
+          columns={['55px 95px 1fr 25px 25px 30px']}
+        >
           <Text
             sx={{
               ...sx.value,
@@ -121,12 +128,17 @@ const MetricDesktop = ({
             <Text sx={{ ...sx.label, display: 'inline-block' }}>
               {metric.name}
             </Text>
-            {hasUnits && (
-              <Text sx={{ ...sx.units, display: 'inline-block' }}>
-                {metric.units}
-              </Text>
-            )}
           </Text>
+          {tooltips.show && (
+            <Box sx={{ mt: ['6px'] }}>
+              <Tooltip
+                value={metric.name.toLowerCase()}
+                tooltips={tooltips}
+                setTooltips={setTooltips}
+              />
+            </Box>
+          )}
+          {!tooltips.show && <Box />}
           <Text sx={{ mt: ['3px'] }}>
             {metric.rating === 1 && (
               <Check sx={{ width: '28px', color: theme.tags[tag] }} />

@@ -1,6 +1,5 @@
 import Table from '../components/table'
-import Check from '../components/icons/check'
-import Ex from '../components/icons/ex'
+import InlineCheck from '../components/inline-check'
 
 export const meta = {
   revised: '05-18-2020',
@@ -12,10 +11,9 @@ Our goal is to harmonize metrics across a range of project categories, bringing 
 
 Values for each metric are based on information provided in public project proposals and our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
-The mark next to each metric shows our validation. We gave projects a <Check closed={true}/> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <Check closed={true}/> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
+The mark next to each metric shows our validation. We gave projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
-<!-- prettier-ignore -->
-Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO<sub>2</sub>, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
+Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
 
 For Additionality and Specificity we provide a qualitative score from 1 to 3, along with comments. Both of these scores are contextual. Additionality is less important when funding decisions are oriented around encouraging innovation, rather than carbon offsetting. For Specificity, our scores should be interpreted in light of the fact that all projects in our database have provided a baseline level of information, and achieved a significant degree of transparency, by making materials public.
 
@@ -25,9 +23,9 @@ In the remainder of this document, we explain each metric in detail, and provide
 
 ## Mechanism
 
-A project’s Mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO<sub>2</sub> from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature a closed circle on the right-hand side of the metric and the abbreviation AVD.
+A project’s Mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO₂ from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature a closed circle on the right-hand side of the metric and the abbreviation AVD.
 
-While we only consider projects in this database that have the potential to be part of a carbon removal system, some of these projects are, in their current form, only responsible for avoided emissions. For example, utilization of CO<sub>2</sub> for storage in building materials where the CO<sub>2</sub> is currently sourced from an industrial waste stream currently constitutes an avoided emissions process, but would constitute carbon removal if its CO<sub>2</sub> were sourced from direct air capture or biological sources.
+While we only consider projects in this database that have the potential to be part of a carbon removal system, some of these projects are, in their current form, only responsible for avoided emissions. For example, utilization of CO₂ for storage in building materials where the CO₂ is currently sourced from an industrial waste stream currently constitutes an avoided emissions process, but would constitute carbon removal if its CO₂ were sourced from direct air capture or biological sources.
 
 In general, a project’s mechanism should be well-specified. The challenge of validation can be more significant, however, when a project involves early-stage technologies or references a broad variety of potential approaches without specifics about which ones are used.
 
@@ -38,7 +36,7 @@ In general, a project’s mechanism should be well-specified. The challenge of v
 
 ## Volume
 
-Volume estimates almost all come directly from project applications, and are stated in metric tCO<sub>2</sub>. In a few cases, volume is specified in a way that can’t easily be compared with other projects, and can potentially be normalized.
+Volume estimates almost all come directly from project applications, and are stated in metric tCO₂. In a few cases, volume is specified in a way that can’t easily be compared with other projects, and can potentially be normalized.
 
 Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. direct air capture), and those that are performing a one-time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
 
@@ -59,7 +57,7 @@ In many cases we were unable to validate volume through an independent calculati
 
 We define Negativity as 1 minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
 
-As discussed above under Mechanism, the concept of “climate benefits” is complicated because some projects directly remove CO<sub>2</sub> (and thus contribute “gross removal”) but others primarily avoid and store CO<sub>2</sub> emissions (and thus contribute “gross storage”). For example, a project that mineralizes CO<sub>2</sub> sourced from industrial waste streams is primarily avoiding emissions, rather than directly removing CO<sub>2</sub>. We call the CO<sub>2</sub> it mineralizes its “gross storage.” Similarly, a project that produces biochar from biogenic materials is not directly removing CO<sub>2</sub> from the atmosphere, but is rather avoiding biogenic CO<sub>2</sub> emissions. We would calculate the carbon embedded in biochar as the project’s “gross storage” for the purposes of the Negativity metric.
+As discussed above under Mechanism, the concept of “climate benefits” is complicated because some projects directly remove CO₂ (and thus contribute “gross removal”) but others primarily avoid and store CO₂ emissions (and thus contribute “gross storage”). For example, a project that mineralizes CO₂ sourced from industrial waste streams is primarily avoiding emissions, rather than directly removing CO₂. We call the CO₂ it mineralizes its “gross storage.” Similarly, a project that produces biochar from biogenic materials is not directly removing CO₂ from the atmosphere, but is rather avoiding biogenic CO₂ emissions. We would calculate the carbon embedded in biochar as the project’s “gross storage” for the purposes of the Negativity metric.
 
 When projects report Negativity based on volume that also includes avoided emissions due to other practices that were prevented (e.g. prevented use of alternative building materials), we recompute the ratio, if possible, to only reflect the carbon removal or carbon storage component.
 
@@ -102,7 +100,7 @@ Building materials are intermediate, as the plausible duration of Permanence dep
 Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects).
 
 <!-- prettier-ignore -->
-Costs are expressed per metric tCO<sub>2</sub> and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO<sub>2</sub> depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
+Costs are expressed per metric tCO₂ and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
 
 We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for direct air capture and mineralization.
 
