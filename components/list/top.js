@@ -1,6 +1,6 @@
 import { Box, Text } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
-import { Badge, Toggle, Switch, Icons } from '@carbonplan/components'
+import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
 import { format } from 'd3-format'
 import glossary from '../../glossary'
 
@@ -34,10 +34,9 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         >
           Total
         </Text>
-        <Badge
-          value={String(data.length).padStart(3, '0')}
-          sx={{ ml: [1], fontSize: [2] }}
-        />
+        <Badge sx={{ ml: [1], fontSize: [2] }}>
+          {String(data.length).padStart(3, '0')}
+        </Badge>
         <Text
           variant='label'
           sx={{
@@ -48,10 +47,9 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         >
           Selected
         </Text>
-        <Badge
-          value={String(filtered.count).padStart(3, '0')}
-          sx={{ ml: [1] }}
-        />
+        <Badge sx={{ ml: [1] }}>
+          {String(filtered.count).padStart(3, '0')}
+        </Badge>
         <Text
           variant='label'
           sx={{
@@ -62,15 +60,14 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         >
           Volume
         </Text>
-        <Badge
-          value={format('.2~s')(
+        <Badge sx={{ ml: [1] }}>
+          {format('.2~s')(
             data
               .filter((d) => filtered[d.id])
               .map((d) => d.metrics[1].value)
               .reduce((a, b) => a + b, 0)
           )}
-          sx={{ ml: [1] }}
-        />
+        </Badge>
         <Box sx={{ display: 'inline-block', float: 'right', mt: ['-5px'] }}>
           <Toggle
             value={tooltips.show}
@@ -100,7 +97,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
               display: 'inline-block',
             }}
           >
-            <Switch />
+            <Dimmer />
           </Box>
         </Box>
       </Box>
@@ -115,14 +112,19 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
               color: 'secondary',
               fontSize: [2],
               pt: [2],
+              pb: [1],
               textAlign: 'left',
               display: 'inline-block',
             }}
           >
-            {tooltips.selected &&
-              capitalize(tooltips.selected) +
-                ': ' +
-                glossary[tooltips.selected]}
+            {tooltips.selected && (
+              <Text>
+                <Text as='span' sx={{ color: 'text' }}>
+                  {capitalize(tooltips.selected) + ': '}
+                </Text>
+                <Text as='span'>{glossary[tooltips.selected]}</Text>
+              </Text>
+            )}
             {!tooltips.selected && (
               <Box>
                 Click a{' '}

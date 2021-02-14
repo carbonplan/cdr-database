@@ -74,15 +74,17 @@ const Chart = ({
           data={data}
         />
         <g ref={ref} />
-        {ticks.map((d) => {
+        {ticks.map((d, i) => {
           return (
             <text
+              key={'tick-' + label + '-' + i}
               x={x(d)}
               y={110}
               textAnchor={'middle'}
               fontFamily={theme.fonts.mono}
               fill={theme.colors.muted}
               fontSize={theme.fontSizes[1]}
+              style={{ userSelect: 'none' }}
             >
               {format('~s')(d)}
             </text>

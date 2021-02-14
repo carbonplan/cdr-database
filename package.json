@@ -24,7 +24,7 @@
   "homepage": "https://github.com/carbonplan/reports-dev#readme",
   "dependencies": {
     "@babel/core": "^7.12.10",
-    "@carbonplan/components": "^2.5.17",
+    "@carbonplan/components": "^3.0.2",
     "@carbonplan/theme": "^2.3.1",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.5",
@@ -33,7 +33,7 @@
     "d3-scale": "^3.2.3",
     "d3-selection": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.5",
+    "next": "^10.0.6",
     "polished": "^4.1.0",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",

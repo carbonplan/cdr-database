@@ -13,6 +13,15 @@ const colors = {
   soil: 'orange',
 }
 
+const categories = [
+  'forests',
+  'soil',
+  'biomass',
+  'ocean',
+  'mineralization',
+  'dac',
+]
+
 const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
   function toggleOption(value) {
     setFilters((filters) => {
@@ -20,10 +29,44 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
     })
   }
 
+  function toggleOptionUnique(value) {
+    let updated = {}
+    categories.forEach((d) => {
+      updated[d] = value === d ? true : false
+    })
+    setFilters((filters) => {
+      return {
+        ...filters,
+        ...updated,
+      }
+    })
+  }
+
+  function toggleAll() {
+    let updated = {}
+    categories.forEach((d) => {
+      updated[d] = true
+    })
+    setFilters((filters) => {
+      return {
+        ...filters,
+        ...updated,
+      }
+    })
+  }
+
   function setRating(value) {
     setFilters((filters) => {
       return { ...filters, ['rating']: value }
     })
+  }
+
+  function isAll() {
+    let check = 0
+    categories.forEach((d) => {
+      if (filters[d]) check += 1
+    })
+    return check == categories.length
   }
 
   return (
@@ -38,7 +81,9 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
               value={filters[d]}
               sx={{ color: 'primary' }}
               onClick={() => toggleOption(d)}
-            />
+            >
+              {d}
+            </Tag>
           ))}
         </Box>
         <Tooltip
@@ -49,18 +94,22 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
       </Grid>
       <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>CATEGORY</Text>
-        <Box sx={{}}>
-          {['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'].map(
-            (d) => (
-              <Tag
-                key={d}
-                label={d}
-                value={filters[d]}
-                sx={{ color: colors[d] }}
-                onClick={() => toggleOption(d)}
-              />
-            )
-          )}
+        <Box>
+          {categories.map((d) => (
+            <Tag
+              key={d}
+              label={d}
+              value={filters[d]}
+              sx={{ color: colors[d] }}
+              onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d)}
+            >
+              {d}
+            </Tag>
+          ))}
+          <Tag label={'all'} value={isAll()} onClick={() => toggleAll()}>
+            All
+          </Tag>
         </Box>
         <Tooltip
           value={'category'}
@@ -78,7 +127,9 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
               value={filters[d]}
               sx={{ color: colors[d] }}
               onClick={() => toggleOption(d)}
-            />
+            >
+              {d}
+            </Tag>
           ))}
         </Box>
         <Tooltip

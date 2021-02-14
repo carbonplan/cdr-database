@@ -35,6 +35,7 @@ def get_sheet(sheet, doc):
     sheet = wks.worksheet(sheet)
     data = sheet.get_all_values()
     h1 = ffill(data[0])
+    print(h1)
 
     # remove extra whitespace
     h1 = [k.strip() for k in h1]

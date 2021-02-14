@@ -28,7 +28,13 @@ export default {
     ifm: 'green',
     agroforestry: 'green',
     concrete: 'grey',
+    sand: 'grey',
+    powder: 'grey',
     gravel: 'grey',
-    wood: 'yellow'
+    wood: 'yellow',
+    farms: 'orange',
+    rangeland: 'orange',
+    conversion: 'orange',
+    macroalgae: 'green'
   }
 }

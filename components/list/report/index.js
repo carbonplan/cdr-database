@@ -86,7 +86,9 @@ const Report = ({ data, setHighlighted }) => {
                 mr: i == 0 ? [2] : [0],
                 color: theme.tags[tag],
               }}
-            />
+            >
+              {tag}
+            </Tag>
           ))}
         </Box>
       </Box>
