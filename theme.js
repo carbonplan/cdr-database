@@ -21,6 +21,7 @@ export default {
     ocean: 'teal',
     soil: 'orange',
     reforestation: 'green',
+    'redd+': 'green',
     biochar: 'yellow',
     burial: 'yellow',
     injection: 'grey',
@@ -28,13 +29,15 @@ export default {
     ifm: 'green',
     agroforestry: 'green',
     concrete: 'grey',
-    sand: 'grey',
-    powder: 'grey',
-    gravel: 'grey',
+    aggregate: 'grey',
+    olivine: 'grey',
     wood: 'yellow',
     farms: 'orange',
     rangeland: 'orange',
     conversion: 'orange',
-    macroalgae: 'green'
+    macroalgae: 'green',
+    wetlands: 'green',
+    insulation: 'yellow',
+    restoration: 'orange'
   }
 }
