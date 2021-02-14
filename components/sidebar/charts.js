@@ -57,7 +57,11 @@ const Charts = ({
             fontSize: [1],
           }}
         >
-          {format('.3s')(bounds.volume[0])} - {format('.3s')(bounds.volume[1])}
+          {!isNaN(bounds.volume[0]) &&
+            format('.3~s')(bounds.volume[0].toFixed(0))}{' '}
+          -{' '}
+          {!isNaN(bounds.volume[1]) &&
+            format('.3~s')(bounds.volume[1].toFixed(0))}
         </Text>
         <Tooltip
           value={'volume'}
@@ -93,8 +97,11 @@ const Charts = ({
             fontSize: [1],
           }}
         >
-          {format('.2s')(bounds.permanence[0])} -{' '}
-          {format('.2s')(bounds.permanence[1])}
+          {!isNaN(bounds.permanence[0]) &&
+            format('.3~s')(bounds.permanence[0].toFixed(0))}{' '}
+          -{' '}
+          {!isNaN(bounds.permanence[1]) &&
+            format('.3~s')(bounds.permanence[1].toFixed(0))}
         </Text>
         <Tooltip
           value={'permanence'}

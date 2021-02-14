@@ -33,8 +33,8 @@ const Sidebar = ({
         </Text>
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
           <Text sx={{ pt: [1], pb: [3] }}>
-            Reports on public CDR project proposals. Download the raw data as
-            JSON or CSV. <br /> Read our methods.
+            Reports on public CDR project proposals. Download as JSON or CSV.
+            Read our methods.
           </Text>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
