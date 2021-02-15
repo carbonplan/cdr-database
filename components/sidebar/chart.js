@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { format } from 'd3-format'
 import Axis from './axis'
-import TooltipToggle from '../tooltip-toggle'
-import TooltipDescription from '../tooltip-description'
+import TooltipToggle from '../tooltip/toggle'
+import TooltipDescription from '../tooltip/description'
 
 const Chart = ({
   x,

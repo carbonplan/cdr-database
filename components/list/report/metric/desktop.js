@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { useThemeUI, Box, Divider, Grid, Text } from 'theme-ui'
 import { Expander, Icons } from '@carbonplan/components'
-import Bar from './graphics/bar'
-import Squares from './graphics/squares'
-import Emissions from './graphics/emissions'
-import TooltipToggle from '../../tooltip-toggle'
-import TooltipDescription from '../../tooltip-description'
-import scales from './graphics/scales'
+import Bar from '../graphics/bar'
+import Squares from '../graphics/squares'
+import Emissions from '../graphics/emissions'
+import TooltipToggle from '../../../tooltip/toggle'
+import TooltipDescription from '../../../tooltip/description'
+import scales from '../graphics/scales'
 
 const { Check } = Icons
 

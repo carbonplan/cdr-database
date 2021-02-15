@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box } from 'theme-ui'
-import MetricMobile from './metric-mobile'
-import MetricDesktop from './metric-desktop'
+import MetricMobile from './mobile'
+import MetricDesktop from './desktop'
 
 const Metric = ({ metric, tag, tooltips }) => {
   const [expanded, setExpanded] = useState(false)

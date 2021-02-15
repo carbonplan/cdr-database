@@ -4,6 +4,42 @@ import { Expander, Icons } from '@carbonplan/components'
 
 const { Check } = Icons
 
+const sx = {
+  comment: {
+    fontFamily: 'faux',
+    fontSize: [1],
+    color: 'secondary',
+    letterSpacing: 'faux',
+    lineHeight: 'small',
+    mt: [0],
+    mb: [2],
+  },
+  value: {
+    fontFamily: 'mono',
+    fontSize: [3],
+    textAlign: 'right',
+    mt: ['5px'],
+  },
+  label: {
+    fontFamily: 'mono',
+    fontSize: [2],
+    mt: ['6px'],
+    textTransform: 'capitalize',
+  },
+  units: {
+    fontFamily: 'mono',
+    color: 'secondary',
+    fontSize: [1],
+    ml: [2],
+    textTransform: 'normal',
+  },
+  rating: {
+    display: 'inline-block',
+    ml: [3],
+    fontSize: ['18px'],
+  },
+}
+
 const MetricMobile = ({
   metric,
   toggle,
@@ -31,20 +67,31 @@ const MetricMobile = ({
           pb: [3],
         }}
       >
-        <Grid id='grid' columns={['1fr 30px']}>
+        <Grid id='grid' columns={['1fr 50px 30px']}>
           <Text>
-            <Text variant='metric.label' sx={{ display: 'inline-block' }}>
+            <Text sx={{ ...sx.label, mb: [1], display: 'inline-block' }}>
               {metric.name}
             </Text>
             {hasUnits && (
-              <Text variant='metric.units' sx={{ display: 'inline-block' }}>
+              <Text sx={{ ...sx.units, display: 'inline-block' }}>
                 {metric.units}
               </Text>
             )}
-            {metric.rating === 1 && <Check color={theme.tags[tag]} />}
           </Text>
+          {metric.rating === 1 && (
+            <Check
+              sx={{
+                position: 'relative',
+                ml: [0],
+                top: ['8px'],
+                width: 28,
+                color: theme.tags[tag],
+              }}
+            />
+          )}
+          {!(metric.rating === 1) && <Box />}
           {hasDetails && (
-            <Box id='container' sx={{ ml: ['-5px'] }}>
+            <Box id='container' sx={{ mt: ['10px'], ml: ['-5px'] }}>
               <Expander
                 id={'expander'}
                 toggle={toggle}
@@ -54,8 +101,8 @@ const MetricMobile = ({
           )}
         </Grid>
         <Text
-          variant='metric.value'
           sx={{
+            ...sx.value,
             color: theme.tags[tag],
             textAlign: ['left'],
             fontSize: [4],
@@ -69,7 +116,7 @@ const MetricMobile = ({
             <Text
               sx={{
                 color: theme.tags[tag],
-                fontFamily: 'monospace',
+                fontFamily: 'mono',
                 letterSpacing: 'mono',
                 fontSize: [4],
               }}
@@ -83,7 +130,7 @@ const MetricMobile = ({
             <Text
               sx={{
                 color: theme.tags[tag],
-                fontFamily: 'monospace',
+                fontFamily: 'mono',
                 letterSpacing: 'mono',
                 fontSize: [4],
               }}
@@ -96,7 +143,7 @@ const MetricMobile = ({
             <Text
               sx={{
                 color: theme.tags[tag],
-                fontFamily: 'monospace',
+                fontFamily: 'mono',
                 letterSpacing: 'mono',
                 fontSize: [4],
               }}
@@ -123,8 +170,8 @@ const MetricMobile = ({
               {metric.notes && (
                 <Box>
                   <Text
-                    variant='metric.comment'
                     sx={{
+                      ...sx.comment,
                       color: theme.tags[tag],
                       textAlign: ['left', 'left', 'right'],
                       mr: [2],
@@ -135,8 +182,8 @@ const MetricMobile = ({
                     NOTES
                   </Text>
                   <Text
-                    variant='metric.comment'
                     sx={{
+                      ...sx.comment,
                       ml: [0],
                     }}
                   >
@@ -152,8 +199,8 @@ const MetricMobile = ({
               {metric.comment && (
                 <Box>
                   <Text
-                    variant='metric.comment'
                     sx={{
+                      ...sx.comment,
                       color: theme.tags[tag],
                       textAlign: ['left'],
                       mr: [2],
@@ -164,8 +211,8 @@ const MetricMobile = ({
                     COMMENT
                   </Text>
                   <Text
-                    variant='metric.comment'
                     sx={{
+                      ...sx.comment,
                       ml: [0],
                     }}
                   >

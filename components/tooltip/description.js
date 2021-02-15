@@ -1,6 +1,6 @@
 import { Box } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
-import glossary from '../glossary'
+import glossary from '../../glossary'
 
 const TooltipDescription = ({ label, value, tooltips, ml }) => {
   return (
