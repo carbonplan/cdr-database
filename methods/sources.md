@@ -13,6 +13,3 @@ In the fall of 2020 Microsoft announced a commitment to purchase carbon removal.
 ## Stripe 2020
 
 In the spring of 2020 Stripe announced a commitment to purchase carbon removal. They made a call for proposals, solicited applications using [this form](), evaluated them, and selected winners for their 2020 purchase. All public materials are available [on Github](). They received TK submissions. We included all TK (100%) for our analyses.
-
-
-

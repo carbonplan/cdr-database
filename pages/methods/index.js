@@ -19,27 +19,27 @@ function Methods(props) {
     <Layout container={false} footer={false} metadata={'scroll'}>
       <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
         <Box
-        sx={{
-          position: ['initial', 'initial', 'sticky'],
-          position: 'sticky',
-          top: 56,
-          height: 'fit-content',
-          pr: ['24px']
-        }}
-      >
-        <Text
-          as='h1'
-          sx={{ fontSize: [6], pt: [2, 2, 3], mb: [1], mt: [2, 2, 0] }}
+          sx={{
+            position: ['initial', 'initial', 'sticky'],
+            position: 'sticky',
+            top: 56,
+            height: 'fit-content',
+            pr: ['24px'],
+          }}
         >
-          Methods
-        </Text>
-        <Text sx={{ pt: [1], fontSize: [2] }}>
-          Descriptions of our metrics and notes on each carbon removal project
-          we have analyzed. Check out the{' '}
-          <Link onClick={() => setSection('feedback')}>feedback</Link> section
-          if you have questions or want to get in touch.
-        </Text>
-        <TOC setSection={setSection} section={section}></TOC>
+          <Text
+            as='h1'
+            sx={{ fontSize: [6], pt: [2, 2, 3], mb: [1], mt: [2, 2, 0] }}
+          >
+            Methods
+          </Text>
+          <Text sx={{ pt: [1], fontSize: [2] }}>
+            Descriptions of our metrics and notes on each carbon removal project
+            we have analyzed. Check out the{' '}
+            <Link onClick={() => setSection('feedback')}>feedback</Link> section
+            if you have questions or want to get in touch.
+          </Text>
+          <TOC setSection={setSection} section={section}></TOC>
         </Box>
         <Box
           sx={{
@@ -50,10 +50,10 @@ function Methods(props) {
             pl: [1, 1, 5],
             pr: [1, 1, 7],
             pt: [1],
-            pb: [4]
+            pb: [4],
           }}
         >
-          <Box sx={{ mt: ['-80px', '-80px', '-50px']}}>
+          <Box sx={{ mt: ['-80px', '-80px', '-50px'] }}>
             {section == 'sources' && <Sources />}
             {section == 'metrics' && <Metrics />}
             {section == 'feedback' && <Feedback />}

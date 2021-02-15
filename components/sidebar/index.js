@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Box, Input, Styled, Grid, Text, Divider, Link } from 'theme-ui'
-import { default as NextLink } from 'next/Link'
+import { default as NextLink } from 'next/link'
 import Search from './search'
 import Metadata from './metadata'
 import Charts from './charts'
@@ -33,9 +33,13 @@ const Sidebar = ({
           CDR Database
         </Text>
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
-          <Text sx={{ pt: [1], mb: [1], pb: [3] }}>
+          <Text sx={{ pt: [1], mb: [1], pb: [1, 3, 3] }}>
             Reports on public CDR project proposals. Download as JSON or CSV.
-            Read our <NextLink href={'/methods'} passHref><Link>methods</Link></NextLink>.
+            Read our{' '}
+            <NextLink href={'/methods'} passHref>
+              <Link>methods</Link>
+            </NextLink>
+            .
           </Text>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>

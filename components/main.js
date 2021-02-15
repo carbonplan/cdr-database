@@ -102,7 +102,7 @@ const Main = ({ projectData, metricsData }) => {
   }
 
   return (
-    <Grid columns={[1, 1, 'minmax(400px, 30%) auto']} gap={['0px']}>
+    <Grid columns={[1, 1, 'minmax(405px, 30%) auto']} gap={['0px']}>
       <Sidebar
         bounds={bounds}
         setBounds={setBounds}

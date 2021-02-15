@@ -1,4 +1,4 @@
-import { Box, Text } from 'theme-ui'
+import { Flex, Box, Text } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
 import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
 import { format } from 'd3-format'
@@ -11,7 +11,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         position: 'sticky',
         height: 'fit-content',
         top: 55,
-        pb: [3],
+        pb: ['13px'],
         pt: '14px',
         mt: '-14px',
         mb: [2],
@@ -23,72 +23,83 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         borderStyle: 'solid',
       }}
     >
-      <Box>
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-
-            mr: [2],
-          }}
-        >
-          Total
-        </Text>
-        <Badge sx={{ ml: [1], fontSize: [2] }}>
-          {String(data.length).padStart(3, '0')}
-        </Badge>
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-            ml: [3],
-            mr: [2],
-          }}
-        >
-          Selected
-        </Text>
-        <Badge sx={{ ml: [1] }}>
-          {String(filtered.count).padStart(3, '0')}
-        </Badge>
-        <Text
-          variant='label'
-          sx={{
-            display: 'inline-block',
-            ml: [3],
-            mr: [2],
-          }}
-        >
-          Volume
-        </Text>
-        <Badge sx={{ ml: [1] }}>
-          {format('.2~s')(
-            data
-              .filter((d) => filtered[d.id])
-              .map((d) => d.metrics[1].value)
-              .reduce((a, b) => a + b, 0)
-          )}
-        </Badge>
-        <Box sx={{ display: 'inline-block', float: 'right', mt: ['-5px'] }}>
-          <Toggle
-            value={tooltips.show}
-            onClick={() => {
-              setTooltips({ show: !tooltips.show, selected: tooltips.selected })
-              setTimeout(() => {
-                setTooltips({ show: !tooltips.show, selected: null })
-              }, 150)
-            }}
-            sx={{ mr: [3] }}
-          />
+      <Flex
+        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [3] }}
+      >
+        <Box>
           <Text
             variant='label'
             sx={{
-              position: 'relative',
-              top: '-5px',
               display: 'inline-block',
+              mr: [2],
+              fontSize: [1],
             }}
           >
-            SHOW TOOLTIPS
+            Total
           </Text>
+          <Badge sx={{ ml: [1], fontSize: [2] }}>
+            {String(data.length).padStart(3, '0')}
+          </Badge>
+          <Text
+            variant='label'
+            sx={{
+              display: 'inline-block',
+              ml: [3],
+              mr: [2],
+            }}
+          >
+            Selected
+          </Text>
+          <Badge sx={{ ml: [1] }}>
+            {String(filtered.count).padStart(3, '0')}
+          </Badge>
+          <Box sx={{ display: ['none', 'initial', 'initial'] }}>
+            <Text
+              variant='label'
+              sx={{
+                display: 'inline-block',
+                ml: [3],
+                mr: [2],
+              }}
+            >
+              Volume
+            </Text>
+            <Badge sx={{ ml: [1] }}>
+              {format('.2~s')(
+                data
+                  .filter((d) => filtered[d.id])
+                  .map((d) => d.metrics[1].value)
+                  .reduce((a, b) => a + b, 0)
+              )}
+            </Badge>
+          </Box>
+        </Box>
+        <Box sx={{ display: 'inline-block', float: 'right', mt: ['-5px'] }}>
+          <Box sx={{ display: ['none', 'initial', 'initial'] }}>
+            <Toggle
+              value={tooltips.show}
+              onClick={() => {
+                setTooltips({
+                  show: !tooltips.show,
+                  selected: tooltips.selected,
+                })
+                setTimeout(() => {
+                  setTooltips({ show: !tooltips.show, selected: null })
+                }, 150)
+              }}
+              sx={{ mr: [3] }}
+            />
+            <Text
+              variant='label'
+              sx={{
+                position: 'relative',
+                top: '-5px',
+                display: 'inline-block',
+              }}
+            >
+              SHOW TOOLTIPS
+            </Text>
+          </Box>
           <Box
             sx={{
               top: '2px',
@@ -100,7 +111,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
             <Dimmer />
           </Box>
         </Box>
-      </Box>
+      </Flex>
       <AnimateHeight
         duration={100}
         height={tooltips.show ? 'auto' : 0}

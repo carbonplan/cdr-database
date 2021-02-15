@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
-import { useThemeUI, Divider, Box, Text, Grid, Link } from 'theme-ui'
+import { useThemeUI, Divider, Box, Flex, Text, Grid, Link } from 'theme-ui'
 import { Expander, Tag } from '@carbonplan/components'
 import Metric from './metric'
 
@@ -49,33 +49,55 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
         borderStyle: 'solid',
         borderColor: 'muted',
         borderWidth: '0px',
-        borderLeftWidth: '1px',
+        borderBottomWidth: ['1px', '1px', '0px'],
+        borderLeftWidth: ['0px', '0px', '1px'],
         borderRadius: '0px',
         cursor: 'pointer',
-        pl: ['24px'],
+        pl: [0, 0, '24px'],
         pr: [0],
-        pt: ['12px'],
+        pt: ['0px', '0px', '12px'],
         pb: [3],
         my: [3],
-        mb: [4],
+        mb: [3, 3, 4],
         transition: 'border-color 0.15s',
         '&:hover': {
-          borderColor: 'secondary',
+          borderColor: ['muted', 'muted', 'secondary'],
         },
-        '&:hover > #container > #expander': {
+        '&:hover > #container > #flex > #expander': {
           fill: 'primary',
           stroke: 'primary',
         },
       }}
     >
-      <Box id='container'>
-        <Text
-          sx={{ display: 'inline-block', fontSize: [4], lineHeight: 'heading' }}
+      <Flex
+        id='container'
+        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [2] }}
+      >
+        <Flex
+          id='flex'
+          sx={{
+            width: ['100%', '100%', 'fit-content'],
+            flexWrap: 'wrap',
+            rowGap: [2],
+            columnGap: [2],
+          }}
         >
-          {applicant}
-        </Text>
-        <Expander sx={{ ml: [2] }} id='expander' value={expanded}></Expander>
-        <Box sx={{ float: 'right', textAlign: 'right' }}>
+          <Text
+            sx={{
+              display: 'inline-block',
+              fontSize: [4],
+              lineHeight: 'heading',
+            }}
+          >
+            {applicant}
+          </Text>
+          <Expander
+            sx={{ mt: ['2px'] }}
+            id='expander'
+            value={expanded}
+          ></Expander>
+        </Flex>
+        <Box sx={{}}>
           {tags.map((tag, i) => (
             <Tag
               key={id + '-tag-' + i}
@@ -91,9 +113,9 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
             </Tag>
           ))}
         </Box>
-      </Box>
-      <Text sx={{ pt: [2], pb: [2], fontSize: [2] }}>{description}</Text>
-      <Text sx={{ fontSize: [1], pt: [0], pb: [1], color: 'secondary' }}>
+      </Flex>
+      <Text sx={{ pt: ['2px'], pb: [2], fontSize: [2] }}>{description}</Text>
+      <Text sx={{ fontSize: [1], pt: ['2px'], pb: [1], color: 'secondary' }}>
         {id.includes('STRP') && 'Stripe 2020'}
         {id.includes('MSFT') && 'Microsoft 2021'}
       </Text>

@@ -38,6 +38,7 @@
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
     "react-dom": "^16.14.0",
+    "react-use": "^17.1.1",
     "rehype-slug": "^4.0.1",
     "safe-compare": "^1.1.4",
     "swr": "^0.4.0",

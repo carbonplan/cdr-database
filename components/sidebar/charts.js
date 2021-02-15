@@ -39,8 +39,6 @@ const Charts = ({
 }) => {
   const [hint, setHint] = useState({ volume: false, permanence: false })
 
-  console.log(hint)
-
   return (
     <Box sx={{ mt: [2], pt: [2], mr: ['24px'] }}>
       <Grid columns={['150px 1fr 16px']} sx={{ mb: [1] }}>
@@ -60,6 +58,7 @@ const Charts = ({
             fontFamily: 'mono',
             fontSize: [1],
             mt: ['3px'],
+            transition: '0.2s',
           }}
         >
           {!isNaN(bounds.volume[0]) &&
@@ -77,7 +76,7 @@ const Charts = ({
       </Grid>
       <Box
         onMouseEnter={() => setHint({ ...hint, volume: true })}
-        onMouseLeave={() => setHint({ ...hint, volume: false })}
+        onMouseOut={() => setHint({ ...hint, volume: false })}
       >
         <Chart
           x={x1}
@@ -107,6 +106,7 @@ const Charts = ({
             fontFamily: 'mono',
             fontSize: [1],
             mt: ['3px'],
+            transition: '0.2s',
           }}
         >
           {!isNaN(bounds.permanence[0]) &&
@@ -124,7 +124,7 @@ const Charts = ({
       </Grid>
       <Box
         onMouseEnter={() => setHint({ ...hint, permanence: true })}
-        onMouseLeave={() => setHint({ ...hint, permanence: false })}
+        onMouseOut={() => setHint({ ...hint, permanence: false })}
       >
         <Chart
           x={x2}

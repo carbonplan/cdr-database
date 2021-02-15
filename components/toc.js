@@ -69,20 +69,24 @@ const TOC = ({ section, setSection }) => {
         }}
       >
         {sections.map((d) => {
-          return <Box
-            sx={{
-              mr: [3, 3, 0],
-              display: ['inline-block', 'inline-block', 'block'],
-              mt: [2],
-              fontSize: [3],
-            }}
-          >
-            <Link sx={style(d.toLowerCase())} onClick={() => setSection(d.toLowerCase())}>
-              {d}
-            </Link>
-          </Box>
-          })
-        }
+          return (
+            <Box
+              sx={{
+                mr: [3, 3, 0],
+                display: ['inline-block', 'inline-block', 'block'],
+                mt: [2],
+                fontSize: [3],
+              }}
+            >
+              <Link
+                sx={style(d.toLowerCase())}
+                onClick={() => setSection(d.toLowerCase())}
+              >
+                {d}
+              </Link>
+            </Box>
+          )
+        })}
       </Box>
     </Box>
   )
