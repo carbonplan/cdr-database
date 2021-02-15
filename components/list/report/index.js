@@ -63,7 +63,7 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
         '&:hover': {
           borderColor: ['muted', 'muted', 'secondary'],
         },
-        '&:hover > #container > #flex > #expander': {
+        '&:hover > #container > #box > #flex > #expander': {
           fill: 'primary',
           stroke: 'primary',
         },
@@ -73,7 +73,7 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
         id='container'
         sx={{ justifyContent: 'space-between', flexWrap: 'wrap', mt: ['-6px'] }}
       >
-        <Box sx={{ mt: ['6px'] }}>
+        <Box id='box' sx={{ mt: ['6px'] }}>
           <Flex
             id='flex'
             sx={{
