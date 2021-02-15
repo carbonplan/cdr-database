@@ -71,31 +71,43 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
     >
       <Flex
         id='container'
-        sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}
+        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', mt: ['-6px'] }}
       >
-        <Flex
-          id='flex'
-          sx={{
-            width: ['100%', '100%', 'fit-content'],
-            flexWrap: 'wrap',
-          }}
-        >
-          <Text
+        <Box sx={{ mt: ['6px'] }}>
+          <Flex
+            id='flex'
             sx={{
-              display: 'inline-block',
-              fontSize: [4],
-              lineHeight: 'heading',
+              width: ['fit-content'],
+              flexWrap: 'wrap',
+              ml: [-2],
+              mt: [-2],
             }}
           >
-            {applicant}
-          </Text>
-          <Expander
-            sx={{ mt: ['2px'], ml: [2] }}
-            id='expander'
-            value={expanded}
-          ></Expander>
-        </Flex>
-        <Box sx={{ mt: [0], pt: ['6px', '6px', 0] }}>
+            <Text
+              sx={{
+                display: 'inline-block',
+                fontSize: [4],
+                lineHeight: 'heading',
+                ml: [2],
+                mt: [2],
+              }}
+            >
+              {applicant}
+            </Text>
+            <Expander
+              sx={{ ml: [2], mr: [2], mt: ['10px'] }}
+              id='expander'
+              value={expanded}
+            ></Expander>
+          </Flex>
+        </Box>
+        <Box
+          sx={{
+            width: ['100%', 'fit-content', 'fit-content'],
+            pt: [0],
+            mt: ['6px'],
+          }}
+        >
           {tags.map((tag, i) => (
             <Tag
               key={id + '-tag-' + i}
