@@ -17,7 +17,7 @@ const Search = ({ setSearch, tooltips }) => {
     <Box sx={{ mr: ['24px'] }}>
       <Field label='search' tooltips={tooltips}>
         <Text variant='label'>Search</Text>
-        <Box>
+        <Box sx={{position: 'relative'}}>
           <Input
             type='text'
             ref={inputRef}
@@ -49,6 +49,7 @@ const Search = ({ setSearch, tooltips }) => {
             as='span'
             sx={{
               display: 'inline-block',
+              position: 'absolute',
               opacity: !hasFocus ? 0.6 : 0,
               borderWidth: '1px',
               pl: ['3px'],
@@ -59,7 +60,8 @@ const Search = ({ setSearch, tooltips }) => {
               borderColor: 'secondary',
               color: 'secondary',
               transition: '0.15s',
-              ml: ['-64px'],
+              left: ['148px'],
+              top: ['2px'],
               userSelect: 'none',
             }}
           >
