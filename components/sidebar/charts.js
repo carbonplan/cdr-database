@@ -1,11 +1,7 @@
 import { memo, useState } from 'react'
-import { Text, Box, Grid } from 'theme-ui'
-import { select } from 'd3-selection'
-import { scaleLinear, scaleOrdinal, scaleLog } from 'd3-scale'
-import { format } from 'd3-format'
+import { Box } from 'theme-ui'
+import { scaleOrdinal, scaleLog } from 'd3-scale'
 import Chart from './chart'
-import Tooltip from '../tooltip'
-import TooltipDescription from '../tooltip-description'
 
 const sx = {
   axisLabel: {
@@ -36,123 +32,35 @@ const Charts = ({
   bounds,
   setBounds,
   tooltips,
-  selectedTooltips,
-  setSelectedTooltips,
 }) => {
-  const [hint, setHint] = useState({ volume: false, permanence: false })
-
   return (
     <Box sx={{ mt: [2], pt: [2], mr: ['24px'], mb: ['24px'] }}>
-      <Grid columns={['150px 1fr 16px']} sx={{ mb: [1] }}>
-        <Text variant='label'>
-          Volume
-          <Text
-            as='span'
-            sx={{ ml: [2], textTransform: 'none', letterSpacing: 'body' }}
-          >
-            tCO₂
-          </Text>
-        </Text>
-        <Text
-          sx={{
-            opacity: !isNaN(bounds.volume[0]) || hint.volume ? 1 : 0,
-            color: 'secondary',
-            fontFamily: 'mono',
-            fontSize: [1],
-            mt: ['3px'],
-            transition: '0.2s',
-          }}
-        >
-          {!isNaN(bounds.volume[0]) &&
-            format('.3~s')(bounds.volume[0].toFixed(0))}
-          {!isNaN(bounds.volume[0]) && ' - '}
-          {!isNaN(bounds.volume[0]) &&
-            format('.3~s')(bounds.volume[1].toFixed(0))}
-          {hint.volume && isNaN(bounds.volume[0]) && 'drag to filter'}
-        </Text>
-        <Tooltip
-          value={'volume'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'volume'}
-        selectedTooltips={selectedTooltips}
+      <Chart
+        x={x1}
+        y={y}
+        highlighted={highlighted}
+        filtered={filtered}
+        data={data.volume}
+        label='volume'
+        units='tCO₂'
+        setBounds={setBounds}
+        bounds={bounds.volume}
+        ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
-        ml={0}
       />
-      <Box
-        onMouseEnter={() => setHint({ ...hint, volume: true })}
-        onMouseOut={() => setHint({ ...hint, volume: false })}
-      >
-        <Chart
-          x={x1}
-          y={y}
-          highlighted={highlighted}
-          filtered={filtered}
-          data={data.volume}
-          label='volume'
-          setBounds={setBounds}
-          ticks={[10, 100, 1000, 10000, 100000, 1000000]}
-        />
-      </Box>
-      <Grid columns={['150px 1fr 16px']} sx={{ mt: [3], mb: [1] }}>
-        <Text variant='label'>
-          Permanence
-          <Text
-            as='span'
-            sx={{ ml: [2], textTransform: 'none', letterSpacing: 'body' }}
-          >
-            years
-          </Text>
-        </Text>
-        <Text
-          sx={{
-            opacity: !isNaN(bounds.permanence[0]) || hint.permanence ? 1 : 0,
-            color: 'secondary',
-            fontFamily: 'mono',
-            fontSize: [1],
-            mt: ['3px'],
-            transition: '0.2s',
-          }}
-        >
-          {!isNaN(bounds.permanence[0]) &&
-            format('.3~s')(bounds.permanence[0].toFixed(0))}
-          {!isNaN(bounds.permanence[0]) && ' - '}
-          {!isNaN(bounds.permanence[0]) &&
-            format('.3~s')(bounds.permanence[1].toFixed(0))}
-          {hint.permanence && isNaN(bounds.permanence[0]) && 'drag to filter'}
-        </Text>
-        <Tooltip
-          value={'permanence'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'permanence'}
-        selectedTooltips={selectedTooltips}
+      <Chart
+        x={x2}
+        y={y}
+        highlighted={highlighted}
+        filtered={filtered}
+        data={data.permanence}
+        label='permanence'
+        units='years'
+        setBounds={setBounds}
+        bounds={bounds.permanence}
+        ticks={[1, 10, 100, 1000]}
         tooltips={tooltips}
-        ml={0}
       />
-      <Box
-        onMouseEnter={() => setHint({ ...hint, permanence: true })}
-        onMouseOut={() => setHint({ ...hint, permanence: false })}
-      >
-        <Chart
-          x={x2}
-          y={y}
-          highlighted={highlighted}
-          filtered={filtered}
-          data={data.permanence}
-          label='permanence'
-          setBounds={setBounds}
-          ticks={[1, 10, 100, 1000]}
-        />
-      </Box>
     </Box>
   )
 }

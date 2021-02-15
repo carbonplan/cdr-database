@@ -1,24 +1,19 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { Box, Grid, Text, Input } from 'theme-ui'
-import Tooltip from '../tooltip'
-import TooltipDescription from '../tooltip-description'
+import Field from './field'
 
-const Search = ({
-  filters,
-  setFilters,
-  tooltips,
-  selectedTooltips,
-  setSelectedTooltips,
-}) => {
+const Search = ({ filters, setFilters, tooltips }) => {
   function setSearch(value) {
     setFilters((filters) => {
       return { ...filters, search: value }
     })
   }
 
+  const [value, setValue] = useState(false)
+
   return (
     <Box sx={{ mr: ['24px'] }}>
-      <Grid columns={['100px 1fr 16px']}>
+      <Field label='search' tooltips={tooltips}>
         <Text variant='label'>Search</Text>
         <Input
           type='text'
@@ -41,18 +36,7 @@ const Search = ({
           }}
           value={filters.search}
         />
-        <Tooltip
-          value={'search'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'search'}
-        selectedTooltips={selectedTooltips}
-        tooltips={tooltips}
-      />
+      </Field>
     </Box>
   )
 }

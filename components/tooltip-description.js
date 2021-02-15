@@ -2,12 +2,12 @@ import { Box } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
 import glossary from '../glossary'
 
-const TooltipDescription = ({ value, selectedTooltips, tooltips, ml }) => {
+const TooltipDescription = ({ label, value, tooltips, ml }) => {
   return (
-    <Box sx={{ pb: [tooltips && selectedTooltips.includes(value) ? 2 : 0] }}>
+    <Box sx={{ pb: [tooltips && value ? 2 : 0] }}>
       <AnimateHeight
         duration={100}
-        height={tooltips && selectedTooltips.includes(value) ? 'auto' : 0}
+        height={tooltips && value ? 'auto' : 0}
         easing={'linear'}
       >
         <Box
@@ -18,7 +18,7 @@ const TooltipDescription = ({ value, selectedTooltips, tooltips, ml }) => {
             color: 'text',
           }}
         >
-          {glossary[value]}
+          {glossary[label]}
         </Box>
       </AnimateHeight>
     </Box>

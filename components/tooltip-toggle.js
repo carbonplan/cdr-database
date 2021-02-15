@@ -1,23 +1,19 @@
+import { useEffect } from 'react'
 import { Box } from 'theme-ui'
 import { Icons } from '@carbonplan/components'
 
-const Tooltip = ({
-  value,
-  tooltips,
-  selectedTooltips,
-  setSelectedTooltips,
-}) => {
+const TooltipToggle = ({ tooltips, value, setValue }) => {
+  useEffect(() => {
+    if (!tooltips) setValue(false)
+  }, [tooltips])
+
   return (
     <Box>
       <Box
         sx={{ display: 'inline-block', cursor: 'pointer', mt: ['3px'] }}
         onClick={(e) => {
           e.stopPropagation()
-          if (selectedTooltips.includes(value)) {
-            setSelectedTooltips(selectedTooltips.filter((d) => !(d === value)))
-          } else {
-            setSelectedTooltips([...new Set(selectedTooltips.concat(value))])
-          }
+          setValue(!value)
         }}
       >
         <Icons.Info
@@ -28,7 +24,7 @@ const Tooltip = ({
             width: 16,
             height: 16,
             transition: '0.15s',
-            color: selectedTooltips.includes(value) ? 'primary' : 'secondary',
+            color: value ? 'primary' : 'secondary',
             '&:hover': {
               stroke: 'primary',
             },
@@ -39,4 +35,4 @@ const Tooltip = ({
   )
 }
 
-export default Tooltip
+export default TooltipToggle

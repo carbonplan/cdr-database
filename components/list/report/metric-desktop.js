@@ -5,7 +5,7 @@ import { Expander, Icons } from '@carbonplan/components'
 import Bar from './graphics/bar'
 import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
-import Tooltip from '../../tooltip'
+import TooltipToggle from '../../tooltip-toggle'
 import TooltipDescription from '../../tooltip-description'
 import scales from './graphics/scales'
 
@@ -60,11 +60,7 @@ const MetricDesktop = ({
   tooltips,
 }) => {
   const { theme } = useThemeUI()
-  const [selectedTooltips, setSelectedTooltips] = useState([])
-
-  useEffect(() => {
-    if (!tooltips) setSelectedTooltips([])
-  }, [tooltips])
+  const [tooltip, setTooltip] = useState(false)
 
   return (
     <Box>
@@ -137,11 +133,10 @@ const MetricDesktop = ({
           </Text>
           {tooltips && (
             <Box sx={{ mt: ['6px'] }}>
-              <Tooltip
-                value={metric.name.toLowerCase()}
+              <TooltipToggle
                 tooltips={tooltips}
-                selectedTooltips={selectedTooltips}
-                setSelectedTooltips={setSelectedTooltips}
+                value={tooltip}
+                setValue={setTooltip}
               />
             </Box>
           )}
@@ -163,8 +158,8 @@ const MetricDesktop = ({
           )}
         </Grid>
         <TooltipDescription
-          value={metric.name.toLowerCase()}
-          selectedTooltips={selectedTooltips}
+          label={metric.name.toLowerCase()}
+          value={tooltip}
           tooltips={tooltips}
           ml={'182px'}
         />

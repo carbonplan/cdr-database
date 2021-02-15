@@ -15,12 +15,6 @@ const Sidebar = ({
   setBounds,
   tooltips,
 }) => {
-  const [selectedTooltips, setSelectedTooltips] = useState([])
-
-  useEffect(() => {
-    if (!tooltips) setSelectedTooltips([])
-  }, [tooltips])
-
   return (
     <Box sx={{}}>
       <Box
@@ -55,16 +49,12 @@ const Sidebar = ({
               filters={filters}
               setFilters={setFilters}
               tooltips={tooltips}
-              selectedTooltips={selectedTooltips}
-              setSelectedTooltips={setSelectedTooltips}
             />
           </Box>
           <Metadata
             filters={filters}
             setFilters={setFilters}
             tooltips={tooltips}
-            selectedTooltips={selectedTooltips}
-            setSelectedTooltips={setSelectedTooltips}
           />
           <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
           <Charts
@@ -74,8 +64,6 @@ const Sidebar = ({
             bounds={bounds}
             setBounds={setBounds}
             tooltips={tooltips}
-            selectedTooltips={selectedTooltips}
-            setSelectedTooltips={setSelectedTooltips}
           />
         </Box>
       </Box>

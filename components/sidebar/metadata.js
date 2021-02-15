@@ -2,8 +2,7 @@ import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { Tag, Icons } from '@carbonplan/components'
 import Rating from './rating'
-import Tooltip from '../tooltip'
-import TooltipDescription from '../tooltip-description'
+import Field from './field'
 
 const colors = {
   dac: 'purple',
@@ -23,6 +22,10 @@ const categories = [
   'dac',
 ]
 
+const sources = ['STRP2020', 'MSFT2021']
+
+const mechanisms = ['avoided', 'removal']
+
 const Metadata = ({
   filters,
   setFilters,
@@ -36,9 +39,9 @@ const Metadata = ({
     })
   }
 
-  function toggleOptionUnique(value) {
+  function toggleOptionUnique(value, list) {
     let updated = {}
-    categories.forEach((d) => {
+    list.forEach((d) => {
       updated[d] = value === d ? true : false
     })
     setFilters((filters) => {
@@ -49,9 +52,9 @@ const Metadata = ({
     })
   }
 
-  function toggleAll() {
+  function toggleAll(list) {
     let updated = {}
-    categories.forEach((d) => {
+    list.forEach((d) => {
       updated[d] = true
     })
     setFilters((filters) => {
@@ -68,9 +71,9 @@ const Metadata = ({
     })
   }
 
-  function isAll() {
+  function isAll(list) {
     let check = 0
-    categories.forEach((d) => {
+    list.forEach((d) => {
       if (filters[d]) check += 1
     })
     return check == categories.length
@@ -78,7 +81,7 @@ const Metadata = ({
 
   return (
     <Box sx={{ mr: ['24px'] }}>
-      <Grid columns={['100px 1fr 16px']}>
+      <Field label='source' tooltips={tooltips}>
         <Text variant='label'>SOURCE</Text>
         <Box sx={{}}>
           {['STRP2020', 'MSFT2021'].map((d) => (
@@ -88,24 +91,14 @@ const Metadata = ({
               value={filters[d]}
               sx={{ color: 'primary' }}
               onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d, sources)}
             >
               {d}
             </Tag>
           ))}
         </Box>
-        <Tooltip
-          value={'source'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'source'}
-        selectedTooltips={selectedTooltips}
-        tooltips={tooltips}
-      />
-      <Grid columns={['100px 1fr 16px']}>
+      </Field>
+      <Field label='category' tooltips={tooltips}>
         <Text variant='label'>CATEGORY</Text>
         <Box>
           {categories.map((d) => (
@@ -115,28 +108,21 @@ const Metadata = ({
               value={filters[d]}
               sx={{ color: colors[d] }}
               onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d)}
+              onDoubleClick={() => toggleOptionUnique(d, categories)}
             >
               {d}
             </Tag>
           ))}
-          <Tag label={'all'} value={isAll()} onClick={() => toggleAll()}>
+          <Tag
+            label={'all'}
+            value={isAll(categories)}
+            onClick={() => toggleAll(categories)}
+          >
             All
           </Tag>
         </Box>
-        <Tooltip
-          value={'category'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'category'}
-        selectedTooltips={selectedTooltips}
-        tooltips={tooltips}
-      />
-      <Grid columns={['100px 1fr 16px']}>
+      </Field>
+      <Field label='mechanism' tooltips={tooltips}>
         <Text variant='label'>MECHANISM</Text>
         <Box sx={{}}>
           {['removal', 'avoided'].map((d) => (
@@ -146,38 +132,17 @@ const Metadata = ({
               value={filters[d]}
               sx={{ color: colors[d] }}
               onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d, mechanisms)}
             >
               {d}
             </Tag>
           ))}
         </Box>
-        <Tooltip
-          value={'mechanism'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'mechanism'}
-        selectedTooltips={selectedTooltips}
-        tooltips={tooltips}
-      />
-      <Grid columns={['100px 1fr 16px']}>
+      </Field>
+      <Field label='rating' tooltips={tooltips}>
         <Text variant='label'>RATING</Text>
         <Rating value={filters['rating']} setValue={setRating} />
-        <Tooltip
-          value={'rating'}
-          tooltips={tooltips}
-          selectedTooltips={selectedTooltips}
-          setSelectedTooltips={setSelectedTooltips}
-        />
-      </Grid>
-      <TooltipDescription
-        value={'rating'}
-        selectedTooltips={selectedTooltips}
-        tooltips={tooltips}
-      />
+      </Field>
     </Box>
   )
 }
