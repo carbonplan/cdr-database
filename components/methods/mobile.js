@@ -29,6 +29,7 @@ const Mobile = ({ section, setSection }) => {
       </Box>
       <Box>
         <Box
+          id='contents'
           sx={{
             borderStyle: 'solid',
             borderColor: 'muted',

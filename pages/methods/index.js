@@ -7,15 +7,10 @@ import Mobile from '../../components/methods/mobile'
 
 function Index(props) {
   const [section, setSection] = useState('sources')
-  const isWide = useMedia('screen and (min-width: 52em)')
-
-  useEffect(() => {
-    window.scrollTo(0, isWide ? 0 : 142)
-  }, [section])
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, [section])
 
   return (
     <Layout container={false} footer={false} metadata={'scroll'}>
