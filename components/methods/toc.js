@@ -27,7 +27,8 @@ const TOC = ({ section, setSection }) => {
         borderWidth: '0px',
         borderBottomWidth: '2px',
         '&:hover': {
-          borderColor: 'secondary',
+          borderColor: ['primary', 'secondary', 'secondary'],
+          color: ['primary', 'secondary', 'secondary'],
         },
       }
     } else {
@@ -38,6 +39,9 @@ const TOC = ({ section, setSection }) => {
         borderStyle: 'solid',
         borderWidth: '0px',
         borderBottomWidth: '2px',
+        '&:hover': {
+          color: ['primary', 'secondary', 'secondary'],
+        },
       }
     }
   }
@@ -48,7 +52,7 @@ const TOC = ({ section, setSection }) => {
         <Link
           sx={{
             display: 'inline-block',
-            fontSize: [6],
+            fontSize: [5, 6, 6],
             mt: [1],
             mr: [3],
             color: 'text',
@@ -64,18 +68,21 @@ const TOC = ({ section, setSection }) => {
       </NextLink>
       <Box
         sx={{
-          mb: [3, 3, 0],
-          mt: [1, 1, 0],
+          display: ['inline-block', 'inline-block', 'initial'],
+          mb: [0],
+          position: ['relative', 'relative', 'initial'],
+          top: ['-7px', '-11px', 0],
         }}
       >
-        {sections.map((d) => {
+        {sections.map((d, i) => {
           return (
             <Box
+              key={'section-' + i}
               sx={{
-                mr: [3, 3, 0],
+                mr: [2, 3, 0],
                 display: ['inline-block', 'inline-block', 'block'],
                 mt: [2],
-                fontSize: [3],
+                fontSize: [2, 3, 3],
               }}
             >
               <Link

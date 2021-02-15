@@ -1,5 +1,5 @@
-import Table from '../components/table'
-import InlineCheck from '../components/inline-check'
+import Table from '../components/methods/table'
+import InlineCheck from '../components/methods/inline-check'
 
 export const meta = {
   revised: '05-18-2020',

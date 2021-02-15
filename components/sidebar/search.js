@@ -17,7 +17,7 @@ const Search = ({ setSearch, tooltips }) => {
     <Box sx={{ mr: ['24px'] }}>
       <Field label='search' tooltips={tooltips}>
         <Text variant='label'>Search</Text>
-        <Box sx={{position: 'relative'}}>
+        <Box sx={{ position: 'relative' }}>
           <Input
             type='text'
             ref={inputRef}

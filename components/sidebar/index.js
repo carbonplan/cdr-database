@@ -32,10 +32,7 @@ const Sidebar = ({
           overflowY: 'scroll',
         }}
       >
-        <Text
-          as='h1'
-          sx={{ fontSize: [6], pt: [2, 2, 3], mb: [1], mt: [2, 2, 0] }}
-        >
+        <Text as='h1' sx={{ fontSize: [6], pt: [1, 3, 3], mb: [1], mt: [0] }}>
           CDR Database
         </Text>
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
