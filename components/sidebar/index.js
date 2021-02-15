@@ -15,6 +15,12 @@ const Sidebar = ({
   setBounds,
   tooltips,
 }) => {
+  function setSearch(value) {
+    setFilters((filters) => {
+      return { ...filters, search: value }
+    })
+  }
+
   return (
     <Box sx={{}}>
       <Box
@@ -45,11 +51,7 @@ const Sidebar = ({
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
           <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
           <Box sx={{ mb: [1], mt: [3] }}>
-            <Search
-              filters={filters}
-              setFilters={setFilters}
-              tooltips={tooltips}
-            />
+            <Search setSearch={setSearch} tooltips={tooltips} />
           </Box>
           <Metadata
             filters={filters}

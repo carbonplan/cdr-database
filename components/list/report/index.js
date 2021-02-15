@@ -176,6 +176,7 @@ const Report = ({ data, setHighlighted, tooltips }) => {
                         display: 'inline-block',
                         textDecoration: 'none',
                         lineHeight: 0,
+                        zIndex: '-1',
                         '&:active': {
                           color: 'primary',
                         },
@@ -216,6 +217,7 @@ const Report = ({ data, setHighlighted, tooltips }) => {
                           display: 'inline-block',
                           textDecoration: 'none',
                           lineHeight: 0,
+                          zIndex: '-1',
                           '&:active': {
                             color: 'primary',
                           },
