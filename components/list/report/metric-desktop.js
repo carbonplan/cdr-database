@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { useThemeUI, Box, Divider, Grid, Text } from 'theme-ui'
 import { Expander, Icons } from '@carbonplan/components'
@@ -5,6 +6,7 @@ import Bar from './graphics/bar'
 import Squares from './graphics/squares'
 import Emissions from './graphics/emissions'
 import Tooltip from '../../tooltip'
+import TooltipDescription from '../../tooltip-description'
 import scales from './graphics/scales'
 
 const { Check } = Icons
@@ -56,9 +58,13 @@ const MetricDesktop = ({
   parse,
   duration,
   tooltips,
-  setTooltips,
 }) => {
   const { theme } = useThemeUI()
+  const [selectedTooltips, setSelectedTooltips] = useState([])
+
+  useEffect(() => {
+    if (!tooltips) setSelectedTooltips([])
+  }, [tooltips])
 
   return (
     <Box>
@@ -129,16 +135,17 @@ const MetricDesktop = ({
               {metric.name}
             </Text>
           </Text>
-          {tooltips.show && (
+          {tooltips && (
             <Box sx={{ mt: ['6px'] }}>
               <Tooltip
                 value={metric.name.toLowerCase()}
                 tooltips={tooltips}
-                setTooltips={setTooltips}
+                selectedTooltips={selectedTooltips}
+                setSelectedTooltips={setSelectedTooltips}
               />
             </Box>
           )}
-          {!tooltips.show && <Box />}
+          {!tooltips && <Box />}
           <Text sx={{ mt: ['3px'] }}>
             {metric.rating === 1 && (
               <Check sx={{ width: '28px', color: theme.tags[tag] }} />
@@ -155,6 +162,12 @@ const MetricDesktop = ({
             </Box>
           )}
         </Grid>
+        <TooltipDescription
+          value={metric.name.toLowerCase()}
+          selectedTooltips={selectedTooltips}
+          tooltips={tooltips}
+          ml={'182px'}
+        />
       </Box>
       <AnimateHeight
         duration={duration}

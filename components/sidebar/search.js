@@ -1,8 +1,15 @@
 import { memo } from 'react'
 import { Box, Grid, Text, Input } from 'theme-ui'
 import Tooltip from '../tooltip'
+import TooltipDescription from '../tooltip-description'
 
-const Search = ({ filters, setFilters, tooltips, setTooltips }) => {
+const Search = ({
+  filters,
+  setFilters,
+  tooltips,
+  selectedTooltips,
+  setSelectedTooltips,
+}) => {
   function setSearch(value) {
     setFilters((filters) => {
       return { ...filters, search: value }
@@ -37,9 +44,15 @@ const Search = ({ filters, setFilters, tooltips, setTooltips }) => {
         <Tooltip
           value={'search'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'search'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+      />
     </Box>
   )
 }

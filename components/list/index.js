@@ -40,7 +40,6 @@ const List = ({
                   key={d.id}
                   data={d}
                   tooltips={tooltips}
-                  setTooltips={setTooltips}
                 />
               ))}
           </Box>
@@ -54,7 +53,6 @@ const List = ({
                   key={d.id}
                   data={d}
                   tooltips={tooltips}
-                  setTooltips={setTooltips}
                 />
               ))}
           </Box>
@@ -70,7 +68,6 @@ const List = ({
                 key={d.id}
                 data={d}
                 tooltips={tooltips}
-                setTooltips={setTooltips}
               />
             ))}
         </Box>

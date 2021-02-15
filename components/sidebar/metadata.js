@@ -3,6 +3,7 @@ import { Box, Grid, Text } from 'theme-ui'
 import { Tag, Icons } from '@carbonplan/components'
 import Rating from './rating'
 import Tooltip from '../tooltip'
+import TooltipDescription from '../tooltip-description'
 
 const colors = {
   dac: 'purple',
@@ -22,7 +23,13 @@ const categories = [
   'dac',
 ]
 
-const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
+const Metadata = ({
+  filters,
+  setFilters,
+  tooltips,
+  selectedTooltips,
+  setSelectedTooltips,
+}) => {
   function toggleOption(value) {
     setFilters((filters) => {
       return { ...filters, [value]: !filters[value] }
@@ -89,9 +96,15 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
         <Tooltip
           value={'source'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'source'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+      />
       <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>CATEGORY</Text>
         <Box>
@@ -114,9 +127,15 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
         <Tooltip
           value={'category'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'category'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+      />
       <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>MECHANISM</Text>
         <Box sx={{}}>
@@ -135,18 +154,30 @@ const Metadata = ({ filters, setFilters, tooltips, setTooltips }) => {
         <Tooltip
           value={'mechanism'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'mechanism'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+      />
       <Grid columns={['100px 1fr 16px']}>
         <Text variant='label'>RATING</Text>
         <Rating value={filters['rating']} setValue={setRating} />
         <Tooltip
           value={'rating'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'rating'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+      />
     </Box>
   )
 }

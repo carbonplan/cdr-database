@@ -14,7 +14,7 @@ const showMetrics = [
   'specificity',
 ]
 
-const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
+const Report = ({ data, setHighlighted, tooltips }) => {
   const [expanded, setExpanded] = useState(false)
   const { theme } = useThemeUI()
 
@@ -144,7 +144,6 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
                   tag={tags[0]}
                   metric={metric}
                   tooltips={tooltips}
-                  setTooltips={setTooltips}
                 ></Metric>
               ))}
             </Box>

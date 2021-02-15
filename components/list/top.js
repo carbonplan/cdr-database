@@ -2,7 +2,6 @@ import { Flex, Box, Text } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
 import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
 import { format } from 'd3-format'
-import glossary from '../../glossary'
 
 const Top = ({ data, filtered, tooltips, setTooltips }) => {
   return (
@@ -23,8 +22,14 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         borderStyle: 'solid',
       }}
     >
-      <Flex sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
-        <Box>
+      <Flex
+        sx={{
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          mt: ['-10px'],
+        }}
+      >
+        <Box sx={{ mt: ['10px'] }}>
           <Text
             variant='label'
             sx={{
@@ -72,90 +77,40 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
             </Badge>
           </Box>
         </Box>
-        <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
-          <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
-            <Toggle
-              value={tooltips.show}
-              onClick={() => {
-                setTooltips({
-                  show: !tooltips.show,
-                  selected: tooltips.selected,
-                })
-                setTimeout(() => {
-                  setTooltips({ show: !tooltips.show, selected: null })
-                }, 150)
-              }}
-              sx={{ mr: [3] }}
-            />
-            <Text
-              variant='label'
+        <Box sx={{ mt: ['10px'] }}>
+          <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
+            <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
+              <Toggle
+                value={tooltips}
+                onClick={() => {
+                  setTooltips(!tooltips)
+                }}
+                sx={{ mr: [3] }}
+              />
+              <Text
+                variant='label'
+                sx={{
+                  position: 'relative',
+                  top: '-5px',
+                  display: 'inline-block',
+                }}
+              >
+                SHOW TOOLTIPS
+              </Text>
+            </Box>
+            <Box
               sx={{
+                top: '2px',
+                ml: [0],
                 position: 'relative',
-                top: '-5px',
                 display: 'inline-block',
               }}
             >
-              SHOW TOOLTIPS
-            </Text>
-          </Box>
-          <Box
-            sx={{
-              top: '2px',
-              ml: [0],
-              position: 'relative',
-              display: 'inline-block',
-            }}
-          >
-            <Dimmer />
+              <Dimmer />
+            </Box>
           </Box>
         </Box>
       </Flex>
-      <AnimateHeight
-        duration={100}
-        height={tooltips.show ? 'auto' : 0}
-        easing={'linear'}
-      >
-        <Box sx={{ mt: [1] }}>
-          <Text
-            sx={{
-              color: 'secondary',
-              fontSize: [2],
-              pt: [2],
-              pb: [1],
-              textAlign: 'left',
-              display: 'inline-block',
-            }}
-          >
-            {tooltips.selected && (
-              <Text>
-                <Text as='span' sx={{ color: 'text' }}>
-                  {capitalize(tooltips.selected) + ': '}
-                </Text>
-                <Text as='span'>{glossary[tooltips.selected]}</Text>
-              </Text>
-            )}
-            {!tooltips.selected && (
-              <Box>
-                Click a{' '}
-                <Icons.Info
-                  closed={true}
-                  sx={{
-                    color: 'secondary',
-                    position: 'relative',
-                    width: 16,
-                    height: 16,
-                    top: '2px',
-                    mr: ['2px'],
-                    ml: ['2px'],
-                    display: 'inline-block',
-                  }}
-                />{' '}
-                to learn more about a term or concept.
-              </Box>
-            )}
-          </Text>
-        </Box>
-      </AnimateHeight>
     </Box>
   )
 }

@@ -1,29 +1,34 @@
 import { Box } from 'theme-ui'
 import { Icons } from '@carbonplan/components'
 
-const Tooltip = ({ value, tooltips, setTooltips }) => {
+const Tooltip = ({
+  value,
+  tooltips,
+  selectedTooltips,
+  setSelectedTooltips,
+}) => {
   return (
     <Box>
       <Box
         sx={{ display: 'inline-block', cursor: 'pointer', mt: ['3px'] }}
         onClick={(e) => {
           e.stopPropagation()
-          if (tooltips.selected === value) {
-            setTooltips({ show: tooltips.show, selected: null })
+          if (selectedTooltips.includes(value)) {
+            setSelectedTooltips(selectedTooltips.filter((d) => !(d === value)))
           } else {
-            setTooltips({ show: tooltips.show, selected: value })
+            setSelectedTooltips([...new Set(selectedTooltips.concat(value))])
           }
         }}
       >
         <Icons.Info
           closed={true}
           sx={{
-            opacity: tooltips.show ? 1 : 0,
+            opacity: tooltips ? 1 : 0,
             color: 'secondary',
             width: 16,
             height: 16,
             transition: '0.15s',
-            color: tooltips.selected === value ? 'primary' : 'secondary',
+            color: selectedTooltips.includes(value) ? 'primary' : 'secondary',
             '&:hover': {
               stroke: 'primary',
             },

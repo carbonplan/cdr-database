@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useState, useEffect } from 'react'
 import { Box, Input, Styled, Grid, Text, Divider, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import Search from './search'
@@ -14,8 +14,13 @@ const Sidebar = ({
   bounds,
   setBounds,
   tooltips,
-  setTooltips,
 }) => {
+  const [selectedTooltips, setSelectedTooltips] = useState([])
+
+  useEffect(() => {
+    if (!tooltips) setSelectedTooltips([])
+  }, [tooltips])
+
   return (
     <Box sx={{}}>
       <Box
@@ -23,7 +28,8 @@ const Sidebar = ({
           position: ['initial', 'initial', 'sticky'],
           position: 'sticky',
           top: 56,
-          height: 'fit-content',
+          height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
+          overflowY: 'scroll',
         }}
       >
         <Text
@@ -49,14 +55,16 @@ const Sidebar = ({
               filters={filters}
               setFilters={setFilters}
               tooltips={tooltips}
-              setTooltips={setTooltips}
+              selectedTooltips={selectedTooltips}
+              setSelectedTooltips={setSelectedTooltips}
             />
           </Box>
           <Metadata
             filters={filters}
             setFilters={setFilters}
             tooltips={tooltips}
-            setTooltips={setTooltips}
+            selectedTooltips={selectedTooltips}
+            setSelectedTooltips={setSelectedTooltips}
           />
           <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
           <Charts
@@ -66,7 +74,8 @@ const Sidebar = ({
             bounds={bounds}
             setBounds={setBounds}
             tooltips={tooltips}
-            setTooltips={setTooltips}
+            selectedTooltips={selectedTooltips}
+            setSelectedTooltips={setSelectedTooltips}
           />
         </Box>
       </Box>

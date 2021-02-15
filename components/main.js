@@ -24,17 +24,12 @@ const initBounds = {
   permanence: [],
 }
 
-const initTooltips = {
-  show: false,
-  selected: null,
-}
-
 const Main = ({ projectData, metricsData }) => {
   const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({ count: 0 })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
-  const [tooltips, setTooltips] = useState(initTooltips)
+  const [tooltips, setTooltips] = useState(false)
 
   useEffect(() => {
     let obj = {}
@@ -112,7 +107,6 @@ const Main = ({ projectData, metricsData }) => {
         setFilters={setFilters}
         highlighted={highlighted}
         tooltips={tooltips}
-        setTooltips={setTooltips}
       />
       <List
         filters={filters}

@@ -5,6 +5,7 @@ import { scaleLinear, scaleOrdinal, scaleLog } from 'd3-scale'
 import { format } from 'd3-format'
 import Chart from './chart'
 import Tooltip from '../tooltip'
+import TooltipDescription from '../tooltip-description'
 
 const sx = {
   axisLabel: {
@@ -35,12 +36,13 @@ const Charts = ({
   bounds,
   setBounds,
   tooltips,
-  setTooltips,
+  selectedTooltips,
+  setSelectedTooltips,
 }) => {
   const [hint, setHint] = useState({ volume: false, permanence: false })
 
   return (
-    <Box sx={{ mt: [2], pt: [2], mr: ['24px'] }}>
+    <Box sx={{ mt: [2], pt: [2], mr: ['24px'], mb: ['24px'] }}>
       <Grid columns={['150px 1fr 16px']} sx={{ mb: [1] }}>
         <Text variant='label'>
           Volume
@@ -71,9 +73,16 @@ const Charts = ({
         <Tooltip
           value={'volume'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'volume'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+        ml={0}
+      />
       <Box
         onMouseEnter={() => setHint({ ...hint, volume: true })}
         onMouseOut={() => setHint({ ...hint, volume: false })}
@@ -119,9 +128,16 @@ const Charts = ({
         <Tooltip
           value={'permanence'}
           tooltips={tooltips}
-          setTooltips={setTooltips}
+          selectedTooltips={selectedTooltips}
+          setSelectedTooltips={setSelectedTooltips}
         />
       </Grid>
+      <TooltipDescription
+        value={'permanence'}
+        selectedTooltips={selectedTooltips}
+        tooltips={tooltips}
+        ml={0}
+      />
       <Box
         onMouseEnter={() => setHint({ ...hint, permanence: true })}
         onMouseOut={() => setHint({ ...hint, permanence: false })}
