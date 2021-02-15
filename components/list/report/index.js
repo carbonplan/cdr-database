@@ -147,11 +147,13 @@ const Report = ({ data, setHighlighted, tooltips }) => {
                 ></Metric>
               ))}
             </Box>
-            <Box sx={{ fontSize: [1], mt: [3] }}>
+            <Box
+              onClick={(e) => e.stopPropagation()}
+              sx={{ fontSize: [1], mt: [3] }}
+            >
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
                 <Text as='span' sx={{ mr: [2] }}>
                   <Link
-                    onClick={(e) => e.stopPropagation()}
                     sx={{
                       textDecoration: 'none',
                       color: 'secondary',
