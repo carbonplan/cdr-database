@@ -55,10 +55,10 @@ const MetricMobile = ({
   return (
     <Box>
       <Box
-        onClick={toggle}
+        onClick={hasDetails ? toggle : (e) => e.stopPropagation()}
         sx={{
           cursor: hasDetails ? 'pointer' : 'default',
-          pointerEvents: hasDetails ? 'all' : 'none',
+          pointerEvents: 'all',
           '&:hover > #grid > #container > #expander': {
             fill: 'primary',
             stroke: 'primary',
@@ -95,7 +95,7 @@ const MetricMobile = ({
               <Expander
                 id={'expander'}
                 toggle={toggle}
-                expanded={expanded}
+                value={expanded}
               ></Expander>
             </Box>
           )}
@@ -160,7 +160,13 @@ const MetricMobile = ({
         easing={'linear'}
       >
         {expanded && (
-          <Box sx={{ pb: [1] }}>
+          <Box
+            sx={{ pb: [1] }}
+            onClick={(e) => {
+              e.stopPropagation()
+              toggle(e)
+            }}
+          >
             <Box
               sx={{
                 mt: metric.notes || metric.comment ? [0] : [0],
