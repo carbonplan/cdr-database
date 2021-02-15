@@ -74,8 +74,8 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
             </Badge>
           </Box>
         </Box>
-        <Box sx={{ display: 'inline-block', float: 'right', mt: ['-5px'] }}>
-          <Box sx={{ display: ['none', 'initial', 'initial'] }}>
+        <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
+          <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
             <Toggle
               value={tooltips.show}
               onClick={() => {
@@ -103,7 +103,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
           <Box
             sx={{
               top: '2px',
-              ml: [4],
+              ml: [0],
               position: 'relative',
               display: 'inline-block',
             }}

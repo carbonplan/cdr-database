@@ -71,7 +71,7 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
     >
       <Flex
         id='container'
-        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [2] }}
+        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [2], columnGap: [0] }}
       >
         <Flex
           id='flex'
