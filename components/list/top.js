@@ -23,9 +23,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         borderStyle: 'solid',
       }}
     >
-      <Flex
-        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [3] }}
-      >
+      <Flex sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
         <Box>
           <Text
             variant='label'

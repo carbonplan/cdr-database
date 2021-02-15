@@ -71,15 +71,13 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
     >
       <Flex
         id='container'
-        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', rowGap: [2], columnGap: [0] }}
+        sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}
       >
         <Flex
           id='flex'
           sx={{
             width: ['100%', '100%', 'fit-content'],
             flexWrap: 'wrap',
-            rowGap: [2],
-            columnGap: [2],
           }}
         >
           <Text
@@ -92,12 +90,12 @@ const Report = ({ data, setHighlighted, tooltips, setTooltips }) => {
             {applicant}
           </Text>
           <Expander
-            sx={{ mt: ['2px'] }}
+            sx={{ mt: ['2px'], ml: [2] }}
             id='expander'
             value={expanded}
           ></Expander>
         </Flex>
-        <Box sx={{}}>
+        <Box sx={{ mt: [0], pt: ['6px', '6px', 0] }}>
           {tags.map((tag, i) => (
             <Tag
               key={id + '-tag-' + i}
