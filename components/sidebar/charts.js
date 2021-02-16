@@ -48,19 +48,21 @@ const Charts = ({
         ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
       />
-      <Chart
-        x={x2}
-        y={y}
-        highlighted={highlighted}
-        filtered={filtered}
-        data={data.permanence}
-        label='permanence'
-        units='years'
-        setBounds={setBounds}
-        bounds={bounds.permanence}
-        ticks={[1, 10, 100, 1000]}
-        tooltips={tooltips}
-      />
+      <Box sx={{ mt: ['12px'] }}>
+        <Chart
+          x={x2}
+          y={y}
+          highlighted={highlighted}
+          filtered={filtered}
+          data={data.permanence}
+          label='permanence'
+          units='years'
+          setBounds={setBounds}
+          bounds={bounds.permanence}
+          ticks={[1, 10, 100, 1000]}
+          tooltips={tooltips}
+        />
+      </Box>
     </Box>
   )
 }
