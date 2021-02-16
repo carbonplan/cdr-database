@@ -15399,7 +15399,7 @@ module.exports = {
             'Reasonable details provided on project. Some public documentation is available on the Puro Platform.',
         },
       ],
-      tags: ['biomass', 'materials'],
+      tags: ['biomass', 'wood'],
       id: 'MSFT113',
       description: 'Production of innovative timber wall elements.',
       applicant: 'Termowood ',
