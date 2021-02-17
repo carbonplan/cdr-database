@@ -23,14 +23,16 @@ const TOC = ({ section, setSection }) => {
       return {
         textDecoration: 'none',
         pb: ['2px'],
-        borderColor: 'text',
+        borderColor: 'primary',
         borderStyle: 'solid',
         borderWidth: '0px',
         borderBottomWidth: '2px',
-        '&:hover': {
-          borderColor: isMobile ? 'primary' : 'secondary',
-          color: isMobile ? 'primary' : 'secondary',
-        },
+        '@media (hover: hover) and (pointer: fine)': {
+          '&:hover': {
+            borderColor: 'secondary',
+            color: 'secondary',
+          },
+        }
       }
     } else {
       return {
@@ -40,9 +42,11 @@ const TOC = ({ section, setSection }) => {
         borderStyle: 'solid',
         borderWidth: '0px',
         borderBottomWidth: '2px',
-        '&:hover': {
-          color: isMobile ? 'primary' : 'secondary',
-        },
+        '@media (hover: hover) and (pointer: fine)': {
+          '&:hover': {
+            color: 'secondary',
+          },
+        }
       }
     }
   }
