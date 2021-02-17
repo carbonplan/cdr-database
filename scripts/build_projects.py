@@ -23,7 +23,6 @@ def main(rfps, output):
 
     write_projects(project_collection, output)
 
-
 def write_projects(project_collection, output):
     with open(output, "w") as f:
         f.write('module.exports=' + json.dumps(project_collection))

@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start -p 5000",
     "format": "npm run format-js && npm run format-md",
-    "format-js": "prettier --write data.js '{components,lib,pages}/**/*.js'",
+    "format-js": "prettier --write '{components,lib,pages}/**/*.js'",
     "format-md": "prettier --write README.md 'methods/**/*.md' --parser mdx"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "polished": "^4.1.0",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^16.14.0",
     "react-use": "^17.1.1",
     "rehype-slug": "^4.0.1",

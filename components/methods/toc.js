@@ -1,5 +1,6 @@
-import { Box, Grid, Link, Text } from 'theme-ui'
 import { useState } from 'react'
+import { Box, Grid, Link, Text } from 'theme-ui'
+import { isMobile } from 'react-device-detect'
 import { default as NextLink } from 'next/link'
 import { Expander } from '@carbonplan/components'
 
@@ -27,8 +28,8 @@ const TOC = ({ section, setSection }) => {
         borderWidth: '0px',
         borderBottomWidth: '2px',
         '&:hover': {
-          borderColor: ['primary', 'secondary', 'secondary'],
-          color: ['primary', 'secondary', 'secondary'],
+          borderColor: isMobile ? 'primary' : 'secondary',
+          color: isMobile ? 'primary' : 'secondary',
         },
       }
     } else {
@@ -40,7 +41,7 @@ const TOC = ({ section, setSection }) => {
         borderWidth: '0px',
         borderBottomWidth: '2px',
         '&:hover': {
-          color: ['primary', 'secondary', 'secondary'],
+          color: isMobile ? 'primary' : 'secondary',
         },
       }
     }
