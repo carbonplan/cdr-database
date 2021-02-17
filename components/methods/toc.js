@@ -31,7 +31,12 @@ const TOC = ({ section, setSection }) => {
             borderColor: 'secondary',
             color: 'secondary',
           },
-        }
+        },
+        '@media (hover: none) and (pointer: coarse)': {
+          '&:hover': {
+            color: 'primary',
+          },
+        },
       }
     } else {
       return {
@@ -45,7 +50,12 @@ const TOC = ({ section, setSection }) => {
           '&:hover': {
             color: 'secondary',
           },
-        }
+        },
+        '@media (hover: none) and (pointer: coarse)': {
+          '&:hover': {
+            color: 'primary',
+          },
+        },
       }
     }
   }
