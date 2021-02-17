@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Box, Grid, Link, Text } from 'theme-ui'
-import { isMobile } from 'react-device-detect'
 import { default as NextLink } from 'next/link'
 import { Expander } from '@carbonplan/components'
 
