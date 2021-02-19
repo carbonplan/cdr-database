@@ -5,7 +5,7 @@ import useMedia from 'react-use/lib/useMedia'
 import Desktop from '../../components/methods/desktop'
 import Mobile from '../../components/methods/mobile'
 
-function Index(props) {
+function Methods(props) {
   const [section, setSection] = useState('sources')
 
   useEffect(() => {
@@ -24,4 +24,4 @@ function Index(props) {
   )
 }
 
-export default Index
+export default withAuth(Methods, ['admin', 'demo'])

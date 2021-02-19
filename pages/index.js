@@ -34,4 +34,4 @@ function Index() {
   )
 }
 
-export default withAuth(Index)
+export default withAuth(Index, ['admin', 'demo'])
