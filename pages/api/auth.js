@@ -10,7 +10,7 @@ const users = [
   },
   {
     username: 'microsoft',
-    password: process.env.MICROSOFT_PASSWORD,
+    password: process.env.MSFT_PASSWORD,
   }
 ]
 
