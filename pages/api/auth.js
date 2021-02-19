@@ -9,17 +9,9 @@ const users = [
     password: process.env.ADMIN_PASSWORD,
   },
   {
-    username: 'generation',
-    password: process.env.GENERATION_PASSWORD,
-  },
-  {
-    username: 'board',
-    password: process.env.BOARD_PASSWORD,
-  },
-  {
-    username: 'gore',
-    password: process.env.GORE_PASSWORD,
-  },
+    username: 'microsoft',
+    password: process.env.MICROSOFT_PASSWORD,
+  }
 ]
 
 export default function handler(req, res) {
