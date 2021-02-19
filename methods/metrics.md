@@ -2,7 +2,7 @@ import Table from '../components/methods/table'
 import InlineCheck from '../components/methods/inline-check'
 
 export const meta = {
-  revised: '05-18-2020',
+  revised: '02-17-2021',
 }
 
 # Metrics
@@ -11,7 +11,9 @@ Our goal is to harmonize metrics across a range of project categories, bringing 
 
 Values for each metric are based on information provided in public project proposals and our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
-The mark next to each metric shows our validation. We gave projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new ratings. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
+The mark next to each metric shows our validation. We gave projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new metrics. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
+
+It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs. 
 
 Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
 
@@ -19,7 +21,9 @@ For Additionality and Specificity we provide a qualitative score from 1 to 3, al
 
 Across all metrics, our evaluation is primarily focused on validating whether claims are plausible and consistent with the best available science and data. We also strive, through our metrics, to harmonize concepts and quantities across a wide diversity of projects. This process is more straightforward for methods based on established physical or biological processes, but can pose particular challenges for proprietary industrial practices or inherently variable physical properties.
 
-In the remainder of this document, we explain each metric in detail, and provide a table for how we arrived at evaluations for each metric.
+After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single score on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence, or a perfect score on Additionality, each add 1 to the total.
+
+In the remainder of this document, we explain each metric and the overall project rating in detail.
 
 ## Mechanism
 
@@ -28,6 +32,8 @@ A project’s Mechanism is its fundamental interaction with the global carbon cy
 While we only consider projects in this database that have the potential to be part of a carbon removal system, some of these projects are, in their current form, only responsible for avoided emissions. For example, utilization of CO₂ for storage in building materials where the CO₂ is currently sourced from an industrial waste stream currently constitutes an avoided emissions process, but would constitute carbon removal if its CO₂ were sourced from direct air capture or biological sources.
 
 In general, a project’s mechanism should be well-specified. The challenge of validation can be more significant, however, when a project involves early-stage technologies or references a broad variety of potential approaches without specifics about which ones are used.
+
+In the case where a proposal offers only one type of carbon benefit (e.g. only carbon removal) from a project that produces both carbon removal and avoided emissions, Mechanism reflects the mechanisms of the project as a whole.
 
 <Table
   type='icons'
@@ -39,6 +45,8 @@ In general, a project’s mechanism should be well-specified. The challenge of v
 Volume estimates almost all come directly from project applications, and are stated in metric tCO₂. In a few cases, volume is specified in a way that can’t easily be compared with other projects, and can potentially be normalized.
 
 Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. direct air capture), and those that are performing a one-time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
+
+If there is uncertainty about whether the offered volume is a gross or net volume, we conservatively interpret it to be a gross volume and attempt validation accordingly. 
 
 We use one of two approaches to validate Volume.
 
@@ -55,7 +63,7 @@ In many cases we were unable to validate volume through an independent calculati
 
 ## Negativity
 
-We define Negativity as 1 minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
+Negativity reflects the emissions intensity of different carbon removal solutions, and we define it as 1 minus the ratio of gross project emissions to gross climate benefits, including carbon removal and storage. Calculating Negativity depends on a life cycle assessment that quantifies project emissions and climate benefits. If emissions are low relative to the climate benefits, this metric will approach 1.
 
 As discussed above under Mechanism, the concept of “climate benefits” is complicated because some projects directly remove CO₂ (and thus contribute “gross removal”) but others primarily avoid and store CO₂ emissions (and thus contribute “gross storage”). For example, a project that mineralizes CO₂ sourced from industrial waste streams is primarily avoiding emissions, rather than directly removing CO₂. We call the CO₂ it mineralizes its “gross storage.” Similarly, a project that produces biochar from biogenic materials is not directly removing CO₂ from the atmosphere, but is rather avoiding biogenic CO₂ emissions. We would calculate the carbon embedded in biochar as the project’s “gross storage” for the purposes of the Negativity metric.
 
@@ -102,7 +110,7 @@ Project Cost is taken directly from public project offerings. Some costs have be
 <!-- prettier-ignore -->
 Costs are expressed per metric tCO₂ and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
 
-We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for direct air capture and mineralization.
+We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for [direct air capture](https://carbonplan.org/research/dac-calculator) and mineralization.
 
 ## Additionality
 
@@ -110,7 +118,9 @@ Additionality refers to the causal relationship between the funds a climate proj
 
 Evaluating Additionality is critical but difficult because the counterfactual scenario can only be estimated, not observed — there is no “control” earth. Additionality is also dynamic: it depends on highly contextual information that can change over time, such as price spreads between different commodities.
 
-We examine projects for contextual information around the likelihood of Additionality and provide values on a three point scale. Projects with high marginal costs or technologies without commercial markets tend to have higher values. Projects with benefits that have already been promised to other parties, or where non-climate co-benefits justify their economics, have lower values.
+We examine projects for contextual information around the likelihood of Additionality and provide values on a three point scale. Projects with high marginal costs or technologies without commercial markets tend to have higher values. Projects with benefits that have already been promised to other parties, or where non-climate co-benefits justify their economics, have lower values. 
+
+To some extent, a high additionality score is contingent on high specificity (see below). If a project lacks specificity and there is not a categorical reason to think otherwise, the project will likely also receive a low additionality score.  
 
 Different organizations might have different priorities for project selection. Low values on Additionality are not a concern when the purpose of funding is to advance technology, but should be a primary consideration if the goal is to claim an emissions offset.
 
@@ -137,3 +147,13 @@ In general, we encourage sharing as many details as possible. We believe that ma
   two='Project uses an established approach with few details available on the specifics of its implementation, or describes a new approach but without details on its plan.'
   one='Critical project data needed for validation cannot be obtained. Key pieces of third-party verification in progress but not yet available.'
 ></Table>
+
+## Rating
+
+After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence each add 1 point to the total. Additionality, which is scored on a three point scale, subtracts 1 point from the total if it receives the lowest score and adds 1 point to the total if it receives the highest score. The lowest rating a project can receive is 1. 
+
+Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics. 
+
+As with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
+
+
