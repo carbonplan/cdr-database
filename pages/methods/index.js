@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useThemeUI, Heading, Grid, Box, Text } from 'theme-ui'
 import { Layout } from '@carbonplan/components'
+import { withAuth } from '../../lib/auth'
 import useMedia from 'react-use/lib/useMedia'
 import Desktop from '../../components/methods/desktop'
 import Mobile from '../../components/methods/mobile'
