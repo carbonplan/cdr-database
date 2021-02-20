@@ -63,7 +63,7 @@ const Report = ({ data, setHighlighted, tooltips }) => {
         '&:hover': {
           borderColor: ['muted', 'muted', 'secondary'],
         },
-        '&:hover > #container > #box > #flex > #expander': {
+        '&:hover > #container > #box > #flex > #text > #expander': {
           fill: 'primary',
           stroke: 'primary',
         },
@@ -80,25 +80,29 @@ const Report = ({ data, setHighlighted, tooltips }) => {
               width: ['fit-content'],
               flexWrap: 'wrap',
               ml: [-2],
-              mt: [-2],
             }}
           >
             <Text
+              id='text'
               sx={{
                 display: 'inline-block',
                 fontSize: [4],
                 lineHeight: 'heading',
                 ml: [2],
-                mt: [2],
               }}
             >
+              <Expander
+                sx={{ display: ['initial', 'none', 'none'], ml: ['-3px'], mr: [2], mt: ['2px'] }}
+                id='expander'
+                value={expanded}
+              ></Expander>
               {applicant}
+              <Expander
+                sx={{ display: ['none', 'initial', 'initial'], ml: [2], mr: [2], mt: ['2px'] }}
+                id='expander'
+                value={expanded}
+              ></Expander>
             </Text>
-            <Expander
-              sx={{ ml: [2], mr: [2], mt: ['10px'] }}
-              id='expander'
-              value={expanded}
-            ></Expander>
           </Flex>
         </Box>
         <Box
