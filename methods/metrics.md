@@ -13,7 +13,7 @@ Values for each metric are based on information provided in public project propo
 
 The mark next to each metric shows our validation. We gave projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new metrics. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
-It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs. 
+It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs.
 
 Validation on metrics is only provided for Mechanism, Volume, Negativity, and Permanence. We do not provide validation on Cost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
 
@@ -46,7 +46,7 @@ Volume estimates almost all come directly from project applications, and are sta
 
 Volume estimates are complicated by time scale because the volume for different projects and project categories reflect different time scales of carbon removal. Projects tend to fall into one of two categories: those that are directly estimating the amount of carbon removed through some process on an annual basis (e.g. direct air capture), and those that are performing a one-time procurement of a material that will contribute to carbon removal or storage over some potentially unknown time horizon (e.g. procurement of minerals for enhanced weathering or procurement of biomass to produce biochar). Forests projects pose a challenge because they may report an annual or project lifetime depending on the context. In these cases, we simply report as faithfully as possible what projects claim (and why), but caution should be exercised when comparing volume estimates for these projects.
 
-If there is uncertainty about whether the offered volume is a gross or net volume, we conservatively interpret it to be a gross volume and attempt validation accordingly. 
+If there is uncertainty about whether the offered volume is a gross or net volume, we conservatively interpret it to be a gross volume and attempt validation accordingly.
 
 We use one of two approaches to validate Volume.
 
@@ -55,6 +55,8 @@ First, where possible, we perform an independent calculation based on third-part
 In other cases, where the volume is primarily driven by procurement of materials for an industrial process, we try to assess whether there is enough information in public materials to show an internally consistent calculation that yields the given volume number. But this is not a verification of the ability for the project to procure the necessary materials. Rather, it’s a demonstration of internal consistency.
 
 In many cases we were unable to validate volume through an independent calculation or using project information, either because we lacked sufficient detail to parameterize an otherwise well-specific proposal, or because we were unable to replicate broad claims with simple models. Where possible, we indicated in our comments what additional information would be useful. A lack of validation on volume should not necessarily be taken as criticism, and we hope to improve in this ability over time.
+
+Key details needed to validate forest project volumes include project area, forest type, claimed standing stock, and claimed growth rate. For forest projects that include timber production, harvesting cycles must also be clearly communicated. For soil projects, key details include project area, specificity around interventions claimed to produce climate benefits, and a clear methodology for modeling or measuring changes in soil organic carbon. For biomass projects, key details include feedstock, annual production capacity, and claimed rate of sequestration per unit of transformed biomass. For DAC projects, key details needed include sorbent or solvent technology, project removal capacity, and clarity around the fate of captured CO2. For mineralization projects, key details needed include exchange material(s), claimed exchange rate(s), and some combination of claimed time bounds or exchange material volume bounds. Ocean projects are diverse and analyzed on a case by case basis.
 
 <Table
   type='icons'
@@ -118,9 +120,9 @@ Additionality refers to the causal relationship between the funds a climate proj
 
 Evaluating Additionality is critical but difficult because the counterfactual scenario can only be estimated, not observed — there is no “control” earth. Additionality is also dynamic: it depends on highly contextual information that can change over time, such as price spreads between different commodities.
 
-We examine projects for contextual information around the likelihood of Additionality and provide values on a three point scale. Projects with high marginal costs or technologies without commercial markets tend to have higher values. Projects with benefits that have already been promised to other parties, or where non-climate co-benefits justify their economics, have lower values. 
+We examine projects for contextual information around the likelihood of Additionality and provide values on a three point scale. Projects with high marginal costs or technologies without commercial markets tend to have higher values. Projects with benefits that have already been promised to other parties, or where non-climate co-benefits justify their economics, have lower values.
 
-To some extent, a high additionality score is contingent on high specificity (see below). If a project lacks specificity and there is not a categorical reason to think otherwise, the project will likely also receive a low additionality score.  
+To some extent, a high additionality score is contingent on high specificity (see below). If a project lacks specificity and there is not a categorical reason to think otherwise, the project will likely also receive a low additionality score.
 
 Different organizations might have different priorities for project selection. Low values on Additionality are not a concern when the purpose of funding is to advance technology, but should be a primary consideration if the goal is to claim an emissions offset.
 
@@ -150,10 +152,8 @@ In general, we encourage sharing as many details as possible. We believe that ma
 
 ## Rating
 
-After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence each add 1 point to the total. Additionality, which is scored on a three point scale, subtracts 1 point from the total if it receives the lowest score and adds 1 point to the total if it receives the highest score. The lowest rating a project can receive is 1. 
+After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence each add 1 point to the total. Additionality, which is scored on a three point scale, subtracts 1 point from the total if it receives the lowest score and adds 1 point to the total if it receives the highest score. The lowest rating a project can receive is 1.
 
-Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics. 
+Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
 
 As with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
-
-

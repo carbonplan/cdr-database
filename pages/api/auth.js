@@ -15,7 +15,7 @@ const users = [
   {
     username: 'demo',
     password: process.env.DEMO_PASSWORD,
-  }
+  },
 ]
 
 export default function handler(req, res) {
