@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Grid, Box, Text, Input } from 'theme-ui'
 import Sidebar from '../components/sidebar'
-import List from './list'
+import Projects from './projects'
 
 const initFilters = {
   forests: true,
@@ -24,7 +24,7 @@ const initBounds = {
   permanence: [],
 }
 
-const Main = ({ projectData, metricsData }) => {
+const Main = ({ projects, metrics }) => {
   const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({ count: 0 })
   const [bounds, setBounds] = useState(initBounds)
@@ -34,7 +34,7 @@ const Main = ({ projectData, metricsData }) => {
   useEffect(() => {
     let obj = {}
     let count = 0
-    projectData.forEach((d) => {
+    projects.forEach((d) => {
       obj[d.id] = inFilter(d)
       if (obj[d.id]) {
         count += 1
@@ -68,15 +68,9 @@ const Main = ({ projectData, metricsData }) => {
         d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
       (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
     const inMechanism =
-      (filters.avoided &&
-        d.metrics[0].avoided == 1.0 &&
-        d.metrics[0].removal == 0.0) ||
-      (filters.removal &&
-        d.metrics[0].removal == 1.0 &&
-        d.metrics[0].avoided == 0.0) ||
-      (filters.removal &&
-        filters.avoided &&
-        (d.metrics[0].removal == 1.0 || d.metrics[0].avoided == 1.0))
+      (filters.removal && d.metrics[0].value == 0) ||
+      (filters.avoided && d.metrics[0].value == 1) ||
+      (filters.removal && filters.avoided && d.metrics[0].value == 2)
     const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume, 10, 1000000) &&
       checkBounds(d.metrics[3].value, bounds.permanence, 1, 1000)
@@ -102,17 +96,17 @@ const Main = ({ projectData, metricsData }) => {
         bounds={bounds}
         setBounds={setBounds}
         filtered={filtered}
-        data={metricsData}
+        data={metrics}
         filters={filters}
         setFilters={setFilters}
         highlighted={highlighted}
         tooltips={tooltips}
       />
-      <List
+      <Projects
         filters={filters}
         setFilters={setFilters}
         filtered={filtered}
-        data={projectData}
+        data={projects}
         setHighlighted={setHighlighted}
         tooltips={tooltips}
         setTooltips={setTooltips}

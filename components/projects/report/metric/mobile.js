@@ -109,7 +109,7 @@ const MetricMobile = ({
             mt: ['-2px'],
           }}
         >
-          {format(metric.name, metric.value)}
+          {format(metric.name, metric.value, true)}
         </Text>
         <Box>
           {metric.name == 'mechanism' && (

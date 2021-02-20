@@ -4,23 +4,23 @@ import { useRouter } from 'next/router'
 import { Layout } from '@carbonplan/components'
 import { withAuth } from '../lib/auth'
 import Main from '../components/main'
-import data from '../data'
+import collection from '../data/projects'
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value
 }
 
 function Index() {
-  const projectData = data.projects.sort((a, b) =>
+  const projects = collection.projects.sort((a, b) =>
     a.applicant.localeCompare(b.applicant)
   )
-  const metricsData = {
-    volume: projectData.map((d) => ({
+  const metrics = {
+    volume: projects.map((d) => ({
       id: d.id,
       tag: d.tags[0],
       value: selectMetric(d, 'volume'),
     })),
-    permanence: projectData.map((d) => ({
+    permanence: projects.map((d) => ({
       id: d.id,
       tag: d.tags[0],
       value: selectMetric(d, 'permanence'),
@@ -29,7 +29,7 @@ function Index() {
 
   return (
     <Layout footer={false} metadata={false} container={false} dimmer={false}>
-      <Main projectData={projectData} metricsData={metricsData} />
+      <Main projects={projects} metrics={metrics} />
     </Layout>
   )
 }

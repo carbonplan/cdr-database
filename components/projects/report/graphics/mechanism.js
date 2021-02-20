@@ -2,7 +2,7 @@
 import { jsx, Box, Text } from 'theme-ui'
 import { useThemeUI } from 'theme-ui'
 
-const Emissions = ({ tag, removal, avoided }) => {
+const Mechanism = ({ tag, value }) => {
   const context = useThemeUI()
   const theme = context.theme
 
@@ -27,12 +27,12 @@ const Emissions = ({ tag, removal, avoided }) => {
           width='40'
           height='12'
         />
-        {removal == 1 && (
+        {(value == 0 || value == 2) && (
           <text sx={{ fill: theme.tags[tag], fontSize: '36px' }} x='7.5' y='29'>
             ↓
           </text>
         )}
-        {avoided == 1 && (
+        {(value == 1 || value == 2) && (
           <>
             <circle
               sx={{ strokeWidth: '2.5px', stroke: theme.tags[tag] }}
@@ -54,6 +54,4 @@ const Emissions = ({ tag, removal, avoided }) => {
   )
 }
 
-export default Emissions
-
-// (avoided == 1) ? 1 : 0.2
+export default Mechanism

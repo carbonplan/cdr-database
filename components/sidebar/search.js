@@ -50,7 +50,7 @@ const Search = ({ setSearch, tooltips }) => {
             sx={{
               display: 'inline-block',
               position: 'absolute',
-              opacity: !hasFocus ? 0.6 : 0,
+              opacity: !hasFocus ? 0.8 : 0,
               borderWidth: '1px',
               pl: ['3px'],
               pr: ['4px'],

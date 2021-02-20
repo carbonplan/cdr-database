@@ -23,12 +23,6 @@ def make_projects():
         "notes",
         "comment",
         "rating",
-        "removal",
-        "emissions",
-        "kind",
-        "counterfactual",
-        "removal",
-        "avoided",
     ]
 
     tag_keys = data.columns.levels[0][data.columns.levels[0].str.startswith("tag")]
@@ -47,6 +41,7 @@ def make_projects():
         project["description"] = row[("description", "")]
         project["rating"] = row[("rating", "")]
         project["keywords"] = row[("keywords", "")]
+        project["methods"] = row[("methods", "")]
         project["location"] = {
             "name": row[("location", "name")],
         }

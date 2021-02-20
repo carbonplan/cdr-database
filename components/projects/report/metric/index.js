@@ -19,11 +19,20 @@ const Metric = ({ metric, tag, tooltips }) => {
   const hasUnits = metric.units != ''
   const hasDetails = metric.notes != '' || metric.comment != ''
 
-  const format = (key, value) => {
+  const format = (key, value, mobile=false) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
     if (key == 'specificity') return ''
     if (key == 'permanence' && value == 1000) return '1000+'
+    if (mobile) {
+      if (key == 'mechanism' && value == 0) return 'REMOVAL'
+      if (key == 'mechanism' && value == 1) return 'AVOIDED'
+    }
+    if (!mobile) {
+      if (key == 'mechanism' && value == 0) return 'RMV'
+      if (key == 'mechanism' && value == 1) return 'AVD'
+    }
+    if (key == 'mechanism' && value == 2) return 'BOTH'
     else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
     else if (key == 'negativity') return parseFloat(value).toFixed(2)
     else if (key == 'volume') {
@@ -32,16 +41,6 @@ const Metric = ({ metric, tag, tooltips }) => {
         return Math.round(value / 1000) + 'k'
       else if (value >= 1000000) return Math.round(value / 1000000) + 'M'
     } else return value
-  }
-
-  const parse = (metric) => {
-    if (metric.name != 'mechanism') return format(metric.name, metric.value)
-    if ((metric.name == 'mechanism') & (metric.removal & !metric.avoided))
-      return 'CDR'
-    if ((metric.name == 'mechanism') & (!metric.removal & metric.avoided))
-      return 'AVD'
-    if ((metric.name == 'mechanism') & (metric.removal & metric.avoided))
-      return 'BOTH'
   }
 
   return (
@@ -67,7 +66,6 @@ const Metric = ({ metric, tag, tooltips }) => {
           toggle={toggle}
           expanded={expanded}
           tag={tag}
-          parse={parse}
           format={format}
           duration={duration}
           tooltips={tooltips}

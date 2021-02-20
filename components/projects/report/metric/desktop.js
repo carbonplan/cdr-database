@@ -4,7 +4,7 @@ import { useThemeUI, Box, Divider, Grid, Text } from 'theme-ui'
 import { Expander, Icons } from '@carbonplan/components'
 import Bar from '../graphics/bar'
 import Squares from '../graphics/squares'
-import Emissions from '../graphics/emissions'
+import Mechanism from '../graphics/mechanism'
 import TooltipToggle from '../../../tooltip/toggle'
 import TooltipDescription from '../../../tooltip/description'
 import scales from '../graphics/scales'
@@ -89,15 +89,11 @@ const MetricDesktop = ({
               textAlign: ['left', 'left', 'right'],
             }}
           >
-            {parse(metric)}
+            {format(metric.name, metric.value)}
           </Text>
           <Box>
             {metric.name == 'mechanism' && (
-              <Emissions
-                tag={tag}
-                removal={metric.removal}
-                avoided={metric.avoided}
-              ></Emissions>
+              <Mechanism tag={tag} value={metric.value}></Mechanism>
             )}
             {metric.name == 'volume' && (
               <Bar tag={tag} data={metric.value} scale={scales['volume']}></Bar>
