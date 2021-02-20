@@ -66,7 +66,7 @@ const TOC = ({ section, setSection }) => {
         <Link
           sx={{
             display: 'inline-block',
-            fontSize: [5, 6, 6],
+            fontSize: [5, 5, 6],
             mt: [1],
             mr: [3],
             color: 'text',
@@ -93,10 +93,10 @@ const TOC = ({ section, setSection }) => {
             <Box
               key={'section-' + i}
               sx={{
-                mr: [2, 3, 0],
+                mr: [2, 2, 0],
                 display: ['inline-block', 'inline-block', 'block'],
                 mt: [2],
-                fontSize: [2, 3, 3],
+                fontSize: [2, 2, 3],
               }}
             >
               <Link

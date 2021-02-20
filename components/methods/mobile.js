@@ -1,43 +1,12 @@
 import { Grid, Box, Text, Link } from 'theme-ui'
-import Sources from '../../methods/sources.md'
-import Metrics from '../../methods/metrics.md'
-import Feedback from '../../methods/feedback.md'
-import Projects from '../../methods/projects.md'
+import Intro from './intro.js'
+import Section from './section.js'
 import TOC from './toc.js'
 
 const Mobile = ({ section, setSection }) => {
   return (
     <Box>
-      <Box>
-        <Text
-          sx={{
-            fontSize: [6],
-            fontFamily: 'heading',
-            letterSpacing: 'heading',
-            pt: [1, 3, 3],
-            mb: [1],
-          }}
-        >
-          Methods
-        </Text>
-        <Text sx={{ maxWidth: '800px', fontSize: [2, 3, 3] }}>
-          Descriptions of our metrics and notes on each carbon removal project
-          we have analyzed. Check out the{' '}
-          <Link
-            sx={{
-              '@media (hover: none) and (pointer: coarse)': {
-                '&:hover': {
-                  color: 'primary',
-                },
-              },
-            }}
-            onClick={() => setSection('feedback')}
-          >
-            feedback
-          </Link>{' '}
-          section if you have questions or want to get in touch.
-        </Text>
-      </Box>
+      <Intro setSection={setSection} />
       <Box>
         <Box
           id='contents'
@@ -57,24 +26,7 @@ const Mobile = ({ section, setSection }) => {
         >
           <TOC setSection={setSection} section={section}></TOC>
         </Box>
-        <Box
-          sx={{
-            borderStyle: 'solid',
-            borderColor: 'muted',
-            borderWidth: '0px',
-            borderLeftWidth: ['0px', '0px', '1px'],
-            pl: [1],
-            pr: [1],
-            mt: '106px',
-          }}
-        >
-          <Box sx={{ mt: ['-80px', '-80px', '-50px'] }}>
-            {section == 'sources' && <Sources />}
-            {section == 'metrics' && <Metrics />}
-            {section == 'feedback' && <Feedback />}
-            {section == 'projects' && <Projects />}
-          </Box>
-        </Box>
+        <Section section={section} />
       </Box>
     </Box>
   )

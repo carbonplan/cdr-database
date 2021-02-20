@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react'
 import { useThemeUI, Heading, Grid, Box, Text } from 'theme-ui'
 import { Layout } from '@carbonplan/components'
 import { withAuth } from '../../lib/auth'
-import useMedia from 'react-use/lib/useMedia'
-import Desktop from '../../components/methods/desktop'
-import Mobile from '../../components/methods/mobile'
+import Main from '../../components/methods/main'
 
 function Methods(props) {
   const [section, setSection] = useState('sources')
@@ -15,12 +13,7 @@ function Methods(props) {
 
   return (
     <Layout container={false} footer={false} metadata={'scroll'}>
-      <Box sx={{ display: ['none', 'none', 'initial'] }}>
-        <Desktop section={section} setSection={setSection} />
-      </Box>
-      <Box sx={{ display: ['initial', 'initial', 'none'] }}>
-        <Mobile section={section} setSection={setSection} />
-      </Box>
+      <Main section={section} setSection={setSection} />
     </Layout>
   )
 }
