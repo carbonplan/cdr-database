@@ -92,13 +92,23 @@ const Report = ({ data, setHighlighted, tooltips }) => {
               }}
             >
               <Expander
-                sx={{ display: ['initial', 'none', 'none'], ml: ['-3px'], mr: [2], mt: ['2px'] }}
+                sx={{
+                  display: ['initial', 'none', 'none'],
+                  ml: ['-3px'],
+                  mr: [2],
+                  mt: ['2px'],
+                }}
                 id='expander'
                 value={expanded}
               ></Expander>
               {applicant}
               <Expander
-                sx={{ display: ['none', 'initial', 'initial'], ml: [2], mr: [2], mt: ['2px'] }}
+                sx={{
+                  display: ['none', 'initial', 'initial'],
+                  ml: [2],
+                  mr: [2],
+                  mt: ['2px'],
+                }}
                 id='expander'
                 value={expanded}
               ></Expander>
