@@ -19,7 +19,7 @@ const Metric = ({ metric, tag, tooltips }) => {
   const hasUnits = metric.units != ''
   const hasDetails = metric.notes != '' || metric.comment != ''
 
-  const format = (key, value, mobile=false) => {
+  const format = (key, value, mobile = false) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
     if (key == 'specificity') return ''

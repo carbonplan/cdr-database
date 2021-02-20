@@ -20,6 +20,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         borderBottomWidth: '1px',
         borderColor: 'muted',
         borderStyle: 'solid',
+        userSelect: 'none',
       }}
     >
       <Flex

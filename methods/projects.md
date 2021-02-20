@@ -10,7 +10,7 @@ Here we provide notes for each of the projects we have analyzed. Projects are li
 
 Here and elsewhere, our primary focus is analyzing and independently validating scientific plausibility and credibility. Our hope is that sharing data and insights can benefit the field as a whole, and complement the work of the inventors, scientists, entrepreneurs, and activists who are making climate solutions a reality.
 
-<Projects/>
+<Projects />
 
 ## References
 

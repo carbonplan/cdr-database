@@ -10,16 +10,18 @@ const TooltipDescription = ({ label, value, tooltips, ml }) => {
         height={tooltips && value ? 'auto' : 0}
         easing={'linear'}
       >
-        <Box
-          sx={{
-            fontSize: [1],
-            mt: [0],
-            ml: !(ml == null) ? ml : '115px',
-            color: 'text',
-          }}
-        >
-          {glossary[label]}
-        </Box>
+        {tooltips && value && (
+          <Box
+            sx={{
+              fontSize: [1],
+              mt: [0],
+              ml: !(ml == null) ? ml : '115px',
+              color: 'text',
+            }}
+          >
+            {glossary[label]}
+          </Box>
+        )}
       </AnimateHeight>
     </Box>
   )
