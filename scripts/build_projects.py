@@ -34,12 +34,21 @@ def write_projects(project_collection, output):
         f.write('module.exports=' + json.dumps(collection))
 
 def write_methods(project_collection, output):
-    methods = {}
+    methods = []
     for project in project_collection['projects']:
-        methods[project['id']] = project['methods']
+        tmp = {}
+        tmp['type'] = 'Methods'
+        tmp['id'] = project['id']
+        tmp['applicant'] = project['applicant']
+        tmp['content'] = project['methods']
+        methods.append(tmp)
+
+    collection = {}
+    collection['type'] = 'MethodsCollection'
+    collection['methods'] = methods
 
     with open('data/' + output, "w") as f:
-        f.write('module.exports=' + json.dumps(methods))
+        f.write('module.exports=' + json.dumps(collection))
 
 if __name__ == "__main__":
     main()
