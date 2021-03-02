@@ -58,7 +58,7 @@ const Report = ({ data, setHighlighted, tooltips }) => {
         pt: ['0px', '0px', '12px'],
         pb: [3],
         my: [3],
-        mb: [3, 3, 4],
+        mb: [3, 3, '24px'],
         transition: 'border-color 0.15s',
         '&:hover': {
           borderColor: ['muted', 'muted', 'secondary'],
