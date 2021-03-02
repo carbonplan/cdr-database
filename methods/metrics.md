@@ -11,7 +11,7 @@ Our goal is to harmonize metrics across a range of project categories, bringing 
 
 Values for each metric are based on information provided in public project proposals and our own research. We are actively developing better methods for metric calibration based on independent data and models.
 
-The mark next to each metric shows our validation. We gave projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new metrics. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
+The mark next to each metric shows our validation. We assigned projects a <InlineCheck /> when we could validate a claim with reasonable confidence. Where we didn’t feel confident about validating claims, we left the entry blank, generally erring on the side of caution and respectfulness. The absence of a <InlineCheck /> should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods, and as we learn more about projects, we expect to be able to validate more claims with confidence, and we may introduce new metrics. We also include “notes” and “comments”, with notes addressing information provided by projects directly and comments explaining our evaluation or interpretation of project information.
 
 It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs.
 
@@ -110,7 +110,7 @@ Building materials are intermediate, as the plausible duration of Permanence dep
 Project Cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects).
 
 <!-- prettier-ignore -->
-Costs are expressed per metric tCO₂ and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. We encourage readers to interpret these data in the context of other project attributes.
+Costs are expressed per metric tCO₂ and thus, similar to Volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. As reported, the stated price does not reflect project duration, i.e. the reality that a ton of permanently removed carbon is a meaningfully different product than a ton of temporarily removed carbon. This makes permanence another important attribute to include in the [comparison of relative project costs](https://carbonplan.org/research/permanence-calculator).
 
 We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for [direct air capture](https://carbonplan.org/research/dac-calculator) and mineralization.
 
@@ -157,3 +157,8 @@ After analyzing each metric separately for validation, we reflect our overall co
 Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
 
 As with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
+
+<Table
+  type='icons'
+  three='Rating = MAX(1, mechanism + volume + negativity + permanence + (additionality - 1)) where mechanism, volume, negativity and permanence are 1 if validated and 0 otherwise, and additionality is scored on a scale from 0 to 2.'
+></Table>
