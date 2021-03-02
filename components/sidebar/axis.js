@@ -23,7 +23,7 @@ const Axis = ({
       brushX()
         .extent([
           [0, 0],
-          [370, 95],
+          [370, 90],
         ])
         .on('start brush', update)
     )
@@ -64,7 +64,7 @@ const Axis = ({
         '.selection': { stroke: 'none' },
       }}
     >
-      <svg viewBox='0 0 370 113'>
+      <svg viewBox='0 0 370 107'>
         <Points
           x={x}
           y={y}
@@ -79,7 +79,7 @@ const Axis = ({
             <text
               key={'tick-' + label + '-' + i}
               x={x(d)}
-              y={110}
+              y={106}
               textAnchor={'middle'}
               fontFamily={theme.fonts.mono}
               fill={theme.colors.muted}

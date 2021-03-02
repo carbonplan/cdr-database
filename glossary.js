@@ -1,6 +1,6 @@
 module.exports = {
 	category: 'Every project gets a primary category based on its carbon removal mechanism. Click to toggle a category in the filter, or double click to select only that category. Most projects have a secondary category, which is included in searches.',
-	search: 'When searching projects, we include the project applicant, project location, all category tags, and any project-specific keywords. Note that search also depends on other filter selections.',
+	search: 'When searching projects, we include the project applicant, project location, all category tags, and any project-specific keywords. Note that search also depends on other filter selections. You can press / to focus the search bar without clicking. ',
 	source: 'Our database is sourced from public project proposals submitted to various entities, such as corporate purchases of carbon removal. You can filter by these sources.',
 	permanence: 'The duration over which carbon storage can be reasonably assured. For biological systems this duration is typically limited by physical and socioeconomic risks, whereas for chemical or geological systems the duration is effectively permanent.',
 	volume: 'The total volume of carbon removal and/or avoided emissions achieved by the project. We interpret these as gross volumes. Net removal requires looking at negativity.',

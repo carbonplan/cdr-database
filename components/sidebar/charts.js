@@ -22,7 +22,7 @@ const y = scaleOrdinal()
   .range(
     Array(6)
       .fill(0)
-      .map((_, i) => i * 15 + 10)
+      .map((_, i) => i * 14 + 10)
   )
 
 const Charts = ({

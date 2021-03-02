@@ -45,28 +45,6 @@ const Search = ({ setSearch, tooltips }) => {
             }}
             value={value}
           />
-          <Box
-            as='span'
-            sx={{
-              display: 'inline-block',
-              position: 'absolute',
-              opacity: !hasFocus ? 0.8 : 0,
-              borderWidth: '1px',
-              pl: ['3px'],
-              pr: ['4px'],
-              fontSize: [1],
-              borderRadius: '4px',
-              borderStyle: 'solid',
-              borderColor: 'secondary',
-              color: 'secondary',
-              transition: '0.15s',
-              left: ['148px'],
-              top: ['2px'],
-              userSelect: 'none',
-            }}
-          >
-            /
-          </Box>
         </Box>
       </Field>
     </Box>

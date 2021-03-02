@@ -46,10 +46,8 @@ const Sidebar = ({
         </Text>
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
           <Text sx={{ pt: [1], mb: [1], pb: [1, 3, 3] }}>
-            This public database contains reports on CDR project proposals.
-            These reports reflect an independent analysis of project proposals
-            based on a harmonized set of metrics and the best available science
-            and data. Download data as a JSON or CSV. Read our{' '}
+            Reports on public Carbon Dioxide Removal project proposals. 
+            Built for transparency. Download as a JSON or CSV. Read our{' '}
             <NextLink href={'/methods'} passHref>
               <Link>methods</Link>
             </NextLink>
