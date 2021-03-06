@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useThemeUI, Heading, Grid, Box, Text } from 'theme-ui'
 import { Layout } from '@carbonplan/components'
 import { withAuth } from '../../lib/auth'
 import Main from '../../components/methods/main'
