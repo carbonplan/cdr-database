@@ -8,13 +8,14 @@
 **reports on carbon removal projects and technologies**
 
 [![GitHub][github-badge]][github]
-![Build Status][]
+[![Build Status]][actions]
 ![MIT License][]
 
 [github]: https://github.com/carbonplan/reports
-[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
-[build status]: https://flat.badgen.net/github/checks/carbonplan/reports
-[mit license]: https://flat.badgen.net/badge/license/MIT/blue
+[github-badge]: https://badgen.net/badge/-/github?icon=github&label
+[build status]: https://github.com/carbonplan/reports/actions/workflows/main.yml/badge.svg
+[actions]: https://github.com/carbonplan/reports/actions/workflows/main.yaml
+[mit license]: https://badgen.net/badge/license/MIT/blue
 
 ## resources
 
