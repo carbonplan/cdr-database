@@ -5,7 +5,7 @@ const { Check } = Icons
 
 const Rating = ({ sx, value }) => {
   return (
-    <Box sx={{ ml: ['-5px'], mt: ['6px'], mb: ['0px'] }}>
+    <Box sx={{ ml: ['-5px'], mt: ['6px'] }}>
       {[0, 1, 2, 3, 4].map((d, i) => (
         <Box key={'rating-' + i} sx={{ display: 'inline-block' }}>
           <Check
