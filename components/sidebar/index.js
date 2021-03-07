@@ -46,8 +46,8 @@ const Sidebar = ({
         </Text>
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
           <Text sx={{ pt: [1], mb: [1], pb: [1, 3, 3] }}>
-            Reports on public Carbon Dioxide Removal project proposals. 
-            Built for transparency. Download as a JSON or CSV. Read our{' '}
+            Reports on public Carbon Dioxide Removal project proposals. Built
+            for transparency. Download as a JSON or CSV. Read our{' '}
             <NextLink href={'/methods'} passHref>
               <Link>methods</Link>
             </NextLink>

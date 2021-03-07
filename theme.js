@@ -4,14 +4,14 @@ export default {
   ...base,
   text: {
     label: {
-      fontFamily: 'mono', 
+      fontFamily: 'mono',
       letterSpacing: 'mono',
-      fontSize: [1], 
-      textTransform: 'uppercase', 
+      fontSize: [1],
+      textTransform: 'uppercase',
       color: 'secondary',
       mt: ['3px'],
-      userSelect: 'none'
-    }
+      userSelect: 'none',
+    },
   },
   tags: {
     dac: 'purple',
@@ -38,6 +38,6 @@ export default {
     macroalgae: 'green',
     wetlands: 'green',
     insulation: 'yellow',
-    restoration: 'orange'
-  }
+    restoration: 'orange',
+  },
 }
