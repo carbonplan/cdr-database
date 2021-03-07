@@ -58,7 +58,7 @@ def make_project(id):
         "tags": [],
         "id": id,
         "description": "",
-        "applicant": ""
+        "applicant": "",
     }
 
 

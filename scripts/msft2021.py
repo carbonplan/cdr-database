@@ -1,5 +1,3 @@
-import json
-
 from utils import get_sheet, make_metric, make_project, maybe_float
 
 
@@ -73,7 +71,7 @@ def make_projects():
                         m[key] = -9999
 
             project["metrics"].append(m)
-        if row[('flag','')] != 'x':
+        if row[('flag', '')] != 'x':
             projects.append(project)
 
     return projects

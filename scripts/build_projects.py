@@ -27,6 +27,7 @@ def main(rfps, output_projects, output_methods, output_numbers):
     write_methods(project_collection, output_methods)
     write_numbers(project_collection, output_numbers)
 
+
 def write_projects(project_collection, output):
     collection = copy.deepcopy(project_collection)
     for project in collection['projects']:
@@ -34,6 +35,7 @@ def write_projects(project_collection, output):
 
     with open('data/' + output, "w") as f:
         f.write('module.exports=' + json.dumps(collection))
+
 
 def write_methods(project_collection, output):
     methods = []
@@ -51,6 +53,7 @@ def write_methods(project_collection, output):
 
     with open('data/' + output, "w") as f:
         f.write('module.exports=' + json.dumps(collection))
+
 
 def write_numbers(project_collection, output):
     collection = copy.deepcopy(project_collection)
