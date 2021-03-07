@@ -28,10 +28,19 @@ const Report = ({ data, setHighlighted, tooltips }) => {
     tags,
     metrics,
     location,
+    rating,
   } = data
 
   metrics = showMetrics.map((metric) => {
     return metrics.filter((m) => m.name == metric)[0]
+  })
+
+  metrics.push({
+    name: 'rating',
+    value: rating,
+    units: '',
+    notes: '',
+    comment: '',
   })
 
   return (

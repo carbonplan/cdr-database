@@ -17,12 +17,13 @@ const Metric = ({ metric, tag, tooltips }) => {
   const duration = Math.min(Math.max(length / 2, 100), 200) * 0.75
 
   const hasUnits = metric.units != ''
-  const hasDetails = metric.notes != '' || metric.comment != ''
+  const hasDetails = metric.notes !== '' || metric.comment !== ''
 
   const format = (key, value, mobile = false) => {
     if (value == 'N/A') return 'N/A'
     if (key == 'additionality') return ''
     if (key == 'specificity') return ''
+    if (key == 'rating') return ''
     if (key == 'permanence' && value == 1000) return '1000+'
     if (mobile) {
       if (key == 'mechanism' && value == 0) return 'REMOVAL'

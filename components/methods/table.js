@@ -1,6 +1,6 @@
 import { Box, Grid } from 'theme-ui'
 import { Icons } from '@carbonplan/components'
-import Squares from '../graphics/squares'
+import Squares from '../projects/report/graphics/squares'
 
 const { Check } = Icons
 

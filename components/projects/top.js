@@ -80,7 +80,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         </Box>
         <Box sx={{ mt: ['10px'] }}>
           <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
-            <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
+            <Box sx={{ display: ['none', 'none', 'initial'], mr: [4] }}>
               <Toggle
                 value={tooltips}
                 onClick={() => {

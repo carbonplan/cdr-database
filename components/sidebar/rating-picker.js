@@ -4,7 +4,7 @@ import { Icons } from '@carbonplan/components'
 
 const { Check } = Icons
 
-const Rating = ({ value, setValue }) => {
+const RatingPicker = ({ value, setValue }) => {
   const [hover, setHover] = useState(0)
 
   return (
@@ -38,4 +38,4 @@ const Rating = ({ value, setValue }) => {
   )
 }
 
-export default Rating
+export default RatingPicker
