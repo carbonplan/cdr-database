@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { Tag, Icons } from '@carbonplan/components'
-import Rating from './rating'
+import RatingPicker from './rating-picker'
 import Field from './field'
 
 const colors = {
@@ -54,9 +54,16 @@ const Metadata = ({
 
   function toggleAll(list) {
     let updated = {}
-    list.forEach((d) => {
-      updated[d] = true
-    })
+    if (isAll(list)) {
+      list.forEach((d) => {
+        updated[d] = false
+      })
+    } else {
+      list.forEach((d) => {
+        updated[d] = true
+      })
+    }
+
     setFilters((filters) => {
       return {
         ...filters,
@@ -141,7 +148,7 @@ const Metadata = ({
       </Field>
       <Field label='rating' tooltips={tooltips}>
         <Text variant='label'>RATING</Text>
-        <Rating value={filters['rating']} setValue={setRating} />
+        <RatingPicker value={filters['rating']} setValue={setRating} />
       </Field>
     </Box>
   )

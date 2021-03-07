@@ -8,11 +8,7 @@ const Squares = ({ color, data }) => {
   const theme = context.theme
 
   return (
-    <Box
-      sx={{
-        mt: ['13px'],
-      }}
-    >
+    <Box sx={{}}>
       <svg
         sx={{ height: ['10px', '10px', '20px'] }}
         width='90px'

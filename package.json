@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start -p 5000",
     "format": "npm run format-js && npm run format-md",
-    "format-js": "prettier --write '{components,lib,pages}/**/*.js'",
+    "format-js": "prettier --write glossary.js theme.js '{methods,components,lib,pages}/**/*.js'",
     "format-md": "prettier --write README.md 'methods/**/*.md' --parser mdx"
   },
   "repository": {
@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/carbonplan/reports-dev#readme",
   "dependencies": {
-    "@babel/core": "^7.13.1",
-    "@carbonplan/components": "^3.0.3",
+    "@carbonplan/components": "^3.1.0",
     "@carbonplan/theme": "^2.3.1",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.5",

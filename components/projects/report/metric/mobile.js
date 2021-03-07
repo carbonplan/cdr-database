@@ -1,6 +1,8 @@
 import AnimateHeight from 'react-animate-height'
 import { useThemeUI, Box, Grid, Divider, Text } from 'theme-ui'
 import { Expander, Icons } from '@carbonplan/components'
+import Rating from '../graphics/rating'
+import Squares from '../graphics/squares'
 
 const { Check } = Icons
 
@@ -127,30 +129,16 @@ const MetricMobile = ({
             </Text>
           )}
           {metric.name == 'additionality' && (
-            <Text
-              sx={{
-                color: theme.tags[tag],
-                fontFamily: 'mono',
-                letterSpacing: 'mono',
-                fontSize: [4],
-              }}
-            >
-              {metric.value + 1}
-              <Text sx={{ color: 'text', display: 'inline-block' }}>/</Text>3
-            </Text>
+            <Squares color={theme.tags[tag]} data={metric.value}></Squares>
           )}
           {metric.name == 'specificity' && (
-            <Text
-              sx={{
-                color: theme.tags[tag],
-                fontFamily: 'mono',
-                letterSpacing: 'mono',
-                fontSize: [4],
-              }}
-            >
-              {metric.value + 1}
-              <Text sx={{ color: 'text', display: 'inline-block' }}>/</Text>3
-            </Text>
+            <Squares color={theme.tags[tag]} data={metric.value}></Squares>
+          )}
+          {metric.name == 'rating' && (
+            <Rating
+              sx={{ color: theme.tags[tag] }}
+              value={metric.value}
+            ></Rating>
           )}
         </Box>
       </Box>
