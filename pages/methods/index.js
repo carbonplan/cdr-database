@@ -11,7 +11,7 @@ function Methods(props) {
   }, [section])
 
   return (
-    <Layout container={false} footer={false} metadata={'scroll'}>
+    <Layout container={'wide'} footer={false} metadata={'scroll'}>
       <Main section={section} setSection={setSection} />
     </Layout>
   )

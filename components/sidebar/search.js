@@ -42,6 +42,10 @@ const Search = ({ setSearch, tooltips }) => {
               borderWidth: '0px',
               textAlign: 'left',
               display: 'inline-block',
+              ':focus-visible': {
+                outline: 'none !important',
+                background: 'none !important',
+              },
             }}
             value={value}
           />

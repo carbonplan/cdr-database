@@ -28,7 +28,7 @@ function Index() {
   }
 
   return (
-    <Layout footer={false} metadata={false} container={false} dimmer={false}>
+    <Layout footer={false} metadata={false} container={'wide'} dimmer={false}>
       <Main projects={projects} metrics={metrics} />
     </Layout>
   )
