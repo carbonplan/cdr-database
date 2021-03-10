@@ -6,7 +6,7 @@ export const meta = {
 
 # Projects
 
-Here we provide notes for each of the projects we have analyzed. Projects are listed by applicant and ID, and sorted by applicant. All analysis and evaluation is based on information provided in public project proposals, publications, and our own research. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations or calculations. Methods may be especially minimal if substantial information for a given project is provided in the notes and comments of our reports.
+Here we provide any additional notes for projects we have analyzed. Projects are listed by applicant and ID, and sorted by applicant. All analysis and evaluation is based on information provided in public project proposals, publications, and our own research. We do not exhaustively list methods for every metric for every project, but rather highlight specific considerations or calculations. Methods may be minimal or absent if substantial information is provided in the notes and comments of our reports.
 
 Here and elsewhere, our primary focus is analyzing and independently validating scientific plausibility and credibility. Our hope is that sharing data and insights can benefit the field as a whole, and complement the work of the inventors, scientists, entrepreneurs, and activists who are making climate solutions a reality.
 

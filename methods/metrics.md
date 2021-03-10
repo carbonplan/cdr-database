@@ -152,13 +152,8 @@ In general, we encourage sharing as many details as possible. We believe that ma
 
 ## Rating
 
-After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence each add 1 point to the total. Additionality, which is scored on a three point scale, subtracts 1 point from the total if it receives the lowest score and adds 1 point to the total if it receives the highest score. The lowest rating a project can receive is 1.
+After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of Mechanism, Volume, Negativity, or Permanence each add 1 point to the total. For Additionality, which is scored on a three point scale, we subtract 1 point from the total if the project receives a 1/3 and we add 1 point to the total if the project receives a 3/3, and otherwise do not change it. The lowest rating a project can receive is 1.
 
 Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
 
 As with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
-
-<Table
-  type='icons'
-  three='Rating = MAX(1, mechanism + volume + negativity + permanence + (additionality - 1)) where mechanism, volume, negativity and permanence are 1 if validated and 0 otherwise, and additionality is scored on a scale from 0 to 2.'
-></Table>

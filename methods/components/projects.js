@@ -22,6 +22,9 @@ const Projects = () => {
         .sort((a, b) => {
           return a.applicant.localeCompare(b.applicant)
         })
+        .filter((d) => {
+          return !(d.content === '')
+        })
         .map((d) => {
           return (
             <Box id={d.id} key={d.id}>
