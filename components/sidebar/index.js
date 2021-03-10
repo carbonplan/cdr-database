@@ -30,6 +30,11 @@ const Sidebar = ({
           top: 56,
           height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
           overflowY: 'scroll',
+          '::-webkit-scrollbar': {
+            width: 0,
+            background: 'transparent',
+          },
+          scrollbarWidth: 'none'
         }}
       >
         <Text
