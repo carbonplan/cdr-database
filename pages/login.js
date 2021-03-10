@@ -58,6 +58,10 @@ function Login({ origin }) {
             borderWidth: '0px',
             borderBottomWidth: '1px',
             borderRadius: '0px',
+            ':focus-visible': {
+              outline: 'none !important',
+              background: 'none !important',
+            },
           }}
           type='password'
           name='password'
