@@ -34,7 +34,7 @@ const Sidebar = ({
             width: 0,
             background: 'transparent',
           },
-          scrollbarWidth: 'none'
+          scrollbarWidth: 'none',
         }}
       >
         <Text

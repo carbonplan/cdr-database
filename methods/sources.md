@@ -20,7 +20,7 @@ In early 2020, Microsoft announced a [commitment to purchase carbon removal](htt
 
 We excluded 9 proposals that specified 0 tCO₂ offered volume, which made the project invalid as a proposal for carbon removal from the perspective of our analysis. We excluded 16 proposals that did not provide enough data to tell what activities led to the claimed carbon benefits. Some of these proposals indicated more complete information in confidential attachments which we did not view. We also excluded one renewable energy proposal, and one apparent double submission.
 
-Microsoft’s RFP did not systematically surface life cycle analysis or cost data in public sections of the application process. Therefore, most proposals from this source have N/As for Negativity and Cost.
+Microsoft’s RFP did not systematically surface life cycle analysis or cost data in public sections of the application process. Therefore, most proposals from this source have N/As for negativity and cost.
 
 ## Stripe 2020
 
