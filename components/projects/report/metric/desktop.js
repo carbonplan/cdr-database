@@ -185,7 +185,7 @@ const MetricDesktop = ({
             sx={{
               pb: [1],
               cursor: 'text',
-              pl: embed ? [0, 0, 0] : [0, 0, '24px'],
+              pl: embed ? [2, 2, 2] : [0, 0, '24px'],
             }}
             onClick={(e) => e.stopPropagation()}
           >

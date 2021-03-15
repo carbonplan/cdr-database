@@ -175,7 +175,7 @@ const MetricMobile = ({
                     sx={{
                       ...sx.comment,
                       color: theme.tags[tag],
-                      textAlign: ['left', 'left', 'right'],
+                      textAlign: ['left'],
                       mr: [2],
                       ml: [0],
                       mt: [0],

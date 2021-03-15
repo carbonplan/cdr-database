@@ -28,10 +28,13 @@ const Project = () => {
   
   return (
     <Layout footer={false} metadata={false} dimmer={true}>
-      <Grid columns={[1, 1, '418px 1fr']} gap={['0px']}>
+      <Grid columns={[1, 1, 'min(40%, 418px) 1fr']} gap={['0px']}>
         <Box
           sx={{
-            pr: [0, 0, 4],
+            pr: [0, 0, 5],
+            '@media only screen and (min-width: 100em)': {
+              pr: [0, 0, '128px'],
+            },
           }}
         >
           <Box
@@ -68,14 +71,18 @@ const Project = () => {
         <Box
           sx={{
             my: [2, 2, '24px'],
-            pl: [0, 0, 4],
+            pl: [0, 0, 5],
             pt: ['0px', '0px', '24px'],
             pb: [2, 2, '24px'],
+            pr: [0, 0, 2],
             borderStyle: 'solid',
             borderWidth: '0px',
             borderLeftWidth: ['0px', '0px', '1px'],
             borderColor: 'muted',
             width: '100%',
+            '@media only screen and (min-width: 100em)': {
+              pl: [0, 0, '128px'],
+            },
           }}
         >
           {project && (
