@@ -59,6 +59,7 @@ const MetricDesktop = ({
   parse,
   duration,
   tooltips,
+  embed,
 }) => {
   const { theme } = useThemeUI()
   const [tooltip, setTooltip] = useState(false)
@@ -76,6 +77,7 @@ const MetricDesktop = ({
           },
           pt: [2],
           pb: [2],
+          pl: embed ? [2, 2, 2] : [0, 0, '24px'],
         }}
       >
         <Grid
@@ -87,7 +89,7 @@ const MetricDesktop = ({
             sx={{
               ...sx.value,
               color: theme.tags[tag],
-              textAlign: ['left', 'left', 'right'],
+              textAlign: ['right'],
             }}
           >
             {format(metric.name, metric.value)}
@@ -180,7 +182,11 @@ const MetricDesktop = ({
       >
         {expanded && (
           <Box
-            sx={{ pb: [1], cursor: 'text' }}
+            sx={{
+              pb: [1],
+              cursor: 'text',
+              pl: embed ? [0, 0, 0] : [0, 0, '24px'],
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <Box
@@ -245,8 +251,16 @@ const MetricDesktop = ({
             </Box>
           </Box>
         )}
+        {!expanded && <span></span>}
       </AnimateHeight>
-      <Divider sx={{ mr: [0], mt: [0], mb: [0] }} />
+      <Divider
+        sx={{
+          ml: embed ? [0, 0, 0] : [0, 0, '24px'],
+          mr: [0],
+          mt: [0],
+          mb: [0],
+        }}
+      />
     </Box>
   )
 }

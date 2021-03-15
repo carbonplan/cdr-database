@@ -129,10 +129,18 @@ const MetricMobile = ({
             </Text>
           )}
           {metric.name == 'additionality' && (
-            <Squares color={theme.tags[tag]} data={metric.value}></Squares>
+            <Squares
+              color={theme.tags[tag]}
+              data={metric.value}
+              height='10px'
+            ></Squares>
           )}
           {metric.name == 'specificity' && (
-            <Squares color={theme.tags[tag]} data={metric.value}></Squares>
+            <Squares
+              color={theme.tags[tag]}
+              data={metric.value}
+              height='10px'
+            ></Squares>
           )}
           {metric.name == 'rating' && (
             <Rating
@@ -217,6 +225,7 @@ const MetricMobile = ({
             </Box>
           </Box>
         )}
+        {!expanded && <span></span>}
       </AnimateHeight>
       <Divider sx={{ mr: [0, 0, 2], mt: [0], mb: [0] }} />
     </Box>

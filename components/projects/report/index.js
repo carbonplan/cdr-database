@@ -14,8 +14,8 @@ const showMetrics = [
   'specificity',
 ]
 
-const Report = ({ data, setHighlighted, tooltips }) => {
-  const [expanded, setExpanded] = useState(false)
+const Report = ({ data, setHighlighted, tooltips, embed }) => {
+  const [expanded, setExpanded] = useState(embed ? true : false)
   const { theme } = useThemeUI()
 
   let {
@@ -43,31 +43,35 @@ const Report = ({ data, setHighlighted, tooltips }) => {
     comment: '',
   })
 
+  const ml = embed ? [0, 0, 0] : [0, 0, '24px']
+
   return (
     <Box
       onClick={() => {
-        setExpanded(!expanded)
+        if (!embed) setExpanded(!expanded)
       }}
       onMouseEnter={() => {
-        setHighlighted(id)
+        if (setHighlighted) setHighlighted(id)
       }}
       onMouseLeave={() => {
-        setHighlighted(null)
+        if (setHighlighted) setHighlighted(null)
       }}
       sx={{
         borderStyle: 'solid',
         borderColor: 'muted',
         borderWidth: '0px',
-        borderBottomWidth: ['1px', '1px', '0px'],
-        borderLeftWidth: ['0px', '0px', '1px'],
+        borderBottomWidth: embed
+          ? ['0px', '0px', '0px']
+          : ['1px', '1px', '0px'],
+        borderLeftWidth: embed ? [0, 0, 0] : ['0px', '0px', '1px'],
         borderRadius: '0px',
-        cursor: 'pointer',
-        pl: [0, 0, '24px'],
+        cursor: embed ? 'default' : 'pointer',
+        pl: embed ? [0, 0, 0] : [0, 0, 0],
         pr: [0],
-        pt: ['0px', '0px', '12px'],
-        pb: [3],
-        my: [3],
-        mb: [3, 3, '24px'],
+        pt: embed ? [0, 0, 0] : ['0px', '0px', '12px'],
+        pb: embed ? [0] : [3],
+        my: [embed ? 0 : 3],
+        mb: embed ? [0, 0, 0] : [3, 3, '24px'],
         transition: 'border-color 0.15s',
         '&:hover': {
           borderColor: ['muted', 'muted', 'secondary'],
@@ -80,7 +84,12 @@ const Report = ({ data, setHighlighted, tooltips }) => {
     >
       <Flex
         id='container'
-        sx={{ justifyContent: 'space-between', flexWrap: 'wrap', mt: ['-6px'] }}
+        sx={{
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          mt: ['-6px'],
+          ml: ml,
+        }}
       >
         <Box id='box' sx={{ mt: ['6px'] }}>
           <Flex
@@ -100,33 +109,37 @@ const Report = ({ data, setHighlighted, tooltips }) => {
                 ml: [2],
               }}
             >
-              <Expander
-                sx={{
-                  display: ['initial', 'none', 'none'],
-                  ml: ['-3px'],
-                  mr: [2],
-                  mt: ['2px'],
-                }}
-                id='expander'
-                value={expanded}
-              ></Expander>
+              {!embed && (
+                <Expander
+                  sx={{
+                    display: ['initial', 'none', 'none'],
+                    ml: ['-3px'],
+                    mr: [2],
+                    mt: ['2px'],
+                  }}
+                  id='expander'
+                  value={expanded}
+                ></Expander>
+              )}
               {applicant}
-              <Expander
-                sx={{
-                  display: ['none', 'initial', 'initial'],
-                  ml: [2],
-                  mr: [2],
-                  mt: ['2px'],
-                }}
-                id='expander'
-                value={expanded}
-              ></Expander>
+              {!embed && (
+                <Expander
+                  sx={{
+                    display: ['none', 'initial', 'initial'],
+                    ml: [2],
+                    mr: [2],
+                    mt: ['2px'],
+                  }}
+                  id='expander'
+                  value={expanded}
+                ></Expander>
+              )}
             </Text>
           </Flex>
         </Box>
         <Box
           sx={{
-            width: ['100%', 'fit-content', 'fit-content'],
+            width: embed ? ['100%'] : ['100%', 'fit-content', 'fit-content'],
             pt: [0],
             mt: ['6px'],
           }}
@@ -147,10 +160,25 @@ const Report = ({ data, setHighlighted, tooltips }) => {
           ))}
         </Box>
       </Flex>
-      <Text sx={{ pt: ['2px'], pb: [2], fontSize: [2] }}>{description}</Text>
-      <Text sx={{ fontSize: [1], pt: ['2px'], pb: [1], color: 'secondary' }}>
+      <Text sx={{ pt: ['2px'], ml: ml, pb: [2], fontSize: [2] }}>
+        {description}
+      </Text>
+      <Text
+        sx={{
+          display: 'inline-block',
+          fontSize: [1],
+          ml: ml,
+          pt: ['2px'],
+          pb: [1],
+          color: 'secondary',
+        }}
+      >
         {id.includes('STRP') && 'Stripe 2020'}
         {id.includes('MSFT') && 'Microsoft 2021'}
+        <Box as='span' sx={{ mx: [2] }}>
+          /
+        </Box>
+        {location.name}
       </Text>
       <AnimateHeight
         duration={100}
@@ -160,19 +188,20 @@ const Report = ({ data, setHighlighted, tooltips }) => {
         {expanded && (
           <Box sx={{ mt: [0] }}>
             <Box sx={{ mt: [3] }}>
-              <Divider sx={{ mr: [0], mt: [0], mb: [0] }} />
+              <Divider sx={{ ml: ml, mr: [0], mt: [0], mb: [0] }} />
               {metrics.map((metric) => (
                 <Metric
                   key={metric.name}
                   tag={tags[0]}
                   metric={metric}
                   tooltips={tooltips}
+                  embed={embed}
                 ></Metric>
               ))}
             </Box>
             <Box
               onClick={(e) => e.stopPropagation()}
-              sx={{ fontSize: [1], mt: [3] }}
+              sx={{ ml: ml, fontSize: [1], mt: [3] }}
             >
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
                 <Text as='span' sx={{ mr: [2] }}>
@@ -261,7 +290,34 @@ const Report = ({ data, setHighlighted, tooltips }) => {
               <Box
                 sx={{ color: 'secondary', textAlign: 'right', float: 'right' }}
               >
-                <Text>{location.name}</Text>
+                <Box as='span' sx={{ color: 'secondary', ml: [0] }}>
+                  Share{' '}
+                  <Text
+                    id='arrow'
+                    sx={{
+                      ml: [1],
+                      fontSize: [4],
+                      position: 'relative',
+                      top: '4px',
+                      display: 'inline-block',
+                      textDecoration: 'none',
+                      lineHeight: 0,
+                      zIndex: '-1',
+                      '&:active': {
+                        color: 'primary',
+                      },
+                      '&:hover': {
+                        color: 'primary',
+                        borderColor: 'primary',
+                      },
+                    }}
+                  >
+                    ↗
+                  </Text>
+                </Box>
+                <Box as='span' sx={{ color: 'secondary', ml: [2] }}>
+                  Embed {'</>'}
+                </Box>
               </Box>
             </Box>
           </Box>

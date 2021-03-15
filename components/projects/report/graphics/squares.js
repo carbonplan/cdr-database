@@ -3,14 +3,14 @@ import { jsx, Box, Text } from 'theme-ui'
 import * as d3 from 'd3-scale'
 import { useThemeUI } from 'theme-ui'
 
-const Squares = ({ color, data }) => {
+const Squares = ({ color, data, height }) => {
   const context = useThemeUI()
   const theme = context.theme
 
   return (
     <Box sx={{}}>
       <svg
-        sx={{ height: ['10px', '10px', '20px'] }}
+        sx={{ height: height ? height : '20px' }}
         width='90px'
         stroke='none'
         fill='none'

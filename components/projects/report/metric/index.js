@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Box } from 'theme-ui'
+import { useMeasure } from 'react-use'
 import MetricMobile from './mobile'
 import MetricDesktop from './desktop'
 
-const Metric = ({ metric, tag, tooltips }) => {
+const Metric = ({ metric, tag, tooltips, embed }) => {
   const [expanded, setExpanded] = useState(false)
+
+  const [ref, { width }] = useMeasure()
 
   const toggle = (e) => {
     e.stopPropagation()
@@ -45,8 +48,38 @@ const Metric = ({ metric, tag, tooltips }) => {
   }
 
   return (
-    <Box>
-      <Box sx={{ display: ['inherit', 'inherit', 'none'] }}>
+    <Box ref={ref}>
+      {!embed && (
+        <Box>
+          <Box sx={{ display: ['inherit', 'none', 'none'] }}>
+            <MetricMobile
+              metric={metric}
+              hasUnits={hasUnits}
+              hasDetails={hasDetails}
+              toggle={toggle}
+              expanded={expanded}
+              tag={tag}
+              format={format}
+              duration={duration}
+              tooltips={tooltips}
+            />
+          </Box>
+          <Box sx={{ display: ['none', 'inherit', 'inherit'] }}>
+            <MetricDesktop
+              metric={metric}
+              hasUnits={hasUnits}
+              hasDetails={hasDetails}
+              toggle={toggle}
+              expanded={expanded}
+              tag={tag}
+              format={format}
+              duration={duration}
+              tooltips={tooltips}
+            />
+          </Box>
+        </Box>
+      )}
+      {embed && width < 368 && (
         <MetricMobile
           metric={metric}
           hasUnits={hasUnits}
@@ -58,8 +91,8 @@ const Metric = ({ metric, tag, tooltips }) => {
           duration={duration}
           tooltips={tooltips}
         />
-      </Box>
-      <Box sx={{ display: ['none', 'none', 'inherit'] }}>
+      )}
+      {embed && width >= 368 && (
         <MetricDesktop
           metric={metric}
           hasUnits={hasUnits}
@@ -70,8 +103,9 @@ const Metric = ({ metric, tag, tooltips }) => {
           format={format}
           duration={duration}
           tooltips={tooltips}
+          embed={true}
         />
-      </Box>
+      )}
     </Box>
   )
 }
