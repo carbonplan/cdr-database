@@ -25,7 +25,7 @@ const Project = () => {
       setProject(project)
     }
   }, [router])
-  
+
   return (
     <Layout footer={false} metadata={false} dimmer={true}>
       <Grid columns={[1, 1, 'min(40%, 418px) 1fr']} gap={['0px']}>
