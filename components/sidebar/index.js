@@ -5,6 +5,9 @@ import Search from './search'
 import Metadata from './metadata'
 import Charts from './charts'
 
+const prefix =
+  'https://github.com/carbonplan/reports-microsoft-2021/blob/main/data'
+
 const Sidebar = ({
   highlighted,
   filtered,
@@ -52,8 +55,9 @@ const Sidebar = ({
         <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
           <Text sx={{ pt: [0, 0, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
             These are reports on public Carbon Dioxide Removal project
-            proposals. Built for transparency. Download as a JSON or CSV. Read
-            our{' '}
+            proposals. Built for transparency. Download as a{' '}
+            <Link href={`${prefix}/projects.json?raw=true`}>JSON</Link> or{' '}
+            <Link href={`${prefix}/projects.csv?raw=true`}>CSV</Link>. Read our{' '}
             <NextLink href={'/methods'} passHref>
               <Link>methods</Link>
             </NextLink>

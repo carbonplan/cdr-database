@@ -18,7 +18,7 @@ module.exports = {
   ratingFilter:
     'Click to filter projects by setting a minimum rating. All projects with a rating as high or higher will be shown. The rating for each project reflects our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total.',
   mechanism:
-    'Does the project remove carbon dioxide from the atmosphere (RMV), or does it avoid emissions that would have otherwise occurred (AVD)? While both can have positive climate benefits, the difference matters for accounting purposes.',
+    'Does the project remove carbon dioxide from the atmosphere (RMV) or does it avoid emissions that would have otherwise occurred (AVD) or both (BOTH)? While both can have positive climate benefits, the difference matters for accounting purposes.',
   mechanismRating:
     'Click to filter projects based on whether they remove carbon dioxide from the atmosphere (REMOVAL) or avoid emissions that would have otherwise occurred (AVOIDED). While both can have positive climate benefits, the difference matters for accounting purposes.',
   negativity:
