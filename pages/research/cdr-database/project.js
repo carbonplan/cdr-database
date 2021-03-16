@@ -3,9 +3,8 @@ import { useRouter } from 'next/router'
 import { Grid, Flex, Container, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { Layout } from '@carbonplan/components'
-import { withAuth } from '../lib/auth'
-import Report from '../components/projects/report'
-import collection from '../data/projects'
+import Report from '../../../components/projects/report'
+import collection from '../../../data/projects'
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value

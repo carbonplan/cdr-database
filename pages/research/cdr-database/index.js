@@ -2,9 +2,8 @@ import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Layout } from '@carbonplan/components'
-import { withAuth } from '../lib/auth'
-import Main from '../components/main'
-import collection from '../data/projects'
+import Main from '../../../components/main'
+import collection from '../../../data/projects'
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value
@@ -34,4 +33,4 @@ function Index() {
   )
 }
 
-export default withAuth(Index, ['admin', 'demo'])
+export default Index
