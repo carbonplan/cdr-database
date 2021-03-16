@@ -21,7 +21,7 @@ const Sidebar = ({
   tooltips,
   mobileFilterExpanded,
 }) => {
-  const isWide = useMedia('screen and (min-width: 52em)')
+  const isWide = useMedia('screen and (min-width: 54em)')
 
   function setSearch(value) {
     setFilters((filters) => {
