@@ -104,9 +104,15 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
         '&:hover': {
           borderColor: ['muted', 'muted', 'secondary'],
         },
-        '&:hover > #container > #box > #flex > #text > #expander': {
-          fill: 'primary',
-          stroke: 'primary',
+        '@media (hover: hover) and (pointer: fine)': {
+          '&:hover > #container > #box > #flex > #text > #expander': {
+            stroke: 'primary',
+          },
+        },
+        '@media (hover: none) and (pointer: coarse)': {
+          '#container > #box > #flex > #text > #expander': {
+            stroke: expanded ? 'primary' : 'secondary',
+          },
         },
       }}
     >

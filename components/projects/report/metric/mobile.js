@@ -61,9 +61,8 @@ const MetricMobile = ({
         sx={{
           cursor: hasDetails ? 'pointer' : 'default',
           pointerEvents: 'all',
-          '&:hover > #grid > #container > #expander': {
-            fill: 'primary',
-            stroke: 'primary',
+          '#grid > #container > #expander': {
+            stroke: expanded ? 'primary' : 'secondary',
           },
           pt: [2],
           pb: [3],
