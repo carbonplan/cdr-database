@@ -84,49 +84,47 @@ const Mobile = ({ filters, setFilters }) => {
       sx={{
         position: 'fixed',
         bottom: '0',
-        left: '0',
+        right: '0',
         width: '100%',
-        height: expanded ? '190px' : '60px',
-        backgroundColor: 'background',
+        height: expanded ? '190px' : '0px',
+        backgroundColor: expanded ? 'background' : 'none',
         borderWidth: '0px',
         borderStyle: 'solid',
         borderColor: 'muted',
-        borderTopWidth: '1px',
-        transition: 'height 0.15s',
+        borderTopWidth: expanded ? '1px' : '0px',
+        transition: '0.15s',
       }}
     >
-      {expanded && (
-        <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
-          <Text variant='label' sx={{ mb: [1] }}>
-            CATEGORY
-          </Text>
-          <Box sx={{ maxWidth: '300px' }}>
-            {categories.map((d) => (
-              <Tag
-                key={d}
-                label={d}
-                value={filters[d]}
-                sx={{ color: colors[d] }}
-                onClick={() => toggleOption(d)}
-                onDoubleClick={() => toggleOptionUnique(d, categories)}
-              >
-                {d}
-              </Tag>
-            ))}
+      <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
+        <Text variant='label' sx={{ mb: [1] }}>
+          CATEGORY
+        </Text>
+        <Box sx={{ maxWidth: '300px' }}>
+          {categories.map((d) => (
             <Tag
-              label={'all'}
-              value={isAll(categories)}
-              onClick={() => toggleAll(categories)}
+              key={d}
+              label={d}
+              value={filters[d]}
+              sx={{ color: colors[d] }}
+              onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d, categories)}
             >
-              All
+              {d}
             </Tag>
-          </Box>
-          <Text variant='label' sx={{ mt: [3], mb: [1] }}>
-            RATING
-          </Text>
-          <RatingPicker value={filters['rating']} setValue={setRating} />
+          ))}
+          <Tag
+            label={'all'}
+            value={isAll(categories)}
+            onClick={() => toggleAll(categories)}
+          >
+            All
+          </Tag>
         </Box>
-      )}
+        <Text variant='label' sx={{ mt: [3], mb: [1] }}>
+          RATING
+        </Text>
+        <RatingPicker value={filters['rating']} setValue={setRating} />
+      </Box>
       <Box
         onClick={() => setExpanded(!expanded)}
         sx={{
