@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Text } from 'theme-ui'
+import { useThemeUI, Box, Text } from 'theme-ui'
 import { Tag } from '@carbonplan/components'
 import RatingPicker from './rating-picker'
 
@@ -22,6 +22,8 @@ const categories = [
 ]
 
 const Mobile = ({ filters, setFilters }) => {
+  const { theme } = useThemeUI()
+
   const [expanded, setExpanded] = useState(false)
 
   function toggleOption(value) {
@@ -131,9 +133,64 @@ const Mobile = ({ filters, setFilters }) => {
           position: 'absolute',
           bottom: ['24px', '24px', 0],
           right: [3, '24px', 0],
+          fontFamily: 'mono',
+          letterSpacing: 'mono',
+          textTransform: 'uppercase',
+          transition: '0.15s',
+          color: expanded ? 'primary' : 'secondary',
+          cursor: 'pointer',
+          userSelect: 'none',
+          fontSize: [1],
         }}
       >
         Filter
+        <Box
+          sx={{
+            ml: [2],
+            position: 'relative',
+            top: '1px',
+            display: 'inline-block',
+            width: '18px',
+            height: '14px',
+            transition: '0.15s',
+            stroke: expanded ? theme.colors.primary : theme.colors.secondary,
+          }}
+        >
+          <svg id='icon' viewBox='0 0 18 14'>
+            <line
+              x1='1'
+              x2='17'
+              y1='1'
+              y2='1'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+            />
+            <line
+              x1='3'
+              x2='15'
+              y1='5'
+              y2='5'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+            />
+            <line
+              x1='5'
+              x2='12'
+              y1='9'
+              y2='9'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+            />
+            <line
+              x1='7'
+              x2='10'
+              y1='13'
+              y2='13'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+            />
+          </svg>
+        </Box>
       </Box>
     </Box>
   )
