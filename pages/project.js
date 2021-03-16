@@ -79,7 +79,7 @@ const Project = () => {
         </Box>
         <Box
           sx={{
-            my: [2, 2, '24px'],
+            my: [2, 2, '21px'],
             pl: [0, 0, 5],
             pt: [3, 3, '24px'],
             pb: [4, 4, '24px'],
@@ -104,8 +104,28 @@ const Project = () => {
             />
           )}
           {missing == true && (
-            <Box sx={{ fontSize: [4] }}>
-              Project '{project}' not found, double check your URL!
+            <Box>
+              <Box
+                sx={{
+                  mt: [1, 1, '8px'],
+                  fontFamily: 'mono',
+                  letterSpacing: 'mono',
+                  fontSize: [1],
+                  textTransform: 'uppercase',
+                  color: 'secondary',
+                }}
+              >
+                Project '{project}' not found
+              </Box>
+              <Box
+                sx={{
+                  mt: [3],
+                  fontSize: [2],
+                  letterSpacing: 'body',
+                }}
+              >
+                Try double checking your URL and try again.
+              </Box>
             </Box>
           )}
         </Box>

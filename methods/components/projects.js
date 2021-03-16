@@ -28,15 +28,27 @@ const Projects = () => {
         .map((d) => {
           return (
             <Box id={d.id} key={d.id}>
-              <Styled.h2>
+              <Box
+                sx={{
+                  fontSize: [5],
+                  fontFamily: 'heading',
+                  letterSpacing: 'heading',
+                  display: 'inline-block',
+                  mt: [2, 3, 3],
+                  mr: [3],
+                }}
+              >
                 {d.applicant}
-                <Box
-                  as='span'
-                  sx={{ fontSize: [4], color: 'secondary', ml: [3] }}
-                >
-                  {d.id}
-                </Box>
-              </Styled.h2>
+              </Box>
+              <Box
+                sx={{
+                  display: 'inline-block',
+                  fontSize: [4],
+                  color: 'secondary',
+                }}
+              >
+                {d.id}
+              </Box>
               <Box sx={{ fontSize: [3] }}>
                 {processor.processSync(d.content).result}
               </Box>

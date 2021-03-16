@@ -79,19 +79,33 @@ const List = ({
       {filtered.count == 0 && (
         <Box
           sx={{
-            pl: [0, 0, '25px'],
-            pt: [1, 2, '29px'],
-            fontSize: [4],
-            letterSpacing: 'body',
+            pl: [0, 0, 0],
+            pt: [3, 2, '150px'],
             maxWidth: '350px',
-            color: 'secondary',
+            margin: [0, 0, 'auto'],
           }}
         >
-          <Box sx={{ display: 'inline-block', color: 'text' }}>
-            No results found.
+          <Box
+            sx={{
+              display: 'inline-block',
+              color: 'text',
+              fontSize: [1],
+              fontFamily: 'mono',
+              color: 'secondary',
+              textTransform: 'uppercase',
+              letterSpacing: 'mono',
+            }}
+          >
+            No results found
           </Box>
-          <br />
-          Please try changing the filter settings in the panel on the left.
+          <Box
+            sx={{
+              mt: [2],
+            }}
+          >
+            Please try changing the filter settings in the panel on the left and
+            try again.
+          </Box>
         </Box>
       )}
     </Box>

@@ -78,10 +78,16 @@ const Mobile = ({ filters, setFilters, expanded }) => {
   }
 
   return (
-    <Box sx={{ position: 'fixed', bottom: 0, right: 0, width: '100%' }}>
+    <Box
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        right: 0,
+        width: '100%',
+      }}
+    >
       <Box
         sx={{
-          position: 'relative',
           display: 'block',
           height: expanded ? '190px' : '0px',
           backgroundColor: 'background',
@@ -90,7 +96,6 @@ const Mobile = ({ filters, setFilters, expanded }) => {
           borderColor: 'muted',
           borderTopWidth: expanded ? '1px' : '0px',
           transition: 'height 0.15s',
-          zIndex: '100',
         }}
       >
         {expanded && (

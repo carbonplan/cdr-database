@@ -30,7 +30,7 @@ const Sidebar = ({
   }
 
   return (
-    <Box sx={{}}>
+    <Box sx={{ zIndex: 100 }}>
       <Box
         sx={{
           position: ['initial', 'initial', 'sticky'],
