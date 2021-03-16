@@ -16,8 +16,11 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
           mt: ['3px'],
           opacity: tooltips ? (value ? 1 : 0.4) : 0,
           transition: '0.15s',
-          '&:hover': {
-            opacity: 1,
+          position: 'relative',
+          '@media (hover: hover) and (pointer: fine)': {
+            '&:hover': {
+              opacity: 1,
+            },
           },
         }}
         onClick={(e) => {

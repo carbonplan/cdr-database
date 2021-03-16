@@ -2,8 +2,16 @@ import { Flex, Box, Text } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
 import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
 import { format } from 'd3-format'
+import MobileFilter from './mobile-filter'
 
-const Top = ({ data, filtered, tooltips, setTooltips }) => {
+const Top = ({
+  data,
+  filtered,
+  tooltips,
+  setTooltips,
+  mobileFilterExpanded,
+  setMobileFilterExpanded,
+}) => {
   return (
     <Box
       sx={{
@@ -61,7 +69,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
           <Badge sx={{ ml: [1] }}>
             {String(filtered.count).padStart(3, '0')}
           </Badge>
-          <Box sx={{ display: ['none', 'initial', 'initial'] }}>
+          <Box sx={{ display: ['none', 'none', 'initial'] }}>
             <Text
               variant='label'
               sx={{
@@ -84,7 +92,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         </Box>
         <Box sx={{ mt: ['10px'] }}>
           <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
-            <Box sx={{ display: ['none', 'none', 'initial'], mr: [4] }}>
+            <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
               <Toggle
                 value={tooltips}
                 onClick={() => {
@@ -103,6 +111,10 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
                 SHOW TOOLTIPS
               </Text>
             </Box>
+            <MobileFilter
+              expanded={mobileFilterExpanded}
+              setExpanded={setMobileFilterExpanded}
+            />
             <Box
               sx={{
                 top: '2px',

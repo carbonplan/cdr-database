@@ -19,6 +19,7 @@ const Sidebar = ({
   bounds,
   setBounds,
   tooltips,
+  mobileFilterExpanded,
 }) => {
   const isWide = useMedia('screen and (min-width: 52em)')
 
@@ -90,7 +91,13 @@ const Sidebar = ({
             />
           </Box>
         )}
-        {!isWide && <Mobile filters={filters} setFilters={setFilters} />}
+        {!isWide && (
+          <Mobile
+            filters={filters}
+            setFilters={setFilters}
+            expanded={mobileFilterExpanded}
+          />
+        )}
       </Box>
     </Box>
   )

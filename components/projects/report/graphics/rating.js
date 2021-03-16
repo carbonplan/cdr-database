@@ -10,12 +10,14 @@ const Rating = ({ sx, value }) => {
         <Box key={'rating-' + i} sx={{ display: 'inline-block' }}>
           <Check
             sx={{
+              position: 'relative',
               cursor: 'pointer',
               width: '21px',
               ml: ['-1px'],
               mr: ['0px'],
               strokeWidth: 2.25,
               opacity: d < value ? 1 : 0.3,
+              zIndex: -1,
               ...sx,
             }}
           />

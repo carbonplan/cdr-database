@@ -30,6 +30,7 @@ const Main = ({ projects, metrics }) => {
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
   const [tooltips, setTooltips] = useState(true)
+  const [mobileFilterExpanded, setMobileFilterExpanded] = useState(false)
 
   useEffect(() => {
     let obj = {}
@@ -101,6 +102,7 @@ const Main = ({ projects, metrics }) => {
         setFilters={setFilters}
         highlighted={highlighted}
         tooltips={tooltips}
+        mobileFilterExpanded={mobileFilterExpanded}
       />
       <Projects
         filters={filters}
@@ -110,6 +112,8 @@ const Main = ({ projects, metrics }) => {
         setHighlighted={setHighlighted}
         tooltips={tooltips}
         setTooltips={setTooltips}
+        mobileFilterExpanded={mobileFilterExpanded}
+        setMobileFilterExpanded={setMobileFilterExpanded}
       />
     </Grid>
   )

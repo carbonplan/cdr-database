@@ -294,6 +294,7 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                         display: 'inline-block',
                         width: '28px',
                         height: '12px',
+                        zIndex: -1,
                       }}
                     >
                       <svg id='icon' viewBox='0 0 28 12'>

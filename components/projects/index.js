@@ -12,6 +12,8 @@ const List = ({
   setHighlighted,
   tooltips,
   setTooltips,
+  mobileFilterExpanded,
+  setMobileFilterExpanded,
 }) => {
   const isWide = useMedia('screen and (min-width: 86em)')
 
@@ -22,6 +24,8 @@ const List = ({
         filtered={filtered}
         tooltips={tooltips}
         setTooltips={setTooltips}
+        mobileFilterExpanded={mobileFilterExpanded}
+        setMobileFilterExpanded={setMobileFilterExpanded}
       />
       <Divider sx={{ display: ['none', 'none', 'inherit'], ml: [4] }} />
       {isWide && filtered.count > 0 && (
@@ -59,7 +63,7 @@ const List = ({
         </Grid>
       )}
       {!isWide && filtered.count > 0 && (
-        <Box sx={{ mb: ['63px', '63px', 0], mt: [0, '28px', '28px'] }}>
+        <Box sx={{ mb: [0], mt: [0, 0, '28px'] }}>
           {data
             .filter((d) => filtered[d.id])
             .map((d) => (
