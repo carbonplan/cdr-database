@@ -2,9 +2,9 @@
 import copy
 import json
 
-import pandas as pd
 import click
 import msft2021
+import pandas as pd
 import strp2020
 
 
@@ -15,14 +15,7 @@ import strp2020
 @click.option('--output-numbers', default='numbers.js', show_default=True)
 @click.option('--output-csv', default='projects.csv', show_default=True)
 @click.option('--output-json', default='projects.json', show_default=True)
-def main(
-        sources, 
-        output_projects, 
-        output_methods, 
-        output_numbers,
-        output_csv,
-        output_json
-    ):
+def main(sources, output_projects, output_methods, output_numbers, output_csv, output_json):
 
     projects = []
 
@@ -38,6 +31,7 @@ def main(
     write_numbers(project_collection, output_numbers)
     write_csv(project_collection, output_csv)
     write_json(project_collection, output_json)
+
 
 def write_projects(project_collection, output):
     collection = copy.deepcopy(project_collection)
@@ -84,6 +78,7 @@ def write_numbers(project_collection, output):
 
     with open('data/' + output, "w") as f:
         f.write('module.exports=' + json.dumps(collection))
+
 
 def write_csv(collection, output):
     projects = collection['projects']
@@ -139,9 +134,11 @@ def write_csv(collection, output):
 
     df.to_csv('data/' + output, index=False)
 
+
 def write_json(collection, output):
     with open('data/' + output, "w") as f:
         f.write(json.dumps(collection))
+
 
 if __name__ == "__main__":
     main()
