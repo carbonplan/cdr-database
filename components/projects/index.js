@@ -24,7 +24,7 @@ const List = ({
         setTooltips={setTooltips}
       />
       <Divider sx={{ display: ['none', 'none', 'inherit'], ml: [4] }} />
-      {isWide && (
+      {isWide && filtered.count > 0 && (
         <Grid
           columns={[2]}
           sx={{ display: ['grid'], mt: ['12px'], ml: [0] }}
@@ -58,7 +58,7 @@ const List = ({
           </Box>
         </Grid>
       )}
-      {!isWide && (
+      {!isWide && filtered.count > 0 && (
         <Box sx={{ mt: [0, 0, '28px'] }}>
           {data
             .filter((d) => filtered[d.id])
@@ -70,6 +70,24 @@ const List = ({
                 tooltips={tooltips}
               />
             ))}
+        </Box>
+      )}
+      {filtered.count == 0 && (
+        <Box
+          sx={{
+            pl: [0, 0, '25px'],
+            pt: [2, 2, '29px'],
+            fontSize: [4],
+            letterSpacing: 'body',
+            maxWidth: '350px',
+            color: 'secondary',
+          }}
+        >
+          <Box sx={{ display: 'inline-block', color: 'text' }}>
+            No results found.
+          </Box>
+          <br />
+          Please try changing the filter settings in the panel on the left.
         </Box>
       )}
     </Box>

@@ -17,6 +17,7 @@ const TooltipDescription = ({ label, value, tooltips, ml }) => {
               mt: [0],
               ml: !(ml == null) ? ml : '115px',
               color: 'text',
+              maxWidth: '450px',
             }}
           >
             {glossary[label]}

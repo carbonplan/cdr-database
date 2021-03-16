@@ -52,7 +52,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
               mr: [2],
             }}
           >
-            Selected
+            Filtered
           </Text>
           <Badge sx={{ ml: [1] }}>
             {String(filtered.count).padStart(3, '0')}

@@ -10,7 +10,16 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
   return (
     <Box>
       <Box
-        sx={{ display: 'inline-block', cursor: 'pointer', mt: ['3px'] }}
+        sx={{
+          display: 'inline-block',
+          cursor: 'pointer',
+          mt: ['3px'],
+          opacity: tooltips ? (value ? 1 : 0.4) : 0,
+          transition: '0.15s',
+          '&:hover': {
+            opacity: 1,
+          },
+        }}
         onClick={(e) => {
           e.stopPropagation()
           setValue(!value)
@@ -19,15 +28,9 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
         <Icons.Info
           closed={true}
           sx={{
-            opacity: tooltips ? 1 : 0,
-            color: 'secondary',
+            color: 'primary',
             width: 16,
             height: 16,
-            transition: '0.15s',
-            color: value ? 'primary' : 'secondary',
-            '&:hover': {
-              stroke: 'primary',
-            },
           }}
         />
       </Box>

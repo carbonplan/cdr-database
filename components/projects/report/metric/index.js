@@ -79,7 +79,7 @@ const Metric = ({ metric, tag, tooltips, embed }) => {
           </Box>
         </Box>
       )}
-      {embed && width < 368 && (
+      {embed && width < 400 && (
         <MetricMobile
           metric={metric}
           hasUnits={hasUnits}
@@ -92,7 +92,7 @@ const Metric = ({ metric, tag, tooltips, embed }) => {
           tooltips={tooltips}
         />
       )}
-      {embed && width >= 368 && (
+      {embed && width >= 400 && (
         <MetricDesktop
           metric={metric}
           hasUnits={hasUnits}

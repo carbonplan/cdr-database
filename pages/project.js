@@ -50,7 +50,7 @@ const Project = () => {
             CDR Project
           </Box>
           <Box sx={{ fontSize: [2], pb: [3, 3, 1] }}>
-            <Box sx={{ pt: [0, 0, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
+            <Box sx={{ pt: [0, 1, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
               This is an entry from our database of reports on carbon dioxide
               removal project proposals. It represents our evaluation of a
               project based on publicly available materials.
@@ -73,7 +73,7 @@ const Project = () => {
             my: [2, 2, '24px'],
             pl: [0, 0, 5],
             pt: ['0px', '0px', '24px'],
-            pb: [2, 2, '24px'],
+            pb: [4, 4, '24px'],
             pr: [0, 0, 2],
             borderStyle: 'solid',
             borderWidth: '0px',
@@ -89,7 +89,7 @@ const Project = () => {
             <Report
               setHighlighted={null}
               data={project}
-              tooltips={false}
+              tooltips={true}
               embed={true}
             />
           )}

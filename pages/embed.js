@@ -33,7 +33,7 @@ function Embed() {
           <Report
             setHighlighted={null}
             data={project}
-            tooltips={false}
+            tooltips={true}
             embed={true}
           />
         )}

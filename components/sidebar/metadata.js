@@ -23,6 +23,10 @@ const categories = [
 ]
 
 const sources = ['STRP2020', 'MSFT2021']
+const sourcesDisplay = {
+  STRP2020: 'STRIPE',
+  MSFT2021: 'MICROSOFT',
+}
 
 const mechanisms = ['avoided', 'removal']
 
@@ -88,24 +92,23 @@ const Metadata = ({
 
   return (
     <Box sx={{ mr: ['24px'] }}>
-      <Field label='source' tooltips={tooltips}>
+      <Field label='sourceFilter' tooltips={tooltips}>
         <Text variant='label'>SOURCE</Text>
         <Box sx={{}}>
           {['STRP2020', 'MSFT2021'].map((d) => (
             <Tag
               key={d}
-              label={d}
               value={filters[d]}
               sx={{ color: 'primary' }}
               onClick={() => toggleOption(d)}
               onDoubleClick={() => toggleOptionUnique(d, sources)}
             >
-              {d}
+              {sourcesDisplay[d]}
             </Tag>
           ))}
         </Box>
       </Field>
-      <Field label='category' tooltips={tooltips}>
+      <Field label='categoryFilter' tooltips={tooltips}>
         <Text variant='label'>CATEGORY</Text>
         <Box>
           {categories.map((d) => (
@@ -129,7 +132,7 @@ const Metadata = ({
           </Tag>
         </Box>
       </Field>
-      <Field label='mechanism' tooltips={tooltips}>
+      <Field label='mechanismRating' tooltips={tooltips}>
         <Text variant='label'>MECHANISM</Text>
         <Box sx={{}}>
           {['removal', 'avoided'].map((d) => (
@@ -146,7 +149,7 @@ const Metadata = ({
           ))}
         </Box>
       </Field>
-      <Field label='rating' tooltips={tooltips}>
+      <Field label='ratingFilter' tooltips={tooltips}>
         <Text variant='label'>RATING</Text>
         <RatingPicker value={filters['rating']} setValue={setRating} />
       </Field>

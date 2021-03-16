@@ -17,12 +17,13 @@ const Chart = ({
   bounds,
   ticks,
   tooltips,
+  tooltipLabel,
 }) => {
   const [tooltip, setTooltip] = useState(false)
 
   return (
     <Box>
-      <Grid columns={['150px 1fr 16px']} sx={{ mb: [1] }}>
+      <Grid columns={['150px 1fr 18px']} sx={{ mb: [1] }}>
         <Text variant='label'>
           {label}
           <Text
@@ -56,7 +57,7 @@ const Chart = ({
         />
       </Grid>
       <TooltipDescription
-        label={label}
+        label={tooltipLabel}
         value={tooltip}
         tooltips={tooltips}
         ml={0}

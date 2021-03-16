@@ -8,7 +8,7 @@ const Field = ({ label, children, tooltips }) => {
 
   return (
     <>
-      <Grid columns={['100px 1fr 16px']}>
+      <Grid columns={['100px 1fr 18px']}>
         {children}
         <TooltipToggle tooltips={tooltips} value={value} setValue={setValue} />
       </Grid>

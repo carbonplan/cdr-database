@@ -21,6 +21,7 @@ const sx = {
     lineHeight: 'small',
     mt: [0],
     mb: [2],
+    maxWidth: '450px',
   },
   value: {
     fontFamily: 'mono',
@@ -76,15 +77,11 @@ const MetricDesktop = ({
             stroke: 'primary',
           },
           pt: [2],
-          pb: [2],
+          pb: ['6px'],
           pl: embed ? [2, 2, 2] : [0, 0, '24px'],
         }}
       >
-        <Grid
-          id='grid'
-          gap={['16px']}
-          columns={['55px 95px 1fr 25px 25px 30px']}
-        >
+        <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 25px 30px']}>
           <Text
             sx={{
               ...sx.value,
@@ -138,20 +135,31 @@ const MetricDesktop = ({
             )}
           </Box>
           <Text>
-            <Text sx={{ ...sx.label, display: 'inline-block' }}>
+            <Text
+              sx={{
+                ...sx.label,
+                display: 'inline-block',
+                mr: tooltips ? [3] : [0],
+              }}
+            >
               {metric.name}
             </Text>
+            {tooltips && (
+              <Box
+                sx={{
+                  position: 'relative',
+                  top: ['3px'],
+                  display: 'inline-block',
+                }}
+              >
+                <TooltipToggle
+                  tooltips={tooltips}
+                  value={tooltip}
+                  setValue={setTooltip}
+                />
+              </Box>
+            )}
           </Text>
-          {tooltips && (
-            <Box sx={{ mt: ['6px'] }}>
-              <TooltipToggle
-                tooltips={tooltips}
-                value={tooltip}
-                setValue={setTooltip}
-              />
-            </Box>
-          )}
-          {!tooltips && <Box />}
           <Text sx={{ mt: ['3px'] }}>
             {metric.rating === 1 && (
               <Check sx={{ width: '28px', color: theme.tags[tag] }} />
@@ -168,11 +176,22 @@ const MetricDesktop = ({
             </Box>
           )}
         </Grid>
+      </Box>
+      <Box
+        onClick={(e) => e.stopPropagation()}
+        sx={{
+          cursor: 'text',
+          pl: embed ? ['190px'] : ['182px', '182px', '206px'],
+          pr: ['30px'],
+          mt: ['-6px'],
+          pb: [2],
+        }}
+      >
         <TooltipDescription
           label={metric.name.toLowerCase()}
           value={tooltip}
           tooltips={tooltips}
-          ml={'182px'}
+          ml={'0px'}
         />
       </Box>
       <AnimateHeight

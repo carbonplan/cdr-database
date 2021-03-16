@@ -26,10 +26,10 @@ const initBounds = {
 
 const Main = ({ projects, metrics }) => {
   const [filters, setFilters] = useState(initFilters)
-  const [filtered, setFiltered] = useState({ count: 0 })
+  const [filtered, setFiltered] = useState({ count: null })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
-  const [tooltips, setTooltips] = useState(false)
+  const [tooltips, setTooltips] = useState(true)
 
   useEffect(() => {
     let obj = {}

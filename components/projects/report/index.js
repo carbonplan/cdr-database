@@ -1,8 +1,18 @@
 import { memo, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
-import { useThemeUI, Divider, Box, Flex, Text, Grid, Link } from 'theme-ui'
+import {
+  useColorMode,
+  useThemeUI,
+  Divider,
+  Box,
+  Flex,
+  Text,
+  Grid,
+  Link,
+} from 'theme-ui'
 import { Expander, Tag } from '@carbonplan/components'
 import Metric from './metric'
+import Share from './share'
 
 const showMetrics = [
   'mechanism',
@@ -17,6 +27,7 @@ const showMetrics = [
 const Report = ({ data, setHighlighted, tooltips, embed }) => {
   const [expanded, setExpanded] = useState(embed ? true : false)
   const { theme } = useThemeUI()
+  const [colorMode] = useColorMode()
 
   let {
     id,
@@ -44,10 +55,28 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
   })
 
   const ml = embed ? [0, 0, 0] : [0, 0, '24px']
+  const pl = embed ? [0, 0, 0] : [0, 0, '24px']
+
+  const arrow = {
+    ml: [1],
+    fontSize: [4],
+    position: 'relative',
+    top: '4px',
+    display: 'inline-block',
+    textDecoration: 'none',
+    lineHeight: 0,
+    zIndex: '-1',
+    '&:active': {
+      color: 'primary',
+    },
+    '&:hover': {
+      color: 'primary',
+    },
+  }
 
   return (
     <Box
-      onClick={() => {
+      onClick={(e) => {
         if (!embed) setExpanded(!expanded)
       }}
       onMouseEnter={() => {
@@ -69,7 +98,6 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
         pl: embed ? [0, 0, 0] : [0, 0, 0],
         pr: [0],
         pt: embed ? [0, 0, 0] : ['0px', '0px', '12px'],
-        pb: embed ? [0] : [3],
         my: [embed ? 0 : 3],
         mb: embed ? [0, 0, 0] : [3, 3, '24px'],
         transition: 'border-color 0.15s',
@@ -201,10 +229,10 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
             </Box>
             <Box
               onClick={(e) => e.stopPropagation()}
-              sx={{ ml: ml, fontSize: [1], mt: [3] }}
+              sx={{ pl: pl, fontSize: [1], pt: [3], cursor: 'default' }}
             >
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
-                <Text as='span' sx={{ mr: [2] }}>
+                <Box as='span' sx={{ mr: [2] }}>
                   <Link
                     sx={{
                       textDecoration: 'none',
@@ -212,40 +240,15 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                       '&:hover': {
                         color: 'primary',
                       },
-                      '&:hover > #arrow': {
-                        color: 'primary',
-                      },
                     }}
                     href={source.url}
                   >
                     Proposal
-                    <Text
-                      id='arrow'
-                      sx={{
-                        ml: [1],
-                        color: 'secondary',
-                        fontSize: [4],
-                        position: 'relative',
-                        top: '4px',
-                        display: 'inline-block',
-                        textDecoration: 'none',
-                        lineHeight: 0,
-                        zIndex: '-1',
-                        '&:active': {
-                          color: 'primary',
-                        },
-                        '&:hover': {
-                          color: 'primary',
-                          borderColor: 'primary',
-                        },
-                      }}
-                    >
-                      ↗
-                    </Text>
+                    <Box sx={arrow}>↗</Box>
                   </Link>
-                </Text>
+                </Box>
                 {!(documentation.name === '') && (
-                  <Text as='span'>
+                  <Box as='span'>
                     <Link
                       onClick={(e) => e.stopPropagation()}
                       sx={{
@@ -254,75 +257,93 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                         '&:hover': {
                           color: 'primary',
                         },
-                        '&:hover > #arrow': {
-                          color: 'primary',
-                        },
                       }}
                       href={documentation.url}
                     >
                       {documentation.name}
-                      <Text
-                        id='arrow'
-                        sx={{
-                          ml: [1],
-                          fontSize: [4],
-                          position: 'relative',
-                          top: '4px',
-                          display: 'inline-block',
-                          textDecoration: 'none',
-                          lineHeight: 0,
-                          zIndex: '-1',
-                          '&:active': {
-                            color: 'primary',
-                          },
-                          '&:hover': {
-                            color: 'primary',
-                            borderColor: 'primary',
-                          },
-                        }}
-                      >
-                        ↗
-                      </Text>
+                      <Box sx={arrow}>↗</Box>
                     </Link>
-                  </Text>
+                  </Box>
                 )}
               </Box>
               <Box
                 sx={{ color: 'secondary', textAlign: 'right', float: 'right' }}
               >
-                <Box as='span' sx={{ color: 'secondary', ml: [0] }}>
-                  Share{' '}
-                  <Text
-                    id='arrow'
+                <Share
+                  value={`https://carbonplan.org/research/cdr-database/project?id=${id}`}
+                  label='Share'
+                >
+                  <Box sx={{ ...arrow, fontSize: ['22px'], top: '2px' }}>↑</Box>
+                </Share>
+                <Share
+                  value={` <iframe src='https://carbonplan.org/research/cdr-database/embed?id=${id}&theme=${colorMode}' loading='lazy' style='width: 420px; height: 634px; border: 0px none;'/>`}
+                  label='Embed'
+                >
+                  <Box
                     sx={{
                       ml: [1],
-                      fontSize: [4],
                       position: 'relative',
-                      top: '4px',
+                      top: '1px',
                       display: 'inline-block',
-                      textDecoration: 'none',
-                      lineHeight: 0,
-                      zIndex: '-1',
-                      '&:active': {
-                        color: 'primary',
-                      },
-                      '&:hover': {
-                        color: 'primary',
-                        borderColor: 'primary',
-                      },
+                      width: '28px',
+                      height: '12px',
                     }}
                   >
-                    ↗
-                  </Text>
-                </Box>
-                <Box as='span' sx={{ color: 'secondary', ml: [2] }}>
-                  Embed {'</>'}
-                </Box>
+                    <svg id='icon' viewBox='0 0 28 12'>
+                      <line
+                        x1='2'
+                        x2='9'
+                        y1='6'
+                        y2='9'
+                        strokeWidth='1.75'
+                        strokeLinecap='round'
+                      />
+                      <line
+                        x1='2'
+                        x2='9'
+                        y1='6'
+                        y2='3'
+                        strokeWidth='1.75'
+                        strokeLinecap='round'
+                      />
+                      <line
+                        x1='19'
+                        x2='26'
+                        y1='9'
+                        y2='6'
+                        strokeWidth='1.75'
+                        strokeLinecap='round'
+                      />
+                      <line
+                        x1='19'
+                        x2='26'
+                        y1='3'
+                        y2='6'
+                        strokeWidth='1.75'
+                        strokeLinecap='round'
+                      />
+                      <line
+                        x1='12'
+                        x2='15.5'
+                        y1='13'
+                        y2='0'
+                        strokeWidth='1.75'
+                        strokeLinecap='round'
+                      />
+                    </svg>
+                  </Box>
+                </Share>
               </Box>
             </Box>
           </Box>
         )}
       </AnimateHeight>
+      <Box
+        onClick={(e) => {
+          if (expanded) e.stopPropagation()
+        }}
+        sx={{ height: ['16px'], cursor: 'default' }}
+      />
     </Box>
   )
 }
