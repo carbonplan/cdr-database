@@ -147,7 +147,7 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                 <Expander
                   sx={{
                     display: ['initial', 'none', 'none'],
-                    ml: ['-3px'],
+                    ml: ['-5px'],
                     mr: [2],
                     mt: ['2px'],
                   }}
@@ -281,64 +281,66 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                 >
                   <Box sx={{ ...arrow, fontSize: ['22px'], top: '2px' }}>↑</Box>
                 </Share>
-                <Share
-                  value={` <iframe src='https://carbonplan.org/research/cdr-database/embed?id=${id}&theme=${colorMode}' loading='lazy' style='width: 420px; height: 634px; border: 0px none;'/>`}
-                  label='Embed'
-                >
-                  <Box
-                    sx={{
-                      ml: [1],
-                      position: 'relative',
-                      top: '1px',
-                      display: 'inline-block',
-                      width: '28px',
-                      height: '12px',
-                    }}
+                <Box sx={{ display: ['none', 'initial', 'initial'] }}>
+                  <Share
+                    value={` <iframe src='https://carbonplan.org/research/cdr-database/embed?id=${id}&theme=${colorMode}' loading='lazy' style='width: 420px; height: 634px; border: 0px none;'/>`}
+                    label='Embed'
                   >
-                    <svg id='icon' viewBox='0 0 28 12'>
-                      <line
-                        x1='2'
-                        x2='9'
-                        y1='6'
-                        y2='9'
-                        strokeWidth='1.75'
-                        strokeLinecap='round'
-                      />
-                      <line
-                        x1='2'
-                        x2='9'
-                        y1='6'
-                        y2='3'
-                        strokeWidth='1.75'
-                        strokeLinecap='round'
-                      />
-                      <line
-                        x1='19'
-                        x2='26'
-                        y1='9'
-                        y2='6'
-                        strokeWidth='1.75'
-                        strokeLinecap='round'
-                      />
-                      <line
-                        x1='19'
-                        x2='26'
-                        y1='3'
-                        y2='6'
-                        strokeWidth='1.75'
-                        strokeLinecap='round'
-                      />
-                      <line
-                        x1='12'
-                        x2='15.5'
-                        y1='13'
-                        y2='0'
-                        strokeWidth='1.75'
-                        strokeLinecap='round'
-                      />
-                    </svg>
-                  </Box>
-                </Share>
+                    <Box
+                      sx={{
+                        ml: [1],
+                        position: 'relative',
+                        top: '1px',
+                        display: 'inline-block',
+                        width: '28px',
+                        height: '12px',
+                      }}
+                    >
+                      <svg id='icon' viewBox='0 0 28 12'>
+                        <line
+                          x1='2'
+                          x2='9'
+                          y1='6'
+                          y2='9'
+                          strokeWidth='1.75'
+                          strokeLinecap='round'
+                        />
+                        <line
+                          x1='2'
+                          x2='9'
+                          y1='6'
+                          y2='3'
+                          strokeWidth='1.75'
+                          strokeLinecap='round'
+                        />
+                        <line
+                          x1='19'
+                          x2='26'
+                          y1='9'
+                          y2='6'
+                          strokeWidth='1.75'
+                          strokeLinecap='round'
+                        />
+                        <line
+                          x1='19'
+                          x2='26'
+                          y1='3'
+                          y2='6'
+                          strokeWidth='1.75'
+                          strokeLinecap='round'
+                        />
+                        <line
+                          x1='12'
+                          x2='15.5'
+                          y1='13'
+                          y2='0'
+                          strokeWidth='1.75'
+                          strokeLinecap='round'
+                        />
+                      </svg>
+                    </Box>
+                  </Share>
+                </Box>
               </Box>
             </Box>
           </Box>

@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { Box, Text, Grid, Divider } from 'theme-ui'
 import Report from './report'
 import Top from './top'
-import useMedia from 'react-use/lib/useMedia'
+import { useMedia } from 'react-use'
 
 const List = ({
   filters,
@@ -59,7 +59,7 @@ const List = ({
         </Grid>
       )}
       {!isWide && filtered.count > 0 && (
-        <Box sx={{ mt: [0, 0, '28px'] }}>
+        <Box sx={{ mb: ['54px'] }}>
           {data
             .filter((d) => filtered[d.id])
             .map((d) => (
@@ -76,7 +76,7 @@ const List = ({
         <Box
           sx={{
             pl: [0, 0, '25px'],
-            pt: [2, 2, '29px'],
+            pt: [1, 2, '29px'],
             fontSize: [4],
             letterSpacing: 'body',
             maxWidth: '350px',

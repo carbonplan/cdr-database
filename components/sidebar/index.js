@@ -4,6 +4,8 @@ import { default as NextLink } from 'next/link'
 import Search from './search'
 import Metadata from './metadata'
 import Charts from './charts'
+import Mobile from './mobile'
+import { useMedia } from 'react-use'
 
 const prefix =
   'https://github.com/carbonplan/reports-microsoft-2021/blob/main/data'
@@ -18,6 +20,8 @@ const Sidebar = ({
   setBounds,
   tooltips,
 }) => {
+  const isWide = useMedia('screen and (min-width: 52em)')
+
   function setSearch(value) {
     setFilters((filters) => {
       return { ...filters, search: value }
@@ -64,26 +68,29 @@ const Sidebar = ({
             .
           </Text>
         </Box>
-        <Box sx={{ display: ['none', 'none', 'initial'] }}>
-          <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
-          <Box sx={{ mb: [1], mt: [3] }}>
-            <Search setSearch={setSearch} tooltips={tooltips} />
+        {isWide && (
+          <Box>
+            <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
+            <Box sx={{ mb: [1], mt: [3] }}>
+              <Search setSearch={setSearch} tooltips={tooltips} />
+            </Box>
+            <Metadata
+              filters={filters}
+              setFilters={setFilters}
+              tooltips={tooltips}
+            />
+            <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
+            <Charts
+              highlighted={highlighted}
+              filtered={filtered}
+              data={data}
+              bounds={bounds}
+              setBounds={setBounds}
+              tooltips={tooltips}
+            />
           </Box>
-          <Metadata
-            filters={filters}
-            setFilters={setFilters}
-            tooltips={tooltips}
-          />
-          <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
-          <Charts
-            highlighted={highlighted}
-            filtered={filtered}
-            data={data}
-            bounds={bounds}
-            setBounds={setBounds}
-            tooltips={tooltips}
-          />
-        </Box>
+        )}
+        {!isWide && <Mobile filters={filters} setFilters={setFilters} />}
       </Box>
     </Box>
   )

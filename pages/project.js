@@ -13,6 +13,7 @@ const selectMetric = (d, name) => {
 
 const Project = () => {
   const [project, setProject] = useState(null)
+  const [missing, setMissing] = useState(false)
 
   const router = useRouter()
 
@@ -22,7 +23,13 @@ const Project = () => {
       const project = collection.projects.filter((d) => {
         return d.id == id
       })[0]
-      setProject(project)
+      if (project) {
+        setMissing(false)
+        setProject(project)
+      } else {
+        setMissing(true)
+        setProject(id)
+      }
     }
   }, [router])
 
@@ -54,8 +61,10 @@ const Project = () => {
               This is an entry from our database of reports on carbon dioxide
               removal project proposals. It represents our evaluation of a
               project based on publicly available materials.
-            </Box>
-            <Box>
+              <Box as='span' sx={{ display: ['none', 'none', 'initial'] }}>
+                <br />
+                <br />
+              </Box>
               To learn more about our reports, return to the main{' '}
               <NextLink href={'/'} passHref>
                 <Link>database</Link>
@@ -72,12 +81,13 @@ const Project = () => {
           sx={{
             my: [2, 2, '24px'],
             pl: [0, 0, 5],
-            pt: ['0px', '0px', '24px'],
+            pt: [3, 3, '24px'],
             pb: [4, 4, '24px'],
             pr: [0, 0, 2],
             borderStyle: 'solid',
             borderWidth: '0px',
             borderLeftWidth: ['0px', '0px', '1px'],
+            borderTopWidth: ['1px', '1px', '0px'],
             borderColor: 'muted',
             width: '100%',
             '@media only screen and (min-width: 100em)': {
@@ -85,13 +95,18 @@ const Project = () => {
             },
           }}
         >
-          {project && (
+          {project && missing == false && (
             <Report
               setHighlighted={null}
               data={project}
               tooltips={true}
               embed={true}
             />
+          )}
+          {missing == true && (
+            <Box sx={{ fontSize: [4] }}>
+              Project '{project}' not found, double check your URL!
+            </Box>
           )}
         </Box>
       </Grid>

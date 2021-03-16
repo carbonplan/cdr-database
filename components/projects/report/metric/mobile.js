@@ -64,11 +64,16 @@ const MetricMobile = ({
           '#grid > #container > #expander': {
             stroke: expanded ? 'primary' : 'secondary',
           },
+          '@media (hover: hover) and (pointer: fine)': {
+            '&:hover > #grid > #container #expander': {
+              stroke: 'primary',
+            },
+          },
           pt: [2],
           pb: [3],
         }}
       >
-        <Grid id='grid' columns={['1fr 50px 30px']}>
+        <Grid id='grid' columns={['1fr 50px 16px']}>
           <Text>
             <Text sx={{ ...sx.label, mb: [1], display: 'inline-block' }}>
               {metric.name}
@@ -87,6 +92,7 @@ const MetricMobile = ({
                 top: ['8px'],
                 width: 28,
                 color: theme.tags[tag],
+                zIndex: -1,
               }}
             />
           )}

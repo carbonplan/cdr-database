@@ -14,13 +14,17 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
         pt: '14px',
         mt: '-14px',
         mb: [2],
-        ml: [0],
+        ml: ['-16px', 0, 0],
+        mr: ['-16px', 0, 0],
+        pr: ['16px', 0, 0],
+        pl: ['16px', 0, 0],
         backgroundColor: 'background',
         borderWidth: '0px',
         borderBottomWidth: '1px',
         borderColor: 'muted',
         borderStyle: 'solid',
         userSelect: 'none',
+        zIndex: '10',
       }}
     >
       <Flex
