@@ -177,21 +177,19 @@ const MetricDesktop = ({
           )}
         </Grid>
       </Box>
-      <Box
-        onClick={(e) => e.stopPropagation()}
-        sx={{
-          cursor: 'text',
-          pl: embed ? ['190px'] : ['182px', '182px', '206px'],
-          pr: ['30px'],
-          mt: ['-6px'],
-          pb: [2],
-        }}
-      >
+      <Box onClick={(e) => e.stopPropagation()}>
         <TooltipDescription
           label={metric.name.toLowerCase()}
           value={tooltip}
           tooltips={tooltips}
           ml={'0px'}
+          sx={{
+            cursor: 'text',
+            pl: embed ? ['190px'] : ['182px', '182px', '206px'],
+            pr: ['30px'],
+            mt: ['-4px'],
+            pb: ['10px'],
+          }}
         />
       </Box>
       <AnimateHeight

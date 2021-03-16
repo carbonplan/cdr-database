@@ -84,7 +84,7 @@ const Mobile = ({ filters, setFilters }) => {
         bottom: '0',
         left: '0',
         width: '100%',
-        height: expanded ? '180px' : '55px',
+        height: expanded ? '190px' : '60px',
         backgroundColor: 'background',
         borderWidth: '0px',
         borderStyle: 'solid',
@@ -94,7 +94,7 @@ const Mobile = ({ filters, setFilters }) => {
       }}
     >
       {expanded && (
-        <Box sx={{ pl: [3], mt: [3] }}>
+        <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
           <Text variant='label' sx={{ mb: [1] }}>
             CATEGORY
           </Text>
@@ -129,8 +129,8 @@ const Mobile = ({ filters, setFilters }) => {
         onClick={() => setExpanded(!expanded)}
         sx={{
           position: 'absolute',
-          bottom: [3],
-          right: [3],
+          bottom: ['24px', '24px', 0],
+          right: [3, '24px', 0],
         }}
       >
         Filter

@@ -59,7 +59,7 @@ const List = ({
         </Grid>
       )}
       {!isWide && filtered.count > 0 && (
-        <Box sx={{ mb: ['54px'] }}>
+        <Box sx={{ mb: ['59px', '59px', 0], mt: [0, '28px', '28px'] }}>
           {data
             .filter((d) => filtered[d.id])
             .map((d) => (
