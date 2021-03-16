@@ -86,16 +86,16 @@ const Mobile = ({ filters, setFilters }) => {
         bottom: '0',
         right: '0',
         width: '100%',
-        height: expanded ? '190px' : '0px',
-        backgroundColor: expanded ? 'background' : 'none',
+        height: expanded ? '190px' : '66px',
+        backgroundColor: 'background',
         borderWidth: '0px',
         borderStyle: 'solid',
         borderColor: 'muted',
-        borderTopWidth: expanded ? '1px' : '0px',
-        transition: '0.15s',
+        borderTopWidth: '1px',
+        transition: 'height 0.15s',
       }}
     >
-      <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
+      {expanded && <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
         <Text variant='label' sx={{ mb: [1] }}>
           CATEGORY
         </Text>
@@ -125,11 +125,12 @@ const Mobile = ({ filters, setFilters }) => {
         </Text>
         <RatingPicker value={filters['rating']} setValue={setRating} />
       </Box>
+      }
       <Box
         onClick={() => setExpanded(!expanded)}
         sx={{
           position: 'absolute',
-          bottom: ['24px', '24px', 0],
+          bottom: ['28px', '28px', 0],
           right: [3, '24px', 0],
           fontFamily: 'mono',
           letterSpacing: 'mono',
