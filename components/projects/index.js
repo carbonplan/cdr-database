@@ -76,7 +76,7 @@ const List = ({
             ))}
         </Box>
       )}
-      {filtered.count == 0 && (
+      {filtered.count == 0 && filtered.init == true && (
         <Box
           sx={{
             pl: [0, 0, 0],
