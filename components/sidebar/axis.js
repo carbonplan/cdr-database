@@ -62,6 +62,13 @@ const Axis = ({
         height: '100%',
         display: 'block',
         '.selection': { stroke: 'none' },
+        '.axis-label': {
+          fill: 'muted',
+          fontFamily: 'mono',
+          fontSize: [1],
+          textAnchor: 'middle',
+          userSelect: 'none',
+        },
       }}
     >
       <svg viewBox='0 0 370 107'>
@@ -77,14 +84,10 @@ const Axis = ({
         {ticks.map((d, i) => {
           return (
             <text
+              className='axis-label'
               key={'tick-' + label + '-' + i}
               x={x(d)}
               y={106}
-              textAnchor={'middle'}
-              fontFamily={theme.fonts.mono}
-              fill={theme.colors.muted}
-              fontSize={theme.fontSizes[1]}
-              style={{ userSelect: 'none' }}
             >
               {format('~s')(d)}
             </text>
