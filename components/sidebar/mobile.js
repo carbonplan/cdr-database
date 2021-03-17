@@ -98,38 +98,36 @@ const Mobile = ({ filters, setFilters, expanded }) => {
           transition: 'height 0.15s',
         }}
       >
-        {expanded && (
-          <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
-            <Text variant='label' sx={{ mb: [1] }}>
-              CATEGORY
-            </Text>
-            <Box sx={{ maxWidth: '300px' }}>
-              {categories.map((d) => (
-                <Tag
-                  key={d}
-                  label={d}
-                  value={filters[d]}
-                  sx={{ color: colors[d] }}
-                  onClick={() => toggleOption(d)}
-                  onDoubleClick={() => toggleOptionUnique(d, categories)}
-                >
-                  {d}
-                </Tag>
-              ))}
+        <Box sx={{ pl: [3, '24px', 0], mt: [3] }}>
+          <Text variant='label' sx={{ mb: [1] }}>
+            CATEGORY
+          </Text>
+          <Box sx={{ maxWidth: '300px' }}>
+            {categories.map((d) => (
               <Tag
-                label={'all'}
-                value={isAll(categories)}
-                onClick={() => toggleAll(categories)}
+                key={d}
+                label={d}
+                value={filters[d]}
+                sx={{ color: colors[d] }}
+                onClick={() => toggleOption(d)}
+                onDoubleClick={() => toggleOptionUnique(d, categories)}
               >
-                All
+                {d}
               </Tag>
-            </Box>
-            <Text variant='label' sx={{ mt: [3], mb: [1] }}>
-              RATING
-            </Text>
-            <RatingPicker value={filters['rating']} setValue={setRating} />
+            ))}
+            <Tag
+              label={'all'}
+              value={isAll(categories)}
+              onClick={() => toggleAll(categories)}
+            >
+              All
+            </Tag>
           </Box>
-        )}
+          <Text variant='label' sx={{ mt: [3], mb: [1] }}>
+            RATING
+          </Text>
+          <RatingPicker value={filters['rating']} setValue={setRating} />
+        </Box>
       </Box>
     </Box>
   )
