@@ -4,7 +4,7 @@ module.exports = {
   search:
     'Type here to search the database. Searches include the project applicant, project location, all category tags, and any project-specific keywords. Search results also depend on other filter selections below. You can press / to focus the search bar without clicking. ',
   sourceFilter:
-    'Click to filter based on the project source. Our database is sourced from public project proposals submitted to various entities, such as corporate purchases of carbon removal. ',
+    'Click to filter based on the project source. Our database is sourced from public project proposals submitted to various entities, such as corporate purchasers of carbon removal. ',
   permanence:
     'The duration over which carbon storage can be reasonably assured. For biological systems this duration is typically limited by physical and socioeconomic risks, whereas for chemical or geological systems the duration is effectively permanent.',
   permanenceFilter:
