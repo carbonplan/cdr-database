@@ -62,7 +62,7 @@ const TOC = ({ section, setSection }) => {
 
   return (
     <Box>
-      <NextLink href='/' passHref={true}>
+      <NextLink href='/research/cdr-database' passHref>
         <Link
           sx={{
             display: 'inline-block',

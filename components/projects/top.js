@@ -92,25 +92,6 @@ const Top = ({
         </Box>
         <Box sx={{ mt: ['10px'] }}>
           <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
-            <Box sx={{ display: ['none', 'initial', 'initial'], mr: [4] }}>
-              <Toggle
-                value={tooltips}
-                onClick={() => {
-                  setTooltips(!tooltips)
-                }}
-                sx={{ mr: [3] }}
-              />
-              <Text
-                variant='label'
-                sx={{
-                  position: 'relative',
-                  top: '-5px',
-                  display: 'inline-block',
-                }}
-              >
-                SHOW TOOLTIPS
-              </Text>
-            </Box>
             <MobileFilter
               expanded={mobileFilterExpanded}
               setExpanded={setMobileFilterExpanded}

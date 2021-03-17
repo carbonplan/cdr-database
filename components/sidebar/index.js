@@ -5,7 +5,6 @@ import Search from './search'
 import Metadata from './metadata'
 import Charts from './charts'
 import Mobile from './mobile'
-import { useMedia } from 'react-use'
 
 const prefix =
   'https://github.com/carbonplan/reports-microsoft-2021/blob/main/data'
@@ -21,8 +20,6 @@ const Sidebar = ({
   tooltips,
   mobileFilterExpanded,
 }) => {
-  const isWide = useMedia('screen and (min-width: 54em)')
-
   function setSearch(value) {
     setFilters((filters) => {
       return { ...filters, search: value }
@@ -63,41 +60,39 @@ const Sidebar = ({
             proposals. Built for transparency. Download as a{' '}
             <Link href={`${prefix}/projects.json?raw=true`}>JSON</Link> or{' '}
             <Link href={`${prefix}/projects.csv?raw=true`}>CSV</Link>. Read our{' '}
-            <NextLink href={'/methods'} passHref>
+            <NextLink href={'/research/cdr-database/methods'} passHref>
               <Link>methods</Link>
             </NextLink>
             .
           </Text>
         </Box>
-        {isWide && (
-          <Box>
-            <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
-            <Box sx={{ mb: [1], mt: [3] }}>
-              <Search setSearch={setSearch} tooltips={tooltips} />
-            </Box>
-            <Metadata
-              filters={filters}
-              setFilters={setFilters}
-              tooltips={tooltips}
-            />
-            <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
-            <Charts
-              highlighted={highlighted}
-              filtered={filtered}
-              data={data}
-              bounds={bounds}
-              setBounds={setBounds}
-              tooltips={tooltips}
-            />
+        <Box sx={{ display: ['none', 'none', 'initial'] }}>
+          <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
+          <Box sx={{ mb: [1], mt: [3] }}>
+            <Search setSearch={setSearch} tooltips={tooltips} />
           </Box>
-        )}
-        {!isWide && (
+          <Metadata
+            filters={filters}
+            setFilters={setFilters}
+            tooltips={tooltips}
+          />
+          <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
+          <Charts
+            highlighted={highlighted}
+            filtered={filtered}
+            data={data}
+            bounds={bounds}
+            setBounds={setBounds}
+            tooltips={tooltips}
+          />
+        </Box>
+        <Box sx={{ display: ['initial', 'initial', 'none'] }}>
           <Mobile
             filters={filters}
             setFilters={setFilters}
             expanded={mobileFilterExpanded}
           />
-        )}
+        </Box>
       </Box>
     </Box>
   )

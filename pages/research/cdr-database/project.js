@@ -65,11 +65,11 @@ const Project = () => {
                 <br />
               </Box>
               To learn more about our reports, return to the main{' '}
-              <NextLink href={'/'} passHref>
+              <NextLink href={'/research/cdr-database'} passHref>
                 <Link>database</Link>
               </NextLink>{' '}
               or read our{' '}
-              <NextLink href={'/methods'} passHref>
+              <NextLink href={'/research/cdr-database/methods'} passHref>
                 <Link>methods</Link>
               </NextLink>
               .
