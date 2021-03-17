@@ -283,7 +283,7 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                 </Share>
                 <Box sx={{ display: ['none', 'initial', 'initial'] }}>
                   <Share
-                    value={` <iframe src='https://carbonplan.org/research/cdr-database/embed?id=${id}&theme=${colorMode}' loading='lazy' style='width: 420px; height: 634px; border: 0px none;'/>`}
+                    value={` <iframe src='https://carbonplan.org/research/cdr-database/embed?id=${id}&theme=${colorMode}' loading='lazy' style='width: 458px; height: 618px; border: 0px none;'/>`}
                     label='Embed'
                   >
                     <Box
