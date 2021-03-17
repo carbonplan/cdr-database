@@ -34,7 +34,7 @@ function Embed() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ mx: [3], my: [3] }}>
+      <Box sx={{ mx: [3], mt: [3] }}>
         {project && missing == false && (
           <Report
             setHighlighted={null}
