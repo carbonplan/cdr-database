@@ -1,30 +1,15 @@
-import React from 'react'
-import { Provider } from 'react-redux'
+import { useState } from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { Style } from '@carbonplan/components'
-import { useStore } from '../store'
-
+import '@carbonplan/components/fonts.css'
+import '@carbonplan/components/globals.css'
 import theme from '../theme'
 
-export default function App({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState)
+const App = ({ Component, pageProps }) => {
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <Style />
-        <style jsx global>
-          {`
-            body {
-              cursor: initial !important;
-            }
-
-            .mark-symbol {
-              cursor: pointer;
-            }
-          `}
-        </style>
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
+
+export default App
