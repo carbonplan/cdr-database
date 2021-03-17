@@ -13,7 +13,7 @@
 
 [github]: https://github.com/carbonplan/cdr-database
 [github-badge]: https://badgen.net/badge/-/github?icon=github&label
-[build status]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml/badge.svg
+[build status]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yml/badge.svg
 [actions]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml
 [mit license]: https://badgen.net/badge/license/MIT/blue
 
