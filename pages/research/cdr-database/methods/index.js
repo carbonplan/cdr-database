@@ -10,7 +10,14 @@ function Methods(props) {
   }, [section])
 
   return (
-    <Layout container={'wide'} footer={false} metadata={'scroll'}>
+    <Layout
+      container={'wide'}
+      footer={false}
+      metadata={'scroll'}
+      title={'cdr database / research / carbonplan'}
+      description={'Public database of reports on carbon removal projects.'}
+      card={'https://images.carbonplan.org/social/cdr-database.png'}
+    >
       <Main section={section} setSection={setSection} />
     </Layout>
   )

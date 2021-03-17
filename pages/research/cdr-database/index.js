@@ -27,7 +27,15 @@ function Index() {
   }
 
   return (
-    <Layout footer={false} metadata={false} container={'wide'} dimmer={false}>
+    <Layout
+      footer={false}
+      metadata={false}
+      container={'wide'}
+      dimmer={false}
+      title={'cdr database / research / carbonplan'}
+      description={'Public database of reports on carbon removal projects.'}
+      card={'https://images.carbonplan.org/social/cdr-database.png'}
+    >
       <Main projects={projects} metrics={metrics} />
     </Layout>
   )

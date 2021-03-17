@@ -33,7 +33,14 @@ const Project = () => {
   }, [router])
 
   return (
-    <Layout footer={false} metadata={false} dimmer={true}>
+    <Layout
+      footer={false}
+      metadata={false}
+      dimmer={true}
+      title={'cdr database / research / carbonplan'}
+      description={'Public database of reports on carbon removal projects.'}
+      card={'https://images.carbonplan.org/social/cdr-database.png'}
+    >
       <Grid columns={[1, 1, 'min(40%, 418px) 1fr']} gap={['0px']}>
         <Box
           sx={{
