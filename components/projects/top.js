@@ -3,6 +3,7 @@ import AnimateHeight from 'react-animate-height'
 import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
 import { format } from 'd3-format'
 import MobileFilter from './mobile-filter'
+import FadeIn from '../fade-in'
 
 const Top = ({
   data,
@@ -53,9 +54,16 @@ const Top = ({
           >
             Total
           </Text>
-          <Badge sx={{ ml: [1], fontSize: [2] }}>
-            {String(data.length).padStart(3, '0')}
-          </Badge>
+          {filtered.init && (
+            <FadeIn as='span' delay={10} duration={150}>
+              <Badge sx={{ ml: [1], fontSize: [2] }}>
+                {String(data.length).padStart(3, '0')}
+              </Badge>
+            </FadeIn>
+          )}
+          {!filtered.init && (
+            <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
+          )}
           <Text
             variant='label'
             sx={{
@@ -66,9 +74,16 @@ const Top = ({
           >
             Filtered
           </Text>
-          <Badge sx={{ ml: [1] }}>
-            {String(filtered.count).padStart(3, '0')}
-          </Badge>
+          {filtered.init && (
+            <FadeIn as='span' delay={10} duration={150}>
+              <Badge sx={{ ml: [1] }}>
+                {String(filtered.count).padStart(3, '0')}
+              </Badge>
+            </FadeIn>
+          )}
+          {!filtered.init && (
+            <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
+          )}
           <Box sx={{ display: ['none', 'none', 'initial'] }}>
             <Text
               variant='label'
@@ -80,14 +95,21 @@ const Top = ({
             >
               Volume
             </Text>
-            <Badge sx={{ ml: [1] }}>
-              {format('.2~s')(
-                data
-                  .filter((d) => filtered[d.id])
-                  .map((d) => d.metrics[1].value)
-                  .reduce((a, b) => a + b, 0)
-              )}
-            </Badge>
+            {filtered.init && (
+              <FadeIn as='span' delay={10} duration={150}>
+                <Badge sx={{ ml: [1] }}>
+                  {format('.2~s')(
+                    data
+                      .filter((d) => filtered[d.id])
+                      .map((d) => d.metrics[1].value)
+                      .reduce((a, b) => a + b, 0)
+                  )}
+                </Badge>
+              </FadeIn>
+            )}
+            {!filtered.init && (
+              <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
+            )}
           </Box>
         </Box>
         <Box sx={{ mt: ['10px'] }}>

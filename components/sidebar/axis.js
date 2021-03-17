@@ -3,6 +3,7 @@ import { useThemeUI, Box } from 'theme-ui'
 import { select } from 'd3-selection'
 import { brushX } from 'd3-brush'
 import { format } from 'd3-format'
+import FadeIn from '../fade-in'
 import Points from './points'
 
 const Axis = ({
@@ -19,19 +20,21 @@ const Axis = ({
   const { theme } = useThemeUI()
 
   useEffect(() => {
-    select(ref.current).call(
-      brushX()
-        .extent([
-          [0, 0],
-          [370, 90],
-        ])
-        .on('start brush', update)
-    )
+    if (ref.current) {
+      select(ref.current).call(
+        brushX()
+          .extent([
+            [0, 0],
+            [370, 90],
+          ])
+          .on('start brush', update)
+      )
+    }
 
     return function cleanup() {
-      ref.current.innerHTML = ''
+      if (ref.current) ref.current.innerHTML = ''
     }
-  }, [theme])
+  }, [ref, theme])
 
   function updateBounds(key) {
     return (value) =>
@@ -62,38 +65,43 @@ const Axis = ({
         height: '100%',
         display: 'block',
         '.selection': { stroke: 'none' },
-        '.axis-label': {
-          fill: 'muted',
-          fontFamily: 'mono',
-          fontSize: [1],
-          textAnchor: 'middle',
-          userSelect: 'none',
-        },
       }}
     >
-      <svg viewBox='0 0 370 107'>
-        <Points
-          x={x}
-          y={y}
-          theme={theme}
-          highlighted={highlighted}
-          filtered={filtered}
-          data={data}
-        />
-        <g ref={ref} />
-        {ticks.map((d, i) => {
-          return (
-            <text
-              className='axis-label'
-              key={'tick-' + label + '-' + i}
-              x={x(d)}
-              y={106}
-            >
-              {format('~s')(d)}
-            </text>
-          )
-        })}
-      </svg>
+      {filtered.init && (
+        <FadeIn delay={10} duration={150}>
+          <svg viewBox='0 0 370 107'>
+            <Points
+              x={x}
+              y={y}
+              highlighted={highlighted}
+              filtered={filtered}
+              data={data}
+            />
+            <g ref={ref} />
+            {ticks.map((d, i) => {
+              return (
+                <Box
+                  as='text'
+                  className='axis-label'
+                  key={'tick-' + label + '-' + i}
+                  x={x(d)}
+                  y={106}
+                  sx={{
+                    fill: 'muted',
+                    fontFamily: 'mono',
+                    fontSize: [1],
+                    textAnchor: 'middle',
+                    userSelect: 'none',
+                  }}
+                >
+                  {format('~s')(d)}
+                </Box>
+              )
+            })}
+          </svg>
+        </FadeIn>
+      )}
+      {!filtered.init && <Box sx={{ height: '117.938px' }}></Box>}
     </Box>
   )
 }
