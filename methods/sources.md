@@ -22,6 +22,10 @@ We excluded 9 proposals that specified 0 tCO₂ offered volume, which made the p
 
 Microsoft’s RFP did not systematically surface life cycle analysis or cost data in public sections of the application process. Therefore, most proposals from this source have N/As for negativity and cost.
 
+Read [our article](https://carbonplan.org/research/microsoft-2021-insights) on insights from evaluating these projects.
+
 ## Stripe 2020
 
 In the spring of 2020 Stripe announced a [commitment to purchase carbon removal](https://stripe.com/blog/negative-emissions-commitment). They made a call for proposals, solicited applications using [this form](https://github.com/stripe/negative-emissions-source-materials/blob/master/project_applicaton_template.pdf), evaluated them, and selected winners for their 2020 purchase. All public materials are available [on Github](https://github.com/stripe/negative-emissions-source-materials). They received 24 submissions. We included all 24 (100%) for our analyses.
+
+Read [our article](https://carbonplan.org/research/stripe-2020-insights) on insights from evaluating these projects.
