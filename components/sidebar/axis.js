@@ -20,7 +20,6 @@ const Axis = ({
 
   const ref = useCallback(
     (node) => {
-      console.log('node appeared')
       if (node !== null) {
         select(node).call(
           brushX()
