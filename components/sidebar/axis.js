@@ -66,7 +66,7 @@ const Axis = ({
       }}
     >
       {filtered.init && (
-        <FadeIn delay={10} duration={300}>
+        <FadeIn delay={10} duration={200}>
           <svg viewBox='0 0 370 107'>
             <Points
               x={x}

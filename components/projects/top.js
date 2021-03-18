@@ -55,7 +55,7 @@ const Top = ({
             Total
           </Text>
           {filtered.init && (
-            <FadeIn as='span' delay={10} duration={150}>
+            <FadeIn as='span' delay={10} duration={200}>
               <Badge sx={{ ml: [1], fontSize: [2] }}>
                 {String(data.length).padStart(3, '0')}
               </Badge>
@@ -75,7 +75,7 @@ const Top = ({
             Filtered
           </Text>
           {filtered.init && (
-            <FadeIn as='span' delay={10} duration={150}>
+            <FadeIn as='span' delay={10} duration={200}>
               <Badge sx={{ ml: [1] }}>
                 {String(filtered.count).padStart(3, '0')}
               </Badge>
@@ -96,7 +96,7 @@ const Top = ({
               Volume
             </Text>
             {filtered.init && (
-              <FadeIn as='span' delay={10} duration={150}>
+              <FadeIn as='span' delay={10} duration={200}>
                 <Badge sx={{ ml: [1] }}>
                   {format('.2~s')(
                     data
