@@ -156,4 +156,4 @@ After analyzing each metric separately for validation, we reflect our overall co
 
 Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
 
-As with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
+Rating does not necessarily reflect project quality, but rather our ability to validate key information. Furtherore, as with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.
