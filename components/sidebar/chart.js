@@ -28,7 +28,12 @@ const Chart = ({
           {label}
           <Text
             as='span'
-            sx={{ ml: [2], textTransform: 'none', letterSpacing: 'body' }}
+            sx={{
+              ml: [2],
+              textTransform: 'none',
+              letterSpacing: 'body',
+              color: 'muted',
+            }}
           >
             {units}
           </Text>
