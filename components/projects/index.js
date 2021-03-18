@@ -30,7 +30,7 @@ const List = ({
       />
       <Divider sx={{ display: ['none', 'none', 'inherit'], ml: [4] }} />
       {filtered.init && (
-        <FadeIn delay={10} duration={150}>
+        <FadeIn delay={10} duration={300}>
           {isWide && filtered.count > 0 && (
             <Grid
               columns={[2]}
