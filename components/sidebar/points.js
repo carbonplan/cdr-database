@@ -1,5 +1,6 @@
+import { Box } from 'theme-ui'
 import { memo } from 'react'
-import { mix } from 'polished'
+import { mix } from '@theme-ui/color'
 
 const colors = {
   dac: 'purple',
@@ -10,7 +11,7 @@ const colors = {
   soil: 'orange',
 }
 
-const Points = ({ theme, data, filtered, highlighted, x, y }) => {
+const Points = ({ data, filtered, highlighted, x, y }) => {
   return data
     .sort((a, b) => {
       if (filtered[a.id] && !filtered[b.id]) return 1
@@ -19,21 +20,18 @@ const Points = ({ theme, data, filtered, highlighted, x, y }) => {
     })
     .map((d) => {
       return (
-        <circle
+        <Box
+          as='circle'
           key={d.id}
           cx={x(d.value)}
           cy={y(d.tag)}
           r={d.id == highlighted ? 8 : 4}
-          style={{ transition: 'r 0.15s' }}
-          fill={
-            filtered[d.id]
-              ? theme.colors[colors[d.tag]]
-              : mix(
-                  0.15,
-                  String(theme.colors[colors[d.tag]]),
-                  String(theme.colors.background)
-                )
-          }
+          sx={{
+            transition: 'r 0.15s',
+            fill: filtered[d.id]
+              ? colors[d.tag]
+              : mix(colors[d.tag], 'background', 0.15),
+          }}
         />
       )
     })

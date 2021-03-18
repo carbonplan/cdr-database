@@ -4,6 +4,7 @@ import { Grid, Flex, Container, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { Layout } from '@carbonplan/components'
 import Report from '../../../components/projects/report'
+import FadeIn from '../../../components/fade-in'
 import collection from '../../../data/projects'
 
 const selectMetric = (d, name) => {
@@ -95,6 +96,7 @@ const Project = () => {
             borderLeftWidth: ['0px', '0px', '1px'],
             borderTopWidth: ['1px', '1px', '0px'],
             borderColor: 'muted',
+            minHeight: [0, 0, '650px'],
             width: '100%',
             '@media only screen and (min-width: 100em)': {
               pl: [0, 0, '128px'],
@@ -102,37 +104,41 @@ const Project = () => {
           }}
         >
           {project && missing == false && (
-            <Report
-              setHighlighted={null}
-              data={project}
-              tooltips={true}
-              embed={true}
-            />
+            <FadeIn delay={10} duration={150}>
+              <Report
+                setHighlighted={null}
+                data={project}
+                tooltips={true}
+                embed={true}
+              />
+            </FadeIn>
           )}
           {missing == true && (
-            <Box>
-              <Box
-                sx={{
-                  mt: [1, 1, '8px'],
-                  fontFamily: 'mono',
-                  letterSpacing: 'mono',
-                  fontSize: [1],
-                  textTransform: 'uppercase',
-                  color: 'secondary',
-                }}
-              >
-                Project '{project}' not found
+            <FadeIn delay={10} duration={150}>
+              <Box>
+                <Box
+                  sx={{
+                    mt: [1, 1, '8px'],
+                    fontFamily: 'mono',
+                    letterSpacing: 'mono',
+                    fontSize: [1],
+                    textTransform: 'uppercase',
+                    color: 'secondary',
+                  }}
+                >
+                  Project '{project}' not found
+                </Box>
+                <Box
+                  sx={{
+                    mt: [3],
+                    fontSize: [2],
+                    letterSpacing: 'body',
+                  }}
+                >
+                  Try double checking your URL and try again.
+                </Box>
               </Box>
-              <Box
-                sx={{
-                  mt: [3],
-                  fontSize: [2],
-                  letterSpacing: 'body',
-                }}
-              >
-                Try double checking your URL and try again.
-              </Box>
-            </Box>
+            </FadeIn>
           )}
         </Box>
       </Grid>
