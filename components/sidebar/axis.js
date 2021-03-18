@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useCallback } from 'react'
 import { useThemeUI, Box } from 'theme-ui'
 import { select } from 'd3-selection'
 import { brushX } from 'd3-brush'
@@ -16,25 +16,24 @@ const Axis = ({
   setBounds,
   ticks,
 }) => {
-  const ref = useRef(null)
   const { theme } = useThemeUI()
 
-  useEffect(() => {
-    if (ref.current) {
-      select(ref.current).call(
-        brushX()
-          .extent([
-            [0, 0],
-            [370, 90],
-          ])
-          .on('start brush', update)
-      )
-    }
-
-    return function cleanup() {
-      if (ref.current) ref.current.innerHTML = ''
-    }
-  }, [ref, theme])
+  const ref = useCallback(
+    (node) => {
+      console.log('node appeared')
+      if (node !== null) {
+        select(node).call(
+          brushX()
+            .extent([
+              [0, 0],
+              [370, 90],
+            ])
+            .on('start brush', update)
+        )
+      }
+    },
+    [theme]
+  )
 
   function updateBounds(key) {
     return (value) =>
