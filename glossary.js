@@ -14,9 +14,9 @@ module.exports = {
   volumeFilter:
     'Click and drag horizontally on the chart to select a range to filter projects by. Values show the total volume in tCO₂ of carbon removal and/or avoided emissions claimed by the project. Calculting net benefits requires incorporating negativity to account for project emissions.',
   rating:
-    'A single rating to reflect our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total rating.',
+    'A single rating to reflect our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total rating. Rating does not necessarily reflect project quality, but rather our ability to validate key information.',
   ratingFilter:
-    'Click to filter projects by setting a minimum rating. All projects with a rating as high or higher will be shown. The rating for each project reflects our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total.',
+    'Click to filter projects by setting a minimum rating. All projects with a rating as high or higher will be shown. The rating for each project reflects our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total. Rating does not necessarily reflect project quality, but rather our ability to validate key information.',
   mechanism:
     'Does the project remove carbon dioxide from the atmosphere (RMV) or does it avoid emissions that would have otherwise occurred (AVD) or both (BOTH)? While both can have positive climate benefits, the difference matters for accounting purposes.',
   mechanismRating:
