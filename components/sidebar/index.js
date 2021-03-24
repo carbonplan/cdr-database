@@ -58,7 +58,6 @@ const Sidebar = ({
             <Link
               href={'/research/cdr-database/projects.json'}
               download='CarbonPlan-CDR-Database.json'
-              target='_blank'
             >
               JSON
             </Link>{' '}
@@ -66,7 +65,6 @@ const Sidebar = ({
             <Link
               href={'/research/cdr-database/projects.csv'}
               download='CarbonPlan-CDR-Database.csv'
-              target='_blank'
             >
               CSV
             </Link>
