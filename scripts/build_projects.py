@@ -132,11 +132,11 @@ def write_csv(collection, output):
 
     df['revisions'] = [d['revisions'] for d in projects]
 
-    df.to_csv('data/' + output, index=False)
+    df.to_csv('public/research/cdr-database/' + output, index=False)
 
 
 def write_json(collection, output):
-    with open('data/' + output, "w") as f:
+    with open('public/research/cdr-database/' + output, "w") as f:
         f.write(json.dumps(collection))
 
 

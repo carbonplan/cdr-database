@@ -6,9 +6,6 @@ import Metadata from './metadata'
 import Charts from './charts'
 import Mobile from './mobile'
 
-const prefix =
-  'https://raw.githubusercontent.com/carbonplan/cdr-database/main/data'
-
 const Sidebar = ({
   highlighted,
   filtered,
@@ -58,8 +55,20 @@ const Sidebar = ({
           <Text sx={{ pt: [0, 0, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
             These are reports on public Carbon Dioxide Removal project
             proposals. Built for transparency. Download as a{' '}
-            <Link href={`${prefix}/projects.json`}>JSON</Link> or{' '}
-            <Link href={`${prefix}/projects.csv`}>CSV</Link>. Read our{' '}
+            <Link
+              href={'/research/cdr-database/projects.json'}
+              download='CarbonPlan-CDR-Database.json'
+            >
+              JSON
+            </Link>{' '}
+            or{' '}
+            <Link
+              href={'/research/cdr-database/projects.csv'}
+              download='CarbonPlan-CDR-Database.csv'
+            >
+              CSV
+            </Link>
+            . Read our{' '}
             <NextLink href={'/research/cdr-database/methods'} passHref>
               <Link>methods</Link>
             </NextLink>
