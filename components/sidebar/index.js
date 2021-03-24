@@ -56,15 +56,17 @@ const Sidebar = ({
             These are reports on public Carbon Dioxide Removal project
             proposals. Built for transparency. Download as a{' '}
             <Link
-              href={'/research/cdr-database/CarbonPlan-CDR-Database.json'}
-              download
+              href={'/research/cdr-database/projects.json'}
+              download='CarbonPlan-CDR-Database.json'
+              target='_blank'
             >
               JSON
             </Link>{' '}
             or{' '}
             <Link
-              href={'/research/cdr-database/CarbonPlan-CDR-Database.csv'}
-              download
+              href={'/research/cdr-database/projects.csv'}
+              download='CarbonPlan-CDR-Database.csv'
+              target='_blank'
             >
               CSV
             </Link>
