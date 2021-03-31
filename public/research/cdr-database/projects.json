@@ -2504,7 +2504,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -2600,7 +2600,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -2696,7 +2696,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -2792,7 +2792,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -2888,7 +2888,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -2984,7 +2984,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3012,7 +3012,7 @@
           "units": "tCO\u2082",
           "rating": 1.0,
           "notes": "Seller offers 250,000 tCO\u2082 from a DAC plant that will be constructed starting in 2024.",
-          "comment": "The proposed plant is designed to capture 1M tCO\u2082/year. A schematic for a deployment of Carbon Engineering's technology at this scale was published in a peer reviewed paper from 2018, alongside data from a pilot project. If executed as modeled, the offered removal volume seems plausible. See Negativity for additional discussion on net CO\u2082 removal."
+          "comment": "The proposed plant is designed to capture 1M tCO\u2082/year in the Permian Basin, with expected use of the captured carbon for enhanced oil recovery. A schematic for a deployment of Carbon Engineering's technology at this scale was published in a peer reviewed paper from 2018, alongside data from a pilot project. If executed as modeled, the offered removal volume seems plausible. See Negativity for additional discussion on net CO\u2082 removal."
         },
         {
           "type": "Metric",
@@ -3021,7 +3021,7 @@
           "units": "",
           "rating": 0.0,
           "notes": "",
-          "comment": "Negativity is a key parameter for evaluating DAC projects, and is dependent on project-specific characteristics such the carbon intensity of the energy source and the end use of the captured CO\u2082. Project indicates that captured CO\u2082 may be used for EOR. There is not enough public information available to calculate negativity for this project."
+          "comment": "Negativity is a key parameter for evaluating DAC projects, and is dependent on project-specific characteristics such as the carbon intensity of the energy source and the end use of the captured CO\u2082. Project indicates that captured CO\u2082 will be used for EOR. There is not enough public information available to calculate negativity for this project."
         },
         {
           "type": "Metric",
@@ -3039,7 +3039,7 @@
           "units": "",
           "rating": "",
           "notes": "",
-          "comment": "Use of captured CO\u2082 for EOR introduces questions about the appropriate baseline against which a carbon payment scenario should be credited. Project has also indicated it is considering participating in the Low Carbon Fuel Standard (LCFS) compliance program. If it were to participate, any tons that recieved LCFS credits and were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that do not recieve LCFS credits would likely be additional because of the high cost and dedicated purpose of DAC."
+          "comment": "Use of captured CO\u2082 for EOR introduces questions about the appropriate baseline against which a carbon payment scenario should be credited. Project has also indicated it is considering participating in the Low Carbon Fuel Standard (LCFS) compliance program. If it were to participate, any tons that received LCFS credits and were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that do not receive LCFS credits would likely be additional because of the high cost and dedicated purpose of DAC."
         },
         {
           "type": "Metric",
@@ -3080,8 +3080,12 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
+        },
+        {
+          "date": "03-30-2021",
+          "note": "Minor changes to improve readability of volume and negativity comments."
         }
       ],
       "documentation": {
@@ -3176,7 +3180,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3272,7 +3276,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3368,7 +3372,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3464,7 +3468,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3560,7 +3564,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3656,7 +3660,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3752,7 +3756,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3848,7 +3852,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -3944,7 +3948,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4040,7 +4044,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4136,7 +4140,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4232,7 +4236,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4328,7 +4332,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4424,7 +4428,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4520,7 +4524,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4616,7 +4620,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4712,7 +4716,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4808,7 +4812,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -4904,7 +4908,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5000,7 +5004,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5096,7 +5100,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5192,7 +5196,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5288,7 +5292,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5384,7 +5388,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5480,7 +5484,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5576,7 +5580,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5672,7 +5676,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5768,7 +5772,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5864,7 +5868,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -5960,7 +5964,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6056,7 +6060,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6152,7 +6156,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6248,7 +6252,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6344,7 +6348,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6399,7 +6403,7 @@
           "units": "",
           "rating": "",
           "notes": "",
-          "comment": "The only reason to implement a project like this is to generate climate benefits. Seller has not indicated the intention to participate in the Low Carbon Fuel Standard (LCFS) compliance program, but appears eligible. If the project were to participate, any tons that recieved LCFS credits and were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that did not recieve LCFS credits be additional."
+          "comment": "The only reason to implement a project like this is to generate climate benefits. Seller has not indicated the intention to participate in the Low Carbon Fuel Standard (LCFS) compliance program, but appears eligible. If the project were to participate, any tons that received LCFS credits and were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that did not receive LCFS credits would be additional."
         },
         {
           "type": "Metric",
@@ -6440,8 +6444,12 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
+        },
+        {
+          "date": "03-30-2021",
+          "note": "Fixed typo in additionality comment."
         }
       ],
       "documentation": {
@@ -6536,7 +6544,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6632,7 +6640,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6728,7 +6736,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6824,7 +6832,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -6920,7 +6928,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7016,7 +7024,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7112,7 +7120,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7208,7 +7216,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7304,7 +7312,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7400,7 +7408,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7496,7 +7504,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7592,7 +7600,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7688,7 +7696,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7784,7 +7792,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7880,7 +7888,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -7976,7 +7984,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8072,7 +8080,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8168,7 +8176,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8264,7 +8272,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8360,7 +8368,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8456,7 +8464,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8552,7 +8560,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8648,7 +8656,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8744,7 +8752,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8840,7 +8848,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -8936,7 +8944,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9032,7 +9040,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9128,7 +9136,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9224,7 +9232,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9320,7 +9328,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9416,7 +9424,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9512,7 +9520,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9608,7 +9616,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9704,7 +9712,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9800,7 +9808,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9896,7 +9904,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -9992,7 +10000,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10088,7 +10096,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10184,7 +10192,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10280,7 +10288,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10376,7 +10384,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10472,7 +10480,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10568,7 +10576,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10664,7 +10672,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10760,7 +10768,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10856,7 +10864,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -10952,7 +10960,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11048,7 +11056,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11144,7 +11152,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11240,7 +11248,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11336,7 +11344,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11432,7 +11440,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11528,7 +11536,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11624,7 +11632,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11720,7 +11728,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11816,7 +11824,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -11912,7 +11920,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12008,7 +12016,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12104,7 +12112,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12200,7 +12208,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12296,7 +12304,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12392,7 +12400,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12488,7 +12496,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12584,7 +12592,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12680,7 +12688,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12776,7 +12784,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12872,7 +12880,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -12968,7 +12976,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13064,7 +13072,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13160,7 +13168,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13256,7 +13264,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13352,7 +13360,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13448,7 +13456,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13544,7 +13552,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13640,7 +13648,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13736,7 +13744,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13832,7 +13840,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -13928,7 +13936,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14024,7 +14032,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14120,7 +14128,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14216,7 +14224,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14244,7 +14252,7 @@
           "units": "tCO\u2082",
           "rating": 1.0,
           "notes": "Seller seeks an offtake agreement for 6,000,000 tCO\u2082 removal from DAC plants that will operate from 2025 onward. All plants will use Carbon Engineering's DAC technology.",
-          "comment": "Carbon Engineering's first industrial plants will be designed to capture 1M tCO\u2082/year. A schematic for a deployment of Carbon Engineering's technology at this scale was published in a peer reviewed paper from 2018, alongside data from a pilot project. If executed as modeled, the offered removal volume seems plausible. See Negativity for additional discussion on net CO\u2082 removal."
+          "comment": "Volume will be delivered by unspecified future projects using Carbon Engineering\u2019s technology. The first industrial-scale plants using Carbon Engineering\u2019s technology will be built in the Permian Basin and are designed to capture 1 million tCO\u2082/year. A schematic for a deployment of Carbon Engineering's technology at this scale was published in a 2018 peer-reviewed paper, alongside data from a pilot project. With sufficient deployment, and if executed as modeled, the offered removal volume is plausible."
         },
         {
           "type": "Metric",
@@ -14253,7 +14261,7 @@
           "units": "",
           "rating": 0.0,
           "notes": "",
-          "comment": "Negativity is a key parameter for evaluating DAC projects, and is dependent on project-specific characteristics such the carbon intensity of the energy source and the end use of the captured CO\u2082. Project indicates that captured CO\u2082 may be used for EOR. There is not enough public information available to calculate negativity for this project."
+          "comment": "Negativity is a key parameter for evaluating DAC projects, and is dependent on project-specific characteristics such as the carbon intensity of the energy source and the end use of the captured CO\u2082. This proposal involves future projects that would deliver carbon removal volume by pursuing either geologic sequestration or carbon utilization. There is not enough public information available to calculate negativity for potential future projects."
         },
         {
           "type": "Metric",
@@ -14262,16 +14270,16 @@
           "units": "years",
           "rating": 1.0,
           "notes": "Seller claims 10,000 year permanence.",
-          "comment": "Successful mineralization produces reliable, effectively permanent carbon storage."
+          "comment": "Successful geologic storage produces reliable, effectively permanent carbon storage. CO\u2082 utilization options feature a wide range of permanence outcomes, including effectively permanent mineralization in products like concrete."
         },
         {
           "type": "Metric",
           "name": "additionality",
-          "value": 1.0,
+          "value": 2.0,
           "units": "",
           "rating": "",
           "notes": "",
-          "comment": "Use of captured CO\u2082 for EOR introduces questions about the appropriate baseline against which a carbon payment scenario should be credited. Project has also indicated it is considering participating in the Low Carbon Fuel Standard (LCFS) compliance program. If it were to participate, any tons that recieved LCFS credits and were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that do not recieve LCFS credits would likely be additional because of the high cost and dedicated purpose of DAC."
+          "comment": "Proposal offers removal volume from projects that will involve non-EOR geologic sequestration or carbon utilization. Proposal indicates likely project participation in the Low Carbon Fuel Standard (LCFS) compliance program. If projects were to participate, any tons that received LCFS credits that were also offered in the voluntary market would be non-additional. Because LCFS is a compliance program, this would be a case of double counting. Conversely, tons that do not receive LCFS credits would likely be additional because of the high cost and dedicated purpose of DAC."
         },
         {
           "type": "Metric",
@@ -14299,7 +14307,7 @@
       "id": "MSFT145",
       "description": "Global opportunities for affordable, scalable DAC and storage at climate-relevant volumes.",
       "applicant": "Carbon Engineering",
-      "rating": "3",
+      "rating": "4",
       "keywords": "",
       "methods": "",
       "location": {
@@ -14312,8 +14320,12 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
+        },
+        {
+          "date": "03-30-2021",
+          "note": "Carbon Engineering\u2019s public proposal is silent on the potential involvement of enhanced oil recovery (EOR). In our original project report, we raised questions about the potential involvement of EOR because Carbon Engineering\u2019s first major project in the Permian Basin will use EOR. Both Carbon Engineering and Microsoft have since confirmed that offering non-EOR volume was a precondition of Carbon Engineering\u2019s proposal, and thus the proposal should be read as offering removal volume with non-EOR geologic sequestration or carbon utilization. We made changes to the volume, negativity and additionality comments to reflect this, and increased the additionality score from a 2/3 to a 3/3. We also modified the permanence comment to reflect the potential for both geologic storage and utilization."
         }
       ],
       "documentation": {
@@ -14408,7 +14420,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14504,7 +14516,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14600,7 +14612,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14696,7 +14708,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14792,7 +14804,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14888,7 +14900,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -14984,7 +14996,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15080,7 +15092,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15176,7 +15188,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15272,7 +15284,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15368,7 +15380,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15464,7 +15476,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15560,7 +15572,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15656,7 +15668,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15752,7 +15764,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15848,7 +15860,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -15944,7 +15956,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16040,7 +16052,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16136,7 +16148,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16232,7 +16244,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16328,7 +16340,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16424,7 +16436,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16520,7 +16532,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16575,7 +16587,7 @@
           "units": "",
           "rating": "",
           "notes": "",
-          "comment": "Seller indicates that project activities started in 2017. The carbon benefits offered are not clearly vintaged, leading to the concern the carbon benefits offered could have been generated up to 4 years ago. Landowner claims significt cattle carrying capacity co-benefits in addition to carbon benefits. Overall, there is not enough information to evaluate additionality."
+          "comment": "Seller indicates that project activities started in 2017. The carbon benefits offered are not clearly vintaged, leading to the concern the carbon benefits offered could have been generated up to 4 years ago. Landowner claims significant cattle carrying capacity co-benefits in addition to carbon benefits. Overall, there is not enough information to evaluate additionality."
         },
         {
           "type": "Metric",
@@ -16616,8 +16628,12 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
+        },
+        {
+          "date": "03-18-2021",
+          "note": "Fixed typo."
         }
       ],
       "documentation": {
@@ -16712,8 +16728,12 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
+        },
+        {
+          "date": "03-17-2021",
+          "note": "Correction to mechanism note and validation."
         }
       ],
       "documentation": {
@@ -16808,7 +16828,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -16904,7 +16924,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17000,7 +17020,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17096,7 +17116,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17192,7 +17212,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17288,7 +17308,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17384,7 +17404,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17480,7 +17500,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17576,7 +17596,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17672,7 +17692,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17768,7 +17788,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
@@ -17864,7 +17884,7 @@
       },
       "revisions": [
         {
-          "date": "01-20-2021",
+          "date": "03-17-2021",
           "note": "First release."
         }
       ],
