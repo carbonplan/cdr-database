@@ -27,7 +27,7 @@
     "@carbonplan/components": "^4.0.6",
     "@carbonplan/theme": "^3.0.0",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.0.5",
+    "@next/mdx": "^10.1.3",
     "d3-brush": "^2.1.0",
     "d3-format": "^2.0.0",
     "d3-scale": "^3.2.3",
