@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Grid, Link, Text } from 'theme-ui'
+import { Box, Grid, Link, Divider } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { Expander } from '@carbonplan/components'
 
@@ -21,11 +21,16 @@ const TOC = ({ section, setSection }) => {
     if (current == section) {
       return {
         textDecoration: 'none',
+        fontFamily: 'heading',
+        textTransform: 'uppercase',
+        letterSpacing: 'smallcaps',
         pb: ['2px'],
+        fontSize: [1, 2, 2, 3],
+        mr: ['2px', 4, 0, 0],
         borderColor: 'primary',
         borderStyle: 'solid',
         borderWidth: '0px',
-        borderBottomWidth: '2px',
+        borderBottomWidth: '1px',
         '@media (hover: hover) and (pointer: fine)': {
           '&:hover': {
             borderColor: 'secondary',
@@ -41,11 +46,16 @@ const TOC = ({ section, setSection }) => {
     } else {
       return {
         textDecoration: 'none',
+        fontSize: [1, 2, 2, 3],
+        mr: ['2px', 4, 0, 0],
         pb: ['2px'],
+        fontFamily: 'heading',
+        textTransform: 'uppercase',
+        letterSpacing: 'smallcaps',
         borderColor: 'background',
         borderStyle: 'solid',
         borderWidth: '0px',
-        borderBottomWidth: '2px',
+        borderBottomWidth: '1px',
         '@media (hover: hover) and (pointer: fine)': {
           '&:hover': {
             color: 'secondary',
@@ -62,30 +72,13 @@ const TOC = ({ section, setSection }) => {
 
   return (
     <Box>
-      <NextLink href='/research/cdr-database' passHref>
-        <Link
-          sx={{
-            display: 'inline-block',
-            fontSize: [5, 5, 6],
-            mt: [1],
-            mr: [3],
-            color: 'text',
-            cursor: 'pointer',
-            '&:hover': {
-              color: 'secondary',
-            },
-            textDecoration: 'none',
-          }}
-        >
-          ←
-        </Link>
-      </NextLink>
       <Box
         sx={{
-          display: ['inline-block', 'inline-block', 'initial'],
+          display: ['inline-block', 'inline-block', 'block'],
           mb: [0],
+          mt: [0, 0, 4, 5],
           position: ['relative', 'relative', 'initial'],
-          top: ['-7px', '-11px', 0],
+          top: ['-7px', '-7px', 0],
         }}
       >
         {sections.map((d, i) => {
@@ -95,8 +88,8 @@ const TOC = ({ section, setSection }) => {
               sx={{
                 mr: [2, 2, 0],
                 display: ['inline-block', 'inline-block', 'block'],
-                mt: [2],
-                fontSize: [2, 2, 3],
+                mt: [3],
+                fontSize: [2, 2, 2, 3],
               }}
             >
               <Link

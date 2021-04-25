@@ -1,11 +1,21 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { Grid, Flex, Container, Box, Text, Link } from 'theme-ui'
+import { Grid, Flex, Divider, Container, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
-import { Layout } from '@carbonplan/components'
+import {
+  Layout,
+  Buttons,
+  Links,
+  FadeIn,
+  Row,
+  Column,
+  Guide,
+} from '@carbonplan/components'
 import Report from '../../../components/projects/report'
-import FadeIn from '../../../components/fade-in'
 import collection from '../../../data/projects'
+
+const { BackButton } = Buttons
+const { InternalLink } = Links
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value
@@ -42,106 +52,140 @@ const Project = () => {
       description={'Public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
     >
-      <Grid columns={[1, 1, 'min(40%, 418px) 1fr']} gap={['0px']}>
-        <Box
-          sx={{
-            pr: [0, 0, 5],
-            '@media only screen and (min-width: 100em)': {
-              pr: [0, 0, '128px'],
-            },
-          }}
-        >
+      <Guide />
+      <Row>
+        <Column start={[1]} width={[6, 8, 4, 4]} sx={{ mt: [4] }}>
+          <InternalLink href='/research/cdr-database'>
+            <BackButton />
+          </InternalLink>
           <Box
             sx={{
+              pt: [3],
+              pb: [5, 6, 6, 6],
+              fontSize: [6, 6, 7, 8],
+              width: 'fit-content',
               fontFamily: 'heading',
-              letterSpacing: 'heading',
-              fontSize: [6],
-              pt: [1, 3, 3],
-              mb: [1],
-              mt: [0],
+              lineHeight: 'heading',
             }}
           >
             CDR Project
           </Box>
-          <Box sx={{ fontSize: [2], pb: [3, 3, 1] }}>
-            <Box sx={{ pt: [0, 1, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
-              This is an entry from our database of reports on carbon dioxide
-              removal project proposals. It represents our evaluation of a
-              project based on publicly available materials.
-              <Box as='span' sx={{ display: ['none', 'none', 'initial'] }}>
-                <br />
-                <br />
+          <Row columns={[6, 8, 4, 4]}>
+            <Column start={[1]} width={[6, 6, 3, 3]}>
+              <Box
+                sx={{
+                  pt: [0],
+                  pb: [4],
+                  mb: [1, 1, 1, 1],
+                  fontSize: [3, 3, 3, 4],
+                  fontFamily: 'body',
+                  lineHeight: 'body',
+                }}
+              >
+                This is an entry from our database of reports on carbon dioxide
+                removal project proposals. It represents our evaluation of a
+                project based on publicly available materials.
+                <Box as='span' sx={{ display: ['none', 'none', 'initial'] }}>
+                  <br />
+                  <br />
+                </Box>
+                To learn more about our reports, return to the main{' '}
+                <NextLink href={'/research/cdr-database'} passHref>
+                  <Link>database</Link>
+                </NextLink>{' '}
+                or read our{' '}
+                <NextLink href={'/research/cdr-database/methods'} passHref>
+                  <Link>methods</Link>
+                </NextLink>
+                .
               </Box>
-              To learn more about our reports, return to the main{' '}
-              <NextLink href={'/research/cdr-database'} passHref>
-                <Link>database</Link>
-              </NextLink>{' '}
-              or read our{' '}
-              <NextLink href={'/research/cdr-database/methods'} passHref>
-                <Link>methods</Link>
-              </NextLink>
-              .
-            </Box>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            my: [2, 2, '21px'],
-            pl: [0, 0, 5],
-            pt: [3, 3, '24px'],
-            pb: [4, 4, '24px'],
-            pr: [0, 0, 2],
-            borderStyle: 'solid',
-            borderWidth: '0px',
-            borderLeftWidth: ['0px', '0px', '1px'],
-            borderTopWidth: ['1px', '1px', '0px'],
-            borderColor: 'muted',
-            minHeight: [0, 0, '650px'],
-            width: '100%',
-            '@media only screen and (min-width: 100em)': {
-              pl: [0, 0, '128px'],
-            },
-          }}
-        >
-          {project && missing == false && (
-            <FadeIn delay={10} duration={150}>
-              <Report
-                setHighlighted={null}
-                data={project}
-                tooltips={true}
-                embed={true}
+              <Divider
+                sx={{
+                  my: [0],
+                  display: ['initial', 'initial', 'none', 'none'],
+                }}
               />
-            </FadeIn>
-          )}
-          {missing == true && (
-            <FadeIn delay={10} duration={150}>
-              <Box>
-                <Box
-                  sx={{
-                    mt: [1, 1, '8px'],
-                    fontFamily: 'mono',
-                    letterSpacing: 'mono',
-                    fontSize: [1],
-                    textTransform: 'uppercase',
-                    color: 'secondary',
-                  }}
-                >
-                  Project '{project}' not found
+            </Column>
+          </Row>
+        </Column>
+        <Column
+          start={[5]}
+          width={[1]}
+          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
+        >
+          <Box
+            sx={{
+              height: [
+                'auto',
+                'auto',
+                'calc(100vh - 150px)',
+                'calc(100vh - 196px)',
+              ],
+              borderWidth: '0px',
+              borderLeftWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'muted',
+              width: '1px',
+              position: 'fixed',
+              mt: [6, 6, 6, 7],
+            }}
+          ></Box>
+        </Column>
+        <Column
+          start={[1, 1, 6, 6]}
+          width={[6, 6, 6, 5]}
+          sx={{ mt: [1, 2, 4, 4] }}
+        >
+          <Box
+            sx={{
+              my: [0, 2, '21px'],
+              pt: [2, 2, '24px', '28px'],
+              pb: [5, 5, 0],
+              pr: [0, 0, 2],
+              minHeight: [0, 0, '650px'],
+              width: '100%',
+            }}
+          >
+            {project && missing == false && (
+              <FadeIn delay={10} duration={150}>
+                <Report
+                  setHighlighted={null}
+                  data={project}
+                  tooltips={true}
+                  embed={true}
+                />
+              </FadeIn>
+            )}
+            {missing == true && (
+              <FadeIn delay={10} duration={150}>
+                <Box>
+                  <Box
+                    sx={{
+                      mt: [1, 1, '8px'],
+                      fontFamily: 'mono',
+                      letterSpacing: 'mono',
+                      fontSize: [1],
+                      textTransform: 'uppercase',
+                      color: 'secondary',
+                    }}
+                  >
+                    Project '{project}' not found
+                  </Box>
+                  <Box
+                    sx={{
+                      mt: [3],
+                      fontSize: [2],
+                      letterSpacing: 'body',
+                    }}
+                  >
+                    Try double checking your URL and try again.
+                  </Box>
                 </Box>
-                <Box
-                  sx={{
-                    mt: [3],
-                    fontSize: [2],
-                    letterSpacing: 'body',
-                  }}
-                >
-                  Try double checking your URL and try again.
-                </Box>
-              </Box>
-            </FadeIn>
-          )}
-        </Box>
-      </Grid>
+              </FadeIn>
+            )}
+          </Box>
+        </Column>
+      </Row>
     </Layout>
   )
 }

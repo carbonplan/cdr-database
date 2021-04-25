@@ -15,7 +15,7 @@ const { Check } = Icons
 const sx = {
   comment: {
     fontFamily: 'faux',
-    fontSize: [1],
+    fontSize: [1, 1, 1, 2],
     color: 'secondary',
     letterSpacing: 'faux',
     lineHeight: 'small',
@@ -31,7 +31,7 @@ const sx = {
   },
   label: {
     fontFamily: 'mono',
-    fontSize: [2],
+    fontSize: [2, 2, 2, 3],
     mt: ['6px'],
     textTransform: 'capitalize',
   },
@@ -81,7 +81,7 @@ const MetricDesktop = ({
           pl: embed ? [2, 2, 2] : [0, 0, '24px'],
         }}
       >
-        <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 25px 30px']}>
+        <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 15px 30px']}>
           <Text
             sx={{
               ...sx.value,

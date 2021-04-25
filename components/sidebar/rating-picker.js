@@ -8,7 +8,7 @@ const RatingPicker = ({ value, setValue }) => {
   const [hover, setHover] = useState(0)
 
   return (
-    <Box sx={{ ml: ['-5px'], mt: ['-2px'] }}>
+    <Box sx={{ ml: ['-5px'], mt: ['-2px', '-2px', '-2px', 0] }}>
       {[0, 1, 2, 3, 4].map((d, i) => (
         <Box
           key={'rating-' + i}

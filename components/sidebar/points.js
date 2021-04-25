@@ -23,7 +23,7 @@ const Points = ({ data, filtered, highlighted, x, y }) => {
         <Box
           as='circle'
           key={d.id}
-          cx={x(d.value)}
+          cx={`${x(d.value)}%`}
           cy={y(d.tag)}
           r={d.id == highlighted ? 8 : 4}
           sx={{

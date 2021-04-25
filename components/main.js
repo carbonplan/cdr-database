@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Grid, Box, Text, Input } from 'theme-ui'
+import { Row, Column } from '@carbonplan/components'
 import Sidebar from '../components/sidebar'
 import Projects from './projects'
 
@@ -24,13 +25,12 @@ const initBounds = {
   permanence: [],
 }
 
-const Main = ({ projects, metrics }) => {
+const Main = ({ projects, metrics, settingsExpanded }) => {
   const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({ count: 0, init: false })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
   const [tooltips, setTooltips] = useState(true)
-  const [mobileFilterExpanded, setMobileFilterExpanded] = useState(false)
 
   useEffect(() => {
     let obj = {}
@@ -93,30 +93,32 @@ const Main = ({ projects, metrics }) => {
   }
 
   return (
-    <Grid columns={[1, 1, '418px 1fr']} gap={['0px']}>
-      <Sidebar
-        bounds={bounds}
-        setBounds={setBounds}
-        filtered={filtered}
-        data={metrics}
-        filters={filters}
-        setFilters={setFilters}
-        highlighted={highlighted}
-        tooltips={tooltips}
-        mobileFilterExpanded={mobileFilterExpanded}
-      />
-      <Projects
-        filters={filters}
-        setFilters={setFilters}
-        filtered={filtered}
-        data={projects}
-        setHighlighted={setHighlighted}
-        tooltips={tooltips}
-        setTooltips={setTooltips}
-        mobileFilterExpanded={mobileFilterExpanded}
-        setMobileFilterExpanded={setMobileFilterExpanded}
-      />
-    </Grid>
+    <Row>
+      <Column start={[1]} width={[6, 7, 4, 4]}>
+        <Sidebar
+          bounds={bounds}
+          setBounds={setBounds}
+          filtered={filtered}
+          data={metrics}
+          filters={filters}
+          setFilters={setFilters}
+          highlighted={highlighted}
+          tooltips={tooltips}
+          settingsExpanded={settingsExpanded}
+        />
+      </Column>
+      <Column start={[1, 2, 5, 5]} width={[6, 6, 8, 8]}>
+        <Projects
+          filters={filters}
+          setFilters={setFilters}
+          filtered={filtered}
+          data={projects}
+          setHighlighted={setHighlighted}
+          tooltips={tooltips}
+          setTooltips={setTooltips}
+        />
+      </Column>
+    </Row>
   )
 }
 

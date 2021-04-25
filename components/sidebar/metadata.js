@@ -1,8 +1,9 @@
 import { memo } from 'react'
-import { Box, Grid, Text } from 'theme-ui'
-import { Tag, Icons } from '@carbonplan/components'
+import { Box, Grid } from 'theme-ui'
+import { Tag, Icons, Column, Tray } from '@carbonplan/components'
 import RatingPicker from './rating-picker'
 import Field from './field'
+import sx from '../styles'
 
 const colors = {
   dac: 'purple',
@@ -91,15 +92,14 @@ const Metadata = ({
   }
 
   return (
-    <Box sx={{ mr: ['24px'] }}>
-      <Field label='sourceFilter' tooltips={tooltips}>
-        <Text variant='label'>SOURCE</Text>
+    <Box sx={{ mb: [-3, -3, 0, 0], pb: [0, 0, 0, 1] }}>
+      <Field label='sourceFilter' displayLabel='source' tooltips={tooltips}>
         <Box sx={{}}>
           {['STRP2020', 'MSFT2021'].map((d) => (
             <Tag
               key={d}
               value={filters[d]}
-              sx={{ color: 'primary' }}
+              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
               onClick={() => toggleOption(d)}
               onDoubleClick={() => toggleOptionUnique(d, sources)}
             >
@@ -108,15 +108,14 @@ const Metadata = ({
           ))}
         </Box>
       </Field>
-      <Field label='categoryFilter' tooltips={tooltips}>
-        <Text variant='label'>CATEGORY</Text>
+      <Field label='categoryFilter' displayLabel='category' tooltips={tooltips}>
         <Box>
           {categories.map((d) => (
             <Tag
               key={d}
               label={d}
               value={filters[d]}
-              sx={{ color: colors[d] }}
+              sx={{ color: colors[d], mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
               onClick={() => toggleOption(d)}
               onDoubleClick={() => toggleOptionUnique(d, categories)}
             >
@@ -127,20 +126,24 @@ const Metadata = ({
             label={'all'}
             value={isAll(categories)}
             onClick={() => toggleAll(categories)}
+            sx={{ mb: [1], mt: [0, 0, 0, '2px'] }}
           >
             All
           </Tag>
         </Box>
       </Field>
-      <Field label='mechanismRating' tooltips={tooltips}>
-        <Text variant='label'>MECHANISM</Text>
+      <Field
+        label='mechanismRating'
+        displayLabel='mechanism'
+        tooltips={tooltips}
+      >
         <Box sx={{}}>
           {['removal', 'avoided'].map((d) => (
             <Tag
               key={d}
               label={d}
               value={filters[d]}
-              sx={{ color: colors[d] }}
+              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
               onClick={() => toggleOption(d)}
               onDoubleClick={() => toggleOptionUnique(d, mechanisms)}
             >
@@ -149,8 +152,7 @@ const Metadata = ({
           ))}
         </Box>
       </Field>
-      <Field label='ratingFilter' tooltips={tooltips}>
-        <Text variant='label'>RATING</Text>
+      <Field label='ratingFilter' displayLabel='rating' tooltips={tooltips}>
         <RatingPicker value={filters['rating']} setValue={setRating} />
       </Field>
     </Box>

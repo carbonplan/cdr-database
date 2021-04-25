@@ -1,13 +1,12 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-import * as d3 from 'd3-scale'
+import { Box } from 'theme-ui'
+import { scaleLinear, scaleLog } from 'd3-scale'
 import { useThemeUI } from 'theme-ui'
 
 const Bar = ({ tag, data, scale }) => {
   const context = useThemeUI()
   const theme = context.theme
 
-  const x = scale.type == 'log' ? d3.scaleLog() : d3.scaleLinear()
+  const x = scale.type == 'log' ? scaleLog() : scaleLinear()
   const width = x.domain([scale.min, scale.max]).range([0, 90])(data)
 
   return (
@@ -17,14 +16,16 @@ const Bar = ({ tag, data, scale }) => {
       }}
     >
       <svg height='20px' width='90px' stroke='none' fill='none'>
-        <rect
+        <Box
+          as='rect'
           sx={{ fill: theme.tags[tag], opacity: 0.2 }}
           x='0'
           y='0'
           width='100'
           height='12'
         />
-        <rect
+        <Box
+          as='rect'
           sx={{ fill: theme.tags[tag], opacity: 1 }}
           x='0'
           y='0'

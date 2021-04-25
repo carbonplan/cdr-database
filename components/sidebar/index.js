@@ -1,6 +1,7 @@
 import { memo, useState, useEffect } from 'react'
 import { Box, Input, Styled, Grid, Text, Divider, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
+import { Tray } from '@carbonplan/components'
 import Search from './search'
 import Metadata from './metadata'
 import Charts from './charts'
@@ -15,7 +16,7 @@ const Sidebar = ({
   bounds,
   setBounds,
   tooltips,
-  mobileFilterExpanded,
+  settingsExpanded,
 }) => {
   function setSearch(value) {
     setFilters((filters) => {
@@ -24,7 +25,7 @@ const Sidebar = ({
   }
 
   return (
-    <Box sx={{ zIndex: 100 }}>
+    <>
       <Box
         sx={{
           position: ['initial', 'initial', 'sticky'],
@@ -39,20 +40,29 @@ const Sidebar = ({
           scrollbarWidth: 'none',
         }}
       >
-        <Text
+        <Box
           sx={{
+            pt: [3],
+            pb: [3],
+            fontSize: [6, 6, 6, 7],
+            width: 'fit-content',
             fontFamily: 'heading',
-            letterSpacing: 'heading',
-            fontSize: [6],
-            pt: [1, 3, 3],
-            mb: [1],
-            mt: [0],
+            lineHeight: 'heading',
           }}
         >
           CDR Database
-        </Text>
-        <Box sx={{ fontSize: [2], maxWidth: '90%', pb: [3, 3, 1] }}>
-          <Text sx={{ pt: [0, 0, 1], mb: [0, 0, 1], pb: [0, 0, 3] }}>
+        </Box>
+        <Box
+          sx={{
+            pt: [0],
+            pb: [3, 3, 4, 4],
+            mb: [0, 3, 0, 1],
+            fontSize: [2, 2, 2, 3],
+            fontFamily: 'body',
+            lineHeight: 'body',
+          }}
+        >
+          <Box>
             These are reports on public Carbon Dioxide Removal project
             proposals. Built for transparency. Download as a{' '}
             <Link
@@ -73,10 +83,10 @@ const Sidebar = ({
               <Link>methods</Link>
             </NextLink>
             .
-          </Text>
+          </Box>
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial'] }}>
-          <Divider sx={{ mr: ['24px'], mt: [0], mb: [0] }} />
+          <Divider sx={{ mt: [0], mb: [0] }} />
           <Box sx={{ mb: [1], mt: [3] }}>
             <Search setSearch={setSearch} tooltips={tooltips} />
           </Box>
@@ -84,8 +94,9 @@ const Sidebar = ({
             filters={filters}
             setFilters={setFilters}
             tooltips={tooltips}
+            settingsExpanded={settingsExpanded}
           />
-          <Divider sx={{ my: [0], mt: ['11px'], mr: ['24px'] }} />
+          <Divider sx={{ my: [0], mt: ['11px'] }} />
           <Charts
             highlighted={highlighted}
             filtered={filtered}
@@ -95,15 +106,19 @@ const Sidebar = ({
             tooltips={tooltips}
           />
         </Box>
-        <Box sx={{ display: ['initial', 'initial', 'none'] }}>
-          <Mobile
-            filters={filters}
-            setFilters={setFilters}
-            expanded={mobileFilterExpanded}
-          />
-        </Box>
       </Box>
-    </Box>
+      <Tray expanded={settingsExpanded}>
+        <Box sx={{ mb: [1], mt: [0, 0, 3, 3] }}>
+          <Search setSearch={setSearch} tooltips={tooltips} />
+        </Box>
+        <Metadata
+          filters={filters}
+          setFilters={setFilters}
+          tooltips={tooltips}
+          settingsExpanded={settingsExpanded}
+        />
+      </Tray>
+    </>
   )
 }
 

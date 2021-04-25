@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Layout } from '@carbonplan/components'
+import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../../components/methods/main'
 
 function Methods(props) {
@@ -11,13 +11,13 @@ function Methods(props) {
 
   return (
     <Layout
-      container={'wide'}
       footer={false}
-      metadata={'scroll'}
+      metadata={false}
       title={'cdr database / research / carbonplan'}
       description={'Public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
     >
+      <Guide />
       <Main section={section} setSection={setSection} />
     </Layout>
   )

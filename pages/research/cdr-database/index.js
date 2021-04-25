@@ -1,7 +1,7 @@
-import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
+import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useRouter } from 'next/router'
-import { Layout } from '@carbonplan/components'
+import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../components/main'
 import collection from '../../../data/projects'
 
@@ -26,17 +26,27 @@ function Index() {
     })),
   }
 
+  const [settingsExpanded, setSettingsExpanded] = useState(false)
+
   return (
     <Layout
       footer={false}
       metadata={false}
-      container={'wide'}
-      dimmer={false}
+      dimmer={'bottom'}
+      settings={{
+        value: settingsExpanded,
+        onClick: () => setSettingsExpanded(!settingsExpanded),
+      }}
       title={'cdr database / research / carbonplan'}
       description={'Public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
     >
-      <Main projects={projects} metrics={metrics} />
+      <Guide />
+      <Main
+        projects={projects}
+        metrics={metrics}
+        settingsExpanded={settingsExpanded}
+      />
     </Layout>
   )
 }

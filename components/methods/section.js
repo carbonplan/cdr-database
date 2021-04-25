@@ -11,12 +11,10 @@ const Section = ({ section }) => {
         borderStyle: 'solid',
         borderColor: 'muted',
         borderWidth: '0px',
-        borderLeftWidth: ['0px', '0px', '1px'],
-        pl: [1, 1, 5],
-        pr: [1, 1, 7],
-        pt: [0, 0, 1],
-        pb: [0, 0, 4],
-        mt: ['106px', '106px', 0],
+        borderLeftWidth: ['0px', '0px', '0px'],
+        pt: [0, 0, 0],
+        pb: [6, 6, 6, 7],
+        mt: ['106px', '116px', '111px', '113px'],
       }}
     >
       <Box sx={{ mt: ['-80px', '-80px', '-50px'] }}>

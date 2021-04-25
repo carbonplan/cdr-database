@@ -1,5 +1,5 @@
 import { Box, Grid } from 'theme-ui'
-import { Icons } from '@carbonplan/components'
+import { Icons, Row, Column } from '@carbonplan/components'
 import Squares from '../projects/report/graphics/squares'
 
 const { Check } = Icons
@@ -9,71 +9,108 @@ const Table = ({ one, two, three, type, children }) => {
   if (type == 'icons') width = '50px'
   if (type == 'squares') width = '100px'
 
-  const Row = ({ children, final }) => {
+  const TableRow = ({ children, final }) => {
     return (
-      <Grid
-        columns={[1, 1, width + ' 1fr']}
+      <Row
+        columns={[6]}
         sx={{
           borderStyle: 'solid',
           borderWidth: '0px',
           borderTopWidth: '1px',
           borderColor: 'muted',
-          py: [2],
-          mb: [2],
-          mr: [1, 1, 7],
+          pt: [3],
           borderBottomWidth: final ? '1px' : '0px',
-          pb: final ? [3] : [0],
+          pb: final ? [4] : [4],
         }}
       >
         {children}
-      </Grid>
+      </Row>
     )
+  }
+
+  let starts, widths
+  if (type === 'icons') {
+    starts = [1, 2]
+    widths = [1, 5]
+  }
+  if (type === 'squares') {
+    starts = [1, 3]
+    widths = [2, 4]
   }
 
   return (
     <Box
       sx={{
-        my: [4],
+        my: [6, 6, 6, 7],
       }}
     >
-      <Row final={type == 'icons'}>
-        {type == 'icons' && <Check />}
-        {type == 'squares' && <Squares data={2} />}
-        <Box
-          sx={{ pt: [1], mb: [1], fontFamily: 'faux', letterSpacing: 'faux' }}
-        >
-          {three}
-        </Box>
-      </Row>
+      <TableRow final={type == 'icons'}>
+        <Column start={[starts[0]]} width={[widths[0]]}>
+          {type == 'icons' && <Check sx={{ width: 48, height: 48 }} />}
+          {type == 'squares' && (
+            <Box sx={{ mt: ['9px'] }}>
+              <Squares data={2} />
+            </Box>
+          )}
+        </Column>
+        <Column start={[starts[1]]} width={[widths[1]]}>
+          <Box
+            sx={{
+              pt: [1],
+              mb: [1],
+              fontSize: [2, 2, 2, 3],
+              fontFamily: 'faux',
+              letterSpacing: 'faux',
+            }}
+          >
+            {three}
+          </Box>
+        </Column>
+      </TableRow>
       {type == 'squares' && (
         <Box>
-          <Row>
-            <Squares data={1} />
-            <Box
-              sx={{
-                pt: [1],
-                mb: [1],
-                fontFamily: 'faux',
-                letterSpacing: 'faux',
-              }}
-            >
-              {two}
-            </Box>
-          </Row>
-          <Row final={true}>
-            {type == 'icons' && <Ex />}
-            {type == 'squares' && <Squares data={0} />}
-            <Box
-              sx={{
-                pt: ['6px'],
-                mb: [1],
-                fontFamily: 'faux',
-                letterSpacing: 'faux',
-              }}
-            >
-              {one}
-            </Box>
-          </Row>
+          <TableRow>
+            <Column start={[starts[0]]} width={[widths[0]]}>
+              <Box sx={{ mt: ['9px'] }}>
+                <Squares data={1} />
+              </Box>
+            </Column>
+            <Column start={[starts[1]]} width={[widths[1]]}>
+              <Box
+                sx={{
+                  pt: [1],
+                  mb: [1],
+                  fontFamily: 'faux',
+                  letterSpacing: 'faux',
+                }}
+              >
+                {two}
+              </Box>
+            </Column>
+          </TableRow>
+          <TableRow final={true}>
+            <Column start={[starts[0]]} width={[widths[0]]}>
+              {type == 'icons' && <Ex />}
+              {type == 'squares' && (
+                <Box sx={{ mt: ['11px'] }}>
+                  <Squares data={0} />
+                </Box>
+              )}
+            </Column>
+            <Column start={[starts[1]]} width={[widths[1]]}>
+              <Box
+                sx={{
+                  pt: ['6px'],
+                  mb: [1],
+                  fontFamily: 'faux',
+                  letterSpacing: 'faux',
+                  fontSize: [2, 2, 2, 3],
+                }}
+              >
+                {one}
+              </Box>
+            </Column>
+          </TableRow>
         </Box>
       )}
     </Box>
