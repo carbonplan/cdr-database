@@ -1,22 +1,48 @@
 import { Box, Text, Link } from 'theme-ui'
+import { Buttons, Links } from '@carbonplan/components'
+
+const { BackButton } = Buttons
+const { InternalLink } = Links
 
 const Intro = ({ setSection }) => {
   return (
-    <Box>
-      <Text
+    <Box sx={{ mt: [4] }}>
+      <InternalLink href='/research/cdr-database'>
+        <BackButton />
+      </InternalLink>
+      <Box
         sx={{
-          fontSize: [6],
+          pt: [3],
+          pb: [5, 6, 6, 6],
+          fontSize: [6, 6, 7, 8],
+          width: 'fit-content',
           fontFamily: 'heading',
-          letterSpacing: 'heading',
-          pt: [1, 3, 3],
-          mb: [1],
+          lineHeight: 'heading',
         }}
       >
         Methods
-      </Text>
-      <Text sx={{ pt: [0, 0, 1], fontSize: [2] }}>
+      </Box>
+      <Box
+        sx={{
+          pt: [0],
+          pb: [4],
+          mb: [1, 3, 1, 1],
+          fontSize: [3, 3, 3, 4],
+          fontFamily: 'body',
+          lineHeight: 'body',
+        }}
+      >
         Descriptions of our metrics and notes on each carbon removal project we
-        have analyzed. Check out the{' '}
+        have analyzed. For more on this work read our articles on what we
+        learned analyzing proposals submitted to{' '}
+        <InternalLink href='/research/stripe-2020-insights'>
+          Stripe in 2020
+        </InternalLink>{' '}
+        and to{' '}
+        <InternalLink href='/research/microsoft-2021-insights'>
+          Microsoft in 2021
+        </InternalLink>
+        . If you have questions or want to get in touch. check out the{' '}
         <Link
           sx={{
             '@media (hover: none) and (pointer: coarse)': {
@@ -29,8 +55,8 @@ const Intro = ({ setSection }) => {
         >
           feedback
         </Link>{' '}
-        section if you have questions or want to get in touch.
-      </Text>
+        section.
+      </Box>
     </Box>
   )
 }

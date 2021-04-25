@@ -1,18 +1,37 @@
 import { useState } from 'react'
-import { Grid } from 'theme-ui'
+import { Box } from 'theme-ui'
+import { Row, Column } from '@carbonplan/components'
 import TooltipToggle from '../tooltip/toggle'
 import TooltipDescription from '../tooltip/description'
+import sx from '../styles'
 
-const Field = ({ label, children, tooltips }) => {
+const Field = ({ label, displayLabel, children, tooltips }) => {
   const [value, setValue] = useState(false)
 
   return (
     <>
-      <Grid columns={['100px 1fr 18px']}>
-        {children}
-        <TooltipToggle tooltips={tooltips} value={value} setValue={setValue} />
-      </Grid>
-      <TooltipDescription label={label} value={value} tooltips={tooltips} />
+      <Row columns={[6, 8, 4, 4]} sx={{ mt: [1, 1, 1, 2] }}>
+        <Column start={[1, 1, 1, 1]} width={[2, 1, 1, 1]}>
+          <Box sx={sx.label}>{displayLabel}</Box>
+        </Column>
+        <Column start={[3, 3, 2, 2]} width={[4, 4, 3, 3]}>
+          <Box sx={{ display: 'inline-block', float: 'right' }}>
+            <TooltipToggle
+              tooltips={tooltips}
+              value={value}
+              setValue={setValue}
+            />
+          </Box>
+          {children}
+          <Box sx={{ mt: [1] }}>
+            <TooltipDescription
+              label={label}
+              value={value}
+              tooltips={tooltips}
+            />
+          </Box>
+        </Column>
+      </Row>
     </>
   )
 }

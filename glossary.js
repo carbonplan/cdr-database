@@ -2,7 +2,7 @@ module.exports = {
   categoryFilter:
     'Click to toggle whether to show projects from the given category. You can also double click to only include that category. Every project gets a primary category based on its carbon removal mechanism. Most projects also have a secondary category, which is included in searches.',
   search:
-    'Type here to search the database. Searches include the project applicant, project location, all category tags, and any project-specific keywords. Search results also depend on other filter selections below. You can press / to focus the search bar without clicking. ',
+    'Type here to search the database. Searches include the project applicant, project location, all category tags, and any project-specific keywords. Search results also depend on other filter selections below. You can type ⌘ + / to focus the search bar without clicking. ',
   sourceFilter:
     'Click to filter based on the project source. Our database is sourced from public project proposals submitted to various entities, such as corporate purchasers of carbon removal. ',
   permanence:

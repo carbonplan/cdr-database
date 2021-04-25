@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { format } from 'd3-format'
+import { Row, Column } from '@carbonplan/components'
 import Axis from './axis'
 import TooltipToggle from '../tooltip/toggle'
 import TooltipDescription from '../tooltip/description'
+import sx from '../styles'
 
 const Chart = ({
   x,
@@ -23,44 +25,50 @@ const Chart = ({
 
   return (
     <Box>
-      <Grid columns={['150px 1fr 18px']} sx={{ mb: [1] }}>
-        <Text variant='label'>
-          {label}
-          <Text
-            as='span'
+      <Row columns={[4]} sx={{ mb: [1, 1, 1, 2] }}>
+        <Column start={[1]} width={[2]}>
+          <Box sx={sx.label}>
+            {label}
+            <Box
+              as='span'
+              sx={{
+                ml: [2],
+                textTransform: 'none',
+                letterSpacing: 'body',
+                color: 'muted',
+              }}
+            >
+              {units}
+            </Box>
+          </Box>
+        </Column>
+        <Column start={[3]} width={[2]} dl={1}>
+          <Box
             sx={{
-              ml: [2],
-              textTransform: 'none',
-              letterSpacing: 'body',
-              color: 'muted',
+              display: 'inline-block',
+              opacity: !isNaN(bounds[0]) || tooltips ? 1 : 0,
+              color: !isNaN(bounds[0]) ? 'secondary' : 'muted',
+              fontFamily: 'mono',
+              fontSize: [1, 1, 1, 2],
+              textTransform: 'uppercase',
+              mt: ['3px'],
+              userSelect: 'none',
             }}
           >
-            {units}
-          </Text>
-        </Text>
-        <Text
-          sx={{
-            opacity: !isNaN(bounds[0]) || tooltips ? 1 : 0,
-            color: 'secondary',
-            fontFamily: 'mono',
-            fontSize: [1],
-            mt: ['3px'],
-            ml: [3],
-            transition: '0.2s',
-            userSelect: 'none',
-          }}
-        >
-          {!isNaN(bounds[0]) && format('.3~s')(bounds[0].toFixed(0))}
-          {!isNaN(bounds[0]) && ' - '}
-          {!isNaN(bounds[0]) && format('.3~s')(bounds[1].toFixed(0))}
-          {isNaN(bounds[0]) && tooltips && 'drag to filter'}
-        </Text>
-        <TooltipToggle
-          tooltips={tooltips}
-          value={tooltip}
-          setValue={setTooltip}
-        />
-      </Grid>
+            {!isNaN(bounds[0]) && format('.3~s')(bounds[0].toFixed(0))}
+            {!isNaN(bounds[0]) && ' - '}
+            {!isNaN(bounds[0]) && format('.3~s')(bounds[1].toFixed(0))}
+            {isNaN(bounds[0]) && tooltips && 'drag to filter'}
+          </Box>
+          <Box sx={{ display: 'inline-block', float: 'right' }}>
+            <TooltipToggle
+              tooltips={tooltips}
+              value={tooltip}
+              setValue={setTooltip}
+            />
+          </Box>
+        </Column>
+      </Row>
       <TooltipDescription
         label={tooltipLabel}
         value={tooltip}

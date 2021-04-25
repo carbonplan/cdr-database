@@ -1,59 +1,44 @@
-import { Flex, Box, Text } from 'theme-ui'
+import { Flex, Box } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
-import { Badge, Toggle, Dimmer, Icons } from '@carbonplan/components'
+import { Badge, Toggle, Dimmer, Icons, FadeIn } from '@carbonplan/components'
 import { format } from 'd3-format'
-import MobileFilter from './mobile-filter'
-import FadeIn from '../fade-in'
+import sx from '../styles'
 
-const Top = ({
-  data,
-  filtered,
-  tooltips,
-  setTooltips,
-  mobileFilterExpanded,
-  setMobileFilterExpanded,
-}) => {
+const Top = ({ data, filtered, tooltips, setTooltips }) => {
   return (
     <Box
       sx={{
         position: 'sticky',
-        height: 'fit-content',
-        top: 55,
-        pb: ['13px'],
-        pt: '14px',
-        mt: '-14px',
-        mb: [2],
+        height: '58px',
+        top: 56,
+        pb: ['26px'],
+        mb: [0],
+        pt: [2],
         ml: ['-16px', 0, 0],
         mr: ['-16px', 0, 0],
         pr: ['16px', 0, 0],
         pl: ['16px', 0, 0],
-        backgroundColor: 'background',
+        bg: 'background',
         borderWidth: '0px',
         borderBottomWidth: '1px',
         borderColor: 'muted',
         borderStyle: 'solid',
         userSelect: 'none',
-        zIndex: '10',
+        zIndex: 1,
       }}
     >
-      <Flex
-        sx={{
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          mt: ['-10px'],
-        }}
-      >
-        <Box sx={{ mt: ['10px'] }}>
-          <Text
-            variant='label'
-            sx={{
-              display: 'inline-block',
-              mr: [2],
-              fontSize: [1],
-            }}
-          >
-            Total
-          </Text>
+      <Box sx={{ mt: ['8px'] }}>
+        <Box
+          sx={{
+            display: 'inline-block',
+            mr: [2],
+            fontSize: [1],
+            ...sx.label,
+          }}
+        >
+          Total
+        </Box>
+        <Box sx={{ display: 'inline-block', width: '40px' }}>
           {filtered.init && (
             <FadeIn as='span' delay={10} duration={150}>
               <Badge sx={{ ml: [1], fontSize: [2] }}>
@@ -61,19 +46,18 @@ const Top = ({
               </Badge>
             </FadeIn>
           )}
-          {!filtered.init && (
-            <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
-          )}
-          <Text
-            variant='label'
-            sx={{
-              display: 'inline-block',
-              ml: [3],
-              mr: [2],
-            }}
-          >
-            Filtered
-          </Text>
+        </Box>
+        <Box
+          sx={{
+            display: 'inline-block',
+            ml: [3, 4, 4, 4],
+            mr: [2],
+            ...sx.label,
+          }}
+        >
+          Filtered
+        </Box>
+        <Box sx={{ display: 'inline-block', width: '40px' }}>
           {filtered.init && (
             <FadeIn as='span' delay={10} duration={150}>
               <Badge sx={{ ml: [1] }}>
@@ -81,56 +65,32 @@ const Top = ({
               </Badge>
             </FadeIn>
           )}
-          {!filtered.init && (
-            <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
+        </Box>
+        <Box
+          sx={{
+            display: 'inline-block',
+            ml: [3, 4, 4, 4],
+            mr: [2],
+            ...sx.label,
+          }}
+        >
+          Volume
+        </Box>
+        <Box sx={{ display: 'inline-block', width: '40px' }}>
+          {filtered.init && (
+            <FadeIn as='span' delay={10} duration={150}>
+              <Badge sx={{ ml: [1] }}>
+                {format('.2~s')(
+                  data
+                    .filter((d) => filtered[d.id])
+                    .map((d) => d.metrics[1].value)
+                    .reduce((a, b) => a + b, 0)
+                )}
+              </Badge>
+            </FadeIn>
           )}
-          <Box sx={{ display: ['none', 'none', 'initial'] }}>
-            <Text
-              variant='label'
-              sx={{
-                display: 'inline-block',
-                ml: [3],
-                mr: [2],
-              }}
-            >
-              Volume
-            </Text>
-            {filtered.init && (
-              <FadeIn as='span' delay={10} duration={150}>
-                <Badge sx={{ ml: [1] }}>
-                  {format('.2~s')(
-                    data
-                      .filter((d) => filtered[d.id])
-                      .map((d) => d.metrics[1].value)
-                      .reduce((a, b) => a + b, 0)
-                  )}
-                </Badge>
-              </FadeIn>
-            )}
-            {!filtered.init && (
-              <Box sx={{ display: 'inline-block', width: '47.375px' }}></Box>
-            )}
-          </Box>
         </Box>
-        <Box sx={{ mt: ['10px'] }}>
-          <Box sx={{ display: 'inline-block', mt: ['-5px'] }}>
-            <MobileFilter
-              expanded={mobileFilterExpanded}
-              setExpanded={setMobileFilterExpanded}
-            />
-            <Box
-              sx={{
-                top: '2px',
-                ml: [0],
-                position: 'relative',
-                display: 'inline-block',
-              }}
-            >
-              <Dimmer />
-            </Box>
-          </Box>
-        </Box>
-      </Flex>
+      </Box>
     </Box>
   )
 }

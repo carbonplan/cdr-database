@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Link, Styled } from 'theme-ui'
 import collection from '../../data/methods'
 import unified from 'unified'

@@ -1,9 +1,9 @@
-import { useRef, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { useThemeUI, Box } from 'theme-ui'
 import { select } from 'd3-selection'
 import { brushX } from 'd3-brush'
 import { format } from 'd3-format'
-import FadeIn from '../fade-in'
+import { FadeIn } from '@carbonplan/components'
 import Points from './points'
 
 const Axis = ({
@@ -17,22 +17,42 @@ const Axis = ({
   ticks,
 }) => {
   const { theme } = useThemeUI()
+  const [width, setWidth] = useState(null)
+  const brush = useRef(null)
 
-  const ref = useCallback(
-    (node) => {
-      if (node !== null) {
-        select(node).call(
-          brushX()
-            .extent([
-              [0, 0],
-              [370, 90],
-            ])
-            .on('start brush', update)
-        )
-      }
-    },
-    [theme]
-  )
+  const chart = useCallback((chartNode) => {
+    if (chartNode != null) {
+      setWidth(chartNode.clientWidth)
+    }
+  })
+
+  const getWidth = () => {
+    if (chart.clientWidth) return chart.clientWidth
+  }
+
+  useEffect(() => {
+    if (width && brush.current != null) {
+      const aspect = width / 100
+      select(brush.current).call(
+        brushX()
+          .extent([
+            [0, 0],
+            [width, 90],
+          ])
+          .on('start brush', (e) => update(e, aspect))
+      )
+    }
+  }, [width])
+
+  useEffect(() => {
+    const resizeListener = () => {
+      setWidth(getWidth())
+    }
+    window.addEventListener('resize', resizeListener)
+    return () => {
+      window.removeEventListener('resize', resizeListener)
+    }
+  }, [])
 
   function updateBounds(key) {
     return (value) =>
@@ -41,7 +61,7 @@ const Axis = ({
       })
   }
 
-  function update(event) {
+  function update(event, aspect) {
     if (event.selection[0] == event.selection[1]) {
       setBounds((bounds) => {
         return { ...bounds, [label]: [] }
@@ -50,7 +70,10 @@ const Axis = ({
       setBounds((bounds) => {
         return {
           ...bounds,
-          [label]: [x.invert(event.selection[0]), x.invert(event.selection[1])],
+          [label]: [
+            x.invert(event.selection[0] / aspect),
+            x.invert(event.selection[1] / aspect),
+          ],
         }
       })
     }
@@ -67,7 +90,13 @@ const Axis = ({
     >
       {filtered.init && (
         <FadeIn delay={10} duration={200}>
-          <svg viewBox='0 0 370 107'>
+          <Box
+            as='svg'
+            ref={chart}
+            width='100%'
+            height='100px'
+            preserveAspectRatio='none'
+          >
             <Points
               x={x}
               y={y}
@@ -75,28 +104,31 @@ const Axis = ({
               filtered={filtered}
               data={data}
             />
-            <g ref={ref} />
+            <g ref={brush} />
+          </Box>
+          <Box
+            as='svg'
+            width={'100%'}
+            height={11}
+            sx={{ position: 'relative', top: -3 }}
+          >
             {ticks.map((d, i) => {
               return (
-                <Box
-                  as='text'
-                  className='axis-label'
-                  key={'tick-' + label + '-' + i}
-                  x={x(d)}
-                  y={106}
-                  sx={{
-                    fill: 'muted',
-                    fontFamily: 'mono',
-                    fontSize: [1],
-                    textAnchor: 'middle',
-                    userSelect: 'none',
-                  }}
+                <text
+                  key={'tick' + '-' + i}
+                  x={x(d) + '%'}
+                  y={11}
+                  textAnchor={'middle'}
+                  fontFamily={theme.fonts.mono}
+                  fill={theme.colors.muted}
+                  fontSize={theme.fontSizes[1]}
+                  style={{ userSelect: 'none' }}
                 >
                   {format('~s')(d)}
-                </Box>
+                </text>
               )
             })}
-          </svg>
+          </Box>
         </FadeIn>
       )}
       {!filtered.init && <Box sx={{ height: '117.938px' }}></Box>}

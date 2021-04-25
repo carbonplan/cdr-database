@@ -1,23 +1,30 @@
 import { memo, useState, useEffect, useRef } from 'react'
 import { Box, Grid, Text, Input } from 'theme-ui'
-import useKeyPress from 'react-use/lib/useKeyPress'
 import Field from './field'
+import sx from '../styles'
 
 const Search = ({ setSearch, tooltips }) => {
   const [value, setValue] = useState('')
   const [hasFocus, setFocus] = useState(false)
   const inputRef = useRef(null)
-  const slash = useKeyPress('/')
 
   useEffect(() => {
-    if (slash[0] && !hasFocus) inputRef.current.focus()
-  }, [slash])
+    function handler(event) {
+      const { key, keyCode, metaKey } = event
+      if (key === '/' && metaKey) {
+        if (!hasFocus) inputRef.current.focus()
+      }
+    }
+    document.addEventListener('keydown', handler)
+    return () => {
+      document.removeEventListener('keydown', handler)
+    }
+  }, [])
 
   return (
-    <Box sx={{ mr: ['24px'] }}>
-      <Field label='search' tooltips={tooltips}>
-        <Text variant='label'>Search</Text>
-        <Box sx={{ position: 'relative' }}>
+    <Box sx={{ mb: [-1], mt: [0, 0, 0, '22px'] }}>
+      <Field label='search' displayLabel='search' tooltips={tooltips}>
+        <Box sx={{ position: 'relative', width: '90%' }}>
           <Input
             type='text'
             ref={inputRef}

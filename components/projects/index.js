@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import { Box, Text, Grid, Divider } from 'theme-ui'
+import { Box, Grid, Divider } from 'theme-ui'
 import { useMedia } from 'react-use'
+import { FadeIn } from '@carbonplan/components'
 import Report from './report'
 import Top from './top'
-import FadeIn from '../fade-in'
 
 const List = ({
   filters,
@@ -13,10 +13,8 @@ const List = ({
   setHighlighted,
   tooltips,
   setTooltips,
-  mobileFilterExpanded,
-  setMobileFilterExpanded,
 }) => {
-  const isWide = useMedia('screen and (min-width: 86em)')
+  const isWide = useMedia('screen and (min-width: 72em)')
 
   return (
     <Box>
@@ -25,19 +23,16 @@ const List = ({
         filtered={filtered}
         tooltips={tooltips}
         setTooltips={setTooltips}
-        mobileFilterExpanded={mobileFilterExpanded}
-        setMobileFilterExpanded={setMobileFilterExpanded}
       />
-      <Divider sx={{ display: ['none', 'none', 'inherit'], ml: [4] }} />
       {filtered.init && (
         <FadeIn delay={10} duration={150}>
           {isWide && filtered.count > 0 && (
             <Grid
               columns={[2]}
-              sx={{ display: ['grid'], mt: ['12px'], ml: [0] }}
-              gap={['0px']}
+              sx={{ display: ['grid'], mt: ['10px'], ml: [0] }}
+              gap={[4, 5, 5, 6]}
             >
-              <Box sx={{ pr: ['24px'] }}>
+              <Box sx={{}}>
                 {data
                   .filter((d) => filtered[d.id])
                   .filter((d, i) => i % 2 == 0)
@@ -50,7 +45,7 @@ const List = ({
                     />
                   ))}
               </Box>
-              <Box sx={{ pl: ['24px'], pr: [0] }}>
+              <Box sx={{ pr: [0] }}>
                 {data
                   .filter((d) => filtered[d.id])
                   .filter((d, i) => i % 2 == 1)
@@ -92,7 +87,7 @@ const List = ({
                 sx={{
                   display: 'inline-block',
                   color: 'text',
-                  fontSize: [1],
+                  fontSize: [1, 1, 1, 2],
                   fontFamily: 'mono',
                   color: 'secondary',
                   textTransform: 'uppercase',
@@ -104,10 +99,11 @@ const List = ({
               <Box
                 sx={{
                   mt: [2],
+                  fontSize: [2, 2, 2, 3],
                 }}
               >
-                Please try changing the filter settings in the panel on the left
-                and try again.
+                Please try changing the settings in the filter panel and try
+                again.
               </Box>
             </Box>
           )}

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Box, Text } from 'theme-ui'
+import { Box, Text } from 'theme-ui'
 import { useThemeUI } from 'theme-ui'
 
 const Mechanism = ({ tag, value }) => {
@@ -13,14 +12,16 @@ const Mechanism = ({ tag, value }) => {
       }}
     >
       <svg height='30px' width='90px' stroke='none' fill='none'>
-        <rect
+        <Box
+          as='rect'
           sx={{ fill: theme.tags[tag], opacity: 0.2 }}
           x='0'
           y='10'
           width='40'
           height='12'
         />
-        <rect
+        <Box
+          as='rect'
           sx={{ fill: theme.tags[tag], opacity: 0.2 }}
           x='50'
           y='10'
@@ -28,19 +29,26 @@ const Mechanism = ({ tag, value }) => {
           height='12'
         />
         {(value == 0 || value == 2) && (
-          <text sx={{ fill: theme.tags[tag], fontSize: '36px' }} x='7.5' y='29'>
+          <Box
+            as='text'
+            sx={{ fill: theme.tags[tag], fontSize: '36px' }}
+            x='7.5'
+            y='29'
+          >
             ↓
-          </text>
+          </Box>
         )}
         {(value == 1 || value == 2) && (
           <>
-            <circle
+            <Box
+              as='circle'
               sx={{ strokeWidth: '2.5px', stroke: theme.tags[tag] }}
               cx='69.8'
               cy='16'
               r='7.6'
             />
-            <line
+            <Box
+              as='line'
               sx={{ strokeWidth: '2.5px', stroke: theme.tags[tag] }}
               x1='73.8'
               y1='8.3'

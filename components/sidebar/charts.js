@@ -13,9 +13,9 @@ const sx = {
   },
 }
 
-const x1 = scaleLog().domain([10, 1000000]).range([10, 360]).clamp(true)
+const x1 = scaleLog().domain([10, 1000000]).range([1.5, 98.25]).clamp(true)
 
-const x2 = scaleLog().domain([1, 1000]).range([10, 360]).clamp(true)
+const x2 = scaleLog().domain([1, 1000]).range([1.5, 98.25]).clamp(true)
 
 const y = scaleOrdinal()
   .domain(['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'])
@@ -34,7 +34,7 @@ const Charts = ({
   tooltips,
 }) => {
   return (
-    <Box sx={{ mt: [2], pt: [2], mr: ['24px'], mb: ['24px'] }}>
+    <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
       <Chart
         x={x1}
         y={y}
@@ -49,7 +49,7 @@ const Charts = ({
         ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
       />
-      <Box sx={{ mt: ['12px'] }}>
+      <Box sx={{ mt: [1, 1, 1, 2] }}>
         <Chart
           x={x2}
           y={y}

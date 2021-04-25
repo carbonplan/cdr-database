@@ -1,6 +1,6 @@
 # Feedback?
 
-All our content is on GitHub, and we welcome feedback on all aspects of our work.
+All our content is publicaly available and hosted on GitHub, and we welcome feedback on all aspects of our work.
 
 If you spot an issue with our website or want to request a new feature for this dashboard, please open an [issue](https://github.com/carbonplan/cdr-database) on GitHub.
 

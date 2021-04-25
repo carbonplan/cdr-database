@@ -16,7 +16,6 @@ const TooltipDescription = ({ label, value, tooltips, ml, sx }) => {
               sx={{
                 fontSize: [1],
                 mt: [0],
-                ml: !(ml == null) ? ml : '115px',
                 color: 'text',
                 maxWidth: '450px',
               }}

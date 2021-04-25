@@ -6,7 +6,6 @@ import {
   Divider,
   Box,
   Flex,
-  Text,
   Grid,
   Link,
 } from 'theme-ui'
@@ -54,8 +53,8 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
     comment: '',
   })
 
-  const ml = embed ? [0, 0, 0] : [0, 0, '24px']
-  const pl = embed ? [0, 0, 0] : [0, 0, '24px']
+  const ml = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
+  const pl = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
 
   const arrow = {
     ml: [1],
@@ -134,11 +133,11 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
               ml: [-2],
             }}
           >
-            <Text
+            <Box
               id='text'
               sx={{
                 display: 'inline-block',
-                fontSize: [4],
+                fontSize: [4, 4, 4, 5],
                 lineHeight: 'heading',
                 ml: [2],
               }}
@@ -168,14 +167,14 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                   value={expanded}
                 ></Expander>
               )}
-            </Text>
+            </Box>
           </Flex>
         </Box>
         <Box
           sx={{
             width: embed ? ['100%'] : ['100%', 'fit-content', 'fit-content'],
             pt: [0],
-            mt: ['6px'],
+            mt: ['5px', '5px', '5px', '11px'],
           }}
         >
           {tags.map((tag, i) => (
@@ -194,13 +193,13 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
           ))}
         </Box>
       </Flex>
-      <Text sx={{ pt: ['2px'], ml: ml, pb: [2], fontSize: [2] }}>
+      <Box sx={{ pt: ['8px'], ml: ml, pb: [2], fontSize: [2, 2, 2, 3] }}>
         {description}
-      </Text>
-      <Text
+      </Box>
+      <Box
         sx={{
           display: 'inline-block',
-          fontSize: [1],
+          fontSize: [1, 1, 1, 2],
           ml: ml,
           pt: ['2px'],
           pb: [1],
@@ -213,7 +212,7 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
           /
         </Box>
         {location.name}
-      </Text>
+      </Box>
       <AnimateHeight
         duration={100}
         height={expanded ? 'auto' : 0}
