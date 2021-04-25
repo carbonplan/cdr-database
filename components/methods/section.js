@@ -13,7 +13,7 @@ const Section = ({ section }) => {
         borderWidth: '0px',
         borderLeftWidth: ['0px', '0px', '0px'],
         pt: [0, 0, 0],
-        pb: [0, 0, 6, 7],
+        pb: [6, 6, 6, 7],
         mt: ['106px', '116px', '111px', '113px'],
       }}
     >
