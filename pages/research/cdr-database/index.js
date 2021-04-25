@@ -40,6 +40,7 @@ function Index() {
       title={'cdr database / research / carbonplan'}
       description={'Public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
+      nav={'research'}
     >
       <Guide />
       <Main
