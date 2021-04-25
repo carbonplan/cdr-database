@@ -14,7 +14,7 @@ const TooltipDescription = ({ label, value, tooltips, ml, sx }) => {
           <Box sx={{ ...sx }}>
             <Box
               sx={{
-                fontSize: [1],
+                fontSize: [1, 1, 1, 2],
                 mt: [0],
                 color: 'text',
                 maxWidth: '450px',

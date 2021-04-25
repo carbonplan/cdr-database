@@ -234,7 +234,12 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
             </Box>
             <Box
               onClick={(e) => e.stopPropagation()}
-              sx={{ pl: pl, fontSize: [1], pt: [3], cursor: 'default' }}
+              sx={{
+                pl: pl,
+                fontSize: [1, 1, 1, 2],
+                pt: [3],
+                cursor: 'default',
+              }}
             >
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
                 <Box as='span' sx={{ mr: [2] }}>
