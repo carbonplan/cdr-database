@@ -36,7 +36,7 @@
     "react": "^17.0.2",
     "react-animate-height": "^2.0.23",
     "react-dom": "^17.0.2",
-    "react-use": "^17.2.1",
+    "react-use": "^17.2.4",
     "rehype-react": "^6.2.0",
     "rehype-slug": "^4.0.1",
     "remark-parse": "^9.0.0",
