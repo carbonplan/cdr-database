@@ -80,6 +80,7 @@ const Table = ({ one, two, three, type, children }) => {
                 sx={{
                   pt: [1],
                   mb: [1],
+                  fontSize: [2, 2, 2, 3],
                   fontFamily: 'faux',
                   letterSpacing: 'faux',
                 }}

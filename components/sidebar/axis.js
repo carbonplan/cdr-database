@@ -131,7 +131,7 @@ const Axis = ({
           </Box>
         </FadeIn>
       )}
-      {!filtered.init && <Box sx={{ height: '117.938px' }}></Box>}
+      {!filtered.init && <Box sx={{ height: '125px' }}></Box>}
     </Box>
   )
 }
