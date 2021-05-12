@@ -14,12 +14,10 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
           display: 'inline-block',
           cursor: 'pointer',
           mt: ['3px'],
-          opacity: tooltips ? (value ? 1 : 0.4) : 0,
-          transition: '0.15s',
           position: 'relative',
           '@media (hover: hover) and (pointer: fine)': {
-            '&:hover': {
-              opacity: 1,
+            '&:hover > #tooltip-toggle': {
+              stroke: 'primary',
             },
           },
         }}
@@ -29,9 +27,11 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
         }}
       >
         <Icons.Info
+          id='tooltip-toggle'
           closed={true}
           sx={{
-            color: 'primary',
+            stroke: tooltips ? (value ? 'primary' : 'muted') : 0,
+            transition: '0.15s',
             width: 16,
             height: 16,
           }}

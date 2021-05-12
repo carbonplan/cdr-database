@@ -206,8 +206,13 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
           color: 'secondary',
         }}
       >
-        {id.includes('STRP') && 'Stripe 2020'}
-        {id.includes('MSFT') && 'Microsoft 2021'}
+        {id.includes('STRP') & (parseInt(id.split('STRP')[1]) <= 24)
+          ? 'Stripe 2020'
+          : ''}
+        {id.includes('STRP') & (parseInt(id.split('STRP')[1]) > 24)
+          ? 'Stripe 2021'
+          : ''}
+        {id.includes('MSFT') ? 'Microsoft 2021' : ''}
         <Box as='span' sx={{ mx: [2] }}>
           /
         </Box>

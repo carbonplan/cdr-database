@@ -23,10 +23,10 @@ const categories = [
   'dac',
 ]
 
-const sources = ['STRP2020', 'MSFT2021']
+const sources = ['stripe', 'microsoft']
 const sourcesDisplay = {
-  STRP2020: 'STRIPE',
-  MSFT2021: 'MICROSOFT',
+  stripe: 'STRIPE',
+  microsoft: 'MICROSOFT',
 }
 
 const mechanisms = ['avoided', 'removal']
@@ -95,7 +95,7 @@ const Metadata = ({
     <Box sx={{ mb: [-3, -3, 0, 0], pb: [0, 0, 0, 1] }}>
       <Field label='sourceFilter' displayLabel='source' tooltips={tooltips}>
         <Box sx={{}}>
-          {['STRP2020', 'MSFT2021'].map((d) => (
+          {sources.map((d) => (
             <Tag
               key={d}
               value={filters[d]}

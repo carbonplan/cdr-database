@@ -6,6 +6,7 @@ import click
 import msft2021
 import pandas as pd
 import strp2020
+import strp2021
 
 
 @click.command()
@@ -21,6 +22,8 @@ def main(sources, output_projects, output_methods, output_numbers, output_csv, o
 
     if 'strp2020' in sources:
         projects.extend(strp2020.make_projects())
+    if 'strp2021' in sources:
+        projects.extend(strp2021.make_projects())
     if 'msft2021' in sources:
         projects.extend(msft2021.make_projects())
 

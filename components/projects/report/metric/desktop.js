@@ -68,6 +68,7 @@ const MetricDesktop = ({
   return (
     <Box>
       <Box
+        id='foo'
         onClick={hasDetails ? toggle : (e) => e.stopPropagation()}
         sx={{
           cursor: hasDetails ? 'pointer' : 'inherit',
@@ -78,7 +79,7 @@ const MetricDesktop = ({
           },
           pt: [2],
           pb: ['6px'],
-          pl: embed ? [2, 2, 2] : [0, 0, '24px'],
+          pl: embed ? [2, 2, 2] : [0, 0, '24px', '38px'],
         }}
       >
         <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 15px 30px']}>
@@ -185,7 +186,7 @@ const MetricDesktop = ({
           ml={'0px'}
           sx={{
             cursor: 'text',
-            pl: embed ? ['190px'] : ['182px', '182px', '206px'],
+            pl: embed ? ['190px'] : ['182px', '182px', '206px', '220px'],
             pr: ['30px'],
             mt: ['-4px'],
             pb: ['10px'],
@@ -202,7 +203,7 @@ const MetricDesktop = ({
             sx={{
               pb: [1],
               cursor: 'text',
-              pl: embed ? [2, 2, 2] : [0, 0, '24px'],
+              pl: embed ? [2, 2, 2] : [0, 0, '24px', '38px'],
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -272,7 +273,7 @@ const MetricDesktop = ({
       </AnimateHeight>
       <Divider
         sx={{
-          ml: embed ? [0, 0, 0] : [0, 0, '24px'],
+          ml: embed ? [0, 0, 0] : [0, 0, '24px', '38px'],
           mr: [0],
           mt: [0],
           mb: [0],

@@ -11,8 +11,8 @@ const initFilters = {
   soil: true,
   biomass: true,
   ocean: true,
-  STRP2020: true,
-  MSFT2021: true,
+  stripe: true,
+  microsoft: true,
   avoided: true,
   removal: true,
   group: false,
@@ -66,9 +66,11 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
       (filters.biomass && d.tags.length > 0 && d.tags[0] == 'biomass') ||
       (filters.ocean && d.tags.length > 0 && d.tags[0] == 'ocean')
     const inSource =
-      (filters.STRP2020 &&
+      (filters.stripe &&
         d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
-      (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
+      (filters.microsoft && d.source.name == 'Microsoft 2021 CDR RFP') ||
+      (filters.stripe &&
+        d.source.name == 'Stripe 2021 Negative Emissions Purchase')
     const inMechanism =
       (filters.removal && d.metrics[0].value == 0) ||
       (filters.avoided && d.metrics[0].value == 1) ||
