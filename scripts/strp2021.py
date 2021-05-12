@@ -50,7 +50,7 @@ def make_projects():
             "license": row[("source", "license")],
             "url": row[("source", "url")],
         }
-        project["revisions"] = ''#json.loads(row[("revisions", "")])
+        project["revisions"] = ''  # json.loads(row[("revisions", "")])
         project["documentation"] = {
             "name": row[("documentation", "name")],
             "url": row[("documentation", "url")],
