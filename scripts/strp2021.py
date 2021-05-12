@@ -1,5 +1,3 @@
-import json
-
 from utils import get_sheet, make_metric, make_project, maybe_float
 
 
