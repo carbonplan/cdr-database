@@ -32,8 +32,8 @@ def main(sources, output_projects, output_methods, output_numbers, output_csv, o
     write_projects(project_collection, output_projects)
     write_methods(project_collection, output_methods)
     # write_numbers(project_collection, output_numbers)
-    write_csv(project_collection, output_csv)
-    write_json(project_collection, output_json)
+    # write_csv(project_collection, output_csv)
+    # write_json(project_collection, output_json)
 
 
 def write_projects(project_collection, output):
