@@ -35,7 +35,6 @@ def main(sources, output_projects, output_methods, output_numbers, output_csv, o
     # write_csv(project_collection, output_csv)
     # write_json(project_collection, output_json)
 
-
 def write_projects(project_collection, output):
     collection = copy.deepcopy(project_collection)
     for project in collection['projects']:
@@ -66,11 +65,12 @@ def write_methods(project_collection, output):
 def write_numbers(project_collection, output):
     collection = copy.deepcopy(project_collection)
     for project in collection['projects']:
+        project['source'] = project['source']['id']
         del project['methods']
         del project['description']
         del project['documentation']
         del project['revisions']
-        del project['source']
+        del project['notes']
         del project['type']
         del project['keywords']
         for metric in project['metrics']:
@@ -94,6 +94,8 @@ def write_csv(collection, output):
     df['tags'] = [','.join(d['tags']) for d in projects]
 
     df['source'] = [d['source']['name'] for d in projects]
+    df['source_id'] = [d['source']['id'] for d in projects]
+    df['source_date'] = [d['source']['date'] for d in projects]
     df['source_url'] = [d['source']['url'] for d in projects]
     df['source_license'] = [d['source']['license'] for d in projects]
 
@@ -134,6 +136,8 @@ def write_csv(collection, output):
     df['rating'] = [d['rating'] for d in projects]
 
     df['revisions'] = [d['revisions'] for d in projects]
+
+    df['notes'] = [d['notes'] for d in projects]
 
     df.to_csv('public/research/cdr-database/' + output, index=False)
 

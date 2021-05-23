@@ -27,12 +27,12 @@ const sx = {
     fontFamily: 'mono',
     fontSize: [3],
     textAlign: 'right',
-    mt: ['5px'],
+    mt: ['6px'],
   },
   label: {
     fontFamily: 'mono',
     fontSize: [2, 2, 2, 3],
-    mt: ['6px'],
+    mt: ['8px', '8px', '8px', '6px'],
     textTransform: 'capitalize',
   },
   units: {
@@ -68,16 +68,15 @@ const MetricDesktop = ({
   return (
     <Box>
       <Box
-        id='foo'
         onClick={hasDetails ? toggle : (e) => e.stopPropagation()}
         sx={{
-          cursor: hasDetails ? 'pointer' : 'inherit',
+          cursor: hasDetails ? 'pointer' : 'initial',
           pointerEvents: 'all',
           '&:hover > #grid > #container > #expander': {
             fill: 'primary',
             stroke: 'primary',
           },
-          pt: [2],
+          pt: [1],
           pb: ['6px'],
           pl: embed ? [2, 2, 2] : [0, 0, '24px', '38px'],
         }}
@@ -127,7 +126,7 @@ const MetricDesktop = ({
               </Box>
             )}
             {metric.name == 'rating' && (
-              <Box sx={{ mb: '6px' }}>
+              <Box sx={{ width: 'calc(100% + 40px)', ml: '-40px', mb: '0px' }}>
                 <Rating
                   sx={{ color: theme.tags[tag] }}
                   value={metric.value}
@@ -162,7 +161,8 @@ const MetricDesktop = ({
             )}
           </Text>
           <Text sx={{ mt: ['3px'] }}>
-            {metric.rating === 1 && (
+            {(metric.rating === 1 ||
+              (metric.name === 'additionality' && metric.value === 2)) && (
               <Check sx={{ width: '28px', color: theme.tags[tag] }} />
             )}
             {metric.rating === 0 && <Box />}

@@ -2,16 +2,7 @@ import { memo, useState } from 'react'
 import { Box } from 'theme-ui'
 import { scaleOrdinal, scaleLog } from 'd3-scale'
 import Chart from './chart'
-
-const sx = {
-  axisLabel: {
-    color: 'muted',
-    fontSize: [1],
-    fontFamily: 'mono',
-    position: 'absolute',
-    ml: ['-8px'],
-  },
-}
+import sx from '../styles'
 
 const x1 = scaleLog().domain([10, 1000000]).range([1.5, 98.25]).clamp(true)
 
@@ -35,6 +26,7 @@ const Charts = ({
 }) => {
   return (
     <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
+      <Box sx={{...sx.label, mb: [2]}}>Filter by metrics</Box>
       <Chart
         x={x1}
         y={y}

@@ -84,7 +84,8 @@ const MetricMobile = ({
               </Text>
             )}
           </Text>
-          {metric.rating === 1 && (
+          {(metric.rating === 1 ||
+            (metric.name === 'additionality' && metric.value === 2)) && (
             <Check
               sx={{
                 position: 'relative',
@@ -96,7 +97,10 @@ const MetricMobile = ({
               }}
             />
           )}
-          {!(metric.rating === 1) && <Box />}
+          {!(
+            metric.rating === 1 ||
+            (metric.name === 'additionality' && metric.value === 2)
+          ) && <Box />}
           {hasDetails && (
             <Box id='container' sx={{ mt: ['10px'], ml: ['-5px'] }}>
               <Expander

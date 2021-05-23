@@ -4,6 +4,7 @@ import { select } from 'd3-selection'
 import { brushX } from 'd3-brush'
 import { format } from 'd3-format'
 import { FadeIn } from '@carbonplan/components'
+import { Chart } from '@carbonplan/charts'
 import Points from './points'
 
 const Axis = ({
@@ -89,7 +90,7 @@ const Axis = ({
       }}
     >
       {filtered.init && (
-        <FadeIn delay={10} duration={200}>
+        <FadeIn delay={0} duration={200}>
           <Box
             as='svg'
             ref={chart}

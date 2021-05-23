@@ -47,6 +47,8 @@ def make_projects():
         }
         project["source"] = {
             "name": row[("source", "name")],
+            "id": row[("source", "id")],
+            "date": row[("source", "date")],
             "license": row[("source", "license")],
             "url": row[("source", "url")],
         }
@@ -55,6 +57,7 @@ def make_projects():
             "url": row[("documentation", "url")],
         }
         project["revisions"] = json.loads(row[("revisions", "")])
+        project["notes"] = row[("notes", "")]
         for name in metrics:
             m = make_metric(name)
             for key in metric_keys:

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Box, Grid, Text } from 'theme-ui'
 import { format } from 'd3-format'
-import { Row, Column } from '@carbonplan/components'
+import { Row, Column, Expander } from '@carbonplan/components'
 import Axis from './axis'
 import TooltipToggle from '../tooltip/toggle'
 import TooltipDescription from '../tooltip/description'
@@ -22,13 +22,36 @@ const Chart = ({
   tooltipLabel,
 }) => {
   const [tooltip, setTooltip] = useState(false)
+  const [expanded, setExpanded] = useState(true)
+
+  const onClick = () => {
+    if (expanded) {
+      setExpanded(false)
+      setBounds({
+        volume: [],
+        permanence: []
+      })
+    } else {
+      setExpanded(true)
+    }
+  }
 
   return (
     <Box>
       <Row columns={[4]} sx={{ mb: [1, 1, 1, 2] }}>
         <Column start={[1]} width={[2]}>
-          <Box sx={sx.label}>
-            {label}
+          <Box sx={{
+            ...sx.label, 
+            mt: ['0px'],
+            ml: [-1],
+            cursor: 'pointer'
+          }} onClick={onClick}>
+            <Expander sx={{
+              position: 'relative',
+              width: 19,
+              top: '1px',
+              mr: [1]
+            }} value={expanded} />{label}
             <Box
               as='span'
               sx={{
@@ -42,8 +65,8 @@ const Chart = ({
             </Box>
           </Box>
         </Column>
-        <Column start={[3]} width={[2]} dl={1}>
-          <Box
+        {<Column start={[3]} width={[2]} dl={1}>
+          {expanded && <Box
             sx={{
               display: 'inline-block',
               opacity: !isNaN(bounds[0]) || tooltips ? 1 : 0,
@@ -60,6 +83,7 @@ const Chart = ({
             {!isNaN(bounds[0]) && format('.3~s')(bounds[1].toFixed(0))}
             {isNaN(bounds[0]) && tooltips && 'drag to filter'}
           </Box>
+          }
           <Box sx={{ display: 'inline-block', float: 'right' }}>
             <TooltipToggle
               tooltips={tooltips}
@@ -68,6 +92,7 @@ const Chart = ({
             />
           </Box>
         </Column>
+      }
       </Row>
       <TooltipDescription
         label={tooltipLabel}
@@ -75,7 +100,7 @@ const Chart = ({
         tooltips={tooltips}
         ml={0}
       />
-      <Axis
+      {expanded && <Axis
         x={x}
         y={y}
         highlighted={highlighted}
@@ -85,6 +110,7 @@ const Chart = ({
         setBounds={setBounds}
         ticks={ticks}
       />
+      }
     </Box>
   )
 }

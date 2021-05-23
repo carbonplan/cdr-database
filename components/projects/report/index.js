@@ -39,19 +39,22 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
     metrics,
     location,
     rating,
+    notes,
   } = data
 
   metrics = showMetrics.map((metric) => {
     return metrics.filter((m) => m.name == metric)[0]
   })
 
-  metrics.push({
-    name: 'rating',
-    value: rating,
-    units: '',
-    notes: '',
-    comment: '',
-  })
+  metrics = [
+    {
+      name: 'rating',
+      value: rating,
+      units: '',
+      notes: '',
+      comment: '',
+    },
+  ].concat(metrics)
 
   const ml = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
   const pl = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
@@ -246,6 +249,17 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                 cursor: 'default',
               }}
             >
+              {!(notes === '') && (
+                <Box
+                  sx={{
+                    color: 'secondary',
+                    mt: [2],
+                    mb: [3],
+                  }}
+                >
+                  Note: {notes}
+                </Box>
+              )}
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
                 <Box as='span' sx={{ mr: [2] }}>
                   <Link

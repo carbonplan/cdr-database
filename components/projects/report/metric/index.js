@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Box } from 'theme-ui'
+import { format as _format } from 'd3-format'
 import { useMeasure } from 'react-use'
 import MetricMobile from './mobile'
 import MetricDesktop from './desktop'
@@ -37,8 +38,13 @@ const Metric = ({ metric, tag, tooltips, embed }) => {
       if (key == 'mechanism' && value == 1) return 'AVD'
     }
     if (key == 'mechanism' && value == 2) return 'BOTH'
-    else if (key == 'cost') return '$' + parseFloat(value).toFixed(0)
-    else if (key == 'negativity') return parseFloat(value).toFixed(2)
+    else if (key == 'cost') {
+      if (parseFloat(value) < 1000) {
+        return '$' + _format('.3~s')(parseFloat(value).toFixed(0))
+      } else {
+        return '$' + _format('.2~s')(parseFloat(value).toFixed(0))
+      }
+    } else if (key == 'negativity') return parseFloat(value).toFixed(2)
     else if (key == 'volume') {
       if (value < 1000) return value
       else if (value >= 1000 && value < 1000000)
