@@ -4,18 +4,6 @@ import { scaleOrdinal, scaleLog } from 'd3-scale'
 import Chart from './chart'
 import sx from '../styles'
 
-const x1 = scaleLog().domain([10, 1000000]).range([1.5, 98.25]).clamp(true)
-
-const x2 = scaleLog().domain([1, 1000]).range([1.5, 98.25]).clamp(true)
-
-const y = scaleOrdinal()
-  .domain(['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'])
-  .range(
-    Array(6)
-      .fill(0)
-      .map((_, i) => i * 14 + 10)
-  )
-
 const Charts = ({
   highlighted,
   filtered,
@@ -26,10 +14,10 @@ const Charts = ({
 }) => {
   return (
     <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
-      <Box sx={{...sx.label, mb: [2]}}>Filter by metrics</Box>
+      <Box sx={{ ...sx.label, mb: [2], pb: [1] }}>Filter by metrics</Box>
       <Chart
-        x={x1}
-        y={y}
+        x={[10, 1000000]}
+        y={[-0.5, 5.5]}
         highlighted={highlighted}
         filtered={filtered}
         data={data.volume}
@@ -41,13 +29,13 @@ const Charts = ({
         ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
       />
-      <Box sx={{ mt: [1, 1, 1, 2] }}>
+      <Box sx={{ mt: [2, 2, 2, 3] }}>
         <Chart
-          x={x2}
-          y={y}
+          x={[1, 1000]}
+          y={[-0.5, 5.5]}
           highlighted={highlighted}
           filtered={filtered}
-          data={data.permanence}
+          data={data.permanence.filter((d) => d.value !== 'N/A')}
           label='permanence'
           tooltipLabel='permanenceFilter'
           units='years'

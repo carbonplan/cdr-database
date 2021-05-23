@@ -22,14 +22,16 @@ const Chart = ({
   tooltipLabel,
 }) => {
   const [tooltip, setTooltip] = useState(false)
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(false)
 
   const onClick = () => {
     if (expanded) {
       setExpanded(false)
-      setBounds({
-        volume: [],
-        permanence: []
+      setBounds((bounds) => {
+        return {
+          ...bounds,
+          [label]: [],
+        }
       })
     } else {
       setExpanded(true)
@@ -40,18 +42,29 @@ const Chart = ({
     <Box>
       <Row columns={[4]} sx={{ mb: [1, 1, 1, 2] }}>
         <Column start={[1]} width={[2]}>
-          <Box sx={{
-            ...sx.label, 
-            mt: ['0px'],
-            ml: [-1],
-            cursor: 'pointer'
-          }} onClick={onClick}>
-            <Expander sx={{
-              position: 'relative',
-              width: 19,
-              top: '1px',
-              mr: [1]
-            }} value={expanded} />{label}
+          <Box
+            sx={{
+              ...sx.label,
+              mt: ['0px'],
+              ml: [-1],
+              cursor: 'pointer',
+              '&:hover > #expander': {
+                stroke: 'primary',
+              },
+            }}
+            onClick={onClick}
+          >
+            <Expander
+              id='expander'
+              sx={{
+                position: 'relative',
+                width: 20,
+                top: '2px',
+                mr: [2],
+              }}
+              value={expanded}
+            />
+            {label}
             <Box
               as='span'
               sx={{
@@ -65,34 +78,36 @@ const Chart = ({
             </Box>
           </Box>
         </Column>
-        {<Column start={[3]} width={[2]} dl={1}>
-          {expanded && <Box
-            sx={{
-              display: 'inline-block',
-              opacity: !isNaN(bounds[0]) || tooltips ? 1 : 0,
-              color: !isNaN(bounds[0]) ? 'secondary' : 'muted',
-              fontFamily: 'mono',
-              fontSize: [1, 1, 1, 2],
-              textTransform: 'uppercase',
-              mt: ['3px'],
-              userSelect: 'none',
-            }}
-          >
-            {!isNaN(bounds[0]) && format('.3~s')(bounds[0].toFixed(0))}
-            {!isNaN(bounds[0]) && ' - '}
-            {!isNaN(bounds[0]) && format('.3~s')(bounds[1].toFixed(0))}
-            {isNaN(bounds[0]) && tooltips && 'drag to filter'}
-          </Box>
-          }
-          <Box sx={{ display: 'inline-block', float: 'right' }}>
-            <TooltipToggle
-              tooltips={tooltips}
-              value={tooltip}
-              setValue={setTooltip}
-            />
-          </Box>
-        </Column>
-      }
+        {
+          <Column start={[3]} width={[2]} dl={1}>
+            {expanded && (
+              <Box
+                sx={{
+                  display: 'inline-block',
+                  opacity: !isNaN(bounds[0]) || tooltips ? 1 : 0,
+                  color: !isNaN(bounds[0]) ? 'secondary' : 'muted',
+                  fontFamily: 'mono',
+                  fontSize: [1, 1, 1, 2],
+                  textTransform: 'uppercase',
+                  mt: ['3px'],
+                  userSelect: 'none',
+                }}
+              >
+                {!isNaN(bounds[0]) && format('.3~s')(bounds[0].toFixed(0))}
+                {!isNaN(bounds[0]) && ' - '}
+                {!isNaN(bounds[0]) && format('.3~s')(bounds[1].toFixed(0))}
+                {isNaN(bounds[0]) && tooltips && 'drag to filter'}
+              </Box>
+            )}
+            <Box sx={{ display: 'inline-block', float: 'right' }}>
+              <TooltipToggle
+                tooltips={tooltips}
+                value={tooltip}
+                setValue={setTooltip}
+              />
+            </Box>
+          </Column>
+        }
       </Row>
       <TooltipDescription
         label={tooltipLabel}
@@ -100,17 +115,18 @@ const Chart = ({
         tooltips={tooltips}
         ml={0}
       />
-      {expanded && <Axis
-        x={x}
-        y={y}
-        highlighted={highlighted}
-        filtered={filtered}
-        data={data}
-        label={label}
-        setBounds={setBounds}
-        ticks={ticks}
-      />
-      }
+      {expanded && (
+        <Axis
+          x={x}
+          y={y}
+          highlighted={highlighted}
+          filtered={filtered}
+          data={data}
+          label={label}
+          setBounds={setBounds}
+          ticks={ticks}
+        />
+      )}
     </Box>
   )
 }

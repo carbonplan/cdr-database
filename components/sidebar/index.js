@@ -38,6 +38,8 @@ const Sidebar = ({
             background: 'transparent',
           },
           scrollbarWidth: 'none',
+          px: ['20px'],
+          mx: ['-20px'],
         }}
       >
         <Box

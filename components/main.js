@@ -17,7 +17,7 @@ const initFilters = {
   removal: true,
   group: false,
   2020: true,
-  2021: false,
+  2021: true,
   search: '',
   rating: 3,
 }
@@ -27,12 +27,18 @@ const initBounds = {
   permanence: [],
 }
 
+const near = (a, b) => {
+  return Math.abs(a - b) < 0.000001
+}
+
 const Main = ({ projects, metrics, settingsExpanded }) => {
   const [filters, setFilters] = useState(initFilters)
   const [filtered, setFiltered] = useState({ count: 0, init: false })
   const [bounds, setBounds] = useState(initBounds)
   const [highlighted, setHighlighted] = useState(null)
   const [tooltips, setTooltips] = useState(true)
+
+  console.log(bounds)
 
   useEffect(() => {
     let obj = {}
@@ -51,9 +57,10 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
   function checkBounds(value, bounds, min, max) {
     if (bounds.length == 0) return true
     return (
-      (value > bounds[0] && value < bounds[1]) ||
-      (bounds[1] === max && value >= max) ||
-      (bounds[0] === min && value <= min)
+      ((near(value, bounds[0]) || value > bounds[0]) &&
+        (near(value, bounds[1]) || value < bounds[1])) ||
+      (near(max, bounds[1]) && value >= max) ||
+      (near(min, bounds[0]) && value <= min)
     )
   }
 
