@@ -44,14 +44,19 @@ const Axis = ({
         ref={chart}
         sx={{
           width: '100%',
-          height: '130px',
+          height: '140px',
           '.selection': { stroke: 'none' },
           mb: [3],
         }}
       >
-        <Chart logx x={x} y={y} padding={{ left: 0, right: 0, bottom: 20 }}>
+        <Chart
+          logx
+          x={x}
+          y={y}
+          padding={{ left: 0, right: 0, top: 5, bottom: 30 }}
+        >
           <Ticks bottom values={ticks} />
-          <TickLabels bottom values={ticks} />
+          <TickLabels bottom values={ticks} format={format('~s')} />
           <Plot>
             <Points highlighted={highlighted} filtered={filtered} data={data} />
             <Brush label={label} setBounds={setBounds} />

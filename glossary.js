@@ -8,11 +8,11 @@ module.exports = {
   permanence:
     'The duration in years over which carbon storage can be reasonably assured. For biological systems this duration is typically limited by physical and socioeconomic risks, whereas for chemical or geological systems the duration is effectively permanent.',
   permanenceFilter:
-    'Click and drag horizontally on the chart to select a range to filter projects by. Values show the duration over which carbon storage can be reasonably assured.',
+    'This visual filter shows the permanence of each project. If you expand it using the plus, you can click and drag horizontally on the resulting chart to select a range to filter projects by. Values show the duration over which carbon storage can be reasonably assured.',
   volume:
     'The total volume in tCO₂ of carbon removal and/or avoided emissions achieved by the project. We interpret these as gross volumes. Calculting net benefits requires incorporating negativity to account for project emissions.',
   volumeFilter:
-    'Click and drag horizontally on the chart to select a range to filter projects by. Values show the total volume in tCO₂ of carbon removal and/or avoided emissions claimed by the project. Calculting net benefits requires incorporating negativity to account for project emissions.',
+    'This visual filter shows the volume of each project. If you expand it using the plus, you can click and drag horizontally on the resulting chart to select a range to filter projects by. Values show the total volume in tCO₂ of carbon removal and/or avoided emissions claimed by the project. Calculting net benefits requires incorporating negativity to account for project emissions.',
   rating:
     'A single rating to reflect our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total rating. Rating does not necessarily reflect project quality, but rather our ability to validate key information.',
   ratingFilter:

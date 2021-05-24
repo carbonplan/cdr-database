@@ -59,8 +59,8 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
     return (
       ((near(value, bounds[0]) || value > bounds[0]) &&
         (near(value, bounds[1]) || value < bounds[1])) ||
-      (near(max, bounds[1]) && value >= max) ||
-      (near(min, bounds[0]) && value <= min)
+      ((near(max, bounds[1]) || bounds[1] > max) && value >= max) ||
+      ((near(min, bounds[0]) || bounds[0] < min) && value <= min)
     )
   }
 

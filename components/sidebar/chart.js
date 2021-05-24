@@ -99,7 +99,7 @@ const Chart = ({
                 {isNaN(bounds[0]) && tooltips && 'drag to filter'}
               </Box>
             )}
-            <Box sx={{ display: 'inline-block', float: 'right' }}>
+            <Box sx={{ display: 'inline-block', float: 'right', mt: '-1px' }}>
               <TooltipToggle
                 tooltips={tooltips}
                 value={tooltip}
