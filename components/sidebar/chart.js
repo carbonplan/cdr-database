@@ -58,9 +58,10 @@ const Chart = ({
               id='expander'
               sx={{
                 position: 'relative',
-                width: 20,
+                width: [20, 20, 20, 22],
                 top: '2px',
                 mr: [2],
+                transform: 'translateY(-3%)'
               }}
               value={expanded}
             />
