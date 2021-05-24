@@ -18,7 +18,7 @@ const Charts = ({
 }) => {
   return (
     <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
-      <Box sx={{ ...sx.label, mb: [2], pb: [1] }}>Filter by metrics</Box>
+      <Box sx={{ ...sx.label, mb: [2], pb: ['6px'] }}>Filter by metrics</Box>
       <Chart
         x={[10 * 0.87, 1000000 * 1.15]}
         y={[-0.5, 5.5]}

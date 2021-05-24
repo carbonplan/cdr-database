@@ -61,21 +61,22 @@ const Chart = ({
                 width: [20, 20, 20, 22],
                 top: '2px',
                 mr: [2],
-                transform: 'translateY(-3%)'
               }}
               value={expanded}
             />
-            {label}
-            <Box
-              as='span'
-              sx={{
-                ml: [2],
-                textTransform: 'none',
-                letterSpacing: 'body',
-                color: 'muted',
-              }}
-            >
-              {units}
+            <Box sx={{ display: 'inline-block', transform: 'translateY(6%)' }}>
+              {label}
+              <Box
+                as='span'
+                sx={{
+                  ml: [2],
+                  textTransform: 'none',
+                  letterSpacing: 'body',
+                  color: 'muted',
+                }}
+              >
+                {units}
+              </Box>
             </Box>
           </Box>
         </Column>
