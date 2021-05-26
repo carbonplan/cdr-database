@@ -38,8 +38,6 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
   const [highlighted, setHighlighted] = useState(null)
   const [tooltips, setTooltips] = useState(true)
 
-  console.log(bounds)
-
   useEffect(() => {
     let obj = {}
     let count = 0

@@ -13,7 +13,6 @@ import {
 } from '@carbonplan/components'
 import Report from '../../../components/projects/report'
 import collection from '../../../data/projects'
-import { withAuth } from '../../../lib/auth'
 
 const { BackButton } = Buttons
 const { InternalLink } = Links
@@ -192,4 +191,4 @@ const Project = () => {
   )
 }
 
-export default withAuth(Project, ['admin'])
+export default Project

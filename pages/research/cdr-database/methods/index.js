@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../../components/methods/main'
-import { withAuth } from '../../../../lib/auth'
 
 function Methods(props) {
   const [section, setSection] = useState('sources')
@@ -25,4 +24,4 @@ function Methods(props) {
   )
 }
 
-export default withAuth(Methods, ['admin'])
+export default Methods

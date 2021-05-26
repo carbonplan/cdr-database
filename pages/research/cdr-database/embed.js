@@ -4,7 +4,6 @@ import { useColorMode, Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { Layout } from '@carbonplan/components'
 import Report from '../../../components/projects/report'
 import collection from '../../../data/projects'
-import { withAuth } from '../../../lib/auth'
 
 function Embed() {
   const [colorMode, setColorMode] = useColorMode()
@@ -73,4 +72,4 @@ function Embed() {
   )
 }
 
-export default withAuth(Embed, ['admin'])
+export default Embed
