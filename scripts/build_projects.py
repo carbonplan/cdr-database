@@ -35,6 +35,7 @@ def main(sources, output_projects, output_methods, output_numbers, output_csv, o
     write_csv(project_collection, output_csv)
     write_json(project_collection, output_json)
 
+
 def write_projects(project_collection, output):
     collection = copy.deepcopy(project_collection)
     for project in collection['projects']:
