@@ -46,7 +46,7 @@ const Table = ({ one, two, three, type, children }) => {
     >
       <TableRow final={type == 'icons'}>
         <Column start={[starts[0]]} width={[widths[0]]}>
-          {type == 'icons' && <Check sx={{ width: 48, height: 48 }} />}
+          {type == 'icons' && <Check sx={{ width: 36, height: 36 }} />}
           {type == 'squares' && (
             <Box sx={{ mt: ['9px'] }}>
               <Squares data={2} />
