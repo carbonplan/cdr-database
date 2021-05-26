@@ -18,7 +18,7 @@ const showMetrics = [
   'volume',
   'negativity',
   'permanence',
-  'cost',
+  'price',
   'additionality',
   'specificity',
 ]

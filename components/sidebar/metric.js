@@ -7,7 +7,7 @@ import TooltipToggle from '../tooltip/toggle'
 import TooltipDescription from '../tooltip/description'
 import sx from '../styles'
 
-const Chart = ({
+const Metric = ({
   x,
   y,
   highlighted,
@@ -45,11 +45,19 @@ const Chart = ({
           <Box
             sx={{
               ...sx.label,
+              width: 'fit-content',
+              pr: [3],
               mt: ['0px'],
               ml: [-1],
               cursor: 'pointer',
               '&:hover > #expander': {
                 stroke: 'primary',
+              },
+              '&:hover > #label': {
+                color: 'primary',
+              },
+              '&:hover > #label > #units': {
+                color: 'secondary',
               },
             }}
             onClick={onClick}
@@ -64,15 +72,24 @@ const Chart = ({
               }}
               value={expanded}
             />
-            <Box sx={{ display: 'inline-block', transform: 'translateY(6%)' }}>
+            <Box
+              id='label'
+              sx={{
+                display: 'inline-block',
+                transform: 'translateY(6%)',
+                transition: 'color 0.15s',
+              }}
+            >
               {label}
               <Box
                 as='span'
+                id='units'
                 sx={{
                   ml: [2],
                   textTransform: 'none',
                   letterSpacing: 'body',
                   color: 'muted',
+                  transition: 'color 0.15s',
                 }}
               >
                 {units}
@@ -133,4 +150,4 @@ const Chart = ({
   )
 }
 
-export default Chart
+export default Metric

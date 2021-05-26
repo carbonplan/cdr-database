@@ -4,7 +4,7 @@ import { default as NextLink } from 'next/link'
 import { Tray } from '@carbonplan/components'
 import Search from './search'
 import Metadata from './metadata'
-import Charts from './charts'
+import Metrics from './metrics'
 import Mobile from './mobile'
 
 const Sidebar = ({
@@ -99,7 +99,7 @@ const Sidebar = ({
             settingsExpanded={settingsExpanded}
           />
           <Divider sx={{ my: [0], mt: ['11px'] }} />
-          <Charts
+          <Metrics
             highlighted={highlighted}
             filtered={filtered}
             data={data}

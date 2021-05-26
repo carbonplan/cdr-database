@@ -10,7 +10,7 @@ def make_projects():
         "negativity",
         "permanence",
         "additionality",
-        "cost",
+        "price",
         "specificity",
     ]
 

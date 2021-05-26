@@ -1,7 +1,7 @@
 import Projects from './components/projects'
 
 export const meta = {
-  revised: '05-20-2020',
+  revised: '05-26-2020',
 }
 
 # Projects
@@ -30,7 +30,9 @@ Fuss et al. (2018) Negative emissions—Part 2: Costs, potentials and side effec
 
 Gunnarsson et al. (2018) The rapid and cost-effective capture and subsurface mineral storage of carbon and sulfur at the CarbFix2 site, International Journal of Greenhouse Gas Control, [DOI](https://doi.org/10.1016/j.ijggc.2018.08.014)
 
-Hepburn et al., (2019) The technological and economic prospects for CO2 utilization and removal, Nature, [DOI](https://doi.org/10.1038/s41586-019-1681-6)
+Harmon et al (2020) Release of coarse woody detritus-related carbon: a synthesis across forest biomes, Carbon Balance and Management, [DOI](https://doi.org/10.1186/s13021-019-0136-6)
+
+Hepburn et al. (2019) The technological and economic prospects for CO2 utilization and removal, Nature, [DOI](https://doi.org/10.1038/s41586-019-1681-6)
 
 Keith et al. (2018) A Process for Capturing CO2 from the Atmosphere, Joule, [DOI](https://10.1016/j.joule.2018.05.006.)
 
@@ -38,9 +40,23 @@ Kelemen et al. (2018) In situ carbon mineralization in ultramafic rocks: Natural
 
 Keleman et al. (2020) Engineered carbon mineralization in ultramafic rocks for CO2 removal from air: Review and new insights, Chemical Geology, [DOI](https://doi.org/10.1016/j.chemgeo.2020.119628)
 
+Kelland et al. (2020) Increased yield and CO2 sequestration potential with the C4 cereal Sorghum bicolor cultivated in basaltic rock dust‐amended agricultural soil, Global Change Biology, [DOI](https://doi.org/10.1111/gcb.15089)
+
+Krause-Jensen et al. (2018) Sequestration of macroalgal carbon: the elephant in the Blue Carbon room, Biology Letters, [DOI](https://doi.org/10.1098/rsbl.2018.0236)
+
+Krause-Jensen & Duarte (2016) Substantial role of macroalgae in marine carbon sequestration, Nature Geoscience, [DOI](https://doi.org/10.1038/ngeo2790)
+
+La Plante et al. (2021) Saline Water-Based Mineralization Pathway for Gigatonne-Scale CO2 Management, ACS Sustainable Chemistry & Engineering, [DOI](https://doi.org/10.1021/acssuschemeng.0c08561)
+
 Lippke et al. (2011) Life cycle impacts of forest management and wood utilization on carbon mitigation: knowns and unknowns, Carbon Management, Carbon Management, [DOI](https://doi.org/10.4155/CMT.11.24)
 
+Macreadie et al. (2019) The future of Blue Carbon science, Nature Communication, [DOI](https://doi.org/10.1038/s41467-019-11693-w)
+
 Magnani et al. (2007) The human footprint in the carbon cycle of temperate and boreal forests, Nature, [DOI](https://doi.org/10.1038/nature05847)
+
+McQueen et al. (2020) Ambient weathering of magnesium oxide for CO2 removal from air, Nature Communication, [DOI](https://doi.org/10.1038/s41467-020-16510-3)
+
+McQueen et al. (2021) A review of direct air capture (DAC): scaling up commercial technologies and innovating for the future, Progress in Energy, [DOI](https://doi.org/10.1088/2516-1083/abf1ce)
 
 Monkman & MacDonald (2017) On carbon dioxide utilization as a means to improve the sustainability of ready-mixed concrete, Journal of Cleaner Production, [DOI](https://doi.org/10.1016/j.jclepro.2017.08.194)
 
@@ -87,6 +103,8 @@ Werner et al. (2018) Biogeochemical potential of biomass pyrolysis systems for l
 Williamson et al. (2012) Ocean fertilization for geoengineering: A review of effectiveness, environmental impacts and emerging governance, Process Safety and Environmental Protection, [DOI](http://doi.org/10.1016/j.psep.2012.10.007)
 
 Winistorfer et al. (2005) Energy Consumption And Greenhouse Gas Emissions Related To The Use, Maintence, And Disposal Of A Residential Structure, Wood and Fiber Science
+
+Ximenes et al. (2017) The decay of engineered wood products and paper excavated from landfills in Australia, Waste Management, [DOI](https://doi.org/10.1016/j.wasman.2017.11.035)
 
 Yen & Lee (2011) Comparing aboveground carbon sequestration between moso bamboo (Phyllostachys heterocycla) and China fir (Cunninghamia lanceolata) forests based on the allometric model, Forest Ecology and Management, [DOI](https://doi.org/10.1016/j.foreco.2010.12.015)
 

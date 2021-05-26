@@ -38,9 +38,13 @@ const Intro = ({ setSection }) => {
         <InternalLink href='/research/stripe-2020-insights'>
           Stripe in 2020
         </InternalLink>{' '}
-        and to{' '}
+        ,{' '}
         <InternalLink href='/research/microsoft-2021-insights'>
           Microsoft in 2021
+        </InternalLink>
+        , or{' '}
+        <InternalLink href='/research/stripe-2021-insights'>
+          Stripe in 2021
         </InternalLink>
         . If you have questions or want to get in touch. check out the{' '}
         <Link

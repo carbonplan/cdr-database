@@ -38,7 +38,7 @@ const Metric = ({ metric, tag, tooltips, embed }) => {
       if (key == 'mechanism' && value == 1) return 'AVD'
     }
     if (key == 'mechanism' && value == 2) return 'BOTH'
-    else if (key == 'cost') {
+    else if (key == 'price') {
       if (parseFloat(value) < 1000) {
         return '$' + _format('.3~s')(parseFloat(value).toFixed(0))
       } else {

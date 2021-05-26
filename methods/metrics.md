@@ -2,7 +2,7 @@ import Table from '../components/methods/table'
 import InlineCheck from '../components/methods/inline-check'
 
 export const meta = {
-  revised: '02-17-2021',
+  revised: '05-26-2021',
 }
 
 # Metrics
@@ -15,7 +15,7 @@ The mark next to each metric shows our validation. We assigned projects a <Inlin
 
 It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs.
 
-Validation on metrics is only provided for mechanism, volume, negativity, and permanence. We do not provide validation on vost. In some ways cost is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, cost also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the cost.
+Validation on metrics is only provided for mechanism, volume, negativity, and permanence. We do not provide validation on vost. In some ways price is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, price also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the price.
 
 For additionality and specificity we provide a qualitative score from 1 to 3, along with comments. Both of these scores are contextual. Additionality is less important when funding decisions are oriented around encouraging innovation, rather than carbon offsetting. For specificity, our scores should be interpreted in light of the fact that all projects in our database have provided a baseline level of information, and achieved a significant degree of transparency, by making materials public.
 
@@ -83,7 +83,7 @@ We express no judgment on this metric when we don't know enough about the projec
 
 <Table
   type='icons'
-  three='Boundary conditions are well specified with respect to our understanding of the mechanism, and LCA components are thoroughly documented, either directly by the project and/or through independent assessment or verification with a third-party.'
+  three='Boundary conditions are well specified with respect to our understanding of the mechanism, and LCA components are thoroughly documented. For solutions which may or may not achieve net-negativity depending on their emissions, LCA documentation includes an independent assessment or verification by a third party. For other solutions, LCA documentation is provided either directly by the project and/or through independent assessment or verification with a third-party.'
 ></Table>
 
 ## Permanence
@@ -105,14 +105,14 @@ Building materials are intermediate, as the plausible duration of permanence dep
   three='Generally used for claimed durations of 1000+ years for geologic or mineral storage,  durations of 100-1000 years for biochar, durations of 50-100 years for wooden building materials, or durations of 30 or fewer years for forests or soil projects. Requires specific description of storage mechanism or contractual arrangements.'
 ></Table>
 
-## Cost
+## Price
 
-Project cost is taken directly from public project offerings. Some costs have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category costs are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects).
+Project price is taken directly from public project offerings. Some prices have been modified for accounting consistency, for example, by averaging a range or ensuring that within a category prices are expressed in relation to climate benefits expected over the entire project duration (e.g. for forest projects).
 
 <!-- prettier-ignore -->
-Costs are expressed per metric tCO₂ and thus, similar to volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total cost. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. As reported, the stated price does not reflect project duration, i.e. the reality that a ton of permanently removed carbon is a meaningfully different product than a ton of temporarily removed carbon. This makes permanence another important attribute to include in the [comparison of relative project costs](https://carbonplan.org/research/permanence-calculator).
+Prices are expressed per metric tCO₂ and thus, similar to volume, reflect project lifetimes, some of which are one year, some longer. We did not attempt to validate this metric because the price at which a project offers its product speaks for itself, at least in terms of total price. The stated price in terms of $/tCO₂ depends on several other factors, however, including projects’ estimated volume. As reported, the stated price does not reflect project duration, i.e. the reality that a ton of permanently removed carbon is a meaningfully different product than a ton of temporarily removed carbon. This makes permanence another important attribute to include in the [comparison of relative project prices](https://carbonplan.org/research/permanence-calculator).
 
-We are working with collaborators on building domain-specific open source models to assist with cost estimation, e.g. for [direct air capture](https://carbonplan.org/research/dac-calculator) and mineralization.
+We are working with collaborators on building domain-specific open source models to assist with price estimation, e.g. for [direct air capture](https://carbonplan.org/research/dac-calculator) and mineralization.
 
 ## Additionality
 
@@ -154,6 +154,6 @@ In general, we encourage sharing as many details as possible. We believe that ma
 
 After analyzing each metric separately for validation, we reflect our overall confidence in project claims with a single rating on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence each add 1 point to the total. For additionality, which is scored on a three point scale, we subtract 1 point from the total if the project receives a 1/3 and we add 1 point to the total if the project receives a 3/3, and otherwise do not change it. The lowest rating a project can receive is 1.
 
-Cost is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
+Price is not reflected in this rating because we do not attempt to validate it. Specificity is not reflected explicitly, but is embedded in our ability to validate or score the other metrics.
 
 Rating does not necessarily reflect project quality, but rather our ability to validate key information. Furthermore, as with validation of the individual metrics, a low rating should not necessarily be interpreted as a criticism of the project, though it may indicate concerns that could be resolved with more information. As we develop better methods for validation, we expect to be able to refine our ratings.

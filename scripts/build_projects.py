@@ -125,9 +125,9 @@ def write_csv(collection, output):
     df['additionality_notes'] = [d['metrics'][4]['notes'] for d in projects]
     df['additionality_comment'] = [d['metrics'][4]['comment'] for d in projects]
 
-    df['cost'] = [d['metrics'][5]['value'] for d in projects]
-    df['cost_notes'] = [d['metrics'][5]['notes'] for d in projects]
-    df['cost_comment'] = [d['metrics'][5]['comment'] for d in projects]
+    df['price'] = [d['metrics'][5]['value'] for d in projects]
+    df['price_notes'] = [d['metrics'][5]['notes'] for d in projects]
+    df['price_comment'] = [d['metrics'][5]['comment'] for d in projects]
 
     df['specificity'] = [d['metrics'][6]['value'] for d in projects]
     df['specificity_notes'] = [d['metrics'][6]['notes'] for d in projects]

@@ -112,8 +112,8 @@ const MetricDesktop = ({
                 scale={scales['negativity']}
               ></Bar>
             )}
-            {metric.name == 'cost' && (
-              <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>
+            {metric.name == 'price' && (
+              <Bar tag={tag} data={metric.value} scale={scales['price']}></Bar>
             )}
             {metric.name == 'additionality' && (
               <Box sx={{ mt: '13px' }}>

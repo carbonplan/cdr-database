@@ -1,14 +1,14 @@
 import { memo, useState } from 'react'
 import { Box } from 'theme-ui'
 import { scaleOrdinal, scaleLog } from 'd3-scale'
-import Chart from './chart'
+import Metric from './metric'
 import sx from '../styles'
 
 const threshold = (d, min, max) => {
   return Math.max(Math.min(d, max), min)
 }
 
-const Charts = ({
+const Metrics = ({
   highlighted,
   filtered,
   data,
@@ -19,7 +19,7 @@ const Charts = ({
   return (
     <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
       <Box sx={{ ...sx.label, mb: [2], pb: ['6px'] }}>Filter by metrics</Box>
-      <Chart
+      <Metric
         x={[10 * 0.87, 1000000 * 1.15]}
         y={[-0.5, 5.5]}
         highlighted={highlighted}
@@ -36,7 +36,7 @@ const Charts = ({
         tooltips={tooltips}
       />
       <Box sx={{ mt: [2, 2, 2, 3] }}>
-        <Chart
+        <Metric
           x={[1 * 0.92, 1000 * 1.09]}
           y={[-0.5, 5.5]}
           highlighted={highlighted}
@@ -59,4 +59,4 @@ const Charts = ({
   )
 }
 
-export default memo(Charts)
+export default memo(Metrics)
