@@ -4,7 +4,7 @@ from utils import get_sheet, make_metric, make_project, maybe_float
 
 
 def make_projects():
-    data = get_sheet("Sheet1", "Stripe reports 0.1 [internal]").loc[:23]
+    data = get_sheet("Sheet1", "Stripe reports Q1 2021 2.0 [internal]").loc[:189]
 
     metrics = [
         "mechanism",
@@ -52,11 +52,11 @@ def make_projects():
             "license": row[("source", "license")],
             "url": row[("source", "url")],
         }
+        project["revisions"] = json.loads(row[("revisions", "")])
         project["documentation"] = {
             "name": row[("documentation", "name")],
             "url": row[("documentation", "url")],
         }
-        project["revisions"] = json.loads(row[("revisions", "")])
         project["notes"] = row[("notes", "")]
         for name in metrics:
             m = make_metric(name)
@@ -66,9 +66,13 @@ def make_projects():
                 except KeyError:
                     continue
                 else:
-                    m[key] = maybe_float(val)
+                    if val:
+                        m[key] = maybe_float(val)
+                    elif key in ['value', 'rating']:
+                        m[key] = -9999
 
             project["metrics"].append(m)
-        projects.append(project)
+        if row[('flag', '')] != 'x':
+            projects.append(project)
 
     return projects

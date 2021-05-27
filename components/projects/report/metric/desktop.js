@@ -27,12 +27,12 @@ const sx = {
     fontFamily: 'mono',
     fontSize: [3],
     textAlign: 'right',
-    mt: ['5px'],
+    mt: ['6px'],
   },
   label: {
     fontFamily: 'mono',
     fontSize: [2, 2, 2, 3],
-    mt: ['6px'],
+    mt: ['8px', '8px', '8px', '6px'],
     textTransform: 'capitalize',
   },
   units: {
@@ -70,15 +70,15 @@ const MetricDesktop = ({
       <Box
         onClick={hasDetails ? toggle : (e) => e.stopPropagation()}
         sx={{
-          cursor: hasDetails ? 'pointer' : 'inherit',
+          cursor: hasDetails ? 'pointer' : 'initial',
           pointerEvents: 'all',
           '&:hover > #grid > #container > #expander': {
             fill: 'primary',
             stroke: 'primary',
           },
-          pt: [2],
+          pt: [1],
           pb: ['6px'],
-          pl: embed ? [2, 2, 2] : [0, 0, '24px'],
+          pl: embed ? [2, 2, 2] : [0, 0, '24px', '38px'],
         }}
       >
         <Grid id='grid' gap={['16px']} columns={['55px 95px 1fr 15px 30px']}>
@@ -112,8 +112,8 @@ const MetricDesktop = ({
                 scale={scales['negativity']}
               ></Bar>
             )}
-            {metric.name == 'cost' && (
-              <Bar tag={tag} data={metric.value} scale={scales['cost']}></Bar>
+            {metric.name == 'price' && (
+              <Bar tag={tag} data={metric.value} scale={scales['price']}></Bar>
             )}
             {metric.name == 'additionality' && (
               <Box sx={{ mt: '13px' }}>
@@ -126,7 +126,7 @@ const MetricDesktop = ({
               </Box>
             )}
             {metric.name == 'rating' && (
-              <Box sx={{ mb: '6px' }}>
+              <Box sx={{ width: 'calc(100% + 40px)', ml: '-40px', mb: '0px' }}>
                 <Rating
                   sx={{ color: theme.tags[tag] }}
                   value={metric.value}
@@ -161,7 +161,8 @@ const MetricDesktop = ({
             )}
           </Text>
           <Text sx={{ mt: ['3px'] }}>
-            {metric.rating === 1 && (
+            {(metric.rating === 1 ||
+              (metric.name === 'additionality' && metric.value === 2)) && (
               <Check sx={{ width: '28px', color: theme.tags[tag] }} />
             )}
             {metric.rating === 0 && <Box />}
@@ -185,7 +186,7 @@ const MetricDesktop = ({
           ml={'0px'}
           sx={{
             cursor: 'text',
-            pl: embed ? ['190px'] : ['182px', '182px', '206px'],
+            pl: embed ? ['190px'] : ['182px', '182px', '206px', '220px'],
             pr: ['30px'],
             mt: ['-4px'],
             pb: ['10px'],
@@ -202,7 +203,7 @@ const MetricDesktop = ({
             sx={{
               pb: [1],
               cursor: 'text',
-              pl: embed ? [2, 2, 2] : [0, 0, '24px'],
+              pl: embed ? [2, 2, 2] : [0, 0, '24px', '38px'],
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -272,7 +273,7 @@ const MetricDesktop = ({
       </AnimateHeight>
       <Divider
         sx={{
-          ml: embed ? [0, 0, 0] : [0, 0, '24px'],
+          ml: embed ? [0, 0, 0] : [0, 0, '24px', '38px'],
           mr: [0],
           mt: [0],
           mb: [0],

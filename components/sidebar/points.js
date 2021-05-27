@@ -1,6 +1,7 @@
 import { Box } from 'theme-ui'
 import { memo } from 'react'
 import { mix } from '@theme-ui/color'
+import { useChart, Circle } from '@carbonplan/charts'
 
 const colors = {
   dac: 'purple',
@@ -9,6 +10,15 @@ const colors = {
   biomass: 'yellow',
   ocean: 'teal',
   soil: 'orange',
+}
+
+const tagsToIndex = {
+  forests: 5,
+  soil: 4,
+  biomass: 3,
+  ocean: 2,
+  mineralization: 1,
+  dac: 0,
 }
 
 const Points = ({ data, filtered, highlighted, x, y }) => {
@@ -20,15 +30,14 @@ const Points = ({ data, filtered, highlighted, x, y }) => {
     })
     .map((d) => {
       return (
-        <Box
-          as='circle'
+        <Circle
           key={d.id}
-          cx={`${x(d.value)}%`}
-          cy={y(d.tag)}
-          r={d.id == highlighted ? 8 : 4}
+          x={d.value}
+          y={tagsToIndex[d.tag]}
+          size={d.id == highlighted ? 16 : 8}
           sx={{
-            transition: 'r 0.15s',
-            fill: filtered[d.id]
+            transition: 'stroke-width 0.15s',
+            stroke: filtered[d.id]
               ? colors[d.tag]
               : mix(colors[d.tag], 'background', 0.15),
           }}

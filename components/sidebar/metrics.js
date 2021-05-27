@@ -1,31 +1,14 @@
 import { memo, useState } from 'react'
 import { Box } from 'theme-ui'
 import { scaleOrdinal, scaleLog } from 'd3-scale'
-import Chart from './chart'
+import Metric from './metric'
+import sx from '../styles'
 
-const sx = {
-  axisLabel: {
-    color: 'muted',
-    fontSize: [1],
-    fontFamily: 'mono',
-    position: 'absolute',
-    ml: ['-8px'],
-  },
+const threshold = (d, min, max) => {
+  return Math.max(Math.min(d, max), min)
 }
 
-const x1 = scaleLog().domain([10, 1000000]).range([1.5, 98.25]).clamp(true)
-
-const x2 = scaleLog().domain([1, 1000]).range([1.5, 98.25]).clamp(true)
-
-const y = scaleOrdinal()
-  .domain(['forests', 'soil', 'biomass', 'ocean', 'mineralization', 'dac'])
-  .range(
-    Array(6)
-      .fill(0)
-      .map((_, i) => i * 14 + 10)
-  )
-
-const Charts = ({
+const Metrics = ({
   highlighted,
   filtered,
   data,
@@ -35,12 +18,15 @@ const Charts = ({
 }) => {
   return (
     <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
-      <Chart
-        x={x1}
-        y={y}
+      <Box sx={{ ...sx.label, mb: [2], pb: ['6px'] }}>Filter by metrics</Box>
+      <Metric
+        x={[10 * 0.87, 1000000 * 1.15]}
+        y={[-0.5, 5.5]}
         highlighted={highlighted}
         filtered={filtered}
-        data={data.volume}
+        data={data.volume.map((d) => {
+          return { ...d, value: threshold(d.value, 10, 1000000) }
+        })}
         label='volume'
         tooltipLabel='volumeFilter'
         units='tCO₂'
@@ -49,13 +35,17 @@ const Charts = ({
         ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
       />
-      <Box sx={{ mt: [1, 1, 1, 2] }}>
-        <Chart
-          x={x2}
-          y={y}
+      <Box sx={{ mt: [2, 2, 2, 3] }}>
+        <Metric
+          x={[1 * 0.92, 1000 * 1.09]}
+          y={[-0.5, 5.5]}
           highlighted={highlighted}
           filtered={filtered}
-          data={data.permanence}
+          data={data.permanence
+            .filter((d) => d.value !== 'N/A')
+            .map((d) => {
+              return { ...d, value: threshold(d.value, 1, 1000) }
+            })}
           label='permanence'
           tooltipLabel='permanenceFilter'
           units='years'
@@ -69,4 +59,4 @@ const Charts = ({
   )
 }
 
-export default memo(Charts)
+export default memo(Metrics)

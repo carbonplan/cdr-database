@@ -12,7 +12,7 @@ def make_projects():
         "negativity",
         "permanence",
         "additionality",
-        "cost",
+        "price",
         "specificity",
     ]
 
@@ -49,6 +49,8 @@ def make_projects():
         }
         project["source"] = {
             "name": row[("source", "name")],
+            "id": row[("source", "id")],
+            "date": row[("source", "date")],
             "license": row[("source", "license")],
             "url": row[("source", "url")],
         }
@@ -57,6 +59,7 @@ def make_projects():
             "name": row[("documentation", "name")],
             "url": row[("documentation", "url")],
         }
+        project["notes"] = row[("notes", "")]
         for name in metrics:
             m = make_metric(name)
             for key in metric_keys:

@@ -11,11 +11,13 @@ const initFilters = {
   soil: true,
   biomass: true,
   ocean: true,
-  STRP2020: true,
-  MSFT2021: true,
+  stripe: true,
+  microsoft: true,
   avoided: true,
   removal: true,
   group: false,
+  2020: true,
+  2021: true,
   search: '',
   rating: 3,
 }
@@ -23,6 +25,10 @@ const initFilters = {
 const initBounds = {
   volume: [],
   permanence: [],
+}
+
+const near = (a, b) => {
+  return Math.abs(a - b) < 0.000001
 }
 
 const Main = ({ projects, metrics, settingsExpanded }) => {
@@ -49,9 +55,10 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
   function checkBounds(value, bounds, min, max) {
     if (bounds.length == 0) return true
     return (
-      (value > bounds[0] && value < bounds[1]) ||
-      (bounds[1] === max && value >= max) ||
-      (bounds[0] === min && value <= min)
+      ((near(value, bounds[0]) || value > bounds[0]) &&
+        (near(value, bounds[1]) || value < bounds[1])) ||
+      ((near(max, bounds[1]) || bounds[1] > max) && value >= max) ||
+      ((near(min, bounds[0]) || bounds[0] < min) && value <= min)
     )
   }
 
@@ -66,9 +73,11 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
       (filters.biomass && d.tags.length > 0 && d.tags[0] == 'biomass') ||
       (filters.ocean && d.tags.length > 0 && d.tags[0] == 'ocean')
     const inSource =
-      (filters.STRP2020 &&
-        d.source.name == 'Stripe 2020 Negative Emissions Purchase') ||
-      (filters.MSFT2021 && d.source.name == 'Microsoft 2021 CDR RFP')
+      (filters.stripe && d.source.id.includes('STRP')) ||
+      (filters.microsoft && d.source.id.includes('MSFT'))
+    const inYear =
+      (filters['2020'] && d.source.date.includes('2020')) ||
+      (filters['2021'] && d.source.date.includes('2021'))
     const inMechanism =
       (filters.removal && d.metrics[0].value == 0) ||
       (filters.avoided && d.metrics[0].value == 1) ||
@@ -86,7 +95,7 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
         (d.tags.length > 1 && d.tags[1].toLowerCase().includes(searchTerm)))
     const isValidated = d.rating >= filters.rating
     const inFilter =
-      inTags && inSource && inBounds && inMechanism && isValidated
+      inTags && inSource && inYear && inBounds && inMechanism && isValidated
     if (filters.search.length > 0 && inSearch && inFilter) return true
     if (filters.search.length == 0 && inFilter) return true
     else return false

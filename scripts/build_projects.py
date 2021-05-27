@@ -6,6 +6,7 @@ import click
 import msft2021
 import pandas as pd
 import strp2020
+import strp2021
 
 
 @click.command()
@@ -21,6 +22,8 @@ def main(sources, output_projects, output_methods, output_numbers, output_csv, o
 
     if 'strp2020' in sources:
         projects.extend(strp2020.make_projects())
+    if 'strp2021' in sources:
+        projects.extend(strp2021.make_projects())
     if 'msft2021' in sources:
         projects.extend(msft2021.make_projects())
 
@@ -63,11 +66,12 @@ def write_methods(project_collection, output):
 def write_numbers(project_collection, output):
     collection = copy.deepcopy(project_collection)
     for project in collection['projects']:
+        project['source'] = project['source']['id']
         del project['methods']
         del project['description']
         del project['documentation']
         del project['revisions']
-        del project['source']
+        del project['notes']
         del project['type']
         del project['keywords']
         for metric in project['metrics']:
@@ -91,6 +95,8 @@ def write_csv(collection, output):
     df['tags'] = [','.join(d['tags']) for d in projects]
 
     df['source'] = [d['source']['name'] for d in projects]
+    df['source_id'] = [d['source']['id'] for d in projects]
+    df['source_date'] = [d['source']['date'] for d in projects]
     df['source_url'] = [d['source']['url'] for d in projects]
     df['source_license'] = [d['source']['license'] for d in projects]
 
@@ -120,9 +126,9 @@ def write_csv(collection, output):
     df['additionality_notes'] = [d['metrics'][4]['notes'] for d in projects]
     df['additionality_comment'] = [d['metrics'][4]['comment'] for d in projects]
 
-    df['cost'] = [d['metrics'][5]['value'] for d in projects]
-    df['cost_notes'] = [d['metrics'][5]['notes'] for d in projects]
-    df['cost_comment'] = [d['metrics'][5]['comment'] for d in projects]
+    df['price'] = [d['metrics'][5]['value'] for d in projects]
+    df['price_notes'] = [d['metrics'][5]['notes'] for d in projects]
+    df['price_comment'] = [d['metrics'][5]['comment'] for d in projects]
 
     df['specificity'] = [d['metrics'][6]['value'] for d in projects]
     df['specificity_notes'] = [d['metrics'][6]['notes'] for d in projects]
@@ -131,6 +137,8 @@ def write_csv(collection, output):
     df['rating'] = [d['rating'] for d in projects]
 
     df['revisions'] = [d['revisions'] for d in projects]
+
+    df['notes'] = [d['notes'] for d in projects]
 
     df.to_csv('public/research/cdr-database/' + output, index=False)
 

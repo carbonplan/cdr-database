@@ -14,7 +14,7 @@ module.exports = {
     min: 10,
     max: 1000,
   },
-  cost: {
+  price: {
     type: 'log',
     min: 3,
     max: 3000,

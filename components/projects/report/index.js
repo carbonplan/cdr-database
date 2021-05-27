@@ -18,7 +18,7 @@ const showMetrics = [
   'volume',
   'negativity',
   'permanence',
-  'cost',
+  'price',
   'additionality',
   'specificity',
 ]
@@ -39,19 +39,22 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
     metrics,
     location,
     rating,
+    notes,
   } = data
 
   metrics = showMetrics.map((metric) => {
     return metrics.filter((m) => m.name == metric)[0]
   })
 
-  metrics.push({
-    name: 'rating',
-    value: rating,
-    units: '',
-    notes: '',
-    comment: '',
-  })
+  metrics = [
+    {
+      name: 'rating',
+      value: rating,
+      units: '',
+      notes: '',
+      comment: '',
+    },
+  ].concat(metrics)
 
   const ml = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
   const pl = embed ? [0, 0, 0] : [0, 0, '24px', '36px']
@@ -206,8 +209,13 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
           color: 'secondary',
         }}
       >
-        {id.includes('STRP') && 'Stripe 2020'}
-        {id.includes('MSFT') && 'Microsoft 2021'}
+        {id.includes('STRP') & (parseInt(id.split('STRP')[1]) <= 24)
+          ? 'Stripe 2020'
+          : ''}
+        {id.includes('STRP') & (parseInt(id.split('STRP')[1]) > 24)
+          ? 'Stripe 2021'
+          : ''}
+        {id.includes('MSFT') ? 'Microsoft 2021' : ''}
         <Box as='span' sx={{ mx: [2] }}>
           /
         </Box>
@@ -241,6 +249,17 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
                 cursor: 'default',
               }}
             >
+              {!(notes === '') && (
+                <Box
+                  sx={{
+                    color: 'secondary',
+                    mt: [2],
+                    mb: [3],
+                  }}
+                >
+                  Note: {notes}
+                </Box>
+              )}
               <Box sx={{ display: 'inline-block', color: 'secondary' }}>
                 <Box as='span' sx={{ mr: [2] }}>
                   <Link

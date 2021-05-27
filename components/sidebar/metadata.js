@@ -22,11 +22,11 @@ const categories = [
   'mineralization',
   'dac',
 ]
-
-const sources = ['STRP2020', 'MSFT2021']
+const years = ['2020', '2021']
+const sources = ['stripe', 'microsoft']
 const sourcesDisplay = {
-  STRP2020: 'STRIPE',
-  MSFT2021: 'MICROSOFT',
+  stripe: 'STRIPE',
+  microsoft: 'MICROSOFT',
 }
 
 const mechanisms = ['avoided', 'removal']
@@ -93,21 +93,6 @@ const Metadata = ({
 
   return (
     <Box sx={{ mb: [-3, -3, 0, 0], pb: [0, 0, 0, 1] }}>
-      <Field label='sourceFilter' displayLabel='source' tooltips={tooltips}>
-        <Box sx={{}}>
-          {['STRP2020', 'MSFT2021'].map((d) => (
-            <Tag
-              key={d}
-              value={filters[d]}
-              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
-              onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d, sources)}
-            >
-              {sourcesDisplay[d]}
-            </Tag>
-          ))}
-        </Box>
-      </Field>
       <Field label='categoryFilter' displayLabel='category' tooltips={tooltips}>
         <Box>
           {categories.map((d) => (
@@ -130,6 +115,36 @@ const Metadata = ({
           >
             All
           </Tag>
+        </Box>
+      </Field>
+      <Field label='sourceFilter' displayLabel='source' tooltips={tooltips}>
+        <Box sx={{}}>
+          {sources.map((d) => (
+            <Tag
+              key={d}
+              value={filters[d]}
+              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
+              onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d, sources)}
+            >
+              {sourcesDisplay[d]}
+            </Tag>
+          ))}
+        </Box>
+      </Field>
+      <Field label='yearFilter' displayLabel='year' tooltips={tooltips}>
+        <Box sx={{}}>
+          {years.map((d) => (
+            <Tag
+              key={d}
+              value={filters[d]}
+              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
+              onClick={() => toggleOption(d)}
+              onDoubleClick={() => toggleOptionUnique(d, years)}
+            >
+              {d}
+            </Tag>
+          ))}
         </Box>
       </Field>
       <Field
