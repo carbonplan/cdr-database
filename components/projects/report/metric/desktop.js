@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { useThemeUI, Box, Divider, Grid, Text } from 'theme-ui'
-import { Expander, Icons } from '@carbonplan/components'
+import { Expander } from '@carbonplan/components'
+import { Check } from '@carbonplan/icons'
 import Bar from '../graphics/bar'
 import Squares from '../graphics/squares'
 import Rating from '../graphics/rating'
@@ -9,8 +10,6 @@ import Mechanism from '../graphics/mechanism'
 import TooltipToggle from '../../../tooltip/toggle'
 import TooltipDescription from '../../../tooltip/description'
 import scales from '../graphics/scales'
-
-const { Check } = Icons
 
 const sx = {
   comment: {
@@ -163,12 +162,20 @@ const MetricDesktop = ({
           <Text sx={{ mt: ['3px'] }}>
             {(metric.rating === 1 ||
               (metric.name === 'additionality' && metric.value === 2)) && (
-              <Check sx={{ width: '28px', color: theme.tags[tag] }} />
+              <Check
+                sx={{
+                  width: '16px',
+                  ml: '2px',
+                  mt: '4px',
+                  strokeWidth: 1.5,
+                  color: theme.tags[tag],
+                }}
+              />
             )}
             {metric.rating === 0 && <Box />}
           </Text>
           {hasDetails && (
-            <Box id='container' sx={{ ml: ['8px'], mt: '5px' }}>
+            <Box id='container' sx={{ ml: ['8px'], mt: '7px' }}>
               <Expander
                 id={'expander'}
                 toggle={toggle}

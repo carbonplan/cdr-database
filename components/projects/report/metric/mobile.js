@@ -1,10 +1,9 @@
 import AnimateHeight from 'react-animate-height'
 import { useThemeUI, Box, Grid, Divider, Text } from 'theme-ui'
-import { Expander, Icons } from '@carbonplan/components'
+import { Expander } from '@carbonplan/components'
+import { Check } from '@carbonplan/icons'
 import Rating from '../graphics/rating'
 import Squares from '../graphics/squares'
-
-const { Check } = Icons
 
 const sx = {
   comment: {
@@ -92,6 +91,7 @@ const MetricMobile = ({
                 ml: [0],
                 top: ['8px'],
                 width: 28,
+                strokeWidth: 1.5,
                 color: theme.tags[tag],
                 zIndex: -1,
               }}

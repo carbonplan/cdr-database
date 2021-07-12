@@ -1,7 +1,5 @@
 import { Box } from 'theme-ui'
-import { Icons } from '@carbonplan/components'
-
-const { Check } = Icons
+import { Check } from '@carbonplan/icons'
 
 const Rating = ({ sx, value }) => {
   return (
@@ -12,9 +10,12 @@ const Rating = ({ sx, value }) => {
             sx={{
               position: 'relative',
               cursor: 'pointer',
-              width: '28px',
-              ml: ['0px'],
-              mr: ['0px'],
+              width: '16px',
+              ml: ['5px'],
+              mr: ['7px'],
+              mt: ['1px'],
+              mb: ['3px'],
+              strokeWidth: 1.5,
               opacity: d < value ? 1 : 0.3,
               zIndex: -1,
               ...sx,

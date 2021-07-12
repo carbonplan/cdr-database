@@ -4,18 +4,15 @@ import { Grid, Flex, Divider, Container, Box, Text, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import {
   Layout,
-  Buttons,
-  Links,
+  Button,
   FadeIn,
   Row,
   Column,
   Guide,
 } from '@carbonplan/components'
+import { Left } from '@carbonplan/icons'
 import Report from '../../../components/projects/report'
 import collection from '../../../data/projects'
-
-const { BackButton } = Buttons
-const { InternalLink } = Links
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value
@@ -56,12 +53,17 @@ const Project = () => {
       <Guide />
       <Row>
         <Column start={[1]} width={[6, 8, 4, 4]} sx={{ mt: [4] }}>
-          <InternalLink href='/research/cdr-database'>
-            <BackButton />
-          </InternalLink>
+          <Button
+            href='/research/cdr-database'
+            size='xs'
+            inverted
+            prefix={<Left />}
+          >
+            Back
+          </Button>
           <Box
             sx={{
-              pt: [3],
+              pt: [4],
               pb: [5, 6, 6, 6],
               fontSize: [6, 6, 7, 8],
               width: 'fit-content',

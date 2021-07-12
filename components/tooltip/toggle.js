@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Box } from 'theme-ui'
-import { Icons } from '@carbonplan/components'
+import { Info } from '@carbonplan/icons'
 
 const TooltipToggle = ({ tooltips, value, setValue }) => {
   useEffect(() => {
@@ -26,9 +26,8 @@ const TooltipToggle = ({ tooltips, value, setValue }) => {
           setValue(!value)
         }}
       >
-        <Icons.Info
+        <Info
           id='tooltip-toggle'
-          closed={true}
           sx={{
             stroke: tooltips ? (value ? 'primary' : 'muted') : 0,
             transition: '0.15s',

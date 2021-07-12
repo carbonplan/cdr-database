@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Box } from 'theme-ui'
-import { Icons } from '@carbonplan/components'
-
-const { Check } = Icons
+import { Check } from '@carbonplan/icons'
 
 const RatingPicker = ({ value, setValue }) => {
   const [hover, setHover] = useState(0)
@@ -20,9 +18,11 @@ const RatingPicker = ({ value, setValue }) => {
           <Check
             sx={{
               cursor: 'pointer',
-              width: '28px',
-              ml: ['-1px'],
-              mr: ['0px'],
+              width: '16px',
+              ml: ['4px'],
+              mr: ['8px'],
+              mt: ['1px'],
+              strokeWidth: 1.5,
               opacity:
                 (hover == 0 && d < value) || (hover > 0 && d < hover) ? 1 : 0.3,
               transition: '0.15s',

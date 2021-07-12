@@ -1,8 +1,7 @@
 import { Box, Grid } from 'theme-ui'
-import { Icons, Row, Column } from '@carbonplan/components'
+import { Row, Column } from '@carbonplan/components'
+import { Check } from '@carbonplan/icons'
 import Squares from '../projects/report/graphics/squares'
-
-const { Check } = Icons
 
 const Table = ({ one, two, three, type, children }) => {
   let width
@@ -46,7 +45,11 @@ const Table = ({ one, two, three, type, children }) => {
     >
       <TableRow final={type == 'icons'}>
         <Column start={[starts[0]]} width={[widths[0]]}>
-          {type == 'icons' && <Check sx={{ width: 36, height: 36 }} />}
+          {type == 'icons' && (
+            <Check
+              sx={{ width: 22, height: 22, mt: ['1px'], strokeWidth: 1.5 }}
+            />
+          )}
           {type == 'squares' && (
             <Box sx={{ mt: ['9px'] }}>
               <Squares data={2} />

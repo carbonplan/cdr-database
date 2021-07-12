@@ -1,15 +1,18 @@
-import { Box, Text, Link } from 'theme-ui'
-import { Buttons, Links } from '@carbonplan/components'
-
-const { BackButton } = Buttons
-const { InternalLink } = Links
+import { Box, Text } from 'theme-ui'
+import { Button, Link } from '@carbonplan/components'
+import { Left } from '@carbonplan/icons'
 
 const Intro = ({ setSection }) => {
   return (
     <Box sx={{ mt: [4] }}>
-      <InternalLink href='/research/cdr-database'>
-        <BackButton />
-      </InternalLink>
+      <Button
+        href='/research/cdr-database'
+        size='xs'
+        inverted
+        prefix={<Left />}
+      >
+        Back
+      </Button>
       <Box
         sx={{
           pt: [3],
@@ -35,19 +38,12 @@ const Intro = ({ setSection }) => {
         Descriptions of our metrics and notes on each carbon removal project we
         have analyzed. For more on this work read our articles on what we
         learned analyzing proposals submitted to{' '}
-        <InternalLink href='/research/stripe-2020-insights'>
-          Stripe in 2020
-        </InternalLink>{' '}
-        ,{' '}
-        <InternalLink href='/research/microsoft-2021-insights'>
-          Microsoft in 2021
-        </InternalLink>
-        , or{' '}
-        <InternalLink href='/research/stripe-2021-insights'>
-          Stripe in 2021
-        </InternalLink>
-        . If you have questions or want to get in touch. check out the{' '}
+        <Link href='/research/stripe-2020-insights'>Stripe in 2020</Link> ,{' '}
+        <Link href='/research/microsoft-2021-insights'>Microsoft in 2021</Link>,
+        or <Link href='/research/stripe-2021-insights'>Stripe in 2021</Link>. If
+        you have questions or want to get in touch. check out the{' '}
         <Link
+          href='/'
           sx={{
             '@media (hover: none) and (pointer: coarse)': {
               '&:hover': {
