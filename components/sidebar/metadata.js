@@ -1,9 +1,8 @@
-import { memo } from 'react'
-import { Box, Grid } from 'theme-ui'
-import { Tag, Icons, Column, Tray } from '@carbonplan/components'
+import { memo, useMemo, useCallback } from 'react'
+import { Box } from 'theme-ui'
+import { Filter, Tag } from '@carbonplan/components'
 import RatingPicker from './rating-picker'
 import Field from './field'
-import sx from '../styles'
 
 const colors = {
   dac: 'purple',
@@ -24,151 +23,74 @@ const categories = [
 ]
 const years = ['2020', '2021']
 const sources = ['stripe', 'microsoft']
-const sourcesDisplay = {
-  stripe: 'STRIPE',
-  microsoft: 'MICROSOFT',
+
+const mechanisms = ['removal', 'avoided']
+
+const filterGroups = {
+  categories,
+  sources,
+  years,
+  mechanisms,
 }
 
-const mechanisms = ['avoided', 'removal']
-
-const Metadata = ({
-  filters,
-  setFilters,
-  tooltips,
-  selectedTooltips,
-  setSelectedTooltips,
-}) => {
-  function toggleOption(value) {
-    setFilters((filters) => {
-      return { ...filters, [value]: !filters[value] }
-    })
-  }
-
-  function toggleOptionUnique(value, list) {
-    let updated = {}
-    list.forEach((d) => {
-      updated[d] = value === d ? true : false
-    })
-    setFilters((filters) => {
-      return {
-        ...filters,
-        ...updated,
-      }
-    })
-  }
-
-  function toggleAll(list) {
-    let updated = {}
-    if (isAll(list)) {
-      list.forEach((d) => {
-        updated[d] = false
-      })
-    } else {
-      list.forEach((d) => {
-        updated[d] = true
-      })
+const useFilterGroups = (filters) => {
+  return useMemo(() => {
+    const result = {}
+    for (const group in filterGroups) {
+      result[group] = filterGroups[group].reduce((obj, key) => {
+        obj[key] = filters[key]
+        return obj
+      }, {})
     }
 
-    setFilters((filters) => {
-      return {
-        ...filters,
-        ...updated,
-      }
-    })
-  }
+    return result
+  }, [filters])
+}
+const Metadata = ({ filters: combinedFilters, setFilters, tooltips }) => {
+  const filters = useFilterGroups(combinedFilters)
 
-  function setRating(value) {
+  const toggleOption = useCallback((updatedFilters) => {
+    setFilters((filters) => {
+      return { ...filters, ...updatedFilters }
+    })
+  })
+
+  const setRating = useCallback((value) => {
     setFilters((filters) => {
       return { ...filters, ['rating']: value }
     })
-  }
-
-  function isAll(list) {
-    let check = 0
-    list.forEach((d) => {
-      if (filters[d]) check += 1
-    })
-    return check == categories.length
-  }
+  })
 
   return (
     <Box sx={{ mb: [-3, -3, 0, 0], pb: [0, 0, 0, 1] }}>
       <Field label='categoryFilter' displayLabel='category' tooltips={tooltips}>
-        <Box>
-          {categories.map((d) => (
-            <Tag
-              key={d}
-              label={d}
-              value={filters[d]}
-              sx={{ color: colors[d], mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
-              onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d, categories)}
-            >
-              {d}
-            </Tag>
-          ))}
-          <Tag
-            label={'all'}
-            value={isAll(categories)}
-            onClick={() => toggleAll(categories)}
-            sx={{ mb: [1], mt: [0, 0, 0, '2px'] }}
-          >
-            All
-          </Tag>
-        </Box>
+        <Filter
+          values={filters.categories}
+          setValues={toggleOption}
+          colors={colors}
+          multiSelect
+          showAll
+        />
       </Field>
       <Field label='sourceFilter' displayLabel='source' tooltips={tooltips}>
-        <Box sx={{}}>
-          {sources.map((d) => (
-            <Tag
-              key={d}
-              value={filters[d]}
-              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
-              onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d, sources)}
-            >
-              {sourcesDisplay[d]}
-            </Tag>
-          ))}
-        </Box>
+        <Filter values={filters.sources} setValues={toggleOption} multiSelect />
       </Field>
       <Field label='yearFilter' displayLabel='year' tooltips={tooltips}>
-        <Box sx={{}}>
-          {years.map((d) => (
-            <Tag
-              key={d}
-              value={filters[d]}
-              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
-              onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d, years)}
-            >
-              {d}
-            </Tag>
-          ))}
-        </Box>
+        <Filter values={filters.years} setValues={toggleOption} multiSelect />
       </Field>
       <Field
         label='mechanismRating'
         displayLabel='mechanism'
         tooltips={tooltips}
       >
-        <Box sx={{}}>
-          {['removal', 'avoided'].map((d) => (
-            <Tag
-              key={d}
-              label={d}
-              value={filters[d]}
-              sx={{ color: 'primary', mr: [2], mb: [1], mt: [0, 0, 0, '2px'] }}
-              onClick={() => toggleOption(d)}
-              onDoubleClick={() => toggleOptionUnique(d, mechanisms)}
-            >
-              {d}
-            </Tag>
-          ))}
-        </Box>
+        <Filter
+          values={filters.mechanisms}
+          setValues={toggleOption}
+          multiSelect
+        />
       </Field>
       <Field label='ratingFilter' displayLabel='rating' tooltips={tooltips}>
-        <RatingPicker value={filters['rating']} setValue={setRating} />
+        <RatingPicker value={combinedFilters['rating']} setValue={setRating} />
       </Field>
     </Box>
   )
