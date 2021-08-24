@@ -44,7 +44,7 @@ const Axis = ({
         ref={chart}
         sx={{
           width: '100%',
-          height: '140px',
+          height: ['140px', '140px', '140px', '180px'],
           '.selection': { stroke: 'none' },
           mb: [3],
         }}

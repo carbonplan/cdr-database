@@ -17,8 +17,10 @@ const Metrics = ({
   tooltips,
 }) => {
   return (
-    <Box sx={{ mt: [2, 2, 2, 3], pt: ['12px'] }}>
-      <Box sx={{ ...sx.label, mb: [2], pb: ['6px'] }}>Filter by metrics</Box>
+    <Box sx={{ mt: [2, 2, 2, 2], pt: ['12px', '12px', '12px', '14px'] }}>
+      <Box sx={{ ...sx.label, mb: [2], pb: ['6px', '6px', '6px', '12px'] }}>
+        Filter by metrics
+      </Box>
       <Metric
         x={[10 * 0.87, 1000000 * 1.15]}
         y={[-0.5, 5.5]}
@@ -35,7 +37,7 @@ const Metrics = ({
         ticks={[10, 100, 1000, 10000, 100000, 1000000]}
         tooltips={tooltips}
       />
-      <Box sx={{ mt: [2, 2, 2, 3] }}>
+      <Box sx={{ mt: [2, 2, 2, '12px'] }}>
         <Metric
           x={[1 * 0.92, 1000 * 1.09]}
           y={[-0.5, 5.5]}

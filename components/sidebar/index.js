@@ -98,7 +98,7 @@ const Sidebar = ({
             tooltips={tooltips}
             settingsExpanded={settingsExpanded}
           />
-          <Divider sx={{ my: [0], mt: ['11px'] }} />
+          <Divider sx={{ my: [0], mt: ['11px', '11px', '11px', '14px'] }} />
           <Metrics
             highlighted={highlighted}
             filtered={filtered}
