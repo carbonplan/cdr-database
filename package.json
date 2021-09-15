@@ -42,7 +42,7 @@
     "react-use": "^17.2.4",
     "rehype-react": "^6.2.1",
     "rehype-slug": "^4.0.1",
-    "remark-parse": "^9.0.0",
+    "remark-parse": "^10.0.0",
     "remark-rehype": "^8.0.0",
     "safe-compare": "^1.1.4",
     "swr": "^0.5.6",
