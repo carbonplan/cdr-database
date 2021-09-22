@@ -14,6 +14,7 @@ const sx = {
     lineHeight: 'small',
     mt: [0],
     mb: [2],
+    wordBreak: 'break-word'
   },
   value: {
     fontFamily: 'mono',

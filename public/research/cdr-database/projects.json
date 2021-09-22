@@ -3911,8 +3911,8 @@
           "value": "N/A",
           "units": "years",
           "rating": 0.0,
-          "notes": "Project claims 1-1000 year permanence in the short term, contingent on the storage strategy identified. In the long term, project indicates plans to pursue geologic storage or mineralization.",
-          "comment": "Project presents a plan to capture CO\u2082, but does not specify what will happen to the captured CO\u2082. Project presents the full range of possible permanence outcomes, from temporary outcomes like chemical production to effectively permanent outcomes like geologic injection or mineralization in concrete. Since the project does not decidedly articulate any particular storage duration, we report N/A."
+          "notes": "Project claims 1-1000 year permanence in the short term, depending on the storage strategy identified. In the long term, project indicates plans to pursue geologic storage or mineralization. Stripe\u2019s purchase from this project was contingent on 1000+ year storage for the purchased tons via geologic sequestration or mineralization in concrete.",
+          "comment": "In its proposal, project presents a plan to capture CO\u2082, but does not specify what will happen to the captured CO\u2082. Project presents the full range of possible permanence outcomes, from temporary outcomes like chemical production to effectively permanent outcomes like geologic injection or mineralization in concrete. Since the project does not decidedly articulate any particular storage duration in its proposal, we report N/A. Further details about the negotiated purchase can be found here: https://github.com/stripe/carbon-removal-source-materials/tree/master/Purchase%20Agreements/Spring2021."
         },
         {
           "type": "Metric",
@@ -3966,6 +3966,10 @@
         {
           "date": "05-26-2021",
           "note": "First release."
+        },
+        {
+          "date": "09-17-2021",
+          "note": "Heirloom\u2019s public proposal is ambiguous regarding the permanence of captured carbon. In our original project report, we reported the permanence as N/A and reflected the proposal\u2019s ambiguity in our permanence note and comment. Heirloom has since confirmed that their purchase agreement with Stripe was contingent on 1000+ year storage for the purchased tons via geologic sequestration or mineralization in concrete. We updated the permanence note and comment to reflect this understanding."
         }
       ],
       "documentation": {

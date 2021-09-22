@@ -21,6 +21,7 @@ const sx = {
     mt: [0],
     mb: [2],
     maxWidth: '450px',
+    wordBreak: 'break-word'
   },
   value: {
     fontFamily: 'mono',
