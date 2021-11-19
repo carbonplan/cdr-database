@@ -1,0 +1,18 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Freay"
+    given-names: "Chay"
+    orcid: https://orcid.org/0000-0002-5397-017X
+  - family-names: "Cullenward"
+    given-names: "Danny"
+    orcid: https://orcid.org/0000-0002-6803-9572
+  - family-names: "Hamman"
+    given-names: "Joseph J."
+    orcid: https://orcid.org/0000-0001-7479-8439
+  - family-names: "Freeman"
+    given-names: "Jeremy"
+    orcid: https://orcid.org/0000-0001-7077-7972
+title: carbonplan/cdr-database
+date-released: 2021-05-21
+doi: 10.5281/zenodo.5715426
