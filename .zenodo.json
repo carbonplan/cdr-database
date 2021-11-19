@@ -1,0 +1,28 @@
+{
+  "description": "Reports on carbon removal projects and technologies.",
+  "title": "carbonplan/cdr-database",
+  "upload_type": "software",
+  "creators": [
+    {
+      "orcid": "0000-0002-5397-017X",
+      "affiliation": "CarbonPlan",
+      "name": "Freya Chay"
+    },
+    {
+      "orcid": "0000-0002-6803-9572",
+      "affiliation": "CarbonPlan",
+      "name": "Danny Cullenward"
+    },
+    {
+      "orcid": "0000-0001-7479-8439",
+      "affiliation": "CarbonPlan",
+      "name": "Joseph Hamman"
+    },
+    {
+      "orcid": "0000-0001-7077-7972",
+      "affiliation": "CarbonPlan",
+      "name": "Jeremy Freeman"
+    }
+  ],
+  "access_right": "open"
+}

@@ -17,6 +17,8 @@
 [actions]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml
 [mit license]: https://badgen.net/badge/license/MIT/blue
 
+[![DOI](https://zenodo.org/badge/252217021.svg)](https://zenodo.org/badge/latestdoi/252217021)
+
 ## resources
 
 - Main website: https://carbonplan.org/
