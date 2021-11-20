@@ -18,7 +18,6 @@
 [actions]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml
 [mit license]: https://badgen.net/badge/license/MIT/blue
 
-
 ## resources
 
 - Main website: https://carbonplan.org/
