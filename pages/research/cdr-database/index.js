@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../components/main'
 import collection from '../../../data/projects'
+import { withAuth } from '../../../lib/auth'
 
 const selectMetric = (d, name) => {
   return d.metrics.filter((m) => m.name == name)[0].value
@@ -52,4 +53,4 @@ function Index() {
   )
 }
 
-export default Index
+export default withAuth(Index, ['admin'])

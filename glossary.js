@@ -20,9 +20,9 @@ module.exports = {
   ratingFilter:
     'Click to filter projects by setting a minimum rating. All projects with a rating as high or higher will be shown. The rating for each project reflects our overall confidence in project claims on a scale from 1 to 5. Validation of mechanism, volume, negativity, or permanence, or a perfect score on additionality, each add 1 to the total rating. A minimum score on additionality subtracts 1 from the total rating. Rating does not necessarily reflect project quality, but rather our ability to validate key information.',
   mechanism:
-    'Does the project remove carbon dioxide from the atmosphere (RMV) or does it avoid emissions that would have otherwise occurred (AVD) or both (BOTH)? While both can have positive climate benefits, the difference matters for accounting purposes.',
+    'Does the project remove carbon dioxide from the atmosphere (RMV), avoid emissions that would have otherwise occurred (AVD), or both (BOTH)? Or is it only an approach for storing carbon dioxide (STO) without any removal or avoided emissions? While all can have positive climate benefits, the difference matters for accounting purposes.',
   mechanismRating:
-    'Click to filter projects based on whether they remove carbon dioxide from the atmosphere (REMOVAL) or avoid emissions that would have otherwise occurred (AVOIDED). While both can have positive climate benefits, the difference matters for accounting purposes.',
+    'Click to filter projects based on whether they remove carbon dioxide from the atmosphere (REMOVAL), avoid emissions that would have otherwise occurred (AVOIDED), or only store carbon dioxide without removing it from the atmosphere or avoiding emissions (STORAGE). While all can have positive climate benefits, the differences matters for accounting purposes.',
   negativity:
     'Negativity reflects the emissions intensity of different carbon removal solutions, and we define it as 1 minus the ratio of gross project emissions to gross climate benefits.',
   additionality:

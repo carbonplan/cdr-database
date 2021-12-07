@@ -24,7 +24,7 @@ const categories = [
 const years = ['2020', '2021']
 const sources = ['stripe', 'microsoft']
 
-const mechanisms = ['removal', 'avoided']
+const mechanisms = ['removal', 'avoided', 'storage']
 
 const filterGroups = {
   categories,

@@ -32,10 +32,12 @@ const Metric = ({ metric, tag, tooltips, embed }) => {
     if (mobile) {
       if (key == 'mechanism' && value == 0) return 'REMOVAL'
       if (key == 'mechanism' && value == 1) return 'AVOIDED'
+      if (key == 'mechanism' && value == 3) return 'STORAGE'
     }
     if (!mobile) {
       if (key == 'mechanism' && value == 0) return 'RMV'
       if (key == 'mechanism' && value == 1) return 'AVD'
+      if (key == 'mechanism' && value == 3) return 'STO'
     }
     if (key == 'mechanism' && value == 2) return 'BOTH'
     else if (key == 'price') {

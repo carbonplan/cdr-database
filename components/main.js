@@ -15,6 +15,7 @@ const initFilters = {
   microsoft: true,
   avoided: true,
   removal: true,
+  storage: true,
   group: false,
   2020: true,
   2021: true,
@@ -81,7 +82,8 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
     const inMechanism =
       (filters.removal && d.metrics[0].value == 0) ||
       (filters.avoided && d.metrics[0].value == 1) ||
-      (filters.removal && filters.avoided && d.metrics[0].value == 2)
+      (filters.removal && filters.avoided && d.metrics[0].value == 2) ||
+      (filters.storage && d.metrics[0].value == 3)
     const inBounds =
       checkBounds(d.metrics[1].value, bounds.volume, 10, 1000000) &&
       checkBounds(d.metrics[3].value, bounds.permanence, 1, 1000)
