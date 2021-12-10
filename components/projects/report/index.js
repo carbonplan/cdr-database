@@ -215,12 +215,12 @@ const Report = ({ data, setHighlighted, tooltips, embed }) => {
         {id.includes('STRP') &
         (parseInt(id.split('STRP')[1]) > 24 &&
           parseInt(id.split('STRP')[1]) <= 50)
-          ? 'Stripe Q1 2021'
+          ? 'Stripe Spring 2021'
           : ''}
         {id.includes('STRP') &
         (parseInt(id.split('STRP')[1]) > 50 &&
           parseInt(id.split('STRP')[1]) <= 61)
-          ? 'Stripe Q4 2021'
+          ? 'Stripe Fall 2021'
           : ''}
         {id.includes('MSFT') ? 'Microsoft 2021' : ''}
         <Box as='span' sx={{ mx: [2] }}>
