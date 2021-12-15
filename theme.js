@@ -9,6 +9,7 @@ export default {
     biomass: 'yellow',
     burial: 'yellow',
     ocean: 'teal',
+    alkalinity: 'teal',
     soil: 'orange',
     reforestation: 'green',
     'redd+': 'green',

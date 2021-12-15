@@ -14,9 +14,15 @@ Our analysis is based exclusively on public materials, including project proposa
 
 Below is a brief overview of our current primary sources.
 
-## Stripe 2021
+## Stripe Fall 2021
 
-In sprint 2021, Stripe ran a new round of [carbon removal purchases](https://stripe.com/newsroom/news/spring-21-carbon-removal-purchases). CarbonPlan collaborated with Stripe to design a new, open source [carbon removal application](https://github.com/carbonplan/carbon-removal-application). They made a call for proposals, solicited applications, evaluated them, and selected winners for their Spring 2021 purchase. All public materials are available [on GitHub](https://github.com/stripe/carbon-removal-source-materials). They received 26 submissions. We included 23 (88%) for our analyses.
+In Fall 2021, Stripe ran a second round of [carbon removal purchases](https://stripe.com/newsroom/news/fall-21-carbon-removal-purchases). They made a call for proposals, solicited applications, evaluated them, and selected winners for their Fall 2021 purchase. All public materials are available [on GitHub](https://github.com/stripe/carbon-removal-source-materials). They received 11 submissions. We included 11 (100%) for our analyses.
+
+Read [our blog post](https://carbonplan.org/blog/stripe-2021-additions) for a summary of our evaluation of these projects.
+
+## Stripe Spring 2021
+
+In Spring 2021, Stripe ran a new round of [carbon removal purchases](https://stripe.com/newsroom/news/spring-21-carbon-removal-purchases). CarbonPlan collaborated with Stripe to design a new, open source [carbon removal application](https://github.com/carbonplan/carbon-removal-application). They made a call for proposals, solicited applications, evaluated them, and selected winners for their Spring 2021 purchase. All public materials are available [on GitHub](https://github.com/stripe/carbon-removal-source-materials). They received 26 submissions. We included 23 (88%) for our analyses.
 
 We excluded one proposal that did not interact with the carbon cycle, and two proposals that presented broad theoretical pathways for carbon removal rather than a concrete and immediate offer.
 
