@@ -27,7 +27,7 @@ In the remainder of this document, we explain each metric and the overall projec
 
 ## Mechanism
 
-A project’s mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO₂ from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature a closed circle on the right-hand side of the metric and the abbreviation AVD.
+A project’s mechanism is its fundamental interaction with the global carbon cycle. A project that removes CO₂ from the atmosphere will feature a downward arrow on the left-hand side of the metric and the abbreviation CDR. A project that reduces or avoids carbon dioxide emissions — for example, by storing it in a more permanent form — will feature a closed circle on the right-hand side of the metric and the abbreviation AVD. In the case where a proposal offers only carbon storage (but not avoided emissions or carbon removal), we indicate the mechanism as N/A.
 
 While we only consider projects in this database that have the potential to be part of a carbon removal system, some of these projects are, in their current form, only responsible for avoided emissions. For example, utilization of CO₂ for storage in building materials where the CO₂ is currently sourced from an industrial waste stream currently constitutes an avoided emissions process, but would constitute carbon removal if its CO₂ were sourced from direct air capture or biological sources.
 
