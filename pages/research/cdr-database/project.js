@@ -51,7 +51,7 @@ const Project = () => {
       nav={'research'}
     >
       <Guide />
-      <Row sx={{mb: [-8, -8, -9, -10]}}>
+      <Row sx={{ mb: [-8, -8, -9, -10] }}>
         <Column start={[1]} width={[6, 8, 4, 4]} sx={{ mt: [4] }}>
           <Button
             href='/research/cdr-database'
