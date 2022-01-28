@@ -105,7 +105,7 @@ const Main = ({ projects, metrics, settingsExpanded }) => {
   }
 
   return (
-    <Row sx={{mb: [-8, -8, -9, -10]}}>
+    <Row sx={{ mb: [-8, -8, -9, -10] }}>
       <Column start={[1]} width={[6, 7, 4, 4]}>
         <Sidebar
           bounds={bounds}
