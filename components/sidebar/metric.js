@@ -41,7 +41,7 @@ const Metric = ({
   return (
     <Box>
       <Row columns={[4]} sx={{ mb: [1, 1, 1, 2] }}>
-        <Column start={[1]} width={[2]}>
+        <Column start={[1]} width={[2]} dr={1}>
           <Box
             sx={{
               ...sx.label,
@@ -108,7 +108,7 @@ const Metric = ({
                   fontFamily: 'mono',
                   fontSize: [1, 1, 1, 2],
                   textTransform: 'uppercase',
-                  mt: ['3px'],
+                  mt: ['4px'],
                   userSelect: 'none',
                 }}
               >
