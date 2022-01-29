@@ -140,7 +140,7 @@ def write_json(collection, output):
 def main(sources, output_projects, output_methods, output_numbers, output_csv, output_json):
 
     projects = []
-    metadata = get_cf_global_attrs(license='CC-BY', version=VERSION)
+    metadata = get_cf_global_attrs(license='CC-BY-4.0', version=VERSION)
 
     if 'strp2020' in sources:
         projects.extend(strp2020.make_projects())
