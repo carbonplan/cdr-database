@@ -1,5 +1,14 @@
 {
   "type": "ProjectCollection",
+  "metadata": {
+    "license": "CC-BY",
+    "version": "1.2.0",
+    "history": "Created: Fri Jan 28 16:20:45 2022",
+    "institution": "CarbonPlan",
+    "source": "./scripts/build_projects.py",
+    "hostname": "Joes-Mac-mini.local",
+    "username": "jhamman"
+  },
   "projects": [
     {
       "type": "Project",

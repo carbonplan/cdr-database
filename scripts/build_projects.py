@@ -8,35 +8,9 @@ import pandas as pd
 import strp2020
 import strp2021q1
 import strp2021q4
+from carbonplan_data.metadata import get_cf_global_attrs
 
-
-@click.command()
-@click.argument('sources', nargs=-1)
-@click.option('--output-projects', default='projects.js', show_default=True)
-@click.option('--output-methods', default='methods.js', show_default=True)
-@click.option('--output-numbers', default='numbers.js', show_default=True)
-@click.option('--output-csv', default='projects.csv', show_default=True)
-@click.option('--output-json', default='projects.json', show_default=True)
-def main(sources, output_projects, output_methods, output_numbers, output_csv, output_json):
-
-    projects = []
-
-    if 'strp2020' in sources:
-        projects.extend(strp2020.make_projects())
-    if 'strp2021q1' in sources:
-        projects.extend(strp2021q1.make_projects())
-    if 'strp2021q4' in sources:
-        projects.extend(strp2021q4.make_projects())
-    if 'msft2021' in sources:
-        projects.extend(msft2021.make_projects())
-
-    project_collection = {"type": "ProjectCollection", "projects": projects}
-
-    write_projects(project_collection, output_projects)
-    write_methods(project_collection, output_methods)
-    # write_numbers(project_collection, output_numbers)
-    write_csv(project_collection, output_csv)
-    write_json(project_collection, output_json)
+VERSION = '1.2.0'
 
 
 def write_projects(project_collection, output):
@@ -143,12 +117,51 @@ def write_csv(collection, output):
 
     df['notes'] = [d['notes'] for d in projects]
 
-    df.to_csv('public/research/cdr-database/' + output, index=False)
+    fname = 'public/research/cdr-database/' + output
+    with open(fname, 'w') as f:
+        f.write('# carbonplan / cdr-database\n')
+        for key, val in collection['metadata'].items():
+            f.write(f'# {key}: {val}\n')
+        df.to_csv(f, index=False)
 
 
 def write_json(collection, output):
     with open('public/research/cdr-database/' + output, "w") as f:
         f.write(json.dumps(collection))
+
+
+@click.command()
+@click.argument('sources', nargs=-1)
+@click.option('--output-projects', default='projects.js', show_default=True)
+@click.option('--output-methods', default='methods.js', show_default=True)
+@click.option('--output-numbers', default='numbers.js', show_default=True)
+@click.option('--output-csv', default='projects.csv', show_default=True)
+@click.option('--output-json', default='projects.json', show_default=True)
+def main(sources, output_projects, output_methods, output_numbers, output_csv, output_json):
+
+    projects = []
+    metadata = get_cf_global_attrs(license='CC-BY', version=VERSION)
+
+    if 'strp2020' in sources:
+        projects.extend(strp2020.make_projects())
+    if 'strp2021q1' in sources:
+        projects.extend(strp2021q1.make_projects())
+    if 'strp2021q4' in sources:
+        projects.extend(strp2021q4.make_projects())
+    if 'msft2021' in sources:
+        projects.extend(msft2021.make_projects())
+
+    project_collection = {
+        "type": "ProjectCollection",
+        "metadata": metadata,
+        "projects": projects,
+    }
+
+    write_projects(project_collection, output_projects)
+    write_methods(project_collection, output_methods)
+    # write_numbers(project_collection, output_numbers)
+    write_csv(project_collection, output_csv)
+    write_json(project_collection, output_json)
 
 
 if __name__ == "__main__":
