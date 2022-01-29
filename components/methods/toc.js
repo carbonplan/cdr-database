@@ -3,7 +3,7 @@ import { Box, Grid, Link, Divider } from 'theme-ui'
 import { default as NextLink } from 'next/link'
 import { Expander } from '@carbonplan/components'
 
-const sections = ['Sources', 'Metrics', 'Projects', 'Feedback']
+const sections = ['Sources', 'Metrics', 'Projects', 'Feedback', 'Terms']
 
 const TOC = ({ section, setSection }) => {
   const [expandedMetrics, setExpandedMetrics] = useState(false)

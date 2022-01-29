@@ -79,8 +79,12 @@ const Sidebar = ({
               download='CarbonPlan-CDR-Database.csv'
             >
               CSV
+            </Link>{' '}
+            (licensed as{' '}
+            <Link href='https://creativecommons.org/licenses/by/4.0/'>
+              CC-BY
             </Link>
-            . Read our{' '}
+            ). Read our{' '}
             <NextLink href={'/research/cdr-database/methods'} passHref>
               <Link>methods</Link>
             </NextLink>
