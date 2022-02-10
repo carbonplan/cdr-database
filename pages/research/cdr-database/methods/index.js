@@ -13,8 +13,8 @@ function Methods(props) {
     <Layout
       footer={false}
       metadata={false}
-      title={'cdr database / research / carbonplan'}
-      description={'Public database of reports on carbon removal projects.'}
+      title={'CDR Database – CarbonPlan'}
+      description={'Methods for our public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >
