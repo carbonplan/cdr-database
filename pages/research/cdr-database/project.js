@@ -45,8 +45,8 @@ const Project = () => {
       footer={false}
       metadata={false}
       dimmer={true}
-      title={'cdr database / research / carbonplan'}
-      description={'Public database of reports on carbon removal projects.'}
+      title={'CDR Project – CarbonPlan'}
+      description={`Report for ${project?.applicant} – an entry from our public database of reports on carbon removal projects.`}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >

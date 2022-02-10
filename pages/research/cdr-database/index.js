@@ -37,7 +37,7 @@ function Index() {
         value: settingsExpanded,
         onClick: () => setSettingsExpanded(!settingsExpanded),
       }}
-      title={'cdr database / research / carbonplan'}
+      title={'CDR Database – CarbonPlan'}
       description={'Public database of reports on carbon removal projects.'}
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
