@@ -14,7 +14,9 @@ function Methods(props) {
       footer={false}
       metadata={false}
       title={'CDR Database – CarbonPlan'}
-      description={'Methods for our public database of reports on carbon removal projects.'}
+      description={
+        'Methods for our public database of reports on carbon removal projects.'
+      }
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >
