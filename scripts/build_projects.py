@@ -10,7 +10,7 @@ import strp2021q1
 import strp2021q4
 from carbonplan_data.metadata import get_cf_global_attrs
 
-VERSION = '1.2.0'
+VERSION = '1.2.1'
 
 
 def write_projects(project_collection, output):
