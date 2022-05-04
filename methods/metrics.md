@@ -15,7 +15,7 @@ The mark next to each metric shows our validation. We assigned projects a <Inlin
 
 It is important to note that our validation is dependent on access to specific project information, as well as relevant science and data. Validation may therefore reflect underlying biases, such as geographic inequities in publicly accessible science and data, or differences in the information solicited from projects by specific RFPs.
 
-Validation on metrics is only provided for mechanism, volume, negativity, and permanence. We do not provide validation on vost. In some ways price is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, price also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the price.
+Validation on metrics is only provided for mechanism, volume, negativity, and permanence. We do not provide validation on cost. In some ways price is self-evident because the price of the offering is set directly by the project. When expressed in terms of $/tCO₂, however, price also reflects uncertainty in volume. Because we validate volume separately, we do not attempt to specifically validate the price.
 
 For additionality and specificity we provide a qualitative score from 1 to 3, along with comments. Both of these scores are contextual. Additionality is less important when funding decisions are oriented around encouraging innovation, rather than carbon offsetting. For specificity, our scores should be interpreted in light of the fact that all projects in our database have provided a baseline level of information, and achieved a significant degree of transparency, by making materials public.
 
