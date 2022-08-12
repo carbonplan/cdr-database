@@ -3,7 +3,7 @@
   "metadata": {
     "license": "CC-BY-4.0",
     "version": "1.2.1",
-    "history": "Created: Fri Aug 12 10:39:22 2022",
+    "history": "Created: Fri Aug 12 11:20:05 2022",
     "institution": "CarbonPlan",
     "source": "scripts/build_projects.py",
     "hostname": "Katas-MacBook-Pro-2.local",
@@ -1979,10 +1979,6 @@
         {
           "date": "03-17-2021",
           "note": "Added documentation column to match new conventions."
-        },
-        {
-          "date": "08-12-2022",
-          "note": "Updated applicant name to reflect organizational name-change."
         }
       ],
       "notes": ""
