@@ -3,11 +3,11 @@
   "metadata": {
     "license": "CC-BY-4.0",
     "version": "1.2.1",
-    "history": "Created: Wed Mar  2 11:25:27 2022",
+    "history": "Created: Fri Aug 12 11:20:05 2022",
     "institution": "CarbonPlan",
     "source": "scripts/build_projects.py",
-    "hostname": "freeman.local",
-    "username": "freeman"
+    "hostname": "Katas-MacBook-Pro-2.local",
+    "username": "katamartin"
   },
   "projects": [
     {
@@ -4064,7 +4064,7 @@
       ],
       "id": "STRP050",
       "description": "Enhanced weathering for carbon removal.",
-      "applicant": "Future Forest",
+      "applicant": "UNDO (prev. Future Forest)",
       "rating": "4",
       "keywords": "",
       "methods": "",
@@ -4082,11 +4082,15 @@
         {
           "date": "05-26-2021",
           "note": "First release."
+        },
+        {
+          "date": "08-12-2022",
+          "note": "Updated applicant name and website to reflect organizational name-change."
         }
       ],
       "documentation": {
         "name": "Website",
-        "url": "https://thefutureforestcompany.com/"
+        "url": "https://un-do.com/"
       },
       "notes": ""
     },
