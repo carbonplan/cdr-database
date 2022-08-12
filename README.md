@@ -23,6 +23,22 @@
 - Main website: https://carbonplan.org/
 - This site: https://carbonplan.org/research/cdr-database
 
+## to build the projects data
+
+To run the script that generates the project data, first install the requirements:
+
+```shell
+pip install -r requirements.txt
+```
+
+You will also need to unlock the Google Sheets key using [`git-crypt`](https://github.com/AGWA/git-crypt). Unlocking is simplest using a symmetric secret key securely shared by a team member.
+
+Finally, you may run the command to generate the projects list for all review cycles:
+
+```shell
+python scripts/build_projects.py strp2020 strp2021q1 strp2021q4 msft2021
+```
+
 ## to build the site locally
 
 Assuming you already have `Node.js` installed, you can install the build dependencies with:
