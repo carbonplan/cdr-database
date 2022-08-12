@@ -1,0 +1,6 @@
+click
+gspread
+oauth2client
+pandas
+carbonplan_data
+intake
