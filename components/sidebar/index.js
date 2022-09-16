@@ -43,7 +43,7 @@ const Sidebar = ({
           mx: ['-20px'],
         }}
       >
-        <Notice/>
+        <Notice />
         <Box
           sx={{
             pt: [3],

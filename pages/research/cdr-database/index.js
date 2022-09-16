@@ -43,7 +43,9 @@ function Index() {
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >
-      <Box sx={{display: ['none', 'none', 'initial', 'initial']}}><Notice /></Box>
+      <Box sx={{ display: ['none', 'none', 'initial', 'initial'] }}>
+        <Notice />
+      </Box>
       <Guide />
       <Main
         projects={projects}

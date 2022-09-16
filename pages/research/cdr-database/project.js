@@ -52,7 +52,9 @@ const Project = () => {
       nav={'research'}
     >
       <Guide />
-      <Box sx={{display: ['none', 'none', 'inherit', 'inherit']}}><Notice /></Box>
+      <Box sx={{ display: ['none', 'none', 'inherit', 'inherit'] }}>
+        <Notice />
+      </Box>
       <Row sx={{ mb: [-8, -8, -9, -10] }}>
         <Column start={[1]} width={[6, 8, 4, 4]} sx={{ mt: [4] }}>
           <Button
@@ -63,8 +65,14 @@ const Project = () => {
           >
             Back
           </Button>
-          <Box sx={{borderTop: ({colors}) => `solid 1px ${colors.muted}`, mt: [4], display: ['inherit', 'inherit', 'none', 'none']}}>
-          <Notice />
+          <Box
+            sx={{
+              borderTop: ({ colors }) => `solid 1px ${colors.muted}`,
+              mt: [4],
+              display: ['inherit', 'inherit', 'none', 'none'],
+            }}
+          >
+            <Notice />
           </Box>
           <Box
             sx={{
