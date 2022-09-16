@@ -1,6 +1,7 @@
 import { Box, Text } from 'theme-ui'
 import { Button, Link } from '@carbonplan/components'
 import { Left } from '@carbonplan/icons'
+import Notice from '../notice'
 
 const Intro = ({ setSection }) => {
   return (
@@ -13,6 +14,15 @@ const Intro = ({ setSection }) => {
       >
         Back
       </Button>
+      <Box
+        sx={{
+          borderTop: ({ colors }) => `solid 1px ${colors.muted}`,
+          mt: [4],
+          display: ['inherit', 'inherit', 'none', 'none'],
+        }}
+      >
+        <Notice />
+      </Box>
       <Box
         sx={{
           pt: [3],

@@ -1,6 +1,8 @@
+import { Box } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../../components/methods/main'
+import Notice from '../../../../components/notice'
 
 function Methods(props) {
   const [section, setSection] = useState('sources')
@@ -20,6 +22,9 @@ function Methods(props) {
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >
+      <Box sx={{ display: ['none', 'none', 'initial', 'initial'] }}>
+        <Notice />
+      </Box>
       <Guide />
       <Main section={section} setSection={setSection} />
     </Layout>
