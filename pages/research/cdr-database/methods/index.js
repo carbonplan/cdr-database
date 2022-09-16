@@ -12,22 +12,24 @@ function Methods(props) {
   }, [section])
 
   return (
-    <Layout
-      footer={false}
-      metadata={false}
-      title={'CDR Database – CarbonPlan'}
-      description={
-        'Methods for our public database of reports on carbon removal projects.'
-      }
-      card={'https://images.carbonplan.org/social/cdr-database.png'}
-      nav={'research'}
-    >
+    <>
       <Box sx={{ display: ['none', 'none', 'initial', 'initial'] }}>
         <Notice />
       </Box>
-      <Guide />
-      <Main section={section} setSection={setSection} />
-    </Layout>
+      <Layout
+        footer={false}
+        metadata={false}
+        title={'CDR Database – CarbonPlan'}
+        description={
+          'Methods for our public database of reports on carbon removal projects.'
+        }
+        card={'https://images.carbonplan.org/social/cdr-database.png'}
+        nav={'research'}
+      >
+        <Guide />
+        <Main section={section} setSection={setSection} />
+      </Layout>
+    </>
   )
 }
 
