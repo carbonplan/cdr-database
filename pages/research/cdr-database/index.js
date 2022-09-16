@@ -3,6 +3,7 @@ import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useRouter } from 'next/router'
 import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../components/main'
+import Notice from '../../../components/notice'
 import collection from '../../../data/projects'
 
 const selectMetric = (d, name) => {
@@ -42,6 +43,7 @@ function Index() {
       card={'https://images.carbonplan.org/social/cdr-database.png'}
       nav={'research'}
     >
+      <Box sx={{display: ['none', 'none', 'initial', 'initial']}}><Notice /></Box>
       <Guide />
       <Main
         projects={projects}
