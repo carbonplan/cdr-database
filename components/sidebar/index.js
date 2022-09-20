@@ -6,6 +6,7 @@ import Search from './search'
 import Metadata from './metadata'
 import Metrics from './metrics'
 import Mobile from './mobile'
+import Notice from '../notice'
 
 const Sidebar = ({
   highlighted,
@@ -42,6 +43,7 @@ const Sidebar = ({
           mx: ['-20px'],
         }}
       >
+        <Notice />
         <Box
           sx={{
             pt: [3],

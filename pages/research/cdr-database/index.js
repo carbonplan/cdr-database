@@ -3,6 +3,7 @@ import { Grid, Flex, Container, Box, Text } from 'theme-ui'
 import { useRouter } from 'next/router'
 import { Layout, Guide } from '@carbonplan/components'
 import Main from '../../../components/main'
+import Notice from '../../../components/notice'
 import collection from '../../../data/projects'
 
 const selectMetric = (d, name) => {
@@ -29,26 +30,31 @@ function Index() {
   const [settingsExpanded, setSettingsExpanded] = useState(false)
 
   return (
-    <Layout
-      footer={false}
-      metadata={false}
-      dimmer={'bottom'}
-      settings={{
-        value: settingsExpanded,
-        onClick: () => setSettingsExpanded(!settingsExpanded),
-      }}
-      title={'CDR Database – CarbonPlan'}
-      description={'Public database of reports on carbon removal projects.'}
-      card={'https://images.carbonplan.org/social/cdr-database.png'}
-      nav={'research'}
-    >
-      <Guide />
-      <Main
-        projects={projects}
-        metrics={metrics}
-        settingsExpanded={settingsExpanded}
-      />
-    </Layout>
+    <>
+      <Box sx={{ display: ['none', 'none', 'initial', 'initial'] }}>
+        <Notice />
+      </Box>
+      <Layout
+        footer={false}
+        metadata={false}
+        dimmer={'bottom'}
+        settings={{
+          value: settingsExpanded,
+          onClick: () => setSettingsExpanded(!settingsExpanded),
+        }}
+        title={'CDR Database – CarbonPlan'}
+        description={'Public database of reports on carbon removal projects.'}
+        card={'https://images.carbonplan.org/social/cdr-database.png'}
+        nav={'research'}
+      >
+        <Guide />
+        <Main
+          projects={projects}
+          metrics={metrics}
+          settingsExpanded={settingsExpanded}
+        />
+      </Layout>
+    </>
   )
 }
 
