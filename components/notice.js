@@ -20,7 +20,10 @@ const Notice = () => {
         }}
       >
         This resource is no longer maintained or updated, read our{' '}
-        <Link sx={{ color: 'secondary' }} href=''>
+        <Link
+          sx={{ color: 'secondary' }}
+          href='https://carbonplan.org/blog/cdr-database-archived'
+        >
           post
         </Link>
         .
@@ -39,7 +42,10 @@ const Notice = () => {
         }}
       >
         This resource is no longer maintained or updated, read our{' '}
-        <Link sx={{ color: 'secondary' }} href=''>
+        <Link
+          sx={{ color: 'secondary' }}
+          href='https://carbonplan.org/blog/cdr-database-archived'
+        >
           post
         </Link>
         .
