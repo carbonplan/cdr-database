@@ -9,7 +9,7 @@
 
 **reports on carbon removal projects and technologies**
 
-[![Checks status](https://img.shields.io/github/checks-status/carbonplan/cdr-database/main?style=flat)](https://github.com/carbonplan/cdr-database/actions/workflows/main.yml)
+![Checks status](https://github.com/carbonplan/cdr-database/actions/workflows/main.yml/badge.svg)
 [![License](https://img.shields.io/github/license/carbonplan/cdr-database?style=flat)](https://github.com/carbonplan/cdr-database/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/252217021.svg)](https://zenodo.org/badge/latestdoi/252217021)
 
