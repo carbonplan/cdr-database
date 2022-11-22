@@ -7,16 +7,9 @@
 
 **reports on carbon removal projects and technologies**
 
-[![GitHub][github-badge]][github]
-[![Build Status]][actions]
-![MIT License][]
+[![Checks status](https://img.shields.io/github/checks-status/carbonplan/cdr-database/main?style=flat)](https://github.com/carbonplan/cdr-database/actions/workflows/main.yml)
+[![License](https://img.shields.io/github/license/carbonplan/cdr-database?style=flat)](https://github.com/carbonplan/cdr-database/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/252217021.svg)](https://zenodo.org/badge/latestdoi/252217021)
-
-[github]: https://github.com/carbonplan/cdr-database
-[github-badge]: https://badgen.net/badge/-/github?icon=github&label
-[build status]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yml/badge.svg
-[actions]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml
-[mit license]: https://badgen.net/badge/license/MIT/blue
 
 ## resources
 
