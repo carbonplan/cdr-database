@@ -38,7 +38,6 @@ repos:
     rev: 'v2.7.1'
     hooks:
       - id: prettier
-        language_version: system
         files: "\\.(\
           css|less|scss\
           |graphql|gql\
@@ -54,7 +53,6 @@ repos:
     hooks:
       - id: prettier
         name: prettier-markdown
-        language_version: system
         entry: prettier --write --parser mdx
         files: "\\.(\
           |md|markdown|mdown|mkdn\
