@@ -1,22 +1,20 @@
-<img
-  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
-  height='48'
-/>
+<p align="left" >
+<a href='https://carbonplan.org'>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://carbonplan-assets.s3.amazonaws.com/monogram/light-small.png">
+  <img alt="CarbonPlan monogram." height="48" src="https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png">
+</picture>
+</a>
+</p>
 
 # carbonplan / cdr-database
 
 **reports on carbon removal projects and technologies**
 
-[![GitHub][github-badge]][github]
-[![Build Status]][actions]
-![MIT License][]
+[![CI](https://github.com/carbonplan/cdr-database/actions/workflows/main.yml/badge.svg)](https://github.com/carbonplan/cdr-database/actions/workflows/main.yml)
+![GitHub deployments](https://img.shields.io/github/deployments/carbonplan/cdr-database/production?label=vercel)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/252217021.svg)](https://zenodo.org/badge/latestdoi/252217021)
-
-[github]: https://github.com/carbonplan/cdr-database
-[github-badge]: https://badgen.net/badge/-/github?icon=github&label
-[build status]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yml/badge.svg
-[actions]: https://github.com/carbonplan/cdr-database/actions/workflows/main.yaml
-[mit license]: https://badgen.net/badge/license/MIT/blue
 
 ## resources
 
@@ -61,4 +59,4 @@ All the code in this repository is [MIT](https://choosealicense.com/licenses/mit
 
 ## about us
 
-CarbonPlan is a non-profit organization that uses data and science for climate action. We aim to improve the transparency and scientific integrity of climate solutions with open data and tools. Find out more at [carbonplan.org](https://carbonplan.org/) or get in touch by [opening an issue](https://github.com/carbonplan/cdr-database/issues/new) or [sending us an email](mailto:hello@carbonplan.org).
+CarbonPlan is a nonprofit organization that uses data and science for climate action. We aim to improve the transparency and scientific integrity of climate solutions with open data and tools. Find out more at [carbonplan.org](https://carbonplan.org/) or get in touch by [opening an issue](https://github.com/carbonplan/cdr-database/issues/new) or [sending us an email](mailto:hello@carbonplan.org).
