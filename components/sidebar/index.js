@@ -87,7 +87,11 @@ const Sidebar = ({
               CC-BY
             </Link>
             ). Read our{' '}
-            <NextLink href={'/research/cdr-database/methods'} passHref>
+            <NextLink
+              href={'/research/cdr-database/methods'}
+              legacyBehavior
+              passHref
+            >
               <Link>methods</Link>
             </NextLink>
             .
