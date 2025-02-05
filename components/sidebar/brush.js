@@ -31,7 +31,7 @@ const Brush = ({ label, setBounds }) => {
             [0, 0],
             [100, 100],
           ])
-          .on('start brush', (e) => update(e, x, setBounds, label))
+          .on('start brush', (e) => update(e, x, setBounds, label)),
       )
     }
   }, [])
