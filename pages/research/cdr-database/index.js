@@ -12,7 +12,7 @@ const selectMetric = (d, name) => {
 
 function Index() {
   const projects = collection.projects.sort((a, b) =>
-    a.applicant.localeCompare(b.applicant)
+    a.applicant.localeCompare(b.applicant),
   )
   const metrics = {
     volume: projects.map((d) => ({

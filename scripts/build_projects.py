@@ -138,7 +138,6 @@ def write_json(collection, output):
 @click.option('--output-csv', default='projects.csv', show_default=True)
 @click.option('--output-json', default='projects.json', show_default=True)
 def main(sources, output_projects, output_methods, output_numbers, output_csv, output_json):
-
     projects = []
     metadata = get_cf_global_attrs(license='CC-BY-4.0', version=VERSION)
 

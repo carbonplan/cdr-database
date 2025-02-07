@@ -84,7 +84,7 @@ const Top = ({ data, filtered, tooltips, setTooltips }) => {
                   data
                     .filter((d) => filtered[d.id])
                     .map((d) => d.metrics[1].value)
-                    .reduce((a, b) => a + b, 0)
+                    .reduce((a, b) => a + b, 0),
                 )}
               </Badge>
             </FadeIn>
